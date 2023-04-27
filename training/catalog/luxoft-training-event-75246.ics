@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170911T061417CEST-35106Ojvg9@185.26.112.96
+DTSTAMP:20170911T041417Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-004 Введение в метрики тестирован
+ ия\n\nДата проведения курса: 12.09.2017-13.09.2017\n�
+ �ремя: 14:30-17:00\n\nРегистрация и подробнее о 
+ курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID
+ =27576&ID_TIME=75246\n\n
+DTSTART:20170912T143000
+DTEND:20170913T170000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Введение в метрики тестирования'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-004 Введение в метрики тестирован
+ ия\n\nДата проведения курса: 12.09.2017-13.09.2017\n�
+ �ремя: 14:30-17:00\n\nРегистрация и подробнее о 
+ курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID
+ =27576&ID_TIME=75246\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

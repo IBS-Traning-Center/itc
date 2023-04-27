@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200908T163635CEST-6844ct3wTh@185.26.112.96
+DTSTAMP:20200908T143635Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-037 Введение в SQL для тестировщико
+ в \n\nДата проведения курса: 07.09.2020-10.09.2020\nВ
+ ремя: 07:00-11:00\n\nРегистрация и подробнее о �
+ �урсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=
+ 44979&ID_TIME=103275\n\n
+DTSTART:20200907T070000
+DTEND:20200910T110000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Введение в SQL для тестировщиков '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-037 Введение в SQL для тестировщико
+ в \n\nДата проведения курса: 07.09.2020-10.09.2020\nВ
+ ремя: 07:00-11:00\n\nРегистрация и подробнее о �
+ �урсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=
+ 44979&ID_TIME=103275\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

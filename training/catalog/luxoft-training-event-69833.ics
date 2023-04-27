@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170331T203909CEST-3331Prbchv@185.26.112.96
+DTSTAMP:20170331T183909Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-030 Интервью по компетенциям\n\nДат
+ а проведения курса: 03.04.2017-04.04.2017\nВремя: 10:
+ 00-16:00\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=69444&ID_TIME
+ =69833\n\n
+DTSTART:20170403T100000
+DTEND:20170404T160000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Интервью по компетенциям'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-030 Интервью по компетенциям\n\nДат
+ а проведения курса: 03.04.2017-04.04.2017\nВремя: 10:
+ 00-16:00\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=69444&ID_TIME
+ =69833\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

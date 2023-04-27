@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Консалтинг";
+$arDirProperties = array(
+
+);
+?>

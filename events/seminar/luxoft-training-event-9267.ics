@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20130227T232719CET-2220l207FN@50.57.83.146
+DTSTAMP:20130227T222719Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Обзор EJB 3.0\n\nДата проведен
+ ия\n24.06.2008\n\nВремя\n10.00 - 14.00\n\nМесто проведе
+ ния:\nг. Омск ул. Учебная 83 каб. 514\n\nСписок 
+ тем уточняется.\n\nРегистрация:\nhttp://www.luxoft
+ -training.ru/events/seminar/9267/\n\n
+DTSTART:20080624T000000
+LOCATION:г. Омск ул. Учебная 83 каб. 514
+SUMMARY:Семинар: Обзор EJB 3.0
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Обзор EJB 3.0
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

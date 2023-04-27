@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20131210T181335CET-4921B68KbN@50.57.83.146
+DTSTAMP:20131210T171335Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-030 Основы тестирования. Часть 7. В
+ ведение в тест-менеджмент\n\nДата проведе
+ ния курса: 16.12.2013-17.12.2013\nВремя: 14:30-18:30\n\nРе�
+ �истрация и подробнее о курсе:\nhttp://www.luxoft-
+ training.ru/training/catalog/course.html?ID=29327&ID_TIME=44921\n\n
+DTSTART:20131216T143000
+DTEND:20131217T183000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы тестирования. Часть 7. Введение в 
+ тест-менеджмент'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-030 Основы тестирования. Часть 7. В
+ ведение в тест-менеджмент\n\nДата проведе
+ ния курса: 16.12.2013-17.12.2013\nВремя: 14:30-18:30\n\nРе�
+ �истрация и подробнее о курсе:\nhttp://www.luxoft-
+ training.ru/training/catalog/course.html?ID=29327&ID_TIME=44921\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

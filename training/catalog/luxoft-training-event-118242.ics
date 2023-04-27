@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220717T185854CEST-0587a7z1HN@82.146.55.227
+DTSTAMP:20220717T165854Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-062 Библиотека лучшего опыта BPM CBOK
+ \n\nДата проведения курса: 18.07.2022-19.07.2022\nВр�
+ �мя: 10:00-18:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=852
+ 52&ID_TIME=118242\n\n
+DTSTART:20220718T100000
+DTEND:20220719T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Библиотека лучшего опыта BPM CBOK'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-062 Библиотека лучшего опыта BPM CBOK
+ \n\nДата проведения курса: 18.07.2022-19.07.2022\nВр�
+ �мя: 10:00-18:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=852
+ 52&ID_TIME=118242\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

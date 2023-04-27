@@ -1,0 +1,177 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?><?
+if($_REQUEST["filter_canceled"] == "Y" && $_REQUEST["filter_history"] == "Y")
+	$page = "canceled";
+elseif($_REQUEST["filter_status"] == "F" && $_REQUEST["filter_history"] == "Y")
+	$page = "completed";
+elseif($_REQUEST["filter_history"] == "Y")
+	$page = "all";
+else
+	$page = "active";
+?>
+	<ul class="filther-list">
+		<li <?if($page == "active"):?>class="active"<?endif?>><a href="<?=$arResult["CURRENT_PAGE"]?>?filter_history=N"><?=GetMessage("STPOL_F_ACTIVE")?></a></li> 
+
+		<li <?if($page == "all"):?>class="active"<?endif?>><a href="<?=$arResult["CURRENT_PAGE"]?>?filter_history=Y"><?=GetMessage("STPOL_F_ALL")?></a>
+
+		<li <?if($page == "completed"):?>class="active"<?endif?>><a href="<?=$arResult["CURRENT_PAGE"]?>?filter_status=F&filter_history=Y"><?=GetMessage("STPOL_F_COMPLETED")?></a>
+
+		<li <?if($page == "canceled"):?>class="active"<?endif?>><a href="<?=$arResult["CURRENT_PAGE"]?>?filter_canceled=Y&filter_history=Y"><?=GetMessage("STPOL_F_CANCELED")?></a>
+	</ul>
+			<?
+			$bNoOrder = true;
+			foreach($arResult["ORDERS"] as $key => $val)
+			{
+				$bNoOrder = false;
+				//echo "<pre>";
+				//print_r($val);
+				//echo "</pre>";
+				?>
+				<div class="heading-order">
+						<div class="alignleft">
+							<h3>Заказ №<?=$val["ORDER"]["ID"]?>
+							<?if ($val["ORDER"]["CANCELED"] == "Y"):?>
+								<span style="color: #ce6262">(<?=GetMessage("STPOL_CANCELED");?>)</span>
+							<?else:?>
+								<span>(<?=$arResult["INFO"]["STATUS"][$val["ORDER"]["STATUS_ID"]]["NAME"]?>)</span>
+							<?endif;?></h3>
+							<span class="date"><?=$val["ORDER"]["DATE_INSERT"];?></span>
+						</div>
+						<ul>
+							
+							<li>
+								<dl>
+									<dt>Стоимость:</dt>
+									<dd><strong><?=$val["ORDER"]["FORMATED_PRICE"]?></strong></dd>
+								</dl>
+							</li>
+
+
+
+							<!--<li>
+								<?if ($val["ORDER"]["PAYED"]!="Y") {?>
+								<dl>
+								
+									<dt>Оплата (только в рублях)</dt>
+									<dd><a class="button" target="_blank" href="javascript:void(0)<?/*/personal/order/payment/?ORDER_ID=<?=intval($val['ORDER']['ID'])?>*/?>"><?if(IntVal($val["ORDER"]["PAY_SYSTEM_ID"])>0)
+									echo $arResult["INFO"]["PAY_SYSTEM"][$val["ORDER"]["PAY_SYSTEM_ID"]]["NAME"]?></a></dd>
+								</dl>
+								<?} else {?>
+								<!--<p class="paid">Оплачено</p>-->
+								<?}?>
+							    </li>-->
+
+
+
+
+							<!--<?if ($val["ORDER"]["PERSON_TYPE_ID"]=="1") {?>
+
+							<li>
+								<a target="_blank" href="/personal/order/print_oferta.php?doc=invoice_oferta&ORDER_ID=<?=$val["ORDER"]["ID"]?>" class="score">Счет-оферта</a>
+							</li>
+							<?}?>-->
+							<li>
+								<a target="_blank" href="<?=$val["ORDER"]["URL_TO_CANCEL"]?>" class="cancel">Отменить</a>
+							</li>
+
+
+
+
+						</ul>
+				</div>
+				<ul class="list order-list">
+					<?
+									foreach($val["BASKET_ITEMS"] as $vvval)
+									{
+										?>
+<?
+		$dbBasketProps = CSaleBasket::GetPropsList(
+			array("SORT" => "ASC", "ID" => "DESC"),
+			array(
+					"BASKET_ID" => $vvval["ID"],
+					"!CODE" => array("CATALOG.XML_ID", "PRODUCT.XML_ID")
+				),
+			false,
+			false,
+			array("NAME", "VALUE")
+		);
+		while($arBasketPropsTmp = $dbBasketProps->GetNext())
+		{
+				$arService[$arBasketPropsTmp['NAME']] = $arBasketPropsTmp["VALUE"];
+				
+		}
+		$arSelect = Array(
+	 		"PROPERTY_teacher",
+			"PROPERTIES_string_teacher",
+	 		"NAME"
+ 		);
+		$arFilter = Array(
+			"IBLOCK_ID"=> D_TIMETABLE_ID_IBLOCK,
+			"ID"=>$arService["ID_TIME"],
+		);
+	
+
+		$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+		$schedule_teacher_id="";
+		$schedule_teacher_string="";
+		while($ar_fields = $res->GetNext())
+		{
+			
+	 		$schedule_teacher_id = $ar_fields['PROPERTY_TEACHER_VALUE'];
+			$schedule_teacher_string = $ar_fields['PROPERTY_STRING_TEACHER_VALUE'];
+			
+			
+		}
+		if  ($schedule_teacher_id > 0) {
+	        //теперь  получим имя преподавателя
+	  		$arSelect = Array("NAME", "PROPERTY_expert_name","CODE", "ACTIVE");
+			$arFilter = Array("IBLOCK_ID"=>56,"ID"=>$schedule_teacher_id);
+			$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+			while($ar_fields = $res->GetNext())
+			{
+				
+		 		$prepod_surname = $ar_fields["NAME"];
+		 		$prepod_code    = strtolower($ar_fields["CODE"]);
+		 		$prepod_name    = $ar_fields["PROPERTY_EXPERT_NAME_VALUE"];
+		 		$prepod_active  = $ar_fields["ACTIVE"];
+			}
+		} else {
+			$prepod_active  = "N";
+			$prepod_surname = $schedule_teacher_string;
+		}
+		
+
+?>
+										
+											
+						<li>
+
+							<div class="description">
+								<div class="info">
+									<h3><a href="<?if ($vvval["CATALOG_XML_ID"]=="9") {?><?=$arService["DETAIL_PAGE_URL"]?><?} else {?>javascript:void(0)<?}?>"><?=$vvval["NAME"]?></a></h3>
+									<?if ($vvval["CATALOG_XML_ID"]=="9") {?><?if (strlen($prepod_surname)>0) {?><p>Тренер: <?if (strlen($prepod_code)>0) {?><a href="/about/experts/<?=$prepod_code?>.html"><?=$prepod_name?> <?=$prepod_surname?></a><?} else {?><?=$prepod_surname?><?}?></p><?}?><?}?>
+								</div>
+<?if ($vvval["CATALOG_XML_ID"]=="9") {?>
+								<div class="more">
+									<p><strong><?=intval($vvval["PRICE"])?> р.</strong> г. <?=$arService["CITY_NAME"]?></p>
+									<span class="time"><?=$arService["SCHEDULE_TIME"]?></span> <span class="date"><?=$arService["STARTDATE"]?><?if (strlen($arService["ENDDATE"])>0) {?>- <?=$arService["ENDDATE"]?><?}?></span>
+								</div>
+<?}?>
+							</div>
+							
+						</li>
+						<?}?>
+				</ul>
+				<div class="all-holder"></div>
+				<?
+			}
+			
+			if ($bNoOrder)
+			{
+				?><center><?echo ShowNote(GetMessage("STPOL_NO_ORDERS"))?></center><?
+			}
+			?>
+
+
+<?if(strlen($arResult["NAV_STRING"]) > 0):?>
+	<div class="navigation"><?=$arResult["NAV_STRING"]?></p>
+<?endif?>

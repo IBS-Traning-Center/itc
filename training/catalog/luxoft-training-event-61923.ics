@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160316T201604CET-6360zztEgG@185.26.112.96
+DTSTAMP:20160316T191604Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ARC-008 Проектирование высокопроизво
+ дительных приложений \n\nДата проведения 
+ курса: 14.03.2016-18.03.2016\nВремя: 10:00-16:00\n\nРегист
+ рация и подробнее о курсе:\nhttp://www.luxoft-trainin
+ g.ru/training/catalog/course.html?ID=20748&ID_TIME=61923\n\n
+DTSTART:20160314T100000
+DTEND:20160318T160000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Проектирование высокопроизводительных
+  приложений '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARC-008 Проектирование высокопроизво
+ дительных приложений \n\nДата проведения 
+ курса: 14.03.2016-18.03.2016\nВремя: 10:00-16:00\n\nРегист
+ рация и подробнее о курсе:\nhttp://www.luxoft-trainin
+ g.ru/training/catalog/course.html?ID=20748&ID_TIME=61923\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

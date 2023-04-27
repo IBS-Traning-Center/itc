@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140121T165744CET-01100gRir6@50.57.83.146
+DTSTAMP:20140121T155744Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PTRN-012 Тестирование методом свободн
+ ого поиска (exploratory testing)\n\nДата проведения
+  курса: 19.02.2014-19.02.2014\nВремя: 10:00-18:00 \n\nРегис
+ трация и подробнее о курсе:\nhttp://www.luxoft-train
+ ing.ru/training/catalog/course.html?ID=44304&ID_TIME=44331\n\n
+DTSTART:20140219T100000
+DTEND:20140219T180000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Тестирование методом свободного поиска
+  (exploratory testing)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PTRN-012 Тестирование методом свободн
+ ого поиска (exploratory testing)\n\nДата проведения
+  курса: 19.02.2014-19.02.2014\nВремя: 10:00-18:00 \n\nРегис
+ трация и подробнее о курсе:\nhttp://www.luxoft-train
+ ing.ru/training/catalog/course.html?ID=44304&ID_TIME=44331\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

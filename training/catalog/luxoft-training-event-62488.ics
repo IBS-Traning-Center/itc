@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160330T075644CEST-4036wL4lTo@185.26.112.96
+DTSTAMP:20160330T055644Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-038 Моделирование бизнес-процесс�
+ �в с использованием BPMN 2.x \n\nДата проведен
+ ия курса: 30.03.2016-31.03.2016\nВремя: 09:00-17:00\n\nРег�
+ �страция и подробнее о курсе:\nhttp://www.luxoft-tr
+ aining.ru/training/catalog/course.html?ID=45134&ID_TIME=62488\n\n
+DTSTART:20160330T090000
+DTEND:20160331T170000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Моделирование бизнес-процессов с испол�
+ �зованием BPMN 2.x '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-038 Моделирование бизнес-процесс�
+ �в с использованием BPMN 2.x \n\nДата проведен
+ ия курса: 30.03.2016-31.03.2016\nВремя: 09:00-17:00\n\nРег�
+ �страция и подробнее о курсе:\nhttp://www.luxoft-tr
+ aining.ru/training/catalog/course.html?ID=45134&ID_TIME=62488\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

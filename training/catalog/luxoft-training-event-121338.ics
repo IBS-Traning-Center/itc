@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20221011T030409CEST-0151U81K2A@82.146.55.227
+DTSTAMP:20221011T010409Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-070 Проектирование интеграционны
+ х решений\n\nДата проведения курса: 10.10.2022-
+ 13.10.2022\nВремя: 15:00 – 20:00\n\nРегистрация и по�
+ �робнее о курсе:\nhttp://www.luxoft-training.ru/training/catal
+ og/course.html?ID=108973&ID_TIME=121338\n\n
+DTSTART:20221010T150000
+DTEND:20221013T000000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Проектирование интеграционных решений'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-070 Проектирование интеграционны
+ х решений\n\nДата проведения курса: 10.10.2022-
+ 13.10.2022\nВремя: 15:00 – 20:00\n\nРегистрация и по�
+ �робнее о курсе:\nhttp://www.luxoft-training.ru/training/catal
+ og/course.html?ID=108973&ID_TIME=121338\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

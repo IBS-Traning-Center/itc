@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140813T151826CEST-8205guLWTT@50.57.83.146
+DTSTAMP:20140813T131826Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-029_ONL Техника написания сценарие�
+ � использования (online)\n\nДата проведения к�
+ �рса: 11.08.2014-14.08.2014\nВремя: 11:30-14:00\n\nРегистр�
+ �ция и подробнее о курсе:\nhttp://www.luxoft-training.r
+ u/training/catalog/course.html?ID=49133&ID_TIME=49158\n\n
+DTSTART:20140811T113000
+DTEND:20140814T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Техника написания сценариев использова
+ ния (online)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-029_ONL Техника написания сценарие�
+ � использования (online)\n\nДата проведения к�
+ �рса: 11.08.2014-14.08.2014\nВремя: 11:30-14:00\n\nРегистр�
+ �ция и подробнее о курсе:\nhttp://www.luxoft-training.r
+ u/training/catalog/course.html?ID=49133&ID_TIME=49158\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

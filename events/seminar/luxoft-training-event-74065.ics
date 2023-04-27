@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190725T190708CEST-8213z4dBwa@185.26.112.96
+DTSTAMP:20190725T170708Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Интеллектуальные указате
+ ли\n\nДата проведения\n21.07.2017\n\nВремя\n18:00 - 1
+ 9:30\n\nМесто проведения:\nгород Омск\, просп
+ ерт Карла Маркса\, 41/7\n\nОбсуждаются  все а
+ спекты интеллектуальных указателей\, а т
+ акже наиболее распространенные ошибки\, 
+ совершаемые программистами при их реали
+ зации. \n\nРегистрация:\nhttp://www.luxoft-training.ru/eve
+ nts/seminar/74065/\n\n
+DTSTART:20170721T000000
+LOCATION:город Омск\, просперт Карла Маркса\, 4
+ 1/7
+SUMMARY:Семинар: Интеллектуальные указатели
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Интеллектуальные указате
+ ли
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

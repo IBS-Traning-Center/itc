@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160807T155729CEST-2022UVOaGg@185.26.112.96
+DTSTAMP:20160807T135729Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-044 Бюджетное юзабилити \n\nДата пр
+ оведения курса: 08.08.2016-08.08.2016\nВремя: 14:00-18:0
+ 0 (Мск)\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=54479&ID_T
+ IME=65510\n\n
+DTSTART:20160808T140000
+DTEND:20160808T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Бюджетное юзабилити '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-044 Бюджетное юзабилити \n\nДата пр
+ оведения курса: 08.08.2016-08.08.2016\nВремя: 14:00-18:0
+ 0 (Мск)\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=54479&ID_T
+ IME=65510\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

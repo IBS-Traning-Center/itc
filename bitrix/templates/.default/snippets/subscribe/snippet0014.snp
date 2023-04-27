@@ -1,0 +1,37 @@
+						<table style="margin:0px;padding:0px;border-collapse:collapse;" cellspacing="0" cellpadding="0" width="100%">
+						<tr>
+							<td class="pad_null" height="30" style="margin:0px;padding:0px; background-color:#004080;" valign="middle">
+								<div style="text-align:left;margin:0px 0px 0px 15px;font-weight:bold;display:block;font-size:16px; font-family:Arial,Helvetica,sans-serif; color:#FFFFFF;">
+									 УЦ LUXOFT В ПРЕССЕ
+								</div>
+							</td>
+							<tr>
+								<td class="pad_null" style="margin:0px;padding:0px; background-color:#D9D9D9;" valign="top">
+									<table cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:none; border-collapse:collapse;">
+									<tr>
+										<td nowrap="" width="10" class="pad_null">
+											<img width="10" border="0" alt="" src="/images/email/spacer.gif">
+										</td>
+										<td width="140" class="pad_null" style="margin:0px;padding:0px" valign="top">
+											<div style="text-align:left;margin:10px 0px 0px 0px; padding:0px;">
+												<img src="/images/email/s_newspaperbannner_140_94.jpg" width="140" height="94" alt="" border="0">
+											</div>
+										</td>
+										<td nowrap="" width="10" class="pad_null">
+											<img width="10" border="0" alt="" src="/images/email/spacer.gif">
+										</td>
+										<td class="pad_null" style="margin:0px;padding:0px;" valign="top">
+											<div style="text-align:left;margin:10px 5px 10px 0px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#1C548D;">
+												<div style="font-weight:bold;display:block;font-size:14px; font-family:Arial,Helvetica,sans-serif;">
+													 Training.ru
+												</div>
+												<div>
+													<a style="margin:3px 0px 9px 0px;text:decoration:underline; font-size:12px; color:#1C548D; display:block;" href="http://www.luxoft-training.ru/">Ссылка. Тестовый серый блок текст. Тестовый серый блок текст.Тестовый серый блок текст. Тестовый серый блок текст.</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+						</table>

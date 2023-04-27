@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190919T161056CEST-3702s4kUco@185.26.112.96
+DTSTAMP:20190919T141056Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-021 Разработка на Angular. Основы\n\nДа
+ та проведения курса: 16.09.2019-20.09.2019\nВремя: 1
+ 0:00-16:00\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=69422&ID_T
+ IME=90761\n\n
+DTSTART:20190916T100000
+DTEND:20190920T160000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Разработка на Angular. Основы'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-021 Разработка на Angular. Основы\n\nДа
+ та проведения курса: 16.09.2019-20.09.2019\nВремя: 1
+ 0:00-16:00\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=69422&ID_T
+ IME=90761\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

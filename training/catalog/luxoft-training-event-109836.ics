@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210607T141616CEST-2683kxrxpe@185.26.112.96
+DTSTAMP:20210607T121616Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-001 Тайм-менеджмент для руководит�
+ �лей\n\nДата проведения курса: 26.07.2021-02.08.2021
+ \nВремя: 10:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=37662&ID_TIME=109836\n\n
+DTSTART:20210726T100000
+DTEND:20210802T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Тайм-менеджмент для руководителей'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-001 Тайм-менеджмент для руководит�
+ �лей\n\nДата проведения курса: 26.07.2021-02.08.2021
+ \nВремя: 10:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=37662&ID_TIME=109836\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

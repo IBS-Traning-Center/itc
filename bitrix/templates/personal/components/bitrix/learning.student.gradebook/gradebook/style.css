@@ -1,0 +1,57 @@
+.test-name {
+	width: 300px;
+	float: left;
+}
+.best-score {
+	width: 130px;
+	float: left;
+	text-align: center;
+}
+.learn-result {
+	width: 80px;
+	float: left;
+	text-align: center;
+}
+.attempts {
+	width: 95px;
+	float: left;
+	text-align: center;
+}
+.action {
+	width: 100px;
+	float: left;
+	text-align: center;
+}
+.date-test {
+	width: 200px;
+	float: left;
+}
+.time-test {
+	width: 195px;
+	float: left;
+}
+.quest-test {
+	width: 100px;
+	float: left;
+	text-align: center;
+}
+.babok .date-test {
+	width: 170px;
+}
+.babok .time-test {
+	width: 175px;
+}
+.babok .quest-test {
+	width: 80px;
+}
+.innher-hidden {
+	display: none;
+	padding-top: 20px;
+}
+
+.courses .head {
+	color: #444;
+}
+.courses h3 {
+	color: #444;
+}

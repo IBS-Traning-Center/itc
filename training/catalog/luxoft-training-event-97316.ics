@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200107T115211CET-2814ZfGuNh@185.26.112.96
+DTSTAMP:20200107T105211Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SCRIPT-003 Python. Продвинутый курс\n\nДата 
+ проведения курса: 02.03.2020-06.03.2020\nВремя: 10:00-
+ 14:00\n\nРегистрация и подробнее о курсе:\nhttp
+ ://www.luxoft-training.ru/training/catalog/course.html?ID=57977&ID_TIME=97
+ 316\n\n
+DTSTART:20200302T100000
+DTEND:20200306T140000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Python. Продвинутый курс'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SCRIPT-003 Python. Продвинутый курс\n\nДата 
+ проведения курса: 02.03.2020-06.03.2020\nВремя: 10:00-
+ 14:00\n\nРегистрация и подробнее о курсе:\nhttp
+ ://www.luxoft-training.ru/training/catalog/course.html?ID=57977&ID_TIME=97
+ 316\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

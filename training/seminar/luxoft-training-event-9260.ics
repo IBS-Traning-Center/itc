@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20130227T191222CET-2997uX0zvd@50.57.83.146
+DTSTAMP:20130227T181222Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Новые возможности MS Visual Stu
+ dio Team System 2008\n\nДата проведения\n05.06.2008\n\nВр�
+ �мя\n18:00-19:30\n\nМесто проведения:\nг. Москва\,
+  ул. 1-ый Волоколамский проезд\, д. 10\, стр. 3
+ \n\nНа семинаре будет рассмотрено развити
+ е функциональности Team System в 2008-й версии и
+  опыт внедрения новой версии заказчикам.
+ \n \n\n\nРегистрация:\nhttp://www.luxoft-training.ru/events/sem
+ inar/9260/\n\n
+DTSTART:20080605T000000
+LOCATION:г. Москва\, ул. 1-ый Волоколамский про�
+ �зд\, д. 10\, стр. 3
+SUMMARY:Семинар: Новые возможности MS Visual Studio 
+ Team System 2008
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Новые возможности MS Visual Stu
+ dio Team System 2008
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170127T235900CET-4371TCGv5c@185.26.112.96
+DTSTAMP:20170127T225900Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-078 Мотивация себя и других\n\nДата 
+ проведения курса: 22.02.2017-23.02.2017\nВремя: 10:00-
+ 18:00\n\nРегистрация и подробнее о курсе:\nhttp
+ ://www.luxoft-training.ru/training/catalog/course.html?ID=69452&ID_TIME=70
+ 020\n\n
+DTSTART:20170222T100000
+DTEND:20170223T180000
+LOCATION:Днепр
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Мотивация себя и других'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-078 Мотивация себя и других\n\nДата 
+ проведения курса: 22.02.2017-23.02.2017\nВремя: 10:00-
+ 18:00\n\nРегистрация и подробнее о курсе:\nhttp
+ ://www.luxoft-training.ru/training/catalog/course.html?ID=69452&ID_TIME=70
+ 020\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

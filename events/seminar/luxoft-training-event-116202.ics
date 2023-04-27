@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211228T160852CET-0947dDSA2d@185.26.112.96
+DTSTAMP:20211228T150852Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Вебинар: Нововведения в Selenium 4 WebDrive
+ r\n\nДата проведения\n01.11.2021\n\nВремя\n18:00-19:00
+ \n\nДокладчик:\n Горбунов Антон -Специалис�
+ � в области автоматизированного тестиро�
+ �ания\n\nПознакомьтесь с новыми возможнос
+ тями продукта Selenium 4 WebDriver!\nВ рамках веби�
+ �ара постараемся ответить на вопрос: сто�
+ �т ли переходить на него?\n\nРегистрация:\nh
+ ttp://www.luxoft-training.ru/events/seminar/116202/\n\n
+DTSTART:20211101T000000
+LOCATION:Вебинар\, проводимый с  использовани
+ ем сервиса gotomeeting.com
+SUMMARY:Вебинар: Нововведения в Selenium 4 WebDriver
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Вебинар: Нововведения в Selenium 4 WebDrive
+ r
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

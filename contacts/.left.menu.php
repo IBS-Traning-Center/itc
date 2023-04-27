@@ -1,0 +1,48 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Москва", 
+		"/contacts/moscow/", 
+		Array(), 
+		Array("vip"=>"3"), 
+		"" 
+	),
+	Array(
+		"Санкт-Петербург", 
+		"/contacts/sankt-peterburg/", 
+		Array(), 
+		Array("vip"=>"3"), 
+		"" 
+	),
+	Array(
+		"Омск", 
+		"/contacts/omsk/", 
+		Array(), 
+		Array("vip"=>"3"), 
+		"" 
+	),
+    /*
+	Array(
+		"Киев", 
+		"/contacts/kiev/", 
+		Array(), 
+		Array("vip"=>"3"), 
+		"" 
+	),
+	Array(
+		"Одесса", 
+		"/contacts/odessa/", 
+		Array(), 
+		Array("vip"=>"3"), 
+		"" 
+	),
+	Array(
+		"Днепр", 
+		"/contacts/dnepr/", 
+		Array(), 
+		Array("vip"=>"3"), 
+		"" 
+	)
+    */
+);
+?>

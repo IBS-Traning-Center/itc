@@ -1,0 +1,33 @@
+<?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
+?>
+<?/*CModule::IncludeModule("iblock")?>
+<?
+$arSelect = Array("ID", "NAME", "PROPERTY_CITY.NAME");
+$arFilter = Array("IBLOCK_ID"=>9, "ACTIVE_DATE"=>"Y", "PROPERTY_CITY"=> 5741, "ACTIVE"=>"Y");
+$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+while($ob = $res->GetNextElement())
+{
+    $arFields = $ob->GetFields();
+	print_r($arFields["NAME"]);
+    fn_randomDiscount($arFields["ID"]);
+
+}*/
+//$vHTML = GetHTMLSubscribeBlogs();
+//CreateSubscribeSnippetsNews();
+//CreateSubscribeSnippetsBlogs();
+//echo $vHTML;
+//CreateSubscribeSnippetsBlogs();
+
+?>
+<?CModule::IncludeModule("iblock")?>
+<?
+$arSelect = Array("ID", "NAME", "PROPERTY_CITY.NAME", "PROPERTY_schedule_duration");
+$arFilter = Array("IBLOCK_ID"=>9, "ACTIVE_DATE"=>"Y", "PROPERTY_CITY"=> array(5745, 5747, 5746), "ACTIVE"=>"Y");
+$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+while($ob = $res->GetNextElement())
+{
+    $arFields = $ob->GetFields();
+    fn_randomDiscount($arFields["ID"], $arFields["PROPERTY_SCHEDULE_DURATION_VALUE"]);
+
+}
+?>

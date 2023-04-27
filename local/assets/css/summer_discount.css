@@ -1,0 +1,142 @@
+.shared-components-Banner-banner-module {
+    width: 100%;
+    background-color: #164BED;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    display: none;
+}
+
+.shared-components-Banner-banner-module p {
+    margin: 0
+}
+
+@media (max-width: 767px) {
+    .shared-components-Banner-banner-module {
+        display:none
+    }
+}
+
+
+.shared-components-Banner-banner-module__content {
+    max-width: 980px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-size: cover
+}
+
+.shared-components-Banner-banner-module__contentInner {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.shared-components-Banner-banner-module__close {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    cursor: pointer;
+    -webkit-transition: opacity .2s ease;
+    transition: opacity .2s ease
+}
+
+@media (max-width: 1023px) {
+    .shared-components-Banner-banner-module__close {
+        right:calc((100vw - 100%)/-2 + 6px)
+    }
+}
+
+.shared-components-Banner-banner-module__svg {
+    fill: var(--text-color);
+    width: 18px;
+    height: 18px
+}
+
+.shared-components-Banner-banner-module__close:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+}
+.shared-components-Banner-banner-module__contentInner--link{
+    height:100%;
+
+}
+
+.shared-components-Banner-banner-module__contentInner--link {
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.shared-components-Banner-banner-module__contentInner--link img:first-of-type {
+    margin-right: 14px;
+}
+.shared-components-Banner-banner-module__contentInner--link img:last-of-type {
+    margin-left: 16px;
+}
+.shared-components-Banner-banner-module__contentInner--link span {
+    font-size: 20px;
+    line-height: 1.2;
+}
+.shared-components-Banner-banner-module__contentInner--link b {
+    font-weight: 700;
+}
+
+.shared-components-Banner-banner-module__contentInner--link button {
+    font-weight: 700;
+    color: #fff;
+    background: #f7941d;
+    border-radius: 20px;
+    margin-left: 14px;
+}
+.shared-components-Banner-banner-module__contentInner--link button:after {
+    border: none;
+}
+
+.shared-components-Banner-banner-module__contentInner--link img {
+    max-width: 1170px;
+    max-height: 70px;
+    display: block;
+}
+@media (max-width: 1365px) {
+    .shared-components-Banner-banner-module__contentInner--link span {
+        font-size: 18px;
+    }
+    .shared-components-Banner-banner-module__contentInner--link button {
+        font-size: 16px;
+        margin-left: 6px;
+    }
+    .shared-components-Banner-banner-module__contentInner--link img:first-of-type {
+        margin-right: 6px;
+    }
+    .shared-components-Banner-banner-module__contentInner--link img:last-of-type {
+        margin-left: 8px;
+    }
+}
+@media (max-width: 767px) {
+    .shared-components-Banner-banner-module__contentInner--link {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0 8px;
+    }
+    .shared-components-Banner-banner-module__contentInner--link span {
+        font-size: 16px;
+        max-width: 154px;
+    }
+    .shared-components-Banner-banner-module__contentInner--link img:last-of-type {
+        display: block;
+        max-width: 100%;
+    }
+    .shared-components-Banner-banner-module__contentInner--link button {
+        font-size: 14px;
+    }
+}

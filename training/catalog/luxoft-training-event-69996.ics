@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170425T194451CEST-7272l9P4RB@185.26.112.96
+DTSTAMP:20170425T174451Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-014 Angular 2: полностью переработанн�
+ �я версия популярного веб-фреймворка\n\nД�
+ �та проведения курса: 03.04.2017-26.04.2017\nВремя: 
+ 18:45-21:45\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=69422&ID_T
+ IME=69996\n\n
+DTSTART:20170403T184500
+DTEND:20170426T214500
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Angular 2: полностью переработанная версия �
+ �опулярного веб-фреймворка'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-014 Angular 2: полностью переработанн�
+ �я версия популярного веб-фреймворка\n\nД�
+ �та проведения курса: 03.04.2017-26.04.2017\nВремя: 
+ 18:45-21:45\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=69422&ID_T
+ IME=69996\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

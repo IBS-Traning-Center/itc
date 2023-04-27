@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200504T083105CEST-41081VVGMj@185.26.112.96
+DTSTAMP:20200504T063105Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-006 Продвинутый уровень использо�
+ �ания XSLT\n\nДата проведения курса: 22.06.2020-23.
+ 06.2020\nВремя: 09:30-17:30\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=25065&ID_TIME=99310\n\n
+DTSTART:20200622T093000
+DTEND:20200623T173000
+LOCATION:Санкт-Петербург
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Продвинутый уровень использования XSLT'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-006 Продвинутый уровень использо�
+ �ания XSLT\n\nДата проведения курса: 22.06.2020-23.
+ 06.2020\nВремя: 09:30-17:30\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=25065&ID_TIME=99310\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

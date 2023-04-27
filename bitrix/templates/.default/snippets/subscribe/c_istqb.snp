@@ -1,0 +1,59 @@
+ 
+<div id="our_template"> 
+  <table width="750" style="border: currentcolor; border-collapse: collapse;" bgcolor="white" border="0" cellspacing="0" cellpadding="0"> 
+ 
+      <tr> 	<td width="25" class="pad_null" nowrap="nowrap"> 		<img width="25" border="0" src="http://www.luxoft-training.ru/images/email/spacer.gif" id="bxid_103014"  /> 	</td> 	<td width="700" class="pad_null"> 		 
+          <table width="700" style="border-collapse: collapse; background-color: rgb(255, 255, 255);" border="0" cellspacing="0" cellpadding="0"> 		 
+            	 
+              <tr> 			<td width="700" height="17" class="pad_null" style="border-top-style: none; border-top-width: medium;"> 				<img width="100%" height="17" border="0" src="http://www.luxoft-training.ru/images/email/spacer.gif" id="bxid_663033"  /> 			</td> 		</tr>
+             		 
+              <tr> 			<td> 				 
+                  <table width="700" style="border: currentcolor; border-collapse: collapse;" border="0" cellspacing="0" cellpadding="0"> 				 
+                   
+                      <tr> 					<td width="200" height="90" class="pad_null" valign="middle" style="background-color: rgb(255, 255, 255);"> 						 
+                          <div style="line-height: 0;"> 							<a target="_blank" style="text-decoration: none;" href="http://www.luxoft-training.ru/?utm_source=rassylka&utm_medium=email&utm_campaign=digest" id="bxid_827711" > 							<img width="200" height="80" border="0" alt="Сайт LUXOFT TRAINING" src="http://www.luxoft-training.ru/images/logo.gif" id="bxid_556224"  /> 							</a> 						</div>
+                         					</td> 					<td width="500" height="90" class="pad_null" valign="middle" style="background-color: rgb(0, 64, 128);"> 						 
+                          <div> 							 
+                            <div style="margin: 0px 0px 3px 30px; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 32px; font-weight: bold; display: block;"> 								 LUXOFT TRAINING 							</div>
+                           							 
+                            <div style="margin: 0px 0px 3px 30px; color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-style: italic; display: block;"> 								 Выпуск № 18  11.11.2013 г. 							</div>
+                           						</div>
+                         					</td> 				</tr>
+                     				
+                   </table>
+                 			</td> 		</tr>
+             		 
+              <tr> 			<td width="700" height="22" class="pad_null" style="border-top-style: none; border-top-width: medium;"> 				<img width="100%" height="22" border="0" src="http://www.luxoft-training.ru/images/email/spacer.gif" id="bxid_783262"  /> 			</td> 		</tr>
+             		 
+              <tr> 			<td> 				 
+                  <table width="700" style="margin: 0px; padding: 0px; border: currentcolor; border-collapse: collapse;" cellspacing="0" cellpadding="0"> 				 
+                    
+                      <tr> 					<td valign="bottom"> 						 
+                          <table width="345" style="margin: 0px; padding: 0px; border-bottom-color: rgb(0, 64, 128); border-bottom-width: 2px; border-bottom-style: solid; border-collapse: collapse;" cellspacing="0" cellpadding="0"> 						 
+                            					 
+                              <tr> 							<td width="135" class="pad_null" valign="top" style="margin: 0px; padding: 0px; background-color: rgb(255, 255, 255);"> 								 
+                                  <div style="text-align: center; line-height: 0;"> 									<img width="100" height="146" src="http://www.luxoft-training.ru/images/email/100_146_4_books.jpg" id="bxid_629834"  /> 								</div>
+                                 							</td> 							<td width="210" height="30" class="pad_null" valign="midlle" style="margin: 0px; padding: 0px; background-color: rgb(255, 255, 255);"> 								 
+                                  <div style="margin: 0px 0px 15px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; display: block;"> 									 &bull; <a href="http://www.luxoft-training.ru/timetable/?utm_source=rassylka&utm_medium=email&utm_campaign=digest" style="color: rgb(0, 64, 128);" target="_blank" id="bxid_394906" >Расписание тренингов</a> 								</div>
+                                 								 
+                                  <div style="margin: 0px 0px 15px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; display: block;"> 									 • <a href="http://www.luxoft-training.ru/events/seminar/?utm_source=rassylka&utm_medium=email&utm_campaign=digest" style="color: rgb(0, 64, 128);" target="_blank" id="bxid_795423" >Бесплатные мероприятия</a> 								</div>
+                                 								 
+                                  <div style="margin: 0px 0px 15px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-style: normal; display: block;"> 									 • <a href="http://www.luxoft-training.ru/training/catalog/?utm_source=rassylka&utm_medium=email&utm_campaign=digest" style="color: rgb(0, 64, 128);" target="_blank" id="bxid_109743" >Каталог тренингов</a> 								</div>
+                                 							</td> 						</tr>
+                             						
+                           						</table>
+                         					</td> 					<td width="10" class="pad_null" nowrap="nowrap"> 						<img width="10" border="0" src="http://www.luxoft-training.ru/images/email/spacer.gif" id="bxid_601138"  /> 					</td> 					<td valign="top"> 						 
+                          <div style="margin: 10px 15px; padding: 0px; text-align: right; color: rgb(0, 64, 128); font-family: Arial, Helvetica, sans-serif; font-size: 12px;"> 									 
+                            <div style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; display: inline;"> 											<a style="text-decoration: none;" target="_blank" href="http://www.facebook.com/TrainingCenterLuxoft" id="bxid_362011" ><img width="32" height="32" src="http://www.luxoft-training.ru/downloads/images/social/t_facebook.png" id="bxid_655470"  /></a><span id="bxid_662119"> </span> <a style="text-decoration: none;" target="_blank" href="http://twitter.com/TrainingLuxoft" id="bxid_371793" ><img width="32" height="32" src="http://www.luxoft-training.ru/downloads/images/social/t_twitter.png" id="bxid_652735"  /></a><span id="bxid_662119"> </span> <a style="text-decoration: none;" target="_blank" href="http://www.youtube.com/user/LuxoftTrainingCenter" id="bxid_41660" ><img width="32" height="32" src="http://www.luxoft-training.ru/downloads/images/social/t_youtube.png" id="bxid_269726"  /></a><span id="bxid_662119"> </span> <a style="text-decoration: none;" target="_blank" href="http://www.luxoft-training.ru/rss/" id="bxid_644760" ><img width="32" height="32" src="http://www.luxoft-training.ru/downloads/images/social/t_rss.png" id="bxid_568300"  /></a><span id="bxid_662119"> </span> <a style="text-decoration: none;" target="_blank" href="http://www.linkedin.com/groups/Luxoft-Training-Center-3880622?trk=myg_ugrp_ovr" id="bxid_27148" ><img width="32" height="32" src="http://www.luxoft-training.ru/downloads/images/social/t_linkedin.png" id="bxid_457476"  /></a><span id="bxid_662119"> </span> <a style="text-decoration: none;" target="_blank" href="http://vkontakte.ru/luxoft_training" id="bxid_71996" ><img width="32" height="32" src="http://www.luxoft-training.ru/downloads/images/social/t_vkontakte.gif" id="bxid_613523"  /></a> 									</div>
+                           								</div>
+                         								 					</td> 				</tr>
+                     				
+                   </table>
+				   </td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</div>
+			

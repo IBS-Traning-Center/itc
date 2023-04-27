@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220325T000425CET-4773ZeZfMk@www.luxoft-training.ru
+DTSTAMP:20220325T230417Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Вебинар: Тестирование для не-тести
+ ровщиков\n\nДата проведения\n19.11.2009\n\nВрем�
+ �\n11:00-13:00\, время московское\n\n\n\nРегистрац
+ ия:\nhttp://www.luxoft-training.ru/events/seminar/15874/\n\n
+DTSTART:20091119T000000
+LOCATION:Вебинар\, проводимый с  использовани
+ ем сервиса gotomeeting.com
+SUMMARY:Вебинар: Тестирование для не-тестиро
+ вщиков
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Вебинар: Тестирование для не-тести
+ ровщиков
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

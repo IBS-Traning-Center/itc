@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140824T162339CEST-01111vL3rJ@50.57.83.146
+DTSTAMP:20140824T142339Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PM-002 Оценка\, планирование и контро�
+ �ь исполнения проекта\n\nДата проведения �
+ �урса: 08.09.2014-12.09.2014\nВремя: 10:00-16:00\n\nРегист�
+ �ация и подробнее о курсе:\nhttp://www.luxoft-training
+ .ru/training/catalog/course.html?ID=22356&ID_TIME=45435\n\n
+DTSTART:20140908T100000
+DTEND:20140912T160000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Оценка\, планирование и контроль исполн�
+ �ния проекта'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PM-002 Оценка\, планирование и контро�
+ �ь исполнения проекта\n\nДата проведения �
+ �урса: 08.09.2014-12.09.2014\nВремя: 10:00-16:00\n\nРегист�
+ �ация и подробнее о курсе:\nhttp://www.luxoft-training
+ .ru/training/catalog/course.html?ID=22356&ID_TIME=45435\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

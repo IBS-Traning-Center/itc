@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190627T143407CEST-6373HtjUjE@185.26.112.96
+DTSTAMP:20190627T123407Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ATL-013 Основы Jira\n\nДата проведения ку
+ рса: 15.07.2019-15.07.2019\nВремя: 10:00-14:00\n\nРегистра
+ ция и подробнее о курсе:\nhttp://www.luxoft-training.ru
+ /training/catalog/course.html?ID=88968&ID_TIME=90831\n\n
+DTSTART:20190715T100000
+DTEND:20190715T140000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы Jira'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ATL-013 Основы Jira\n\nДата проведения ку
+ рса: 15.07.2019-15.07.2019\nВремя: 10:00-14:00\n\nРегистра
+ ция и подробнее о курсе:\nhttp://www.luxoft-training.ru
+ /training/catalog/course.html?ID=88968&ID_TIME=90831\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

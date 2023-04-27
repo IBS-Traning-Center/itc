@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220709T093900CEST-0205M49VJX@82.146.55.227
+DTSTAMP:20220709T073900Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Вебинар: Захват изменений из MongoDB и
+  запись в Clickhouse\n\nДата проведения\n12.07.2022 1
+ 8:00:00\n\nВремя\n18:00-20:00\n\nРассмотрим 4 вариан�
+ �а архитектуры пайплайна для применения 
+ изменений данных в MongoDB к Clickhouse.\n\nРегист�
+ �ация:\nhttp://www.luxoft-training.ru/events/seminar/121099/\n\n
+DTSTART:20220712T180000
+LOCATION:Вебинар\, проводимый с  использовани
+ ем сервиса gotomeeting.com
+SUMMARY:Вебинар: Захват изменений из MongoDB и з�
+ �пись в Clickhouse
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Вебинар: Захват изменений из MongoDB и
+  запись в Clickhouse
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

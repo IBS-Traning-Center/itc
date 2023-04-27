@@ -1,0 +1,19 @@
+div.learning-course-list .course-name
+{
+	font-size: 14px;
+}
+div.learning-course-list .desript {
+  margin-top: 15px;
+  margin-bottom: 9px;
+  font-size: 13px;
+}
+div.learning-course-list .uno-course {
+	padding-top: 11px;
+}
+div.learning-course-list  .separate-line {
+	border-bottom: 1px dashed #d1d3d4;
+}
+.course-heading {
+	font-size: 28px;
+	margin: 20px 0;
+}

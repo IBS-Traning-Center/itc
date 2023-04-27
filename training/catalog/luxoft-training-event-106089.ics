@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210216T064347CET-0716uwlc1l@185.26.112.96
+DTSTAMP:20210216T054347Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-054 BABOK Guide 3.0: Анализ стратегии\n\nД�
+ �та проведения курса: 02.03.2021-03.03.2021\nВремя: 
+ 10:30-18:30\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=81224&ID_T
+ IME=106089\n\n
+DTSTART:20210302T103000
+DTEND:20210303T183000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BABOK Guide 3.0: Анализ стратегии'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-054 BABOK Guide 3.0: Анализ стратегии\n\nД�
+ �та проведения курса: 02.03.2021-03.03.2021\nВремя: 
+ 10:30-18:30\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=81224&ID_T
+ IME=106089\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

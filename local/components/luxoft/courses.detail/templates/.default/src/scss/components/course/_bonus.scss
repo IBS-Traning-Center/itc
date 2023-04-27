@@ -1,0 +1,59 @@
+@use "../../variables" as *;
+.course-bonus {
+  &__header {
+    border-top: 8px solid $color-orange;
+    background-color: #fff;
+  }
+  &__title {
+    padding: 20px 30px;
+    font-size: 30px;
+    line-height: 1.163;
+    font-weight: 400;
+  }
+  &__main {
+    padding: 0 30px 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__item {
+    width: 100%;
+    padding: 0 10px;
+
+    &-number {
+      font-size: 30px;
+      line-height: 1.5;
+      font-weight: 400;
+      color: $color-orange;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__footer {
+    padding: 40px 30px;
+  }
+}
+@media (max-width: 1023px) {
+  .course-bonus {
+    &__main {
+      flex-direction: column;
+    }
+    &__item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 10px;
+      &-number {
+        width: 100%;
+        max-width: 75px;
+      }
+    }
+  }
+}

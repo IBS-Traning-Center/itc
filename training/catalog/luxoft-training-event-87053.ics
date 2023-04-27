@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190115T112706CET-65677GvG5I@185.26.112.96
+DTSTAMP:20190115T102706Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DB-018 Oracle: введение в PL/SQL\n\nДата пров�
+ �дения курса: 27.03.2019-29.03.2019\nВремя: 10:00-18:00\n\n
+ Регистрация и подробнее о курсе:\nhttp://www.lu
+ xoft-training.ru/training/catalog/course.html?ID=29263&ID_TIME=87053\n\n
+DTSTART:20190327T100000
+DTEND:20190329T180000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Oracle: введение в PL/SQL'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DB-018 Oracle: введение в PL/SQL\n\nДата пров�
+ �дения курса: 27.03.2019-29.03.2019\nВремя: 10:00-18:00\n\n
+ Регистрация и подробнее о курсе:\nhttp://www.lu
+ xoft-training.ru/training/catalog/course.html?ID=29263&ID_TIME=87053\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

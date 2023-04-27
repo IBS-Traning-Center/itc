@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140415T183633CEST-4422d8UfRh@50.57.83.146
+DTSTAMP:20140415T163633Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-023_ONL Основы тестирования (не для 
+ тестировщиков) (online)\n\nДата проведения ку
+ рса: 22.04.2014-22.04.2014\nВремя: 13:00-15:00\n\nРегистра
+ ция и подробнее о курсе:\nhttp://www.luxoft-training.ru
+ /training/catalog/course.html?ID=47634&ID_TIME=47638\n\n
+DTSTART:20140422T130000
+DTEND:20140422T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы тестирования (не для тестировщик
+ ов) (online)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-023_ONL Основы тестирования (не для 
+ тестировщиков) (online)\n\nДата проведения ку
+ рса: 22.04.2014-22.04.2014\nВремя: 13:00-15:00\n\nРегистра
+ ция и подробнее о курсе:\nhttp://www.luxoft-training.ru
+ /training/catalog/course.html?ID=47634&ID_TIME=47638\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

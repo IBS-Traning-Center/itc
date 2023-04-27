@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20171011T020729CEST-8441sTTW8X@185.26.112.96
+DTSTAMP:20171011T000729Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:NET-006 Основы работы с платформой ASP.N
+ ET MVC 5.0\n\nДата проведения курса: 13.11.2017-14.11.2
+ 017\nВремя: 10:00-18:00\n\nРегистрация и подробне
+ е о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.h
+ tml?ID=29006&ID_TIME=74099\n\n
+DTSTART:20171113T100000
+DTEND:20171114T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы работы с платформой ASP.NET MVC 5.0'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:NET-006 Основы работы с платформой ASP.N
+ ET MVC 5.0\n\nДата проведения курса: 13.11.2017-14.11.2
+ 017\nВремя: 10:00-18:00\n\nРегистрация и подробне
+ е о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.h
+ tml?ID=29006&ID_TIME=74099\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

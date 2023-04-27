@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210429T212644CEST-33140cUfju@185.26.112.96
+DTSTAMP:20210429T192644Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:NET-003 Асинхронное будущее в .NET\n\nДат
+ а проведения курса: 29.04.2021-30.04.2021\nВремя: 10:
+ 00-14:00\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=28751&ID_TIME
+ =108149\n\n
+DTSTART:20210429T100000
+DTEND:20210430T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Асинхронное будущее в .NET'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:NET-003 Асинхронное будущее в .NET\n\nДат
+ а проведения курса: 29.04.2021-30.04.2021\nВремя: 10:
+ 00-14:00\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=28751&ID_TIME
+ =108149\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

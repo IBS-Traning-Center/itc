@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20131221T113439CET-9072GoA9gu@50.57.83.146
+DTSTAMP:20131221T103439Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Рабочие процессы в SharePoint 2
+ 010\n\nДата проведения\n11.08.2011\n\nВремя\n19:00-21:0
+ 0\n\nМесто проведения:\nМосква\, 1-й Волокол�
+ �мский проезд\, д.10\, стр. 3 (бизнес-центр Ди
+ апазон)\n\nДокладчик:\n Гафуров Булат -Архи
+ тектор .NET / Консультант SharePoint\n\nСеминар п
+ освящен обзору возможностей SharePoint 2010 по 
+ реализации рабочих процессов в SharePoint Desig
+ ner 2010 и Visual Studio 2010\n\nРегистрация:\nhttp://www.luxo
+ ft-training.ru/events/seminar/26537/\n\n
+DTSTART:20110811T000000
+LOCATION:Москва\, 1-й Волоколамский проезд\, д.1
+ 0\, стр. 3 (бизнес-центр Диапазон)
+SUMMARY:Семинар: Рабочие процессы в SharePoint 2010
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Рабочие процессы в SharePoint 2
+ 010
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

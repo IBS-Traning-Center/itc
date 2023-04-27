@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220517T021516CEST-8436VRir8v@185.26.112.96
+DTSTAMP:20220517T001516Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-050 BABOK Guide 3.0: Введение в бизнес-ан�
+ �лиз\n\nДата проведения курса: 23.05.2022-24.05.2022
+ \nВремя: 10:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=67167&ID_TIME=120032\n\n
+DTSTART:20220523T100000
+DTEND:20220524T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BABOK Guide 3.0: Введение в бизнес-анализ'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-050 BABOK Guide 3.0: Введение в бизнес-ан�
+ �лиз\n\nДата проведения курса: 23.05.2022-24.05.2022
+ \nВремя: 10:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=67167&ID_TIME=120032\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

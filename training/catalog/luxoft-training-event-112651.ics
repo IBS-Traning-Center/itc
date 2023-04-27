@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210906T122438CEST-4635ofIjhr@185.26.112.96
+DTSTAMP:20210906T102438Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ADM-025 Инфраструктура как код. Terraform\n
+ \nДата проведения курса: 06.09.2021-08.09.2021\nВре�
+ �я: 10:00-14:00\n\nРегистрация и подробнее о кур
+ се:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=11247
+ 1&ID_TIME=112651\n\n
+DTSTART:20210906T100000
+DTEND:20210908T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Инфраструктура как код. Terraform'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ADM-025 Инфраструктура как код. Terraform\n
+ \nДата проведения курса: 06.09.2021-08.09.2021\nВре�
+ �я: 10:00-14:00\n\nРегистрация и подробнее о кур
+ се:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=11247
+ 1&ID_TIME=112651\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

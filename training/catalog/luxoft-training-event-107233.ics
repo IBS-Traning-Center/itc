@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210225T110617CET-5756UZesgG@185.26.112.96
+DTSTAMP:20210225T100617Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:C-006 Многопоточность на C++ \n\nДата пр
+ оведения курса: 23.03.2021-26.03.2021\nВремя: 14:30-18:3
+ 0\n\nРегистрация и подробнее о курсе:\nhttp://w
+ ww.luxoft-training.ru/training/catalog/course.html?ID=106485&ID_TIME=10723
+ 3\n\n
+DTSTART:20210323T143000
+DTEND:20210326T183000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Многопоточность на C++ '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:C-006 Многопоточность на C++ \n\nДата пр
+ оведения курса: 23.03.2021-26.03.2021\nВремя: 14:30-18:3
+ 0\n\nРегистрация и подробнее о курсе:\nhttp://w
+ ww.luxoft-training.ru/training/catalog/course.html?ID=106485&ID_TIME=10723
+ 3\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

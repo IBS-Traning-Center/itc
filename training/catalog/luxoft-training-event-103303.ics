@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20201005T025539CEST-3994DfxxnU@185.26.112.96
+DTSTAMP:20201005T005539Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-002 Мастерская по работе с требов�
+ �ниями: от классики до user stories\n\nДата пров�
+ �дения курса: 05.10.2020-06.10.2020\nВремя: 10:00-18:00\n\n
+ Регистрация и подробнее о курсе:\nhttp://www.lu
+ xoft-training.ru/training/catalog/course.html?ID=22365&ID_TIME=103303\n\n
+DTSTART:20201005T100000
+DTEND:20201006T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Мастерская по работе с требованиями: от 
+ классики до user stories'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-002 Мастерская по работе с требов�
+ �ниями: от классики до user stories\n\nДата пров�
+ �дения курса: 05.10.2020-06.10.2020\nВремя: 10:00-18:00\n\n
+ Регистрация и подробнее о курсе:\nhttp://www.lu
+ xoft-training.ru/training/catalog/course.html?ID=22365&ID_TIME=103303\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

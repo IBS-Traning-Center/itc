@@ -1,0 +1,26 @@
+<?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");?>
+<?GLOBAL $USER;
+
+if ($USER->IsAdmin()) {
+	
+	$file = file_get_contents('email.txt');
+	//echo $file;?>
+	<?//echo $file;?>
+	<?$pEmail=explode(', ',$file);?>
+	<?//print_r($pEmail);?>
+	<?if (CModule::IncludeModule("subscribe")){?>
+		<?foreach ($pEmail as $email) {
+		  $subscription = CSubscription::GetByEmail($email);
+		  if ($arSub=$subscription->Fetch()) {
+			$subscr=new CSubscription;
+			echo "<pre>";
+			print_r($arSub);
+			echo "</pre>";
+			if (intval($arSub["ID"])>0) {
+				//$subscr->Update($arSub["ID"], array("ACTIVE"=>"N"));
+			 }
+		 };
+		}?>
+
+	<?}?>
+<?}?>

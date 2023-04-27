@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140301T124414CET-0476R8KDSF@50.57.83.146
+DTSTAMP:20140301T114414Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-028_ONL Основы тестирования. Часть 4
+ . Тест-дизайн (online)\n\nДата проведения курс
+ а: 03.03.2014-05.03.2014\nВремя: 13:00-18:00\n\nРегистраци
+ я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tra
+ ining/catalog/course.html?ID=36868&ID_TIME=45784\n\n
+DTSTART:20140303T130000
+DTEND:20140305T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы тестирования. Часть 4. Тест-дизай�
+ � (online)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-028_ONL Основы тестирования. Часть 4
+ . Тест-дизайн (online)\n\nДата проведения курс
+ а: 03.03.2014-05.03.2014\nВремя: 13:00-18:00\n\nРегистраци
+ я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tra
+ ining/catalog/course.html?ID=36868&ID_TIME=45784\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

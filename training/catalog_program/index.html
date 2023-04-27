@@ -1,0 +1,49 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("blue_title", "Каталог комплексных программ");
+$APPLICATION->SetPageProperty("title", "Каталог комплексных программ");
+$APPLICATION->SetPageProperty("keywords", "тренинги,   процессы разработки, управление требованиями, разработка ПО, тестирование ПО, java, архитектура ПО, oracle, BEA, курсы, обучение в области разработки ПО");
+$APPLICATION->SetPageProperty("description", "Обучение в сфере разработки ПО. Курсы по всем направлениям для тестировщик, аналитиков, разработчиков, проектировщиков.");
+$APPLICATION->SetTitle("Каталог комплексных программ");
+?>
+<script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+<?$page=$APPLICATION->GetCurPageParam();?>
+<?$array=preg_split("#\?#", $page);?>
+<?if (strlen($array[1])>0) {?>
+	<?$array[1]="?".$array[1]?>
+<?}?>
+<?LocalRedirect('/training/katalog_kursov/kompleksnye-programmy/'.$array[1], false, '301 Moved permanently')?>
+<?$APPLICATION->IncludeComponent("luxoft:super.component", "newcatalog.main.v6.desc", array(
+	"CACHE_TYPE" => "Y",
+	"CACHE_TIME" => "36000",
+	"ID_IBLOCK" => "49"
+	),
+	false
+);?>
+<script>
+$(document).ready(function(){
+	var currentHash;
+	currentHash = window.location.hash.slice(1);
+
+	if (currentHash === 'java') {
+		$("#tr_catalog ul li#cat_562").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_562 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_562 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_562', 800);
+	}
+
+	if (currentHash === 'advjava') {
+		$("#tr_catalog ul li#cat_574").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_574 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_574 ul").show();
+		console.info($("#tr_catalog ul li#cat_574"));
+		$.scrollTo('#tr_catalog ul li#cat_574', 800);
+	}
+
+});
+</script>
+
+<p>По запросу на <a href="mailto:<?=EMAIL_ADDRESS?>" title="Написать письмо" ><?=EMAIL_ADDRESS?></a> мы ответим на любые дополнительные вопросы касательно обучения в нашем Luxoft Training.</p>
+
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

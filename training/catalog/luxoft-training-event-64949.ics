@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160715T072404CEST-63171izigd@185.26.112.96
+DTSTAMP:20160715T052404Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SDP-032 ICAgile Certified Professional – Business Value Analy
+ sis\n\nДата проведения курса: 04.10.2016-05.10.2016\nВ
+ ремя: 10:00 - 19:00\n\nРегистрация и подробнее о
+  курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?I
+ D=55625&ID_TIME=64949\n\n
+DTSTART:20161004T100000
+DTEND:20161005T190000
+LOCATION:Санкт-Петербург
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'ICAgile Certified Professional – Business Value Analysis'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SDP-032 ICAgile Certified Professional – Business Value Analy
+ sis\n\nДата проведения курса: 04.10.2016-05.10.2016\nВ
+ ремя: 10:00 - 19:00\n\nРегистрация и подробнее о
+  курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?I
+ D=55625&ID_TIME=64949\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

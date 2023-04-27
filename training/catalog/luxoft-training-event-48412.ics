@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140705T132725CEST-29681clJP2@50.57.83.146
+DTSTAMP:20140705T112725Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-038 Школа тестирования. Часть 7. Вв
+ едение в тест-менеджмент для Junior\n\nДата п
+ роведения курса: 11.07.2014-11.07.2014\nВремя: 11:00-13
+ :00\n\nРегистрация и подробнее о курсе:\nhttp:/
+ /www.luxoft-training.ru/training/catalog/course.html?ID=45489&ID_TIME=4841
+ 2\n\n
+DTSTART:20140711T110000
+DTEND:20140711T130000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Школа тестирования. Часть 7. Введение в т
+ ест-менеджмент для Junior'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-038 Школа тестирования. Часть 7. Вв
+ едение в тест-менеджмент для Junior\n\nДата п
+ роведения курса: 11.07.2014-11.07.2014\nВремя: 11:00-13
+ :00\n\nРегистрация и подробнее о курсе:\nhttp:/
+ /www.luxoft-training.ru/training/catalog/course.html?ID=45489&ID_TIME=4841
+ 2\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170502T183527CEST-50511tAUJ1@185.26.112.96
+DTSTAMP:20170502T163527Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-030 Введение в тест-менеджмент\n\nД
+ ата проведения курса: 04.05.2017-05.05.2017\nВремя:
+  10:00-15:00\n\nРегистрация и подробнее о курсе
+ :\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=29327&ID_
+ TIME=71968\n\n
+DTSTART:20170504T100000
+DTEND:20170505T150000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Введение в тест-менеджмент'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-030 Введение в тест-менеджмент\n\nД
+ ата проведения курса: 04.05.2017-05.05.2017\nВремя:
+  10:00-15:00\n\nРегистрация и подробнее о курсе
+ :\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=29327&ID_
+ TIME=71968\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

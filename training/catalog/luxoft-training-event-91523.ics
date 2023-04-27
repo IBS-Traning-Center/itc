@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20191214T043321CET-7703nkWdWW@185.26.112.96
+DTSTAMP:20191214T033321Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-059 Корпоративная архитектура на 
+ базе TOGAF\n\nДата проведения курса: 16.12.2019-17.
+ 12.2019\nВремя: 10:00-18:00\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=85244&ID_TIME=91523\n\n
+DTSTART:20191216T100000
+DTEND:20191217T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Корпоративная архитектура на базе TOGAF'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-059 Корпоративная архитектура на 
+ базе TOGAF\n\nДата проведения курса: 16.12.2019-17.
+ 12.2019\nВремя: 10:00-18:00\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=85244&ID_TIME=91523\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

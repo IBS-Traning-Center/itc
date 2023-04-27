@@ -1,0 +1,75 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("");
+set_time_limit(0);
+		CModule::IncludeModule("iblock");
+			$arOrder = array("ACTIVE_FROM" =>"DESC");$arSort = array();$arGroupBy = false;$arNavStartParams = Array("nPageSize"=>850);
+			$arFilter = array("IBLOCK_ID"=>9, "ACTIVE" => "Y");
+			$arSelectFields = array("ID", "PROPERTY_SCHEDULE_COURSE", "PROPERTY_TEACHER");
+			$res = CIBlockElement::GetList($arOrder, $arFilter, $arGroupBy, $arNavStartParams, $arSelectFields);
+			$index = 0 ;
+			while($ob = $res->GetNextElement())
+			{
+				$ar_fields = $ob->GetFields();
+				$index = $index + 1 ;
+				/*
+				кроме того создадим триггер - связка расписание курсов - эксперт
+				при создании курса в расписании нужно обновить карточку курса для тренера если этот курс он читает впервые
+				*/
+				echo $ar_fields['ID']." Запись ID расписание<br />";
+				if  ((strlen($ar_fields['PROPERTY_TEACHER_VALUE'])>0) and (strlen($ar_fields['PROPERTY_SCHEDULE_COURSE_VALUE'])>0)){
+					echo "tecacher: ";
+					iwrite($ar_fields['PROPERTY_TEACHER_VALUE']);echo "   ";
+					iwrite($ar_fields['PROPERTY_SCHEDULE_COURSE_VALUE']);
+					
+					echo "<br />";
+					$arSelectTeacher = Array("PROPERTY_COURSES", "NAME", "ID");
+					$arFilterTeacher = Array("IBLOCK_ID" =>56, "ID" =>$ar_fields['PROPERTY_TEACHER_VALUE'] );
+					$resTeacher = CIBlockElement::GetList(Array(), $arFilterTeacher, false, false, $arSelectTeacher);
+					while($ar_fieldsTeacher = $resTeacher->GetNext())
+					{
+                        //echo $ar_fields['PROPERTY_SCHEDULE_COURSE_VALUE']." значение <br />";
+                        //iwrite( $ar_fieldsTeacher['PROPERTY_COURSES_VALUE']);
+						//iwrite($ar_fieldsTeacher['PROPERTY_COURSES_ACTIVE']);
+						//echo "<br />";
+						if (in_array($ar_fields['PROPERTY_SCHEDULE_COURSE_VALUE'], $ar_fieldsTeacher['PROPERTY_COURSES_VALUE'])) {
+						    // не делаем ничего ибо в базе уже существует
+						    // запись что он преподает данный курс
+						    echo "уже существует в массиве<br /><br />";
+						} else {
+							if (IsCourseActive($ar_fields['PROPERTY_SCHEDULE_COURSE_VALUE'])) {
+						
+							 $arCourses = $ar_fieldsTeacher['PROPERTY_COURSES_VALUE'];
+							 $arCourses[] = $ar_fields['PROPERTY_SCHEDULE_COURSE_VALUE'];
+							 //iwrite($arCourses);
+
+							 foreach ($arCourses as  $valueCourse) {
+								if (IsCourseActive($valueCourse)) {
+									$arCoursesFormatted['courses'][] = array('VALUE' => $valueCourse);
+								}
+								//echo $valueCourse;
+								//echo "<br />";
+								//echo IsCourseActive($valueCourse);
+								//echo "---------<br />";
+							 }
+							 iwrite($arCoursesFormatted);
+							 if (count($arCoursesFormatted['courses'])>0){
+								CIBlockElement::SetPropertyValuesEx($ar_fields['PROPERTY_TEACHER_VALUE'], 56, $arCoursesFormatted);
+							 }
+							 echo "change<br /><br />";
+							 $arCoursesFormatted['courses'] =  array();
+							 $arCourses = array();
+							 }
+						}
+							 //$arCoursesFormatted['courses'] = array('VALUE' => "");
+                            //CIBlockElement::SetPropertyValuesEx($ar_fields['PROPERTY_TEACHER_VALUE'], 56, $arCoursesFormatted);
+					}
+				}
+
+			}
+            echo "index= ".$index;
+
+?>
+
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -1,0 +1,48 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("");
+?>
+<?
+global $USER;
+//$USER->Authorize(14); // авторизуем
+?>
+<?
+// Установим для товара с кодом 15 цену типа 2 в значение 29.95 USD
+if (CModule::IncludeModule("catalog")){
+
+$PRODUCT_ID = 18924;
+$PRICE_TYPE_ID = 1;
+
+$arFields = Array(
+    "PRODUCT_ID" => $PRODUCT_ID,
+    "CATALOG_GROUP_ID" => $PRICE_TYPE_ID,
+    "PRICE" => 29.95,
+    "CURRENCY" => "GRN",
+    "QUANTITY_FROM" => false,
+    "QUANTITY_TO" => false
+);
+
+$res = CPrice::GetList(
+        array(),
+        array(
+                "PRODUCT_ID" => $PRODUCT_ID,
+                "CATALOG_GROUP_ID" => $PRICE_TYPE_ID
+            )
+    );
+
+if ($arr = $res->Fetch())
+{
+    CPrice::Update($arr["ID"], $arFields);
+}
+else
+{
+    CPrice::Add($arFields);
+}
+?>
+
+<?
+//$USER->Authorize(1); // авторизуем
+}
+?>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

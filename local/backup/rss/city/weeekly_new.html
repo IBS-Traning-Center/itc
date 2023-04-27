@@ -1,0 +1,32 @@
+<?
+// подключение служебной части пролога
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+// здесь можно задать например, свойство страницы
+// с помощью функции $APPLICATION->SetPageProperty
+// и обработать затем его в визуальной части эпилога
+// подключение визуальной части пролога
+//require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
+?>
+<?$APPLICATION->IncludeComponent("luxoft:super.component", "luxoft.weekly", array(
+	"CACHE_TYPE" => "Y",
+	"CACHE_TIME" => "36000",
+	"INCLUDE_CLASSES" => "Y",
+	"COUNT_DAYS_CLASS" => "60",
+	"INCLUDE_COURSES" => "Y",
+	"COUNT_DAYS_COURSE_BEGIN" => "1",
+	"COUNT_DAYS_COURSE_END" => "21",
+	"INCLUDE_EVENTS" => "Y",
+	"COUNT_DAYS_EVENT" => "60"
+	),
+	false
+);?>
+
+
+
+<?
+
+// подключение визуальной части эпилога
+//require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_before.php");
+// подключение служебной части эпилога
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_after.php");
+?>

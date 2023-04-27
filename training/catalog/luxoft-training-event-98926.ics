@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200527T050033CEST-1345luG7Mn@185.26.112.96
+DTSTAMP:20200527T030033Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PTRN-043 CI/CD или Непрерывная поставка �
+ � Docker и Kubernetes\n\nДата проведения курса: 28.05.
+ 2020-29.05.2020\nВремя: 10:00-18:00\n\nРегистрация и по
+ дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cata
+ log/course.html?ID=83379&ID_TIME=98926\n\n
+DTSTART:20200528T100000
+DTEND:20200529T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'CI/CD или Непрерывная поставка с Docker и Kuberne
+ tes'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PTRN-043 CI/CD или Непрерывная поставка �
+ � Docker и Kubernetes\n\nДата проведения курса: 28.05.
+ 2020-29.05.2020\nВремя: 10:00-18:00\n\nРегистрация и по
+ дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cata
+ log/course.html?ID=83379&ID_TIME=98926\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

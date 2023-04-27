@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200914T015357CEST-5007kV9Vf9@185.26.112.96
+DTSTAMP:20200914T235357Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PM-008 Управление удаленными команда
+ ми \n\nДата проведения курса: 14.09.2020-18.09.2020\n
+ Время: 15:00-19:00\n\nРегистрация и подробнее о
+  курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?I
+ D=20223&ID_TIME=103587\n\n
+DTSTART:20200914T150000
+DTEND:20200918T190000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Управление удаленными командами '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PM-008 Управление удаленными команда
+ ми \n\nДата проведения курса: 14.09.2020-18.09.2020\n
+ Время: 15:00-19:00\n\nРегистрация и подробнее о
+  курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?I
+ D=20223&ID_TIME=103587\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190402T080205CEST-5084uuODPK@185.26.112.96
+DTSTAMP:20190402T060205Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-022 Анимация в Android\n\nДата проведе�
+ �ия курса: 15.04.2019-15.04.2019\nВремя: 11:00-17:00\n\nРег
+ истрация и подробнее о курсе:\nhttp://www.luxoft-t
+ raining.ru/training/catalog/course.html?ID=82275&ID_TIME=87838\n\n
+DTSTART:20190415T110000
+DTEND:20190415T170000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Анимация в Android'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-022 Анимация в Android\n\nДата проведе�
+ �ия курса: 15.04.2019-15.04.2019\nВремя: 11:00-17:00\n\nРег
+ истрация и подробнее о курсе:\nhttp://www.luxoft-t
+ raining.ru/training/catalog/course.html?ID=82275&ID_TIME=87838\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20130225T104914CET-2867sEuVBN@50.57.83.146
+DTSTAMP:20130225T094914Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Windows Workflow Foundation\, Windows Server 20
+ 08 и Гаджеты для Windows Vista\n\nДата проведения
+ \n27.09.2007\n\nВремя\n19:00-22:00\n\nСеминар проводит
+ ся совместно с Московским сообществом .NE
+ T разработчиков \n\nРегистрация:\nhttp://www.luxof
+ t-training.ru/events/seminar/9222/\n\n
+DTSTART:20070927T000000
+LOCATION:
+SUMMARY:Семинар: Windows Workflow Foundation\, Windows Server 2008 �
+ � Гаджеты для Windows Vista
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Windows Workflow Foundation\, Windows Server 20
+ 08 и Гаджеты для Windows Vista
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

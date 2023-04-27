@@ -1,0 +1,334 @@
+<? if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+
+if(!isset($arParams["CACHE_TIME"])) {
+	$arParams["CACHE_TIME"] = 3600;
+}
+
+CPageOption::SetOptionString("main", "nav_page_in_session", "N");
+
+if($arParams["IBLOCK_ID"] < 1) {
+	//ShowError("IBLOCK_ID IS NOT DEFINED");
+	//return false;
+}
+
+if(!isset($arParams["ITEMS_LIMIT"])) {
+	$arParams["ITEMS_LIMIT"] = 10;
+}
+global $USER;
+if ($USER->IsAuthorized()) {
+	$arResult["IS_AUTHORIZED"] = "Y";
+	$arResult["USER_ID"] = CUser::GetID();	
+}
+
+
+$arNavParams = array();
+if ($arParams["ITEMS_LIMIT"] > 0) {
+	$arNavParams = array(
+		"nPageSize" => $arParams["ITEMS_LIMIT"],
+	);
+}
+if($this->StartResultCache(false, array($arNavigation)))
+{
+
+	if(!CModule::IncludeModule("iblock")) {
+		$this->AbortResultCache();
+		ShowError("IBLOCK_MODULE_NOT_INSTALLED");
+		return false;
+	}	
+
+	/*
+		get all  active elements in our basket
+		and put it into  $arResult['BASKETITEMS']
+	*/
+	$arBasketItems = array();
+	$dbBasketItems = CSaleBasket::GetList(
+			array(
+					"NAME" => "ASC",
+					"ID" => "ASC"
+				),
+			array(
+					"FUSER_ID" => CSaleBasket::GetBasketUserID(),
+					"LID" => SITE_ID,
+					"ORDER_ID" => "NULL"
+				),
+			false,
+			false,
+			array("ID", "PRODUCT_ID" )
+		);
+	while ($arItems = $dbBasketItems->Fetch())
+	{
+		$arResult['PRODUCT_ID_IN_BASKET'][] = $arItems["PRODUCT_ID"];
+	}
+	$arResult['BASKETITEMS'] = $arResult['PRODUCT_ID_IN_BASKET'];
+	
+	
+	
+	/*
+		get all  needed info by default
+		and put it into  $arResult['EMAIL']
+	*/	
+	
+	global $USER;
+	$arResult['SEND_EMAIL'] = "N";
+	$arResult['SHOW_INFO'] = "N";
+	$arResult['EMAIL']['USER_EMAIL'] = $USER->GetEmail();
+	$arResult['EMAIL']['USER_ID'] = $arResult["USER_ID"];
+	$arResult['EMAIL']['LIST_COURSES_SM'] = "";
+	$arResult['EMAIL']['LIST_COURSES_B'] = "";
+//iwrite($arResult['EMAIL']);
+
+if ( in_array(61, $USER->GetUserGroupArray())){
+	$arResult['SHOW_INFO'] = "Y";
+}; 
+
+	if ((count($arResult['BASKETITEMS'])>0) and ($_REQUEST['SEND_EMAIL'] === "Y") and (in_array(61, $USER->GetUserGroupArray()))){
+//echo "PRIVED";
+		$index = 0;
+		$arResult['BASKETITEMS'] = GetListCoursesOfArrayByDateASC($arResult['BASKETITEMS']);
+		foreach ($arResult['BASKETITEMS'] as $vIDTimetable){
+			$arPossibleCities[] = $arInfo['ID_CITY']; /*array to get active cities to show free events by these cities*/
+			$index = $index + 1;
+			$arInfo = GetFullInfoAboutCourse($vIDTimetable);
+			if (strlen($arInfo["ENDDATE"])>0){
+				$arInfo["STARTDATE"] .= " - ".$arInfo["ENDDATE"];
+			}
+			
+			$arResult['EMAIL']['LIST_COURSES_SM'] .= "
+									<div style='margin:0px 0px 4px 0px;font-style:normal;display:block;font-size:12px; font-family:Arial,Helvetica,sans-serif;font-weight:bold;'>
+										 &ndash; <a target='_blank' style='color:#004080;' href='#c_".$arInfo['ID_TIME']."'>".trim($arInfo['COURSE_NAME']).", ".$arInfo["STARTDATE"]."</a>
+									</div>";
+					
+			$arFilter = array("IBLOCK_ID"=>D_COURSE_ID_IBLOCK, "ACTIVE"=>"Y" , "ID"=>$arInfo['ID_COURSE']);
+			$arSelectFields = array(
+				"ID",
+				"NAME",
+				"PROPERTY_COURSE_CODE",
+				"PROPERTY_COURSE_FORMAT",
+				"PROPERTY_COURSE_DURATION",
+				"PROPERTY_COURSE_DESC_NEW",
+				"PROPERTY_COURSE_PUPROSES"
+			);
+			$res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelectFields);
+
+			while($ob = $res->GetNextElement())
+			{
+				$arFields = $ob->GetFields();
+				$arInfo['COURSE_ID'] = $arFields['ID'];
+				$arInfo['COURSE_NAME'] = $arFields['NAME'];
+				$arInfo['COURSE_CODE'] = $arFields['PROPERTY_COURSE_CODE_VALUE'];
+				$arInfo['COURSE_DURATION'] = $arFields['PROPERTY_COURSE_DURATION_VALUE'];
+				$arInfo['COURSE_FORMAT_ID'] = $arFields['PROPERTY_COURSE_FORMAT_VALUE'];
+				$arInfo['COURSE_DESC_NEW'] = $arFields['PROPERTY_COURSE_DESC_NEW_VALUE'];
+					if ($arFields['PROPERTY_COURSE_DESC_NEW_VALUE']['TYPE']  === "text"){
+						$arInfo['COURSE_DESC_NEW_VALUE'] = nl2br($arFields['~PROPERTY_COURSE_DESC_NEW_VALUE']['TEXT']);
+					}
+					if ($arFields['PROPERTY_COURSE_DESC_NEW_VALUE']['TYPE']  === "html"){
+						$arInfo['COURSE_DESC_NEW_VALUE'] = $arFields['~PROPERTY_COURSE_DESC_NEW_VALUE']['TEXT'];
+					}
+					$arInfo['COURSE_DESC_NEW_VALUE'] = str_replace("<ul>","<ul style='margin:0px 0px 15px 25px; padding:0px 0px 0px 0px;'>",$arInfo['COURSE_DESC_NEW_VALUE']);
+					$arInfo['COURSE_DESC_NEW_VALUE'] = str_replace("<blockquote>","<blockquote style='margin:0px; padding:0px;'>",$arInfo['COURSE_DESC_NEW_VALUE']);
+				
+				$arInfo['COURSE_PUPROSES'] = $arFields['~PROPERTY_COURSE_PUPROSES_VALUE']; 
+					$arInfo['COURSE_PUPROSES'] = str_replace("<ul>","<ul style='margin:0px 0px 15px 25px; padding:0px 0px 0px 0px;'>",$arInfo['COURSE_PUPROSES']);
+					$arInfo['COURSE_PUPROSES'] = str_replace("<blockquote>","<blockquote style='margin:0px; padding:0px;'>",$arInfo['COURSE_PUPROSES']);				
+					if (strpos($arInfo['COURSE_PUPROSES'], "ul") === false) {
+						$arInfo['COURSE_PUPROSES'] = nl2br($arInfo['COURSE_PUPROSES']);
+					}
+			}
+
+			if (strlen($arInfo['ID_TEACHER'])>0){	
+				$arExpert = GetInfoAboutExpertByID($arInfo['ID_TEACHER']);
+				$arInfo['PREPOD_TEXT'] = strlen($arInfo['ID_TEACHER']) > 0 ? "Преподаватель: <a target='_blank' style='color:#004080;text-decoration:underline;font-weight:bold;' href='http://www.luxoft-training.ru/about/experts/".$arExpert["EXPERT_CODE"].".html'>".$arExpert['EXPERT_NAME']." ".$arExpert['EXPERT_NAME_FULL']."</a> &ndash; ".$arExpert['EXPERT_SHORT']." <br />" : "";
+			} else {
+				$arInfo['PREPOD_TEXT'] = "";
+			}
+			
+			$arResult['EMAIL']['LIST_COURSES_B'] .= "
+								<div class='l_course' style='margin:20px 0px 10px 0px;'>
+									<div style='text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:14px; font-family:Arial,Helvetica,sans-serif;font-weight:bold;'><a name='c_".$arInfo['ID_TIME']."'></a>
+										<a target='_blank' style='color:#004080;font-size:14px; text-decoration:underline;font-weight:bold;' href='http://www.luxoft-training.ru/internal/catalog/".$arInfo['COURSE_CODE']."/'>".trim($arInfo['COURSE_NAME'])."</a>
+									</div>
+									<div style='text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:13px; font-family:Arial,Helvetica,sans-serif;color:#454545;'>
+									
+									Код курса: ".$arInfo['COURSE_CODE']."<br />
+									Дата: <span style='color:#ff6600;font-weight:bold;'>".$arInfo['STARTDATE'] .", ".$arInfo['CITY_NAME'] ."</span><br />
+									Длительность: ".$arInfo['COURSE_DURATION']." час.<br />
+									
+									".$arInfo['PREPOD_TEXT']."
+									
+									
+									<br />
+									<div class='l_template'>
+									<span style='color:#000000;font-weight:bold;'>Описание:</span><br />
+									".$arInfo['COURSE_DESC_NEW_VALUE']."
+									</div>
+									<br /><br />
+									<div class='l_template'>
+									<span style='color:#000000;font-weight:bold;'>Цели:</span><br />
+									".$arInfo['COURSE_PUPROSES']."
+									</div>
+									<br />
+									<!--<a target='_blank' style='color:#004080;text-decoration:underline;font-weight:bold;font-size:12px;' href='http://www.luxoft-training.ru/training/catalog/course.html?ID=".$arInfo['COURSE_ID']."'>Подробнее о курсе</a><br />-->
+									
+									<a target='_blank' style='color:#004080;text-decoration:underline;font-weight:bold;font-size:12px;' href='http://www.luxoft-training.ru/internal/catalog/".$arInfo['COURSE_CODE']."/'>Подробнее о курсе</a><br />
+									<a target='_blank' style='color:#004080;text-decoration:underline;font-weight:bold;font-size:12px;' href='https://inthr.luxoft.com/IntHRWebApp/aspx_PTC/CreateRequestInternal.aspx?Course=".$arInfo['COURSE_CODE']."'>Записаться на курс</a>
+									
+									</div>
+								</div>								
+			";
+			
+			if ($index !== count($arResult['BASKETITEMS'])){
+				$arResult['EMAIL']['LIST_COURSES_B'] .= "
+					<table style='border-collapse:collapse; border:none; margin:0px;padding:0px;' width='700' cellspacing='0' cellpadding='0'>
+						<tr>
+							<td valign='top' width='15' height='2' class='pad_null' style='background-color:#ffffff;'>
+								<img src='http://www.luxoft-training.ru/images/email/spacer.gif' width='15' height='2' alt='' border='0'/>
+							</td>
+							<td width='500' height='2' class='pad_null' style='background-color:#FF6600;'>
+								<img src='http://www.luxoft-training.ru/images/email/spacer.gif' width='500' height='2' alt='' border='0'/>
+							</td>
+							<td width='185' height='2' class='pad_null' style='background-color:#ffffff;'>
+								<img src='http://www.luxoft-training.ru/images/email/spacer.gif' width='185' height='2' alt='' border='0'/>
+							</td>
+						</tr>
+					</table>				
+				";
+			}
+			
+		}
+		$arPossibleCities = array_unique($arPossibleCities);
+		$arPossibleCities[] = CITY_ID_ONLINE;
+		$arPossibleCities = array_diff($arPossibleCities, array(''));
+		//iwrite($arPossibleCities);
+		
+		
+		/*
+			get info about free events by ID Array of cities
+		*/
+		$arFilter = array("IBLOCK_ID"=>D_SEMINARS_IBLOCK, "ACTIVE"=>"Y", "PROPERTY_CITY"=>$arPossibleCities, ">=PROPERTY_STARTDATE" => date("Y-m-d"));
+		$arSelectFields = array(
+			"ID",
+			"NAME",
+			"PROPERTY_TYPE_EVENT",
+			"PROPERTY_DESCRIPTION",
+			"PROPERTY_TIME",
+			"PROPERTY_STARTDATE",
+			"PROPERTY_CITY.NAME",
+			"PROPERTY_TRENER",
+			"PROPERTY_LOCATION"
+		);
+		$res = CIBlockElement::GetList(array("PROPERTY_STARTDATE" =>"ASC"), $arFilter, false, false, $arSelectFields);
+
+		while($ob = $res->GetNextElement())
+		{
+			$arFields = $ob->GetFields();
+			$arInfoSem['ID'] = $arFields['ID'];
+			$arInfoSem['NAME'] = $arFields['NAME'];
+			$arInfoSem['TYPE_EVENT'] = $arFields['PROPERTY_TYPE_EVENT_VALUE'];
+			$arInfoSem['DESCRIPTION'] = $arFields['PROPERTY_DESCRIPTION_VALUE'];
+			$arInfoSem['TIME'] = $arFields['PROPERTY_TIME_VALUE'];				
+			$arInfoSem['STARTDATE'] = $arFields['PROPERTY_STARTDATE_VALUE'];
+			$arInfoSem['CITY'] = $arFields['PROPERTY_CITY_NAME'];
+			$arInfoSem['TRENER_ID'] = $arFields['PROPERTY_TRENER_VALUE'];
+			$arInfoSem['LOCATION'] = $arFields['PROPERTY_LOCATION_VALUE'];			
+			$arSeminars[] = $arInfoSem;
+		}
+		//iwrite($arSeminars);
+		
+		/*
+			seminars block http://www.luxoft-training.ru/events/seminar/26271/
+		*/
+		$index = 0;
+		foreach ($arSeminars as $arSeminar){
+			$index = $index + 1;
+			
+			if (strlen($arSeminar['TRENER_ID'])>0){
+				$arExpert = GetInfoAboutExpertByID($arSeminar['TRENER_ID']);
+				$arInfo['PREPOD_TEXT'] = strlen($arInfo['ID_TEACHER']) > 0 ? "Преподаватель: <a target='_blank' style='color:#004080;text-decoration:underline;font-weight:bold;' href='http://www.luxoft-training.ru/about/experts/".$arExpert["EXPERT_CODE"].".html'>".$arExpert['EXPERT_NAME']." ".$arExpert['EXPERT_NAME_FULL']."</a> &ndash; ".$arExpert['EXPERT_SHORT']." <br />" : "";
+			} else {
+				$arSeminar['TRENER_ID'] = 0;
+			}
+			$arResult['EMAIL']['LIST_SEMINARS_SM'] .= "
+									<div style='margin:0px 0px 4px 0px;font-style:normal;display:block;font-size:12px; font-family:Arial,Helvetica,sans-serif;font-weight:bold;'>
+										 &ndash; <span style='color:#ff6600;'>".$arSeminar['TYPE_EVENT']."</span>  <a target='_blank' style='color:#004080;' href='#s_".$arSeminar['ID']."'>".trim($arSeminar['NAME']).", ".$arSeminar["STARTDATE"]."</a>
+									</div>";
+			$arResult['EMAIL']['LIST_SEMINARS_B'] .= "
+								<div class='l_course' style='margin:20px 0px 10px 0px;'>
+									<div style='text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:14px; font-family:Arial,Helvetica,sans-serif;font-weight:bold;'><a name='s_".$arSeminar['ID']."'></a>
+										<a target='_blank' style='color:#004080;font-size:14px; text-decoration:underline;font-weight:bold;' href='http://www.luxoft-training.ru/events/seminar/".$arSeminar['ID']."/'>".trim($arSeminar['NAME'])."</a>
+									</div>
+									<div style='text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:13px; font-family:Arial,Helvetica,sans-serif;color:#454545;'>
+									
+									Место проведения: ".$arSeminar['CITY']." ".$arSeminar['LOCATION']."<br />
+									Дата: <span style='color:#ff6600;font-weight:bold;'>".$arSeminar['STARTDATE'] .", ".$arSeminar['TYPE_EVENT'] ."</span><br />
+									Время: ".$arSeminar['TIME']." час.<br />
+								
+									".$arInfo['PREPOD_TEXT']."
+									
+									<br />
+									<div class='l_template'>
+									<span style='color:#000000;font-weight:bold;'>Описание:</span><br />
+									".$arSeminar['DESCRIPTION']."
+									</div>
+									<br />
+									
+									<a target='_blank' style='color:#004080;text-decoration:underline;font-weight:bold;font-size:12px;' href='http://www.luxoft-training.ru/events/seminar/".$arSeminar['ID']."/'>Подробнее о мероприятии</a><br />
+									<a target='_blank' style='color:#004080;text-decoration:underline;font-weight:bold;font-size:12px;' href='http://www.luxoft-training.ru/events/seminar/".$arSeminar['ID']."/#form_b'>Записаться на мероприятие</a>
+									
+									</div>
+								</div>								
+			";
+			
+			if ($index !== count($arSeminars)){
+				$arResult['EMAIL']['LIST_SEMINARS_B'] .= "
+					<table style='border-collapse:collapse; border:none; margin:0px;padding:0px;' width='700' cellspacing='0' cellpadding='0'>
+						<tr>
+							<td valign='top' width='15' height='2' class='pad_null' style='background-color:#ffffff;'>
+								<img src='http://www.luxoft-training.ru/images/email/spacer.gif' width='15' height='2' alt='' border='0'/>
+							</td>
+							<td width='500' height='2' class='pad_null' style='background-color:#FF6600;'>
+								<img src='http://www.luxoft-training.ru/images/email/spacer.gif' width='500' height='2' alt='' border='0'/>
+							</td>
+							<td width='185' height='2' class='pad_null' style='background-color:#ffffff;'>
+								<img src='http://www.luxoft-training.ru/images/email/spacer.gif' width='185' height='2' alt='' border='0'/>
+							</td>
+						</tr>
+					</table>				
+				";
+			}									
+		}									
+		
+		
+	}
+
+
+
+
+	$arSendEvent =  $arResult['EMAIL'];	
+	if (isset($_REQUEST['SEND_EMAIL']) and ($_REQUEST['SEND_EMAIL'] === "Y")){
+		CEvent::Send('ELEMENTS_BASKET_SEND',SITE_ID, $arSendEvent, "N", 101);
+		$arResult['SEND_EMAIL'] = "Y";
+	}
+
+
+
+
+	
+	$this->SetResultCacheKeys(array(
+		"IS_AUTHORIZED",
+		"USER_ID",
+		"EMAIL",
+		"BASKETITEMS",
+		"SEND_EMAIL"
+	));
+
+	
+	
+
+	
+	// Подключаем шаблон
+	$this->IncludeComponentTemplate();
+
+}
+
+?>

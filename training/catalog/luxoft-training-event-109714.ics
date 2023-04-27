@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210818T033808CEST-2195495xk1@185.26.112.96
+DTSTAMP:20210818T013808Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-010 Владение каркасом разработки 
+ Spring Framework 5\n\nДата проведения курса: 16.08.2021
+ -20.08.2021\nВремя: 10:00-16:00\n\nРегистрация и подр
+ обнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/
+ course.html?ID=32146&ID_TIME=109714\n\n
+DTSTART:20210816T100000
+DTEND:20210820T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Владение каркасом разработки Spring Framework 5
+ '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-010 Владение каркасом разработки 
+ Spring Framework 5\n\nДата проведения курса: 16.08.2021
+ -20.08.2021\nВремя: 10:00-16:00\n\nРегистрация и подр
+ обнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/
+ course.html?ID=32146&ID_TIME=109714\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

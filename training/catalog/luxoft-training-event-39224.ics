@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140121T165950CET-9483B4UxJS@50.57.83.146
+DTSTAMP:20140121T155950Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SDP-002_ONL Основы методологии IBM Rational Un
+ ified Process для разработки ПО (online)\n\nДата про
+ ведения курса: 27.01.2014-28.01.2014\nВремя: 11:00 - 15:0
+ 0\n\nРегистрация и подробнее о курсе:\nhttp://w
+ ww.luxoft-training.ru/training/catalog/course.html?ID=36532&ID_TIME=39224
+ \n\n
+DTSTART:20140127T110000
+DTEND:20140128T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы методологии IBM Rational Unified Process для �
+ �азработки ПО (online)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SDP-002_ONL Основы методологии IBM Rational Un
+ ified Process для разработки ПО (online)\n\nДата про
+ ведения курса: 27.01.2014-28.01.2014\nВремя: 11:00 - 15:0
+ 0\n\nРегистрация и подробнее о курсе:\nhttp://w
+ ww.luxoft-training.ru/training/catalog/course.html?ID=36532&ID_TIME=39224
+ \n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

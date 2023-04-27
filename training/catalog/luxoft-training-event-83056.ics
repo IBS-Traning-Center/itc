@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180807T095122CEST-04784eulWM@185.26.112.96
+DTSTAMP:20180807T075122Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-001_C++ Шаблоны проектирования (GoF). 
+ Редакция для C++\n\nДата проведения курса: 2
+ 8.08.2018-06.09.2018\nВремя: 15:00-19:00\n\nРегистрация и
+  подробнее о курсе:\nhttp://www.luxoft-training.ru/training
+ /catalog/course.html?ID=44679&ID_TIME=83056\n\n
+DTSTART:20180828T150000
+DTEND:20180906T190000
+LOCATION:Одесса
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Шаблоны проектирования (GoF). Редакция дл�
+ � C++'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-001_C++ Шаблоны проектирования (GoF). 
+ Редакция для C++\n\nДата проведения курса: 2
+ 8.08.2018-06.09.2018\nВремя: 15:00-19:00\n\nРегистрация и
+  подробнее о курсе:\nhttp://www.luxoft-training.ru/training
+ /catalog/course.html?ID=44679&ID_TIME=83056\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

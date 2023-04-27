@@ -1,0 +1,54 @@
+.course-accordion {
+  display: block;
+  list-style-type: none;
+  padding-left: 0;
+  &__item {
+    &:before {
+      display: none!important;
+    }
+  }
+}
+.course-accordion-item {
+  &__header {
+    position: relative;
+    border-top: 1px solid #cecece;
+    padding: 23px 0;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    cursor: pointer;
+    &:after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 10px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      bottom: 0;
+      margin: auto;
+      margin-top: -5px;
+      background-size: contain;
+      background-image: url("images/course/detail/icons/chevron-down.svg");
+    }
+    &.active:after {
+      background-image: url("images/course/detail/icons/chevron-down_active.svg");
+    }
+  }
+  &_empty & {
+    &__header {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__header.active + &__body {
+    display: block;
+  }
+  &__body {
+    display: none;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,64 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("IT Календарь");
+?>
+<div style="width: 500px;" id="stylized" class="myform bradius5">
+  <h2>В этот день, <?echo $arrTime["DD"]." ".ToLower(GetMessage("MONTH_".intval($arrTime["MM"])."_S"));?></h2>
+ <?$APPLICATION->IncludeComponent("bitrix:news.list", "itcalendar.items", array(
+	"IBLOCK_TYPE" => "edu",
+	"IBLOCK_ID" => "86",
+	"NEWS_COUNT" => "20",
+	"SORT_BY1" => "PROPERTY_EVENT_YEAR",
+	"SORT_ORDER1" => "ASC",
+	"SORT_BY2" => "SORT",
+	"SORT_ORDER2" => "ASC",
+	"FILTER_NAME" => "arrFilter",
+	"FIELD_CODE" => array(
+		0 => "",
+		1 => "",
+	),
+	"PROPERTY_CODE" => array(
+		0 => "EVENT_FULL_DATE",
+		1 => "EVENT_DAY",
+		2 => "",
+	),
+	"CHECK_DATES" => "Y",
+	"DETAIL_URL" => "",
+	"AJAX_MODE" => "N",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "Y",
+	"AJAX_OPTION_HISTORY" => "N",
+	"CACHE_TYPE" => "A",
+	"CACHE_TIME" => "36000000",
+	"CACHE_FILTER" => "Y",
+	"CACHE_GROUPS" => "N",
+	"PREVIEW_TRUNCATE_LEN" => "",
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",
+	"SET_TITLE" => "N",
+	"SET_STATUS_404" => "Y",
+	"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+	"ADD_SECTIONS_CHAIN" => "N",
+	"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+	"PARENT_SECTION" => "",
+	"PARENT_SECTION_CODE" => "",
+	"DISPLAY_TOP_PAGER" => "N",
+	"DISPLAY_BOTTOM_PAGER" => "Y",
+	"PAGER_TITLE" => "IT Календарь",
+	"PAGER_SHOW_ALWAYS" => "N",
+	"PAGER_TEMPLATE" => "",
+	"PAGER_DESC_NUMBERING" => "N",
+	"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+	"PAGER_SHOW_ALL" => "N",
+	"DISPLAY_DATE" => "Y",
+	"DISPLAY_NAME" => "N",
+	"DISPLAY_PICTURE" => "Y",
+	"DISPLAY_PREVIEW_TEXT" => "Y",
+	"AJAX_OPTION_ADDITIONAL" => ""
+	),
+	false
+);?> </div>
+
+<div class="learn_more autowidth bradius5">Присылайте свои события нам на электронный адрес
+  <br />
+ <a href="mailto:<?=EMAIL_ADDRESS?>" ><?=EMAIL_ADDRESS?></a></div>
+ <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

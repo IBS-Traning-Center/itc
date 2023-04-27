@@ -1,0 +1,325 @@
+<?
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+global $SUBSCRIBE_TEMPLATE_RESULT;
+$SUBSCRIBE_TEMPLATE_RESULT=false;
+global $SUBSCRIBE_TEMPLATE_RUBRIC;
+$SUBSCRIBE_TEMPLATE_RUBRIC=$arRubric;
+global $APPLICATION;
+?>
+
+<table cellspacing="0" cellpadding="0"  bgcolor="white" style="border: 1px solid #c5c6c7; border-collapse:collapse;">
+	<tr>
+		<td style="width: 676px; padding: 0 24px; " nowrap>
+			<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
+				<tr>
+					<td>
+						<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
+							<tr>
+								<td style="width: 30px; padding-right: 2px; padding-top: 42px; vertical-align: top;">
+									<a href="https://www.facebook.com/LuxoftTrainingEurope"><img src="https://www.luxoft-training.com/images/digest2014/facebook.jpg" /></a>
+								</td>
+								<td style="width: 30px; padding-right: 2px; padding-top: 42px; vertical-align: top;">
+									<a href="https://www.linkedin.com/company/luxoft-training?trk=biz-companies-cym"><img src="https://www.luxoft-training.com/images/digest2014/linkedin.jpg" /></a>									
+								</td>
+								<td style="width: 30px; padding-right: 2px; padding-top: 42px; vertical-align: top;">
+									<a href="https://plus.google.com/b/114233135562173842441/114233135562173842441/posts/p/pub"><img src="https://www.luxoft-training.com/images/digest2014/gplus.jpg"/></a>					
+								</td>
+								<td style="width: 30px; padding-right: 2px; padding-top: 42px; vertical-align: top;"> 									
+									<a href="https://www.youtube.com/channel/UCiU7bY45e414rZxv2BgoTRA/featured?view_as=subscriber"><img src="https://www.luxoft-training.com/images/digest2014/youtube.jpg"></a>					 								
+								</td>
+								<td style="width: 484px; padding-top: 15px; text-align: right; padding-bottom: 30px;">
+									<a href="http://www.luxoft-training.com?utm_source=newsletter&utm_medium=email&utm_campaign=digest_<?=date('m')?>_<?=date('Y')?>"><img src="https://www.luxoft-training.com/bitrix/templates/new-desing/images/logo_134.png"/></a>				
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
+							<tr>
+								<td style="width: 380px; font-family: Tahoma; color: #424242; padding-bottom: 60px; line-height: 1.2">
+									<div style="font-size: 42px;">LUXOFT TRAINING</div>
+									<div style="font-size: 30px;">Digest № 1</div>
+								
+								</td>
+								<td style="width: 96px; padding-top: 10px; text-align: center; vertical-align: top;">
+									<img src="https://www.luxoft-training.com/images/digest2014/list.jpg" /><br/>
+									<a href='https://www.luxoft-training.com/catalogue/?utm_source=newsletter&utm_medium=email&utm_campaign=digest_<?=date('m')?>_<?=date('Y')?>' style="font-size: 15px; color: #424242; font-family: Tahoma;">Course Catalogue</a> 
+								</td>
+								<td style="width: 96px; padding-top: 10px; text-align: center; vertical-align: top;">
+									<img src="https://www.luxoft-training.com/images/digest2014/planshet1.jpg" /><br/>
+									<a href='http://www.luxoft-training.com/schedule/?utm_source=newsletter&utm_medium=email&utm_campaign=digest_<?=date('m')?>_<?=date('Y')?>' style="font-size: 15px; color: #424242; font-family: Tahoma; ">Schedule of courses</a> 
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<?
+			 CModule::IncludeModule("iblock");
+$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "PREVIEW_TEXT", "DETAIL_PAGE_URL", "PROPERTY_LINK_TO_SOC");
+$arFilter = Array("IBLOCK_ID"=> 102);
+$res = CIBlockElement::GetList(Array("DATE_ACTIVE_FROM"=>"DESC"), $arFilter, false, Array("nPageSize"=>10), $arSelect);
+while($ob = $res->GetNextElement())
+{
+ $arResult["ITEMS"][] = $ob->GetFields();
+ //print_r($arFields);
+}
+?> 
+					<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
+							<tr>
+								<td colspan="2" style="font-size: 26px; font-family: Arial; color: #c96262; text-align: center; " >
+									Our News 
+								</td>
+							</tr>
+						
+                   							 
+						<tr> 								<td> <img src="https://www.luxoft-training.com/images/email/spacer.gif" height="25" border="0"  /> 								</td> 							</tr>
+							
+							<?//print_r($arResult);?>
+							<?if (count($arResult["ITEMS"]) > 0){?>
+								<?foreach($arResult["ITEMS"] as $key=>$arItem):?>
+							<tr>
+								<td style="width: 73px; padding-right: 14px;  vertical-align: top; ">
+									<?if ($key==0) {?><img src="https://www.luxoft-training.com/images/digest2014/mag.jpg" /><?}?>
+								</td>
+								<td style="padding-bottom: 15px;">
+									<a style='font-size: 17px; color: #4f5d73; font-family: Arial;' href='http://www.luxoft-training.com<?echo $arItem["DETAIL_PAGE_URL"]?>?utm_source=newsletter&utm_medium=email&utm_campaign=digest_<?=date('m')?>_<?=date('Y')?>'><?=$arItem["NAME"]?></a>
+									<div style="font-size: 13px; color: #404040; font-family: Arial; margin-bottom: 3px;">
+									<?=$arItem["PREVIEW_TEXT"]?>
+									</div>
+									<?if (strlen($arItem["PROPERTY_LINK_TO_SOC_VALUE"])>0) {?>
+										<a href="<?=$arItem["PROPERTY_LINK_TO_SOC_VALUE"]?>" style="font-size: 12px; color: #afb3b2">Leave a comment</a>
+									<?}?>
+								</td>
+							</tr>
+							<?endforeach;?>
+							<?}?>
+							<tr>
+								<td colspan="2" style="border: 1px solid #dbdbdb; " >
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="https://www.luxoft-training.com/images/email/spacer.gif" height="25" alt="" border="0"/>
+
+								</td>
+							</tr>
+							
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td >
+						<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
+							<tbody><tr>
+								<td style="width: 86px; padding-bottom: 18px;">
+																			<img src="https://www.luxoft-training.com/images/digest2014/online.jpg">
+																	</td>
+								<td style="width: 410px; font-size: 19px; font-family: Arial; color: #e0995e; padding-bottom: 18px;">
+									<div>
+																				<a style="font-size: 19px; font-family: Arial; color: #e0995e;" href="http://www.luxoft-training.com/timetable/onlinecourse/?utm_source=newsletter&amp;utm_medium=email_World&amp;utm_campaign=digest_04_2015">Nearest Courses</a>
+																			</div>
+								</td>
+								<td style="vertical-align: bottom; text-align: center; padding-bottom: 18px;">
+									<img src="https://www.luxoft-training.com/images/digest2014/date.jpg">
+								</td>
+								<td style="vertical-align: bottom; text-align: center; padding-bottom: 18px;">
+									<img src="https://www.luxoft-training.com/images/digest2014/time.jpg">
+								</td>
+							</tr>
+							
+<?
+CModule::IncludeModule("iblock");
+$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "PREVIEW_TEXT", "PROPERTY_TRAINER_ID.NAME", "PROPERTY_TRAINER_SIMPLE", "PROPERTY_TIME", "PROPERTY_TRAINER_ID.PROPERTY_SHORT_NAME", "PROPERTY_TRAINER_ID.DETAIL_PAGE_URL","PROPERTY_TRAINER_ID.PREVIEW_PICTURE", "DETAIL_PAGE_URL", "PROPERTY_STARTDATE", "PROPERTY_ENDDATE","PROPERTY_CITY_ID.NAME","PROPERTY_CITY_ID.IBLOCK_SECTION_ID",  "PROPERTY_COURSE_ID.NAME", "PROPERTY_COURSE_ID.DETAIL_PAGE_URL", "PROPERTY_COURSE_ID.PROPERTY_HTML_DESC");
+$arFilter = Array("IBLOCK_ID"=> 99, '>PROPERTY_STARTDATE'=> date('Y-m-d'));
+$res = CIBlockElement::GetList(Array("PROPERTY_CITY_ID"=> "ASC", "PROPERTY_STARTDATE"=>"ASC"), $arFilter, false, false, $arSelect);
+while($ob = $res->GetNextElement())
+{
+ $arResult["COURSES"][] = $ob->GetFields();
+
+}
+/*
+  [ID] => 38069
+            [~ID] => 38069
+            [NAME] => --Temp Name--
+            [~NAME] => --Temp Name--
+            [DATE_ACTIVE_FROM] => 27.05.2013 15:16:45
+            [~DATE_ACTIVE_FROM] => 27.05.2013 15:16:45
+            [PREVIEW_TEXT] => 
+            [~PREVIEW_TEXT] => 
+            [PROPERTY_TRAINER_ID_NAME] => Carp
+            [~PROPERTY_TRAINER_ID_NAME] => Carp
+            [PROPERTY_TIME_VALUE] => 14:00 - 18:00
+            [~PROPERTY_TIME_VALUE] => 14:00 - 18:00
+            [PROPERTY_TIME_DESCRIPTION] => 
+            [~PROPERTY_TIME_DESCRIPTION] => 
+            [PROPERTY_TIME_VALUE_ID] => 38069:525
+            [~PROPERTY_TIME_VALUE_ID] => 38069:525
+            [PROPERTY_TRAINER_ID_PROPERTY_SHORT_NAME_VALUE] => Alexandru-Mihai
+            [~PROPERTY_TRAINER_ID_PROPERTY_SHORT_NAME_VALUE] => Alexandru-Mihai
+            [PROPERTY_TRAINER_ID_PROPERTY_SHORT_NAME_DESCRIPTION] => 
+            [~PROPERTY_TRAINER_ID_PROPERTY_SHORT_NAME_DESCRIPTION] => 
+            [PROPERTY_SHORT_NAME_TRAINER_ID_VALUE_ID] => 38147:512
+            [~PROPERTY_SHORT_NAME_TRAINER_ID_VALUE_ID] => 38147:512
+            [PROPERTY_TRAINER_ID_DETAIL_PAGE_URL] => /trainers/carp/
+            [~PROPERTY_TRAINER_ID_DETAIL_PAGE_URL] => /trainers/carp/
+            [PROPERTY_TRAINER_ID_PREVIEW_PICTURE] => 5681
+            [~PROPERTY_TRAINER_ID_PREVIEW_PICTURE] => 5681
+            [DETAIL_PAGE_URL] => /ennews/detail.php?ID=38069
+            [~DETAIL_PAGE_URL] => /ennews/detail.php?ID=38069
+            [PROPERTY_STARTDATE_VALUE] => 23.06.2015 14:00:00
+            [~PROPERTY_STARTDATE_VALUE] => 23.06.2015 14:00:00
+            [PROPERTY_STARTDATE_DESCRIPTION] => 
+            [~PROPERTY_STARTDATE_DESCRIPTION] => 
+            [PROPERTY_STARTDATE_VALUE_ID] => 38069:527
+            [~PROPERTY_STARTDATE_VALUE_ID] => 38069:527
+            [PROPERTY_CITY_ID_NAME] => Bucharest
+            [~PROPERTY_CITY_ID_NAME] => Bucharest
+            [PROPERTY_CITY_ID_IBLOCK_SECTION_ID] => 540
+            [~PROPERTY_CITY_ID_IBLOCK_SECTION_ID] => 540
+            [PROPERTY_COURSE_ID_NAME] => Linux Essentials
+            [~PROPERTY_COURSE_ID_NAME] => Linux Essentials
+            [PROPERTY_COURSE_ID_DETAIL_PAGE_URL] => /it-course/ADM-007/
+            [~PROPERTY_COURSE_ID_DETAIL_PAGE_URL] => /it-course/ADM-007/
+*/
+?> 
+
+	<?$t=0?>
+	<?$last_city="Bucharest"?>
+	<?foreach ($arResult["COURSES"] as $key=>$arCourse) {?>
+								<?$res = CIBlockSection::GetByID($arCourse["PROPERTY_CITY_ID_IBLOCK_SECTION_ID"]);
+									  if($ar_res = $res->GetNext())
+										  $country=$ar_res["NAME"];?>
+								
+								<?if ($key==0) {?>
+									<tr>
+									
+									<td colspan="5" style="text-align: center; font-size: 19px; font-family: Arial; color: #e0995e; padding-bottom: 18px;">
+										<div>
+																					<span style="font-size: 19px; font-family: Arial; color: #c96262;">Romania, Bucharest</span>
+																				</div>
+									</td>
+								</tr>
+									
+								<?}?>
+								<?if ($last_city!=$arCourse["PROPERTY_CITY_ID_NAME"]) {?>
+									<tr>
+										<td colspan="5" style="text-align: center; font-size: 19px; font-family: Arial; color: #e0995e; padding-bottom: 18px;">
+											<div>
+												<span style="font-size: 19px; font-family: Arial; color: #c96262;"><?=$country?>, <?=$arCourse["PROPERTY_CITY_ID_NAME"]?></span>
+											</div>
+										</td>
+									</tr>
+									<?$last_city=$arCourse["PROPERTY_CITY_ID_NAME"];?>
+									
+								<?}?>
+								<tr>
+									<td style="width: 86px; vertical-align: top;">
+										<?if ($arFile=CFile::GetFileArray($arCourse["PROPERTY_TRAINER_ID_PREVIEW_PICTURE"])) {?><img src="https://www.luxoft-training.com<?=$arFile["SRC"]?>"/><?} else {?><img width="80" src="https://www.luxoft-training.com/upload/medialibrary/c50/trainer_man.png"/><?}?>
+									</td>
+									
+
+									<td style="width: 410px; vertical-align: top; font-family: Arial; padding-bottom: 30px;">
+										<div style="color: #818181; font-family: Arial; font-size: 17px;"><?if ($country!="Online"){?><?=$country?>, <?}?><?=$arCourse["PROPERTY_CITY_ID_NAME"]?></div>
+										<div style="font-family: Arial; font-size: 17px; color: #4f5d73;">
+											<?if (strlen($arCourse["PROPERTY_TRAINER_ID_DETAIL_PAGE_URL"])>0) {?>
+											Trainer - <a style="color: #4f5d73; font-family: Arial;" href="http://www.luxoft-training.com<?=$arCourse["PROPERTY_TRAINER_ID_DETAIL_PAGE_URL"]?>"><?=$arCourse["PROPERTY_TRAINER_ID_PROPERTY_SHORT_NAME_VALUE"]?> <?=$arCourse["PROPERTY_TRAINER_ID_NAME"]?></a>
+											<?} else {?>
+											Trainer - <?=$arCourse["PROPERTY_TRAINER_SIMPLE_VALUE"];?>
+											<?}?>
+										</div>
+										<div>
+											<a style="font-family: Arial; font-size: 17px; color: #4f5d73;" href="http://www.luxoft-training.com<?=$arCourse["PROPERTY_COURSE_ID_DETAIL_PAGE_URL"]?>?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=digest_<?=date('m')?>_<?=date('Y')?>"><?=$arCourse["PROPERTY_COURSE_ID_NAME"]?></a>
+										</div>
+										<div style="font-size: 13px; font-family: Arial; color: #404040;">
+											<?$obParser = new CTextParser;?>
+											<?$arItem["PREVIEW_TEXT"] = $obParser->html_cut($arCourse["PROPERTY_COURSE_ID_PROPERTY_HTML_DESC_VALUE"]["TEXT"], '260');?>
+											<?=str_replace(htmlspecialchars('<br />'), ' ', $arItem["PREVIEW_TEXT"])?>
+										</div>
+									</td>
+									<?//print_r($arCourse["PROPERTY_STARTDATE_VALUE"]);?>
+									<td style="vertical-align: top; text-align: center; padding-bottom: 18px; font-family: Arial; font-size: 16px; color: #4f5d73; padding-right: 6px;">
+										<?if (strlen($arCourse["PROPERTY_ENDDATE_VALUE"])>0) {?>
+											<?=date("j", strtotime($arCourse["PROPERTY_STARTDATE_VALUE"]))?>-<?=date("j M", strtotime($arCourse["PROPERTY_ENDDATE_VALUE"]))?></td>
+										<?} else {?>
+											<?=date("j M", strtotime($arCourse["PROPERTY_STARTDATE_VALUE"]))?>
+										<?}?>
+									<td style="width: 100px; vertical-align: top; text-align: center; padding-bottom: 18px; font-family: Arial; font-size: 16px; color: #4f5d73;">
+										<?=$arCourse["PROPERTY_TIME_VALUE"]?>
+									</td>
+								</tr>
+	<?}?>							
+								<tr>
+									<td colspan="4" style="border: 1px solid #dbdbdb; ">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img src="https://www.luxoft-training.com/images/email/spacer.gif" height="25" alt="" border="0">
+									</td>
+								</tr>
+								</tbody></table>
+							
+								
+					</td>
+				</tr>
+				
+				
+				
+				
+				<tr>
+					<td>
+						<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
+							<tr>
+								<td colspan="2" style="font-size: 13px; font-family: Arial; color: #777777; padding-bottom: 10px;" >
+									If you have any questions, please, don't hesitate to ask:
+								</td>
+							</tr>
+							<tr>
+								<td style="font-size: 11px; font-family: Arial; color: #777777;">
+									Wroclaw: <a style="font-size: 11px; font-family: Arial; color: #777777;" href="tel:48124458886">+ 48 12 445 88 86</a><br/>
+									Krakov:  <a style="font-size: 11px; font-family: Arial; color: #777777;" href="tel:48124458886">+ 48 12 445 88 86</a><br/>  
+									Bucharest: +38 (056) 787-12-21 (доп. 3532, 6954)<br/> 
+								</td>
+								<td style="padding-left: 20px; font-size: 11px; font-family: Arial; color: #777777;">
+									web: <a style="font-size: 12px; font-family: Arial; color: #777777;" href="http://www.luxoft-training.com?utm_source=newsletter&utm_medium=email&utm_campaign=digest_<?=date('m')?>_<?=date('Y')?>">www.luxoft-training.com</a><br/>
+									<br/>  
+									email: <a style="font-size: 12px; font-family: Arial; color: #777777;" href='mailto: education@luxoft.com'>education@luxoft.com</a><br/> 
+								</td>
+							</tr>
+							
+							<tr>
+								<td colspan="2">
+									<img src="https://www.luxoft-training.com/images/email/spacer.gif" height="15" alt="" border="0"/>
+								</td>
+							</tr>
+							<?/*<tr>
+								<td colspan="2" style="font-size: 11px; font-family: Arial; color: #373737; padding-bottom: 10px;" >
+									We apologize if you received this newsletter by mistake.<br/> If you don't want to receive further emails from Luxoft Training you can unsubscribe at the <a style="font-family: Arial; color: #373737; " href="http://www.luxoft-training.com/unsubscribe/?mid=#MAIL_ID#&mhash=#MAIL_MD5#">link</a>.
+								</td>
+							</tr>*/?>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<?
+$SUBSCRIBE_TEMPLATE_RESULT = true;
+if($SUBSCRIBE_TEMPLATE_RESULT) {
+	return array(
+		"SUBJECT"=>$SUBSCRIBE_TEMPLATE_RUBRIC["NAME"]
+		,"BODY_TYPE"=>"html"
+		,"CHARSET"=>"Windows-1251"
+		,"DIRECT_SEND"=>"Y"
+		,"FROM_FIELD"=>$SUBSCRIBE_TEMPLATE_RUBRIC["FROM_FIELD"]
+	);
+
+} else {
+	return false;
+}
+?>

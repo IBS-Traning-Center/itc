@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20151216T064323CET-1794hh8Z6D@185.26.112.96
+DTSTAMP:20151216T054323Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FITCH-002 Fitch Learning: Интенсивный банковс
+ кий анализ\n\nДата проведения курса: 15.12.201
+ 5-17.12.2015\nВремя: 10:00 - 18:00\n\nРегистрация и по�
+ �робнее о курсе:\nhttp://www.luxoft-training.ru/training/catal
+ og/course.html?ID=60296&ID_TIME=60327\n\n
+DTSTART:20151215T100000
+DTEND:20151217T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Fitch Learning: Интенсивный банковский анализ'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FITCH-002 Fitch Learning: Интенсивный банковс
+ кий анализ\n\nДата проведения курса: 15.12.201
+ 5-17.12.2015\nВремя: 10:00 - 18:00\n\nРегистрация и по�
+ �робнее о курсе:\nhttp://www.luxoft-training.ru/training/catal
+ og/course.html?ID=60296&ID_TIME=60327\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220106T025441CET-7615TRAuBi@185.26.112.96
+DTSTAMP:20220106T015441Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ARC-001 Ключевые практики архитектор�
+ � ПО\n\nДата проведения курса: 10.01.2022-19.01.2022
+ \nВремя: 09:00-12:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=110086&ID_TIME=117209\n\n
+DTSTART:20220110T090000
+DTEND:20220119T120000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Ключевые практики архитектора ПО'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARC-001 Ключевые практики архитектор�
+ � ПО\n\nДата проведения курса: 10.01.2022-19.01.2022
+ \nВремя: 09:00-12:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=110086&ID_TIME=117209\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

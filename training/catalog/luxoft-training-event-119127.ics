@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220523T051847CEST-6824aAvUxk@82.146.55.227
+DTSTAMP:20220523T031847Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SDP-004 Основы методологии Agile для раз
+ работки ПО\n\nДата проведения курса: 06.06.202
+ 2-10.06.2022\nВремя: 10:00-14:00\n\nРегистрация и под�
+ �обнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog
+ /course.html?ID=6126&ID_TIME=119127\n\n
+DTSTART:20220606T100000
+DTEND:20220610T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы методологии Agile для разработки П�
+ �'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SDP-004 Основы методологии Agile для раз
+ работки ПО\n\nДата проведения курса: 06.06.202
+ 2-10.06.2022\nВремя: 10:00-14:00\n\nРегистрация и под�
+ �обнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog
+ /course.html?ID=6126&ID_TIME=119127\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

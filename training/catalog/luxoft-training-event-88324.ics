@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190425T112308CEST-6449gnimRK@185.26.112.96
+DTSTAMP:20190425T092308Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-026 Лучшие практики для Android\n\nДат�
+ � проведения курса: 20.05.2019-21.05.2019\nВремя: 11:0
+ 0-17:00\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=82288&ID_TIME=
+ 88324\n\n
+DTSTART:20190520T110000
+DTEND:20190521T170000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Лучшие практики для Android'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-026 Лучшие практики для Android\n\nДат�
+ � проведения курса: 20.05.2019-21.05.2019\nВремя: 11:0
+ 0-17:00\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=82288&ID_TIME=
+ 88324\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

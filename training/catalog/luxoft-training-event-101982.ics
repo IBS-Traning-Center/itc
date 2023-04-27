@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200621T191059CEST-4090l7Ehhx@185.26.112.96
+DTSTAMP:20200621T171059Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-063 Бизнес-анализ в стиле Agile (Agile ex
+ tension to the BABOK)\n\nДата проведения курса: 22.06.2
+ 020-23.06.2020\nВремя: 14:30-18:30\n\nРегистрация и по�
+ �робнее о курсе:\nhttp://www.luxoft-training.ru/training/catal
+ og/course.html?ID=92705&ID_TIME=101982\n\n
+DTSTART:20200622T143000
+DTEND:20200623T183000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Бизнес-анализ в стиле Agile (Agile extension to the BAB
+ OK)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-063 Бизнес-анализ в стиле Agile (Agile ex
+ tension to the BABOK)\n\nДата проведения курса: 22.06.2
+ 020-23.06.2020\nВремя: 14:30-18:30\n\nРегистрация и по�
+ �робнее о курсе:\nhttp://www.luxoft-training.ru/training/catal
+ og/course.html?ID=92705&ID_TIME=101982\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

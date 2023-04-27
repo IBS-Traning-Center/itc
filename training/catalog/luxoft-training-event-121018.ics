@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20221213T004233CET-6167PstTS5@82.146.55.227
+DTSTAMP:20221213T234233Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-023 React Advanced: продвинутые темы\n\nДа
+ та проведения курса: 05.12.2022-20.12.2022\nВремя: 1
+ 0:00-13:00\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=106002&ID_
+ TIME=121018\n\n
+DTSTART:20221205T100000
+DTEND:20221220T130000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'React Advanced: продвинутые темы'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-023 React Advanced: продвинутые темы\n\nДа
+ та проведения курса: 05.12.2022-20.12.2022\nВремя: 1
+ 0:00-13:00\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=106002&ID_
+ TIME=121018\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

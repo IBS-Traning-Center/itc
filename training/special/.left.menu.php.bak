@@ -1,0 +1,18 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Alumni club", 
+		"/timetable/special/alumni/", 
+		Array(), 
+		Array("vip"=>"3"), 
+		"" 
+	),
+	Array(
+		"Студентам", 
+		"/timetable/special/student/", 
+		Array(), 
+		Array("vip"=>"3"),
+		"" 
+	)
+);
+?>

@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20150803T191545CEST-8879ZsVAJr@185.26.112.96
+DTSTAMP:20150803T171545Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-001 Тайм-менеджмент для руководит�
+ �лей\n\nДата проведения курса: 04.08.2015-07.08.2015
+ \nВремя: 10:00 - 16:00\n\nРегистрация и подробне�
+ � о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.ht
+ ml?ID=37662&ID_TIME=56521\n\n
+DTSTART:20150804T100000
+DTEND:20150807T160000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Тайм-менеджмент для руководителей'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-001 Тайм-менеджмент для руководит�
+ �лей\n\nДата проведения курса: 04.08.2015-07.08.2015
+ \nВремя: 10:00 - 16:00\n\nРегистрация и подробне�
+ � о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.ht
+ ml?ID=37662&ID_TIME=56521\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

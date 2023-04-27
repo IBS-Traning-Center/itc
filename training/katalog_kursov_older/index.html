@@ -1,0 +1,155 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("blue_title", "Каталог курсов по направлениям");
+$APPLICATION->SetPageProperty("title", "Обучение в сфере разработки ПО. Курсы для аналитиков, тестировщиков, менеджеров проектов, разработчиков ПО, архитекторов и проектировщиков");
+$APPLICATION->SetPageProperty("keywords", "тренинги,  процессы разработки, управление требованиями, разработка ПО, тестирование ПО, java, архитектура ПО, oracle, BEA, курсы, обучение в области разработки ПО");
+$APPLICATION->SetPageProperty("description", "Курсы программирования от экспертов-практиков в Luxoft Training. Примеры разработки реальных проектов. Обучение программистов, тестировщиков, аналитиков, менеджеров проектов. Повышение квалификации для ИТ-специалистов.");
+$APPLICATION->SetTitle("Каталог курсов по направлениям: обучение аналитиков, тестировщиков, менеджеров проектов");
+?>
+<?/*
+<link href="/bitrix/ext/tabs/templates/.default/style.css" type="text/css" rel="stylesheet">
+<div class="tabsection-container-default">
+    <ul class="tab-list" id="tab-list-id-0">
+           <li id="tab-info" class="active">
+               <a class="tdef" href="#"><span>По направлениям</span></a>
+           </li>
+        <li id="tab-price" class=""><a class="tdef"  href="/training/katalog_kursov/po-rolyam/"><span>По ролям</span></a></li>
+        <li id="tab-feedback" class=""><a class="tdef" href="/training/katalog_kursov/kompleksnye-programmy/"><span>Комплексные программы</span></a></li>
+     </ul>
+<div class="tab-boby-container">
+*/?>
+<?if (strlen($_REQUEST["qcat"])==0) {?>
+<?$APPLICATION->IncludeComponent("luxoft:super.component", "newcatalog.main.v7-dir", Array(
+	"CACHE_TYPE" => "A",	// Тип кеширования
+	"CACHE_TIME" => "36000",	// Время кеширования (сек.)
+	"ID_IBLOCK" => "94",	// Идентификатор Инфоблока
+	),
+	false
+);?>
+<?} else {?>
+    <?$APPLICATION->IncludeComponent("luxoft:super.component", "section-items-list-search", Array(
+	"CACHE_TYPE" => "N",	// Тип кеширования
+	"CACHE_TIME" => "3600",	// Время кеширования (сек.)
+	"ID_IBLOCK" => "94",	// Идентификатор Инфоблока
+	"SECTION_CODE" => ""
+	),
+	false
+);?>
+<?}?>
+<?/*
+</div>
+</div>
+*/?>
+<script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+
+<script>
+$(document).ready(function(){
+	var currentHash;
+	currentHash = window.location.hash.slice(1);
+
+	if (currentHash === 'methodology') {
+		$("#tr_catalog ul li#cat_522").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_522 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_522 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_522', 800);
+	}
+
+	if (currentHash === 'test') {
+		$("#tr_catalog ul li#cat_461").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_461 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_461 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_461', 800);
+	}
+	if (currentHash === 'pm') {
+		$("#tr_catalog ul li#cat_530").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_530 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_530 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_530', 800);
+	}
+	if (currentHash === 'developer') {
+		$("#tr_catalog ul li#cat_482").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_482 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_482 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_482', 800);
+	}
+	if (currentHash === 'itservice') {
+		$("#tr_catalog ul li#cat_520").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_520 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_520 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_520', 800);
+	}
+	if (currentHash === 'analytics') {
+		$("#tr_catalog ul li#cat_448").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_448 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_448 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_448', 800);
+	}
+	if (currentHash === 'developer-java') {
+		$("#tr_catalog ul li#cat_482").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_482").find('div.hitarea:first').removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_482").find('ul:first').show();
+		$("#tr_catalog ul li#cat_526").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_526").find('div.hitarea:first').removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_526").find('ul:first').show();
+		$.scrollTo('#tr_catalog ul li#cat_526', 800);
+	}
+
+	if (currentHash === 'developer-net') {
+		$("#tr_catalog ul li#cat_482").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_482").find('div.hitarea:first').removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_482").find('ul:first').show();
+		$("#tr_catalog ul li#cat_524").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_524").find('div.hitarea:first').removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_524").find('ul:first').show();
+		$.scrollTo('#tr_catalog ul li#cat_524', 800);
+	}
+
+	if (currentHash === 'arch') {
+		$("#tr_catalog ul li#cat_529").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_529 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_529 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_529', 800);
+	}
+	if (currentHash === 'admin') {
+		$("#tr_catalog ul li#cat_509").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_509 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_509 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_509', 800);
+	}
+	if (currentHash === 'business') {
+		$("#tr_catalog ul li#cat_584").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_584 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_584 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_584', 800);
+	}
+	if (currentHash === 'soft') {
+		$("#tr_catalog ul li#cat_521").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_512 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_521 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_521', 800);
+	}
+	if (currentHash === 'exp') {
+		$("#tr_catalog ul li#cat_533").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_533 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_533 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_533', 800);
+	}
+	if (currentHash === 'recrut') {
+		$("#tr_catalog ul li#cat_590").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_590 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_590 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_590', 800);
+	}
+	if (currentHash === 'sec') {
+		$("#tr_catalog ul li#cat_609").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_609 div.hitarea").removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+		$("#tr_catalog ul li#cat_609 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_609', 800);
+	}
+
+});
+</script>
+<br/>
+<p>По запросу на <a href="mailto:<?=EMAIL_ADDRESS?>" title="Написать письмо" ><?=EMAIL_ADDRESS?></a> мы ответим на любые дополнительные вопросы касательно обучения в нашем Luxoft Training.</p>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -1,0 +1,28 @@
+/*Table*/
+table.sale_basket_basket
+{
+	width:100%;
+	border-collapse:collapse;
+}
+
+/*Table head*/
+table.sale_basket_basket th
+{
+
+	background-repeat:repeat-x;
+	text-align: left;
+	color:#000;
+}
+
+/* Table cells and heads*/
+table.sale_basket_basket th, table.sale_basket_basket td
+{
+	border:1px solid #000;
+	padding: 3px 5px;
+	vertical-align:top;
+    color:#000;
+}
+table.sale_basket_basket th a, table.sale_basket_basket td a
+{
+	color:#3399CC;
+}

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20161030T203507CET-502864gKno@185.26.112.96
+DTSTAMP:20161030T193507Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-028 Подготовка технических писат�
+ �лей\n\nДата проведения курса: 31.10.2016-03.11.2016
+ \nВремя: 11:00-15:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=36625&ID_TIME=66811\n\n
+DTSTART:20161031T110000
+DTEND:20161103T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Подготовка технических писателей'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-028 Подготовка технических писат�
+ �лей\n\nДата проведения курса: 31.10.2016-03.11.2016
+ \nВремя: 11:00-15:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=36625&ID_TIME=66811\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

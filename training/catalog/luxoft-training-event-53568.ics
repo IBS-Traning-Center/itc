@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20150204T145446CET-0392iRzUsI@50.57.83.146
+DTSTAMP:20150204T135446Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DB-005 Oracle 10g\, основы языка PL/SQL\n\nДата 
+ проведения курса: 03.02.2015-06.02.2015\nВремя: 10:00 
+ - 16:00\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=6061&ID_TIME=5
+ 3568\n\n
+DTSTART:20150203T100000
+DTEND:20150206T160000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Oracle 10g\, основы языка PL/SQL'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DB-005 Oracle 10g\, основы языка PL/SQL\n\nДата 
+ проведения курса: 03.02.2015-06.02.2015\nВремя: 10:00 
+ - 16:00\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=6061&ID_TIME=5
+ 3568\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,34 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Регистрация");
+?>
+<?$APPLICATION->IncludeComponent(
+	"luxoft:register",
+	"lux-training",
+	Array(
+		"USER_PROPERTY_NAME" => "",
+		"SEF_MODE" => "Y",
+		"SHOW_FIELDS" => Array("NAME", "LAST_NAME", "PERSONAL_PHONE", "PERSONAL_CITY"),
+		"REQUIRED_FIELDS" => Array("NAME", "LAST_NAME", "PERSONAL_CITY"),
+		"AUTH" => "Y",
+		"USE_BACKURL" => "Y",
+		"SUCCESS_PAGE" => "/auth/registration_success.html",
+		"SET_TITLE" => "Y",
+		"USER_PROPERTY" => Array(),
+		"SEF_FOLDER" => "/auth/",
+		"VARIABLE_ALIASES" => Array(
+
+		)
+	),
+false
+);?>
+<script>
+	$(document).ready(function(){
+		pageTracker._trackEvent('Users', 'Registration', 'View');
+		$('#stylized form').submit(function() {
+			yaCounter23056159.reachGoal("Registration");
+			pageTracker._trackEvent('Users', 'Registration', 'Submit');
+		});
+	});
+</script>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

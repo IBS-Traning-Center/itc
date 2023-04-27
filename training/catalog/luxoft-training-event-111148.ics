@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211010T080246CEST-9018tIpuI0@185.26.112.96
+DTSTAMP:20211010T060246Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-055 BABOK Guide 3.0: Анализ требований и �
+ �ыработка решения\n\nДата проведения курс
+ а: 11.10.2021-13.10.2021\nВремя: 10:00-15:30\n\nРегистраци
+ я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tra
+ ining/catalog/course.html?ID=74151&ID_TIME=111148\n\n
+DTSTART:20211011T100000
+DTEND:20211013T153000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BABOK Guide 3.0: Анализ требований и выработка 
+ решения'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-055 BABOK Guide 3.0: Анализ требований и �
+ �ыработка решения\n\nДата проведения курс
+ а: 11.10.2021-13.10.2021\nВремя: 10:00-15:30\n\nРегистраци
+ я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tra
+ ining/catalog/course.html?ID=74151&ID_TIME=111148\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

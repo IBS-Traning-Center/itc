@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200506T221636CEST-25150cvJT6@185.26.112.96
+DTSTAMP:20200506T201636Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-010 Введение в SQL\n\nДата проведени�
+ � курса: 21.05.2020-22.05.2020\nВремя: 10:00-18:00\n\nРегис
+ трация и подробнее о курсе:\nhttp://www.luxoft-train
+ ing.ru/training/catalog/course.html?ID=6067&ID_TIME=95132\n\n
+DTSTART:20200521T100000
+DTEND:20200522T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Введение в SQL'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-010 Введение в SQL\n\nДата проведени�
+ � курса: 21.05.2020-22.05.2020\nВремя: 10:00-18:00\n\nРегис
+ трация и подробнее о курсе:\nhttp://www.luxoft-train
+ ing.ru/training/catalog/course.html?ID=6067&ID_TIME=95132\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

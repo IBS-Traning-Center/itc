@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20131221T140706CET-62250HBlpo@50.57.83.146
+DTSTAMP:20131221T130706Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Visual Studio 2008 и Windows Communication Fou
+ ndation – Коротко о Главном\n\nДата проведен�
+ �я\n26.01.2010\n\nВремя\n18:00-20:00\n\nМесто проведен�
+ �я:\nМосква\, 1-ый Волоколамский проезд\, д. 
+ 10\, стр. 3\n\nДается полноценное знакомство
+  с WCF и проводится обзор базовых концепци
+ й с сопутствующими рабочими примерами.\n 
+ \nЦель: обучение разработке SOA приложений
+  на базе Windows Communication Foundation\n\n\nРегистраци�
+ �:\nhttp://www.luxoft-training.ru/events/seminar/17567/\n\n
+DTSTART:20100126T000000
+LOCATION:Москва\, 1-ый Волоколамский проезд\, д
+ . 10\, стр. 3
+SUMMARY:Семинар: Visual Studio 2008 и Windows Communication Foundat
+ ion – Коротко о Главном
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Visual Studio 2008 и Windows Communication Fou
+ ndation – Коротко о Главном
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

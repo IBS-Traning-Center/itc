@@ -1,0 +1,65 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Видео с вебинара \"Планирование, отслеживание и исполнение проектов с использованием Visual Studio 2010\"");
+?> 
+<br />
+ <?$APPLICATION->IncludeComponent(
+	"bitrix:player",
+	"",
+	Array(
+		"PLAYER_TYPE" => "auto",
+		"USE_PLAYLIST" => "N",
+		"PATH" => "/downloads/webinar/MSF_Agile.wmv",
+		"WIDTH" => "600",
+		"HEIGHT" => "450",
+		"PREVIEW" => "",
+		"LOGO" => "",
+		"FULLSCREEN" => "Y",
+		"SHOW_CONTROLS" => "Y",
+		"SHOW_STOP" => "Y",
+		"SHOW_DIGITS" => "Y",
+		"CONTROLS_BGCOLOR" => "FFFFFF",
+		"CONTROLS_COLOR" => "000000",
+		"CONTROLS_OVER_COLOR" => "000000",
+		"SCREEN_COLOR" => "000000",
+		"WMODE_WMV" => "window",
+		"AUTOSTART" => "N",
+		"REPEAT" => "N",
+		"VOLUME" => "90",
+		"ADVANCED_MODE_SETTINGS" => "Y",
+		"PLAYER_ID" => "",
+		"BUFFER_LENGTH" => "10",
+		"DOWNLOAD_LINK" => "/downloads/webinar/MSF_Agile.wmv",
+		"DOWNLOAD_LINK_TARGET" => "_self"
+	)
+);?> 
+<br />
+ 
+<p> Приглашаем Вас посетить однодневный <strong><a target="_blank" href="http://www.luxoft-training.ru/events/conference/microsoft/">Семинар &laquo;MS Team System 2010: Революция в управлении проектами разработки ПО&raquo;</a></strong>, 12 марта 2010, г. Москва. 
+  <br />
+ 
+  <br />
+ Для участников этого Семинара предусмотрен <strong>Бонусный пакет</strong>: 
+  <br />
+ 
+  <br />
+ - Бета версия VS 2010 Pro; 
+  <br />
+ - Коммерческая версия VS 2010 Pro (на 2-х человек от одной компании); 
+  <br />
+ - Сертификат на бесплатное онлайн-обучение в Учебном Центре Luxoft; 
+  <br />
+ - Льготная регистрация на Launch Visual Studio в апреле; 
+  <br />
+ - Брошюра &quot;Microsoft Visual Studio 2010. Первое знакомство&quot;; 
+  <br />
+ - Информационный пакет от компании Microsoft и Учебного Центра Luxoft; 
+  <br />
+ - Сувенир от Microsoft. 
+  <br />
+ 
+  <br />
+ <a target="_blank" href="http://www.luxoft-training.ru/events/conference/microsoft/" class="links">Более подробная информация о Семинаре</a> 
+  <br />
+ </p>
+ <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

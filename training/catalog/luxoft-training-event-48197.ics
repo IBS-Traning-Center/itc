@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140616T072421CEST-86800ZH6cV@50.57.83.146
+DTSTAMP:20140616T052421Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-003_ONL Использование техники Mind Maps 
+ (online)\n\nДата проведения курса: 18.06.2014-19.06.201
+ 4\nВремя: 13:00-15:00\n\nРегистрация и подробнее
+  о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.htm
+ l?ID=36535&ID_TIME=48197\n\n
+DTSTART:20140618T130000
+DTEND:20140619T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Использование техники Mind Maps (online)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-003_ONL Использование техники Mind Maps 
+ (online)\n\nДата проведения курса: 18.06.2014-19.06.201
+ 4\nВремя: 13:00-15:00\n\nРегистрация и подробнее
+  о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.htm
+ l?ID=36535&ID_TIME=48197\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

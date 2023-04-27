@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211223T151859CET-8020wifzTV@185.26.112.96
+DTSTAMP:20211223T141859Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-002 Школа тестирования. Часть 6. Те
+ стирование Web-приложений\n\nДата проведен
+ ия курса: 22.12.2021-27.12.2021\nВремя: 12:00-16:00\n\nРег�
+ �страция и подробнее о курсе:\nhttp://www.luxoft-tr
+ aining.ru/training/catalog/course.html?ID=6085&ID_TIME=117297\n\n
+DTSTART:20211222T120000
+DTEND:20211227T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Школа тестирования. Часть 6. Тестировани
+ е Web-приложений'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-002 Школа тестирования. Часть 6. Те
+ стирование Web-приложений\n\nДата проведен
+ ия курса: 22.12.2021-27.12.2021\nВремя: 12:00-16:00\n\nРег�
+ �страция и подробнее о курсе:\nhttp://www.luxoft-tr
+ aining.ru/training/catalog/course.html?ID=6085&ID_TIME=117297\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20130225T055025CET-6268hpK0b8@50.57.83.146
+DTSTAMP:20130225T045025Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Обзор методик тестирован�
+ �я юзабилити\n\nДата проведения\n30.10.2008\n\nВ�
+ �емя\n16.00-18.00\n\nМесто проведения:\nг. Киев\, �
+ �л. Радищева\, 10/14\n\nСписок тем уточняется
+ \n\nРегистрация:\nhttp://www.luxoft-training.ru/events/seminar/
+ 9296/\n\n
+DTSTART:20081030T000000
+LOCATION:г. Киев\, ул. Радищева\, 10/14
+SUMMARY:Семинар: Обзор методик тестирования 
+ юзабилити
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Обзор методик тестирован�
+ �я юзабилити
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

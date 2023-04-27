@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20130225T102746CET-5851eOMtM7@50.57.83.146
+DTSTAMP:20130225T092746Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Sun GlassFish Enterprise Server. Общие с�
+ �едения и опыт использования.\n\nДата пров
+ едения\n28.08.2008\n\nВремя\n16.00-17.30\n\nМесто пров
+ едения:\nг. Днепропетровск\, пр. Карла Мар�
+ �са\, 107а\, 3-й этаж\n\n\n\nРегистрация:\nhttp://www.l
+ uxoft-training.ru/events/seminar/9287/\n\n
+DTSTART:20080828T000000
+LOCATION:г. Днепропетровск\, пр. Карла Маркса\,
+  107а\, 3-й этаж
+SUMMARY:Семинар: Sun GlassFish Enterprise Server. Общие све�
+ �ения и опыт использования.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Sun GlassFish Enterprise Server. Общие с�
+ �едения и опыт использования.
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

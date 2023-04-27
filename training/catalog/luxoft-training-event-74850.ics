@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170908T000158CEST-6451NeS5pm@185.26.112.96
+DTSTAMP:20170908T220158Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-005 Основы финансовых рынков. Fixed I
+ ncome & Fixed Income Derivatives.\n\nДата проведения кур�
+ �а: 11.09.2017-13.09.2017\nВремя: 10:00-12:00\n\nРегистрац�
+ �я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tr
+ aining/catalog/course.html?ID=28568&ID_TIME=74850\n\n
+DTSTART:20170911T100000
+DTEND:20170913T120000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы финансовых рынков. Fixed Income & Fixed Inco
+ me Derivatives.'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-005 Основы финансовых рынков. Fixed I
+ ncome & Fixed Income Derivatives.\n\nДата проведения кур�
+ �а: 11.09.2017-13.09.2017\nВремя: 10:00-12:00\n\nРегистрац�
+ �я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tr
+ aining/catalog/course.html?ID=28568&ID_TIME=74850\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

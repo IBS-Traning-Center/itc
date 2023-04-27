@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180723T235611CEST-8931VgEhPU@185.26.112.96
+DTSTAMP:20180723T215611Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DB-022 Новые возможности Oracle 12c \n\nДат�
+ � проведения курса: 23.07.2018-25.07.2018\nВремя: 10:0
+ 0-14:00\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=73445&ID_TIME=
+ 82576\n\n
+DTSTART:20180723T100000
+DTEND:20180725T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Новые возможности Oracle 12c '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DB-022 Новые возможности Oracle 12c \n\nДат�
+ � проведения курса: 23.07.2018-25.07.2018\nВремя: 10:0
+ 0-14:00\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=73445&ID_TIME=
+ 82576\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

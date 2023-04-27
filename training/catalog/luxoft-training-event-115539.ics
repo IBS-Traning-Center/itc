@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211203T123829CET-4994s9Z1l4@185.26.112.96
+DTSTAMP:20211203T113829Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SDP-030_PRG Продвинутая разработка в Micr
+ osoft .NET\n\nДата проведения курса: 06.12.2021-10.12.2
+ 021\nВремя: 11:00-16:00\n\nРегистрация и подробне
+ е о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.h
+ tml?ID=55387&ID_TIME=115539\n\n
+DTSTART:20211206T110000
+DTEND:20211210T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Продвинутая разработка в Microsoft .NET'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SDP-030_PRG Продвинутая разработка в Micr
+ osoft .NET\n\nДата проведения курса: 06.12.2021-10.12.2
+ 021\nВремя: 11:00-16:00\n\nРегистрация и подробне
+ е о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.h
+ tml?ID=55387&ID_TIME=115539\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

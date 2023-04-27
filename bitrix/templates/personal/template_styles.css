@@ -1,0 +1,163 @@
+.btn-sert.unactive {
+	-webkit-filter: grayscale(100%);
+	opacity: 0.7 !important;
+	filter: gray;
+}
+.hidden-wrap-bonus {
+	display: none; 
+    position: absolute;
+    width: 80px;
+    top: 50%;
+    padding: 10px;
+    margin-top: -20px;
+    left: 150px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 0 #e1e1e1;
+    background: #fff;
+    color: #777;
+}
+.bonuses-box .box:hover .hidden-wrap-bonus{
+	display: block;
+}
+.hidden-wrap-bonus:after {
+	content: ''; 
+    position: absolute;
+    left: -18px; top: 15px;
+    border: 10px solid transparent;
+    border-right: 10px solid #fff;
+}
+.hidden-wrap-bonus:before {
+	content: ''; 
+    position: absolute;
+    left: -20px; top: 15px;
+    border: 10px solid transparent;
+    border-right: 10px solid #e1e1e1;
+}
+.hidden-wrap-bonus span {
+	color: #c56b6d;
+}
+.white-brd {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 0 #e1e1e1;
+    border-radius: 3px;
+	position: relative;
+}
+.white-brd table {
+  margin: 0 -1px;
+  position: relative;
+}
+table.bordered td {
+    line-height: 17px;
+    border: 1px dashed #d7d7d7;
+    border-width: 1px 1px 0 1px;
+	padding: 5px;
+	white-space: normal;
+}
+table.bordered td img {
+	max-width: 500px;
+}
+.bordered tr:first-child td {
+    border-top: 0;
+}
+body #logo {
+    padding-top: 14px;
+}
+.popup, .newpopup{
+	width:616px;
+	box-shadow:0 0 15px rgba(0,0,0,0.5);
+	background:#fff;
+}
+.newpopup{ 
+	padding: 10px;
+}
+.newpopup p { 
+	margin-bottom: 20px;
+}
+.popup-new{
+	display: none;
+	width:720px;
+	box-shadow:0 0 15px rgba(0,0,0,0.5);
+	background:#fff;
+}
+.newpopup {
+	display: none;
+}
+.footer-links {
+	width: 100%;
+	background: #112a3c;
+}
+.footer-column-1 {
+	margin-top: 22px;
+	width: 328px;
+	float: left;
+}
+.footer-column-1 a {
+	color: #77acd7;
+	font-size: 13px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+.footer-column-2 {
+	width: 329px;
+	float: left;
+	margin-top: 21px;
+}
+.footer-heading {
+	font-size: 16px;
+	color: #326dab;
+	margin-bottom: 14px;
+	font-weight: bold;
+}
+.footer-column-2 .ft-social a {
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: left;
+	margin: 0 8px 9px 0;
+	background: url('https://www.luxoft-training.ru/local/assets/images/f-soc-sprite-opt.png') no-repeat;
+}
+.footer-column-2 .ft-social a.vk  {
+	background-position: -30px 0;
+}
+.footer-column-2 .ft-social a.facebook  {
+	background-position: -60px 0;
+}
+.footer-column-2 .ft-social a.in  {
+	background-position: -90px 0;
+}
+.footer-column-2 .ft-social a.gplus  {
+	background-position: -120px 0;
+}
+.footer-column-2 .ft-social a.tube  {
+	background-position: -150px 0;
+}
+.footer-column-3 {
+	margin-top: 21px;
+	width: 224px;
+	float: right;
+}
+.copyright {
+	font-size: 12px;
+	color: #c9deef;
+	margin-top: 14px;
+	
+}
+.footer-links .frame{
+	padding: 19px 50px;
+	padding-bottom: 30px !important;
+}
+.footer-column-1 {
+	position: relative;
+}
+.footer-column-1.first:after {
+	right: 21px;
+	width: 1px; 
+	height: 100%;
+	position: absolute;
+	top: 0;
+	content:'';
+	display: block;
+	background: #1a3244;
+}

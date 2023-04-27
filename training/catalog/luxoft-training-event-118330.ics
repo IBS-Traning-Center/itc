@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220725T031706CEST-7433cuVE4b@82.146.55.227
+DTSTAMP:20220725T011706Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-060 Моделирование в ArchiMate\n\nДата п�
+ �оведения курса: 08.08.2022-09.08.2022\nВремя: 10:00-18:
+ 00\n\nРегистрация и подробнее о курсе:\nhttp://
+ www.luxoft-training.ru/training/catalog/course.html?ID=85245&ID_TIME=11833
+ 0\n\n
+DTSTART:20220808T100000
+DTEND:20220809T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Моделирование в ArchiMate'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-060 Моделирование в ArchiMate\n\nДата п�
+ �оведения курса: 08.08.2022-09.08.2022\nВремя: 10:00-18:
+ 00\n\nРегистрация и подробнее о курсе:\nhttp://
+ www.luxoft-training.ru/training/catalog/course.html?ID=85245&ID_TIME=11833
+ 0\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

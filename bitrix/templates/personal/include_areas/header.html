@@ -1,0 +1,65 @@
+<div class="frame">
+    <strong class="logo"><a href="/">Luxoft TRAINING</a></strong>
+    <div class="area">
+        <div class="section">
+            <form name="searchForm" action="/search.html" method="get" class="search-form">
+                <fieldset>
+                    <input type="image" src="/images/ico-search.png" alt="Поиск" />
+                    <input name="q" type="text" onfocus="if(this.value=='Поиск по сайту') this.value=''" onblur="if(this.value=='') this.value='Поиск по сайту'" value="Поиск по сайту" />
+                </fieldset>
+            </form>
+            <a href="/search/">Расширенный Поиск</a>
+            
+			<div class="user" style="float:right">
+                <?$APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "user",
+                Array(
+                "ROOT_MENU_TYPE"	=>	"user",
+                "MAX_LEVEL"	=>	"1",
+                "USE_EXT"	=>	"Y"
+                )
+                );?>
+            </div>
+		<div class="basket" style="float:right">
+			<?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.small", "small", Array(
+				"PATH_TO_BASKET" => "/personal/cart/",	
+				"PATH_TO_ORDER" => "/personal/order/make/",	
+				"SHOW_DELAY" => "N",
+				"SHOW_NOTAVAIL" => "N",
+				"SHOW_SUBSCRIBE" => "N"
+				),
+				false
+			);?>
+			</div>
+            
+        </div>
+        <ul id="nav">
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "up_menu", array(
+            "ROOT_MENU_TYPE" => "top",
+            "MENU_CACHE_TYPE" => "A",
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "MENU_CACHE_GET_VARS" => array(
+            ),
+            "MAX_LEVEL" => "2",
+            "CHILD_MENU_TYPE" => "left",
+            "USE_EXT" => "N",
+            "DELAY" => "N",
+            "ALLOW_MULTI_SELECT" => "N"
+            ),
+            false
+            );?>
+        </ul>
+    </div>
+</div>
+			<? // получим ID  сайта для того чтобы в #search использовать русские слова
+				$rsSite = CSite::GetByID(SITE_ID);
+				$arSite = $rsSite->Fetch();
+				$id_site =$arSite["ID"];
+			?>
+
+
+
+
+			<div class="clear"> </div>

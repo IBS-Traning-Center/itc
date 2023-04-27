@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20131221T140455CET-7101IFTvt1@50.57.83.146
+DTSTAMP:20131221T130455Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Изменения в Windows Workflow Foundati
+ on 4.0\n\nДата проведения\n27.04.2010\n\nВремя\n19:00-2
+ 0:00\n\nМесто проведения:\n1-ый Волоколамски�
+ � пр-зд\, 10 стр.3\n\nПриглашаем Вас на Встреч
+ у Московского сообщества .NET разработчик
+ ов\, в рамках которой будут представлены 
+ 2 выступления:\n\n- Изменения в Windows Workflow Foun
+ dation 4.0\n\n- CodeSmith/NetTiers: эффективная генерац�
+ �я кода в среде .Net Framework\n\nРегистрация:\nhttp
+ ://www.luxoft-training.ru/events/seminar/20065/\n\n
+DTSTART:20100427T000000
+LOCATION:1-ый Волоколамский пр-зд\, 10 стр.3
+SUMMARY:Семинар: Изменения в Windows Workflow Foundation 4
+ .0
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Изменения в Windows Workflow Foundati
+ on 4.0
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200906T055223CEST-15446KuCJC@185.26.112.96
+DTSTAMP:20200906T035223Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ADM-019 Основы Docker\n\nДата проведения к
+ урса: 02.09.2020-08.09.2020\nВремя: 11:00-14:30\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=102858&ID_TIME=103193\n\n
+DTSTART:20200902T110000
+DTEND:20200908T143000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы Docker'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ADM-019 Основы Docker\n\nДата проведения к
+ урса: 02.09.2020-08.09.2020\nВремя: 11:00-14:30\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=102858&ID_TIME=103193\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

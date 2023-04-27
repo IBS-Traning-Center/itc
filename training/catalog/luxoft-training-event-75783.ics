@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170909T110811CEST-4406VnRD4B@185.26.112.96
+DTSTAMP:20170909T090811Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-029 Школа тестирования. Часть 5. Пр
+ актикум по тест-дизайну\n\nДата проведени
+ я курса: 27.11.2017-30.11.2017\nВремя: 10:00-14:00\n\nРеги�
+ �трация и подробнее о курсе:\nhttp://www.luxoft-trai
+ ning.ru/training/catalog/course.html?ID=29291&ID_TIME=75783\n\n
+DTSTART:20171127T100000
+DTEND:20171130T140000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Школа тестирования. Часть 5. Практикум п�
+ � тест-дизайну'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-029 Школа тестирования. Часть 5. Пр
+ актикум по тест-дизайну\n\nДата проведени
+ я курса: 27.11.2017-30.11.2017\nВремя: 10:00-14:00\n\nРеги�
+ �трация и подробнее о курсе:\nhttp://www.luxoft-trai
+ ning.ru/training/catalog/course.html?ID=29291&ID_TIME=75783\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180723T082254CEST-7171IsksIz@185.26.112.96
+DTSTAMP:20180723T062254Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-006_NET Рефакторинг кода .NET\n\nДата п
+ роведения курса: 23.07.2018-25.07.2018\nВремя: 10:00-18
+ :00\n\nРегистрация и подробнее о курсе:\nhttp:/
+ /www.luxoft-training.ru/training/catalog/course.html?ID=44877&ID_TIME=8044
+ 8\n\n
+DTSTART:20180723T100000
+DTEND:20180725T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Рефакторинг кода .NET'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-006_NET Рефакторинг кода .NET\n\nДата п
+ роведения курса: 23.07.2018-25.07.2018\nВремя: 10:00-18
+ :00\n\nРегистрация и подробнее о курсе:\nhttp:/
+ /www.luxoft-training.ru/training/catalog/course.html?ID=44877&ID_TIME=8044
+ 8\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20150213T213122CET-1668eas366@50.57.83.146
+DTSTAMP:20150213T203122Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-012 Обзор JAVA-технологий разработк
+ и ПО\n\nДата проведения курса: 26.02.2015-27.02.2015
+ \nВремя: 18:00-20:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=6019&ID_TIME=53299\n\n
+DTSTART:20150226T180000
+DTEND:20150227T200000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Обзор JAVA-технологий разработки ПО'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-012 Обзор JAVA-технологий разработк
+ и ПО\n\nДата проведения курса: 26.02.2015-27.02.2015
+ \nВремя: 18:00-20:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=6019&ID_TIME=53299\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

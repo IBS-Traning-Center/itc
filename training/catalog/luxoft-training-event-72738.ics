@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170528T180544CEST-7123t398e3@185.26.112.96
+DTSTAMP:20170528T160544Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:NET-001 Основы .NET разработки и языка C#
+ \n\nДата проведения курса: 26.06.2017-13.07.2017\nВр�
+ �мя: 10:00-13:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=234
+ 96&ID_TIME=72738\n\n
+DTSTART:20170626T100000
+DTEND:20170713T130000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы .NET разработки и языка C#'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:NET-001 Основы .NET разработки и языка C#
+ \n\nДата проведения курса: 26.06.2017-13.07.2017\nВр�
+ �мя: 10:00-13:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=234
+ 96&ID_TIME=72738\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

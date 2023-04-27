@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170608T193455CEST-9063VwK0ad@185.26.112.96
+DTSTAMP:20170608T173455Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-027 Управление портфелем активов
+ \n\nДата проведения курса: 10.08.2017-11.08.2017\nВр�
+ �мя: 10:00-14:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=633
+ 49&ID_TIME=72714\n\n
+DTSTART:20170810T100000
+DTEND:20170811T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Управление портфелем активов'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-027 Управление портфелем активов
+ \n\nДата проведения курса: 10.08.2017-11.08.2017\nВр�
+ �мя: 10:00-14:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=633
+ 49&ID_TIME=72714\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

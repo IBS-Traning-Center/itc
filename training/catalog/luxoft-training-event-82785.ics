@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20181213T211404CET-1540Z61U3c@185.26.112.96
+DTSTAMP:20181213T201404Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-019 Разработка мобильных приложе�
+ �ий на React Native\n\nДата проведения курса: 11.12
+ .2018-14.12.2018\nВремя: 11:00-15:30 (UTC+3)\n\nРегистраци�
+ � и подробнее о курсе:\nhttp://www.luxoft-training.ru/trai
+ ning/catalog/course.html?ID=79754&ID_TIME=82785\n\n
+DTSTART:20181211T110000
+DTEND:20181214T153000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Разработка мобильных приложений на React N
+ ative'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-019 Разработка мобильных приложе�
+ �ий на React Native\n\nДата проведения курса: 11.12
+ .2018-14.12.2018\nВремя: 11:00-15:30 (UTC+3)\n\nРегистраци�
+ � и подробнее о курсе:\nhttp://www.luxoft-training.ru/trai
+ ning/catalog/course.html?ID=79754&ID_TIME=82785\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

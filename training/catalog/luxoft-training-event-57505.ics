@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160214T034726CET-88718JG0ap@185.26.112.96
+DTSTAMP:20160214T024726Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-007 Эффективная межличностная ком
+ муникация для команды ИТ-проекта\n\nДата �
+ �роведения курса: 15.02.2016-16.02.2016\nВремя: 10:00-1
+ 8:00\n\nРегистрация и подробнее о курсе:\nhttp:
+ //www.luxoft-training.ru/training/catalog/course.html?ID=8880&ID_TIME=5750
+ 5\n\n
+DTSTART:20160215T100000
+DTEND:20160216T180000
+LOCATION:Одесса
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Эффективная межличностная коммуникаци�
+ � для команды ИТ-проекта'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-007 Эффективная межличностная ком
+ муникация для команды ИТ-проекта\n\nДата �
+ �роведения курса: 15.02.2016-16.02.2016\nВремя: 10:00-1
+ 8:00\n\nРегистрация и подробнее о курсе:\nhttp:
+ //www.luxoft-training.ru/training/catalog/course.html?ID=8880&ID_TIME=5750
+ 5\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

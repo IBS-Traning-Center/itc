@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20230408T201354CEST-9859mC3Av6@82.146.55.227
+DTSTAMP:20230408T181354Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-070 Проектирование интеграционны
+ х решений\n\nДата проведения курса: 24.07.2023-
+ 28.07.2023\nВремя: 9:00-13:00\n\nРегистрация и подро
+ бнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/co
+ urse.html?ID=108973&ID_TIME=126493\n\n
+DTSTART:20230724T090000
+DTEND:20230728T130000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Проектирование интеграционных решений'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-070 Проектирование интеграционны
+ х решений\n\nДата проведения курса: 24.07.2023-
+ 28.07.2023\nВремя: 9:00-13:00\n\nРегистрация и подро
+ бнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/co
+ urse.html?ID=108973&ID_TIME=126493\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

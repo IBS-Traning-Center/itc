@@ -1,0 +1,486 @@
+
+=======================2019-09-20 13:38:43=======================
+START UNDER CRON
+
+=======================2019-09-20 13:38:43=======================
+START PARSING
+
+=======================2019-09-20 13:38:43=======================
+END PARSING
+Bucharest, ARC-001, Approved, 25.09.2019 - 27.09.2019, Stefanescu, Radu-Cristian <-------- UPDATED
+Bucharest, JVA-007, Approved, 16.12.2019 - 20.12.2019, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, NET-008, Cancelled, 03.10.2019 - 04.10.2019, Tanase, Constantin <-------- ADDED
+Bucharest, REQ-052, Approved, 26.09.2019 - 27.09.2019, Naghel, Lucian <-------- UPDATED
+Bucharest, SQA-028, Approved, 19.09.2019 - 20.09.2019, Pirvulescu, Andrei <-------- UPDATED
+Bucharest, SCRIPT-002, Approved, 25.09.2019 - 27.09.2019, Cumpanasu, Malin <-------- UPDATED
+Bucharest, , Approved, 09.12.2019 - 11.12.2019, Naghel, Lucian <-------- UPDATED
+Bucharest, SDP-042, Cancelled, 01.10.2019 - 04.10.2019, Velea, Iulian-Laurentiu <-------- UPDATED
+Moscow, DEV-010, Approved, 25.09.2019 - 26.09.2019, Korotkov, Vladimir <-------- UPDATED
+Moscow, REQ-039, Approved, 19.09.2019 - 20.09.2019, Burko, Oleg <-------- UPDATED
+Moscow, WEB-012, Approved, 30.09.2019 - 04.10.2019, Sonkin, Vladimir <-------- UPDATED
+Moscow, REQ-038, Approved, 05.12.2019 - 06.12.2019, Burko, Oleg <-------- UPDATED
+Moscow, REQ-055, Approved, 21.10.2019 - 22.10.2019, Burko, Oleg <-------- UPDATED
+Moscow, SDP-004, Approved, 21.10.2019 - 23.10.2019, Koretskiy, Alexey <-------- UPDATED
+Moscow, WEB-013, Approved, 24.10.2019 - 24.10.2019, Sonkin, Vladimir <-------- UPDATED
+Moscow, WEB-016, Approved, 25.10.2019 - 25.10.2019, Sonkin, Vladimir <-------- UPDATED
+Moscow, ARC-003, Approved, 29.10.2019 - 31.10.2019, Breiman, Aleksandr <-------- UPDATED
+Moscow, EAS-017, Approved, 23.10.2019 - 25.10.2019, Panteleev, Maksim <-------- UPDATED
+Moscow, SCRIPT-006, Approved, 02.12.2019 - 06.12.2019, Tsytovich, Pavel <-------- UPDATED
+Kiev, SCRIPT-003, Approved, 31.10.2019 - 01.11.2019, Zamyatin, Denys <-------- UPDATED
+Kiev, SDP-031, Approved, 05.11.2019 - 08.11.2019, Ryzhykh, Denys <-------- UPDATED
+Kiev, ARC-013, Cancelled, 25.09.2019 - 27.09.2019, Teslenko, Victor <-------- UPDATED
+Kiev, ARC-013, Cancelled, 25.09.2019 - 27.09.2019, Teslenko, Victor <-------- UPDATED
+Kiev, JVA-051, Approved, 04.11.2019 - 04.11.2019, Yushchenko, Oleh <-------- NOT_FOUND
+Kiev, JVA-052, Approved, 28.10.2019 - 30.10.2019, Yushchenko, Oleh <-------- NOT_FOUND
+Kiev, JVA-055, Approved, 07.11.2019 - 07.11.2019, Yushchenko, Oleh <-------- NOT_FOUND
+Wroclaw, SQA-017, Approved, 04.10.2019 - 04.10.2019, Paulouski, Ivan <-------- UPDATED
+St.-Petersburg, DEV-007, Approved, 17.10.2019 - 18.10.2019, Suslov, Maxim <-------- UPDATED
+St.-Petersburg, SS-002_RUS, Approved, 26.09.2019 - 27.09.2019, Gedzberg, Mikhail <-------- UPDATED
+Krakow, OFFICE-003, Approved, 22.10.2019 - 23.10.2019, Baran, Zbigniew <-------- UPDATED
+
+=======================2019-09-20 13:41:24=======================
+START UNDER CRON
+
+=======================2019-09-20 13:41:24=======================
+START PARSING
+
+=======================2019-09-20 13:41:24=======================
+END PARSING
+
+=======================2019-09-25 14:39:04=======================
+START UNDER CRON
+
+=======================2019-09-25 14:39:04=======================
+START PARSING
+
+=======================2019-09-25 14:39:04=======================
+END PARSING
+Bucharest, 2a5aa083-5092-4d5b-a9e0-e9c1a5f1cabb, DB-018, Approved, 14.10.2019 - 21.10.2019, Vacaroiu, Cosmin <-------- UPDATED
+Bucharest, b8ce1a42-ea36-4726-85d5-49ccf95a06cb, JVA-010, Approved, 07.10.2019 - 09.10.2019, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, ffcf5c83-26eb-4591-ab96-2ef614e28950, JVA-030, Approved, 01.10.2019 - 03.10.2019, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, d5245de5-646d-41be-aa39-8bad09dabf28, JVA-034, Approved, 10.10.2019 - 10.10.2019, Popa, Ioan-Florin <-------- UPDATED
+Bucharest, d0d97090-e353-4eb1-afeb-5e393bb722ac, REQ-053, Approved, 11.10.2019 - 11.10.2019, Naghel, Lucian <-------- UPDATED
+Bucharest, fd4acf45-ddc7-4dc4-9e3f-dec6fed9d536, SDP-004_ENG, Cancelled, 07.10.2019 - 10.10.2019, Vasilescu, Cornel-Constantin <-------- ADDED
+Bucharest, 38ec11f0-003b-4ebf-b344-2c7d561b81fb, SQA-017, Approved, 25.10.2019 - 25.10.2019, Radu, Adrian <-------- UPDATED
+Bucharest, c3acbf39-2e21-4d91-9171-f411561d3655, SQA-030, Approved, 17.10.2019 - 18.10.2019, Pirvulescu, Andrei <-------- UPDATED
+Bucharest, 3d6418b4-ff51-42f8-b86d-bb8174e7489c, SCRIPT-002, Approved, 25.09.2019 - 27.09.2019, Cumpanasu, Malin <-------- UPDATED
+Dnepropetrovsk, 950a0d2f-7676-4e84-96e9-0130179bbbfe, DEV-007, Approved, 09.10.2019 - 10.10.2019, Yushchenko, Oleh <-------- UPDATED
+Kiev, 988c5fe2-71d3-4264-b50e-bd51dca1a532, DEV-010, Approved, 18.11.2019 - 19.11.2019, Oseledko, Andrii <-------- UPDATED
+Odessa, 53e2e417-3daa-4d3f-bb7b-1ef1b47b8b42, SCRIPT-003, Approved, 16.10.2019 - 18.10.2019, Savlushyn, Dmytro <-------- UPDATED
+Moscow, 8c6af8b2-2a71-4fde-8d95-35333823fe93, EAS-014, Cancelled, 16.10.2019 - 18.10.2019, Breiman, Aleksandr <-------- UPDATED
+Moscow, 8c6af8b2-2a71-4fde-8d95-35333823fe93, EAS-014, Cancelled, 16.10.2019 - 18.10.2019, Breiman, Aleksandr <-------- UPDATED
+Moscow, 350fe9b3-2982-4a57-8c8d-e2ddae6eb322, EAS-020, Approved, 16.10.2019 - 18.10.2019, Breiman, Aleksandr <-------- UPDATED
+Moscow, 6b3e8bcc-ce64-4427-a282-12d8d6383d0f, REQ-054, Cancelled, 14.10.2019 - 15.10.2019, Petrov, Aleksey <-------- UPDATED
+Moscow, 6b3e8bcc-ce64-4427-a282-12d8d6383d0f, REQ-054, Cancelled, 14.10.2019 - 15.10.2019, Petrov, Aleksey <-------- UPDATED
+Moscow, 4b273f90-993f-440d-8c74-ef60ef68fd30, REQ-061, Cancelled, 14.10.2019 - 15.10.2019, Koptelov, Andrei <-------- UPDATED
+Moscow, 4b273f90-993f-440d-8c74-ef60ef68fd30, REQ-061, Cancelled, 14.10.2019 - 15.10.2019, Koptelov, Andrei <-------- UPDATED
+
+=======================2019-09-25 14:45:10=======================
+START UNDER CRON
+
+=======================2019-09-25 14:45:10=======================
+START PARSING
+
+=======================2019-09-25 14:45:10=======================
+END PARSING
+Bucharest, 2a5aa083-5092-4d5b-a9e0-e9c1a5f1cabb, DB-018, Approved, 14.10.2019 - 21.10.2019, Vacaroiu, Cosmin <-------- UPDATED
+Bucharest, b8ce1a42-ea36-4726-85d5-49ccf95a06cb, JVA-010, Approved, 07.10.2019 - 09.10.2019, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, ffcf5c83-26eb-4591-ab96-2ef614e28950, JVA-030, Approved, 01.10.2019 - 03.10.2019, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, d5245de5-646d-41be-aa39-8bad09dabf28, JVA-034, Approved, 10.10.2019 - 10.10.2019, Popa, Ioan-Florin <-------- UPDATED
+Bucharest, d0d97090-e353-4eb1-afeb-5e393bb722ac, REQ-053, Approved, 11.10.2019 - 11.10.2019, Naghel, Lucian <-------- UPDATED
+Bucharest, fd4acf45-ddc7-4dc4-9e3f-dec6fed9d536, SDP-004_ENG, Cancelled, 07.10.2019 - 10.10.2019, Vasilescu, Cornel-Constantin <-------- UPDATED
+Bucharest, 38ec11f0-003b-4ebf-b344-2c7d561b81fb, SQA-017, Approved, 25.10.2019 - 25.10.2019, Radu, Adrian <-------- UPDATED
+Bucharest, c3acbf39-2e21-4d91-9171-f411561d3655, SQA-030, Approved, 17.10.2019 - 18.10.2019, Pirvulescu, Andrei <-------- UPDATED
+Bucharest, 3d6418b4-ff51-42f8-b86d-bb8174e7489c, SCRIPT-002, Approved, 25.09.2019 - 27.09.2019, Cumpanasu, Malin <-------- UPDATED
+Dnepropetrovsk, 950a0d2f-7676-4e84-96e9-0130179bbbfe, DEV-007, Approved, 09.10.2019 - 10.10.2019, Yushchenko, Oleh <-------- UPDATED
+
+=======================2019-09-25 14:46:35=======================
+START UNDER CRON
+
+=======================2019-09-25 14:46:35=======================
+START PARSING
+
+=======================2019-09-25 14:46:35=======================
+END PARSING
+Bucharest, 2a5aa083-5092-4d5b-a9e0-e9c1a5f1cabb, DB-018, Approved, 14.10.2019 - 21.10.2019, Vacaroiu, Cosmin <-------- UPDATED
+Bucharest, b8ce1a42-ea36-4726-85d5-49ccf95a06cb, JVA-010, Approved, 07.10.2019 - 09.10.2019, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, ffcf5c83-26eb-4591-ab96-2ef614e28950, JVA-030, Approved, 01.10.2019 - 03.10.2019, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, d5245de5-646d-41be-aa39-8bad09dabf28, JVA-034, Approved, 10.10.2019 - 10.10.2019, Popa, Ioan-Florin <-------- UPDATED
+Bucharest, d0d97090-e353-4eb1-afeb-5e393bb722ac, REQ-053, Approved, 11.10.2019 - 11.10.2019, Naghel, Lucian <-------- UPDATED
+Bucharest, fd4acf45-ddc7-4dc4-9e3f-dec6fed9d536, SDP-004_ENG, Cancelled, 07.10.2019 - 10.10.2019, Vasilescu, Cornel-Constantin <-------- UPDATED
+Bucharest, 38ec11f0-003b-4ebf-b344-2c7d561b81fb, SQA-017, Approved, 25.10.2019 - 25.10.2019, Radu, Adrian <-------- UPDATED
+Bucharest, c3acbf39-2e21-4d91-9171-f411561d3655, SQA-030, Approved, 17.10.2019 - 18.10.2019, Pirvulescu, Andrei <-------- UPDATED
+Bucharest, 3d6418b4-ff51-42f8-b86d-bb8174e7489c, SCRIPT-002, Approved, 25.09.2019 - 27.09.2019, Cumpanasu, Malin <-------- UPDATED
+Dnepropetrovsk, 950a0d2f-7676-4e84-96e9-0130179bbbfe, DEV-007, Approved, 09.10.2019 - 10.10.2019, Yushchenko, Oleh <-------- UPDATED
+Kiev, 988c5fe2-71d3-4264-b50e-bd51dca1a532, DEV-010, Approved, 18.11.2019 - 19.11.2019, Oseledko, Andrii <-------- UPDATED
+Odessa, 53e2e417-3daa-4d3f-bb7b-1ef1b47b8b42, SCRIPT-003, Approved, 16.10.2019 - 18.10.2019, Savlushyn, Dmytro <-------- UPDATED
+Moscow, 8c6af8b2-2a71-4fde-8d95-35333823fe93, EAS-014, Cancelled, 16.10.2019 - 18.10.2019, Breiman, Aleksandr <-------- UPDATED
+Moscow, 8c6af8b2-2a71-4fde-8d95-35333823fe93, EAS-014, Cancelled, 16.10.2019 - 18.10.2019, Breiman, Aleksandr <-------- UPDATED
+Moscow, 350fe9b3-2982-4a57-8c8d-e2ddae6eb322, EAS-020, Approved, 16.10.2019 - 18.10.2019, Breiman, Aleksandr <-------- UPDATED
+Moscow, 6b3e8bcc-ce64-4427-a282-12d8d6383d0f, REQ-054, Cancelled, 14.10.2019 - 15.10.2019, Petrov, Aleksey <-------- UPDATED
+Moscow, 6b3e8bcc-ce64-4427-a282-12d8d6383d0f, REQ-054, Cancelled, 14.10.2019 - 15.10.2019, Petrov, Aleksey <-------- UPDATED
+Moscow, 4b273f90-993f-440d-8c74-ef60ef68fd30, REQ-061, Cancelled, 14.10.2019 - 15.10.2019, Koptelov, Andrei <-------- UPDATED
+Moscow, 4b273f90-993f-440d-8c74-ef60ef68fd30, REQ-061, Cancelled, 14.10.2019 - 15.10.2019, Koptelov, Andrei <-------- UPDATED
+
+=======================2020-02-13 11:40:54=======================
+START UNDER CRON
+
+=======================2020-02-13 11:40:54=======================
+START PARSING
+
+=======================2020-02-13 11:40:54=======================
+END PARSING
+Moscow, 6a72fe68-74d1-4f68-8929-014b78568b5f, , Approved, 19.03.2020 - 20.03.2020, Suslov, Maxim <-------- UPDATED
+Moscow, 4de7b020-b79d-4653-9d2b-a2300678043e, BAN-001, Approved, 23.03.2020 - 23.03.2020, Nosatova, Olga <-------- UPDATED
+Moscow, 05e3d8d4-c625-4ca6-af26-cf92764d48c5, DB-021, Cancelled, 02.03.2020 - 05.03.2020, Korotkov, Vladimir <-------- UPDATED
+Moscow, 05e3d8d4-c625-4ca6-af26-cf92764d48c5, DB-021, Cancelled, 02.03.2020 - 05.03.2020, Korotkov, Vladimir <-------- UPDATED
+Moscow, 3934f747-f212-41be-b001-db5b0cf924bb, DEV-010, Approved, 10.03.2020 - 11.03.2020, Parshukov, Sergey <-------- UPDATED
+Moscow, 489f2188-d6f7-4be2-b5fa-f20027ad33e2, EAS-011, Approved, 25.03.2020 - 26.03.2020, Smirnov, Denis <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 12.03.2020 - 13.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 0c3ba498-520c-4c87-97ba-d1088f9ef63e, REQ-031, Approved, 16.03.2020 - 17.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 587e2715-7cfe-4d4c-94be-97b22808af9b, REQ-039, Approved, 23.03.2020 - 24.03.2020, Burko, Oleg <-------- UPDATED
+Moscow, 657e91da-b811-4be5-8580-c71ea192bc2f, REQ-058, Cancelled, 02.03.2020 - 03.03.2020, Koptelov, Andrei <-------- UPDATED
+Moscow, 657e91da-b811-4be5-8580-c71ea192bc2f, REQ-058, Cancelled, 02.03.2020 - 03.03.2020, Koptelov, Andrei <-------- UPDATED
+Moscow, 5b3cecbe-9acb-439b-b278-26c487916650, SDP-035, Approved, 30.03.2020 - 31.03.2020, Mukhina, Sviatlana <-------- UPDATED
+Moscow, 9b9bf19b-6d49-425a-b192-94862e890901, WEB-005, Approved, 26.03.2020 - 27.03.2020, Lapin, Vyacheslav <-------- UPDATED
+Moscow, 50173631-e44a-4b9b-8ee6-8434ad6e4014, WEB-012, Approved, 17.03.2020 - 20.03.2020, Pichugin, Timur <-------- UPDATED
+Moscow, 740c1eeb-4033-447f-acee-26831d1d1a25, WEB-021, Approved, 23.03.2020 - 27.03.2020, Sonkin, Vladimir <-------- UPDATED
+Moscow, c0e170d2-1166-4644-b8ca-43e1c8be81ad, WEB-021, Approved, 02.03.2020 - 06.03.2020, Sonkin, Vladimir <-------- UPDATED
+Moscow, 88df9f0e-f147-42cb-bce1-ccac536fef74, ARC-001, Approved, 17.02.2020 - 19.02.2020, Ulanov, Alexander <-------- UPDATED
+Moscow, 119f614d-6f19-448e-8983-1cb9f96c4106, ATL-014, Approved, 01.06.2020 - 01.06.2020, Glotov, Artem <-------- UPDATED
+Moscow, 5b5920e3-e8dd-4d44-915f-797dcbe66b47, ATL-016, Approved, 05.06.2020 - 05.06.2020, Glotov, Artem <-------- UPDATED
+Moscow, c21aed96-c126-49da-ab01-be140fe38b56, ATL-017, Approved, 02.06.2020 - 03.06.2020, Glotov, Artem <-------- UPDATED
+Moscow, 37c34dbc-3832-4e38-a12d-a9337de6dd40, ATL-018, Approved, 04.06.2020 - 04.06.2020, Glotov, Artem <-------- ADDED
+Moscow, cdb6e0ca-8f1f-44d9-b657-dbc55a57a6f5, EAS-014, Approved, 02.06.2020 - 04.06.2020, Breiman, Aleksandr <-------- ADDED
+Moscow, a09940dc-6002-41ec-b162-501fb5124ce7, REQ-002, Approved, 17.02.2020 - 18.02.2020, Burko, Oleg <-------- ADDED
+Moscow, 033d40ce-df01-46fd-94db-efce52a91519, REQ-006, Approved, 14.02.2020 - 14.02.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 39c08dc5-08be-4713-9fc6-aacbf0e4368d, REQ-052, Cancelled, 17.02.2020 - 18.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, 39c08dc5-08be-4713-9fc6-aacbf0e4368d, REQ-052, Cancelled, 17.02.2020 - 18.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, 5dfc92c7-79df-40c4-ab2d-accc692bda34, REQ-063, Approved, 25.03.2020 - 25.03.2020, Burko, Oleg <-------- UPDATED
+Moscow, 40c028fa-c417-450e-946e-803693e5f5a9, REQ-065, Approved, 06.04.2020 - 07.04.2020, Burko, Oleg <-------- ADDED
+Moscow, 55d9339e-56cc-4a3e-9976-57b7673fb3b4, SDP-033, Approved, 16.03.2020 - 17.03.2020, Makarkin, Sergey <-------- UPDATED
+Moscow, 4297b94b-ea59-44c6-8c9d-af693cae0ccc, SQA-030, Approved, 09.04.2020 - 10.04.2020, Alexandrov, Alexandr <-------- ADDED
+Moscow, fb0ec63f-8e12-48f2-8b6b-98d14143e07d, SQA-QA-010, Approved, 01.04.2020 - 03.04.2020, Alexandrov, Alexandr <-------- ADDED
+Moscow, 9184e1b5-b993-4795-be94-f47852bd2df1, WEB-007, Approved, 06.04.2020 - 10.04.2020, Pichugin, Timur <-------- ADDED
+Bucharest, 34536324-07e9-483d-a5dc-d525b6045e21, DEV-018, Approved, 22.04.2020 - 24.04.2020, Tudorache, Catalin-Florin <-------- ADDED
+Bucharest, 7adb2a4b-7e54-4d61-a753-60bc7bfb86fb, JVA-017, Approved, 02.03.2020 - 06.03.2020, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, 0fb59565-2425-49fe-b331-acf86a12099e, NET-010, Cancelled, 10.02.2020 - 10.02.2020, Iancu, Bogdan <-------- NOT_FOUND
+Bucharest, 56bd6594-0537-42df-b1a1-3088ff8d3ed0, REQ-064, Approved, 13.05.2020 - 15.05.2020, Naghel, Lucian <-------- ADDED
+Virtual, 2756610a-f24a-48b7-9a0c-cd5762e1aacd, REQ-028, Approved, 18.05.2020 - 21.05.2020, Pryimak, Dmytro <-------- ADDED
+Kiev, 064fc3b6-4285-4274-b35f-7481f1561128, SS-063, Approved, 18.02.2020 - 18.02.2020, Novik, Sergiy <-------- NOT_FOUND
+Kiev, 37ca4275-64a1-4a86-bcaa-3a6bbdfd058b, SS-079, Approved, 17.02.2020 - 17.02.2020, Novik, Sergiy <-------- NOT_FOUND
+
+=======================2020-02-13 11:44:23=======================
+START UNDER CRON
+
+=======================2020-02-13 11:44:23=======================
+START PARSING
+
+=======================2020-02-13 11:44:23=======================
+END PARSING
+Moscow, 6a72fe68-74d1-4f68-8929-014b78568b5f, , Approved, 19.03.2020 - 20.03.2020, Suslov, Maxim <-------- UPDATED
+Moscow, 4de7b020-b79d-4653-9d2b-a2300678043e, BAN-001, Approved, 23.03.2020 - 23.03.2020, Nosatova, Olga <-------- UPDATED
+Moscow, 05e3d8d4-c625-4ca6-af26-cf92764d48c5, DB-021, Cancelled, 02.03.2020 - 05.03.2020, Korotkov, Vladimir <-------- UPDATED
+Moscow, 05e3d8d4-c625-4ca6-af26-cf92764d48c5, DB-021, Cancelled, 02.03.2020 - 05.03.2020, Korotkov, Vladimir <-------- UPDATED
+Moscow, 3934f747-f212-41be-b001-db5b0cf924bb, DEV-010, Approved, 10.03.2020 - 11.03.2020, Parshukov, Sergey <-------- UPDATED
+Moscow, 489f2188-d6f7-4be2-b5fa-f20027ad33e2, EAS-011, Approved, 25.03.2020 - 26.03.2020, Smirnov, Denis <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 12.03.2020 - 13.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 0c3ba498-520c-4c87-97ba-d1088f9ef63e, REQ-031, Approved, 16.03.2020 - 17.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 587e2715-7cfe-4d4c-94be-97b22808af9b, REQ-039, Approved, 23.03.2020 - 24.03.2020, Burko, Oleg <-------- UPDATED
+Moscow, 657e91da-b811-4be5-8580-c71ea192bc2f, REQ-058, Cancelled, 02.03.2020 - 03.03.2020, Koptelov, Andrei <-------- UPDATED
+Moscow, 657e91da-b811-4be5-8580-c71ea192bc2f, REQ-058, Cancelled, 02.03.2020 - 03.03.2020, Koptelov, Andrei <-------- UPDATED
+Moscow, 5b3cecbe-9acb-439b-b278-26c487916650, SDP-035, Approved, 30.03.2020 - 31.03.2020, Mukhina, Sviatlana <-------- UPDATED
+Moscow, 9b9bf19b-6d49-425a-b192-94862e890901, WEB-005, Approved, 26.03.2020 - 27.03.2020, Lapin, Vyacheslav <-------- UPDATED
+Moscow, 50173631-e44a-4b9b-8ee6-8434ad6e4014, WEB-012, Approved, 17.03.2020 - 20.03.2020, Pichugin, Timur <-------- UPDATED
+Moscow, 740c1eeb-4033-447f-acee-26831d1d1a25, WEB-021, Approved, 23.03.2020 - 27.03.2020, Sonkin, Vladimir <-------- UPDATED
+Moscow, c0e170d2-1166-4644-b8ca-43e1c8be81ad, WEB-021, Approved, 02.03.2020 - 06.03.2020, Sonkin, Vladimir <-------- UPDATED
+Moscow, 88df9f0e-f147-42cb-bce1-ccac536fef74, ARC-001, Approved, 17.02.2020 - 19.02.2020, Ulanov, Alexander <-------- UPDATED
+Moscow, 119f614d-6f19-448e-8983-1cb9f96c4106, ATL-014, Approved, 01.06.2020 - 01.06.2020, Glotov, Artem <-------- UPDATED
+Moscow, 5b5920e3-e8dd-4d44-915f-797dcbe66b47, ATL-016, Approved, 05.06.2020 - 05.06.2020, Glotov, Artem <-------- UPDATED
+Moscow, c21aed96-c126-49da-ab01-be140fe38b56, ATL-017, Approved, 02.06.2020 - 03.06.2020, Glotov, Artem <-------- UPDATED
+Moscow, 37c34dbc-3832-4e38-a12d-a9337de6dd40, ATL-018, Approved, 04.06.2020 - 04.06.2020, Glotov, Artem <-------- UPDATED
+Moscow, cdb6e0ca-8f1f-44d9-b657-dbc55a57a6f5, EAS-014, Approved, 02.06.2020 - 04.06.2020, Breiman, Aleksandr <-------- UPDATED
+Moscow, a09940dc-6002-41ec-b162-501fb5124ce7, REQ-002, Approved, 17.02.2020 - 18.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, 033d40ce-df01-46fd-94db-efce52a91519, REQ-006, Approved, 14.02.2020 - 14.02.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 39c08dc5-08be-4713-9fc6-aacbf0e4368d, REQ-052, Cancelled, 17.02.2020 - 18.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, 39c08dc5-08be-4713-9fc6-aacbf0e4368d, REQ-052, Cancelled, 17.02.2020 - 18.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, 5dfc92c7-79df-40c4-ab2d-accc692bda34, REQ-063, Approved, 25.03.2020 - 25.03.2020, Burko, Oleg <-------- UPDATED
+Moscow, 40c028fa-c417-450e-946e-803693e5f5a9, REQ-065, Approved, 06.04.2020 - 07.04.2020, Burko, Oleg <-------- UPDATED
+Moscow, 55d9339e-56cc-4a3e-9976-57b7673fb3b4, SDP-033, Approved, 16.03.2020 - 17.03.2020, Makarkin, Sergey <-------- UPDATED
+Moscow, 4297b94b-ea59-44c6-8c9d-af693cae0ccc, SQA-030, Approved, 09.04.2020 - 10.04.2020, Alexandrov, Alexandr <-------- UPDATED
+Moscow, fb0ec63f-8e12-48f2-8b6b-98d14143e07d, SQA-QA-010, Approved, 01.04.2020 - 03.04.2020, Alexandrov, Alexandr <-------- UPDATED
+Moscow, 9184e1b5-b993-4795-be94-f47852bd2df1, WEB-007, Approved, 06.04.2020 - 10.04.2020, Pichugin, Timur <-------- UPDATED
+Bucharest, 34536324-07e9-483d-a5dc-d525b6045e21, DEV-018, Approved, 22.04.2020 - 24.04.2020, Tudorache, Catalin-Florin <-------- UPDATED
+Bucharest, 7adb2a4b-7e54-4d61-a753-60bc7bfb86fb, JVA-017, Approved, 02.03.2020 - 06.03.2020, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, 0fb59565-2425-49fe-b331-acf86a12099e, NET-010, Cancelled, 10.02.2020 - 10.02.2020, Iancu, Bogdan <-------- NOT_FOUND
+Bucharest, 56bd6594-0537-42df-b1a1-3088ff8d3ed0, REQ-064, Approved, 13.05.2020 - 15.05.2020, Naghel, Lucian <-------- UPDATED
+Virtual, 2756610a-f24a-48b7-9a0c-cd5762e1aacd, REQ-028, Approved, 18.05.2020 - 21.05.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 064fc3b6-4285-4274-b35f-7481f1561128, SS-063, Approved, 18.02.2020 - 18.02.2020, Novik, Sergiy <-------- NOT_FOUND
+Kiev, 37ca4275-64a1-4a86-bcaa-3a6bbdfd058b, SS-079, Approved, 17.02.2020 - 17.02.2020, Novik, Sergiy <-------- NOT_FOUND
+
+=======================2020-02-14 16:16:08=======================
+START UNDER CRON
+
+=======================2020-02-14 16:16:08=======================
+START PARSING
+
+=======================2020-02-14 16:16:08=======================
+END PARSING
+Kiev, 9f367f6d-5b9b-4222-9ed7-66f1546feb61, DEV-014, Approved, 19.02.2020 - 21.02.2020, Voloshyn, Dmytro <-------- NOT_FOUND
+Kiev, 32b28880-e7f2-4594-80bb-51ea962f5c9b, REQ-001, Cancelled, 20.02.2020 - 21.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 32b28880-e7f2-4594-80bb-51ea962f5c9b, REQ-001, Cancelled, 20.02.2020 - 21.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 10381795-5d98-4796-9851-0f3a19b72d4c, REQ-056, Cancelled, 24.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 10381795-5d98-4796-9851-0f3a19b72d4c, REQ-056, Cancelled, 24.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 67ef0fe0-a86c-494d-b12b-126024f7f0ef, SS-011, Approved, 20.02.2020 - 21.02.2020, Novik, Sergiy <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Bucharest, 7b37d0eb-464c-44b9-977e-683173296c9f, SCRIPT-002, Approved, 28.04.2020 - 30.04.2020, Serbanescu, Georgiana-Elena <-------- ADDED
+Wroclaw, d9d46a26-bc51-481c-9a32-6ba31e425bc5, SDP-004_ENG, Approved, 20.04.2020 - 21.04.2020, Brzusnian, Krzysztof <-------- ADDED
+Wroclaw, 7c05664b-d909-4aaf-aa8d-cdbb611a220b, WEB-021, Approved, 07.04.2020 - 10.04.2020, Yushchenko, Oleh <-------- ADDED
+Wroclaw, 909f6bad-531c-4692-aa38-c8d128eaf4ab, WEB-022, Approved, 19.05.2020 - 22.05.2020, Pietrucha, Bartosz <-------- ADDED
+
+=======================2020-02-14 16:23:11=======================
+START UNDER CRON
+
+=======================2020-02-14 16:23:11=======================
+START PARSING
+
+=======================2020-02-14 16:23:11=======================
+END PARSING
+Kiev, 9f367f6d-5b9b-4222-9ed7-66f1546feb61, DEV-014, Approved, 19.02.2020 - 21.02.2020, Voloshyn, Dmytro <-------- NOT_FOUND
+Kiev, 32b28880-e7f2-4594-80bb-51ea962f5c9b, REQ-001, Cancelled, 20.02.2020 - 21.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 32b28880-e7f2-4594-80bb-51ea962f5c9b, REQ-001, Cancelled, 20.02.2020 - 21.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 10381795-5d98-4796-9851-0f3a19b72d4c, REQ-056, Cancelled, 24.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 10381795-5d98-4796-9851-0f3a19b72d4c, REQ-056, Cancelled, 24.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 67ef0fe0-a86c-494d-b12b-126024f7f0ef, SS-011, Approved, 20.02.2020 - 21.02.2020, Novik, Sergiy <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Bucharest, 7b37d0eb-464c-44b9-977e-683173296c9f, SCRIPT-002, Approved, 28.04.2020 - 30.04.2020, Serbanescu, Georgiana-Elena <-------- UPDATED
+Wroclaw, d9d46a26-bc51-481c-9a32-6ba31e425bc5, SDP-004_ENG, Approved, 20.04.2020 - 21.04.2020, Brzusnian, Krzysztof <-------- UPDATED
+Wroclaw, 7c05664b-d909-4aaf-aa8d-cdbb611a220b, WEB-021, Approved, 07.04.2020 - 10.04.2020, Yushchenko, Oleh <-------- UPDATED
+Wroclaw, 909f6bad-531c-4692-aa38-c8d128eaf4ab, WEB-022, Approved, 19.05.2020 - 22.05.2020, Pietrucha, Bartosz <-------- UPDATED
+
+=======================2020-02-14 18:29:08=======================
+START UNDER CRON
+
+=======================2020-02-14 18:29:08=======================
+START PARSING
+
+=======================2020-02-14 18:29:08=======================
+END PARSING
+Kiev, 9f367f6d-5b9b-4222-9ed7-66f1546feb61, DEV-014, Approved, 19.02.2020 - 21.02.2020, Voloshyn, Dmytro <-------- NOT_FOUND
+Kiev, 32b28880-e7f2-4594-80bb-51ea962f5c9b, REQ-001, Cancelled, 20.02.2020 - 21.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 32b28880-e7f2-4594-80bb-51ea962f5c9b, REQ-001, Cancelled, 20.02.2020 - 21.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 10381795-5d98-4796-9851-0f3a19b72d4c, REQ-056, Cancelled, 24.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 10381795-5d98-4796-9851-0f3a19b72d4c, REQ-056, Cancelled, 24.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Kiev, 67ef0fe0-a86c-494d-b12b-126024f7f0ef, SS-011, Approved, 20.02.2020 - 21.02.2020, Novik, Sergiy <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Bucharest, 7b37d0eb-464c-44b9-977e-683173296c9f, SCRIPT-002, Approved, 28.04.2020 - 30.04.2020, Serbanescu, Georgiana-Elena <-------- UPDATED
+Wroclaw, d9d46a26-bc51-481c-9a32-6ba31e425bc5, SDP-004_ENG, Approved, 20.04.2020 - 21.04.2020, Brzusnian, Krzysztof <-------- UPDATED
+Wroclaw, 7c05664b-d909-4aaf-aa8d-cdbb611a220b, WEB-021, Approved, 07.04.2020 - 10.04.2020, Yushchenko, Oleh <-------- UPDATED
+Wroclaw, 909f6bad-531c-4692-aa38-c8d128eaf4ab, WEB-022, Approved, 19.05.2020 - 22.05.2020, Pietrucha, Bartosz <-------- UPDATED
+
+=======================2020-02-17 14:56:21=======================
+START UNDER CRON
+
+=======================2020-02-17 14:56:21=======================
+START PARSING
+
+=======================2020-02-17 14:56:21=======================
+END PARSING
+Bucharest, f579d17d-a5e0-4717-98c5-c8bc0c423800, ADM-007, Approved, 25.02.2020 - 27.02.2020, Simion, Florin-Cristian <-------- UPDATED
+Moscow, 941bd46d-83f4-4179-bc0a-82186c7a55f7, ATL-014, Approved, 30.03.2020 - 30.03.2020, Glotov, Artem <-------- ADDED
+Moscow, d98839d7-24ff-4893-a80f-02f9ccfd232a, ATL-016, Approved, 03.04.2020 - 03.04.2020, Glotov, Artem <-------- ADDED
+Moscow, 7ccd77a5-bbd6-4716-bc41-110e706c911f, ATL-017, Approved, 31.03.2020 - 01.04.2020, Glotov, Artem <-------- ADDED
+Moscow, f19959d2-18d2-4894-9830-fb89aa99b7f0, ATL-018, Approved, 02.04.2020 - 02.04.2020, Glotov, Artem <-------- ADDED
+Moscow, 160ae7af-5bcc-4bfa-a240-509d16ce1ca3, DEV-017, Approved, 28.02.2020 - 28.02.2020, Pichugin, Timur <-------- UPDATED
+Moscow, 86523ccd-6b7a-4cd7-8378-5065614062c1, PM-007, Approved, 10.03.2020 - 12.03.2020, Sysolyatin, Dmitry <-------- UPDATED
+Moscow, e87443af-2a8b-4338-9c68-6287bd8ed00f, REQ-002, Approved, 27.02.2020 - 28.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 0e70dd45-0c93-41e5-8f17-ee91a70030c5, WEB-002, Approved, 28.02.2020 - 28.02.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, db993011-03b1-4911-acb9-d9325b37cc6a, C-005, Approved, 26.02.2020 - 28.02.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 3f02ea90-a78d-4f75-a62b-eb43b0795ae5, DEV-005, Approved, 25.05.2020 - 25.05.2020, Tsytovich, Pavel <-------- ADDED
+St.-Petersburg, 1f88b185-bb5b-4a40-a747-9dda5e671115, NET-003, Approved, 27.05.2020 - 27.05.2020, Tsytovich, Pavel <-------- ADDED
+St.-Petersburg, 787c3195-1bb1-43c8-b69f-ca6e82ee8ac4, NET-011, Approved, 26.05.2020 - 26.05.2020, Tsytovich, Pavel <-------- ADDED
+St.-Petersburg, 52d3a53f-9a9d-4891-bf8b-9d3db67f6d3a, WEB-005, Approved, 15.06.2020 - 16.06.2020, Lapin, Vyacheslav <-------- ADDED
+St.-Petersburg, 367eddef-c99d-46a5-b299-98ee81281c4e, WEB-006, Approved, 22.06.2020 - 23.06.2020, Lapin, Vyacheslav <-------- ADDED
+Kiev, 1a3c1f54-8aab-481b-8fdd-06fdf84c2bf9, REQ-055, Approved, 21.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- ADDED
+Virtual, 4f249b53-8783-4f27-b677-bbd44edc84b2, SQA-033, Approved, 06.05.2020 - 06.05.2020, Tsyganov, Denis <-------- ADDED
+Wroclaw, 29d3cf66-6460-4336-81d3-44f4ca4e3e3d, WEB-019, Approved, 15.04.2020 - 17.04.2020, Sonkin, Vladimir <-------- UPDATED
+
+=======================2020-02-18 13:07:24=======================
+START UNDER CRON
+
+=======================2020-02-18 13:07:24=======================
+START PARSING
+
+=======================2020-02-18 13:07:24=======================
+END PARSING
+Bucharest, f579d17d-a5e0-4717-98c5-c8bc0c423800, ADM-007, Approved, 25.02.2020 - 27.02.2020, Simion, Florin-Cristian <-------- UPDATED
+Moscow, 941bd46d-83f4-4179-bc0a-82186c7a55f7, ATL-014, Approved, 30.03.2020 - 30.03.2020, Glotov, Artem <-------- UPDATED
+Moscow, d98839d7-24ff-4893-a80f-02f9ccfd232a, ATL-016, Approved, 03.04.2020 - 03.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 7ccd77a5-bbd6-4716-bc41-110e706c911f, ATL-017, Approved, 31.03.2020 - 01.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, f19959d2-18d2-4894-9830-fb89aa99b7f0, ATL-018, Approved, 02.04.2020 - 02.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 160ae7af-5bcc-4bfa-a240-509d16ce1ca3, DEV-017, Approved, 28.02.2020 - 28.02.2020, Pichugin, Timur <-------- UPDATED
+Moscow, 86523ccd-6b7a-4cd7-8378-5065614062c1, PM-007, Approved, 10.03.2020 - 12.03.2020, Sysolyatin, Dmitry <-------- UPDATED
+Moscow, e87443af-2a8b-4338-9c68-6287bd8ed00f, REQ-002, Approved, 27.02.2020 - 28.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 0e70dd45-0c93-41e5-8f17-ee91a70030c5, WEB-002, Approved, 28.02.2020 - 28.02.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, db993011-03b1-4911-acb9-d9325b37cc6a, C-005, Approved, 26.02.2020 - 28.02.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 3f02ea90-a78d-4f75-a62b-eb43b0795ae5, DEV-005, Approved, 25.05.2020 - 25.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 1f88b185-bb5b-4a40-a747-9dda5e671115, NET-003, Approved, 27.05.2020 - 27.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 787c3195-1bb1-43c8-b69f-ca6e82ee8ac4, NET-011, Approved, 26.05.2020 - 26.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 52d3a53f-9a9d-4891-bf8b-9d3db67f6d3a, WEB-005, Approved, 15.06.2020 - 16.06.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, 367eddef-c99d-46a5-b299-98ee81281c4e, WEB-006, Approved, 22.06.2020 - 23.06.2020, Lapin, Vyacheslav <-------- UPDATED
+Kiev, 1a3c1f54-8aab-481b-8fdd-06fdf84c2bf9, REQ-055, Approved, 21.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Virtual, 4f249b53-8783-4f27-b677-bbd44edc84b2, SQA-033, Approved, 06.05.2020 - 06.05.2020, Tsyganov, Denis <-------- UPDATED
+Wroclaw, 29d3cf66-6460-4336-81d3-44f4ca4e3e3d, WEB-019, Approved, 15.04.2020 - 17.04.2020, Sonkin, Vladimir <-------- UPDATED
+
+=======================2020-02-18 17:53:28=======================
+START UNDER CRON
+
+=======================2020-02-18 17:53:29=======================
+START PARSING
+
+=======================2020-02-18 17:53:37=======================
+END PARSING
+Bucharest, f579d17d-a5e0-4717-98c5-c8bc0c423800, ADM-007, Approved, 25.02.2020 - 27.02.2020, Simion, Florin-Cristian <-------- UPDATED
+Moscow, 941bd46d-83f4-4179-bc0a-82186c7a55f7, ATL-014, Approved, 30.03.2020 - 30.03.2020, Glotov, Artem <-------- UPDATED
+Moscow, d98839d7-24ff-4893-a80f-02f9ccfd232a, ATL-016, Approved, 03.04.2020 - 03.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 7ccd77a5-bbd6-4716-bc41-110e706c911f, ATL-017, Approved, 31.03.2020 - 01.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, f19959d2-18d2-4894-9830-fb89aa99b7f0, ATL-018, Approved, 02.04.2020 - 02.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 160ae7af-5bcc-4bfa-a240-509d16ce1ca3, DEV-017, Approved, 28.02.2020 - 28.02.2020, Pichugin, Timur <-------- UPDATED
+Moscow, 86523ccd-6b7a-4cd7-8378-5065614062c1, PM-007, Approved, 10.03.2020 - 12.03.2020, Sysolyatin, Dmitry <-------- UPDATED
+Moscow, e87443af-2a8b-4338-9c68-6287bd8ed00f, REQ-002, Approved, 27.02.2020 - 28.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 0e70dd45-0c93-41e5-8f17-ee91a70030c5, WEB-002, Approved, 28.02.2020 - 28.02.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, db993011-03b1-4911-acb9-d9325b37cc6a, C-005, Approved, 26.02.2020 - 28.02.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 3f02ea90-a78d-4f75-a62b-eb43b0795ae5, DEV-005, Approved, 25.05.2020 - 25.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 1f88b185-bb5b-4a40-a747-9dda5e671115, NET-003, Approved, 27.05.2020 - 27.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 787c3195-1bb1-43c8-b69f-ca6e82ee8ac4, NET-011, Approved, 26.05.2020 - 26.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 52d3a53f-9a9d-4891-bf8b-9d3db67f6d3a, WEB-005, Approved, 15.06.2020 - 16.06.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, 367eddef-c99d-46a5-b299-98ee81281c4e, WEB-006, Approved, 22.06.2020 - 23.06.2020, Lapin, Vyacheslav <-------- UPDATED
+Kiev, 1a3c1f54-8aab-481b-8fdd-06fdf84c2bf9, REQ-055, Approved, 21.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Virtual, 4f249b53-8783-4f27-b677-bbd44edc84b2, SQA-033, Approved, 06.05.2020 - 06.05.2020, Tsyganov, Denis <-------- UPDATED
+Wroclaw, 29d3cf66-6460-4336-81d3-44f4ca4e3e3d, WEB-019, Approved, 15.04.2020 - 17.04.2020, Sonkin, Vladimir <-------- UPDATED
+
+=======================2020-02-18 17:54:52=======================
+START UNDER CRON
+
+=======================2020-02-18 17:54:53=======================
+START PARSING
+
+=======================2020-02-18 17:54:53=======================
+END PARSING
+Bucharest, f579d17d-a5e0-4717-98c5-c8bc0c423800, ADM-007, Approved, 25.02.2020 - 27.02.2020, Simion, Florin-Cristian <-------- UPDATED
+Moscow, 941bd46d-83f4-4179-bc0a-82186c7a55f7, ATL-014, Approved, 30.03.2020 - 30.03.2020, Glotov, Artem <-------- UPDATED
+Moscow, d98839d7-24ff-4893-a80f-02f9ccfd232a, ATL-016, Approved, 03.04.2020 - 03.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 7ccd77a5-bbd6-4716-bc41-110e706c911f, ATL-017, Approved, 31.03.2020 - 01.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, f19959d2-18d2-4894-9830-fb89aa99b7f0, ATL-018, Approved, 02.04.2020 - 02.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 160ae7af-5bcc-4bfa-a240-509d16ce1ca3, DEV-017, Approved, 28.02.2020 - 28.02.2020, Pichugin, Timur <-------- UPDATED
+Moscow, 86523ccd-6b7a-4cd7-8378-5065614062c1, PM-007, Approved, 10.03.2020 - 12.03.2020, Sysolyatin, Dmitry <-------- UPDATED
+Moscow, e87443af-2a8b-4338-9c68-6287bd8ed00f, REQ-002, Approved, 27.02.2020 - 28.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 0e70dd45-0c93-41e5-8f17-ee91a70030c5, WEB-002, Approved, 28.02.2020 - 28.02.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, db993011-03b1-4911-acb9-d9325b37cc6a, C-005, Approved, 26.02.2020 - 28.02.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 3f02ea90-a78d-4f75-a62b-eb43b0795ae5, DEV-005, Approved, 25.05.2020 - 25.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 1f88b185-bb5b-4a40-a747-9dda5e671115, NET-003, Approved, 27.05.2020 - 27.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 787c3195-1bb1-43c8-b69f-ca6e82ee8ac4, NET-011, Approved, 26.05.2020 - 26.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 52d3a53f-9a9d-4891-bf8b-9d3db67f6d3a, WEB-005, Approved, 15.06.2020 - 16.06.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, 367eddef-c99d-46a5-b299-98ee81281c4e, WEB-006, Approved, 22.06.2020 - 23.06.2020, Lapin, Vyacheslav <-------- UPDATED
+Kiev, 1a3c1f54-8aab-481b-8fdd-06fdf84c2bf9, REQ-055, Approved, 21.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Virtual, 4f249b53-8783-4f27-b677-bbd44edc84b2, SQA-033, Approved, 06.05.2020 - 06.05.2020, Tsyganov, Denis <-------- UPDATED
+Wroclaw, 29d3cf66-6460-4336-81d3-44f4ca4e3e3d, WEB-019, Approved, 15.04.2020 - 17.04.2020, Sonkin, Vladimir <-------- UPDATED
+
+=======================2020-02-18 17:58:28=======================
+START UNDER CRON
+
+=======================2020-02-18 17:58:28=======================
+START PARSING
+
+=======================2020-02-18 17:58:28=======================
+END PARSING
+Bucharest, f579d17d-a5e0-4717-98c5-c8bc0c423800, ADM-007, Approved, 25.02.2020 - 27.02.2020, Simion, Florin-Cristian <-------- UPDATED
+Moscow, 941bd46d-83f4-4179-bc0a-82186c7a55f7, ATL-014, Approved, 30.03.2020 - 30.03.2020, Glotov, Artem <-------- UPDATED
+Moscow, d98839d7-24ff-4893-a80f-02f9ccfd232a, ATL-016, Approved, 03.04.2020 - 03.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 7ccd77a5-bbd6-4716-bc41-110e706c911f, ATL-017, Approved, 31.03.2020 - 01.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, f19959d2-18d2-4894-9830-fb89aa99b7f0, ATL-018, Approved, 02.04.2020 - 02.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 160ae7af-5bcc-4bfa-a240-509d16ce1ca3, DEV-017, Approved, 28.02.2020 - 28.02.2020, Pichugin, Timur <-------- UPDATED
+Moscow, 86523ccd-6b7a-4cd7-8378-5065614062c1, PM-007, Approved, 10.03.2020 - 12.03.2020, Sysolyatin, Dmitry <-------- UPDATED
+Moscow, e87443af-2a8b-4338-9c68-6287bd8ed00f, REQ-002, Approved, 27.02.2020 - 28.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 0e70dd45-0c93-41e5-8f17-ee91a70030c5, WEB-002, Approved, 28.02.2020 - 28.02.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, db993011-03b1-4911-acb9-d9325b37cc6a, C-005, Approved, 26.02.2020 - 28.02.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 3f02ea90-a78d-4f75-a62b-eb43b0795ae5, DEV-005, Approved, 25.05.2020 - 25.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 1f88b185-bb5b-4a40-a747-9dda5e671115, NET-003, Approved, 27.05.2020 - 27.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 787c3195-1bb1-43c8-b69f-ca6e82ee8ac4, NET-011, Approved, 26.05.2020 - 26.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 52d3a53f-9a9d-4891-bf8b-9d3db67f6d3a, WEB-005, Approved, 15.06.2020 - 16.06.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, 367eddef-c99d-46a5-b299-98ee81281c4e, WEB-006, Approved, 22.06.2020 - 23.06.2020, Lapin, Vyacheslav <-------- UPDATED
+Kiev, 1a3c1f54-8aab-481b-8fdd-06fdf84c2bf9, REQ-055, Approved, 21.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Virtual, 4f249b53-8783-4f27-b677-bbd44edc84b2, SQA-033, Approved, 06.05.2020 - 06.05.2020, Tsyganov, Denis <-------- UPDATED
+Wroclaw, 29d3cf66-6460-4336-81d3-44f4ca4e3e3d, WEB-019, Approved, 15.04.2020 - 17.04.2020, Sonkin, Vladimir <-------- UPDATED
+
+=======================2020-02-18 17:58:51=======================
+START UNDER CRON
+
+=======================2020-02-18 17:58:53=======================
+START PARSING
+
+=======================2020-02-18 17:58:55=======================
+END PARSING
+Bucharest, f579d17d-a5e0-4717-98c5-c8bc0c423800, ADM-007, Approved, 25.02.2020 - 27.02.2020, Simion, Florin-Cristian <-------- UPDATED
+Moscow, 941bd46d-83f4-4179-bc0a-82186c7a55f7, ATL-014, Approved, 30.03.2020 - 30.03.2020, Glotov, Artem <-------- UPDATED
+Moscow, d98839d7-24ff-4893-a80f-02f9ccfd232a, ATL-016, Approved, 03.04.2020 - 03.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 7ccd77a5-bbd6-4716-bc41-110e706c911f, ATL-017, Approved, 31.03.2020 - 01.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, f19959d2-18d2-4894-9830-fb89aa99b7f0, ATL-018, Approved, 02.04.2020 - 02.04.2020, Glotov, Artem <-------- UPDATED
+Moscow, 160ae7af-5bcc-4bfa-a240-509d16ce1ca3, DEV-017, Approved, 28.02.2020 - 28.02.2020, Pichugin, Timur <-------- UPDATED
+Moscow, 86523ccd-6b7a-4cd7-8378-5065614062c1, PM-007, Approved, 10.03.2020 - 12.03.2020, Sysolyatin, Dmitry <-------- UPDATED
+Moscow, e87443af-2a8b-4338-9c68-6287bd8ed00f, REQ-002, Approved, 27.02.2020 - 28.02.2020, Burko, Oleg <-------- UPDATED
+Moscow, b2846639-7bc7-4f60-b379-24731a679fa9, REQ-004, Approved, 30.03.2020 - 31.03.2020, Petrov, Aleksey <-------- UPDATED
+Moscow, 0e70dd45-0c93-41e5-8f17-ee91a70030c5, WEB-002, Approved, 28.02.2020 - 28.02.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, db993011-03b1-4911-acb9-d9325b37cc6a, C-005, Approved, 26.02.2020 - 28.02.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 3f02ea90-a78d-4f75-a62b-eb43b0795ae5, DEV-005, Approved, 25.05.2020 - 25.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 1f88b185-bb5b-4a40-a747-9dda5e671115, NET-003, Approved, 27.05.2020 - 27.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 787c3195-1bb1-43c8-b69f-ca6e82ee8ac4, NET-011, Approved, 26.05.2020 - 26.05.2020, Tsytovich, Pavel <-------- UPDATED
+St.-Petersburg, 52d3a53f-9a9d-4891-bf8b-9d3db67f6d3a, WEB-005, Approved, 15.06.2020 - 16.06.2020, Lapin, Vyacheslav <-------- UPDATED
+St.-Petersburg, 367eddef-c99d-46a5-b299-98ee81281c4e, WEB-006, Approved, 22.06.2020 - 23.06.2020, Lapin, Vyacheslav <-------- UPDATED
+Kiev, 1a3c1f54-8aab-481b-8fdd-06fdf84c2bf9, REQ-055, Approved, 21.02.2020 - 24.02.2020, Pryimak, Dmytro <-------- UPDATED
+Virtual, 4f249b53-8783-4f27-b677-bbd44edc84b2, SQA-033, Approved, 06.05.2020 - 06.05.2020, Tsyganov, Denis <-------- UPDATED
+Wroclaw, 29d3cf66-6460-4336-81d3-44f4ca4e3e3d, WEB-019, Approved, 15.04.2020 - 17.04.2020, Sonkin, Vladimir <-------- UPDATED
+
+=======================2020-02-25 18:15:03=======================
+START UNDER CRON
+
+=======================2020-02-25 18:15:03=======================
+START PARSING
+
+=======================2020-02-25 18:15:03=======================
+END PARSING
+Bucharest, f579d17d-a5e0-4717-98c5-c8bc0c423800, ADM-007, Approved, 25.02.2020 - 27.02.2020, Simion, Florin-Cristian <-------- UPDATED
+Bucharest, 4ace0a98-8b07-4c91-a7ff-4b43703d61ce, ARC-001, Approved, 23.03.2020 - 25.03.2020, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, 2925005f-3335-4402-b443-f73a861b6958, DB-018, Approved, 09.03.2020 - 16.03.2020, Constantin, Ionut-Marian <-------- UPDATED
+Bucharest, 721139bb-9dff-4264-a2a5-45a3b240c6c3, DB-021, Approved, 18.03.2020 - 25.03.2020, Stefanescu, Radu-Cristian <-------- UPDATED
+Bucharest, baca803a-e766-4813-ab3d-609d69b54399, DEV-010, Approved, 19.03.2020 - 20.03.2020, Calin, Horia Alexandru <-------- UPDATED
+Bucharest, f991efa1-c353-40ed-9a26-f63bd581d9fe, DEV-017, Approved, 06.03.2020 - 06.03.2020, Pomohaci, Dan Nicolae <-------- UPDATED
+Bucharest, 4914f3f3-a2e0-49f9-a699-f1bf091aad45, ISTQB-001, Approved, 16.03.2020 - 19.03.2020, Damian, Bogdan-Cristian <-------- UPDATED
+Bucharest, 7adb2a4b-7e54-4d61-a753-60bc7bfb86fb, JVA-017, Approved, 02.03.2020 - 06.03.2020, Tudose, Florin Catalin <-------- UPDATED
+Bucharest, 75681934-2c7e-46ac-9eaf-0bfa6fe01b52, NET-001, Approved, 02.03.2020 - 13.03.2020, Tanase, Constantin <-------- UPDATED
+St.-Petersburg, 8ef2414e-3e38-4a06-b118-43637f28f4f6, ARC-001, Approved, 02.03.2020 - 04.03.2020, Zankovich, Mikhail <-------- UPDATED
+St.-Petersburg, 6593905c-0400-430b-a7b5-773a695d4bf9, NET-006, Approved, 05.03.2020 - 06.03.2020, Tsytovich, Pavel <-------- UPDATED
+Wroclaw, 687612e9-2750-4fe0-9ab1-6b9d2348724b, ARC-003, Approved, 04.03.2020 - 06.03.2020, Pietrucha, Bartosz <-------- UPDATED
+Wroclaw, 6f548b49-0bd7-4a6d-961f-d13431c416be, DEV-010, Approved, 16.03.2020 - 17.03.2020, Bilyk, Andrii <-------- UPDATED
+Wroclaw, a0970872-557b-4f7c-ae26-d0e389aed7d9, EAS-006, Approved, 25.03.2020 - 25.03.2020, Savchenko, Yurij <-------- UPDATED
+Kiev, f1c67582-e1f3-44f2-ac8d-7598bf4c50bd, JVA-010, Approved, 10.03.2020 - 19.03.2020, Yushchenko, Oleh <-------- UPDATED
+Kiev, 5310c707-64cd-4668-bd6c-4049ab451398, JVA-013, Approved, 31.03.2020 - 03.04.2020, Yushchenko, Oleh <-------- UPDATED
+Kiev, d061c6d9-bb7c-447c-8cf7-f07248561c00, JVA-035, Approved, 02.03.2020 - 03.03.2020, Yushchenko, Oleh <-------- UPDATED
+Moscow, fb97d7d6-655f-45fe-8a6f-a26edfc70aaa, REQ-003, Approved, 04.03.2020 - 06.03.2020, Burko, Oleg <-------- UPDATED
+Moscow, c28ff7c5-ad53-4cdb-ac20-3ecf9ddec26c, REQ-038, Approved, 04.03.2020 - 05.03.2020, Koptelov, Andrei <-------- UPDATED
+Moscow, 2672fe82-ce48-4b78-b77f-7923dd627199, WEB-003, Approved, 02.03.2020 - 02.03.2020, Lapin, Vyacheslav <-------- UPDATED
+Moscow, 4cb3b2db-3f58-4e9c-8f58-c6ea9a0d2da1, WEB-004, Approved, 03.03.2020 - 03.03.2020, Lapin, Vyacheslav <-------- UPDATED
+Moscow, c0e170d2-1166-4644-b8ca-43e1c8be81ad, WEB-021, Approved, 02.03.2020 - 06.03.2020, Sonkin, Vladimir <-------- UPDATED
+Virtual, ba4ed78e-0e94-4ec6-92a8-1359f2e9e854, REQ-055, Approved, 02.03.2020 - 05.03.2020, Pryimak, Dmytro <-------- UPDATED
+
+=======================2022-03-08 15:33:28=======================
+START UNDER CRON
+
+=======================2022-03-08 15:33:28=======================
+START PARSING
+ERROR: File not found at localhost#ToBitrix_48067_03_08_2022

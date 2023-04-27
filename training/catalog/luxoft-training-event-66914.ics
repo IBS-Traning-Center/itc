@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20161004T174922CEST-1966f3AO9o@185.26.112.96
+DTSTAMP:20161004T154922Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-002 Основы финансовых рынков. Foreign
+  Exchange & FX Derivatives \n\nДата проведения курса: 0
+ 5.10.2016-06.10.2016\nВремя: 12:00-15:00\n\nРегистрация и
+  подробнее о курсе:\nhttp://www.luxoft-training.ru/training
+ /catalog/course.html?ID=28553&ID_TIME=66914\n\n
+DTSTART:20161005T120000
+DTEND:20161006T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы финансовых рынков. Foreign Exchange & FX Der
+ ivatives '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-002 Основы финансовых рынков. Foreign
+  Exchange & FX Derivatives \n\nДата проведения курса: 0
+ 5.10.2016-06.10.2016\nВремя: 12:00-15:00\n\nРегистрация и
+  подробнее о курсе:\nhttp://www.luxoft-training.ru/training
+ /catalog/course.html?ID=28553&ID_TIME=66914\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

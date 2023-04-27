@@ -1,0 +1,108 @@
+*{
+margin:0;
+padding: 0;
+
+}
+img {
+	border: none;
+	
+}
+div.course-item {
+	border-bottom: 1px solid #C7D2D5; 
+	margin-bottom: 6px;
+}
+div.course-item  a {
+	color: #0d44a0;
+	
+	
+}
+div.course-item .course-name {
+	
+	margin-bottom: 12px;
+}
+
+.softwidget-wrap {
+	background-color: white;
+	font-family: Arial,Helvetica,sans-serif;
+	position: relative;
+	width: 200px;
+	
+
+}
+.widget-head {
+	color: #701132;
+	font-weight: bold;
+	margin-bottom: 6px;
+}
+.widget-head a {
+	text-decoration: none;
+	color: #AD2827;
+}
+
+.date-of-course {
+	float: left;
+	color: #8A8A8A;
+	font-size: 10px;
+}
+.cours-list {
+	
+}
+.link-abs-wrap a {
+	color: #0d44a0;
+	font-size: 11px;
+	text-decoration: underline;
+}
+.link-abs-wrap div {
+	margin-bottom: 3px;
+}
+.abs-logo-link {
+	position: absolute;
+	bottom: 11px;
+	right: 12px;
+	width: 104px;
+	height: 53px;
+}
+.link_to_all {
+    background: url("/images/g_arrow.png") no-repeat scroll right 70% transparent;
+    text-align: right;
+    padding-right: 10px;
+}
+.link_to_all a:link, .link_to_all a:visited{
+    color:#888888;
+}
+.discount {
+	
+	font-size: 12px;
+	color: #AD2827;
+	float: right;
+	text-align: right;
+}
+.discount a {
+	color: #AD2827 !important;
+}
+.info-hidden {
+	
+	display: none;
+	position: absolute;
+	bottom: -32px;
+	right: 0px;
+	background: white;
+	color: #0d44a0;
+	width: 150px;
+	padding: 5px;
+	font-size: 10px;
+}
+.show-hidden {
+	position: relative;
+}
+.show-hidden span{
+	border-bottom: 1px dotted #AD2827;
+}
+.cluetip-default {
+	background: white !important;
+	text-align: left !important;
+}
+.cluetip-default #cluetip-outer {
+	background: white !important;
+	border: 1px solid #CCC;
+}

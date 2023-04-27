@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160318T145206CET-9831iWUe3f@185.26.112.96
+DTSTAMP:20160318T135206Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-006 Рефакторинг кода\n\nДата прове�
+ �ения курса: 21.03.2016-24.03.2016\nВремя: 10:00-16:00\n\nР
+ егистрация и подробнее о курсе:\nhttp://www.luxo
+ ft-training.ru/training/catalog/course.html?ID=6098&ID_TIME=63010\n\n
+DTSTART:20160321T100000
+DTEND:20160324T160000
+LOCATION:Одесса
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Рефакторинг кода'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-006 Рефакторинг кода\n\nДата прове�
+ �ения курса: 21.03.2016-24.03.2016\nВремя: 10:00-16:00\n\nР
+ егистрация и подробнее о курсе:\nhttp://www.luxo
+ ft-training.ru/training/catalog/course.html?ID=6098&ID_TIME=63010\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

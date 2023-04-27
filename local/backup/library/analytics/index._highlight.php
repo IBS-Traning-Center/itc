@@ -1,0 +1,2 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?> 
+<div class="headline_image"><img src="/upload/medialibrary/717/rating.jpg" alt="rating.jpg" title="rating.jpg" width="265" height="175"  />Раздел &laquo;IT-аналитика: обучение&raquo; включает обзоры рынков и провайдеров IT-обучения, анализ стоимости образовательных и консультационных услуг, тенденции и перспективы дальнейшего развития рынка обучающих программ по основным направлениям Software Engineering.</div>

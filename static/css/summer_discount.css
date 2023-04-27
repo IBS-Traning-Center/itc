@@ -1,0 +1,71 @@
+.shared-components-Banner-banner-module {
+    width: 100%;
+    background-color: #164BED;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    display: none;
+}
+
+.shared-components-Banner-banner-module p {
+    margin: 0
+}
+
+@media (max-width: 767px) {
+    .shared-components-Banner-banner-module {
+        display:none
+    }
+}
+
+
+.shared-components-Banner-banner-module__content {
+    max-width: 980px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-size: cover
+}
+
+.shared-components-Banner-banner-module__contentInner {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.shared-components-Banner-banner-module__close {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    cursor: pointer;
+    -webkit-transition: opacity .2s ease;
+    transition: opacity .2s ease
+}
+
+@media (max-width: 1023px) {
+    .shared-components-Banner-banner-module__close {
+        right:calc((100vw - 100%)/-2 + 6px)
+    }
+}
+
+.shared-components-Banner-banner-module__svg {
+    fill: var(--text-color);
+    width: 18px;
+    height: 18px
+}
+
+.shared-components-Banner-banner-module__close:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+}
+.shared-components-Banner-banner-module__contentInner--link{
+	height:100%;
+}

@@ -1,0 +1,31 @@
+<?php
+header("Location: /training/catalog/",TRUE,301);
+/* Make sure that code below does not get executed when we redirect. */
+exit;
+?><?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("blue_title", "Обучение. Основы программирования");
+$APPLICATION->SetPageProperty("title", "Курсы Тренинги Основы программирования");
+$APPLICATION->SetPageProperty("keywords", "обучение, разработка программного обеспечения, менеджер проекта,  аналитик,  тестировщик,  проектировщик,  разработчик");
+$APPLICATION->SetPageProperty("description", "Обучение для специалистов в сфере разработки ПО.  Актуальные знания для менеджеров проектов, аналитиков, тестировщиков, проектировщиков, разработчиков.");
+$APPLICATION->SetTitle("Обучение. Основы программирования");
+?><?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list",
+	"edu_school_accordion",
+	Array(
+	"IBLOCK_TYPE" => "edu_schools",	// Тип инфо-блока
+	"IBLOCK_ID" => "49",	// Инфо-блок
+	"SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
+	"SECTION_CODE" => "",	// Код раздела
+	"COUNT_ELEMENTS" => "Y",	// Показывать количество элементов в разделе
+	"TOP_DEPTH" => "2",	// Максимальная отображаемая глубина разделов
+	"SECTION_URL" => "#SECTION_ID#/",	// URL, ведущий на страницу с содержимым раздела
+	"CACHE_TYPE" => "A",	// Тип кеширования
+	"CACHE_TIME" => "3600",	// Время кеширования (сек.)
+	"DISPLAY_PANEL" => "N",	// Добавлять в админ. панель кнопки для данного компонента
+	"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
+	),
+	component
+);?>
+<div class="learn_more autowidth">По всем вопросам отправьте письмо по адресу <a href="mailto:<?=EMAIL_ADDRESS?>" title="Написать письмо"><?=EMAIL_ADDRESS?></a></div>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

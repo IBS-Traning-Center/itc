@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160912T170416CEST-6449UmNWb1@185.26.112.96
+DTSTAMP:20160912T150416Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PM-010 Основы Microsoft Project 2010\n\nДата пров
+ едения курса: 12.09.2016-13.09.2016\nВремя: 14:00-18:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=6121&ID_TIME=66420\n\n
+DTSTART:20160912T140000
+DTEND:20160913T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы Microsoft Project 2010'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PM-010 Основы Microsoft Project 2010\n\nДата пров
+ едения курса: 12.09.2016-13.09.2016\nВремя: 14:00-18:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=6121&ID_TIME=66420\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

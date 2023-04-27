@@ -1,0 +1,11 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+$APPLICATION->SetTitle("");
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
+?> 
+<iframe src="http://www.luxoft-training.ru/rss/city/qasib_ru.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:190px; min-height:300px;" allowTransparency="true"></iframe>
+
+ <?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_before.php");
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_after.php");
+?>

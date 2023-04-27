@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20161214T181551CET-8884U5vUO4@185.26.112.96
+DTSTAMP:20161214T171551Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-011 Разработка на AngularJS\n\nДата про�
+ �едения курса: 12.12.2016-16.12.2016\nВремя: 10:00-16:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=60318&ID_TIME=62615\n\n
+DTSTART:20161212T100000
+DTEND:20161216T160000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Разработка на AngularJS'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-011 Разработка на AngularJS\n\nДата про�
+ �едения курса: 12.12.2016-16.12.2016\nВремя: 10:00-16:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=60318&ID_TIME=62615\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

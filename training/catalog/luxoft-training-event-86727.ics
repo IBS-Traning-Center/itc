@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190211T061321CET-65667Iigzp@185.26.112.96
+DTSTAMP:20190211T051321Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-006 Основы финансовых рынков. Credit 
+ Derivatives.\n\nДата проведения курса: 25.02.2019-25.02
+ .2019\nВремя: 15:00-18:00\n\nРегистрация и подробн
+ ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course
+ .html?ID=28569&ID_TIME=86727\n\n
+DTSTART:20190225T150000
+DTEND:20190225T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы финансовых рынков. Credit Derivatives.'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-006 Основы финансовых рынков. Credit 
+ Derivatives.\n\nДата проведения курса: 25.02.2019-25.02
+ .2019\nВремя: 15:00-18:00\n\nРегистрация и подробн
+ ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course
+ .html?ID=28569&ID_TIME=86727\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

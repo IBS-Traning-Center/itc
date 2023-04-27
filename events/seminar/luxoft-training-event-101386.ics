@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200518T144349CEST-3614ah4ZnJ@185.26.112.96
+DTSTAMP:20200518T124349Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Вебинар: Maven и Gradle: сходства и отлич
+ ия?\n\nДата проведения\n18.05.2020\n\nВремя\n17:00 - 
+ 19:00\n\nДокладчик:\n Милютин Юрий -Специалис
+ т в области разработки ПО\n\nАттестационн
+ ый семинар.\n\n\n\nРегистрация:\nhttp://www.luxoft-tra
+ ining.ru/events/seminar/101386/\n\n
+DTSTART:20200518T000000
+LOCATION:Вебинар\, проводимый с  использовани
+ ем сервиса gotomeeting.com
+SUMMARY:Вебинар: Maven и Gradle: сходства и отличия
+ ?
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Вебинар: Maven и Gradle: сходства и отлич
+ ия?
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

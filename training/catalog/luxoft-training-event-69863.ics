@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170119T015926CET-3252Szfnhi@185.26.112.96
+DTSTAMP:20170119T005926Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-014 Обратная связь для менеджеров 
+ проектов\n\nДата проведения курса: 29.05.2017-2
+ 9.05.2017\nВремя: 10:00-14:00\n\nРегистрация и подро
+ бнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/co
+ urse.html?ID=35883&ID_TIME=69863\n\n
+DTSTART:20170529T100000
+DTEND:20170529T140000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Обратная связь для менеджеров проектов'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-014 Обратная связь для менеджеров 
+ проектов\n\nДата проведения курса: 29.05.2017-2
+ 9.05.2017\nВремя: 10:00-14:00\n\nРегистрация и подро
+ бнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/co
+ urse.html?ID=35883&ID_TIME=69863\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

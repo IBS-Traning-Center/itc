@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210530T205513CEST-26822ImdCw@185.26.112.96
+DTSTAMP:20210530T185513Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DB-021 Oracle: основы  PL/SQL для разработчи
+ ков\n\nДата проведения курса: 07.06.2021-16.06.2021
+ \nВремя: 09:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=44218&ID_TIME=108883\n\n
+DTSTART:20210607T090000
+DTEND:20210616T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Oracle: основы  PL/SQL для разработчиков'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DB-021 Oracle: основы  PL/SQL для разработчи
+ ков\n\nДата проведения курса: 07.06.2021-16.06.2021
+ \nВремя: 09:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=44218&ID_TIME=108883\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

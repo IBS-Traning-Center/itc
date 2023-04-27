@@ -1,0 +1,65 @@
+body {
+	width:550px;
+	margin:0;
+	padding:0;
+	border:0;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+    background: none repeat scroll 0 0 #FFFFFF!important;
+}
+.f_query_state {
+    height: 190px;
+}
+
+#showcalendar div.inside {
+    background-color: #F3F3F3!important;
+}
+
+#showcalendar .ewTableAltRow {
+    background-color: #F3F3F3!important;
+}
+#showcalendar .ewTableRow {
+    background-color: #F3F3F3!important;
+}
+
+#showcalendar table.edu .edu_header {
+    background-color: #646569;
+}
+
+#showcalendar table.edu a:link, #showcalendar table.edu a:visited {
+    color: #333399;
+}
+
+#showcalendar  table.edu a:link {
+    color: #333399;
+}
+
+#showcalendar  table.edu a:active {
+    color: #333399;
+}
+#showcalendar table.edu .edu_header p {
+    color: #F0EDDB;
+}
+
+table.edu {
+    font-size: 12px;
+}
+table.edu td.td_buy,table.edu td.td_time ,table.edu td.td_code{
+    display:none;
+}
+.edu_sort{
+    display:none;
+}
+h2.abs{
+    position:relative!important;
+}
+.cities ul li a {
+    font-size: 14px;
+}
+.cities ul li {
+    margin: 0 2px 4px 0;
+}	
+
+.cities ul li a {
+    padding: 0 6px;
+}

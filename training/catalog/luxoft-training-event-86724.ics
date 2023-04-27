@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190128T134308CET-9456GEmmCM@185.26.112.96
+DTSTAMP:20190128T124308Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-003 Основы финансовых рынков. Money M
+ arket & Interest Rate Derivatives.\n\nДата проведения кур
+ са: 04.02.2019-05.02.2019\nВремя: 14:00-18:00\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=28554&ID_TIME=86724\n\n
+DTSTART:20190204T140000
+DTEND:20190205T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы финансовых рынков. Money Market & Interest R
+ ate Derivatives.'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-003 Основы финансовых рынков. Money M
+ arket & Interest Rate Derivatives.\n\nДата проведения кур
+ са: 04.02.2019-05.02.2019\nВремя: 14:00-18:00\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=28554&ID_TIME=86724\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200719T154251CEST-3186v2HpAN@185.26.112.96
+DTSTAMP:20200719T134251Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-066 Дизайн-мышление\n\nДата провед�
+ �ния курса: 10.08.2020-11.08.2020\nВремя: 10:00-18:00\n\nРе
+ гистрация и подробнее о курсе:\nhttp://www.luxoft
+ -training.ru/training/catalog/course.html?ID=99964&ID_TIME=101368\n\n
+DTSTART:20200810T100000
+DTEND:20200811T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Дизайн-мышление'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-066 Дизайн-мышление\n\nДата провед�
+ �ния курса: 10.08.2020-11.08.2020\nВремя: 10:00-18:00\n\nРе
+ гистрация и подробнее о курсе:\nhttp://www.luxoft
+ -training.ru/training/catalog/course.html?ID=99964&ID_TIME=101368\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140810T141135CEST-7495V2B5mt@50.57.83.146
+DTSTAMP:20140810T121135Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-003 Практикум по рискам тестирова
+ ния\n\nДата проведения курса: 11.08.2014-13.08.2014
+ \nВремя: 10:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=22646&ID_TIME=48135\n\n
+DTSTART:20140811T100000
+DTEND:20140813T140000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Практикум по рискам тестирования'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-003 Практикум по рискам тестирова
+ ния\n\nДата проведения курса: 11.08.2014-13.08.2014
+ \nВремя: 10:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=22646&ID_TIME=48135\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

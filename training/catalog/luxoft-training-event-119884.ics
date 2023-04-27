@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220516T012457CEST-9746zX0ziA@185.26.112.96
+DTSTAMP:20220516T232457Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:NET-003 Асинхронное программирование
+  в .NET\n\nДата проведения курса: 07.06.2022-10.06.202
+ 2\nВремя: 09:00-11:00\n\nРегистрация и подробнее
+  о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.htm
+ l?ID=28751&ID_TIME=119884\n\n
+DTSTART:20220607T090000
+DTEND:20220610T110000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Асинхронное программирование в .NET'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:NET-003 Асинхронное программирование
+  в .NET\n\nДата проведения курса: 07.06.2022-10.06.202
+ 2\nВремя: 09:00-11:00\n\nРегистрация и подробнее
+  о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.htm
+ l?ID=28751&ID_TIME=119884\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

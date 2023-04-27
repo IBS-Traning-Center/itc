@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20221127T065757CET-1794KevPsb@82.146.55.227
+DTSTAMP:20221127T055757Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:EAS-017 Основы Apache Spark\n\nДата проведен�
+ �я курса: 29.11.2022-06.12.2022\nВремя: 10:00-14:20\n\nРеги
+ страция и подробнее о курсе:\nhttp://www.luxoft-tra
+ ining.ru/training/catalog/course.html?ID=68169&ID_TIME=122236\n\n
+DTSTART:20221129T100000
+DTEND:20221206T142000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы Apache Spark'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:EAS-017 Основы Apache Spark\n\nДата проведен�
+ �я курса: 29.11.2022-06.12.2022\nВремя: 10:00-14:20\n\nРеги
+ страция и подробнее о курсе:\nhttp://www.luxoft-tra
+ ining.ru/training/catalog/course.html?ID=68169&ID_TIME=122236\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

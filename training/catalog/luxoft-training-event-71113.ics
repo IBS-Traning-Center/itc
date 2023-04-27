@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20171009T123621CEST-2981VDbzrC@185.26.112.96
+DTSTAMP:20171009T103621Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-013 Владение каркасом разработки 
+ Spring Security\n\nДата проведения курса: 13.11.2017-14
+ .11.2017\nВремя: 10:00-18:00\n\nРегистрация и подро�
+ �нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cou
+ rse.html?ID=33824&ID_TIME=71113\n\n
+DTSTART:20171113T100000
+DTEND:20171114T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Владение каркасом разработки Spring Security'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-013 Владение каркасом разработки 
+ Spring Security\n\nДата проведения курса: 13.11.2017-14
+ .11.2017\nВремя: 10:00-18:00\n\nРегистрация и подро�
+ �нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cou
+ rse.html?ID=33824&ID_TIME=71113\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220106T231057CET-8129fsOdxN@185.26.112.96
+DTSTAMP:20220106T221057Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PM-001 Ключевые аспекты управления п�
+ �оектами\n\nДата проведения курса: 10.01.2022-18
+ .01.2022\nВремя: 14:00-18:00\n\nРегистрация и подро�
+ �нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cou
+ rse.html?ID=22355&ID_TIME=117258\n\n
+DTSTART:20220110T140000
+DTEND:20220118T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Ключевые аспекты управления проектами'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PM-001 Ключевые аспекты управления п�
+ �оектами\n\nДата проведения курса: 10.01.2022-18
+ .01.2022\nВремя: 14:00-18:00\n\nРегистрация и подро�
+ �нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cou
+ rse.html?ID=22355&ID_TIME=117258\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

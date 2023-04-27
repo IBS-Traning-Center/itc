@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190628T015826CEST-33487MVnjL@185.26.112.96
+DTSTAMP:20190628T235826Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SDP-042 Leading SAFe\n\nДата проведения курс�
+ �: 03.07.2019-04.07.2019\nВремя: 10:00-18:00\n\nРегистраци�
+ � и подробнее о курсе:\nhttp://www.luxoft-training.ru/trai
+ ning/catalog/course.html?ID=81769&ID_TIME=91863\n\n
+DTSTART:20190703T100000
+DTEND:20190704T180000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Leading SAFe'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SDP-042 Leading SAFe\n\nДата проведения курс�
+ �: 03.07.2019-04.07.2019\nВремя: 10:00-18:00\n\nРегистраци�
+ � и подробнее о курсе:\nhttp://www.luxoft-training.ru/trai
+ ning/catalog/course.html?ID=81769&ID_TIME=91863\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

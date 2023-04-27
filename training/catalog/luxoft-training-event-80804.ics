@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180522T075312CEST-6283lSv9lU@185.26.112.96
+DTSTAMP:20180522T055312Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-012_PRG Использование XSLT\n\nДата про�
+ �едения курса: 04.06.2018-08.06.2018\nВремя: 10:00 - 16:00
+  (UTC+3)\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=55404&ID_TIME
+ =80804\n\n
+DTSTART:20180604T100000
+DTEND:20180608T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Использование XSLT'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-012_PRG Использование XSLT\n\nДата про�
+ �едения курса: 04.06.2018-08.06.2018\nВремя: 10:00 - 16:00
+  (UTC+3)\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=55404&ID_TIME
+ =80804\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

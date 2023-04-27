@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20161126T183541CET-0200gmoVVV@185.26.112.96
+DTSTAMP:20161126T173541Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-014 Java Persistence с использованием Hibern
+ ate\n\nДата проведения курса: 25.11.2016-30.11.2016\nВ
+ ремя: 10:00-16:00\n\nРегистрация и подробнее о �
+ �урсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=
+ 56705&ID_TIME=68018\n\n
+DTSTART:20161125T100000
+DTEND:20161130T160000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Java Persistence с использованием Hibernate'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-014 Java Persistence с использованием Hibern
+ ate\n\nДата проведения курса: 25.11.2016-30.11.2016\nВ
+ ремя: 10:00-16:00\n\nРегистрация и подробнее о �
+ �урсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=
+ 56705&ID_TIME=68018\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

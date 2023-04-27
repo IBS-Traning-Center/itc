@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220307T161935CET-5745Ix9vxu@185.26.112.96
+DTSTAMP:20220307T151935Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:EAS-004 Основы хранилищ данных\n\nДата 
+ проведения курса: 14.03.2022-18.03.2022\nВремя: 10:00-
+ 15:00\n\nРегистрация и подробнее о курсе:\nhttp
+ ://www.luxoft-training.ru/training/catalog/course.html?ID=25278&ID_TIME=11
+ 7595\n\n
+DTSTART:20220314T100000
+DTEND:20220318T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы хранилищ данных'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:EAS-004 Основы хранилищ данных\n\nДата 
+ проведения курса: 14.03.2022-18.03.2022\nВремя: 10:00-
+ 15:00\n\nРегистрация и подробнее о курсе:\nhttp
+ ://www.luxoft-training.ru/training/catalog/course.html?ID=25278&ID_TIME=11
+ 7595\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

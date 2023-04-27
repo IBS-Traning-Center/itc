@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200626T032044CEST-2926SHIVrC@185.26.112.96
+DTSTAMP:20200626T012044Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-012 Разработка на React.js\n\nДата пров
+ едения курса: 13.07.2020-17.07.2020\nВремя: 10:00-16:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=68246&ID_TIME=99753\n\n
+DTSTART:20200713T100000
+DTEND:20200717T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Разработка на React.js'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-012 Разработка на React.js\n\nДата пров
+ едения курса: 13.07.2020-17.07.2020\nВремя: 10:00-16:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=68246&ID_TIME=99753\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

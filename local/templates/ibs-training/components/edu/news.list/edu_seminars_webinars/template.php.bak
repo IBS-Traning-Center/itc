@@ -1,0 +1,68 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?if (count($arResult["ITEMS"])>0){?>
+<TABLE cellSpacing="0" cellPadding="5"    border="0" class="edu">
+<TR class="edu_header">
+<TD vAlign=top width="100%">
+<P align="left">Название мероприятия</P></TD>
+<TD vAlign=center width=70 VALIGN="middle">
+<nobr><P align="left">Дата <span style="text-align:right; font-size:18px;">&#8595;</span></P></nobr></TD>
+<TD vAlign=center width=70 VALIGN="middle">
+<P align=center>Время</P></TD></TR>
+<?
+global $USER;
+
+?>
+<?foreach($arResult["ITEMS"] as $arItem):?>
+
+         <?
+         if ($USER->IsAdmin()) {
+         	//print_r($arItem);
+		 };
+	      $seminar_name = $arItem["NAME"];
+	      //$program_id = $arItem["ID"];
+	      $location = $arItem['PROPERTIES']['location']['VALUE'];
+	      //$lecturer = $arItem['PROPERTIES']['lecturer']['VALUE'];
+	      $startdate = $arItem['PROPERTIES']['startdate']['VALUE'];
+	      //$description = nl2br($arItem['PROPERTIES']['description']['VALUE']);
+	      //$content = nl2br($arItem['PROPERTIES']['content']['VALUE']);
+	      $time = $arItem['PROPERTIES']['time']['VALUE'];
+	      $type_event = $arItem['PROPERTIES']['type_event']['VALUE_ENUM_ID'];
+	      //$titlefile = $arItem['PROPERTIES']['titlefile']['VALUE'];
+	      //$city_id = $arItem['PROPERTIES']['cities']['VALUE'];
+
+$datetime = $startdate;
+$format = "DD.MM.YYYY HH:MI:SS";
+
+$arr = ParseDateTime($datetime, $format);
+
+//    echo "День:    ".$arr["DD"]."<br>";    // День: 21
+//    echo "Месяц:   ".$arr["MM"]."<br>";    // Месяц: 1
+//    echo "Год:     ".$arr["YYYY"]."<br>";  // Год: 2004
+//    echo "Часы:    ".$arr["HH"]."<br>";    // Часы: 23
+//    echo "Минуты:  ".$arr["MI"]."<br>";    // Минуты: 44
+//    echo "Секунды: ".$arr["SS"]."<br>";    // Секунды: 15
+$startdate = $arr["DD"].".".$arr["MM"].".".$arr["YYYY"];
+		?>
+<TR  class="ewTableAltRow"  onmouseover='ew_mouseover(this);' onmouseout='ew_mouseout(this);'>
+
+<TD width="100%">
+<p align="left"><a class="orange" href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><?=$seminar_name ?></a></p>
+<?if ($type_event==92){?><strong>Вебинар</strong><? }else {?><strong>Семинар:</strong> <?=$location?><? } ?></TD>
+<TD>
+<div class="nobr tocenter "><NOBR><?= $startdate ?></NOBR><a href="/events/seminar/ics.html?ID=<?=$arItem['ID']?>" title="Добавить событие в календарь"   ><br /><img width="24" border="0" src="/downloads/images/47-ical_24_24.png" style="float:none;"></a></div></TD>
+<TD>
+<p align="left"><?=$time ?> <?if ($type_event==92){?>(мск.)<? } ?></p></TD>
+</TR>
+
+
+<?endforeach;?>
+</TABLE>
+
+<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+	<br /><?=$arResult["NAV_STRING"]?>
+<?endif;?>
+<? } ?>
+<?if (count($arResult["ITEMS"]) == 0){?>
+<h2>В ближайшее время семинары не запланированы</h2>
+
+<? } ?>

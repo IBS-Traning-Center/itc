@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20201202T221806CET-2942JMUa2D@185.26.112.96
+DTSTAMP:20201202T211806Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-069 Управление изменениями для ан
+ алитиков\n\nДата проведения курса: 04.02.2021-0
+ 5.02.2021\nВремя: 10:00-18:00\n\nРегистрация и подро
+ бнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/co
+ urse.html?ID=104423&ID_TIME=104869\n\n
+DTSTART:20210204T100000
+DTEND:20210205T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Управление изменениями для аналитиков'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-069 Управление изменениями для ан
+ алитиков\n\nДата проведения курса: 04.02.2021-0
+ 5.02.2021\nВремя: 10:00-18:00\n\nРегистрация и подро
+ бнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/co
+ urse.html?ID=104423&ID_TIME=104869\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

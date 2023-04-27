@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180324T043703CET-62199ggMIP@185.26.112.96
+DTSTAMP:20180324T033703Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-007 Введение в систему контроля в�
+ �рсий Git\n\nДата проведения курса: 29.03.2018-30.0
+ 3.2018\nВремя: 17:00-22:00\n\nРегистрация и подроб�
+ �ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cours
+ e.html?ID=45139&ID_TIME=80402\n\n
+DTSTART:20180329T170000
+DTEND:20180330T220000
+LOCATION:Одесса
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Введение в систему контроля версий Git'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-007 Введение в систему контроля в�
+ �рсий Git\n\nДата проведения курса: 29.03.2018-30.0
+ 3.2018\nВремя: 17:00-22:00\n\nРегистрация и подроб�
+ �ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cours
+ e.html?ID=45139&ID_TIME=80402\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

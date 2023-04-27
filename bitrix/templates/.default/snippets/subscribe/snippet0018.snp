@@ -1,0 +1,340 @@
+<style>
+#our_template table{
+	border-collapse:collapse;
+}
+</style>
+<div id="our_template">
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="white" width="750" style="border-collapse:collapse; border:none;">
+<tbody>
+<tr>
+	<td width="25" class="pad_null" nowrap>
+		<img src="/images/email/spacer.gif" width="25" alt="" border="0"/>
+	</td>
+	<td width="700" style="" class="pad_null">
+		<table cellspacing="0" cellpadding="0" border="0" width="700" style="background-color: #FFFFFF;" style="border-collapse:collapse; border:none;">
+		<tbody>
+		<tr>
+			<td width="700" height="17" class="pad_null" style="border-top:none;">
+				<img src="/images/email/spacer.gif" width="100%" height="17" alt="" border="0"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="700" cellpadding="0" cellspacing="0" style="border-collapse:collapse; border:none;" border="0">
+				<tr>
+					<td valign="middle" width="200" height="90" style="background-color: #FFFFFF;" class="pad_null">
+						<div style="line-height:0;">
+							<a href="http://www.luxoft-training.ru/?r1=sbs" style="text-decoration:none;" target="_blank">
+							<img src="/images/logo.gif" border="0" width="200" height="80" alt="Сайт LUXOFT TRAINING"/>
+							</a>
+						</div>
+					</td>
+					<td valign="middle" width="500" height="90" style="background-color: #004080;" class="pad_null">
+						<div style="">
+							<div style="margin:0px 0px 3px 30px;font-weight:bold;display:block;font-size:32px; font-family:Arial,Helvetica,sans-serif; color:#FFFFFF;">
+								 LUXOFT TRAINING
+							</div>
+							<div style="margin:0px 0px 3px 30px;font-style:italic;display:block;font-size:12px; font-family:Arial,Helvetica,sans-serif; color:#FFFFFF;">
+								 Выпуск #... DD MM YYYY г.
+							</div>
+						</div>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" height="22" class="pad_null" style="border-top:none;">
+				<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table style="border-collapse:collapse; border:none; margin:0px;padding:0px;" width="700" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="bottom">
+						<table style="border-collapse:collapse;margin:0px;padding:0px;border-bottom:2px solid #004080;" width="345" cellspacing="0" cellpadding="0">
+						<tbody>
+						<tr>
+							<td valign="top" width="135" style="margin:0px;padding:0px; background-color:#FFFFFF;" class="pad_null">
+								<div style="line-height:0;text-align:center;">
+									<img src="/images/email/100_146_4_books.jpg" alt="" width="100" height="146">
+								</div>
+							</td>
+							<td valign="midlle" width="210" height="30" style="margin:0px;padding:0px; background-color:#FFFFFF;" class="pad_null">
+								<div style="margin:0px 0px 15px 0px;font-style:normal;display:block;font-size:16px; font-family:Arial,Helvetica,sans-serif;">
+									 &bull; <a target="_blank" style="color:#004080;" href="http://www.luxoft-training.ru/timetable/?r1=sbs">Расписание тренингов</a>
+								</div>
+								<div style="margin:0px 0px 15px 0px;font-style:normal;display:block;font-size:16px; font-family:Arial,Helvetica,sans-serif;">
+									 &bull; <a target="_blank" style="color:#004080;" href="http://www.luxoft-training.ru/events/seminar/?r1=sbs">Бесплатные мероприятия</a>
+								</div>
+								<div style="margin:0px 0px 15px 0px;font-style:normal;display:block;font-size:16px; font-family:Arial,Helvetica,sans-serif;">
+									 &bull; <a target="_blank" style="color:#004080;" href="http://www.luxoft-training.ru/training/catalog/?r1=sbs">Каталог тренингов</a>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+					<td width="10" nowrap="" class="pad_null">
+						<img width="10" border="0" src="/images/email/spacer.gif" alt="">
+					</td>
+					<td valign="top">
+						<!-- BLOCK -->
+
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" height="22" class="pad_null" style="">
+				<img src="/images/email/spacer.gif" width="100%" height="12" alt="" border="0"/>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" style="" class="pad_null">
+				<table cellspacing="0" cellpadding="0" style="border-collapse:collapse; border:none; margin:0px;padding:0px;">
+				<tbody>
+				<tr>
+					<td width="700" valign="top"style="margin:0px;padding:0px;" class="pad_null">
+						<!-- BLOCK -->
+
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" height="22" class="pad_null" style="">
+				<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table style="border-collapse:collapse; border:none; margin:0px;padding:0px;" width="700" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top">
+						<!-- BLOCK -->
+
+					</td>
+					<td width="10" nowrap="" class="pad_null">
+						<img width="10" border="0" src="/images/email/spacer.gif" alt="">
+					</td>
+					<td valign="top">
+						<!-- BLOCK -->
+
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" height="22" class="pad_null" style="">
+				<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table style="border-collapse:collapse; border:none; margin:0px;padding:0px;" width="700" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top">
+						<!-- BLOCK -->
+
+					</td>
+					<td width="10" nowrap="" class="pad_null">
+						<img width="10" border="0" src="/images/email/spacer.gif" alt="">
+					</td>
+					<td valign="top">
+						<!-- BLOCK -->
+
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" height="22" class="pad_null" style="">
+				<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table style="border-collapse:collapse; border:none; margin:0px;padding:0px;" width="700" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top">
+						<!-- BLOCK -->
+
+					</td>
+					<td width="10" nowrap="" class="pad_null">
+						<img width="10" border="0" src="/images/email/spacer.gif" alt="">
+					</td>
+					<td valign="top">
+						<!-- BLOCK -->
+
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" height="22" class="pad_null" style="">
+				<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+			</td>
+		</tr>
+
+		<tr>
+			<td width="700" class="pad_null" style="">
+				<table cellspacing="0" cellpadding="0" style="border-collapse:collapse; border:none; margin:0px;padding:0px;">
+				<tbody>
+				<tr>
+					<td width="700" valign="top" class="pad_null" style="margin:0px;padding:0px;">
+						<!-- BLOCK -->
+
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" height="22" class="pad_null" style="">
+				<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+			</td>
+		</tr>
+		<tr>
+			<td width="700" class="pad_null" style="">
+				<table cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border-collapse:collapse;border:none;">
+				<td width="345" class="pad_null" style="margin:0px;padding:0px; border:0px solid #19568F;" valign="top">
+					<img src="http://dummyimage.com/345x473/a6a6ff&text=Banner+345+x+473" width="345" height="473" alt="" border="0">
+				</td>
+				<td nowrap="" width="10" class="pad_null">
+					<img width="10" border="0" alt="" src="/images/email/spacer.gif">
+				</td>
+				<td width="345" class="pad_null" valign="top" style=""><!-- BLOCK -->
+
+					<br/>
+
+					</td>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="700" height="22" class="pad_null" style="">
+					<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+				</td>
+			</tr>
+			<tr>
+				<td width="700" class="pad_null" style=""><!-- BLOCK -->
+					<table cellspacing="0" cellpadding="0" style="margin:0px;padding:0px;border:none;border-collapse:collapse;">
+					<td width="345" class="pad_null" style="margin:0px;padding:0px;" valign="top">
+					<!-- BLOCK -->
+
+						</td>
+						<td nowrap="" width="10" class="pad_null">
+							<img width="10" border="0" alt="" src="/images/email/spacer.gif">
+						</td>
+						<td width="345" class="pad_null" valign="top" style=""><!-- BLOCK -->
+
+							</td>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="700" height="22" class="pad_null" style="">
+					<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+				</td>
+			</tr>
+					
+			<tr>
+				<td width="700" style="" class="pad_null">
+					<table cellspacing="0" cellpadding="0" style="border-collapse:collapse; border:none; margin:0px;padding:0px;">
+					<tbody>
+					<tr>
+						<td width="700" valign="top" style="margin:0px;padding:0px;" class="pad_null"><!-- BLOCK -->
+
+							
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="700" height="22" class="pad_null" style="">
+					<img src="/images/email/spacer.gif" width="100%" height="22" alt="" border="0"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="700" class="pad_null" style="">
+					<table cellspacing="0" cellpadding="0" style="border:2px solid #FF6600;"><!-- BLOCK -->
+					<tr>
+					<td width="425" class="pad_null" style="margin:0px;padding:0px;" valign="top">
+						<div style="text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#004080;">
+							<p>
+							Если у Вас возникли какие-либо вопросы, Вы можете задать их любым удобным для Вас способом:<br/>
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Москва +7 (495) 967-8030 (доп. 5095, 5091, 5094) <br /> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Омск +7 (495) 967-8030 (доп. 5095, 5091, 5094) <br /> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Киев +38 (044) 206-18-08 (доп. 4872) <br /> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Санкт-Петербург +7 (495) 967-8030 (доп. 5095, 5091, 5094) <br /> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Одесса +38 (044) 206-18-08 (доп. 4872) <br /> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Днепропетровск +38 (044) 206-18-08 (доп. 4872)<br /> <br /> 
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email:&nbsp;<a style="text:decoration:underline; color:#1C548D; display:inline;" href="mailto:education@luxoft.com">education@luxoft.com</a><br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;web:&nbsp;<a style="text:decoration:underline; color:#1C548D; display:inline;" href="http://www.luxoft-training.ru/">www.luxoft-training.ru</a><br /> 
+								</p>
+						</div>
+					</td>
+					<td nowrap="" width="10" class="pad_null">
+						<img width="10" border="0" alt="" src="/images/email/spacer.gif">
+					</td>
+					<td width="265" class="pad_null" valign="top" style="">
+						<div style="text-align:right;margin:10px 15px 10px 15px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#004080;">
+							<div style="font-weight:bold;display:inline;font-size:12px; font-family:Arial,Helvetica,sans-serif;">
+									<a href="http://www.facebook.com/TrainingCenterLuxoft" target="_blank" style="text-decoration:none;"><img width="32" height="32" alt="" src="/downloads/images/social/t_facebook.png"></a>&nbsp; <a href="http://twitter.com/TrainingLuxoft" target="_blank" style="text-decoration:none;"><img width="32" height="32" alt="" src="/downloads/images/social/t_twitter.png"></a>&nbsp; <a href="http://www.youtube.com/user/LuxoftTrainingCenter" target="_blank" style="text-decoration:none;"><img width="32" height="32" alt="" src="/downloads/images/social/t_youtube.png"></a>&nbsp; <a href="http://www.luxoft-training.ru/rss/" target="_blank" style="text-decoration:none;"><img width="32" height="32" alt="" src="/downloads/images/social/t_rss.png"></a>&nbsp; <a href="http://www.linkedin.com/groups/Luxoft-Training-Center-3880622?trk=myg_ugrp_ovr" target="_blank" style="text-decoration:none;"><img width="32" height="32" alt="" src="/downloads/images/social/t_linkedin.png"></a>&nbsp; <a href="http://vkontakte.ru/luxoft_training" target="_blank" style="text-decoration:none;"><img width="32" height="32" alt="" src="/downloads/images/social/t_vkontakte.gif"></a>
+							</div>
+						</div>
+					</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="700" height="15" class="pad_null" style="">
+					<img src="/images/email/spacer.gif" width="100%" height="15" alt="" border="0"/>
+				</td>
+			</tr>
+			<tr>
+				<td width="700" class="pad_null" style="">
+					<table cellspacing="0" cellpadding="0" style="border:2px solid #FF6600;"><!-- BLOCK -->
+					<tr>
+					<td width="700" class="pad_null" style="margin:0px;padding:0px;" valign="top">
+						<div style="text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:10px; font-family:Arial,Helvetica,sans-serif;color:#004080;">
+							 Мы приносим извинения, если эта информация попала к Вам по ошибке. Если Вы не хотите больше получать никаких информационных сообщений от Luxoft Training, то Вы можете отписаться, перейдя по следующей <a style="text:decoration:underline; color:#1C548D; display:inline;" href="http://www.luxoft-training.ru/unsubscribe/?mid=#MAIL_ID#&amp;mhash=#MAIL_MD5#">ссылке</a> для автоматической отписки.
+						</div>
+					</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td width="700" height="10" class="pad_null" style="">
+					<img src="/images/email/spacer.gif" width="100%" height="10" alt="" border="0"/>
+				</td>
+			</tr>			
+			
+		</tbody>
+		</table>
+			</td>
+			<td width="25" class="pad_null" nowrap>
+				<img src="/images/email/spacer.gif" width="25" alt="" border="0"/>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>

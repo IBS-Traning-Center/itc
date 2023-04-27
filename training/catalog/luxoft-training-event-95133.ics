@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200330T020317CEST-4721VTUbNh@185.26.112.96
+DTSTAMP:20200330T000317Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:EAS-019 BigData SQL: Impala\n\nДата проведения к
+ урса: 27.04.2020-27.04.2020\nВремя: 10:00-18:00\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=67714&ID_TIME=95133\n\n
+DTSTART:20200427T100000
+DTEND:20200427T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BigData SQL: Impala'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:EAS-019 BigData SQL: Impala\n\nДата проведения к
+ урса: 27.04.2020-27.04.2020\nВремя: 10:00-18:00\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=67714&ID_TIME=95133\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

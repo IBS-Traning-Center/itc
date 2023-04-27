@@ -1,0 +1,1 @@
+<iframe scrolling="no" frameborder="0" src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FTrainingCenterLuxoft&amp;width=198&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false" style="border: medium none; overflow: hidden; width: 198px; height: 258px;" allowtransparency="true"></iframe>

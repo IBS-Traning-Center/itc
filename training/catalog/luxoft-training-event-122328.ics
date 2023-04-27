@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20230117T143445CET-17828sIzDF@82.146.55.227
+DTSTAMP:20230117T133445Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ARC-014 Архитектура в Agile-проектах\n\nД�
+ �та проведения курса: 13.03.2023-17.03.2023\nВремя: 
+ 15:00-18:15\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=93184&ID_T
+ IME=122328\n\n
+DTSTART:20230313T150000
+DTEND:20230317T181500
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Архитектура в Agile-проектах'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARC-014 Архитектура в Agile-проектах\n\nД�
+ �та проведения курса: 13.03.2023-17.03.2023\nВремя: 
+ 15:00-18:15\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=93184&ID_T
+ IME=122328\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

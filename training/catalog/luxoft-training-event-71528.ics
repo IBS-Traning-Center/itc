@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170418T173040CEST-7576Vl6VcP@185.26.112.96
+DTSTAMP:20170418T153040Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-027 Школа тестирования. Часть 3. Пр
+ актикум по тестированию\n\nДата проведен�
+ �я курса: 24.04.2017-28.04.2017\nВремя: 10:00-15:00\n\nРеги
+ страция и подробнее о курсе:\nhttp://www.luxoft-tra
+ ining.ru/training/catalog/course.html?ID=29285&ID_TIME=71528\n\n
+DTSTART:20170424T100000
+DTEND:20170428T150000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Школа тестирования. Часть 3. Практикум п�
+ � тестированию'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-027 Школа тестирования. Часть 3. Пр
+ актикум по тестированию\n\nДата проведен�
+ �я курса: 24.04.2017-28.04.2017\nВремя: 10:00-15:00\n\nРеги
+ страция и подробнее о курсе:\nhttp://www.luxoft-tra
+ ining.ru/training/catalog/course.html?ID=29285&ID_TIME=71528\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

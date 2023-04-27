@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Библиотека ";
+$arDirProperties = Array(
+
+);
+?>

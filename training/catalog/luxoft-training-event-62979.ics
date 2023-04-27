@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160616T191835CEST-2058A4VBfJ@185.26.112.96
+DTSTAMP:20160616T171835Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ARC-005 Аналитические шаблоны\n\nДата �
+ �роведения курса: 15.06.2016-17.06.2016\nВремя: 10:00-1
+ 8:00\n\nРегистрация и подробнее о курсе:\nhttp:
+ //www.luxoft-training.ru/training/catalog/course.html?ID=6147&ID_TIME=6297
+ 9\n\n
+DTSTART:20160615T100000
+DTEND:20160617T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Аналитические шаблоны'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARC-005 Аналитические шаблоны\n\nДата �
+ �роведения курса: 15.06.2016-17.06.2016\nВремя: 10:00-1
+ 8:00\n\nРегистрация и подробнее о курсе:\nhttp:
+ //www.luxoft-training.ru/training/catalog/course.html?ID=6147&ID_TIME=6297
+ 9\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

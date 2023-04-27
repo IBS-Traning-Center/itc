@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20141127T191521CET-4306wVI4ok@50.57.83.146
+DTSTAMP:20141127T181521Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-SCH-06 Управление командой и сертиф
+ икация\n\nДата проведения курса: 02.12.2014-05.12
+ .2014\nВремя: 16:00 - 20:00\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=35122&ID_TIME=46306\n\n
+DTSTART:20141202T160000
+DTEND:20141205T200000
+LOCATION:Санкт-Петербург
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Управление командой и сертификация'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-SCH-06 Управление командой и сертиф
+ икация\n\nДата проведения курса: 02.12.2014-05.12
+ .2014\nВремя: 16:00 - 20:00\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=35122&ID_TIME=46306\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

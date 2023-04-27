@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220823T225719CEST-0572BDKpSE@82.146.55.227
+DTSTAMP:20220823T205719Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-069 Управление изменениями требо�
+ �аний\n\nДата проведения курса: 22.08.2022-25.08.20
+ 22\nВремя: 10:00-14:00\n\nРегистрация и подробне�
+ � о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.ht
+ ml?ID=104423&ID_TIME=120035\n\n
+DTSTART:20220822T100000
+DTEND:20220825T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Управление изменениями требований'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-069 Управление изменениями требо�
+ �аний\n\nДата проведения курса: 22.08.2022-25.08.20
+ 22\nВремя: 10:00-14:00\n\nРегистрация и подробне�
+ � о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.ht
+ ml?ID=104423&ID_TIME=120035\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

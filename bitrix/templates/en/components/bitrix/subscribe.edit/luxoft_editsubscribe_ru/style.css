@@ -1,0 +1,112 @@
+div.subscribe-edit .red {
+	color:red;
+}
+div.subscribe-edit .green {
+	color:green;
+}
+div.subscribe-edit .errorcolor {
+	color:red;
+}
+div.subscribe-edit .successcolor {
+	color:green;
+}
+
+#content img {
+    margin-right:0px;
+    padding:0px;
+}
+
+.tableworkbg {background-color:#FFFFFF;}
+.tableborder {background-color:#5E6B87;}
+.tablehead { background-color:#EBF4FB; border-top: solid 1px #93CBEA; border-bottom: solid 1px #C7E2FF; padding-top: 5px; padding-bottom: 5px; background-repeat: repeat-x;}
+.tdpadding  {padding-left:5px;}
+
+#content img {
+margin-right:0px;
+padding:0px;
+}
+h2 {
+	padding:5px  5px 5px 0px;
+}
+
+.subscribe
+{
+}
+
+.subscribe p
+{
+    color:#666;
+    padding:10px 0 10px 0;
+}
+
+.subscribe label
+{
+    display:block;
+    float:left;
+    font-weight:normal;
+    margin:10px 0 0;
+    text-align:right;
+}
+label {
+    font-weight:normal!important;
+}
+.subscribe label.error {
+    display:block;
+    font-weight:normal;
+    text-align:left;
+    width:100%;
+    color: red;
+    vertical-align: top;
+    margin:-15px 0px 10px 150px;
+    padding:0px 0px 0px 0px;
+}
+.subscribe label.red
+{
+    color: red;
+}
+.subscribe input
+{
+    float:left;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    width:160px;
+    margin:10px 5px 10px 10px;
+}
+.subscribe input.radiocheck
+{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 0px #aacfe4;
+    width:16px;
+}
+.subscribe input.but
+{
+    border:1px solid #fff!important;
+    margin:10px 5px 10px 75px;
+    width:170px;
+}
+.subscribe .errortext {
+    color:red;
+    padding:10px 0 10px 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+.box {
+    float: left;
+    width:25px;
+    padding-top:3px
+}
+.info_text {
+    float: left;
+    width:240px;
+
+}
+td.errortext{
+    color:red;
+}
+.subscribe input.confirm {
+    margin:10px 5px 0px 0;
+    display:block;
+    float:none;
+}

@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140514T063951CEST-2348uZgxZE@50.57.83.146
+DTSTAMP:20140514T043951Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:NET-011  C# Tips and Tricks\n\nДата проведения к
+ урса: 26.05.2014-27.05.2014\nВремя: 10:00-14:30\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=45199&ID_TIME=47781\n\n
+DTSTART:20140526T100000
+DTEND:20140527T143000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'C# Tips and Tricks'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:NET-011  C# Tips and Tricks\n\nДата проведения к
+ урса: 26.05.2014-27.05.2014\nВремя: 10:00-14:30\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=45199&ID_TIME=47781\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

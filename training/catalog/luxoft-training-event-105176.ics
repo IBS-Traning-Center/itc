@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20201203T173213CET-7210tcVaBW@185.26.112.96
+DTSTAMP:20201203T163213Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-106 Развитие эмоционального интел
+ лекта. Уровень 2\n\nДата проведения курса: 
+ 26.11.2020-04.12.2020\nВремя: 10:00-14:00\n\nРегистрация �
+ � подробнее о курсе:\nhttp://www.luxoft-training.ru/trainin
+ g/catalog/course.html?ID=69424&ID_TIME=105176\n\n
+DTSTART:20201126T100000
+DTEND:20201204T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Развитие эмоционального интеллекта. Ур�
+ �вень 2'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-106 Развитие эмоционального интел
+ лекта. Уровень 2\n\nДата проведения курса: 
+ 26.11.2020-04.12.2020\nВремя: 10:00-14:00\n\nРегистрация �
+ � подробнее о курсе:\nhttp://www.luxoft-training.ru/trainin
+ g/catalog/course.html?ID=69424&ID_TIME=105176\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

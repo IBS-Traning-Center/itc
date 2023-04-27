@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20221118T012337CET-4091ivvneD@82.146.55.227
+DTSTAMP:20221118T002337Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Вебинар: Реализация ООП в Java\n\nДата
+  проведения\n29.11.2022 18:00:00\n\nВремя\n18:00-20:00\n\n�
+ �есто проведения:\nOnline\n\nJava — один из самы
+ х популярных объектно-ориентированных я
+ зыков программирования. Но реализация О�
+ �П в Java отличается от\, например\, Python.\n\nРе
+ гистрация:\nhttp://www.luxoft-training.ru/events/seminar/123230/
+ \n\n
+DTSTART:20221129T180000
+LOCATION:Вебинар\, проводимый с  использовани
+ ем сервиса gotomeeting.com
+SUMMARY:Вебинар: Реализация ООП в Java
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Вебинар: Реализация ООП в Java
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

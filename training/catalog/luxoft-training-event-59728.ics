@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20151108T140939CET-8933Rrf4am@185.26.112.96
+DTSTAMP:20151108T130939Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-030 Введение в тест-менеджмент\n\nД
+ ата проведения курса: 23.11.2015-24.11.2015\nВремя:
+  14:00-19:00\n\nРегистрация и подробнее о курсе
+ :\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=29327&ID_
+ TIME=59728\n\n
+DTSTART:20151123T140000
+DTEND:20151124T190000
+LOCATION:Днепропетровск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Введение в тест-менеджмент'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-030 Введение в тест-менеджмент\n\nД
+ ата проведения курса: 23.11.2015-24.11.2015\nВремя:
+  14:00-19:00\n\nРегистрация и подробнее о курсе
+ :\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=29327&ID_
+ TIME=59728\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

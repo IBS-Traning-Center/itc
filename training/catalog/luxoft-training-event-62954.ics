@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160223T171543CET-2655UUisch@185.26.112.96
+DTSTAMP:20160223T161543Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-040  Особенности тестирования моб
+ ильных приложений\n\nДата проведения кур�
+ �а: 24.02.2016-25.02.2016\nВремя: 17:30-21:30\n\nРегистрац�
+ �я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tr
+ aining/catalog/course.html?ID=53384&ID_TIME=62954\n\n
+DTSTART:20160224T173000
+DTEND:20160225T213000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Особенности тестирования мобильных при
+ ложений'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-040  Особенности тестирования моб
+ ильных приложений\n\nДата проведения кур�
+ �а: 24.02.2016-25.02.2016\nВремя: 17:30-21:30\n\nРегистрац�
+ �я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tr
+ aining/catalog/course.html?ID=53384&ID_TIME=62954\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

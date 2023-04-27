@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211010T184240CEST-0628maritG@185.26.112.96
+DTSTAMP:20211010T164240Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-001 Визуальное моделирование с пр
+ именением UML\n\nДата проведения курса: 12.10.
+ 2021-15.10.2021\nВремя: 16:00-19:15\n\nРегистрация и по
+ дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cata
+ log/course.html?ID=28515&ID_TIME=113517\n\n
+DTSTART:20211012T160000
+DTEND:20211015T191500
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Визуальное моделирование с применением
+  UML'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-001 Визуальное моделирование с пр
+ именением UML\n\nДата проведения курса: 12.10.
+ 2021-15.10.2021\nВремя: 16:00-19:15\n\nРегистрация и по
+ дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cata
+ log/course.html?ID=28515&ID_TIME=113517\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

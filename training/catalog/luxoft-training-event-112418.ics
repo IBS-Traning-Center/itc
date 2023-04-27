@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210727T084149CEST-8304KH4nfG@185.26.112.96
+DTSTAMP:20210727T064149Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-007 Эффективная межличностная ком
+ муникация для команды ИТ-проекта\n\nДата �
+ �роведения курса: 26.07.2021-28.07.2021\nВремя: 10:00-1
+ 4:00\n\nРегистрация и подробнее о курсе:\nhttp:
+ //www.luxoft-training.ru/training/catalog/course.html?ID=8880&ID_TIME=1124
+ 18\n\n
+DTSTART:20210726T100000
+DTEND:20210728T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Эффективная межличностная коммуникаци�
+ � для команды ИТ-проекта'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-007 Эффективная межличностная ком
+ муникация для команды ИТ-проекта\n\nДата �
+ �роведения курса: 26.07.2021-28.07.2021\nВремя: 10:00-1
+ 4:00\n\nРегистрация и подробнее о курсе:\nhttp:
+ //www.luxoft-training.ru/training/catalog/course.html?ID=8880&ID_TIME=1124
+ 18\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

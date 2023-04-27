@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20191015T114810CEST-6750XRvTsC@185.26.112.96
+DTSTAMP:20191015T094810Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-004 Основы финансовых рынков. Cash Eq
+ uities & Equity Derivatives\n\nДата проведения курса: 1
+ 5.10.2019-16.10.2019\nВремя: 12:00-16:00\n\nРегистрация и
+  подробнее о курсе:\nhttp://www.luxoft-training.ru/training
+ /catalog/course.html?ID=28555&ID_TIME=94168\n\n
+DTSTART:20191015T120000
+DTEND:20191016T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы финансовых рынков. Cash Equities & Equity De
+ rivatives'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-004 Основы финансовых рынков. Cash Eq
+ uities & Equity Derivatives\n\nДата проведения курса: 1
+ 5.10.2019-16.10.2019\nВремя: 12:00-16:00\n\nРегистрация и
+  подробнее о курсе:\nhttp://www.luxoft-training.ru/training
+ /catalog/course.html?ID=28555&ID_TIME=94168\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

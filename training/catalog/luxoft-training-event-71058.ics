@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170411T191219CEST-5022FsBBpB@185.26.112.96
+DTSTAMP:20170411T171219Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-017 VaR и рыночный риск\n\nДата прове
+ дения курса: 12.04.2017-13.04.2017\nВремя: 11:00 - 13:30\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=56630&ID_TIME=71058\n\n
+DTSTART:20170412T110000
+DTEND:20170413T133000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'VaR и рыночный риск'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-017 VaR и рыночный риск\n\nДата прове
+ дения курса: 12.04.2017-13.04.2017\nВремя: 11:00 - 13:30\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=56630&ID_TIME=71058\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,140 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("");
+
+?><?$APPLICATION->IncludeComponent("bitrix:news.detail", "edu_ru_onecourse", array(
+	"IBLOCK_TYPE" => "edu",
+	"IBLOCK_ID" => "6",
+	"ELEMENT_ID" => $_REQUEST["ID"],
+	"ELEMENT_CODE" => "",
+	"CHECK_DATES" => "N",
+	"FIELD_CODE" => array(
+		0 => "PREVIEW_PICTURE",
+		1 => "",
+	),
+	"PROPERTY_CODE" => array(
+		0 => "course_code",
+		1 => "course_top",
+		2 => "course_price",
+		3 => "course_language",
+		4 => "course_duration",
+		5 => "course_type",
+		6 => "course_description",
+		7 => "course_puproses",
+		8 => "course_topics",
+		9 => "course_audience",
+		10 => "course_required",
+		11 => "course_linkedcourses",
+		12 => "course_trainers",
+		13 => "course_owner",
+		14 => "course_addsources",
+		15 => "course_requirements",
+		16 => "course_other",
+		17 => "course_filename",
+		18 => "",
+	),
+	"IBLOCK_URL" => "news.php?ID=#IBLOCK_ID#",
+	"AJAX_MODE" => "N",
+	"AJAX_OPTION_SHADOW" => "Y",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "Y",
+	"AJAX_OPTION_HISTORY" => "N",
+	"CACHE_TYPE" => "A",
+	"CACHE_TIME" => "3600",
+	"META_KEYWORDS" => "-",
+	"META_DESCRIPTION" => "-",
+	"DISPLAY_PANEL" => "N",
+	"SET_TITLE" => "Y",
+	"SET_STATUS_404" => "N",
+	"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+	"ADD_SECTIONS_CHAIN" => "N",
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",
+	"USE_PERMISSIONS" => "N",
+	"DISPLAY_TOP_PAGER" => "N",
+	"DISPLAY_BOTTOM_PAGER" => "N",
+	"PAGER_TITLE" => "Страница",
+	"PAGER_TEMPLATE" => "",
+	"DISPLAY_DATE" => "N",
+	"DISPLAY_NAME" => "Y",
+	"DISPLAY_PICTURE" => "N",
+	"DISPLAY_PREVIEW_TEXT" => "N",
+	"AJAX_OPTION_ADDITIONAL" => ""
+	),
+	false
+);?>
+<a name="reg"></a>
+ <?$APPLICATION->IncludeComponent("edu:iblock.element.add.form", "edu_training", array(
+	"IBLOCK_TYPE" => "edu",
+	"IBLOCK_ID" => "64",
+	"STATUS_NEW" => "N",
+	"LIST_URL" => "",
+	"USE_CAPTCHA" => "N",
+	"USER_MESSAGE_EDIT" => "",
+	"USER_MESSAGE_ADD" => "Спасибо. Ваша заявка была успешно добавлена",
+	"DEFAULT_INPUT_SIZE" => "60",
+	"PROPERTY_CODES" => array(
+		0 => "NAME",
+		1 => "248",
+		2 => "244",
+		3 => "246",
+		4 => "243",
+		5 => "245",
+		6 => "247",
+		7 => "249",
+		8 => "271",
+		9 => "313",
+		10 => "345",
+	),
+	"PROPERTY_CODES_REQUIRED" => array(
+		0 => "244",
+		1 => "246",
+		2 => "245",
+		3 => "247",
+		4 => "249",
+	),
+	"PROPERTY_CODES_HIDDEN" => array(
+		0 => "248",
+		1 => "243",
+		2 => "271",
+		3 => "313",
+	),
+	"PROPERTY_TYPE_EVENT" => "78",
+	"PROPERTY_TEXT_TO_DO" => "Регистрация на данный курс",
+	"PROPERTY_EVENT_NAME" => "",
+	"PROPERTY_EVENT_CITY_IN" => "",
+	"PROPERTY_EVENT_DATE_IN" => "",
+	"GROUPS" => array(
+		0 => "2",
+	),
+	"STATUS" => "ANY",
+	"ELEMENT_ASSOC" => "CREATED_BY",
+	"MAX_USER_ENTRIES" => "100000",
+	"MAX_LEVELS" => "100000",
+	"LEVEL_LAST" => "Y",
+	"MAX_FILE_SIZE" => "0",
+	"SEF_MODE" => "N",
+	"SEF_FOLDER" => "/training/catalog/",
+	"CUSTOM_TITLE_NAME" => "Название курса",
+	"CUSTOM_TITLE_TAGS" => "",
+	"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+	"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+	"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+	"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+	"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+	"CUSTOM_TITLE_DETAIL_TEXT" => "",
+	"CUSTOM_TITLE_DETAIL_PICTURE" => ""
+	),
+	false
+);?>
+
+<a name="fill_form"></a>
+<br />
+
+<br />
+
+<div class="learn_more autowidth">
+  <h3>Хотите узнать больше?</h3>
+
+  <p>По всем вопросам, в т.ч. для регистрации на курсы, отправьте письмо по адресу <a href="mailto:<?=EMAIL_ADDRESS?>" ><?=EMAIL_ADDRESS?></a></p>
+</div>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

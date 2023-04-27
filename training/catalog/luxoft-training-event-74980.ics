@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170905T195802CEST-8095sLvul3@185.26.112.96
+DTSTAMP:20170905T175802Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-001 Тестирование удобства исполь�
+ �ования приложений\n\nДата проведения кур
+ са: 04.09.2017-08.09.2017\nВремя: 09:00-11:30\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=6086&ID_TIME=74980\n\n
+DTSTART:20170904T090000
+DTEND:20170908T113000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Тестирование удобства использования пр
+ иложений'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-001 Тестирование удобства исполь�
+ �ования приложений\n\nДата проведения кур
+ са: 04.09.2017-08.09.2017\nВремя: 09:00-11:30\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=6086&ID_TIME=74980\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

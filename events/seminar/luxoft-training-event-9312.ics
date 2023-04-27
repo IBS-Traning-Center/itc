@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20130227T194538CET-5804rWv8v4@50.57.83.146
+DTSTAMP:20130227T184538Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Методология Lean в разработ
+ ке ПО\n\nДата проведения\n27.02.2009\n\nВремя\n17:0
+ 0-19:00\n\nМесто проведения:\nг. Омск ул. Учебн
+ ая 83/1 каб. 304\n\nЦель семинара: познакомить
+ ся с основными принципами методологии Lea
+ n\, оценить плюсы и минусы.\n\nРегистрация:
+ \nhttp://www.luxoft-training.ru/events/seminar/9312/\n\n
+DTSTART:20090227T000000
+LOCATION:г. Омск ул. Учебная 83/1 каб. 304
+SUMMARY:Семинар: Методология Lean в разработке
+  ПО
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Методология Lean в разработ
+ ке ПО
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

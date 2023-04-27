@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Расписание";
+$arDirProperties = array(
+
+);
+?>

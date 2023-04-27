@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160522T170533CEST-42973B8DI9@185.26.112.96
+DTSTAMP:20160522T150533Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-005 Метрики для управления тестир
+ ованием\n\nДата проведения курса: 23.05.2016-23.
+ 05.2016\nВремя: 10:00-17:00\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=35882&ID_TIME=63734\n\n
+DTSTART:20160523T100000
+DTEND:20160523T170000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Метрики для управления тестированием'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-005 Метрики для управления тестир
+ ованием\n\nДата проведения курса: 23.05.2016-23.
+ 05.2016\nВремя: 10:00-17:00\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=35882&ID_TIME=63734\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170226T150417CET-6264UnGpZJ@185.26.112.96
+DTSTAMP:20170226T140417Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-030 Java 8: новые возможности языка Ja
+ va\n\nДата проведения курса: 27.02.2017-28.02.2017\nВ�
+ �емя: 10:00-16:00\n\nРегистрация и подробнее о к
+ урсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=6
+ 8260&ID_TIME=68622\n\n
+DTSTART:20170227T100000
+DTEND:20170228T160000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Java 8: новые возможности языка Java'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-030 Java 8: новые возможности языка Ja
+ va\n\nДата проведения курса: 27.02.2017-28.02.2017\nВ�
+ �емя: 10:00-16:00\n\nРегистрация и подробнее о к
+ урсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=6
+ 8260&ID_TIME=68622\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

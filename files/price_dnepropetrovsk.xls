@@ -1,0 +1,1056 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:o="urn:schemas-microsoft-com:office:office"
+	xmlns:x="urn:schemas-microsoft-com:office:excel"
+	xmlns="http://www.w3.org/TR/REC-html40">
+	<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<meta http-equiv="Content-Type" content="application/octet-stream">
+	<style>
+	body {
+		font-family: Times New Roman;
+		font-size: 10pt;
+		background: white;
+	}
+	td {mso-number-format:\@; }
+	.number0 {mso-number-format:0;}
+	.number2 {mso-number-format:Fixed;}
+	.border td{
+		border:.5pt solid windowtext;
+	}
+	.border {
+		border:.5pt solid windowtext;
+	}
+	</style>
+	<!--[if gte mso 9]>
+	<xml>
+	<x:ExcelWorkbook>
+	  <x:ExcelWorksheets>
+	   <x:ExcelWorksheet>
+		<x:Name>Sheet1</x:Name>
+		<x:WorksheetOptions>
+		<x:Print>
+		<x:ValidPrinterInfo/>
+		<x:Scale>75</x:Scale>
+		<x:HorizontalResolution>600</x:HorizontalResolution>
+		<x:VerticalResolution>600</x:VerticalResolution>
+		</x:Print>
+		 
+		</x:WorksheetOptions>
+	   </x:ExcelWorksheet>
+	  </x:ExcelWorksheets>
+	</x:ExcelWorkbook>
+	</xml>
+	<![endif]--> 
+	</head>
+	<body>
+		<table  cellspacing="0" cellpadding="0" width="824" border="0">
+			<tr>
+				<td rowspan="3" style="border: none;" height="" colspan="2"><img style="padding: 12px;" src="http://www.luxoft-training.ru/images/logoh93.jpg"></td>
+				<td colspan="3" style="border: none;" style="font-size: 10pt;" align="right">
+					<i>
+					<b>
+					Учебный Центр Luxoft Training </b></i><br/>
+					<i><b>Обучение и консалтинг от экспертов-практиков по разработке ПО</b></i><br/>
+				</td>
+			</tr>
+			<tr>
+				<td style="border: none;" colspan="3"></td>
+			</tr>
+			<tr>
+				<td style="border: none;" colspan="3" style="font-size: 10pt;" align="right">Днепропетровск, ул. Шевченко, д. 53, этаж 6<br/>
+		Тел: +38 (056) 787-12-21 (доп. 4106, 6954)<br/>
+		e-mail: education@luxoft.com</td>
+			</tr>
+			<tr >
+				<td valign="middle" style="border: none;" align="center" style="font-size: 16pt; height: 50px; vertical-align: middle;" colspan="5">
+					<b>Открытое расписание г. Днепропетровск</b>
+				</td>
+			</tr>
+			<tr >
+				<td valign="middle" style="border: none;" align="center" style="font-size: 16pt; height: 40x; vertical-align: middle;" colspan="5">
+					<b>Прайс-лист</b>
+				</td>
+			</tr>
+			<tr >
+				<td valign="bottom" style="border: none; font-size: 10pt;" colspan="5">
+					Указана стоимость обучения одного слушателя за весь курс в формате открытого расписания в г. Днепропетровск на 04.12.2013</td>
+			</tr>
+			<tr>
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;"  class="border" align="center"><b>Код курса</b></td>
+				<td style="font-size: 10pt; vertical-align: middle;"  width="536" class="border" colspan="2"   align="center"><b>Название курса</b></td>
+				<td style="font-size: 10pt; vertical-align: middle;" width="99" class="border" align="center" align="center"><b>Длительность, акад. ч</b></td>
+				<td style="font-size: 10pt; vertical-align: middle;" border="1" class="border" width="99" align="center" align="center"><b>Стоимость, грн.</b></td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Управление проектами разработки ПО</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Ключевые аспекты управления проектами</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">28</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 120</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Оценка, планирование и контроль исполнения проекта</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">32</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 770</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Работа с персоналом в проекте</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">32</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 770</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Оценка проекта: размер и трудозатраты </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 620</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Практикум по управлению проектами с использованием бизнес-симулятора SimulTrain</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 300</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление проектами в методологии RUP</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление рисками </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 620</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление виртуальными командами </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 420</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-009</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление тестированием для менеджеров проектов</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">690</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы Microsoft Project 2010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 490</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-011</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Подготовка к сертификации по PMBOK 4.0 </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">7 230</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">PM-013</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы управления проектами с акцентом на Soft Skills</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 880</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SPOV-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Метрики: проекты, процессы, качество</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Системный и бизнес-анализ</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы визуального моделирования с использованием UML 2.0</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 050</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Мастерская по разработке и управлению требованиями. UML и Модель сценариев использования  (Use Case Model)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 660</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Объектно-ориентированный  анализ ИС. Концептуальное моделирование на UML для системных аналитиков </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 660</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Моделирование бизнес-процессов на UML</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 560</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Введение в методологию функционального моделирования IDEF0</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 130</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Моделирование предметной области на UML (ER-модель)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 130</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Решение бизнес-проблем</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 130</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы использования IBM Rational RequisitePro</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 330</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-009</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы использования IBM Rational Rose для получения навыков визуального моделирования на UML</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 330</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">UML-моделирование с использованием Sparx Enterprise Architect</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 330</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-021</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Подготовка к проведению этапа бизнес-анализа IT проекта</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 050</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-022</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Проектирование и аудит Пользовательских Интерфейсов: что такое Пользовательский Интерфейс?</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">820</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-023</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Принципы создания пользовательских интерфейсов</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 190</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-024</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Проектирование интерфейсов Web-приложений</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">820</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-026</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Анализ данных – поиск закономерностей и построение моделей прогноза</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 380</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-027</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Процессный подход в современном менеджменте</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 190</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-029</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Техника написания сценариев использования</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 050</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">REQ-032</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">UML как средство общения внутри команды</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">720</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Архитектура, дизайн и управление базами данных</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ARC-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основные практики архитектора ПО</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 790</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ARC-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Предметно-ориентированное проектирование</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 440</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ARC-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Шаблоны проектирования приложений масштаба предприятия</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 300</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ARC-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Аналитические шаблоны</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 300</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ARC-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы высокопроизводительных систем</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 300</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ARC-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Введение в системную архитектуру ПО</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">880</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">EAS-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы хранилищ данных (Data Warehouse Fundamentals)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 980</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">EAS-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Хранилища данных - моделирование и дизайн</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">880</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">EAS-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Построение репозитория Oracle BI (Базовый курс)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 420</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">EAS-009</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Создание отчетов и информационных панелей Oracle BI (Базовый курс)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 640</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">EAS-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Интеграция данных и администрирование Oracle Data Integrator</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">30</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 180</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Общие курсы по разработке ПО</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Шаблоны проектирования (GoF)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 300</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Введение в SQL</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 450</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-013</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Введение в технологии разработки ПО</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">490</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SDP-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Обзор методологий разработки программного обеспечения</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 120</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SDP-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы методологии IBM Rational Unified Process для разработки ПО</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 120</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SDP-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Конфигурационное управление в ИТ проектах</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">690</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SDP-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы методологии Agile для разработки ПО</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">28</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 410</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Разработка ПО (.NET)</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление зависимостями в .NET</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-009</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка через тестирование (TDD)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы .NET разработки и языка C#</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6 160</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Асинхронное будущее в .NET</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 760</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">SharePoint 2010 для разработчиков</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">32</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6 160</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка программного обеспечения на платформе .NET (для нетехнических специалистов)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">490</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы работы с платформой ASP.NET MVC 3.0</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 910</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка приложений для Windows Phone</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">490</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Модульное тестирование на платформе .Net</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 050</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Проектирование по контракту на платформе .NET</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 560</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">NET-012</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Рефакторинг кода .NET</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 620</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Разработка ПО (Java)</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Рефакторинг кода</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 690</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-012</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Сборщик проектов Ant</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Взаимодействие с СУБД из java-приложений посредством технологии JDBC v3</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Работа с Java web-сервисами</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">7 230</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка на платформе Java SE 7. Базовые темы</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 180</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка на платформе Java SE 7. Расширенные темы</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 180</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-009</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка бизнес-приложений на базе технологии EJB3</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 180</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Владение каркасом разработки Spring Framework</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 300</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-011</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Владение каркасом модульного тестирования JUnit</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 080</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-012</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Обзор JAVA-технологий разработки ПО</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">490</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-013</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Владение каркасом разработки Spring Security</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 710</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-016</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Введение в Apache Maven</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 170</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-018</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка бизнес-приложений на базе JPA 2.0</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 710</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">JVA-020 </td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка web-приложений с использованием Servlets 2.5</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">0</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Разработка ПО (Web)</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы использования XML, XPath, Altova</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">780</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Продвинутый уровень использования XSD</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 080</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Продвинутый уровень использования XML, XPath, Altova</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">780</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы использования XSLT</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">13</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 660</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Продвинутый уровень использования XSLT</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">15</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 950</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка на JavaScript</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 180</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Разработка HTML5/RIA (Паттерны и инструменты JavaScript)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6 840</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-009</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Объектно-ориентированное программирование на PHP 5</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">32</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 880</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">WEB-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">FLEX Базовый курс (часть 1)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 050</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Разработка ПО (C, C++)</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">C-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы языка программирования С</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 760</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">C-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Объектно-ориентированное программирование на языке С++</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 180</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-001_C++</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Шаблоны проектирования (GoF). Редакция для C++</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 300</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Разработка ПО (Mobile)</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DEV-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы разработки на Android</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 100</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Разработка ПО (Базы данных)</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 11g, настройка производительности SQL-выражений</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 710</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, основы языка PL/SQL</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 530</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, язык SQL</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 660</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, язык PL/SQL для разработчиков</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 710</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, настройка производительности SQL-выражений</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">32</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 910</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, настройка производительности БД</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 660</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-013</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, Аналитические функции</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">590</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-017</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">База данных Oracle11g:  PL/SQL новые возможности</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 320</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-018</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 11g, основы языка PL/SQL</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 710</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-021</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 11g, язык PL/SQL для разработчиков</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 710</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Разработка ПО (PowerCenter)</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">EAS-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Informatica PowerCenter 8.6 Уровень 1 для разработчиков</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 320</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">EAS-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Informatica PowerCenter 8.6 Уровень 2 для разработчиков</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 320</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">EAS-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Informatica - решение по интеграции данных для Hadoop</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">780</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Скриптовые языки</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SCRIPT-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Tool Command Language</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">930</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Программирование для офисных приложений</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">OFFICE-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Программирование на языке Microsoft Visual Basic for Applications в среде Microsoft Office Excel 2007 / 2010 </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 590</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Тестирование</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Тестирование удобства использования приложений</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 660</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования. Часть 6. Тестирование Web-приложений</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 450</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Практикум по рискам тестирования</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 270</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Введение в метрики тестирования</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">780</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Метрики для управления тестированием</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">7</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 170</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-011</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Тестирование производительности с использованием Jmeter</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-013</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Тестирование производительности с использованием jMeter: от старта проекта до финальных отчетов</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 660</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-017</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Автоматизация тестирования с использованием Selenium 2</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 080</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-018</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Построение фреймворка автоматического тестирования с помощью QTP</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 450</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-019</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Автоматизация тестирования с использованием AutomatedQA TestComplete 9</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 080</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-020</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Тестирование производительности с помощью Mercury Load Runner</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 450</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-021</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Использование и Администрирование Quality Center 10.0</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 950</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-022</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Использование и администрирование HP Application Lifecycle Management platform 11.0 </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 950</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-023</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования для не тестировщиков</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">300</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-024</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования. Часть 2. Управление дефектами</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">15</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 730</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-025</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Эффективный подбор команды тестировщиков</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">490</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-026</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования. Часть 1. Введение</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 170</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-027</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования. Часть 3. Практикум по тестированию</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 710</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-028</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования. Часть 4. Тест-дизайн</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 450</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-029</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования. Часть 5. Практикум по тест-дизайну</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 450</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-030</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования. Часть 7. Введение в тест-менеджмент</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">10</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 400</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-033</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы тестирования производительности</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">780</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SQA-036</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Метрики для оценки качества продукта и процесса</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 270</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">W-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Тест-кейс или тест-сценарий. «Анализируй это»</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">200</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">W-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Тестирование по тест-кейсам. Или без тест-кейсов.</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">200</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">W-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Стратегии тестирования. Полководцы на марше.</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">190</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Oracle</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, основы администрирования</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 250</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, администрирование, часть 1</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 660</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">DB-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Oracle 10g, администрирование, часть 2</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">40</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5 660</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Linux</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ADM-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Aдминистрирование GNU/Linux</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 510</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ADM-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Введение в ALT Linux</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 050</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Управление IT-сервисами</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ITSM-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Введение в процессы сопровождения ИС – ITIL/ITSM – Управление сервисами</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">ITSM-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы ITIL/ITSM. Процессы библиотеки инфраструктуры информационных технологий  (2-я редакция)</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 950</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Управленческая эффективность и коммуникации</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Тайм-менеджмент для руководителей</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 400</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Эффективная межличностная коммуникация для менеджеров проектов</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">4 300</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Эффективное проведение встреч и совещаний</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 150</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-011</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Искусство управления конфликтом</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 120</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-012</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Мастерство переговоров</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-014</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Обратная связь для менеджеров проектов</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-015</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Постановка целей персонального развития</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">5</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">980</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-016</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Рычаги влияния</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">22</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">0</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Программа «7 ступеней к лидерству»</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-SCH-01</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы менеджмента</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-SCH-02</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Личная эффективность </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-SCH-03</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Успешная коммуникация</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-SCH-04</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Работа с персоналом</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 790</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-SCH-05</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Искусство убеждать</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-SCH-06</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление командой и сертификация</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Личная эффективность</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Тайм-менеджмент для инженеров</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Использование техники Mind Maps</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Эффективная письменная коммуникация</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">20</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3 710</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Эффективная межличностная коммуникация для команды ИТ проекта</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Эффективная подготовка презентаций</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 150</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Мастерство защиты от скрытого влияния</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SS-013</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Успешное публичное выступление</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Investment Banking</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">FIN-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы финансовых рынков. Инвестиционный банкинг</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">FIN-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы финансовых рынков. Foreign Exchange & FX Derivatives </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 080</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">FIN-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы финансовых рынков. Money Market & Interest Rate Derivatives.</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 080</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">FIN-004</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы финансовых рынков. Cash Equities & Equity Derivatives.</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 080</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">FIN-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы финансовых рынков. Fixed Income & Fixed Income Derivatives.</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">6</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 080</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">FIN-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основы финансовых рынков. Credit Derivatives.</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">3</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">590</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">FIN-010</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Клиринг и расчеты по сделкам </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">8</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 470</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Подготовка внутренних тренеров ИТ компаний</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">TRN-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Личная эффективность тренера </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">TRN-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление группой в тренинге</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Успешный внешний рекрутёр</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">RECR-006</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление проектами во внешнем рекрутменте</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">12</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 150</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">RECR-007</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Эффективная коммуникация во внешнем рекрутменте</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">RECR-008</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Искусство продаж во внешнем рекрутменте</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">RECR-009</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление конфликтами и противостояние скрытому влиянию во внешнем рекрутменте</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Успешный внутренний рекрутёр</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">RECR-001</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Успешная коммуникация</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">RECR-002</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Искусство продаж</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 790</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">RECR-003</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Управление конфликтами</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">16</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">2 930</td>
+			</tr><tr > 
+				<td style="font-size: 10pt; height:34px; vertical-align: middle; background: #d9d9d9;" class="border" align="center" colspan="5">
+				<i><b>Безопасность ПО</b></i>
+				</td>
+				</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SECR-004 </td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Поиск уязвимостей ПО с использованием HP </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">10</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">1 810</td>
+			</tr><tr >
+				<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">SECR-005</td>
+				<td style="font-size: 10pt; vertical-align: middle;" colspan="2" class="border" align="left">Основные уязвимости в безопасности веб-приложений </td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">24</td>
+				<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">0</td>
+			</tr></table>
+	</body>
+	</html>

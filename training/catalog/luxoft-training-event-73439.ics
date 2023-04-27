@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20171028T105533CEST-5415d6svVL@185.26.112.96
+DTSTAMP:20171028T085533Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-056 BABOK Guide 3.0: Оценка решения\n\nДат�
+ � проведения курса: 15.12.2017-15.12.2017\nВремя: 10:0
+ 0-18:00\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=68441&ID_TIME=
+ 73439\n\n
+DTSTART:20171215T100000
+DTEND:20171215T180000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BABOK Guide 3.0: Оценка решения'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-056 BABOK Guide 3.0: Оценка решения\n\nДат�
+ � проведения курса: 15.12.2017-15.12.2017\nВремя: 10:0
+ 0-18:00\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=68441&ID_TIME=
+ 73439\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

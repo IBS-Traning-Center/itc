@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200408T085042CEST-5937xPKrvx@185.26.112.96
+DTSTAMP:20200408T065042Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-046 Введение в бизнес-моделирован
+ ие\n\nДата проведения курса: 16.04.2020-21.04.2020\n�
+ �ремя: 14:00-18:00\n\nРегистрация и подробнее о 
+ курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID
+ =53340&ID_TIME=97950\n\n
+DTSTART:20200416T140000
+DTEND:20200421T180000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Введение в бизнес-моделирование'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-046 Введение в бизнес-моделирован
+ ие\n\nДата проведения курса: 16.04.2020-21.04.2020\n�
+ �ремя: 14:00-18:00\n\nРегистрация и подробнее о 
+ курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID
+ =53340&ID_TIME=97950\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

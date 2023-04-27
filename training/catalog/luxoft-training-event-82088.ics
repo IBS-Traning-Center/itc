@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180701T225023CEST-3360MmA6UB@185.26.112.96
+DTSTAMP:20180701T205023Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DB-024 Основы SQL\, часть 2\n\nДата провед
+ ения курса: 18.07.2018-19.07.2018\nВремя: 10:00-18:00\n\nР�
+ �гистрация и подробнее о курсе:\nhttp://www.luxof
+ t-training.ru/training/catalog/course.html?ID=57989&ID_TIME=82088\n\n
+DTSTART:20180718T100000
+DTEND:20180719T180000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы SQL\, часть 2'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DB-024 Основы SQL\, часть 2\n\nДата провед
+ ения курса: 18.07.2018-19.07.2018\nВремя: 10:00-18:00\n\nР�
+ �гистрация и подробнее о курсе:\nhttp://www.luxof
+ t-training.ru/training/catalog/course.html?ID=57989&ID_TIME=82088\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

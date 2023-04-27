@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180223T061302CET-5072XBxbUc@185.26.112.96
+DTSTAMP:20180223T051302Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-039 Применение фреймворка Spring Integr
+ ation\n\nДата проведения курса: 19.03.2018-22.03.2018\n
+ Время: 09:30-13:30\n\nРегистрация и подробнее о
+  курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?I
+ D=77332&ID_TIME=77445\n\n
+DTSTART:20180319T093000
+DTEND:20180322T133000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Применение фреймворка Spring Integration'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-039 Применение фреймворка Spring Integr
+ ation\n\nДата проведения курса: 19.03.2018-22.03.2018\n
+ Время: 09:30-13:30\n\nРегистрация и подробнее о
+  курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?I
+ D=77332&ID_TIME=77445\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

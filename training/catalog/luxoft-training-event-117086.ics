@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211219T231313CET-42443gsFmP@185.26.112.96
+DTSTAMP:20211219T221313Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-037 Akka для Java\n\nДата проведения ку�
+ �са: 20.12.2021-24.12.2021\nВремя: 17:00-20:15\n\nРегистра�
+ �ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/
+ training/catalog/course.html?ID=90821&ID_TIME=117086\n\n
+DTSTART:20211220T170000
+DTEND:20211224T201500
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Akka для Java'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-037 Akka для Java\n\nДата проведения ку�
+ �са: 20.12.2021-24.12.2021\nВремя: 17:00-20:15\n\nРегистра�
+ �ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/
+ training/catalog/course.html?ID=90821&ID_TIME=117086\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

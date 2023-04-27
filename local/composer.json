@@ -1,0 +1,42 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Bitrix24\\Rest\\": "lib/bitrix24.rest/",
+      "Luxoft\\Dev\\": "modules/luxoft.dev/lib/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "symfony/console": "6.*",
+    "wapmorgan/morphos": "^3.2.27",
+    "andreyryabin/sprint.migration": "4.*",
+    "mpdf/mpdf": "8.0.*",
+    "myclabs/deep-copy": "1.10.*",
+    "paragonie/random_compat": "9.99.*",
+    "psr/log": "1.1.*",
+    "setasign/fpdi": "2.3.*",
+    "symfony/polyfill-mbstring": "1.23.*",
+    "wapmorgan/morphos": "3.2.*",
+    "wikimedia/composer-merge-plugin": "dev-feature/composer-v2"
+  },
+  "extra": {
+    "installer-paths": {
+      "./components/{$name}/": ["type:bitrix-component"],
+      "./modules/{$name}/": ["type:bitrix-module"],
+      "./templates/{$name}/": ["type:bitrix-theme"],
+
+      "../bitrix/components/{$name}/": ["type:bitrix-core-component"],
+      "../bitrix/modules/{$name}/": ["type:bitrix-core-module"],
+      "../bitrix/templates/{$name}/": ["type:bitrix-core-theme"]
+    }
+  },
+  "config": {
+    "vendor-dir": "./vendor",
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.9"
+  }
+}

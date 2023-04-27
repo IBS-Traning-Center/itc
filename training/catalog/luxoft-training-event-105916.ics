@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210321T104613CET-6277JDKcRj@185.26.112.96
+DTSTAMP:20210321T094613Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-001_NET Шаблоны проектирования GoF. Р
+ едакция для .NET\n\nДата проведения курса: 22
+ .03.2021-25.03.2021\nВремя: 10:00-16:00\n\nРегистрация и 
+ подробнее о курсе:\nhttp://www.luxoft-training.ru/training/
+ catalog/course.html?ID=48311&ID_TIME=105916\n\n
+DTSTART:20210322T100000
+DTEND:20210325T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Шаблоны проектирования GoF. Редакция для 
+ .NET'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-001_NET Шаблоны проектирования GoF. Р
+ едакция для .NET\n\nДата проведения курса: 22
+ .03.2021-25.03.2021\nВремя: 10:00-16:00\n\nРегистрация и 
+ подробнее о курсе:\nhttp://www.luxoft-training.ru/training/
+ catalog/course.html?ID=48311&ID_TIME=105916\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

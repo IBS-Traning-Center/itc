@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211128T235720CET-0347gPUiF8@185.26.112.96
+DTSTAMP:20211128T225720Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-008 Эффективная подготовка презен
+ таций\n\nДата проведения курса: 29.11.2021-30.11.2
+ 021\nВремя: 13:00-17:00\n\nРегистрация и подробне
+ е о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.h
+ tml?ID=8882&ID_TIME=116073\n\n
+DTSTART:20211129T130000
+DTEND:20211130T170000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Эффективная подготовка презентаций'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-008 Эффективная подготовка презен
+ таций\n\nДата проведения курса: 29.11.2021-30.11.2
+ 021\nВремя: 13:00-17:00\n\nРегистрация и подробне
+ е о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.h
+ tml?ID=8882&ID_TIME=116073\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

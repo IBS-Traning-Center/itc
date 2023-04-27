@@ -1,0 +1,149 @@
+<?
+// подключение служебной части пролога
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+// здесь можно задать например, свойство страницы
+// с помощью функции $APPLICATION->SetPageProperty
+// и обработать затем его в визуальной части эпилога
+// подключение визуальной части пролога
+//require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
+?>
+<table cellspacing="0" cellpadding="0" width="100%">
+				<tbody><tr><td><font size="3" face="Arial" color="#365873">Приглашаем освоить новую специальность. Открыт набор в классы:</font>
+				</td></tr>
+				<tr><td height="8" bgcolor="#ffffff"><img height="8" border="0" width="820" alt="" src="/images/spacer.gif"></td></tr>
+			</tbody></table>
+<?
+	$data  = date("Y-m-d");
+	$nextWeek =   mktime (0,0,0,date("m") ,date("d")+60,date("Y"));
+	$nextWeek =   date("Y-m-d",$nextWeek);
+	//$GLOBALS["arrFilter"] =array("ACTIVE" => "Y" ,">=PROPERTY_startdate" => $data, "<=PROPERTY_startdate" => $nextWeek);
+?>
+<?
+	$GLOBALS["arrFilter"] =array("ACTIVE" => "Y",">=PROPERTY_startdate" => $data, "<=PROPERTY_startdate" => $nextWeek);
+?>
+
+<?$APPLICATION->IncludeComponent("bitrix:news.list", "edu_schedule_pp_weekly", array(
+	"IBLOCK_TYPE" => "edu",
+	"IBLOCK_ID" => "10",
+	"NEWS_COUNT" => "100",
+	"SORT_BY1" => "PROPERTY_startdate",
+	"SORT_ORDER1" => "ASC",
+	"SORT_BY2" => "PROPERTY_startdate",
+	"SORT_ORDER2" => "ASC",
+	"FILTER_NAME" => "arrFilter",
+	"FIELD_CODE" => array(
+		0 => "",
+		1 => "",
+	),
+	"PROPERTY_CODE" => array(
+		0 => "prschedule_time",
+		1 => "prschedule_desc",
+		2 => "hot_checkbox",
+		3 => "prschedule_courses",
+		4 => "prschedule_startdate",
+		5 => "prschedule_enddate",
+		6 => "",
+	),
+	"CHECK_DATES" => "Y",
+	"DETAIL_URL" => "/training/catalog/course.html?ID=#ELEMENT_ID#",
+	"AJAX_MODE" => "N",
+	"AJAX_OPTION_SHADOW" => "Y",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "Y",
+	"AJAX_OPTION_HISTORY" => "N",
+	"CACHE_TYPE" => "Y",
+	"CACHE_TIME" => "3600",
+	"CACHE_FILTER" => "Y",
+	"PREVIEW_TRUNCATE_LEN" => "",
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",
+	"DISPLAY_PANEL" => "N",
+	"SET_TITLE" => "N",
+	"SET_STATUS_404" => "N",
+	"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+	"ADD_SECTIONS_CHAIN" => "N",
+	"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+	"PARENT_SECTION" => "",
+	"PARENT_SECTION_CODE" => "",
+	"DISPLAY_TOP_PAGER" => "N",
+	"DISPLAY_BOTTOM_PAGER" => "N",
+	"PAGER_TITLE" => "",
+	"PAGER_SHOW_ALWAYS" => "N",
+	"PAGER_TEMPLATE" => "",
+	"PAGER_DESC_NUMBERING" => "N",
+	"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+	"AJAX_OPTION_ADDITIONAL" => ""
+	),
+	false
+);?>
+<?/*
+<br />
+<table cellspacing="0" cellpadding="0" width="100%">
+				<tbody><tr><td><font size="3" face="Arial" color="#365873">Продолжается набор в классы:</font>
+				</td></tr>
+				<tr><td height="8" bgcolor="#ffffff"><img height="8" border="0" width="820" alt="" src="/images/spacer.gif"></td></tr>
+			</tbody></table>
+*/?>
+<?
+//$GLOBALS["arrFilter"] =array("ACTIVE" => "Y","<=PROPERTY_startdate" => $data, ">=PROPERTY_enddate" => $data);
+?>
+<?/*$APPLICATION->IncludeComponent("bitrix:news.list", "edu_schedule_pp_weekly", array(
+	"IBLOCK_TYPE" => "edu",
+	"IBLOCK_ID" => "10",
+	"NEWS_COUNT" => "100",
+	"SORT_BY1" => "PROPERTY_startdate",
+	"SORT_ORDER1" => "ASC",
+	"SORT_BY2" => "PROPERTY_startdate",
+	"SORT_ORDER2" => "ASC",
+	"FILTER_NAME" => "arrFilter",
+	"FIELD_CODE" => array(
+		0 => "",
+		1 => "",
+	),
+	"PROPERTY_CODE" => array(
+		0 => "prschedule_time",
+		1 => "prschedule_desc",
+		2 => "hot_checkbox",
+		3 => "prschedule_courses",
+		4 => "prschedule_startdate",
+		5 => "prschedule_enddate",
+		6 => "",
+	),
+	"CHECK_DATES" => "Y",
+	"DETAIL_URL" => "/training/catalog/course.html?ID=#ELEMENT_ID#",
+	"AJAX_MODE" => "N",
+	"AJAX_OPTION_SHADOW" => "Y",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "Y",
+	"AJAX_OPTION_HISTORY" => "N",
+	"CACHE_TYPE" => "Y",
+	"CACHE_TIME" => "3600",
+	"CACHE_FILTER" => "Y",
+	"PREVIEW_TRUNCATE_LEN" => "",
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",
+	"DISPLAY_PANEL" => "N",
+	"SET_TITLE" => "N",
+	"SET_STATUS_404" => "N",
+	"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+	"ADD_SECTIONS_CHAIN" => "N",
+	"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+	"PARENT_SECTION" => "",
+	"PARENT_SECTION_CODE" => "",
+	"DISPLAY_TOP_PAGER" => "N",
+	"DISPLAY_BOTTOM_PAGER" => "N",
+	"PAGER_TITLE" => "",
+	"PAGER_SHOW_ALWAYS" => "N",
+	"PAGER_TEMPLATE" => "",
+	"PAGER_DESC_NUMBERING" => "N",
+	"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+	"AJAX_OPTION_ADDITIONAL" => ""
+	),
+	false
+);*/?>
+
+<?
+
+// подключение визуальной части эпилога
+//require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_before.php");
+// подключение служебной части эпилога
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_after.php");
+?>

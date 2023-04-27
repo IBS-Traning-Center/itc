@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180904T081157CEST-0374sHxvgi@185.26.112.96
+DTSTAMP:20180904T061157Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ATL-001 Getting Started with Jira Software\n\nДата пров
+ едения курса: 17.09.2018-17.09.2018\nВремя: 10:00-14:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=80964&ID_TIME=82904\n\n
+DTSTART:20180917T100000
+DTEND:20180917T140000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Getting Started with Jira Software'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ATL-001 Getting Started with Jira Software\n\nДата пров
+ едения курса: 17.09.2018-17.09.2018\nВремя: 10:00-14:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=80964&ID_TIME=82904\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

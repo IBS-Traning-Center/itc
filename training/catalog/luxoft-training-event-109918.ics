@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211005T182621CEST-8903t4WcdG@185.26.112.96
+DTSTAMP:20211005T162621Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-006_JVA Рефакторинг кода на Java\n\nДат
+ а проведения курса: 04.10.2021-08.10.2021\nВремя: 10:
+ 00-15:00\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=6098&ID_TIME=
+ 109918\n\n
+DTSTART:20211004T100000
+DTEND:20211008T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Рефакторинг кода на Java'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-006_JVA Рефакторинг кода на Java\n\nДат
+ а проведения курса: 04.10.2021-08.10.2021\nВремя: 10:
+ 00-15:00\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=6098&ID_TIME=
+ 109918\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

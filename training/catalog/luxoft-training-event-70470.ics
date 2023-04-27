@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170508T183431CEST-77004rvV98@185.26.112.96
+DTSTAMP:20170508T163431Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-007 Introduction to git\n\nДата проведения к
+ урса: 11.05.2017-12.05.2017\nВремя: 10:00-15:00\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=45139&ID_TIME=70470\n\n
+DTSTART:20170511T100000
+DTEND:20170512T150000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Introduction to git'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-007 Introduction to git\n\nДата проведения к
+ урса: 11.05.2017-12.05.2017\nВремя: 10:00-15:00\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=45139&ID_TIME=70470\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

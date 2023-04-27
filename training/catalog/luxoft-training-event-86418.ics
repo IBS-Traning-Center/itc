@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190222T142808CET-3707jXmfzH@185.26.112.96
+DTSTAMP:20190222T132808Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:EAS-011 Современные подходы к управле
+ нию данными\n\nДата проведения курса: 27.02.2
+ 019-28.02.2019\nВремя: 10:00-18:00\n\nРегистрация и по�
+ �робнее о курсе:\nhttp://www.luxoft-training.ru/training/catal
+ og/course.html?ID=49453&ID_TIME=86418\n\n
+DTSTART:20190227T100000
+DTEND:20190228T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Современные подходы к управлению данны�
+ �и'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:EAS-011 Современные подходы к управле
+ нию данными\n\nДата проведения курса: 27.02.2
+ 019-28.02.2019\nВремя: 10:00-18:00\n\nРегистрация и по�
+ �робнее о курсе:\nhttp://www.luxoft-training.ru/training/catal
+ og/course.html?ID=49453&ID_TIME=86418\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

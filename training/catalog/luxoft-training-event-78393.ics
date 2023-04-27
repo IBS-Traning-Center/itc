@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180113T051913CET-4628TRDz4L@185.26.112.96
+DTSTAMP:20180113T041913Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-116 Секреты эффективной аргумента
+ ции \n\nДата проведения курса: 16.01.2018-19.01.2018
+ \nВремя: 10:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=77180&ID_TIME=78393\n\n
+DTSTART:20180116T100000
+DTEND:20180119T140000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Секреты эффективной аргументации '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-116 Секреты эффективной аргумента
+ ции \n\nДата проведения курса: 16.01.2018-19.01.2018
+ \nВремя: 10:00-14:00\n\nРегистрация и подробнее 
+ о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html
+ ?ID=77180&ID_TIME=78393\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210516T213006CEST-82420wdHKU@185.26.112.96
+DTSTAMP:20210516T193006Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-031 Язык Scala для Java-разработчиков\n
+ \nДата проведения курса: 17.05.2021-21.05.2021\nВре�
+ �я: 10:00-16:00\n\nРегистрация и подробнее о кур
+ се:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=68262
+ &ID_TIME=108842\n\n
+DTSTART:20210517T100000
+DTEND:20210521T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Язык Scala для Java-разработчиков'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-031 Язык Scala для Java-разработчиков\n
+ \nДата проведения курса: 17.05.2021-21.05.2021\nВре�
+ �я: 10:00-16:00\n\nРегистрация и подробнее о кур
+ се:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=68262
+ &ID_TIME=108842\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

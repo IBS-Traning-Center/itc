@@ -1,0 +1,56 @@
+<?
+	$myID=$_POST[ID];
+	if ($myID==0)
+	{
+		 $ID_record = $_POST["PROP"][51]['n0'];
+	}
+	else
+	{
+		 $ID_record = $_POST["PROP"][51]["$myID:51"];
+	}
+   /*
+	$arFilter = array();
+	$arFilter["ID"] = $ID_record;
+	$arSort["SORT"] = "ASC";
+	$items = GetIBlockElementList(6, false, $arSort, 1, $arFilter );
+	while($arItem = $items->GetNext())
+	{
+	 	$name_cource = $arItem["NAME"];
+	 	$IDD = $arItem["ID"];
+	 	$arIBlockElement = GetIBlockElement($ID_record);
+	 	$categ_id = $arIBlockElement['PROPERTIES']['course_idcategory']['VALUE'];
+        echo "categ_id =$categ_id";//print_r($arIBlockElement);
+
+	}
+    */
+    if($REQUEST_METHOD=="POST" && strlen($Update)>0 && $view!="Y")
+
+   {
+    //phpinfo();
+    //die();
+    $arSelect = Array("PROPERTY_course_idcategory", "NAME");
+	$arFilter = Array("ID"=>$ID_record);
+	$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+	while($ar_fields = $res->GetNext())
+	{
+  		$categ_id= $ar_fields["PROPERTY_COURSE_IDCATEGORY_VALUE"];
+  		$name_cource = $ar_fields["NAME"];
+	}
+    $_POST[NAME]=$name_cource;
+    //$_POST["ACTIVE_FROM"]= $name_cource;
+    /*
+    if ($myID==0)
+	{
+		 $_POST["PROP"][196]['n0']['VALUE'] =  "";
+		 $_REQUEST["PROP"][196]['n0']['VALUE'] =  "";
+	}
+	else
+	{
+		 $_POST["PROP"][196]["$myID:196"]['VALUE'] =  "";
+		 $_REQUEST["PROP"][196]["$myID:196"]['VALUE'] =  "";
+	}
+    $_POST["ACTIVE_FROM"] = date("d.m.Y H:i:s");
+   //$error = new _CIBlockError(2, "INTERNAL_CODE_REQUIRED",  "ббедем осярни INTERNAL_CODE");
+     */
+   }
+?>

@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140710T021626CEST-3949KgcZOi@50.57.83.146
+DTSTAMP:20140710T001626Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-002 Тайм-менеджмент для инженеров
+ \n\nДата проведения курса: 15.07.2014-16.07.2014\nВр�
+ �мя: 10:00-18:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=602
+ 3&ID_TIME=49077\n\n
+DTSTART:20140715T100000
+DTEND:20140716T180000
+LOCATION:Одесса
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Тайм-менеджмент для инженеров'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-002 Тайм-менеджмент для инженеров
+ \n\nДата проведения курса: 15.07.2014-16.07.2014\nВр�
+ �мя: 10:00-18:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=602
+ 3&ID_TIME=49077\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

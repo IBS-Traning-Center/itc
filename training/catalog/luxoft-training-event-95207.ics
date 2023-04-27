@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20191031T180025CET-4343HmUdtN@185.26.112.96
+DTSTAMP:20191031T170025Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ARC-014 Архитектура в Agile-проектах\n\nД�
+ �та проведения курса: 31.10.2019-01.11.2019\nВремя: 
+ 10:00-18:00\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=93184&ID_T
+ IME=95207\n\n
+DTSTART:20191031T100000
+DTEND:20191101T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Архитектура в Agile-проектах'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARC-014 Архитектура в Agile-проектах\n\nД�
+ �та проведения курса: 31.10.2019-01.11.2019\nВремя: 
+ 10:00-18:00\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=93184&ID_T
+ IME=95207\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

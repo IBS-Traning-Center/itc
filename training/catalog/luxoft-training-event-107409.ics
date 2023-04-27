@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210530T093132CEST-7022O577Zc@185.26.112.96
+DTSTAMP:20210530T073132Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-043 Тестирование защищенности ве�
+ �-приложений\n\nДата проведения курса: 31.05.
+ 2021-03.06.2021\nВремя: 09:30-13:30\n\nРегистрация и по
+ дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cata
+ log/course.html?ID=74226&ID_TIME=107409\n\n
+DTSTART:20210531T093000
+DTEND:20210603T133000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Тестирование защищенности веб-приложен
+ ий'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-043 Тестирование защищенности ве�
+ �-приложений\n\nДата проведения курса: 31.05.
+ 2021-03.06.2021\nВремя: 09:30-13:30\n\nРегистрация и по
+ дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cata
+ log/course.html?ID=74226&ID_TIME=107409\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

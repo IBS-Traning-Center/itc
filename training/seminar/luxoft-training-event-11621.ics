@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20130225T054849CET-61357oGGv9@50.57.83.146
+DTSTAMP:20130225T044849Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Разработка приложений с и
+ спользованием JPA.Обзор.\n\nДата проведени�
+ �\n17.06.2009\n\nВремя\n10.00-12.00\n\nМесто проведени�
+ �:\nг. Омск ул. Учебная 83 каб. 208\n\n\n\nРегистр
+ ация:\nhttp://www.luxoft-training.ru/events/seminar/11621/\n\n
+DTSTART:20090617T000000
+LOCATION:г. Омск ул. Учебная 83 каб. 208
+SUMMARY:Семинар: Разработка приложений с исп
+ ользованием JPA.Обзор.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Разработка приложений с и
+ спользованием JPA.Обзор.
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

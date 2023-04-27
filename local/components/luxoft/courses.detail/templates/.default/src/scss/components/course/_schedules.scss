@@ -1,0 +1,375 @@
+@use "../../variables" as *;
+.course-schedules {
+  padding: 20px 0;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+
+    margin-bottom: 34px;
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 1.163;
+    color: #ffffff;
+  }
+  &__controls {}
+  &__location {}
+  &__view {
+    &-label {
+      margin-bottom: 10px;
+    }
+    &-controls {
+
+    }
+    &-control {
+      cursor: pointer;
+      margin-left: 10px;
+      input {
+        margin: 0;
+      }
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__body {}
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__item + .course-detail__button {
+    margin-top: 30px;
+  }
+
+  &__price {
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 50px;
+
+      color: #ffffff;
+      font-size: 20px;
+      border-bottom: 1px solid #ffffff;
+
+      &:last-of-type {
+        //border-bottom: none;
+        margin-bottom: 30px;
+      }
+    }
+    &-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    &-name {
+      font-weight: 400;
+    }
+    &-value {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__footer {}
+}
+
+.course-schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #ffffff;
+  padding: 22px 15px;
+  &__date-and-time {
+    padding: 0 10px;
+    min-width: 135px;
+  }
+  &__date {
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $color-orange;
+  }
+  &__date-start {}
+  &__date-separator {}
+  &__date-end {}
+  &__time {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  &__info {
+    padding: 0 10px;
+    min-width: 210px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  &__property {
+    display: flex;
+    span{
+      &:first-of-type {
+        margin-right: 5px;
+      }
+      &:last-of-type {}
+    }
+    &_location {}
+    &_duration {}
+    &_lang {}
+    &_time {
+      display: none;
+    }
+    &_trainer {
+      display: none;
+    }
+  }
+
+  &__trainer {
+    padding: 0 10px;
+    width: 100%;
+    line-height: 24px;
+    span {
+      display: block;
+    }
+  }
+  &__order {
+    padding: 0 10px;
+    min-width: 205px;
+    text-align: right;
+  }
+  &__price {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.163;
+    color: $color-orange;
+  }
+  &__price-last {
+    display: inline-block;
+    position: relative;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.163;
+    color: #7e7e7e;
+    &:after {
+      content: "";
+      width: 110%;
+      height: 1px;
+      display: block;
+      position: absolute;
+      top: 49%;
+      left: -5%;
+      background-color: $color-orange;
+    }
+  }
+  &__discount {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.163;
+    color: $color-orange;
+  }
+  &__discount-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    background-color: #d65a50;
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.163;
+    color: #ffffff;
+  }
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    padding: 0 10px;
+    min-width: 160px;
+    .course-detail__button {
+      margin-right: 0;
+    }
+  }
+}
+
+.course-detail-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ffffff;
+
+  padding: 40px 55px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ffffff;
+    padding-right: 20px;
+    min-width: 210px;
+  }
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+    padding-right: 20px;
+  }
+}
+
+.button-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background: $color-orange;
+  cursor: pointer;
+
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media (max-width: 1179px) {
+  .course-schedules {
+    &__items {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+    &__item {
+      width: 50%;
+      padding: 0 15px;
+      .course-schedule-item {
+        height: 100%;
+      }
+    }
+  }
+  .course-schedule-item {
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: flex-start;
+
+    flex-direction: column;
+    &__date-and-time {
+      margin-bottom: 10px;
+    }
+    &__date {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__date-start {
+      margin-right: 6px;
+    }
+    &__time {
+      display: none;
+    }
+    &__info {
+      margin-bottom: 15px;
+    }
+    &__property {
+      &_time {
+        display: flex;
+      }
+      &_trainer {
+        display: flex;
+      }
+    }
+    &__trainer {
+      display: none;
+    }
+    &__order {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+    &__price {
+      margin-bottom: 5px;
+    }
+    &__price-last {
+      margin-bottom: 5px;
+    }
+    &__controls {
+      width: 100%;
+      margin-top: auto;
+      padding: 0;
+      margin-bottom: 0;
+      flex-direction: revert;
+      justify-content: space-between;
+    }
+    &__discount-icon {
+      margin-top: 0;
+      min-width: 90px;
+      margin-left: 15px;
+    }
+    .course-detail__button {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .course-schedules {
+    &__header {
+      flex-direction: column;
+    }
+    &__view {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      &-label {
+        margin-bottom: 0;
+        margin-right: 5px;
+      }
+    }
+  }
+  .course-detail-new {
+    padding: 15px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__title {
+      padding: 0;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    &__description {
+      padding: 0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 579px) {
+  .course-schedules {
+    &__item {
+      width: 100%;
+    }
+  }
+  .course-schedule-item {
+    max-width: 360px;
+  }
+}

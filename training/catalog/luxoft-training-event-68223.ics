@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180323T085224CET-08184rzVK7@185.26.112.96
+DTSTAMP:20180323T075224Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:EAS-015 Основы Hadoop\n\nДата проведения к
+ урса: 02.04.2018-06.04.2018\nВремя: 16:00-21:00\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=57979&ID_TIME=68223\n\n
+DTSTART:20180402T160000
+DTEND:20180406T210000
+LOCATION:Одесса
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы Hadoop'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:EAS-015 Основы Hadoop\n\nДата проведения к
+ урса: 02.04.2018-06.04.2018\nВремя: 16:00-21:00\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=57979&ID_TIME=68223\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

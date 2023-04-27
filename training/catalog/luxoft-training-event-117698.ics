@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220303T193245CET-9690uWVVGZ@185.26.112.96
+DTSTAMP:20220303T183245Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-013 Spring Security\n\nДата проведения кур
+ са: 21.03.2022-25.03.2022\nВремя: 12:00-16:00\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=33824&ID_TIME=117698\n\n
+DTSTART:20220321T120000
+DTEND:20220325T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Spring Security'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-013 Spring Security\n\nДата проведения кур
+ са: 21.03.2022-25.03.2022\nВремя: 12:00-16:00\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=33824&ID_TIME=117698\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

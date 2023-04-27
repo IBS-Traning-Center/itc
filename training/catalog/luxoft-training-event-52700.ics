@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20150722T112728CEST-6862aeGusu@50.57.83.146
+DTSTAMP:20150722T092728Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PM-004 Оценка проекта: размер и трудо�
+ �атраты \n\nДата проведения курса: 20.07.2015-23.
+ 07.2015\nВремя: 10:00 - 15:00\n\nРегистрация и подро
+ бнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/co
+ urse.html?ID=6122&ID_TIME=52700\n\n
+DTSTART:20150720T100000
+DTEND:20150723T150000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Оценка проекта: размер и трудозатраты '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PM-004 Оценка проекта: размер и трудо�
+ �атраты \n\nДата проведения курса: 20.07.2015-23.
+ 07.2015\nВремя: 10:00 - 15:00\n\nРегистрация и подро
+ бнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/co
+ urse.html?ID=6122&ID_TIME=52700\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

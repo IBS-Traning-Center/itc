@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200818T023421CEST-4185MOOwKV@185.26.112.96
+DTSTAMP:20200818T003421Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-067 Матрица компетенций бизнес-ан
+ алитика\n\nДата проведения курса: 14.09.2020-15.
+ 09.2020\nВремя: 10:00-18:00\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=101335&ID_TIME=101395\n\n
+DTSTART:20200914T100000
+DTEND:20200915T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Матрица компетенций бизнес-аналитика'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-067 Матрица компетенций бизнес-ан
+ алитика\n\nДата проведения курса: 14.09.2020-15.
+ 09.2020\nВремя: 10:00-18:00\n\nРегистрация и подроб
+ нее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/cour
+ se.html?ID=101335&ID_TIME=101395\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

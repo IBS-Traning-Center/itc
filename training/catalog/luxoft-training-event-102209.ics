@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200627T125532CEST-7016bil6vm@185.26.112.96
+DTSTAMP:20200627T105532Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:EAS-016 BigData SQL: Hive\n\nДата проведения ку
+ рса: 29.06.2020-30.06.2020\nВремя: 10:00-14:00\n\nРегистра
+ ция и подробнее о курсе:\nhttp://www.luxoft-training.ru
+ /training/catalog/course.html?ID=67065&ID_TIME=102209\n\n
+DTSTART:20200629T100000
+DTEND:20200630T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BigData SQL: Hive'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:EAS-016 BigData SQL: Hive\n\nДата проведения ку
+ рса: 29.06.2020-30.06.2020\nВремя: 10:00-14:00\n\nРегистра
+ ция и подробнее о курсе:\nhttp://www.luxoft-training.ru
+ /training/catalog/course.html?ID=67065&ID_TIME=102209\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

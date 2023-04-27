@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20161029T124226CEST-72034huwuB@185.26.112.96
+DTSTAMP:20161029T104226Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-007 Разработка на платформе Java SE 7.
+  Базовые темы\n\nДата проведения курса: 17.1
+ 0.2016-02.11.2016\nВремя: 14:30-18:30\n\nРегистрация и п
+ одробнее о курсе:\nhttp://www.luxoft-training.ru/training/ca
+ talog/course.html?ID=22489&ID_TIME=67605\n\n
+DTSTART:20161017T143000
+DTEND:20161102T183000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Разработка на платформе Java SE 7. Базовые т
+ емы'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-007 Разработка на платформе Java SE 7.
+  Базовые темы\n\nДата проведения курса: 17.1
+ 0.2016-02.11.2016\nВремя: 14:30-18:30\n\nРегистрация и п
+ одробнее о курсе:\nhttp://www.luxoft-training.ru/training/ca
+ talog/course.html?ID=22489&ID_TIME=67605\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

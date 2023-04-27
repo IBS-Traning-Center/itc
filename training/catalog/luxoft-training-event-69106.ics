@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20161215T135722CET-6923xIk4MA@185.26.112.96
+DTSTAMP:20161215T125722Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DB-018 Oracle 11g\, основы языка PL/SQL\n\nДата 
+ проведения курса: 12.12.2016-19.12.2016\nВремя: 10:00-
+ 14:00\n\nРегистрация и подробнее о курсе:\nhttp
+ ://www.luxoft-training.ru/training/catalog/course.html?ID=29263&ID_TIME=69
+ 106\n\n
+DTSTART:20161212T100000
+DTEND:20161219T140000
+LOCATION:Днепр
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Oracle 11g\, основы языка PL/SQL'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DB-018 Oracle 11g\, основы языка PL/SQL\n\nДата 
+ проведения курса: 12.12.2016-19.12.2016\nВремя: 10:00-
+ 14:00\n\nРегистрация и подробнее о курсе:\nhttp
+ ://www.luxoft-training.ru/training/catalog/course.html?ID=29263&ID_TIME=69
+ 106\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

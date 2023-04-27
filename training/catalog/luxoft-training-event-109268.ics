@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210706T222915CEST-6145pS9U2D@185.26.112.96
+DTSTAMP:20210706T202915Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:C-005 Qt Framework\n\nДата проведения курса:
+  25.10.2021-29.10.2021\nВремя: 10:00-15:00\n\nРегистрация 
+ и подробнее о курсе:\nhttp://www.luxoft-training.ru/traini
+ ng/catalog/course.html?ID=69431&ID_TIME=109268\n\n
+DTSTART:20211025T100000
+DTEND:20211029T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Qt Framework'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:C-005 Qt Framework\n\nДата проведения курса:
+  25.10.2021-29.10.2021\nВремя: 10:00-15:00\n\nРегистрация 
+ и подробнее о курсе:\nhttp://www.luxoft-training.ru/traini
+ ng/catalog/course.html?ID=69431&ID_TIME=109268\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

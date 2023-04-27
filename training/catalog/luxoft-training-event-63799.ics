@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160404T034420CEST-3099ck1fks@185.26.112.96
+DTSTAMP:20160404T014420Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-016 Electronic and Algorithmic Trading\n\nДата пров
+ едения курса: 13.04.2016-13.04.2016\nВремя: 10:00-17:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=56624&ID_TIME=63799\n\n
+DTSTART:20160413T100000
+DTEND:20160413T170000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Electronic and Algorithmic Trading'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-016 Electronic and Algorithmic Trading\n\nДата пров
+ едения курса: 13.04.2016-13.04.2016\nВремя: 10:00-17:00\n
+ \nРегистрация и подробнее о курсе:\nhttp://www.
+ luxoft-training.ru/training/catalog/course.html?ID=56624&ID_TIME=63799\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

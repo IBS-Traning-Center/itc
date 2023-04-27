@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170612T040728CEST-8659BH6Fwx@185.26.112.96
+DTSTAMP:20170612T020728Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-002 Основы использования XML\, XPath\, A
+ ltova\n\nДата проведения курса: 13.06.2017-13.06.2017\n
+ Время: 10:00-16:00\n\nРегистрация и подробнее о
+  курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?I
+ D=25058&ID_TIME=71631\n\n
+DTSTART:20170613T100000
+DTEND:20170613T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы использования XML\, XPath\, Altova'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-002 Основы использования XML\, XPath\, A
+ ltova\n\nДата проведения курса: 13.06.2017-13.06.2017\n
+ Время: 10:00-16:00\n\nРегистрация и подробнее о
+  курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?I
+ D=25058&ID_TIME=71631\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

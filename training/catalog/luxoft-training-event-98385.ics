@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200421T111533CEST-6794nJGE33@185.26.112.96
+DTSTAMP:20200421T091533Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:EAS-015 Основы Hadoop\n\nДата проведения к
+ урса: 22.04.2020-29.04.2020\nВремя: 10:00-14:00\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=57979&ID_TIME=98385\n\n
+DTSTART:20200422T100000
+DTEND:20200429T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы Hadoop'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:EAS-015 Основы Hadoop\n\nДата проведения к
+ урса: 22.04.2020-29.04.2020\nВремя: 10:00-14:00\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=57979&ID_TIME=98385\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20150722T013916CEST-1678k3UPcO@50.57.83.146
+DTSTAMP:20150722T233916Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-027 Процессный подход в современн
+ ом менеджменте\n\nДата проведения курса: 1
+ 9.10.2015-23.10.2015\nВремя: 10:00 - 14:00\n\nРегистрация 
+ и подробнее о курсе:\nhttp://www.luxoft-training.ru/traini
+ ng/catalog/course.html?ID=32338&ID_TIME=57302\n\n
+DTSTART:20151019T100000
+DTEND:20151023T140000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Процессный подход в современном менедж�
+ �енте'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-027 Процессный подход в современн
+ ом менеджменте\n\nДата проведения курса: 1
+ 9.10.2015-23.10.2015\nВремя: 10:00 - 14:00\n\nРегистрация 
+ и подробнее о курсе:\nhttp://www.luxoft-training.ru/traini
+ ng/catalog/course.html?ID=32338&ID_TIME=57302\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

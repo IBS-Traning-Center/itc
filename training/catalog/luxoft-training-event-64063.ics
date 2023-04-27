@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160524T025914CEST-9886tDlUaf@185.26.112.96
+DTSTAMP:20160524T005914Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-003 Основы финансовых рынков. Money M
+ arket & Interest Rate Derivatives.\n\nДата проведения кур
+ са: 24.05.2016-25.05.2016\nВремя: 14:00-18:00\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=28554&ID_TIME=64063\n\n
+DTSTART:20160524T140000
+DTEND:20160525T180000
+LOCATION:Днепропетровск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы финансовых рынков. Money Market & Interest R
+ ate Derivatives.'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-003 Основы финансовых рынков. Money M
+ arket & Interest Rate Derivatives.\n\nДата проведения кур
+ са: 24.05.2016-25.05.2016\nВремя: 14:00-18:00\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=28554&ID_TIME=64063\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

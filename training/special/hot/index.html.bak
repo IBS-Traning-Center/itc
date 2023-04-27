@@ -1,0 +1,116 @@
+<?
+	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+	$APPLICATION->SetTitle("Горящие тренинги");
+	$data  = date("Y-m-d");
+	$GLOBALS["arrFilter"] =array("ACTIVE" => "Y" ,">=PROPERTY_schedule_startdate" => $data, ">=PROPERTY_hot_checkbox" => 68); // 68  - hot_checkbox
+?>
+	<ul>
+	  <li><a href="/training/catalog/">Полный Каталог курсов УЦ Luxoft</a></li>
+	  <li><a href="/edu/programms.html">Каталог Программ подготовки</a></li>
+	</ul>
+	<? if (isset($_GET["by_date"])) { ?>
+	<?$APPLICATION->IncludeComponent("bitrix:news.list", "edu_ru_all_city_schedule_cources_bydate", Array(
+		"IBLOCK_TYPE"	=>	"edu",
+		"IBLOCK_ID"	=>	"9",
+		"NEWS_COUNT"	=>	"100",
+		"SORT_BY1"	=>	"PROPERTY_schedule_startdate",
+		"SORT_ORDER1"	=>	"DESC",
+		"SORT_BY2"	=>	"SORT",
+		"SORT_ORDER2"	=>	"ASC",
+		"FILTER_NAME"	=>	"arrFilter",
+		"FIELD_CODE"	=>	array(
+			0	=>	"",
+			1	=>	"",
+		),
+		"PROPERTY_CODE"	=>	array(
+			0	=>	"",
+			1	=>	"prschedule_startdate",
+			2	=>	"prschedule_enddate",
+			3	=>	"prschedule_time",
+			4	=>	"prschedule_desc",
+			5	=>	"",
+		),
+		"DETAIL_URL"	=>	"/edu/catalog/course.html?ID=#ELEMENT_ID#",
+		"CACHE_TYPE"	=>	"A",
+		"CACHE_TIME"	=>	"3600",
+		"CACHE_FILTER"	=>	"N",
+		"PREVIEW_TRUNCATE_LEN"	=>	"",
+		"ACTIVE_DATE_FORMAT"	=>	"d.m.Y",
+		"DISPLAY_PANEL"	=>	"N",
+		"SET_TITLE"	=>	"N",
+		"INCLUDE_IBLOCK_INTO_CHAIN"	=>	"N",
+		"ADD_SECTIONS_CHAIN"	=>	"N",
+		"HIDE_LINK_WHEN_NO_DETAIL"	=>	"N",
+		"PARENT_SECTION"	=>	"",
+		"DISPLAY_TOP_PAGER"	=>	"N",
+		"DISPLAY_BOTTOM_PAGER"	=>	"N",
+		"PAGER_TITLE"	=>	"",
+		"PAGER_SHOW_ALWAYS"	=>	"N",
+		"PAGER_TEMPLATE"	=>	"",
+		"PAGER_DESC_NUMBERING"	=>	"N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME"	=>	"36000",
+		"PROPERTY_CITYCHECK"	=>	"5741",
+		"DISPLAY_DATE"	=>	"N",
+		"DISPLAY_NAME"	=>	"Y",
+		"DISPLAY_PICTURE"	=>	"N",
+		"DISPLAY_PREVIEW_TEXT"	=>	"N"
+	)
+	);?>
+
+
+
+	 <?} else { ?>
+
+	 <?$APPLICATION->IncludeComponent("bitrix:news.list", "edu_ru_all_city_schedule_cources", Array(
+		"IBLOCK_TYPE"	=>	"edu",
+		"IBLOCK_ID"	=>	"9",
+		"NEWS_COUNT"	=>	"100",
+		"SORT_BY1"	=>	"ACTIVE_FROM",
+		"SORT_ORDER1"	=>	"DESC",
+		"SORT_BY2"	=>	"SORT",
+		"SORT_ORDER2"	=>	"ASC",
+		"FILTER_NAME"	=>	"arrFilter",
+		"FIELD_CODE"	=>	array(
+			0	=>	"",
+			1	=>	"",
+		),
+		"PROPERTY_CODE"	=>	array(
+			0	=>	"",
+			1	=>	"prschedule_startdate",
+			2	=>	"prschedule_enddate",
+			3	=>	"prschedule_time",
+			4	=>	"prschedule_desc",
+			5	=>	"",
+		),
+		"DETAIL_URL"	=>	"/edu/catalog/course.html?ID=#ELEMENT_ID#",
+		"CACHE_TYPE"	=>	"A",
+		"CACHE_TIME"	=>	"3600",
+		"CACHE_FILTER"	=>	"N",
+		"PREVIEW_TRUNCATE_LEN"	=>	"",
+		"ACTIVE_DATE_FORMAT"	=>	"d.m.Y",
+		"DISPLAY_PANEL"	=>	"N",
+		"SET_TITLE"	=>	"N",
+		"INCLUDE_IBLOCK_INTO_CHAIN"	=>	"N",
+		"ADD_SECTIONS_CHAIN"	=>	"N",
+		"HIDE_LINK_WHEN_NO_DETAIL"	=>	"N",
+		"PARENT_SECTION"	=>	"",
+		"DISPLAY_TOP_PAGER"	=>	"N",
+		"DISPLAY_BOTTOM_PAGER"	=>	"N",
+		"PAGER_TITLE"	=>	"",
+		"PAGER_SHOW_ALWAYS"	=>	"N",
+		"PAGER_TEMPLATE"	=>	"",
+		"PAGER_DESC_NUMBERING"	=>	"N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME"	=>	"36000",
+		"PROPERTY_CITYCHECK"	=>	"5741",
+		"DISPLAY_DATE"	=>	"N",
+		"DISPLAY_NAME"	=>	"Y",
+		"DISPLAY_PICTURE"	=>	"N",
+		"DISPLAY_PREVIEW_TEXT"	=>	"N"
+		)
+	);?>
+
+<? } ?>
+
+<p>По запросу на <a href="mailto:education@luxoft.com" >education@luxoft.com</a> мы готовы выслать резюме Инструктора, читающего интересующий вас курс, а также ответить на любые дополнительные вопросы касательно обучения в нашем Учебном Центре.</p>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Вебинары";
+$arDirProperties = array(
+
+);
+?>

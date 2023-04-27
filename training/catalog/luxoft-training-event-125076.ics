@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20230208T215036CET-87482tESKP@82.146.55.227
+DTSTAMP:20230208T205036Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-075 Spring Advanced\n\nДата проведения кур
+ са: 05.06.2023-28.06.2023\nВремя: 9:00-13:00\n\nРегистрац�
+ �я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tr
+ aining/catalog/course.html?ID=103315&ID_TIME=125076\n\n
+DTSTART:20230605T090000
+DTEND:20230628T130000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Spring Advanced'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-075 Spring Advanced\n\nДата проведения кур
+ са: 05.06.2023-28.06.2023\nВремя: 9:00-13:00\n\nРегистрац�
+ �я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tr
+ aining/catalog/course.html?ID=103315&ID_TIME=125076\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

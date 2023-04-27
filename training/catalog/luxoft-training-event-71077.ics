@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170317T212648CET-7907LL8TUF@185.26.112.96
+DTSTAMP:20170317T202648Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-007 Разработка на JavaScript\n\nДата про
+ ведения курса: 13.03.2017-28.03.2017\nВремя: 10:00-14:00
+ \n\nРегистрация и подробнее о курсе:\nhttp://ww
+ w.luxoft-training.ru/training/catalog/course.html?ID=11762&ID_TIME=71077\n
+ \n
+DTSTART:20170313T100000
+DTEND:20170328T140000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Разработка на JavaScript'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-007 Разработка на JavaScript\n\nДата про
+ ведения курса: 13.03.2017-28.03.2017\nВремя: 10:00-14:00
+ \n\nРегистрация и подробнее о курсе:\nhttp://ww
+ w.luxoft-training.ru/training/catalog/course.html?ID=11762&ID_TIME=71077\n
+ \n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

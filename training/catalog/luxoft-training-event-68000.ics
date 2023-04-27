@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20161107T193239CET-8575oXV5lJ@185.26.112.96
+DTSTAMP:20161107T183239Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-008 Разработка HTML5/RIA (Паттерны и и�
+ �струменты JavaScript)\n\nДата проведения курс�
+ �: 25.10.2016-15.11.2016\nВремя: 10:00-14:00\n\nРегистраци�
+ � и подробнее о курсе:\nhttp://www.luxoft-training.ru/trai
+ ning/catalog/course.html?ID=35238&ID_TIME=68000\n\n
+DTSTART:20161025T100000
+DTEND:20161115T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Разработка HTML5/RIA (Паттерны и инструмент�
+ � JavaScript)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-008 Разработка HTML5/RIA (Паттерны и и�
+ �струменты JavaScript)\n\nДата проведения курс�
+ �: 25.10.2016-15.11.2016\nВремя: 10:00-14:00\n\nРегистраци�
+ � и подробнее о курсе:\nhttp://www.luxoft-training.ru/trai
+ ning/catalog/course.html?ID=35238&ID_TIME=68000\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

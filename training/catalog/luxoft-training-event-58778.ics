@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20150901T125344CEST-9654wrr3PP@185.26.112.96
+DTSTAMP:20150901T105344Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-026 Школа тестирования. Часть 1. Вв
+ едение\n\nДата проведения курса: 03.09.2015-04.09
+ .2015\nВремя: 10:00-14:00\n\nРегистрация и подробн
+ ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course
+ .html?ID=29282&ID_TIME=58778\n\n
+DTSTART:20150903T100000
+DTEND:20150904T140000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Школа тестирования. Часть 1. Введение'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-026 Школа тестирования. Часть 1. Вв
+ едение\n\nДата проведения курса: 03.09.2015-04.09
+ .2015\nВремя: 10:00-14:00\n\nРегистрация и подробн
+ ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course
+ .html?ID=29282&ID_TIME=58778\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190609T211810CEST-5601Tr8KZU@185.26.112.96
+DTSTAMP:20190609T191810Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-QA-002 Какой он - тестировщик\n\nДата
+  проведения курса: 10.06.2019-10.06.2019\nВремя: 10:00
+ -15:00\n\nРегистрация и подробнее о курсе:\nhtt
+ p://www.luxoft-training.ru/training/catalog/course.html?ID=86309&ID_TIME=9
+ 1276\n\n
+DTSTART:20190610T100000
+DTEND:20190610T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Какой он - тестировщик'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-QA-002 Какой он - тестировщик\n\nДата
+  проведения курса: 10.06.2019-10.06.2019\nВремя: 10:00
+ -15:00\n\nРегистрация и подробнее о курсе:\nhtt
+ p://www.luxoft-training.ru/training/catalog/course.html?ID=86309&ID_TIME=9
+ 1276\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

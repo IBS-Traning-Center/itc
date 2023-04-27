@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20201118T102129CET-22640zh2rf@185.26.112.96
+DTSTAMP:20201118T092129Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-023 Принципы создания пользовате�
+ �ьских интерфейсов\n\nДата проведения кур
+ са: 18.01.2021-21.01.2021\nВремя: 10:00-15:00\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=33146&ID_TIME=104771\n\n
+DTSTART:20210118T100000
+DTEND:20210121T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Принципы создания пользовательских инт
+ ерфейсов'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-023 Принципы создания пользовате�
+ �ьских интерфейсов\n\nДата проведения кур
+ са: 18.01.2021-21.01.2021\nВремя: 10:00-15:00\n\nРегистрац
+ ия и подробнее о курсе:\nhttp://www.luxoft-training.ru/t
+ raining/catalog/course.html?ID=33146&ID_TIME=104771\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

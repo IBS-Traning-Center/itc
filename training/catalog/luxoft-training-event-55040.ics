@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20150313T065841CET-3100V3EJn9@50.57.83.146
+DTSTAMP:20150313T055841Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-001_ONL Основы визуального моделир�
+ �вания с использованием UML 2.x (online)\n\nДата �
+ �роведения курса: 16.03.2015-19.03.2015\nВремя: 11:00-1
+ 5:00\n\nРегистрация и подробнее о курсе:\nhttp:
+ //www.luxoft-training.ru/training/catalog/course.html?ID=36528&ID_TIME=550
+ 40\n\n
+DTSTART:20150316T110000
+DTEND:20150319T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы визуального моделирования с исп�
+ �льзованием UML 2.x (online)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-001_ONL Основы визуального моделир�
+ �вания с использованием UML 2.x (online)\n\nДата �
+ �роведения курса: 16.03.2015-19.03.2015\nВремя: 11:00-1
+ 5:00\n\nРегистрация и подробнее о курсе:\nhttp:
+ //www.luxoft-training.ru/training/catalog/course.html?ID=36528&ID_TIME=550
+ 40\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

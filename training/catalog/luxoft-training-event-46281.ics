@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20141023T144815CEST-7755IUBpm8@50.57.83.146
+DTSTAMP:20141023T124815Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PTRN-021 Свежий взгляд на проектирова�
+ �ие реального ПО: от DDD и CQRS до Event Sourcing\n\nД�
+ �та проведения курса: 25.10.2014-25.10.2014\nВремя: 
+ 10:00-18:00\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=46034&ID_T
+ IME=46281\n\n
+DTSTART:20141025T100000
+DTEND:20141025T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Свежий взгляд на проектирование реальн�
+ �го ПО: от DDD и CQRS до Event Sourcing'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PTRN-021 Свежий взгляд на проектирова�
+ �ие реального ПО: от DDD и CQRS до Event Sourcing\n\nД�
+ �та проведения курса: 25.10.2014-25.10.2014\nВремя: 
+ 10:00-18:00\n\nРегистрация и подробнее о курсе:
+ \nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=46034&ID_T
+ IME=46281\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20191123T145751CET-2316fdS6GZ@185.26.112.96
+DTSTAMP:20191123T135751Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DB-029 Redis для разработчиков\n\nДата пр
+ оведения курса: 25.11.2019-28.11.2019\nВремя: 11:00-15:0
+ 0\n\nРегистрация и подробнее о курсе:\nhttp://w
+ ww.luxoft-training.ru/training/catalog/course.html?ID=81907&ID_TIME=94424
+ \n\n
+DTSTART:20191125T110000
+DTEND:20191128T150000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Redis для разработчиков'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DB-029 Redis для разработчиков\n\nДата пр
+ оведения курса: 25.11.2019-28.11.2019\nВремя: 11:00-15:0
+ 0\n\nРегистрация и подробнее о курсе:\nhttp://w
+ ww.luxoft-training.ru/training/catalog/course.html?ID=81907&ID_TIME=94424
+ \n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

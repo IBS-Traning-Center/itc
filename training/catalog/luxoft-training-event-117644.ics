@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220113T095930CET-2623hpR2Ju@185.26.112.96
+DTSTAMP:20220113T085930Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-001 Основы финансовых рынков\n\nДа�
+ �а проведения курса: 17.01.2022-19.01.2022\nВремя: 11
+ :30-13:30\n\nРегистрация и подробнее о курсе:\n
+ http://www.luxoft-training.ru/training/catalog/course.html?ID=28551&ID_TIM
+ E=117644\n\n
+DTSTART:20220117T113000
+DTEND:20220119T133000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы финансовых рынков'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-001 Основы финансовых рынков\n\nДа�
+ �а проведения курса: 17.01.2022-19.01.2022\nВремя: 11
+ :30-13:30\n\nРегистрация и подробнее о курсе:\n
+ http://www.luxoft-training.ru/training/catalog/course.html?ID=28551&ID_TIM
+ E=117644\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

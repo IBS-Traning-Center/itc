@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180310T035514CET-3529SMjxeA@185.26.112.96
+DTSTAMP:20180310T025514Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-012 Мастерство переговоров  \n\nДат�
+ � проведения курса: 13.03.2018-16.03.2018\nВремя: 14:3
+ 0-18:30\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=71713&ID_TIME=
+ 76881\n\n
+DTSTART:20180313T143000
+DTEND:20180316T183000
+LOCATION:Одесса
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Мастерство переговоров  '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-012 Мастерство переговоров  \n\nДат�
+ � проведения курса: 13.03.2018-16.03.2018\nВремя: 14:3
+ 0-18:30\n\nРегистрация и подробнее о курсе:\nht
+ tp://www.luxoft-training.ru/training/catalog/course.html?ID=71713&ID_TIME=
+ 76881\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

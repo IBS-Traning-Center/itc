@@ -1,0 +1,60 @@
+<?
+require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+$APPLICATION->SetTitle("Опрос. Курсы в разработке");
+require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_after.php");
+?>
+
+<style>
+div.vote-item-header{
+margin:13px 0px 1px 6px;
+}
+ol.vote-answers-list {
+    margin-top: 0;
+}
+</style>
+<?
+if (CModule::IncludeModule("vote"))
+{
+//$VOTE_ID = $_REQUEST["VOTE_ID"]; // берет ID опроса из параметров страницы
+$VOTE_ID = GetCurrentVote("NEW_COURSE");
+//echo "VOTE_ID=$VOTE_ID";
+}
+// Примеры использования основных функций модуля опросов
+/*
+if (CModule::IncludeModule("vote"))
+{
+	$bIsUserVoted = IsUserVoted($VOTE_ID)	// проверяет голосовал ли уже данный посетитель (возвращает true либо false)
+	$VOTE_ID = GetCurrentVote("ANKETA");	// возвращает ID текущего опроса группы ANKETA
+	$VOTE_ID = GetPrevVote("ANKETA");		// возвращает ID предыдущего опроса группы ANKETA
+	$VOTE_ID = GetAnyAccessibleVote();		// возвращает ID любого доступного для голосования опроса
+}
+*/
+?>
+
+<?$APPLICATION->IncludeComponent("bitrix:voting.form", "blog.vote", array(
+	"VOTE_ID" => "9",
+	"VOTE_RESULT_TEMPLATE" => "vote_result.php?VOTE_ID=#VOTE_ID#",
+	"CACHE_TYPE" => "N",
+	"CACHE_TIME" => "3600"
+	),
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "Y"
+	)
+);?><br />
+<?
+global $USER;
+if ($USER->IsAdmin()){
+?>
+<h2>Текущие результаты опроса(виден только администраторам сайта): </h2>
+<?$APPLICATION->IncludeComponent("bitrix:voting.result", "no.digits", Array(
+	"VOTE_ID" => "9",	// Идентификатор опроса
+	"VOTE_ALL_RESULTS" => "Y",	// Показывать все результаты
+	"CACHE_TYPE" => "N",	// Тип кеширования
+	"CACHE_TIME" => "1200",	// Время кеширования (сек.)
+	"QUESTION_DIAGRAM_24" => "histogram"
+	),
+	false
+);?>
+<? } ?>
+<?require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog.php");?>

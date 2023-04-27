@@ -1,0 +1,85 @@
+.overlay {
+	width: 390px;
+	padding: 25px;
+	background: #f1efe8;
+	display: none;
+	font-family: Cuprum;
+	font-size: 19px;
+}
+.overlay  a {
+	color: #225267;
+}
+.overlay .over-head {
+	float: left;
+	font-family: Cuprum;
+	font-weight: bold;
+	font-size: 24px;
+	color: #225267;
+	margin-bottom: 15px;
+}
+.agree-text {
+		font-size: 16px;
+}
+.close {
+	cursor: pointer;
+	float: right;
+	width: 15px;
+	height: 15px;
+}
+.overlay input[type="text"] {
+	font-family: Cuprum;
+	font-size: 22px;
+	padding: 8px;
+	width: 370px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #939393;
+	background: #f1efe8; 
+} 
+.overlay input[type="text"]:focus {
+	background: #fff;
+} 
+.overlay  textarea{
+	font-family: Cuprum;
+	font-size: 22px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #939393;
+	background: #f1efe8;
+	width: 370px;	
+	padding: 8px;
+	resize: none;
+}
+.overlay  textarea:focus {
+	background: #fff;
+}
+.overlay  .field-wrap {
+	margin-bottom: 15px;
+	font-size: 22px;
+}
+.overlay .but {
+	border: none;
+	width: 207px;
+	height: 33px;
+	background: url('/images/landing/reg-btn.jpg') no-repeat;
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
+}
+.overlay .but.en {
+	background: none;
+	background: #225267;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+	-webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+}
+.overlay .req {
+	color: #6f3045;
+}

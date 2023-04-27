@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210405T203740CEST-4998TuVbZF@185.26.112.96
+DTSTAMP:20210405T183740Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:DEV-032 DevOps и Continuous Delivery для разработч
+ иков\n\nДата проведения курса: 05.04.2021-06.04.202
+ 1\nВремя: 10:00-14:00\n\nРегистрация и подробнее
+  о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.htm
+ l?ID=81297&ID_TIME=108841\n\n
+DTSTART:20210405T100000
+DTEND:20210406T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'DevOps и Continuous Delivery для разработчиков'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DEV-032 DevOps и Continuous Delivery для разработч
+ иков\n\nДата проведения курса: 05.04.2021-06.04.202
+ 1\nВремя: 10:00-14:00\n\nРегистрация и подробнее
+  о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.htm
+ l?ID=81297&ID_TIME=108841\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

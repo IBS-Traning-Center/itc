@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211219T103023CET-61237GOUvP@185.26.112.96
+DTSTAMP:20211219T093023Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:EAS-020 Основы машинного обучения \n\nД
+ ата проведения курса: 13.12.2021-20.12.2021\nВремя:
+  15:00-19:00\n\nРегистрация и подробнее о курсе
+ :\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=77174&ID_
+ TIME=115938\n\n
+DTSTART:20211213T150000
+DTEND:20211220T190000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы машинного обучения '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:EAS-020 Основы машинного обучения \n\nД
+ ата проведения курса: 13.12.2021-20.12.2021\nВремя:
+  15:00-19:00\n\nРегистрация и подробнее о курсе
+ :\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=77174&ID_
+ TIME=115938\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

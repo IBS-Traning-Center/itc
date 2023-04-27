@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190727T042100CEST-1873lF6HUS@185.26.112.96
+DTSTAMP:20190727T022100Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Вебинар: JQuery vs Ext JS – что выбрать?\n\n
+ Дата проведения\n02.06.2011\n\nВремя\n13:00- 15:00\n\n�
+ �окладчик:\n Мараник Ольга -Консультант п�
+ � разработке веб-приложений с использова
+ нием Java-технологий\n\nОбзор возможностей 
+ и сравнение двух популярных Java Script фрейм
+ ворков \n\nРегистрация:\nhttp://www.luxoft-training.ru/ev
+ ents/seminar/24992/\n\n
+DTSTART:20110602T000000
+LOCATION:Вебинар\, проводимый с  использовани
+ ем сервиса gotomeeting.com
+SUMMARY:Вебинар: JQuery vs Ext JS – что выбрать?
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Вебинар: JQuery vs Ext JS – что выбрать?
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

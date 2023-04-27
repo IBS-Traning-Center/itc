@@ -1,0 +1,32 @@
+	<div class="topline">
+		<div class="flatMenu">
+			<?$APPLICATION->IncludeComponent(
+				"bitrix:menu",
+				"user",
+				Array(
+					"ROOT_MENU_TYPE"	=>	"user",
+					"MAX_LEVEL"	=>	"1",
+					"USE_EXT"	=>	"Y"
+				)
+			);?>
+		</div>
+<?
+//global $USER;
+//if ($USER->IsAdmin()) {
+?>
+		<div class="basketSmall">
+			<?$APPLICATION->IncludeComponent("kodix:sale.basket.basket.small", ".default", array(
+	"PATH_TO_BASKET" => "/personal/cart/",
+	"PATH_TO_PERSONAL" => "/personal/",
+	"SHOW_PERSONAL_LINK" => "N",
+	"PATH_TO_ORDER"	=>	"/personal/order/",
+	),
+	false
+);?>
+		</div>
+<?
+// }
+ ?>
+		<i class="corner_rounded c3"><!--/--></i>
+		<i class="corner_rounded c4"><!--/--></i>
+	</div>

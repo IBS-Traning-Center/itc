@@ -1,0 +1,45 @@
+						<table width="100%" cellspacing="0" cellpadding="0" style="margin:0px;padding:0px; border:2px solid #004080; border-collapse:collapse;">
+						<tbody>
+						<tr>
+							<td valign="middle" height="30" class="pad_null" style="margin:0px;padding:0px; background-color:#004080;">
+								<div style="text-align:left;margin:0px 0px 0px 15px;font-weight:bold;display:block;font-size:16px; font-family:Arial,Helvetica,sans-serif; color:#FFFFFF;">
+									 БЛОГИ ЭКСПЕРТОВ LUXOFT TRAINING
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td valign="top" class="pad_null" style="margin:0px;padding:0px; background-color:#FFFFFF;">
+								<div>
+									<img src="/images/email/padding10.png" alt="" border="0" height="10">
+								</div>
+								<div>
+									<div style="text-align:left;margin:5px 15px 3px 15px; padding:0px; font-size:19px; font-family:Arial,Helvetica,sans-serif;">
+										<img src="/images/email/arebrov.png" width="80" height="80" alt="" border="0" align="left" hspace="5" vspace="2">
+										<a target="_blank" style="color:#FF6600; text-decoration:underline;font-size:19px;font-family:Arial,Helvetica,sans-serif;" href="http://www.luxoft-training.ru/blog/">Ripple – браузерный эмулятор для тестирования мобильных платформ</a>
+									</div>
+									<div style="text-align:left;margin:0px 15px 7px 15px; padding:0px; font-size:14px; font-family:Arial,Helvetica,sans-serif;color:#333333;">
+										 Ребров Андрей, 20.05.2011
+									</div>
+									<div style="text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#333333;">
+										 Все, кто занимается мобильным вебом, обязательно сталкиваются с проблемой тестирования на различных платформах. С одной стороны, тестировать надо на реальных устройствах, с другой стороны многие компании не могу достаточно быстро собрать парк нужных устройств. Сегодня я хотел бы написать про браузерный эмулятор для тестирования мобильных платформ под названием Ripple Emulator.
+									</div>
+								</div>
+								<div>
+									<img src="/images/email/padding10.png" alt="" border="0" height="10">
+								</div>
+								<div>
+									<div style="text-align:left;margin:5px 15px 3px 15px; padding:0px; font-size:19px; font-family:Arial,Helvetica,sans-serif;">
+										<img src="/images/email/alexandrov_small.jpg" width="80" height="80" alt="" border="0" align="left" hspace="5" vspace="2">
+										<a target="_blank" style="color:#FF6600; text-decoration:underline;font-size:19px;font-family:Arial,Helvetica,sans-serif;" href="http://www.luxoft-training.ru/blog/">Weekend тестировщика, № 04-01, или О гречневой крупе</a>
+									</div>
+									<div style="text-align:left;margin:0px 15px 7px 15px; padding:0px; font-size:14px; font-family:Arial,Helvetica,sans-serif;color:#333333;">
+										 Александров Александр, 19.02.2011
+									</div>
+									<div style="text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#333333;">
+										 Когда я был маленький, меня, как и каждого ребенка, родители кормили кашами. Я относительно спокойно ел манную кашу, с равнодушием относится к рисовой и пшенной кашам, но очень любил гречку. Правда, выбор в те послевоенный годы был небольшой...
+									</div>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+						</table>

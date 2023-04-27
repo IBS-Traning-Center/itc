@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220415T003017CEST-90860FOKEv@185.26.112.96
+DTSTAMP:20220415T223017Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ARC-015 Микросервисная архитектура\n\n
+ Дата проведения курса: 03.06.2022-10.06.2022\nВрем�
+ �: 08:00-12:00\n\nРегистрация и подробнее о курс
+ е:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=95606&I
+ D_TIME=118902\n\n
+DTSTART:20220603T080000
+DTEND:20220610T120000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Микросервисная архитектура'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARC-015 Микросервисная архитектура\n\n
+ Дата проведения курса: 03.06.2022-10.06.2022\nВрем�
+ �: 08:00-12:00\n\nРегистрация и подробнее о курс
+ е:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=95606&I
+ D_TIME=118902\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

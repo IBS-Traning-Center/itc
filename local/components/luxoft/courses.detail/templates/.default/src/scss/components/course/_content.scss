@@ -1,0 +1,76 @@
+@use "../../variables" as *;
+.course-content {
+  &__block {
+    margin-bottom: 30px;
+  }
+  font-size: 16px;
+  line-height: 1.5;
+
+  h2 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #262626;
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+  p {
+    margin-top: 24px;
+  }
+  ol,
+  ul {
+    margin-top: 20px;
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 1em;
+      &:before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        left: 0;
+        top: 0.55rem;
+        background: #1D427D;
+        border-radius: 50%;
+      }
+    }
+  }
+  .course-detail__button {
+    margin-top: 30px;
+  }
+}
+.course-certificate {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  &__icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: 60px;
+  }
+  &__text {
+    font-weight: bold;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .course-certificate {
+    flex-direction: column;
+    align-items: flex-start;
+    &__text {
+      margin-top: 15px;
+      margin-left: 0;
+    }
+  }
+}

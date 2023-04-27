@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20150712T160842CEST-1817LvkPfR@50.57.83.146
+DTSTAMP:20150712T140842Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-026_ONL Школа тестирования. Часть 1. 
+ Введение (online)\n\nДата проведения курса: 13.
+ 07.2015-16.07.2015\nВремя: 10:00 - 12:00\n\nРегистрация и
+  подробнее о курсе:\nhttp://www.luxoft-training.ru/training
+ /catalog/course.html?ID=36534&ID_TIME=57323\n\n
+DTSTART:20150713T100000
+DTEND:20150716T120000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Школа тестирования. Часть 1. Введение (onli
+ ne)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-026_ONL Школа тестирования. Часть 1. 
+ Введение (online)\n\nДата проведения курса: 13.
+ 07.2015-16.07.2015\nВремя: 10:00 - 12:00\n\nРегистрация и
+  подробнее о курсе:\nhttp://www.luxoft-training.ru/training
+ /catalog/course.html?ID=36534&ID_TIME=57323\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

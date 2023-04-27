@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170517T173453CEST-94633anA1A@185.26.112.96
+DTSTAMP:20170517T153453Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-018 Опционы\n\nДата проведения кур�
+ �а: 17.05.2017-18.05.2017\nВремя: 14:30-17:00\n\nРегистрац�
+ �я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tr
+ aining/catalog/course.html?ID=58368&ID_TIME=72295\n\n
+DTSTART:20170517T143000
+DTEND:20170518T170000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Опционы'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-018 Опционы\n\nДата проведения кур�
+ �а: 17.05.2017-18.05.2017\nВремя: 14:30-17:00\n\nРегистрац�
+ �я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tr
+ aining/catalog/course.html?ID=58368&ID_TIME=72295\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

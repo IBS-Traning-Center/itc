@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160717T015254CEST-31185hWVct@185.26.112.96
+DTSTAMP:20160717T235254Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:FIN-001 Основы финансовых рынков. Инв�
+ �стиционный банкинг\n\nДата проведения ку
+ рса: 19.07.2016-20.07.2016\nВремя: 10:00-14:00\n\nРегистра
+ ция и подробнее о курсе:\nhttp://www.luxoft-training.ru
+ /training/catalog/course.html?ID=28551&ID_TIME=65675\n\n
+DTSTART:20160719T100000
+DTEND:20160720T140000
+LOCATION:Днепр
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы финансовых рынков. Инвестиционн�
+ �й банкинг'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:FIN-001 Основы финансовых рынков. Инв�
+ �стиционный банкинг\n\nДата проведения ку
+ рса: 19.07.2016-20.07.2016\nВремя: 10:00-14:00\n\nРегистра
+ ция и подробнее о курсе:\nhttp://www.luxoft-training.ru
+ /training/catalog/course.html?ID=28551&ID_TIME=65675\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

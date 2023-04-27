@@ -1,0 +1,15 @@
+<? $path= $_SERVER["REQUEST_URI"];
+	$current_language=0;?>
+  <? if (strstr($path, '/eu/')) { $current_language=1; }?>
+  <? if (strstr($path, '/ca/')) { $current_language=2; }?>
+  <? if (strstr($path, '/de/')) { $current_language=3; }?>
+
+
+            <div id="sites_choice">
+				<ul>
+					<li><a href="/" <?if ($current_language==0) {?>class="current" <? } ?>>En</a></li>
+					<li><a href="http://www.luxoft.ru/">Ru</a></li>
+					<li><a href="/de/" <?if ($current_language==3) {?>class="current" <? } ?>>De</a></li>
+					<li><a href="/eu/">Eu</a></li>
+				</ul>
+			</div>

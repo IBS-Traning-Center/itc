@@ -1,0 +1,3 @@
+<?php
+$MESS['LUXOFT_MODULE_NAME'] = 'Luxoft';
+$MESS['LUXOFT_MODULE_DESCRIPTION'] = '';

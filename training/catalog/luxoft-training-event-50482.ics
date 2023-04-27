@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140902T055345CEST-4999xVXkL0@50.57.83.146
+DTSTAMP:20140902T035345Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-017 Автоматизация тестирования с 
+ использованием Selenium 2\n\nДата проведения �
+ �урса: 22.09.2014-23.09.2014\nВремя: 10:00-14:00\n\nРегист�
+ �ация и подробнее о курсе:\nhttp://www.luxoft-training
+ .ru/training/catalog/course.html?ID=5986&ID_TIME=50482\n\n
+DTSTART:20140922T100000
+DTEND:20140923T140000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Автоматизация тестирования с использов
+ анием Selenium 2'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-017 Автоматизация тестирования с 
+ использованием Selenium 2\n\nДата проведения �
+ �урса: 22.09.2014-23.09.2014\nВремя: 10:00-14:00\n\nРегист�
+ �ация и подробнее о курсе:\nhttp://www.luxoft-training
+ .ru/training/catalog/course.html?ID=5986&ID_TIME=50482\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

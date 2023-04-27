@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200604T111139CEST-5622vdvFwO@185.26.112.96
+DTSTAMP:20200604T091139Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-017 Основы NodeJS\n\nДата проведения к
+ урса: 03.06.2020-10.06.2020\nВремя: 09:30-11:30\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=78432&ID_TIME=101322\n\n
+DTSTART:20200603T093000
+DTEND:20200610T113000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы NodeJS'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-017 Основы NodeJS\n\nДата проведения к
+ урса: 03.06.2020-10.06.2020\nВремя: 09:30-11:30\n\nРегистр
+ ация и подробнее о курсе:\nhttp://www.luxoft-training.
+ ru/training/catalog/course.html?ID=78432&ID_TIME=101322\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

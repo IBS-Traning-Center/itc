@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20130225T021941CET-4677oHuU0n@50.57.83.146
+DTSTAMP:20130225T011941Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Возможности расширения Vis
+ ual Studio. Знакомство с Visual Studio SDK\, расширени
+ я с помощью packages\, add-ins\, и macros\n\nДата прове
+ дения\n11.06.2008\n\nВремя\n16:00-18:00\n\nМесто прове
+ дения:\nг. Москва\, ул. 1-ый Волоколамский п
+ роезд\, д. 10\, стр. 3\n\n\n\nРегистрация:\nhttp://www
+ .luxoft-training.ru/events/seminar/9265/\n\n
+DTSTART:20080611T000000
+LOCATION:г. Москва\, ул. 1-ый Волоколамский про�
+ �зд\, д. 10\, стр. 3
+SUMMARY:Семинар: Возможности расширения Visual 
+ Studio. Знакомство с Visual Studio SDK\, расширения �
+ � помощью packages\, add-ins\, и macros
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Возможности расширения Vis
+ ual Studio. Знакомство с Visual Studio SDK\, расширени
+ я с помощью packages\, add-ins\, и macros
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

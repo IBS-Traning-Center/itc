@@ -1,0 +1,13 @@
+				<table style="border-collapse:collapse; border:none; margin:0px;padding:0px;" width="700" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top" width="50" height="2" class="pad_null" style="background-color:#ffffff;">
+						<img src="/images/email/spacer.gif" width="50" height="2" alt="" border="0"/>
+					</td>
+					<td width="600" height="2" class="pad_null" style="background-color:#FF6600;">
+						<img src="/images/email/spacer.gif" width="600" height="2" alt="" border="0"/>
+					</td>
+					<td width="50" height="2" class="pad_null" style="background-color:#ffffff;">
+						<img src="/images/email/spacer.gif" width="100%" height="2" alt="" border="0"/>
+					</td>
+				</tr>
+				</table>

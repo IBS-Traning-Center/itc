@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140824T175351CEST-2299eDVX0D@50.57.83.146
+DTSTAMP:20140824T155351Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-007_ONL Решение бизнес-проблем (online)
+ \n\nДата проведения курса: 01.09.2014-03.09.2014\nВр�
+ �мя: 11:00-14:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=448
+ 87&ID_TIME=49803\n\n
+DTSTART:20140901T110000
+DTEND:20140903T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Решение бизнес-проблем (online)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-007_ONL Решение бизнес-проблем (online)
+ \n\nДата проведения курса: 01.09.2014-03.09.2014\nВр�
+ �мя: 11:00-14:00\n\nРегистрация и подробнее о ку
+ рсе:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=448
+ 87&ID_TIME=49803\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

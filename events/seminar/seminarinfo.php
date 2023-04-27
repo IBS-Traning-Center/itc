@@ -1,0 +1,216 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Title");
+
+?>
+<?LocalRedirect("/training/seminar/", false, "301 Moved permanently");?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.detail",
+	"edu_ru_oneseminar",
+	array(
+		"IBLOCK_TYPE" => "edu",
+		"IBLOCK_ID" => "73",
+		"ELEMENT_ID" => "",
+		"ELEMENT_CODE" => "",
+		"CHECK_DATES" => "Y",
+		"FIELD_CODE" => array(
+			0 => "PREVIEW_TEXT",
+			1 => "PREVIEW_PICTURE",
+			2 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "location",
+			2 => "lecturer",
+			3 => "startdate",
+			4 => "enddate",
+			5 => "time",
+			6 => "description",
+			7 => "content",
+			8 => "titlefile",
+			9 => "file_old",
+			10 => "",
+		),
+		"IBLOCK_URL" => "",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_SHADOW" => "Y",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"CACHE_TYPE" => "N",
+		"CACHE_TIME" => "3600",
+		"META_KEYWORDS" => "-",
+		"META_DESCRIPTION" => "-",
+		"DISPLAY_PANEL" => "N",
+		"SET_TITLE" => "Y",
+		"SET_STATUS_404" => "N",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"USE_PERMISSIONS" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"PAGER_TITLE" => "Страница",
+		"PAGER_TEMPLATE" => "",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"COMPONENT_TEMPLATE" => "edu_ru_oneseminar",
+		"DETAIL_URL" => "",
+		"CACHE_GROUPS" => "Y",
+		"SET_CANONICAL_URL" => "N",
+		"SET_BROWSER_TITLE" => "Y",
+		"BROWSER_TITLE" => "-",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"ADD_ELEMENT_CHAIN" => "N",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"SHOW_404" => "N",
+		"MESSAGE_404" => ""
+	),
+	false
+);?>
+
+
+
+
+
+<?
+global $USER, $startdateGlobal, $glFlagShowForm;
+//iwrite($startdateGlobal);
+$curDate=date("d.m.Y");
+$result = $DB->CompareDates($curDate, $startdateGlobal);
+	/*
+	int
+	CDatabase::CompareDates(
+	 string date1,
+	 string date2,
+	)
+
+	Сравнивает между собой две даты. Возвращаемые значения:
+	Условие 	Возвращаемое значение
+	date1 > date2 	1
+	date1 < date2 	-1
+	date1 = date2 	0
+	*/
+?>
+<? if (($result == 0) or ($result == -1)) {?>
+
+<? if ($glFlagShowForm) {?>
+<?$APPLICATION->IncludeComponent("edu:iblock.element.add.form", "records.seminar", array(
+	"IBLOCK_TYPE" => "edu",
+	"IBLOCK_ID" => "64",
+	"STATUS_NEW" => "N",
+	"LIST_URL" => "",
+	"USE_CAPTCHA" => "N",
+	"USER_MESSAGE_EDIT" => "",
+	"USER_MESSAGE_ADD" => "Спасибо. Ваша заявка была успешно добавлена",
+	"DEFAULT_INPUT_SIZE" => "60",
+	"PROPERTY_CODES" => array(
+		0 => "NAME",
+		1 => "248",
+		2 => "244",
+		3 => "246",
+		4 => "243",
+		5 => "245",
+		6 => "247",
+		7 => "249",
+		8 => "265",
+		9 => "271",
+	),
+	"PROPERTY_CODES_REQUIRED" => array(
+		0 => "244",
+		1 => "246",
+		2 => "245",
+		3 => "247",
+		4 => "249",
+		5 => "265",
+	),
+	"PROPERTY_CODES_HIDDEN" => array(
+		0 => "248",
+		1 => "243",
+		2 => "271",
+	),
+	"PROPERTY_TYPE_EVENT" => "80",
+	"PROPERTY_TEXT_TO_DO" => "Регистрация на данный семинар",
+	"GROUPS" => array(
+		0 => "2",
+	),
+	"STATUS" => "ANY",
+	"ELEMENT_ASSOC" => "CREATED_BY",
+	"MAX_USER_ENTRIES" => "100000",
+	"MAX_LEVELS" => "100000",
+	"LEVEL_LAST" => "Y",
+	"MAX_FILE_SIZE" => "0",
+	"SEF_MODE" => "N",
+	"SEF_FOLDER" => "/events/seminar/",
+	"CUSTOM_TITLE_NAME" => "Название семинара",
+	"CUSTOM_TITLE_TAGS" => "",
+	"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+	"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+	"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+	"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+	"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+	"CUSTOM_TITLE_DETAIL_TEXT" => "",
+	"CUSTOM_TITLE_DETAIL_PICTURE" => ""
+	),
+	false
+);?>
+<a name="fill_form"></a>
+<? } else {?>
+<h2>Регистрация на мероприятие закрыта</h2>
+<? } ?>
+<? } else {?>
+	<h2>Регистрация на мероприятие закрыта</h2>
+<? } ?>
+
+
+
+
+
+<div class="learn_more">
+  <h3>Хотите узнать больше?</h3>
+  <p>По всем вопросам отправьте письмо по адресу <a href="mailto:<?=EMAIL_ADDRESS?>"><?=EMAIL_ADDRESS?></a></p>
+</div>
+
+	<script>
+	$(document).ready(function(){
+							$("#ya_share").one("click", function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'All');
+							});
+							$(".b-share-icon_yaru").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'Ya.ru');
+							});
+							$(".b-share-icon_vkontakte").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'Vkontakte');
+							});
+							$(".b-share-icon_facebook").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'Facebook');
+							});
+							$(".b-share-icon_twitter").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'Twitter');
+							});
+							$(".b-share-icon_odnoklassniki").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'Odnoklassniki');
+							});
+							$(".b-share-icon_lj").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'LifeJournal');
+							});
+							$(".b-share-icon_moikrug").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'MoiKrug');
+							});
+							$(".b-share-icon_evernote").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'Evernote');
+							});
+							$(".b-share-icon_greader").click(function() {
+								pageTracker._trackEvent('SocialBlock', 'Events', 'Greader');
+							});
+
+	})
+	</script>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

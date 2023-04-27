@@ -1,0 +1,2 @@
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");?>
+<iframe width="720" height="600" src="//www.youtube.com/embed/fOxmskjyrOo" frameborder="0" allowfullscreen></iframe>

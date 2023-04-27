@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20160905T184951CEST-2498VkMt4g@185.26.112.96
+DTSTAMP:20160905T164951Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-016 Введение в Apache Maven\n\nДата прове
+ дения курса: 06.09.2016-06.09.2016\nВремя: 10:00-16:00\n\n�
+ �егистрация и подробнее о курсе:\nhttp://www.lux
+ oft-training.ru/training/catalog/course.html?ID=36789&ID_TIME=64794\n\n
+DTSTART:20160906T100000
+DTEND:20160906T160000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Введение в Apache Maven'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-016 Введение в Apache Maven\n\nДата прове
+ дения курса: 06.09.2016-06.09.2016\nВремя: 10:00-16:00\n\n�
+ �егистрация и подробнее о курсе:\nhttp://www.lux
+ oft-training.ru/training/catalog/course.html?ID=36789&ID_TIME=64794\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

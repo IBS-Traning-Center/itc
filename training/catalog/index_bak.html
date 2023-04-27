@@ -1,0 +1,62 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("blue_title", "Каталог курсов: обучение аналитиков, тестировщиков, менеджеров проектов, разработчиков ПО, архитекторов и проектировщиков");
+$APPLICATION->SetPageProperty("title", "Обучение в сфере разработки ПО. Каталог курсов: обучение аналитиков, тестировщиков, менеджеров проектов, разработчиков ПО, архитекторов и проектировщиков");
+$APPLICATION->SetPageProperty("keywords", "тренинги,   процессы разработки, управление требованиями, разработка ПО, тестирование ПО, java, архитектура ПО, oracle, BEA, курсы, обучение в области разработки ПО");
+$APPLICATION->SetPageProperty("description", "Обучение в сфере разработки ПО. Курсы по всем направлениям для тестировщик, аналитиков, разработчиков, проектировщиков.");
+$APPLICATION->SetTitle("Каталог курсов: обучение аналитиков, тестировщиков, менеджеров проектов, ");
+?><?$APPLICATION->IncludeComponent(
+	"luxoft:super.component",
+	"newcatalog.main.v4_no_expand",
+	Array(
+		"CACHE_TYPE" => "Y",
+		"CACHE_TIME" => "36000",
+		"ID_IBLOCK" => "76"
+	)
+);?>
+<script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+
+<script>
+$(document).ready(function(){
+	var currentHash;
+	currentHash = window.location.hash.slice(1);
+	if (currentHash === 'test') {
+		$("#tr_catalog ul li#cat_185").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_185 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_185', 800);
+	}
+	if (currentHash === 'pm') {
+		$("#tr_catalog ul li#cat_183").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_183 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_183', 800);
+	}
+	if (currentHash === 'analytics') {
+		$("#tr_catalog ul li#cat_184").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_184 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_184', 800);
+	}
+	if (currentHash === 'developer') {
+		$("#tr_catalog ul li#cat_186").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_186 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_186', 800);
+	}
+	if (currentHash === 'arch') {
+		$("#tr_catalog ul li#cat_187").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_187 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_187', 800);
+	}
+	if (currentHash === 'admin') {
+		$("#tr_catalog ul li#cat_188").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_188 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_188', 800);
+	}
+	if (currentHash === 'business') {
+		$("#tr_catalog ul li#cat_189").removeClass('expandable').addClass('collapsable');
+		$("#tr_catalog ul li#cat_189 ul").show();
+		$.scrollTo('#tr_catalog ul li#cat_189', 800);
+	}
+});
+</script>
+ 
+<p>По запросу на <a href="mailto:<?=EMAIL_ADDRESS?>" title="Написать письмо" ><?=EMAIL_ADDRESS?></a> мы ответим на любые дополнительные вопросы касательно обучения в нашем Luxoft Training.</p>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

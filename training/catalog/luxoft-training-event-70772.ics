@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170411T185636CEST-1438JMmreN@185.26.112.96
+DTSTAMP:20170411T165636Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-042 Юзабилити-анализ и проектиров
+ ание веб-интерфейсов \n\nДата проведения �
+ �урса: 14.04.2017-14.04.2017\nВремя: 10:00-17:00\n\nРегист�
+ �ация и подробнее о курсе:\nhttp://www.luxoft-training
+ .ru/training/catalog/course.html?ID=51032&ID_TIME=70772\n\n
+DTSTART:20170414T100000
+DTEND:20170414T170000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Юзабилити-анализ и проектирование веб-и
+ нтерфейсов '
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-042 Юзабилити-анализ и проектиров
+ ание веб-интерфейсов \n\nДата проведения �
+ �урса: 14.04.2017-14.04.2017\nВремя: 10:00-17:00\n\nРегист�
+ �ация и подробнее о курсе:\nhttp://www.luxoft-training
+ .ru/training/catalog/course.html?ID=51032&ID_TIME=70772\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

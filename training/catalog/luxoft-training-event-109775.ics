@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210428T014410CEST-0479ELU3Gu@185.26.112.96
+DTSTAMP:20210428T234410Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SCRIPT-007 Разработка реального проект
+ а на языке Python. Продвинутый уровень\n\nДат
+ а проведения курса: 19.04.2021-30.04.2021\nВремя: 10:
+ 00-13:00\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=102783&ID_TIM
+ E=109775\n\n
+DTSTART:20210419T100000
+DTEND:20210430T130000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Разработка реального проекта на языке Py
+ thon. Продвинутый уровень'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SCRIPT-007 Разработка реального проект
+ а на языке Python. Продвинутый уровень\n\nДат
+ а проведения курса: 19.04.2021-30.04.2021\nВремя: 10:
+ 00-13:00\n\nРегистрация и подробнее о курсе:\nh
+ ttp://www.luxoft-training.ru/training/catalog/course.html?ID=102783&ID_TIM
+ E=109775\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

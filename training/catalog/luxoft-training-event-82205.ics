@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180714T151120CEST-3946Bno42g@185.26.112.96
+DTSTAMP:20180714T131120Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ATL-011 Getting More from Confluence (for users)\n\nДата п
+ роведения курса: 02.08.2018-02.08.2018\nВремя: 10:00-14
+ :00\n\nРегистрация и подробнее о курсе:\nhttp:/
+ /www.luxoft-training.ru/training/catalog/course.html?ID=81595&ID_TIME=8220
+ 5\n\n
+DTSTART:20180802T100000
+DTEND:20180802T140000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Getting More from Confluence (for users)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ATL-011 Getting More from Confluence (for users)\n\nДата п
+ роведения курса: 02.08.2018-02.08.2018\nВремя: 10:00-14
+ :00\n\nРегистрация и подробнее о курсе:\nhttp:/
+ /www.luxoft-training.ru/training/catalog/course.html?ID=81595&ID_TIME=8220
+ 5\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

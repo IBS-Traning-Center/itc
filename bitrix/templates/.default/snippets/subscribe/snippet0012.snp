@@ -1,0 +1,24 @@
+					<table style="margin:0px;padding:0px;border:2px solid #004080; border-collapse:collapse;" cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td class="pad_null" height="30" style="margin:0px;padding:0px; background-color:#004080;" valign="middle">
+							<div style="text-align:left;margin:0px 0px 0px 15px;font-weight:bold;display:block;font-size:16px; font-family:Arial,Helvetica,sans-serif; color:#FFFFFF;">
+								 НОВОСТИ LUXOFT TRAINING
+							</div>
+						</td>
+						<tr>
+							<td class="pad_null" style="margin:0px;padding:0px; background-color:#FFFFFF;" valign="top">
+								<div style="text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#1C548D;">
+									<a style="margin:3px 0px 9px 0px;text:decoration:underline; font-size:12px; color:#1C548D; display:inline;" href="http://www.luxoft-training.ru/about/news/">Бесплатный вебинар: JQuery vs Ext JS – что выбрать? 2 июня 2011</a>
+								</div>
+								<div style="text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#1C548D;">
+									<a style="margin:3px 0px 9px 0px;text:decoration:underline; font-size:12px; color:#1C548D; display:inline;" href="http://www.luxoft-training.ru/about/news/">Доступно видео доклада «Мобильная веб-разработка»</a>
+								</div>
+								<div style="text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#1C548D;">
+									<a style="margin:3px 0px 9px 0px;text:decoration:underline; font-size:12px; color:#1C548D; display:inline;" href="http://www.luxoft-training.ru/about/news/">Бесплатный семинар: UML для IT бизнес аналитиков: Бизнес Анализ. Этап начала проекта (Initiation phase), Москва, 16 июня 2011</a>
+								</div>
+								<div style="text-align:left;margin:10px 15px 10px 15px; padding:0px; font-size:12px; font-family:Arial,Helvetica,sans-serif;color:#1C548D;">
+									<a style="margin:3px 0px 9px 0px;text:decoration:underline; font-size:12px; color:#1C548D; display:inline;" href="http://www.luxoft-training.ru/about/news/">Бесплатный семинар: Обзор Visual Studio LightSwitch, Киев, 26 мая 2011</a>
+								</div>
+							</td>
+						</tr>
+						</table>

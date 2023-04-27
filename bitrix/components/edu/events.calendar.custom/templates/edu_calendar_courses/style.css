@@ -1,0 +1,196 @@
+div.news-calendar{
+    width:170px;
+}
+.NewsCalWeekend, .NewsCalToday, .NewsCalDefault, .NewsCalOtherMonth , .NewsCalHeader, .NewsCalMonthNav, .NewsCalDay, .NewsCalNews{
+	color:#000000;
+}
+.NewsCalToday, .NewsCalDefault, .NewsCalOtherMonth, .NewsCalWeekend, .NewsCalHeader {
+	padding-left:8px;
+}
+.NewsCalToday{
+	background-color:#EEEEEE;
+}
+span.info{
+	color:#000000;
+	font-weight:bold;
+}
+.NewsCalDefault{
+	background-color:#FFFFFF;
+}
+.NewsCalOtherMonth{
+	background-color:#EEEEEE;
+	color:#CCCCCC;
+}
+.NewsCalWeekend{
+    background-color:#FFFFFF;
+}
+.NewsCalHeader{
+    background-color:#22396D;
+    color:#FFFFFF;
+}
+.NewsCalTable, .NewsCalTable tr, .NewsCalTable td{
+	border-collapse:collapse;
+	border:1px solid #999999;
+    height:19px;
+    padding: 2px 0px 3px 3px;
+}
+.NewsCalTable tr.weekdays {
+	border-collapse:collapse;
+    border:0px solid #000000;
+}
+.NewsCalHeader {
+	border:0px solid #000000;
+    text-align: center;
+}
+.NewsCalMonthNav{
+}
+.NewsCalDay{
+	color:#000000;
+}
+.NewsCalDayOther{
+	color:#365D91;
+}
+.NewsCalNews{
+	color:#000000;
+	border-bottom: 1px dotted #CCCCCC;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 6px 0px;
+}
+span.red{
+    font-weight: bold;
+    font-style: italic;
+    color: #CC0000;
+}
+a.jt{
+    text-decoration: none;
+    border-bottom: 2px dotted #C85711;
+    padding: 3px 0px -3px 0px;
+    color: #C85711;
+}
+
+a.jt:hover{
+    text-decoration: none;
+}
+
+
+/*table tr td styles*/
+table.calend
+{
+	width: 100%;
+	margin-bottom: 10px;
+	border-collapse:collapse;
+	margin: 0 auto 15px auto;
+}
+
+table.calend a:visited
+{
+	color:#FC711B;
+}
+
+table.calend .edu_header
+{
+	background-color: #22396D;
+}
+
+table.calend a:active
+{
+	color:#FC711B;
+}
+
+table.calend a:link
+{
+	color:#FC711B;
+}
+
+table.calend h3
+{
+	color:#FFFFFF;
+	font-size:12px;
+	padding:0px;
+}
+
+/* main table row color */
+.ewTableRow
+{
+	background-color: #FFFFFF;  /* alt row color 1 */
+}
+
+/* main table highlight color */
+.ewTableHighlightRow
+{
+	background-color: #EFF3FF; /* highlight color */
+}
+
+.ewTableAltRow
+{
+	background-color: #FFFFFF; /* alt row color 2 */
+}
+
+/* main table select color */
+.ewTableSelectRow
+{
+	background-color: #FFDEB9; /* select color */
+}
+
+table.calend th
+{
+	vertical-align: middle;
+	color: red;
+}
+
+table.calend p
+{
+	padding:0px;
+}
+
+table.calend .edu_header p
+{
+	color: #FFFFFF;
+}
+
+table.calend td
+{
+	border: 1px #ede solid;
+	padding: 5px;
+	vertical-align: top;
+}
+
+table.calend ul
+{
+	padding: 0;
+	margin: 0 0 0 5px;
+}
+
+table.calend li
+{
+	padding: 0;
+	margin: 0 0 10px 5px;
+}
+
+table.calend tr.select
+{
+	padding: 0;
+	margin: 0 0 10px 5px;
+}
+
+table.calend td.td_name
+{
+}
+
+table.calend td.td_date
+{
+}
+
+table.calend td.td_duration
+{
+}
+
+table.calend td.td_price
+{
+}
+
+table.calend td.td_time
+{
+} 
+
+

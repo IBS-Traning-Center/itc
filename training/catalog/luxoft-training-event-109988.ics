@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211123T214630CET-0007RfXGnp@185.26.112.96
+DTSTAMP:20211123T204629Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-059 Платформа обмена сообщениями 
+ RabbitMQ\n\nДата проведения курса: 25.11.2021-26.11.202
+ 1\nВремя: 10:00-16:00\n\nРегистрация и подробнее
+  о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.htm
+ l?ID=80318&ID_TIME=109988\n\n
+DTSTART:20211125T100000
+DTEND:20211126T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Платформа обмена сообщениями RabbitMQ'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-059 Платформа обмена сообщениями 
+ RabbitMQ\n\nДата проведения курса: 25.11.2021-26.11.202
+ 1\nВремя: 10:00-16:00\n\nРегистрация и подробнее
+  о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course.htm
+ l?ID=80318&ID_TIME=109988\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

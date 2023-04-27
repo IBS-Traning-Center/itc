@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20170414T211529CEST-4268Na7Dwk@185.26.112.96
+DTSTAMP:20170414T191529Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-004 Эффективная письменная коммун
+ икация для руководителей\n\nДата проведе�
+ �ия курса: 24.04.2017-28.04.2017\nВремя: 10:00-14:00\n\nРег
+ истрация и подробнее о курсе:\nhttp://www.luxoft-t
+ raining.ru/training/catalog/course.html?ID=8881&ID_TIME=70973\n\n
+DTSTART:20170424T100000
+DTEND:20170428T140000
+LOCATION:Омск
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Эффективная письменная коммуникация дл
+ я руководителей'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-004 Эффективная письменная коммун
+ икация для руководителей\n\nДата проведе�
+ �ия курса: 24.04.2017-28.04.2017\nВремя: 10:00-14:00\n\nРег
+ истрация и подробнее о курсе:\nhttp://www.luxoft-t
+ raining.ru/training/catalog/course.html?ID=8881&ID_TIME=70973\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

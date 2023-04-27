@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210211T161628CET-879487jp7u@185.26.112.96
+DTSTAMP:20210211T151628Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-052 BABOK Guide 3.0: Выяснение и взаимоде
+ йствие\n\nДата проведения курса: 15.02.2021-18.02
+ .2021\nВремя: 10:30-14:30\n\nРегистрация и подробн
+ ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course
+ .html?ID=68029&ID_TIME=106088\n\n
+DTSTART:20210215T103000
+DTEND:20210218T143000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BABOK Guide 3.0: Выяснение и взаимодействие'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-052 BABOK Guide 3.0: Выяснение и взаимоде
+ йствие\n\nДата проведения курса: 15.02.2021-18.02
+ .2021\nВремя: 10:30-14:30\n\nРегистрация и подробн
+ ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course
+ .html?ID=68029&ID_TIME=106088\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

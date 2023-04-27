@@ -1,0 +1,14 @@
+@use "../variables" as *;
+//@use "fonts";
+//@use "normalize";
+@use "typography";
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}

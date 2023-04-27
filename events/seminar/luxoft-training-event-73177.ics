@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220709T153206CEST-1263Cgutpt@82.146.55.227
+DTSTAMP:20220709T133206Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:Семинар: Workshop &quot\;Spam Classification Using Spark
+ &quot\;\n\nДата проведения\n13.06.2017 16:35:00\n\nВрем�
+ �\n19:00-21:00\n\nМесто проведения:\nКиев\, ул. Ра�
+ �ищева 10/14\, БЦ &quot\;Ирва&quot\;\n\nДокладчик:\n �
+ �лободянюк Владимир -Специалист в област
+ и хранилищ данных и интеграционных прое�
+ �тов\n\nSpark Architecture\n- Spark ML\n - Main Concepts\n - How It Wor
+ ks\n - classification types\n- Examples based on databricks cloud\n\n\nР�
+ �гистрация:\nhttp://www.luxoft-training.ru/events/seminar/73177/
+ \n\n
+DTSTART:20170613T163500
+LOCATION:Киев\, ул. Радищева 10/14\, БЦ &quot\;Ирва&quo
+ t\;
+SUMMARY:Семинар: Workshop &quot\;Spam Classification Using Spark&quo
+ t\;
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Семинар: Workshop &quot\;Spam Classification Using Spark
+ &quot\;
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

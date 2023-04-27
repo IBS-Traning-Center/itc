@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20180218T110858CET-3478U0VCab@185.26.112.96
+DTSTAMP:20180218T100858Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:WEB-015 Язык программирования TypeScript\n
+ \nДата проведения курса: 12.03.2018-14.03.2018\nВре�
+ �я: 14:30-18:00\n\nРегистрация и подробнее о кур
+ се:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=77260
+ &ID_TIME=79399\n\n
+DTSTART:20180312T143000
+DTEND:20180314T180000
+LOCATION:Киев
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Язык программирования TypeScript'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:WEB-015 Язык программирования TypeScript\n
+ \nДата проведения курса: 12.03.2018-14.03.2018\nВре�
+ �я: 14:30-18:00\n\nРегистрация и подробнее о кур
+ се:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=77260
+ &ID_TIME=79399\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,73 @@
+body {
+	width:100%;
+	margin:0;
+	padding:0;
+	border:0;
+	background: none repeat scroll 0 0 #FFFFFF!important;
+}
+
+* { 
+	border: 0px none currentColor;
+	font-size: 100%;
+	font-weight: 400;
+	margin: 0px;
+	outline: 0px none currentColor;
+	padding: 0px;
+}
+body { font: normal normal 400 12.8px/19.2px "Trebuchet MS"; }
+
+p { 	line-height: 1.5em;
+	padding: 5px 0px;
+}
+
+a {	color: #1F79AE;
+	text-decoration: underline;
+}
+a:hover {
+	color: #576B95;
+	text-decoration: none;
+}
+
+table { 	width: 100%; 
+		border-collapse: collapse;
+}
+table td { border: 1px solid #CBD6DE;
+		color: #666666;
+		padding: 5px 10px; 
+		vertical-align:top;
+}
+table tr.edu_header  {
+	background-color: #DCE9F2;
+	border: 1px solid #CBD6DE;
+}
+table tr.edu_header p {
+	color: #467AA7;
+	font-weight: 700;
+	font-size: 1.1em;
+	padding:0;
+}
+
+
+
+
+a.show_tooltip {
+	text-decoration:none;
+	cursor: default;
+}
+
+table.edu td.td_buy{
+    display:none;
+}
+table.edu td.td_time, table.edu td.td_code{
+
+}
+table.edu td.td_time img{
+    display:none;
+}
+.edu_sort{
+    display:none;
+}
+h2.abs{
+    position:relative!important;
+	display:none;
+}

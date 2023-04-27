@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20181125T235045CET-8436NP8AVv@185.26.112.96
+DTSTAMP:20181125T225045Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PTRN-041 DevOps и Infrastructure as Code для классич
+ еской трехзвенной архитектуры на Ansible\n\n�
+ �ата проведения курса: 26.11.2018-27.11.2018\nВремя
+ : 10:00-18:00\n\nРегистрация и подробнее о курс�
+ �:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=79278&ID
+ _TIME=83617\n\n
+DTSTART:20181126T100000
+DTEND:20181127T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'DevOps и Infrastructure as Code для классической трех
+ звенной архитектуры на Ansible'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PTRN-041 DevOps и Infrastructure as Code для классич
+ еской трехзвенной архитектуры на Ansible\n\n�
+ �ата проведения курса: 26.11.2018-27.11.2018\nВремя
+ : 10:00-18:00\n\nРегистрация и подробнее о курс�
+ �:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=79278&ID
+ _TIME=83617\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

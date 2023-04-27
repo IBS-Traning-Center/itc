@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190305T164522CET-16766cUIhj@185.26.112.96
+DTSTAMP:20190305T154522Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SQA-QA-001 Какое оно – тестирование\n\nД
+ ата проведения курса: 11.03.2019-11.03.2019\nВремя:
+  10:00-15:00\n\nРегистрация и подробнее о курсе
+ :\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=86308&ID_
+ TIME=88036\n\n
+DTSTART:20190311T100000
+DTEND:20190311T150000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Какое оно – тестирование'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SQA-QA-001 Какое оно – тестирование\n\nД
+ ата проведения курса: 11.03.2019-11.03.2019\nВремя:
+  10:00-15:00\n\nРегистрация и подробнее о курсе
+ :\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=86308&ID_
+ TIME=88036\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20200803T211800CEST-4433gT1suK@185.26.112.96
+DTSTAMP:20200803T191800Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-074 Java Advanced: функциональное\, асин�
+ �ронное и реактивное программирование\n\n
+ Дата проведения курса: 07.09.2020-11.09.2020\nВрем�
+ �: 10:00-16:00\n\nРегистрация и подробнее о курс
+ е:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=101382&
+ ID_TIME=102609\n\n
+DTSTART:20200907T100000
+DTEND:20200911T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Java Advanced: функциональное\, асинхронное и �
+ �еактивное программирование'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-074 Java Advanced: функциональное\, асин�
+ �ронное и реактивное программирование\n\n
+ Дата проведения курса: 07.09.2020-11.09.2020\nВрем�
+ �: 10:00-16:00\n\nРегистрация и подробнее о курс
+ е:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=101382&
+ ID_TIME=102609\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

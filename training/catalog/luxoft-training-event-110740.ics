@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20210625T035453CEST-5618z4LCjr@185.26.112.96
+DTSTAMP:20210625T015453Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SCRIPT-002 Основы языка Python\n\nДата пров�
+ �дения курса: 29.06.2021-05.07.2021\nВремя: 10:00-14:00\n\n
+ Регистрация и подробнее о курсе:\nhttp://www.lu
+ xoft-training.ru/training/catalog/course.html?ID=57975&ID_TIME=110740\n\n
+DTSTART:20210629T100000
+DTEND:20210705T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Основы языка Python'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SCRIPT-002 Основы языка Python\n\nДата пров�
+ �дения курса: 29.06.2021-05.07.2021\nВремя: 10:00-14:00\n\n
+ Регистрация и подробнее о курсе:\nhttp://www.lu
+ xoft-training.ru/training/catalog/course.html?ID=57975&ID_TIME=110740\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

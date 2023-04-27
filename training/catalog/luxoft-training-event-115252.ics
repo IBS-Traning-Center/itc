@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20220207T173852CET-3474zzA1IE@185.26.112.96
+DTSTAMP:20220207T163852Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-038 BPMN: Моделирование бизнес-проц�
+ �ссов. Основы\n\nДата проведения курса: 07.02
+ .2022-10.02.2022\nВремя: 10:30-14:30\n\nРегистрация и п�
+ �дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cat
+ alog/course.html?ID=45134&ID_TIME=115252\n\n
+DTSTART:20220207T103000
+DTEND:20220210T143000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BPMN: Моделирование бизнес-процессов. Осн�
+ �вы'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-038 BPMN: Моделирование бизнес-проц�
+ �ссов. Основы\n\nДата проведения курса: 07.02
+ .2022-10.02.2022\nВремя: 10:30-14:30\n\nРегистрация и п�
+ �дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cat
+ alog/course.html?ID=45134&ID_TIME=115252\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

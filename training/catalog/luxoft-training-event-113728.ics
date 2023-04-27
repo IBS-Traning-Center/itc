@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20211108T185817CET-5751AtbFvT@185.26.112.96
+DTSTAMP:20211108T175817Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:ARC-013 Интеграция в корпоративных си
+ стемах\n\nДата проведения курса: 08.11.2021-12.11
+ .2021\nВремя: 10:00-16:00\n\nРегистрация и подробн
+ ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course
+ .html?ID=75880&ID_TIME=113728\n\n
+DTSTART:20211108T100000
+DTEND:20211112T160000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Интеграция в корпоративных системах'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ARC-013 Интеграция в корпоративных си
+ стемах\n\nДата проведения курса: 08.11.2021-12.11
+ .2021\nВремя: 10:00-16:00\n\nРегистрация и подробн
+ ее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/course
+ .html?ID=75880&ID_TIME=113728\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

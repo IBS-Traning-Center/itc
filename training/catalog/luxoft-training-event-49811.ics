@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20140724T055949CEST-7666Uw7iHW@50.57.83.146
+DTSTAMP:20140724T035949Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:PM-003 Работа с персоналом в проекте\n
+ \nДата проведения курса: 04.08.2014-08.08.2014\nВре�
+ �я: 10:00-17:00\n\nРегистрация и подробнее о кур
+ се:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=22357
+ &ID_TIME=49811\n\n
+DTSTART:20140804T100000
+DTEND:20140808T170000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Работа с персоналом в проекте'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:PM-003 Работа с персоналом в проекте\n
+ \nДата проведения курса: 04.08.2014-08.08.2014\nВре�
+ �я: 10:00-17:00\n\nРегистрация и подробнее о кур
+ се:\nhttp://www.luxoft-training.ru/training/catalog/course.html?ID=22357
+ &ID_TIME=49811\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

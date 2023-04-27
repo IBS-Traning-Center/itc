@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20151118T144815CET-4476kR7EUk@185.26.112.96
+DTSTAMP:20151118T134815Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-021_ONL BABOK: Планирование и управлен
+ ие этапом бизнес-анализа ИТ-проекта (online)
+ \n\nДата проведения курса: 18.11.2015 19:37:00-25.11.20
+ 15 19:37:00\nВремя: 10:00-14:00\n\nРегистрация и подр
+ обнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/
+ course.html?ID=36530&ID_TIME=61243\n\n
+DTSTART:20151118T100000
+DTEND:20151125T140000
+LOCATION:Онлайн
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'BABOK: Планирование и управление этапом би
+ знес-анализа ИТ-проекта (online)'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-021_ONL BABOK: Планирование и управлен
+ ие этапом бизнес-анализа ИТ-проекта (online)
+ \n\nДата проведения курса: 18.11.2015 19:37:00-25.11.20
+ 15 19:37:00\nВремя: 10:00-14:00\n\nРегистрация и подр
+ обнее о курсе:\nhttp://www.luxoft-training.ru/training/catalog/
+ course.html?ID=36530&ID_TIME=61243\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

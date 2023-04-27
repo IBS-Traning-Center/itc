@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20161201T033403CET-5808VN367O@185.26.112.96
+DTSTAMP:20161201T023403Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:SS-105 Развитие эмоционального интел
+ лекта. Уровень 1\n\nДата проведения курса: 
+ 06.12.2016-09.12.2016\nВремя: 14:30-18:30\n\nРегистрация �
+ � подробнее о курсе:\nhttp://www.luxoft-training.ru/trainin
+ g/catalog/course.html?ID=68835&ID_TIME=68842\n\n
+DTSTART:20161206T143000
+DTEND:20161209T183000
+LOCATION:Одесса
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Развитие эмоционального интеллекта. Ур�
+ �вень 1'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SS-105 Развитие эмоционального интел
+ лекта. Уровень 1\n\nДата проведения курса: 
+ 06.12.2016-09.12.2016\nВремя: 14:30-18:30\n\nРегистрация �
+ � подробнее о курсе:\nhttp://www.luxoft-training.ru/trainin
+ g/catalog/course.html?ID=68835&ID_TIME=68842\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

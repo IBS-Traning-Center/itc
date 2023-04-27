@@ -1,0 +1,9 @@
+<?
+if(mail("zagvozdin@gmail.com", "zagvozdin@gmail.com", "test", "From: education@edu.luxoft.ru")) echo"ok"; else echo "error";
+?>
+<?
+if(mail("azagvozdin@mail.ru", "azagvozdin@mail.ru", "test", "From: education@edu.luxoft.ru")) echo"ok"; else echo "error";
+?>
+<?
+if(mail("azagvozdin@luxoft.com", "azagvozdin@luxoft.com", "test", "From: education@edu.luxoft.ru")) echo"ok"; else echo "error";
+?>

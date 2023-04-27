@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Логотип";
+$arDirProperties = Array(
+
+);
+?>

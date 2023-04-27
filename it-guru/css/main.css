@@ -1,0 +1,477 @@
+/* ==========================Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section, main {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of Eric Meyer's CSS Reset */
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-weight: normal;
+}
+a {
+    color: #2a728f;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.a-right {
+    text-align: right;
+}
+
+.a-left {
+    text-align: left;
+}
+
+.a-center {
+    text-align: center;
+}
+
+/* =========================== Global */
+body {
+    background: #fff;
+    font: 16px/1 Arial, sans-serif;
+    color: #333;
+}
+ul, li {
+    list-style-type: none;
+}
+.wrapper {
+    min-width: 1100px;
+}
+.content {
+    padding-top: 94px;
+}
+.title {
+    font: 34px 'Roboto', Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+/* =========================== Helper classes */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/*=========================== Header */
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: #fff;
+    padding: 0 40px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.35);
+    min-width: 1100px;
+    z-index: 10;
+}
+
+.header-logo {
+    float: left;
+    margin-top: 14px;
+}
+
+.header-nav {
+    float: right;
+    margin-right: 20px;
+}
+
+.header-nav li {
+    float: left;
+}
+
+.header-nav a {
+    display: block;
+    padding: 38px 20px;
+    color: #1d427d;
+    text-decoration: none;
+    position: relative;
+    font:500 16px/19px 'Roboto', Arial, sans-serif;
+}
+.header-nav a:before,
+.header-nav a:after {
+    transition: all 0.2s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: #f26f21;
+    height: 4px;
+    left: 50%;
+    right: 50%;
+}
+.header-nav a:hover:before,
+.header-nav a.active:before {
+    left: 0;
+}
+.header-nav a:hover:after,
+.header-nav a.active:after {
+    right: 0;
+}
+.btn-registration {
+    float: right;
+    border: none;
+    font: 13px 'Roboto', Arial, sans-serif;
+    border-radius: 25px;
+    margin-top: 24px;
+    padding: 15px 25px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #ffa407;
+    transition: all 0.2s ease;
+    background: -moz-linear-gradient(top,  #ffa407 0%, #ff7f16 100%);
+    background: -webkit-linear-gradient(top,  #ffa407 0%,#ff7f16 100%);
+    background: linear-gradient(to bottom,  #ffa407 0%,#ff7f16 100%);
+}
+.btn-registration:hover {
+    opacity: 0.8;
+}
+.container p{
+	font-family: 'Roboto', Arial, sans-serif;
+}
+/*============================== Agile Practice */
+.section-agile {
+    line-height: 21px;
+    padding-top: 65px;
+}
+.section-agile .title {
+    text-transform: none;
+    margin-bottom: 30px;
+}
+.container {
+    width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.left-col {
+    float: left;
+    width: 50%;
+    padding:0 8px 0 0;
+}
+.right-col {
+    float: right;
+    width: 50%;
+    padding:0 0 0 8px;
+}
+.right-col p:first-child {
+    min-height: 235px;
+}
+.container img {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.gallery-row {
+    margin: 0 -5px;
+    overflow: hidden;
+}
+.gallery-row img {
+    float: left;
+    width: 50%;
+    padding: 0 5px;
+}
+.more-info {
+    text-align: center;
+    margin: 40px 0;
+}
+.more-info a {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 20px;
+    transition: all 0.2s ease;
+}
+.more-info a:hover {
+    opacity: 0.8;
+}
+/*============================== Video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/*============================== Training*/
+.training-section {
+    padding-top: 100px;
+}
+.table-training-list {
+    width: 865px;
+    margin: 0 auto;
+}
+.training-title {
+    display: block;
+    color: #0055a1;
+    margin-bottom: 15px;
+    font:normal 16px Arial, sans-serif;
+}
+.table-training-list th,
+.table-training-list td {
+    text-align: center;
+    padding: 20px 10px;
+}
+.table-training-list th:first-child,
+.table-training-list td:first-child {
+    text-align: left;
+    padding-left: 0;
+}
+.table-training-list th {
+    font: 13px 'Roboto', Arial, sans-serif;
+    color: #888;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.table-training-list td {
+    border-bottom: 1px solid #d1dde8;
+    font: 16px 'Roboto', Arial, sans-serif;
+}
+.table-training-list td:first-child {
+    font:12px 'Roboto', Arial, sans-serif;
+}
+.btn-set {
+    text-align: center;
+}
+.btn-load-more {
+    font:30px 'Roboto', Arial, sans-serif;
+    background: none;
+    border: none;
+    margin: 70px 0;
+    text-transform: uppercase;
+    color: #0055a1;
+    cursor: pointer;
+}
+.btn-load-more:hover {
+    text-decoration: underline;
+}
+/*============================== Reviews */
+.review-section {
+    background: url("../images/reviews-bg.jpg") no-repeat 0 center / cover;
+    padding: 70px 0 180px;
+}
+.reviewer-list {
+    width: 955px;
+    margin:0 auto;
+}
+.reviewer-list-item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 12px;
+}
+.reviewer-card {
+    width: 290px;
+    padding: 20px;
+    background: #fff;
+    border-top: 4px solid #924ee6;
+    font: 14px/23px 'Roboto', Arial, sans-serif;
+    position: relative;
+}
+.reviewer-card:before {
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 27px 27px 0 0;
+    border-color: #924ee6 transparent transparent transparent;
+}
+.reviewer-list-item:nth-child(6n+2) .reviewer-card,
+.reviewer-list-item:nth-child(6n+2) .reviewer-card:before {
+    border-color: #ffa626 transparent transparent transparent;
+}
+.reviewer-list-item:nth-child(6n+3) .reviewer-card,
+.reviewer-list-item:nth-child(6n+3) .reviewer-card:before {
+    border-color: #2665a8 transparent transparent transparent;
+}
+.reviewer-list-item:nth-child(6n+4) .reviewer-card,
+.reviewer-list-item:nth-child(6n+4) .reviewer-card:before {
+    border-color: #6ca826 transparent transparent transparent;
+}
+.reviewer-list-item:nth-child(6n+5) .reviewer-card,
+.reviewer-list-item:nth-child(6n+5) .reviewer-card:before {
+    border-color: #d03ca8 transparent transparent transparent;
+}
+.reviewer-list-item:nth-child(6n+6) .reviewer-card,
+.reviewer-list-item:nth-child(6n+6) .reviewer-card:before {
+    border-color: #26a89d transparent transparent transparent;
+}
+.reviewer-card-header {
+    margin-bottom: 15px;
+}
+.reviewer-name {
+    font-weight: 500;
+    font-size: 16px;
+}
+.reviewer-position {
+    font-size: 16px;
+    color: #0055a1;
+}
+/*============================== Footer */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    text-transform: uppercase;
+    font:15px 'Roboto', Arial, sans-serif;
+}
+/*============================== Social links */
+.social-links {
+    position: fixed;
+    top: 50%;
+    right: 43px;
+    margin-top: -100px;
+    z-index: 5;
+}
+.social-links a {
+    display: block;
+    width: 34px;
+    height: 34px;
+    margin: 0 0 9px 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    background: url(../images/social-icons.png) no-repeat;
+}
+.social-links a:hover {
+    opacity: 0.8;
+}
+.social-links .vk{background-position: 0 -43px;}
+.social-links .twitter{background-position: 0 -85px;}
+.social-links .linkedin{background-position: 0 -127px;}
+.social-links .google{background-position: 0 -169px;}
+
+/*=============================== Scroll top */
+.scroll-top {
+    position: fixed;
+    right: 43px;
+    bottom: 56px;
+    background-image: url(../images/scroll-top-icon.png);
+    text-indent: -9999px;
+    width: 69px;
+    height: 69px;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+.btn{
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding:0 14px;
+    background: rgb(255,165,7);
+    background: -moz-linear-gradient(top,  rgba(255,165,7,1) 0%, rgba(255,127,23,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(255,165,7,1) 0%,rgba(255,127,23,1) 100%);
+    background: linear-gradient(to bottom,  rgba(255,165,7,1) 0%,rgba(255,127,23,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa507', endColorstr='#ff7f17',GradientType=0 );
+    font-size:12px;
+    line-height:32px;
+}
+.btn:hover{
+    text-decoration: none;
+    background: rgb(255,127,23);
+    background: -moz-linear-gradient(top,  rgba(255,127,23,1) 0%, rgba(255,165,7,1) 96%);
+    background: -webkit-linear-gradient(top,  rgba(255,127,23,1) 0%,rgba(255,165,7,1) 96%);
+    background: linear-gradient(to bottom,  rgba(255,127,23,1) 0%,rgba(255,165,7,1) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7f17', endColorstr='#ffa507',GradientType=0 );
+    box-shadow:inset 0 0 3px 3px rgba(255, 255, 255, 0.35), 0 1px 0 rgba(0, 0, 0, 0.11);
+}
+.btn:active{box-shadow:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

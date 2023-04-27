@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20190310T022225CET-1961xW7vuv@185.26.112.96
+DTSTAMP:20190310T012225Z
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:REQ-031 Деловая игра по сбору и анализ
+ у требований\n\nДата проведения курса: 11.03
+ .2019-12.03.2019\nВремя: 10:00-18:00\n\nРегистрация и п�
+ �дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cat
+ alog/course.html?ID=45680&ID_TIME=86873\n\n
+DTSTART:20190311T100000
+DTEND:20190312T180000
+LOCATION:Москва
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Деловая игра по сбору и анализу требова�
+ �ий'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:REQ-031 Деловая игра по сбору и анализ
+ у требований\n\nДата проведения курса: 11.03
+ .2019-12.03.2019\nВремя: 10:00-18:00\n\nРегистрация и п�
+ �дробнее о курсе:\nhttp://www.luxoft-training.ru/training/cat
+ alog/course.html?ID=45680&ID_TIME=86873\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

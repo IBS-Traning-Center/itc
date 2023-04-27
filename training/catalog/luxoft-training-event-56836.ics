@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+PRODID:-//luxoft-training.ru//NONSGML iCalcreator 2.6//
+VERSION:2.0
+X-WR-TIMEZONE:Europe/Moscow
+BEGIN:VEVENT
+UID:20151108T093945CET-4320rixKAu@185.26.112.96
+DTSTAMP:20151108T083945Z
+ATTENDEE:MAILTO:education@luxoft.com
+CATEGORIES:LUXOFT-TRAINING.RU
+DESCRIPTION:JVA-011 Владение каркасом модульного 
+ тестирования JUnit\n\nДата проведения курса
+ : 09.11.2015-09.11.2015\nВремя: 10:00 - 16:00\n\nРегистраци
+ я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tra
+ ining/catalog/course.html?ID=6069&ID_TIME=56836\n\n
+DTSTART:20151109T100000
+DTEND:20151109T160000
+LOCATION:Санкт-Петербург
+SUMMARY:Посещение курса Учебного центра Luxoft 
+ 'Владение каркасом модульного тестирова
+ ния JUnit'
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:JVA-011 Владение каркасом модульного 
+ тестирования JUnit\n\nДата проведения курса
+ : 09.11.2015-09.11.2015\nВремя: 10:00 - 16:00\n\nРегистраци
+ я и подробнее о курсе:\nhttp://www.luxoft-training.ru/tra
+ ining/catalog/course.html?ID=6069&ID_TIME=56836\n\n
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR

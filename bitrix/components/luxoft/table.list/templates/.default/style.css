@@ -1,0 +1,75 @@
+body {
+margin:0;
+padding: 0;
+background: #FFF;
+}
+img {
+	border: none;
+}
+.wid-wrap {
+	border: 1px solid #bcbcbc;
+	width: 726px;
+	height: 88px;
+	font-family: Arial;
+}
+.wid-wrap a {
+	text-decoration: underline; 
+	color: #6a7b95;
+}
+.wid-wrap  .wid-header {
+	margin-top: 12px;
+	margin-left: 15px;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #bcbcbc;
+	width: 224px;
+	float: left;
+	height: 68px;
+	
+}
+.wid-header .wid-h {
+
+	
+	color: #ae2827;
+	font-size: 18px;
+	margin-bottom: 9px;
+}
+.wid-header .wid-logo {
+	width: 75px;
+	float: left;
+	height: 43px;
+	margin-right: 38px;
+}
+.wid-header .link-wrap {
+	padding-top: 4px;
+	width: 87px;
+	height: 39px;
+	float: left;
+	font-size: 12px;
+}
+.wid-header .link-wrap  div {
+	margin-bottom: 3px;
+}
+.courses-wraper {
+	float: left;
+	font-size: 12px;
+	width: 465px;
+	overflow: hidden;
+	position:relative;
+}
+.courses-wraper {
+	height: 88px;
+	overflow: hidden;
+}
+.four-it {
+	height: 88px;
+	clear: both;
+	width: 468px;
+	position: relative;
+	margin-bottom: 10px;
+}
+.items {
+	position: absolute;
+	height: 90000000000px;
+	width: 468px;
+}

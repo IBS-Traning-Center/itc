@@ -1,0 +1,71 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("blue_title", "Курсы по программированию Санкт-Петербург");
+$APPLICATION->SetPageProperty("title", "Обучение программированию Санкт-Петербург");
+$APPLICATION->SetPageProperty("keywords", "обучение программированию Санкт-Петербург, обучение тестированию, курсы для программистов Ленинградская область,обучение аналитиков Санкт-Петербург");
+$APPLICATION->SetPageProperty("description", "Адрес УЦ Luxoft: Выборгская наб., дом 47д, бизнес-центр «Гренадерский», 4-й этаж");
+$APPLICATION->SetTitle("Курсы по программированию Санкт-Петербург");
+?><span itemscope="" itemtype="http://data-vocabulary.org/Organization">
+<p>
+ <b>Телефоны:</b><span class="less"> </span>&nbsp;+7 (812) 457-1044&nbsp;(доп.&nbsp;6250, 6251, 5921, 6172)&nbsp; <br>
+ <b>Факс:</b><span class="less"> +7 (495) 967-8032</span> <br>
+ <b>E-mail:</b><span class="less"> <a href="mailto:<?=EMAIL_ADDRESS?>" title="Написать письмо."><?=EMAIL_ADDRESS?></a></span> <br>
+ <span itemprop="address" itemscope="" itemtype="http://data-vocabulary.org/Address"> <b>Адрес аудиторий: </b><span class="less"><span itemprop="region">Россия</span>, </span>195027 <span itemprop="locality">Санкт-Петербург</span>, <span itemprop="street-address">Свердловская наб., д. 44, лит. Я, БЦ "Осень"</span>&nbsp;</span>
+</p>
+<p>
+ <b>Аудитории</b>
+</p>
+<p>
+ <a class="fancy" rel="1" href="/upload/aditory/DSCN3727.jpg"><img width="209" alt="DSCN3727_small.jpg" src="/upload/medialibrary/fc9/DSCN3727_small.jpg" height="133" title="DSCN3727_small.jpg" border="0" align="top"></a> &nbsp;&nbsp;<a class="fancy" rel="1" href="/upload/aditory/DSCN3728.jpg"><img width="212" alt="DSCN3728_small.jpg" src="/upload/medialibrary/1e6/DSCN3728_small.jpg" height="133" title="DSCN3728_small.jpg" border="0" align="top"></a> <br>
+ <b> <br>
+ </b>
+</p>
+<p>
+ <b>Важно!</b> Посетителям необходимо иметь с собой документ, удостоверяющий личность.
+</p>
+<div>
+ <i><b>Расположение автобусных остановок у метро "Площадь Ленина"</b></i> <br>
+ <img width="427" src="images/spbmap.jpg">
+</div>
+<p>
+</p>
+<p>
+</p>
+ </span>
+<div class="maps">
+	 <?/*$APPLICATION->IncludeComponent(
+	"bitrix:map.yandex.view",
+	".default",
+	Array(
+		"INIT_MAP_TYPE" => "MAP",
+		"MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:59.975481582196;s:10:\"yandex_lon\";d:30.33314270427898;s:12:\"yandex_scale\";i:16;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:30.333636777685;s:3:\"LAT\";d:59.973549957602;s:4:\"TEXT\";s:20:\"Офис Luxoft Training\";}}}",
+		"MAP_WIDTH" => "743",
+		"MAP_HEIGHT" => "500",
+		"CONTROLS" => array(0=>"ZOOM",1=>"MINIMAP",2=>"TYPECONTROL",3=>"SCALELINE",),
+		"OPTIONS" => array(0=>"ENABLE_DBLCLICK_ZOOM",1=>"ENABLE_DRAGGING",),
+		"MAP_ID" => ""
+	)
+);*/?> <?$APPLICATION->IncludeComponent(
+	"bitrix:map.google.view",
+	".default",
+	array(
+	"INIT_MAP_TYPE" => "ROADMAP",	// Стартовый тип карты
+		"MAP_DATA" => "a:4:{s:10:\"google_lat\";d:59.96094029735452;s:10:\"google_lon\";d:30.40329278945921;s:12:\"google_scale\";i:15;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:4:\"TEXT\";s:20:\"Офис Luxoft-Training\";s:3:\"LON\";d:30.40316104888916;s:3:\"LAT\";d:59.96163829199604;}}}",	// Данные, выводимые на карте
+		"MAP_WIDTH" => "745",	// Ширина карты
+		"MAP_HEIGHT" => "500",	// Высота карты
+		"CONTROLS" => array(	// Элементы управления
+			0 => "SMALL_ZOOM_CONTROL",
+			1 => "TYPECONTROL",
+			2 => "SCALELINE",
+		),
+		"OPTIONS" => array(	// Настройки
+			0 => "ENABLE_SCROLL_ZOOM",
+			1 => "ENABLE_DBLCLICK_ZOOM",
+			2 => "ENABLE_DRAGGING",
+			3 => "ENABLE_KEYBOARD",
+		),
+		"MAP_ID" => "gm_1",	// Идентификатор карты
+	)
+);?>
+</div>
+<br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

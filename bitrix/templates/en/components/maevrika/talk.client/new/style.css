@@ -1,0 +1,103 @@
+
+ul.users li {
+	cursor:pointer;
+	color:green;
+};
+.Talk{
+	
+}
+.cons-open {
+	width: 22px;
+	height: 136px;
+	background: url('images/askme.png');
+	position: fixed;
+	top: 325px;
+	left: 0;
+	cursor: pointer;
+}
+
+.Talk .text .message{
+ font-weight:bold;
+}
+	.Talk .text{
+		width:98%;
+		height:210px;
+		border:1px solid #aaa;
+		overflow:auto;
+		border-radius:8px;
+		box-shadow: 2px 2px 5px black;
+	    padding:5px;
+		
+	}
+	.Talk .text .line{
+		padding:3px 3px 3px 14px;
+	    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+		font-weight:bold;
+		background:  url(images/log/razdelitel.png) bottom  left no-repeat;
+	}
+	.Talk .text .line .time{
+	 float:right;
+	 color:#aaa;
+	 font-size:10px;
+	}
+	
+	.Talk .input{
+		width:98%;
+		height:60px;
+		border:1px solid #aaa;
+		overflow:auto;
+		border-radius:8px;
+	    background:  url(images/text/bottom_text_field_left.png) center  left  no-repeat,
+	    			#fff url(images/text/bottom_text_field_right.png) bottom  right  no-repeat;
+
+	    box-shadow: 2px 2px 5px black;
+	    margin-top:5px;
+	    padding:5px;
+	    position:relative;
+	    z-index:2;
+	}
+	.Talk .send{
+		float:right;
+		margin-top:-6px;
+		margin-right:-6px;
+		width:160px;
+		height:30px;
+		border:none;
+		background: #fff url(images/button/send_up.png) center  right  no-repeat;
+		box-shadow: 0px 0px 5px black;
+		border-radius: 0px 0px 8px 0px;
+		z-index:3;
+		position:relative;
+		font-weight:bold;
+		font-size:16px;
+	}
+	
+.red{color:red;}
+.green{color:green;}
+.note{
+ color:blue; 
+}
+.UserInfo{
+	height:75px;
+	background-color:#c9c9c9;
+	overflow:auto;
+	padding:5px;
+	margin-bottom:6px;
+}
+.UserInfo .avatar{
+ float:left; margin-right:10px;
+}
+.UserInfo .name{
+	background-image: url(images/consult_top/razdelitel.png);
+	background-repeat:  no-repeat;
+	background-position:  bottom  left;
+	padding:3px;
+
+	font-weight:bold;
+}
+.UserInfo .additionally{
+padding:3px;
+}
+
+
+/*=======*/
