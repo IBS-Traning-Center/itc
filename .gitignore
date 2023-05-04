@@ -12,18 +12,23 @@
 **/._.DS_Store
 /.env
 /.htaccess
+/.htsecure
 /.idea
 /upload
 
 /bitrix/*
 !/bitrix/activities
+/bitrix/activities/bitrix
 !/bitrix/components
 /bitrix/components/bitrix
 
 !/bitrix/gadgets
+/bitrix/gadgets/bitrix
 
 !/bitrix/php_interface
 bitrix/php_interface/dbconn.php
+bitrix/php_interface/include/catalog_import
+bitrix/php_interface/include/catalog_export
 
 !/bitrix/templates
 /bitrix/templates/call_app
