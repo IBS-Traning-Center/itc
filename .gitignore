@@ -12,6 +12,7 @@
 **/._.DS_Store
 /.env
 /.htaccess
+/.htpasswd
 /.htsecure
 /.idea
 /upload
