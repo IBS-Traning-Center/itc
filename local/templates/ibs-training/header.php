@@ -48,7 +48,7 @@ $request = $application->getContext()->getRequest();
 <head>
     <meta name="yandex-verification" content="a63abf59d6bf064e"/>
     <meta name="yandex-verification" content="8f50c1eeeb059b18"/>
-    <meta charset="windows-1251">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <meta name=viewport content="width=device-width">
     <link rel="canonical" href="https://ibs-training.ru<?=$APPLICATION->GetCurPage();?>">
