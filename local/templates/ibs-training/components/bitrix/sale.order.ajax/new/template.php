@@ -23,7 +23,7 @@ $APPLICATION->SetAdditionalCSS($templateFolder."/style.css");
 
 <a name="order_form"></a>
 
-<div id="order_form_div" class="order-checkout test">
+<div id="order_form_div" class="order-checkout">
 <NOSCRIPT>
 	<div class="errortext"><?=GetMessage("SOA_NO_JS")?></div>
 </NOSCRIPT>
