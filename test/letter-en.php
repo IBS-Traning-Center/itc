@@ -1,7 +1,7 @@
 
 <html>
 	<head>
-	<meta content="text/html; charset=windows-1251" http-equiv="Content-Type">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 	</head>
 	<body style="padding: 0; margin:0; background: #fff;">
 		<table cellspacing="0" cellpadding="0" width="603" border="0" style="border-collapse:collapse; border:none;">

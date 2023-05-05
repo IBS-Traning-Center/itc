@@ -233,7 +233,7 @@ function CreateXLSfiles($cityid=CITY_ID_MOSCOW, $isColored=false)  {
 	xmlns="http://www.w3.org/TR/REC-html40">
 	<head>
 	<title></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Type" content="application/vnd.ms-excel">
 	<style>
 	body {

@@ -9,7 +9,7 @@ include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.ph
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="<?$APPLICATION->ShowTitle()?>" />
 	<meta property="og:description" content="" />
-    <meta charset="windows-1251">
+    <meta charset="UTF-8">
 	<?$APPLICATION->ShowHeadStrings()?>
 	<?$APPLICATION->ShowHeadScripts()?>
     <title><?$APPLICATION->ShowTitle()?></title>

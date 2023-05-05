@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset=windows-1251>
+    <meta charset="UTF-8">
     <title>Тесты для подготовки к сдаче экзамена для сертификации IIBA</title>
 	<meta name="viewport" content="width=1024">
 	<meta name="description" content="Тест, разработанный в стиле экзаменационных вопросов IIBA. Для того чтобы максимально приблизить ситуацию к реальному процессу экзаменационного тестирования">

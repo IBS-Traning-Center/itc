@@ -13,7 +13,7 @@ if (strlen($requestCode) > 0 && $requestCode != "ua") { ?>
         <meta property="og:title" content="<? $APPLICATION->ShowTitle() ?>"/>
         <meta property="og:image" content="https://ibs-training.ru/agile/images/agile-nice-photo.jpg"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="windows-1251">
+        <meta charset="UTF-8">
         <? $APPLICATION->ShowHeadStrings() ?>
         <? $APPLICATION->ShowHeadScripts() ?>
         <title><? $APPLICATION->ShowTitle() ?></title>
