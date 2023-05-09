@@ -86,12 +86,10 @@ table.form-table td
   padding: 18px 52px 18px 52px;
 }
 
-/* ��������� ���������� ������ */
 .data-table tr td {
   border: 1px solid transparent !important;
 }
 
-/* �������������� ���������� ����� price */
 .form-table input[type="text"] {
   background: #f3f3f3;
 }

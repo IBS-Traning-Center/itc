@@ -1,11 +1,9 @@
 <?php
 declare(strict_types=1);
+use \Bitrix\Main\Page;
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$str = '';
-$unique = false;
-$location = \Bitrix\Main\Page\AssetLocation::AFTER_JS_KERNEL;
-$mode = null;
-\Bitrix\Main\Page\Asset::addString($str, $unique, $location, $mode);
+
+(Page\Asset::getInstance())->addString('');
 $APPLICATION->SetPageProperty("blue_title", "Новости IBS Training Center");
 $APPLICATION->SetTitle("Новости IBS Training Center");
 ?>

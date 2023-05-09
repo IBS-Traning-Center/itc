@@ -1,26 +1,26 @@
 <?
-$aMenuLinks = Array(
-	Array(
-		"Расписание", 
-		"/timetable/index.php", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-    Array(
-        "Сертификация",
-        "/timetable/certification/",
-        Array(),
-        Array(),
+$aMenuLinks = array(
+    array(
+        "Расписание",
+        "/timetable/index.php",
+        array(),
+        array(),
         ""
     ),
-	Array(
-		"Бесплатные семинары", 
-		"/timetable/?type=events",
-		Array(), 
-		Array(), 
-		"" 
-	),
+    array(
+        "Сертификация",
+        "/timetable/certification/",
+        array(),
+        array(),
+        ""
+    ),
+    array(
+        "Бесплатные семинары",
+        "/timetable/?type=events",
+        array(),
+        array(),
+        ""
+    ),
 
 );
 ?>

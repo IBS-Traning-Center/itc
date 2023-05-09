@@ -191,7 +191,6 @@
 
 			CIBlockElement::SetPropertyValuesEx($PRODUCT_ID, false, array("STATUS" => 189));
 
-			//$filename=GenarateCert($userID, intval($_REQUEST["couseid"]));
 			if (!empty($filename)) {
 				CIBlockElement::SetPropertyValuesEx($PRODUCT_ID, false, array("CERT" => $filename));
 			}
