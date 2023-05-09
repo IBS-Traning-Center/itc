@@ -27,7 +27,6 @@
 /bitrix/gadgets/bitrix
 
 !/bitrix/php_interface
-bitrix/php_interface/dbconn.php
 bitrix/php_interface/include/catalog_import
 bitrix/php_interface/include/catalog_export
 
