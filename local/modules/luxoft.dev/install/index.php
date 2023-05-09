@@ -26,14 +26,6 @@ class luxoft_dev extends CModule
         $path = str_replace("\\", "/", __FILE__);
         $path = substr($path, 0, strlen($path) - strlen("/index.php"));
 
-        if (is_array($arModuleVersion) && array_key_exists("VERSION", $arModuleVersion)) {
-            $this->MODULE_VERSION = $arModuleVersion["VERSION"];
-            $this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
-        } else {
-            $this->MODULE_VERSION = IBLOCK_VERSION;
-            $this->MODULE_VERSION_DATE = IBLOCK_VERSION_DATE;
-        }
-
         $this->MODULE_VERSION = '1.0.0';
         $this->MODULE_VERSION_DATE = '02.07.2021';
         $this->MODULE_NAME = "Luxoft";
