@@ -13,7 +13,7 @@ foreach($arResult as $key=>$arItem):?>
 			<li class="first<?if ($key=="0") {?> start<?}?><?if ($arItem["SELECTED"]):?> selected<?endif?>"><a href="<?=$arItem["LINK"]?>" class="<?if ($key=="0") {?>home<?}?>"><?if ($key!="0") {?><?=$arItem["TEXT"]?><?}?></a>
 				<ul class="inner">
 		<?else:?>
-			<li ><a href="<?=$arItem["LINK"]?>" > <?=$arItem["TEXT"]?><? echo "&nbsp;"; ?> <img src="/bitrix/templates/en/images/arr4.gif" alt=""  /></a>
+			<li ><a href="<?=$arItem["LINK"]?>" > <?=$arItem["TEXT"]?><? echo "&nbsp;"; ?> <img src="/bitrix/templates/.default/en/images/arr4.gif" alt=""  /></a>
 				<ul class="inner">
 		<?endif?>
 	<?else:?>

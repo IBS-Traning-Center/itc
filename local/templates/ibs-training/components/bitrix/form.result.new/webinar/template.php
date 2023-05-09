@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<script type="text/javascript" src="/bitrix/templates/en/jquery.validate.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/jquery.validate.js"></script>
 <script>
 	$(document).ready(function(){
 		$("#submit_contacts").validate();

@@ -31,7 +31,7 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
 //iwrite($arUserInfo);
 ?>
 <a name="form_b"></a>
-<script type="text/javascript" src="/bitrix/templates/en/jquery.validate.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/jquery.validate.js"></script>
 <script>
 	$(document).ready(function(){
 		$("#submit_form").validate();

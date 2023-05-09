@@ -10,10 +10,10 @@ include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.ph
 <link href="/master-class/css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="/master-class/js/jquery.tools.min.js"></script>
-<script src="/bitrix/templates/en/js/cycle.all.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="/bitrix/templates/en/js/jquery.maximage.min.js"></script>
+<script src="/bitrix/templates/.default/en/js/cycle.all.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/js/jquery.maximage.min.js"></script>
 <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/bitrix/templates/en/js/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/js/jquery.scrollTo.min.js"></script>
 <!--[if lt IE 9]>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
@@ -137,7 +137,7 @@ $(document).ready(function() {
 	});
 </script>
 <?$APPLICATION->IncludeFile(
-    $APPLICATION->GetTemplatePath("/bitrix/templates/en/include_areas/analytics.html"),
+    $APPLICATION->GetTemplatePath("/bitrix/templates/.default/en/include_areas/analytics.html"),
     Array(),
     Array("MODE"=>"php")
 );?>

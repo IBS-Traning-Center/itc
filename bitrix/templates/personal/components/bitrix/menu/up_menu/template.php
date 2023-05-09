@@ -12,7 +12,7 @@ foreach($arResult as $arItem):?>
 			<li><a href="<?=$arItem["LINK"]?>" class="<?if ($arItem["SELECTED"]):?>active<?else:?>first<?endif?>"><?=$arItem["TEXT"]?></a>
 				<ul>
 		<?else:?>
-			<li><a href="<?=$arItem["LINK"]?>" > <?=$arItem["TEXT"]?><? echo "&nbsp;"; ?> <img src="/bitrix/templates/en/images/arr4.gif" alt=""  /></a>
+			<li><a href="<?=$arItem["LINK"]?>" > <?=$arItem["TEXT"]?><? echo "&nbsp;"; ?> <img src="/bitrix/templates/.default/en/images/arr4.gif" alt=""  /></a>
 				<ul>
 		<?endif?>
 	<?else:?>

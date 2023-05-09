@@ -74,10 +74,10 @@
     .treeview li.collapsable,.treeview li.expandable{background:0 -176px;}
 
     ul.treeview li .expandable-hitarea{
-        background:url(/bitrix/templates/en/images/but_plus.gif) no-repeat;
+        background:url(/bitrix/templates/.default/en/images/but_plus.gif) no-repeat;
     }
     ul.treeview li .collapsable-hitarea{
-        background:url(/bitrix/templates/en/images/but_minus.gif) no-repeat;
+        background:url(/bitrix/templates/.default/en/images/but_minus.gif) no-repeat;
     }
 
 

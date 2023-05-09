@@ -65,7 +65,7 @@ $APPLICATION->SetPageProperty("blue_title", $arResult["NAME"] ." ". $expert_name
 $APPLICATION->SetPageProperty("title", $arResult["NAME"] ." ". $expert_name." / Эксперты и Тренеры Luxoft Training");
 $APPLICATION->AddChainItem($arResult["NAME"]." ". $expert_name, "");
 ?>
-<script type="text/javascript" src="/bitrix/templates/en/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/js/jquery.tools.min.js"></script>
 <div class="bg-main-wrap" style="background: url('/static/images/news-jpg.jpg') center 0; background-size: cover;">
 		<div class="frame">
 			<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "bread", Array(

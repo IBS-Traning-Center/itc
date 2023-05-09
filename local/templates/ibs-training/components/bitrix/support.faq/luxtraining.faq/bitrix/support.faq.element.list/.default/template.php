@@ -32,7 +32,8 @@
 		</td>
 	</tr>
 	<tr>
-      <td background="/bitrix/templates/en/components/bitrix/support.faq/luxtraining.faq/bitrix/support.faq.element.list/.default/mc_b.gif"><img width="4" height="23" src="/bitrix/templates/en/components/bitrix/support.faq/luxtraining.faq/bitrix/support.faq.element.list/.default/mc_b.gif"></td>
+		<?php //todo перенести картинку в папку изображений, проверить компонент ?>
+      <td background="/bitrix/templates/.default/en/components/bitrix/support.faq/luxtraining.faq/bitrix/support.faq.element.list/.default/mc_b.gif"><img width="4" height="23" src="/bitrix/templates/.default/en/components/bitrix/support.faq/luxtraining.faq/bitrix/support.faq.element.list/.default/mc_b.gif"></td>
     </tr>
 </table>
 <br/>

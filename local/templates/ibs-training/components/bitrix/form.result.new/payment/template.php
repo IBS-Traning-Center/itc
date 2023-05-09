@@ -12,7 +12,7 @@ $arUserInfo["PERSONAL_PHONE"] = $arUser["PERSONAL_PHONE"];
 
 
 ?>
-<script type="text/javascript" src="/bitrix/templates/en/jquery.validate.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/jquery.validate.js"></script>
 <script>
 	$(document).ready(function(){
 		$("#submit_contacts").validate();
@@ -34,8 +34,10 @@ $arUserInfo["PERSONAL_PHONE"] = $arUser["PERSONAL_PHONE"];
 	width:125px;
 	float:none;
 }
-.myform{	overflow:visible;
-	width:440px;}
+.myform{
+	overflow:visible;
+	width:440px;
+}
 </style>
 <?//print_r($arResult);
 ?>

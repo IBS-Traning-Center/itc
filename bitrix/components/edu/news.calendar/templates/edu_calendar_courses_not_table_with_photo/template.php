@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<script type="text/javascript" src="/bitrix/templates/en/js_main_v5/player.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/js_main_v5/player.js"></script>
 <script type="text/javascript" src="/bitrix/js/additional/jquery.cluetip.js"></script>
-<link rel="stylesheet" type="text/css" href="/bitrix/templates/en/template_styles_main_v5.css" />
+<link rel="stylesheet" type="text/css" href="/bitrix/templates/.default/en/template_styles_main_v5.css" />
 <link rel="stylesheet" type="text/css" href="/bitrix/js/additional/jquery.cluetip.css" />
 
 <div class="news-calendar">
