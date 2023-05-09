@@ -1,0 +1,111 @@
+/* - - - ADxMenu: IE6 BASIC styles [MANDATORY] - - - */
+/*
+	this rules improves accessibility - if Javascript is disabled, the entire menu will be visible
+	of course, that means that it might require different styling then.
+	in which case you can use adxie class - see: aplus.co.yu/adxmenu/examples/ie6-double-style/
+ */
+.menu ul {
+	visibility: visible;
+	position: static;
+}
+.ie6 .menu, .menu ul {
+	/* float.clear */
+	zoom: 1;
+}
+.ie6 .menu li.adxmhover {
+	z-index: 10000;
+}
+.ie6 .menu .adxmhoverUL {
+	visibility: visible;
+}
+.ie6 #logo {
+}
+.ie6 #up_menu {
+	margin: 15px 0px 0px -7px;
+}
+.ie6 #sites_choice {
+	margin: -5px 0px 0px 0px;
+	position: static;
+	width: 200px;
+}
+.ie6 #search {
+	margin: -20px 0px 0px 400px;
+	position: static;
+	float: left;
+}
+.ie6 input.searchinput {
+	width: 180px;
+}
+.ie6 .menu li {
+
+}
+.ie6 .menu ul {
+	border-left: 0px solid #949DB5;
+	border-bottom: 0px solid #949DB5;
+	border-right: 0px solid #949DB5;
+}
+.ie6 .menu ul li ul {
+	border-left: 1px solid #949DB5;
+	border-bottom: 1px solid #949DB5;
+	border-right: 1px solid #949DB5;
+	border-top: 1px solid #949DB5;
+}
+.ie6 .menu li a.selected_blue {
+	background-color: #63749C; /*  FC711B - pink;  949DB5 - light blue ; 63749C - dark */
+	color: #FFFFFF;
+}
+.ie6 .menu .adxmhoverUL {
+	/* 1st-level submenu go below their parent item */
+	top: 100%;
+	left: 0;
+}
+.ie6 .menu .adxmhoverUL .adxmhoverUL {
+	/* 2nd+ levels go on the right side of the parent item */
+	top: 0;
+	left: 100%;
+}
+/* - - - ADxMenu: DESIGN styles - - - */
+.ie6 .menu ul a {
+	/* fix clickability-area problem */
+	zoom: 1;
+}
+.ie6  .menu li a.first {
+    padding:0 7px;
+}
+.ie6 .menu li li {
+	/* fix white gap problem */
+	float: left;
+	width: 100%;
+}
+.ie6 .menu ul li ul {
+	margin: -5px 0px 0px -15px;
+}
+.ie6 .menu li li {
+}
+.ie6 .menu ul ul {
+	padding: 0px 0px 0px 0px;
+}
+.ie6 .menu a:hover, .menu .adxmhoverA {
+}
+.ie6 .menu .adxmhoverUL .adxmhoverUL {
+	/* inset 2nd+ submenus, to show off overlapping */
+	top: 5px;
+	left: 90%;
+}
+.ie6 .menu li a:hover>a {
+	color: #FFFFFF; /* here!!!!!!  */
+	border-left: 1px solid #949DB5;
+	border-right: 1px solid #949DB5;
+	padding: 0px 7px 0px 7px;
+}
+.ie6 .menu li a:hover>a.selected {
+	color: #FFFFFF;
+	border-left: 1px solid #949DB5;
+	border-right: 1px solid #949DB5; /*border-right:1px solid #FC711B; */
+	padding: 0px 7px 0px 7px;
+	background-color: #63749C;
+}
+.ie6 div.headline_image {
+overflow:visible;
+height:175px;
+}
