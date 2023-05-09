@@ -25,6 +25,7 @@
 
 !/bitrix/gadgets
 /bitrix/gadgets/bitrix
+/bitrix/gadgets/sprint.migration
 
 !/bitrix/php_interface
 bitrix/php_interface/include/catalog_import

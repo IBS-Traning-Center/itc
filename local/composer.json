@@ -1,29 +1,33 @@
 {
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "repositories": [],
   "autoload": {
     "psr-4": {
       "Bitrix24\\Rest\\": "lib/bitrix24.rest/",
-      "Luxoft\\Dev\\": "modules/luxoft.dev/lib/"
+      "Luxoft\\Dev\\": "modules/luxoft.dev/lib/",
+      "Itc\\Tools\\": "modules/itc.tools/lib/",
+      "Itc\\Catalog\\": "modules/itc.catalog/lib/"
     }
   },
   "require": {
-    "php": "^7.4",
+    "php": ">=7.4, <=8.0",
     "symfony/console": "5.*",
-    "andreyryabin/sprint.migration": "4.*",
-    "mpdf/mpdf": "8.0.*",
-    "myclabs/deep-copy": "1.10.*",
-    "paragonie/random_compat": "9.99.*",
-    "psr/log": "1.1.*",
-    "setasign/fpdi": "2.3.*",
-    "symfony/polyfill-mbstring": "1.23.*",
+    "webpractik/bitrixoa": "^1",
     "wapmorgan/morphos": "3.2.*",
-    "wikimedia/composer-merge-plugin": "dev-master"
+    "mpdf/mpdf": "8.0.*",
+    "phpseclib/phpseclib": "^3",
+    "illuminate/support": "^8.83",
+
+    "andreyryabin/sprint.migration": "4.*",
+    "wikimedia/composer-merge-plugin": "dev-master",
+    "psr/log": "1.1.*",
   },
   "extra": {
     "installer-paths": {
       "./components/{$name}/": ["type:bitrix-component"],
       "./modules/{$name}/": ["type:bitrix-module"],
       "./templates/{$name}/": ["type:bitrix-theme"],
-
       "../bitrix/components/{$name}/": ["type:bitrix-core-component"],
       "../bitrix/modules/{$name}/": ["type:bitrix-core-module"],
       "../bitrix/templates/{$name}/": ["type:bitrix-core-theme"]
