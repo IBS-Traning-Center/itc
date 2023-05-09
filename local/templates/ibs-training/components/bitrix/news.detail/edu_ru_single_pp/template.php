@@ -30,7 +30,7 @@ blockquote ul {
 	margin:0 0 10px 20px;
 }
 #content #one_list ul {
-	list-style-image:url(/bitrix/templates/en/images/list_index_bigger_no_up.gif);
+	list-style-image:url(/bitrix/templates/.default/en/images/list_index_bigger_no_up.gif);
 	list-style-position:outside;
 	list-style-type:circle;
 	margin:0 0 0px 20px;

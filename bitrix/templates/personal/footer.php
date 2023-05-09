@@ -54,7 +54,7 @@
 		</div>
 	</div>*/?>
 	<?$APPLICATION->IncludeFile(
-    $APPLICATION->GetTemplatePath("/bitrix/templates/en/include_areas/analytics.html"),
+    $APPLICATION->GetTemplatePath("/bitrix/templates/.default/en/include_areas/analytics.html"),
     Array(),
     Array("MODE"=>"php")
 );?>

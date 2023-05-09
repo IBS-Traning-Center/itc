@@ -8,9 +8,9 @@
     <?$APPLICATION->ShowMeta("keywords")?>
     <?$APPLICATION->ShowMeta("description")?>
     <!--[IF IE]>
-    <script type="text/javascript" src="/bitrix/templates/en/js/mashajs/ierange.js"></script>
+    <script type="text/javascript" src="/bitrix/templates/personal/js/en/mashajs/ierange.js"></script>
     <![ENDIF]-->
-    <script type="text/javascript" src="/bitrix/templates/en/js_main/css_browser_selector.js"></script>
+    <script type="text/javascript" src="/bitrix/templates/.default/en/js_main/css_browser_selector.js"></script>
     <script type="text/javascript" src="/color.js"></script>
 	<link rel="stylesheet" href="/local/assets/css/audit.css" />
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
@@ -27,14 +27,7 @@
     <?$APPLICATION->ShowCSS();?>
     <?$APPLICATION->ShowHeadStrings()?>
     <?$APPLICATION->ShowHeadScripts()?>
-    <!--
-    <script type="text/javascript" src="/bitrix/templates/en/jquery-latest.pack.js"></script>
-    <script type="text/javascript" src="/bitrix/templates/en/thickbox-compressed.js"></script>
-    <link rel="stylesheet" type="text/css" href="/bitrix/templates/en/thickbox.css" media="screen" />
-    -->
-    <!--
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    -->
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
     <script type="text/javascript" src="/bitrix/js/additional/jquery.cluetip.js"></script>
@@ -46,24 +39,24 @@
 
 
     <link rel="stylesheet" type="text/css" href="/bitrix/js/additional/jquery.cluetip.css" />
-    <script type="text/javascript" src="/bitrix/templates/en/ddaccordion.js"></script>
-    <script type="text/javascript" src="/bitrix/templates/en/jquery.toggleElements.pack.js"></script>
-    <link rel="stylesheet" type="text/css" href="/bitrix/templates/en/togglelement.css" />
+    <script type="text/javascript" src="/bitrix/templates/.default/en/ddaccordion.js"></script>
+    <script type="text/javascript" src="/bitrix/templates/.default/en/jquery.toggleElements.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="/bitrix/templates/.default/en/togglelement.css" />
 	<link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/jquery-ui-1.9.2.css" />
 	<link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/jquery.formstyler.css" />
 
-    <link rel="stylesheet" type="text/css" media="print" href="/bitrix/templates/en/print.css" />
-    <link rel="alternate stylesheet" type="text/css" media="screen,projection" href="/bitrix/templates/en/print.css" title="print" disabled="disabled" />
+    <link rel="stylesheet" type="text/css" media="print" href="/bitrix/templates/.default/en/print.css" />
+    <link rel="alternate stylesheet" type="text/css" media="screen,projection" href="/bitrix/templates/.default/en/print.css" title="print" disabled="disabled" />
 
 
 
     <!--[if lte IE 6]>
-    <link rel="stylesheet" type="text/css" href="/bitrix/templates/en/menu_ie6.css" />
-    <script type="text/javascript" src="/bitrix/templates/en/ADxMenu.js"></script>
-    <script type="text/javascript" src="/bitrix/templates/en/ie6.js"></script>
+    <link rel="stylesheet" type="text/css" href="/bitrix/templates/personal/css/en/menu_ie6.css" />
+    <script type="text/javascript" src="/bitrix/templates/personal/js/en/ADxMenu.js"></script>
+    <script type="text/javascript" src="/bitrix/templates/personal/js/en/ie6.js"></script>
     <![endif]-->
     <link rel="alternate" type="application/rss+xml" title="Учебный Центр Luxoft RSS Feed" href="http://feeds.feedburner.com/Luxoft" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/bitrix/templates/en/menu.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/bitrix/templates/.default/en/menu.css" />
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 	<script type="text/javascript">

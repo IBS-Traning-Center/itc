@@ -2,8 +2,8 @@
 <? /*,http://jquery.bassistance.de/treeview/lib/jquery.cookie.js http://jquery.bassistance.de/treeview/jquery.treeview.js
 		persist: "cookie"*/?>
 
-<script src="/bitrix/templates/en/js/jquery.cookie.js" type="text/javascript"></script>
-<script src="/bitrix/templates/en/js/jquery.treeview.js" type="text/javascript"></script>
+<script src="/bitrix/templates/.default/en/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="/bitrix/templates/.default/en/js/jquery.treeview.js" type="text/javascript"></script>
 <script>
 $(document).ready(function(){
 	$("#navigation").treeview({
@@ -84,22 +84,11 @@ ul#navigation li a{font-size:12px;font-weight:normal; text-decoration:underline;
 .treeview li.collapsable,.treeview li.expandable{background:0 -176px;}
 
 ul.treeview li .expandable-hitarea{
-	background:url(/bitrix/templates/en/images/but_plus.gif) no-repeat;
+	background:url(/bitrix/templates/.default/en/images/but_plus.gif) no-repeat;
 }
 ul.treeview li .collapsable-hitarea{
-	background:url(/bitrix/templates/en/images/but_minus.gif) no-repeat;
+	background:url(/bitrix/templates/.default/en/images/but_minus.gif) no-repeat;
 }
-
-
-/*
-ul.treeview li ul li .expandable-hitarea{
-	background:url(/bitrix/templates/en/images/but_minus.gif) no-repeat;
-}
-ul.treeview li ul li .collapsable-hitarea{
-	background:url(/bitrix/templates/en/images/but_plus.gif) no-repeat;
-}
-*/
-
 
 .ie7 #content ul#navigation li{
 

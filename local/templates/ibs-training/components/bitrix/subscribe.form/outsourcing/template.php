@@ -15,7 +15,7 @@ h1, form, button
 	height:1px;
 }
 </style>
-<script type="text/javascript" src="/bitrix/templates/en/jquery.validate.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/jquery.validate.js"></script>
   <script>
   $(document).ready(function(){
     $("#submit_outsourcing").validate();

@@ -118,10 +118,10 @@
 							top: 12px;
 							height: 16px;
 							width: 16px;
-							background: url('/bitrix/templates/en/images/but_plus.gif') no-repeat;
+							background: url('/bitrix/templates/.default/en/images/but_plus.gif') no-repeat;
 						}
 						.plus-btn.clicked {
-							background: url('/bitrix/templates/en/images/but_minus.gif') no-repeat;
+							background: url('/bitrix/templates/.default/en/images/but_minus.gif') no-repeat;
 						}
 					</style>
 					

@@ -1,11 +1,9 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<script type="text/javascript" src="/bitrix/templates/en/js/highlight.pack.js"></script>
-<!--<script type="text/javascript" src="http://softwaremaniacs.org/media/soft/highlight/highlight.pack.js"></script>
-<script type="text/javascript" src="/bitrix/templates/en/js/mashajs/masha.min.js"></script>-->
+<script type="text/javascript" src="/bitrix/templates/.default/en/js/highlight.pack.js"></script>
 <?
-	$GLOBALS['APPLICATION']->AddHeadScript('/bitrix/templates/en/js/mashajs/masha.js');
-	$GLOBALS['APPLICATION']->SetAdditionalCSS('/bitrix/templates/en/masha.css');
-	$GLOBALS['APPLICATION']->AddHeadScript('/bitrix/templates/en/js/masha_start.js');
+	$GLOBALS['APPLICATION']->AddHeadScript('/bitrix/templates/.default/en/js/mashajs/masha.js');
+	$GLOBALS['APPLICATION']->SetAdditionalCSS('/bitrix/templates/.default/en/masha.css');
+	$GLOBALS['APPLICATION']->AddHeadScript('/bitrix/templates/.default/en/js/masha_start.js');
 ?>
 
 
@@ -59,7 +57,7 @@ endif;
 ?>
 <div id="upmsg-selectable">
     <div class="upmsg-selectable-inner">
-        <img src="/bitrix/templates/en/images/textselect/upmsg_arrow.png" alt="">
+        <img src="/bitrix/templates/.default/en/images/textselect/upmsg_arrow.png" alt="">
         <p>Вы можете отметить интересные вам фрагменты текста, которые будут доступны по уникальной ссылке в адресной строке браузера.</p>
         <a href="#" class="upmsg_closebtn"></a>
     </div>
@@ -459,7 +457,7 @@ $uri = $_SERVER["SCRIPT_URI"];
 );*/?> 
 <div id="upmsg-selectable">
     <div class="upmsg-selectable-inner">
-        <img src="/bitrix/templates/en/images/textselect/upmsg_arrow.png" alt="">
+        <img src="/bitrix/templates/.default/en/images/textselect/upmsg_arrow.png" alt="">
         <p>Вы можете отметить интересные вам фрагменты текста, которые будут доступны по уникальной ссылке в адресной строке браузера.</p>
         <a href="#" class="upmsg_closebtn"></a>
     </div>

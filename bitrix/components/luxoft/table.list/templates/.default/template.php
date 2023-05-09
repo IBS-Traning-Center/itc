@@ -54,8 +54,8 @@
 </div>
 
 </div>
-<script type="text/javascript" src="/bitrix/templates/en/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/bitrix/templates/en/js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/bitrix/templates/.default/en/js/jquery.tools.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
