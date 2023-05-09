@@ -3,8 +3,8 @@ $PERM["pub"]["101"]="T_8";
 $PERM["upload"]["101"]="T_8";
 $PERM["upload"]["77"]="X";
 $PERM["video"]["*"]="R";
-$PERM["desktop_app"]["*"]="D";
 $PERM["online"]["*"]="R";
+$PERM["desktop_app"]["*"]="D";
 $PERM["learning"]["15"]="R";
 $PERM["learning"]["*"]="D";
 $PERM["self-education"]["33"]="R";
@@ -38,4 +38,3 @@ $PERM["images_new"]["6"]="W";
 $PERM["images_edu"]["6"]="W";
 $PERM["training"]["6"]="W";
 $PERM["/"]["*"]="R";
-?>

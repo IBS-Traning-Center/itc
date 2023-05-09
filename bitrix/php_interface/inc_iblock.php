@@ -146,7 +146,7 @@ function BeforeIndexHandlerRu($arFields)
 }
 class IBlockHandlerClass
 {
-    function OnBeforeIBlockElementAddHandlerN(&$arFields)
+    static function OnBeforeIBlockElementAddHandlerN(&$arFields)
     {
 		//iwrite($arFields);
 		//die();
@@ -160,7 +160,7 @@ class IBlockHandlerClass
 				$arFields["NAME"] = "Новый вопрос от ".date("d.m.Y H:i:s");
 		}
 	}
-	function OnAfterIBlockElementUpdateHandlerN(&$arFields)
+	static function OnAfterIBlockElementUpdateHandlerN(&$arFields)
     {
 		global $DB, $USER;
 
@@ -426,6 +426,3 @@ class IBlockHandlerClass
         } /* D_TIMETABLE_ID_IBLOCK  ENDS*/
 	}
 }
-
-
-?>

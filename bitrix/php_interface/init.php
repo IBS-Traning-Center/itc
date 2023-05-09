@@ -18,8 +18,6 @@ include "inc_iblock.php";
 
 include "inc_functionality.php";
 include "inc_property.php";
-//include "third_party/uf/uf_iblock_element.php";
-//include "third_party/uf/uf_iblock_element_list.php";
 
 AddEventHandler('main', 'OnBeforeEventSend', "CheckEmailOnBeforeEventSend");
 function CheckEmailOnBeforeEventSend($arFields, & $arTemplate)
@@ -327,14 +325,14 @@ function OnAfterUserRegisterHandler(&$arFields)
 
 class MyClass
 {
-    function OnBeforeSectionAddHandler(&$arFields)
+    static function OnBeforeSectionAddHandler(&$arFields)
     {
         if ($arFields["IBLOCK_ID"] == 94) {
             $arFields["CODE"] = strtolower(codeTranslite($arFields["NAME"]));
         }
     }
 
-    function BeforePostingSendMailHandler($arFields)
+    static function BeforePostingSendMailHandler($arFields)
     {
         $rsSub = CSubscription::GetByEmail($arFields["EMAIL"]);
         $arSub = $rsSub->Fetch();
@@ -359,12 +357,12 @@ class MyClass
         return $arFields;
     }
 
-    function GetMailHash($email)
+    static function GetMailHash($email)
     {
         return md5(md5($email) . MAIL_SALT);
     }
 
-    function OnBeforePriceAddHandler(&$arFields)
+    static function OnBeforePriceAddHandler(&$arFields)
     {
         $arVariables = array(
             'price' => 0,
@@ -422,7 +420,7 @@ class MyClass
         return $arFields;
     }
 
-    function OnBeforePriceUpdateHandler($idPrice, &$arFields)
+    static function OnBeforePriceUpdateHandler($idPrice, &$arFields)
     {
         $arVariables = array(
             'price' => 0,
@@ -492,7 +490,7 @@ class MyClass
         return $arFields;
     }
 
-    function OnBeforeUserRegisterHandler(&$arFields)
+    static function OnBeforeUserRegisterHandler(&$arFields)
     {
         $arFields["LOGIN"] = $arFields["EMAIL"];
         if ($arFields["NAME"] == $arFields["LAST_NAME"]) {
@@ -508,13 +506,13 @@ class MyClass
         }
     }
 
-    function OnBeforeUserUpdateHandler(&$arFields)
+    static function OnBeforeUserUpdateHandler(&$arFields)
     {
         $arFields["LOGIN"] = $arFields["EMAIL"];
     }
 
     // создаем обработчик события "OnBeforeIBlockElementUpdate"
-    function OnBeforeIBlockElementUpdateHandler(&$arFields)
+    static function OnBeforeIBlockElementUpdateHandler(&$arFields)
     {
         global $DB, $USER, $APPLICATION;
 
@@ -526,7 +524,6 @@ class MyClass
         }
 
         if ($arFields["IBLOCK_ID"] == 180) {
-            //Bitrix\Main\Diag\Debug::dumpToFile($arFields,'','OnBeforeIBlockElementUpdateHandler.log');
             $date = '';
             foreach ($arFields["PROPERTY_VALUES"][1280] as $currentValue) {
                 if ($currentValue['VALUE']) {
@@ -582,7 +579,7 @@ class MyClass
         }
     }
 
-    function OnBeforeIBlockElementAddHandler(&$arFields)
+    static function OnBeforeIBlockElementAddHandler(&$arFields)
     {
         global $DB;
 
@@ -641,7 +638,7 @@ class MyClass
     /**
      * @param $arFields
      */
-    function OnAfterIBlockElementAddHandler(&$arFields)
+    static function OnAfterIBlockElementAddHandler(&$arFields)
     {
         /*
          Заполнение автоматических скидок для виджета
@@ -2035,7 +2032,7 @@ class MyClass
     // при удалении элементов из инф блоков Семинары ID = 7
     // и инф блока Конференции ID = 66 удаляем
     // связанныую запись из инфоблока Календарь событий ID =65
-    function OnBeforeIBlockElementDeleteHandler($ID)
+    static function OnBeforeIBlockElementDeleteHandler($ID)
     {
         global $USER, $APPLICATION;
         $IBLOCK_ID = "";
