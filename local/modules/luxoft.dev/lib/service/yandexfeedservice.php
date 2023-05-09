@@ -328,27 +328,18 @@ class YandexFeedService
             //todo вывод ошибки
         }
         $categories = $categoriesResult->getData();
-        $categoriesJson = Json::encode($categories);
-        $categoriesJson = iconv('windows-1251', 'UTF-8', $categoriesJson);
-        $categories = json_decode($categoriesJson, true);
 
         $courseResult = $this->getCourses();
         if (!$courseResult->isSuccess()) {
             // todo: обработка ошибок
         }
         $courses = $courseResult->getData();
-        $coursesJson = Json::encode($courses);
-        $coursesJson = iconv('windows-1251', 'UTF-8', $coursesJson);
-        $courses = json_decode($coursesJson, true);
 
         $scheduleResult = $this->getSchedule();
         if (!$scheduleResult->isSuccess()) {
             // todo: обработка ошибок
         }
         $schedule = $scheduleResult->getData();
-        $scheduleJson = Json::encode($schedule);
-        $scheduleJson = iconv('windows-1251', 'UTF-8', $scheduleJson);
-        $schedule = json_decode($scheduleJson, true);
 
         $allCoursesId = array_keys($courses);
         $categories = array_filter($categories, function ($category) use ($allCoursesId) {

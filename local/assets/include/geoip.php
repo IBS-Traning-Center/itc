@@ -20,8 +20,8 @@ if (intval($_REQUEST["cityFormSend"])>0) {
  if (intval($_SESSION["cityID"])==0) {
         //print_r($_COOKIE["cityID"]);
         $geo_xml=simplexml_load_file('http://ipgeobase.ru:7020/geo?ip='.$USER_IP);
-        $city=iconv('UTF-8', 'windows-1251', (string)$geo_xml->ip->city);
-		$country=iconv('UTF-8', 'windows-1251', (string)$geo_xml->ip->country);
+        $city = (string)$geo_xml->ip->city;
+		$country = (string)$geo_xml->ip->country;
         switch ($city) {
             case "Санкт-Петербург":
                 $cityID=CITY_ID_SPB;

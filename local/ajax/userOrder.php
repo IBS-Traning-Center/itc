@@ -21,7 +21,6 @@ if (
         $FIELDS = []; $PROPS = [];
         foreach ($_POST as $keyValue => $value) {
             $value = htmlspecialchars($value);
-            $value = iconv("UTF-8", "windows-1251", $value);
             if(strpos($keyValue, 'PROPERTY_') === false) {
                 $FIELDS[$keyValue] = $value;
             } else {

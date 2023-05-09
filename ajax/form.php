@@ -39,7 +39,7 @@ if(CModule::IncludeModule("form")) {
         $item = $answer[0];
         $code = 'form_'.$item['FIELD_TYPE'].'_'.$item['ID'];
         if(empty($result[$key])) continue;
-        $arValues[$code] = iconv("UTF-8", "windows-1251", $result[$key]);
+        $arValues[$code] = $result[$key];
     }
 
     if ($RESULT_ID = CFormResult::Add($formId, $arValues)) {

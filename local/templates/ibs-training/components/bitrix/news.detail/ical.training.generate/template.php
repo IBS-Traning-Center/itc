@@ -116,11 +116,11 @@
 	   $description .= $wordReg."\n";
 	   $description .= "http://www.luxoft-training.ru/training/catalog/course.html?ID=".$arResult['ID_COURSE']."&ID_TIME=".$arResult['ID']."\n\n";
 
-       $description = iconv("windows-1251", "UTF-8", $description);
+       $description = $description;
        $summary = "Посещение курса Учебного центра Luxoft \"".$arResult["NAME_COURSE"]."\"";
-        $summary = iconv("windows-1251", "UTF-8", $summary);
+        $summary = $summary;
 
-$arResult["NAME_COURSE"] =  iconv("windows-1251", "UTF-8", $arResult["NAME_COURSE"]);
+$arResult["NAME_COURSE"] =  $arResult["NAME_COURSE"];
 	$begintime = $arResult['PROPERTIES']['startdate']['VALUE'];
 	$format = "DD.MM.YYYY HH:MI:SS";
 	$arr = ParseDateTime($begintime, $format);
@@ -135,7 +135,7 @@ $arResult["NAME_COURSE"] =  iconv("windows-1251", "UTF-8", $arResult["NAME_COURS
 	$arrEnd["MI"] = $arTimeOfEndMM;
 
 
-	$location = iconv("windows-1251", "UTF-8", $city_name);
+	$location = $city_name;
 	$v = new vcalendar();
 	$v->setProperty( "X-WR-TIMEZONE", "Europe/Moscow" );
 

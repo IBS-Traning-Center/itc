@@ -9,7 +9,7 @@ if (CModule::IncludeModule("iblock")):
 		while($ob = $res->GetNextElement())
 		{
 		  $arFields = $ob->GetFields();
-		  $response=array('title_ru'=>iconv("windows-1251", "UTF-8", $arFields["PREVIEW_TEXT"]), "subject"=>iconv("windows-1251", "UTF-8", $arFields["PROPERTY_SUBJECT_VALUE"]));
+		  $response=array('title_ru'=>$arFields["PREVIEW_TEXT"], "subject"=>$arFields["PROPERTY_SUBJECT_VALUE"]);
 		}
 	}
 

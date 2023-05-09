@@ -1,6 +1,6 @@
 <?include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 if (CModule::IncludeModule("iblock")):
-$phrase=iconv("UTF-8", "windows-1251", $_REQUEST['nameStartsWith']);
+$phrase=$_REQUEST['nameStartsWith'];
 if ($_REQUEST["type"]=="k") {
 $arSelect = Array("ID", "NAME", "CODE");
 $arFilter = Array("IBLOCK_ID"=>6, "ACTIVE_DATE"=>"Y",  "ACTIVE"=>"Y");
@@ -9,7 +9,7 @@ $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
 while($ob = $res->GetNextElement())
 {
   $arFields = $ob->GetFields();
-  $response[]=array('title_ru'=>iconv("windows-1251", "UTF-8", $arFields["CODE"]." ".$arFields["NAME"]), 'id'=>$arFields["ID"]);
+  $response[]=array('title_ru'=>$arFields["CODE"]." ".$arFields["NAME"], 'id'=>$arFields["ID"]);
 }
 
 } else {
@@ -29,7 +29,7 @@ while($ob = $res->GetNextElement())
 			$valuta_ENUM_ID = $ar_pields["PROPERTY_EDU_TYPE_MONEY_ENUM_ID"];
 			$city_name = $ar_pields["NAME"];
 		}
-		$response[]=array('title_ru'=>iconv("windows-1251", "UTF-8", $city_name.", ".$arFields["PROPERTY_COURSE_CODE_VALUE"]." ".$arFields["PROPERTY_STARTDATE_VALUE"].", ".$arFields["PROPERTY_SCHEDULE_COURSE_NAME"]), 'id'=>$arFields["ID"]);
+		$response[]=array('title_ru'=>$city_name.", ".$arFields["PROPERTY_COURSE_CODE_VALUE"]." ".$arFields["PROPERTY_STARTDATE_VALUE"].", ".$arFields["PROPERTY_SCHEDULE_COURSE_NAME"], 'id'=>$arFields["ID"]);
 	
 	}
 }

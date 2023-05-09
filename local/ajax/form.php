@@ -127,7 +127,7 @@ if (
                     $code = 'form_' . $item['FIELD_TYPE'] . '_' . $item['ID'];
                     if (empty($result[$item['QUESTION_ID']])) continue;
                     if ($item['FIELD_TYPE'] !== 'file') {
-                        $arValues[$code] = iconv("UTF-8", "windows-1251", $result[$item['QUESTION_ID']]);
+                        $arValues[$code] = $result[$item['QUESTION_ID']];
                     } else {
                         $arValues[$code] = $result[$item['QUESTION_ID']];
                     }

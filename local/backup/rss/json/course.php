@@ -15,8 +15,8 @@ $arrFilter1["<PROPERTY_startdate"]=date("Y-m-d", strtotime("+91 day"));
 $arrFilter2[">PROPERTY_startdate"]=date("Y-m-d", strtotime("+14 day"));
 $arrFilter2["<PROPERTY_startdate"]=date("Y-m-d", strtotime("+91 day"));
 $xml =  simplexml_load_file('http://ipgeobase.ru:7020/geo?ip='.$_REQUEST["ip"]);
-$city=iconv("UTF-8", "windows-1251",(string)$xml->ip->region);
-$country=iconv("UTF-8", "windows-1251",(string)$xml->ip->country);
+$city=(string)$xml->ip->region;
+$country=(string)$xml->ip->country;
 if ($country=="RU") {
 			if ($city=="Омская область" || $city=="Новосибирская область" || $city=="Ханты-Мансийский автономный округ" || $city=="Тюменская область" || $city=="Алтайский край") {
 				$arrFilter["PROPERTY_city"]=CITY_ID_OMSK;
@@ -43,7 +43,7 @@ if ($country=="RU") {
 			}
 		}
 	if (strlen($_REQUEST["tag"])>0) {
-			$arrFilter[]=array("LOGIC"=>"OR", "NAME"=>"%".iconv("UTF-8", "windows-1251", $_REQUEST["tag"])."%", "PREVIEW_TEXT"=> "%".iconv("UTF-8", "windows-1251", $_REQUEST["tag"])."%");
+			$arrFilter[]=array("LOGIC"=>"OR", "NAME"=>"%".$_REQUEST["tag"]."%", "PREVIEW_TEXT"=> "%".$_REQUEST["tag"]."%");
 		}
 
 $count=5;

@@ -90,7 +90,7 @@ if ($arResult['PROPERTIES']['HTML_SOCIAL']['VALUE']['TYPE'] == "text" )
 	$expert_social = nl2br($expert_social);
 ?>
 <?function UTF($string) {
-	$utf_string=iconv("windows-1251", "UTF-8", $string);
+	$utf_string=$string;
 	return $utf_string;
 }?>
 <?$html='<style>
