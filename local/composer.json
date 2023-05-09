@@ -6,9 +6,8 @@
     }
   },
   "require": {
-    "php": "^8.0",
-    "symfony/console": "6.*",
-    "wapmorgan/morphos": "^3.2.27",
+    "php": "^7.4",
+    "symfony/console": "5.*",
     "andreyryabin/sprint.migration": "4.*",
     "mpdf/mpdf": "8.0.*",
     "myclabs/deep-copy": "1.10.*",
@@ -17,7 +16,7 @@
     "setasign/fpdi": "2.3.*",
     "symfony/polyfill-mbstring": "1.23.*",
     "wapmorgan/morphos": "3.2.*",
-    "wikimedia/composer-merge-plugin": "dev-feature/composer-v2"
+    "wikimedia/composer-merge-plugin": "dev-master"
   },
   "extra": {
     "installer-paths": {
@@ -28,12 +27,16 @@
       "../bitrix/components/{$name}/": ["type:bitrix-core-component"],
       "../bitrix/modules/{$name}/": ["type:bitrix-core-module"],
       "../bitrix/templates/{$name}/": ["type:bitrix-core-theme"]
+    },
+    "merge-plugin": {
+      "require": []
     }
   },
   "config": {
     "vendor-dir": "./vendor",
     "allow-plugins": {
-      "composer/installers": true
+      "composer/installers": true,
+      "wikimedia/composer-merge-plugin": true
     }
   },
   "require-dev": {
