@@ -12,7 +12,7 @@ if ($ob = $res->GetNextElement())
  $arFields = $ob->GetFields();
  $APPLICATION->RestartBuffer();
  //print_r($arFields);
- $json=json_encode(array("success"=> "Y", "course"=> iconv('windows-1251', 'UTF-8', $arFields["NAME"])));
+ $json=json_encode(array("success"=> "Y", "course"=> $arFields["NAME"]));
 print_r($json);
  } else {
 	$APPLICATION->RestartBuffer();

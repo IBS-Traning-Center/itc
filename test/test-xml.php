@@ -1,14 +1,12 @@
-<?include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");?>
-<?GLOBAL $APPLICATION?>
-<?GLOBAL $USER?>
-<?$file=file_get_contents('file.txt');?>
-<?$arCourse=xml_rus_courses_to_array($file);?>
-<?echo "<pre>"?>
-<?print_r($arCourse)?>
-<?echo "</pre>";?>
-<?//$cpfile=iconv("UTF-8", "windows-1251", $file)?>
-<?//print_r($cpfile);?>
-<?function xml_rus_courses_to_array($file) {?>
+<?php include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");?>
+<?php GLOBAL $APPLICATION?>
+<?php GLOBAL $USER?>
+<?php $file=file_get_contents('file.txt');?>
+<?php $arCourse=xml_rus_courses_to_array($file);?>
+<?php echo "<pre>"?>
+<?php print_r($arCourse)?>
+<?php echo "</pre>";?>
+<?php function xml_rus_courses_to_array($file) {?>
 <?$xml=simplexml_load_string($file);?>
 <?$arRusArray=array();?>
 <?$arRusArray["Name"]=strip_tags($xml->CourseItem[0]->Title->children()->asXML())?>
@@ -28,7 +26,7 @@
 	<?$arRusArray[$arTeg]=htmlspecialchars(str_replace(array("<".$arTeg.">", "</".$arTeg.">"), array("",""), $xml->CourseItem[0]->$arTeg->asXML()))?>
 <?}?>
 <?foreach ($arRusArray as $key=>$arItem) {?>
-	<?$arRusArray[$key]=iconv("UTF-8", "windows-1251", $arItem)?>
+	<?$arRusArray[$key]=$arItem?>
 <?}?>
 
 <?return $arRusArray?>

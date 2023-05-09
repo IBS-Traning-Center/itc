@@ -129,7 +129,7 @@
 				<?if ($_REQUEST["AJAX"]=="Y") {?>
 					<?$APPLICATION->RestartBuffer();?>
 				<?}?>
-				<?$RUTEXT=iconv('UTF-8', 'windows-1251', $_REQUEST["text"]);?>
+				<?$RUTEXT=$_REQUEST["text"];?>
 				<?if (count($_REQUEST["ROLES"])>0) {?>
 				<div class="selected-role center">
 					Роль: <?foreach ($_REQUEST["ROLES"] as $ROLE) {?><div class="role-sel"><?=$arResult["ROLES"][$ROLE]["VALUE"]?><a data-click="#ch_<?=$ROLE?>" class="close" href="#"></a></div><?}?>

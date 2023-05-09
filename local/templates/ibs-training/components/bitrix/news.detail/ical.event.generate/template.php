@@ -28,12 +28,11 @@ require_once $_SERVER['DOCUMENT_ROOT']."/bitrix/php_interface/ical/iCalcreator.c
 		}
 		$seminar_id = $arResult["ID"];
 		$location = $arResult['PROPERTIES']['location']['VALUE'];
-		//$location = iconv("windows-1251", "UTF-8", $location);
 		$lecturer = $arResult['PROPERTIES']['lecturer']['VALUE'];
 		$startdate = $arResult['PROPERTIES']['startdate']['VALUE'];
 		$startdateGlobal = $startdate;
 		$icallocation= "Вебинар, проводимый с  использованием сервиса gotomeeting.com";
-		$icallocation = iconv("windows-1251", "UTF-8", $icallocation);
+		$icallocation = $icallocation;
 
 		$content = nl2br($arResult['PROPERTIES']['content']['VALUE']);
 		$people = nl2br($arResult['PROPERTIES']['people']['VALUE']);
@@ -48,7 +47,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/bitrix/php_interface/ical/iCalcreator.c
 			$city_name= $ar_fields["NAME"];
 		}
 		$course_tr_summary = $typeEventName.": ".$seminar_name;
-		$course_tr_summary = iconv("windows-1251", "UTF-8", $course_tr_summary);
+		$course_tr_summary = $course_tr_summary;
 		$description .= $typeEventName.": ".$seminar_name."\n\n";
 		if(strlen($arResult["DETAIL_TEXT"])>1)  {
 			//$description .= "\n". $arResult["DETAIL_TEXT"]."\n\n";
@@ -67,26 +66,19 @@ require_once $_SERVER['DOCUMENT_ROOT']."/bitrix/php_interface/ical/iCalcreator.c
 		 }
 
 		 if(!$location=="")  {
-		 	//$description .= "<span class='st'>Место проведения:</span>";
-		    //$description .= "<p class='indent'>".$location."</p>";
 		 	$description .= "Место проведения:\n";
-		 	//$location = iconv("windows-1251", "UTF-8", $location);
 		    $description .= $location."\n\n";
 		 }
 		if(strlen($arTrener["SURNAME"])>0)  {
-		 	//$description .= "<span class='st'>Докладчик:</span>";
-		    //$description .= "<p class='indent'><a href='/about/experts/".$arTrener['CODE'].".html\">".$arTrener['SURNAME']." ".$arTrener["NAME"]."</a> &mdash;".$arTrener["DESC"]."</p>";
-		    $description .= "Докладчик:\n";
+			$description .= "Докладчик:\n";
 		    $description .= " ".$arTrener['SURNAME']." ".$arTrener["NAME"]." -".$arTrener["DESC"]."\n\n";
 		 }
 
        $description .=  $arResult['PROPERTIES']['description']['~VALUE']."\n\n";
         $wordReg  =  "Регистрация:";
-       // $wordReg = iconv("windows-1251", "UTF-8", $wordReg);
 	 	$description .= $wordReg."\n";
 	    $description .= "http://www.luxoft-training.ru/events/seminar/".$arResult['ID']."/\n\n";
-       //$description = mb_convert_encoding($description, "UTF-8", "CP1251");
-       $description = iconv("windows-1251", "UTF-8", $description);
+       $description = $description;
 
 $datetime = $startdate;
 $format = "DD.MM.YYYY HH:MI:SS";
@@ -101,7 +93,7 @@ $arr = ParseDateTime($datetime, $format);
 //    echo "Секунды: ".$arr["SS"]."<br>";    // Секунды: 15
 
 
-$location = iconv("windows-1251", "UTF-8", $location);
+$location = $location;
 $v = new vcalendar();
 //$v->setProperty( "x-wr-calname", "" );
 //$v->setProperty( "X-WR-CALDESC", "Calendar Luxoft-training.ru Events" );

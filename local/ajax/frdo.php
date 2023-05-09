@@ -11,7 +11,6 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
     } else {
         foreach ($_POST as &$postValue)  {
             $postValue = htmlspecialchars($postValue);
-            $postValue = iconv("UTF-8", "windows-1251", $postValue);
         }
         if(\Bitrix\Main\Loader::includeModule('iblock'))
         {

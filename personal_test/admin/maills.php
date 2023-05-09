@@ -6,7 +6,7 @@ if (CModule::IncludeModule("iblock")):
 		$arFilter = Array("IBLOCK_ID"=>111, "PROPERTY_SCH_COURSE"=>intval($_REQUEST["id"]));
 		$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
 		if ($arFields=$res->GetNext()) {
-			$response=array('title'=>iconv("windows-1251", "UTF-8", $arFields["PROPERTY_EMAIL_LIST_VALUE"]["TEXT"]));
+			$response=array('title'=>$arFields["PROPERTY_EMAIL_LIST_VALUE"]["TEXT"]);
 		}
 	}
 	echo json_encode($response);

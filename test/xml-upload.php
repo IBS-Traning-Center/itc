@@ -79,10 +79,10 @@
 		<?}?>
 		<?foreach ($arRusArray as $key=>$arItem) {?>
 			<?if (!is_array($arRusArray[$key])) {?>
-			<?$arRusArray[$key]=iconv("UTF-8", "windows-1251", $arItem)?>
+			<?$arRusArray[$key]=$arItem?>
 			 <?} else {?>
 				<?foreach ($arRusArray[$key] as $subkey=>$arSubItem) {?>
-					<?$arRusArray[$key][$subkey]=iconv("UTF-8", "windows-1251", $arSubItem)?>
+					<?$arRusArray[$key][$subkey]=$arSubItem?>
 				<?}?>
 			<?}?>
 		<?}?>
