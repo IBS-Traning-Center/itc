@@ -1,0 +1,14 @@
+<div class="footer">
+	<h2>Contacts</h2>
+	<a class="rss_feed" href="/rss/">RSS</a><a href="/contact.html">Contact us</a><a href="/about/locations.html">Global locations</a><a href="/legal.html">Legal</a><a href="/sitemap.html">Site map</a><a href="/bugs/forma.html?current_url=<?=$_SERVER[REQUEST_URI]?>&keepThis=true&TB_iframe=true&height=460&width=550" title="Добавить замечание по странице" class="thickbox red">Bug!</a>
+<?
+   $print_url = $_SERVER["REQUEST_URI"];
+   $print_url_original = $_SERVER["REQUEST_URI"];
+   if (strstr($print_url, '?')===false) {
+   $print_url .="?print=Y";} else { $print_url .="&print=Y"; }
+?>
+<?if (($print_url_original == "/") or ($print_url_original == "/ru/") or ($print_url_original == "/eu/")
+     or ($print_url_original == "/de/") or ($print_url_original == "/ca/")) { } else { ?><a class="print" href="<?=$print_url?>">Print version</a><? } ?>
+</div>
+
+

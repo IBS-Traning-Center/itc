@@ -1,0 +1,230 @@
+h2.intab{
+	color:#004080;
+	font-size:20px;
+	line-height:120%;
+	margin:20px 0 10px 11px;
+}
+h2.white{
+	color:#fff;
+	font-size:15px;
+	margin:20px 0 10px 11px;
+}
+.usual ul#listo a{
+	border:0px solid #39487F;
+	font-weight:normal;
+	margin:0px;
+	padding:0px;
+	color:#004080;
+	display:inline;
+	font-size:15px;
+}
+.usual ul#listo a:hover{
+	text-decoration:underline!important;
+}
+.usual ul#listo li{
+	color:#FC6700;
+	float:none;
+	list-style:square outside;
+	font-size:17px;
+}
+.usual ul#listo li span{
+	color:#004080;
+	font-size:17px;
+}
+
+.usual ul#listo{
+	margin:0 0 10px 34px;
+	font-size:15px;line-height:180%;
+}
+.usual ul.white{
+	margin:0 0 10px 34px;
+	font-size:13px;line-height:137%;
+}
+.usual ul.white li{
+	color:#FC6700;
+	float:none;
+	list-style:square outside;
+	font-size:19px;
+}
+.usual ul.whitev2 {
+    font-size: 13px;
+    line-height: 127%;
+    margin: 2px 0 3px 34px;
+}
+.usual ul.whitev2 li {
+    color: #FFF;
+    float: none;
+    font-size: 13px;
+    list-style: square outside none;
+    font-weight:bold;
+}
+
+.usual ul.white span{
+	color:#fff;
+	font-size:13px;
+}
+.usual p.orange{
+	color:#c95202!important;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 0 0 12px;
+}
+.usual p.blue{
+	color:#004080!important;
+	font-size:15px;
+	font-weight:normal;
+	padding:10px 0 0 12px;
+}
+.usual p.white{
+	color:#ffffff!important;
+	font-size:15px;
+	font-weight:normal;
+	padding:10px 0 0 12px;
+}
+
+#basketTemp {z-index:1000;}
+.topline  {
+	background-color:#EEEEEE;
+	left:235px;
+	line-height:22px;
+	min-height:30px;
+	position:absolute;
+	top:0;
+	width:550px;
+}
+.topline .flatMenu {
+	color:#888888;
+	float:left;
+	margin:4px 14px 0;
+}
+.topline .basketSmall {
+	color:#505050;
+	float:right;
+	margin:4px 15px 0;
+}
+#basketTemp {
+	z-index:1000;
+}
+.c3 {
+	background-position:0 100% !important;
+	bottom:0;
+	left:0;
+}
+.c4 {
+	background-position:100% 100% !important;
+	bottom:0;
+	right:0;
+}
+.c {
+	background:url("/bitrix/templates/en/images/c0.png") no-repeat scroll 0 0 transparent;
+	display:block;
+	height:7px;
+	position:absolute;
+	width:7px;
+}
+.r {
+float: right;
+}
+.basketList  {
+	display:none;
+	position:absolute;
+	right:0;
+	width:245px;
+	z-index:1000;
+}
+.ie7 .basketList {
+margin-top:20px;
+}
+
+.basketList .arr {
+background:url('http://www.luxoft-training.ru/images_new/arr2.gif') no-repeat scroll 210px 0 transparent;
+height:7px;
+position:absolute;
+width:245px;
+}
+.basketList .text {
+background-color:#FFFFFF;
+border:1px solid #A6A6A6;
+color:#848484;
+margin-top:6px;
+padding:6px 10px 20px 10px;
+z-index:1000;
+
+}
+.basketList ul {
+margin:0;
+padding:0;
+}
+.basketList ul li {
+line-height:15px;
+list-style-type:none;
+margin:0 0 0.5em;
+padding:0;
+}
+.basketList ul li img {
+float:left;
+margin:0 1em 0 0;
+}
+.basketList ul li a {
+color:#888888;
+text-decoration:none;
+}
+.basketList ul li a:hover {
+text-decoration:underline;
+}
+.summary {
+border-top:1px solid #CECEC7;
+margin-top:1em;
+padding:0.5em 0;
+text-align:left;
+}
+.summary .l {
+float:left;
+font-weight:bold;
+line-height:22px;
+}
+.summary .r {
+color:#22396D;
+float:right;
+font-weight:bold;
+font-size: 15px;
+}
+.mac .summary .r {
+font-family:Arial,Helvetica,sans-serif !important;
+}
+.basketList .scrollBar {
+height:350px;
+overflow-x:hidden;
+overflow-y:scroll;
+}
+a.button {
+  display: block;
+  float: left; /* чтобы кнопка не растягивалась на всю ширину родительского блока, а ограничивалась текстом */
+  font: bold 12px arial, sans-serif;
+  color: #555;
+  text-decoration: none;
+  background: url(/bitrix/templates/en/images/button_r.gif) top right no-repeat;
+  padding-right: 25px; /* отступ для "раздвижных дверей" */
+  outline: none; /* убираем точечную обводку в FireFox, которая появляется при клике */
+}
+a.button span {
+  display: block;
+  line-height: 13px;
+  background: url(/bitrix/templates/en/images/button_l.gif) no-repeat;
+  padding: 7px 0 13px 23px;
+}
+a.button:hover {
+  background-position: 100% -33px;
+}
+a.button:hover span {
+  background-position: 0% -33px;
+  color: #222;
+}
+a.tobasket {
+	text-decoration:none;
+	border-bottom:1px dashed #00528D;
+}
+a.tobasket:hover {
+	text-decoration:none;
+	border-bottom:1px dashed #C90404;
+}

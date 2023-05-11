@@ -1,0 +1,42 @@
+	<div id="logo">
+    <a href="/"><img src="/images/luxoft_training_logo.gif" alt="" title="" border="0" width="200" height="80" /></a>
+			</div>
+			<?$APPLICATION->IncludeFile(
+					$APPLICATION->GetTemplatePath("/bitrix/templates/en/include_areas_main/sites_choice.html"),
+					Array(),
+					Array("MODE"=>"php")
+			);?>
+			<? // получим ID  сайта для того чтобы в #search использовать русские слова
+				$rsSite = CSite::GetByID(SITE_ID);
+				$arSite = $rsSite->Fetch();
+				$id_site =$arSite["ID"];
+			?>
+			<div id="search">
+
+			<form name="searchForm" action="/search.html" method="get">
+					<input name="q" class="searchinput" value="Поиск по сайту" onfocus="if(this.value=='Поиск по сайту') this.value=''" onblur="if(this.value=='') this.value='Поиск по сайту'" type="text" />
+
+				</form>
+			</div>
+
+			<div id="up_menu">
+				<ul class="adxm menu">
+				<?$APPLICATION->IncludeComponent("bitrix:menu", "up_menu", array(
+	"ROOT_MENU_TYPE" => "top",
+	"MENU_CACHE_TYPE" => "A",
+	"MENU_CACHE_TIME" => "3600",
+	"MENU_CACHE_USE_GROUPS" => "Y",
+	"MENU_CACHE_GET_VARS" => array(
+	),
+	"MAX_LEVEL" => "3",
+	"CHILD_MENU_TYPE" => "left",
+	"USE_EXT" => "N",
+	"DELAY" => "N",
+	"ALLOW_MULTI_SELECT" => "N"
+	),
+	false
+);?>
+				</ul>
+			</div>
+
+			<div class="clear"> </div>
