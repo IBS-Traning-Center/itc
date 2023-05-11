@@ -84,7 +84,8 @@ class CourseDetailComponent
                 'audience' => 'course_audience',
                 'roadmap' => 'course_top_html',
                 'note' => 'course_other',
-                'roadmapBlocks' => 'ROADMAP',
+                'roadmapTitleItems' => 'ROADMAP_TITLE',
+                'roadmapDescriptionItems' => 'ROADMAP_DESCRIPTION',
                 'recommended' => 'RECOMMENDED',
                 'recommendedHtml' => 'course_addsources',
                 'similarCourses' => 'ID_LINKED_COURSES',
@@ -187,6 +188,10 @@ class CourseDetailComponent
 
     protected function checkContentFields($content): string
     {
+        if (!$content) {
+            return (string) $content;
+        }
+
         if (unserialize($content)) {
             $content = unserialize($content);
         }
@@ -246,7 +251,8 @@ class CourseDetailComponent
                 $this->mapping('course', 'prerequisites'),
                 $this->mapping('course', 'audience'),
                 $this->mapping('course', 'roadmap'),
-                $this->mapping('course', 'roadmapBlocks'),
+                $this->mapping('course', 'roadmapTitleItems'),
+                $this->mapping('course', 'roadmapDescriptionItems'),
                 $this->mapping('course', 'note'),
                 $this->mapping('course', 'recommended'),
                 $this->mapping('course', 'recommendedHtml'),
@@ -344,15 +350,20 @@ class CourseDetailComponent
                 }
             }
 
-            $rsRoadMap = \CIBlockElement::GetProperty($this->course['iblockId'], $this->course['id'], 'sort', 'asc', ["CODE" => $this->mapping('course', 'roadmapBlocks')]);
-            while ($arRoadMap = $rsRoadMap->GetNext()) {
-                if ($arRoadMap['CODE'] === $this->mapping('course', 'roadmapBlocks') && !empty($arRoadMap['VALUE'])) {
-                    $this->course['content']['roadmapBlocks'][] = [
-                        'title' => $arRoadMap['VALUE']['SUB_VALUES']['ROADMAP_TITLE']['~VALUE'],
-                        'description' => $arRoadMap['VALUE']['SUB_VALUES']['ROADMAP_DESCRIPTION']['~VALUE']['TEXT']
-                    ];
-                }
+            $roadmapBlocks = [];
+
+            $roadmapTitleItems = $courseObject->get($this->mapping('course', 'roadmapTitleItems'))->fill(['VALUE']);
+            foreach ($roadmapTitleItems as $index => $title) {
+                $roadmapBlocks[$index]['title'] = $title;
             }
+
+            $roadmapDescriptionItems = $courseObject->get($this->mapping('course', 'roadmapDescriptionItems'))->fill(['VALUE']);
+            foreach ($roadmapDescriptionItems as $index => $description) {
+                $roadmapBlocks[$index]['description'] = $this->checkContentFields($description);;
+            }
+
+            $this->course['content']['roadmapBlocks'] = $roadmapBlocks;
+
 
             if ($courseObject->get($this->mapping('course', 'similarCourses'))) {
                 foreach ($courseObject->get($this->mapping('course', 'similarCourses'))->getAll() as $value) {
