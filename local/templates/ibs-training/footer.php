@@ -253,7 +253,6 @@
     /* ]]> */
 </script>
 <!-- Google Code for tawk.to Chat Conversion -->
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {};
     Tawk_API.onChatStarted = function () {
