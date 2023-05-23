@@ -5,6 +5,12 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
 
+define('NO_KEEP_STATISTIC', true);
+define('PUBLIC_AJAX_MODE', true);
+define('STOP_STATISTICS', true);
+define('NO_AGENT_STATISTIC', true);
+define('NO_AGENT_CHECK', true);
+
 use Bitrix\Main\Application;
 use Bitrix\Main\Routing\RoutingConfigurator;
 use Luxoft\Dev\Controller\CertificationController;
