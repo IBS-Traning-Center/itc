@@ -24,7 +24,7 @@ use Bitrix\Catalog\PriceTable;
 use Bitrix\Iblock\Elements\ElementCertificationTable;
 use Bitrix\Iblock\Elements\ElementScheduleCertificationTable;
 
-class CertificationController extends Controller
+class CertificationController extends JsonController
 {
     public function configureActions(): array
     {
@@ -300,16 +300,5 @@ class CertificationController extends Controller
             $this->addError(new Error('Возникла ошибка, попробуйте отправить заявку позже.'));
             return [];
         }
-    }
-
-    protected function getDefaultPreFilters(): array
-    {
-        return array_merge(
-            [
-                new ContentType([ContentType::JSON]),
-                new Cors('*', true),
-            ],
-            parent::getDefaultPreFilters()
-        );
     }
 }
