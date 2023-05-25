@@ -58,7 +58,7 @@ class CertificationController extends JsonController
 
     public function questionAction($name = '', $email = '', $company = '', $type = '', $text = ''): array
     {
-        \CEvent::Send(
+        $eventResult = \CEvent::Send(
             'ITC_CERTIFICATION_QUESTION',
             SITE_ID,
             [
@@ -70,6 +70,29 @@ class CertificationController extends JsonController
             ],
             'N',
         );
+
+        require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
+        if ($eventResult) {
+            if (class_exists('CRest')) {
+                \CRest::call(
+                    'crm.lead.add',
+                    [
+                        'fields' => [
+                            'TITLE' => 'Вопрос по сертификации направление: ' . Loc::getMessage("TYPE_$type") ,
+                            'STATUS_ID' => 'NEW',
+                            'NAME' => $name,
+                            'COMPANY_TITLE' => $company,
+                            'EMAIL' => [
+                                ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
+                            ],
+                            'COMMENTS' => $text,
+                            'ASSIGNED_BY_ID' => '1',
+                            'CREATED_BY_ID' => '1',
+                        ]
+                    ]
+                );
+            }
+        }
 
         return [];
     }
