@@ -23,6 +23,7 @@ use Luxoft\Dev\Table\CertificationLevelTable;
 use Bitrix\Catalog\PriceTable;
 use Bitrix\Iblock\Elements\ElementCertificationTable;
 use Bitrix\Iblock\Elements\ElementScheduleCertificationTable;
+require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
 
 class CertificationController extends JsonController
 {
@@ -71,7 +72,7 @@ class CertificationController extends JsonController
             'N',
         );
 
-        require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
+
         if ($eventResult) {
             if (class_exists('CRest')) {
                 \CRest::call(
@@ -86,8 +87,8 @@ class CertificationController extends JsonController
                                 ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
                             ],
                             'COMMENTS' => $text,
-                            'ASSIGNED_BY_ID' => '1',
-                            'CREATED_BY_ID' => '1',
+                            'ASSIGNED_BY_ID' => '29',
+                            'CREATED_BY_ID' => '29',
                         ]
                     ]
                 );
@@ -246,7 +247,7 @@ class CertificationController extends JsonController
             $answerType = mb_strtoupper(implode('_', [$type, $level ?? '']));
             $clintSendEvent = 'ITC_CERTIFICATION_REQUEST_ANSWER_'.$answerType;
 
-            \CEvent::Send(
+            $eventSubscribe = \CEvent::Send(
                 $clintSendEvent,
                 SITE_ID,
                 [
@@ -256,7 +257,28 @@ class CertificationController extends JsonController
                 'N',
             );
 
-            \CEvent::Send(
+            if ($eventSubscribe) {
+                if (class_exists('CRest')) {
+                    \CRest::call(
+                        'crm.lead.add',
+                        [
+                            'fields' => [
+                                'TITLE' => 'Подписка: ' . Loc::getMessage("TYPE_$type") ,
+                                'STATUS_ID' => 'NEW',
+                                'NAME' => $name,
+                                'EMAIL' => [
+                                    ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
+                                ],
+                                'ASSIGNED_BY_ID' => '29',
+                                'CREATED_BY_ID' => '29',
+                            ]
+                        ]
+                    );
+                }
+            }
+
+
+            $eventResult = \CEvent::Send(
                 'ITC_CERTIFICATION_REQUEST',
                 SITE_ID,
                 [
@@ -275,6 +297,29 @@ class CertificationController extends JsonController
                 ],
                 'N',
             );
+
+            if ($eventResult) {
+                if (class_exists('CRest')) {
+                    \CRest::call(
+                        'crm.lead.add',
+                        [
+                            'fields' => [
+                                'TITLE' => 'Сертификация: ' . Loc::getMessage("TYPE_$type") ,
+                                'STATUS_ID' => 'NEW',
+                                'NAME' => $name,
+                                'COMPANY_TITLE' => $company,
+                                'EMAIL' => [
+                                    ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
+                                ],
+                                'PHONE' => [['VALUE' => $phone, 'VALUE_TYPE' => 'WORK']],
+                                'COMMENTS' => "Должность: " . $position . "<br/>" . "Уровень: " . Loc::getMessage("LEVEL_$level") . "<br/>" . "Дата: " . $date . "<br/>" . "Желаемая дата: " . $desiredDate . "<br/>" . "Город: " . Loc::getMessage("LOCATION_$location") . "<br/>" . "Желаемый город: " . $city,
+                                'ASSIGNED_BY_ID' => '29',
+                                'CREATED_BY_ID' => '29',
+                            ]
+                        ]
+                    );
+                }
+            }
 
             if (!$subscribe) {
                 return [];
