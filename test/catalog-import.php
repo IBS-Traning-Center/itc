@@ -232,7 +232,7 @@ margin-bottom: 18px;
         'margin_top' => 30,
         'margin_bottom' => 30,
     ]);
-    $mpdf->SetHTMLHeader('<div style="text-align: right;"><img src="/static/images/logo_ibs.png" alt="" title="" border="0"  /></div>');
+    $mpdf->SetHTMLHeader('<div style="text-align: right;"><img src="/static/images/logo_IBS.png" alt="" title="" border="0"  /></div>');
     $mpdf->SetHTMLFooter('<table class="footer"><tr><td>По всем вопросам обращайтесь <a taget="_blank" style="color: #a1a1a1" href="mailto:'.EMAIL_ADDRESS.'">'.EMAIL_ADDRESS.'</a></td><td style="width: 34%;text-align: center;">{PAGENO}</td><td style="text-align: right;">Версия {DATE j.m.Y}</td></tr></table>');
     $mpdf->WriteHTML($html);
     $filename="trainer_".$arResult["CODE"].".pdf";
@@ -339,7 +339,7 @@ margin-bottom: 18px;
         'margin_right' => 30,
         'margin_top' => 20,
     ]);
-    $mpdf->SetHTMLHeader('<div style="text-align: right;"><img src="/static/images/logo_ibs.png" alt="" title="" border="0"  /></div>');
+    $mpdf->SetHTMLHeader('<div style="text-align: right;"><img src="/static/images/logo_IBS.png" alt="" title="" border="0"  /></div>');
     $mpdf->SetHTMLFooter('<table class="footer"><tr><td>По всем вопросам обращайтесь <a style="color: #a1a1a1" href="mailto:'.EMAIL_ADDRESS.'">'.EMAIL_ADDRESS.'</a></td><td style="width: 34%;text-align: center;">{PAGENO}</td><td style="text-align: right;">Версия {DATE j.m.Y}</td></tr></table>');
     $mpdf->WriteHTML($html);
     $mpdf->h2toc = array('H3'=>0);
@@ -607,7 +607,7 @@ margin-bottom: 18px;
         'margin_bottom' => 30,
     ]);
 
-    $mpdf->SetHTMLHeader('<div style="text-align: right !important; width: 100%;"><img src="/static/images/logo_ibs.png" alt="" title="" border="0"  style="float: right" /></div>');
+    $mpdf->SetHTMLHeader('<div style="text-align: right !important; width: 100%;"><img src="/static/images/logo_IBS.png" alt="" title="" border="0"  style="float: right" /></div>');
     $mpdf->SetHTMLFooter('<table class="footer"><tr><td>По всем вопросам обращайтесь <a taget="_blank" style="color: #a1a1a1" href="mailto:'.EMAIL_ADDRESS.'" class="underline">'.EMAIL_ADDRESS.'</a></td><td style="width: 34%;text-align: center;">{PAGENO}</td><td style="text-align: right;">Версия {DATE j.m.Y}</td></tr></table>');
     $mpdf->WriteHtml($html);
     $filename="training_".UTF($arResult['PROPERTIES']['course_code']['VALUE']).".pdf";
