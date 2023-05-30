@@ -18,7 +18,7 @@ include "inc_iblock.php";
 
 include "inc_functionality.php";
 include "inc_property.php";
-
+require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
 AddEventHandler('main', 'OnBeforeEventSend', "CheckEmailOnBeforeEventSend");
 function CheckEmailOnBeforeEventSend($arFields, & $arTemplate)
 {
@@ -1673,6 +1673,7 @@ class MyClass
                     $arSendEvent["EDU_EVENT_TIME"] = $reg_time;
                     $arSendEvent["REGISTRATION_LINK"] = $arFieldsSeminar['PROPERTY_REGISTRATION_LINK_VALUE'];
                     CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 86);
+
                 }
                 /*
                         8.1 Повод:  Регистрация на Self-learning курс
@@ -1713,7 +1714,28 @@ class MyClass
                     (strlen($arSendEvent['WEBINAR_LINK']) == 0)) {
                     $arSendEvent["EDU_EVENT_TIME"] = $reg_time;
                     $arSendEvent["REGISTRATION_LINK"] = $arFieldsSeminar['PROPERTY_REGISTRATION_LINK_VALUE'];
-                    CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 87);
+                    $evenwebinar = CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 87);
+                    if ($evenwebinar) {
+                        if (class_exists('CRest')) {
+                            \CRest::call(
+                                'crm.lead.add',
+                                [
+                                    'fields' => [
+                                        'TITLE' => 'Запись на вибинар: ' . $arFields3["NAME"],
+                                        'STATUS_ID' => 'NEW',
+                                        'NAME' => $arFields3["PROPERTY_FULLNAME_VALUE"],
+                                        'EMAIL' => [
+                                            ["VALUE" => $arFields3["PROPERTY_EMAIL_VALUE"], "VALUE_TYPE" => "WORK"],
+                                        ],
+                                        'PHONE' => [['VALUE' => $arFields3["PROPERTY_TELEPHONE_VALUE"], 'VALUE_TYPE' => 'WORK']],
+                                        'COMMENTS' => "Дата: " . $arFields3["PROPERTY_DATE_VALUE"] . "<br/>" . "Комментарий: " . $commentOrder,
+                                        'ASSIGNED_BY_ID' => '29',
+                                        'CREATED_BY_ID' => '29',
+                                    ]
+                                ]
+                            );
+                        }
+                    }
                 }
 
                 /*
