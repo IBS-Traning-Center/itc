@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
+require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
 global $USER;
 
 $formAnswer = ['type' => 'error', 'message' => ''];
@@ -24,6 +25,22 @@ function subscribe($email)
 
         $subscr = new CSubscription;
         $ID = $subscr->Add($subscribeFields);
+
+        if (class_exists('CRest')) {
+            \CRest::call(
+                'crm.lead.add',
+                [
+                    'fields' => [
+                        'TITLE' => 'Подписка на дайджест' ,
+                        'EMAIL' => [
+                            ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
+                        ],
+                        'ASSIGNED_BY_ID' => '29',
+                        'CREATED_BY_ID' => '29',
+                    ]
+                ]
+            );
+        }
 
         if ($ID > 0) {
             CSubscription::Authorize($ID);

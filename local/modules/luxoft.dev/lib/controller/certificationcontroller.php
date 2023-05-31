@@ -80,7 +80,6 @@ class CertificationController extends JsonController
                     [
                         'fields' => [
                             'TITLE' => 'Вопрос по сертификации направление: ' . Loc::getMessage("TYPE_$type") ,
-                            'STATUS_ID' => 'NEW',
                             'NAME' => $name,
                             'COMPANY_TITLE' => $company,
                             'EMAIL' => [
@@ -264,7 +263,6 @@ class CertificationController extends JsonController
                         [
                             'fields' => [
                                 'TITLE' => 'Подписка: ' . Loc::getMessage("TYPE_$type") ,
-                                'STATUS_ID' => 'NEW',
                                 'NAME' => $name,
                                 'EMAIL' => [
                                     ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
@@ -349,7 +347,7 @@ class CertificationController extends JsonController
                 return [];
             }
 
-            \CEvent::Send(
+            $eventSub =  \CEvent::Send(
                 'ITC_CERTIFICATION_SUBSCRIBE',
                 SITE_ID,
                 [
@@ -361,6 +359,26 @@ class CertificationController extends JsonController
                 ],
                 'N',
             );
+
+            if ($eventSub) {
+                if (class_exists('CRest')) {
+                    \CRest::call(
+                        'crm.lead.add',
+                        [
+                            'fields' => [
+                                'TITLE' => 'Подписка: ' . Loc::getMessage("TYPE_$type"),
+                                'NAME' => $name,
+                                'EMAIL' => [
+                                    ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
+                                ],
+                                'COMMENTS' => "Уровень: " . Loc::getMessage("LEVEL_$level") . "<br/>" . "Направление: " . Loc::getMessage("TYPE_$type"),
+                                'ASSIGNED_BY_ID' => '29',
+                                'CREATED_BY_ID' => '29',
+                            ]
+                        ]
+                    );
+                }
+            }
 
             return [];
 

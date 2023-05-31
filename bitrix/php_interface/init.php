@@ -1722,7 +1722,6 @@ class MyClass
                                 [
                                     'fields' => [
                                         'TITLE' => 'Запись на вибинар: ' . $arFields3["NAME"],
-                                        'STATUS_ID' => 'NEW',
                                         'NAME' => $arFields3["PROPERTY_FULLNAME_VALUE"],
                                         'EMAIL' => [
                                             ["VALUE" => $arFields3["PROPERTY_EMAIL_VALUE"], "VALUE_TYPE" => "WORK"],
