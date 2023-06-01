@@ -32,6 +32,7 @@ function subscribe($email)
                 [
                     'fields' => [
                         'TITLE' => 'Подписка на дайджест' ,
+                        'UF_ITC_SOURSE' => '26',
                         'EMAIL' => [
                             ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
                         ],

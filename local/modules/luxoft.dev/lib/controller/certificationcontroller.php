@@ -81,6 +81,7 @@ class CertificationController extends JsonController
                         'fields' => [
                             'TITLE' => 'Вопрос по сертификации направление: ' . Loc::getMessage("TYPE_$type") ,
                             'NAME' => $name,
+                            'UF_ITC_SOURSE' => '26',
                             'COMPANY_TITLE' => $company,
                             'EMAIL' => [
                                 ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
@@ -263,6 +264,7 @@ class CertificationController extends JsonController
                         [
                             'fields' => [
                                 'TITLE' => 'Подписка: ' . Loc::getMessage("TYPE_$type") ,
+                                'UF_ITC_SOURSE' => '26',
                                 'NAME' => $name,
                                 'EMAIL' => [
                                     ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
@@ -303,6 +305,7 @@ class CertificationController extends JsonController
                         [
                             'fields' => [
                                 'TITLE' => 'Сертификация: ' . Loc::getMessage("TYPE_$type") ,
+                                'UF_ITC_SOURSE' => '26',
                                 'STATUS_ID' => 'NEW',
                                 'NAME' => $name,
                                 'COMPANY_TITLE' => $company,
@@ -367,6 +370,7 @@ class CertificationController extends JsonController
                         [
                             'fields' => [
                                 'TITLE' => 'Подписка: ' . Loc::getMessage("TYPE_$type"),
+                                'UF_ITC_SOURSE' => '26',
                                 'NAME' => $name,
                                 'EMAIL' => [
                                     ["VALUE" => $email, "VALUE_TYPE" => "WORK"],

@@ -1722,6 +1722,7 @@ class MyClass
                                 [
                                     'fields' => [
                                         'TITLE' => 'Запись на вибинар: ' . $arFields3["NAME"],
+                                        'UF_ITC_SOURSE' => '26',
                                         'NAME' => $arFields3["PROPERTY_FULLNAME_VALUE"],
                                         'EMAIL' => [
                                             ["VALUE" => $arFields3["PROPERTY_EMAIL_VALUE"], "VALUE_TYPE" => "WORK"],
