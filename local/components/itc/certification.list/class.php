@@ -28,7 +28,7 @@ extends CBitrixComponent
         $currentDay->setTime(0,0);
         $scheduleCollection = ElementScheduleCertificationTable::getList([
             'order'  => ['date.value' => 'asc', 'id' => 'asc'],
-            'select' => ['id', 'active', 'certification', 'location', 'date'],
+            'select' => ['id', 'active', 'certification', 'location', 'date', 'time'],
             'filter' => ['>=date.value' => $currentDay->format('Y-m-d H:i:s'), 'active' => true]
         ])->fetchCollection();
 
@@ -44,18 +44,23 @@ extends CBitrixComponent
                 $date = (new DateTime($date, 'Y-m-d H:i:s'))->format('d.m.Y');
             }
 
-            return [
+            $scheduleItem = [
                 'id' => $item->getId(),
                 'certificationId' => $item->getCertification()
                     ? $item->getCertification()->getValue() : '',
                 'locations' => $currentLocations,
                 'date' => $date,
-                'time' => '10:00 - 13:00',
             ];
+
+            if ($time = $item->getTime() ? $item->getTime()->getValue() : '') {
+                $scheduleItem['time'] = $time;
+            }
+
+            return $scheduleItem;
         }, $scheduleCollection->getAll());
 
         $certificationCollection = ElementCertificationTable::getList([
-            'select' => ['id', 'active', 'name', 'preview_picture', 'type', 'level', 'duration'],
+            'select' => ['id', 'active', 'name', 'preview_picture', 'type', 'level', 'duration', 'time'],
             'filter' => ['active' => true, 'id' => array_column($schedule, 'certificationId')],
         ])->fetchCollection();
 
@@ -71,6 +76,8 @@ extends CBitrixComponent
                     ? $item->getType()->getValue() : '',
                 'duration' => $item->getDuration()
                     ? $item->getDuration()->getValue() : '',
+                'time'  => $item->getTime()
+                    ? $item->getTime()->getValue() : '',
             ];
 
             return $result;
@@ -105,7 +112,7 @@ extends CBitrixComponent
             $certification = $certifications[$scheduleItem['certificationId']] ?? [];
             $price = $prices[$certification['id']];
             $certification['url'] = '/certification/' . $certification['type'] . '/?scheduleId=' . $scheduleItem['id'];
-            return array_merge($certification,$price, $scheduleItem);
+            return array_merge($certification, $price, $scheduleItem);
         }, $schedule);
     }
 }
