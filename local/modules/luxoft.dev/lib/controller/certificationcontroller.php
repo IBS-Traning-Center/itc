@@ -73,27 +73,27 @@ class CertificationController extends JsonController
         );
 
 
-        if ($eventResult) {
-            if (class_exists('CRest')) {
-                \CRest::call(
-                    'crm.lead.add',
-                    [
-                        'fields' => [
-                            'TITLE' => 'Вопрос по сертификации направление: ' . Loc::getMessage("TYPE_$type") ,
-                            'NAME' => $name,
-                            'UF_ITC_SOURSE' => '26',
-                            'COMPANY_TITLE' => $company,
-                            'EMAIL' => [
-                                ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
-                            ],
-                            'COMMENTS' => $text,
-                            'ASSIGNED_BY_ID' => '29',
-                            'CREATED_BY_ID' => '29',
-                        ]
-                    ]
-                );
-            }
+        if (!$eventResult || !class_exists('CRest')) {
+            return [];
         }
+
+        \CRest::call(
+            'crm.lead.add',
+            [
+                'fields' => [
+                    'TITLE' => 'Вопрос по сертификации направление: ' . Loc::getMessage("TYPE_$type") ,
+                    'NAME' => $name,
+                    'UF_ITC_SOURSE' => '26',
+                    'COMPANY_TITLE' => $company,
+                    'EMAIL' => [
+                        ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
+                    ],
+                    'COMMENTS' => $text,
+                    'ASSIGNED_BY_ID' => '29',
+                    'CREATED_BY_ID' => '29',
+                ]
+            ]
+        );
 
         return [];
     }
@@ -326,7 +326,7 @@ class CertificationController extends JsonController
                 return [];
             }
 
-            $this->addSubscribeAction($code, $name, $email, $type, $level);
+            $this->addSubscribeAction($code, $name, $email, $phone, $type, $level);
 
             return [];
         } catch (\Throwable $exception) {
@@ -335,7 +335,7 @@ class CertificationController extends JsonController
         }
     }
 
-    public function addSubscribeAction($code, $name, $email, $type = '', $level = ''): array
+    public function addSubscribeAction($code, $name, $email, $phone = '', $type = '', $level = ''): array
     {
         try {
             if (!$type) {
@@ -343,19 +343,20 @@ class CertificationController extends JsonController
             }
 
             $unisenderService = new UnisenderService();
-            $resultId = $unisenderService->subscribeCertification($type, $level, $name, $email);
+            $resultId = $unisenderService->subscribeCertification($type, $level, $name, $email, $phone);
 
             if (!$resultId) {
                 $this->addError(new Error('Не удалось подписать на рассылку'));
                 return [];
             }
 
-            $eventSub =  \CEvent::Send(
+            $eventSub = \CEvent::Send(
                 'ITC_CERTIFICATION_SUBSCRIBE',
                 SITE_ID,
                 [
                     'FIO' => $name,
                     'EMAIL' => $email,
+                    'PHONE' => $phone,
                     'TYPE' => Loc::getMessage("TYPE_$type"),
                     'LEVEL' => Loc::getMessage("LEVEL_$level"),
                     'UNISENDER_ID' => $resultId,
@@ -363,29 +364,27 @@ class CertificationController extends JsonController
                 'N',
             );
 
-            if ($eventSub) {
-                if (class_exists('CRest')) {
-                    \CRest::call(
-                        'crm.lead.add',
-                        [
-                            'fields' => [
-                                'TITLE' => 'Подписка: ' . Loc::getMessage("TYPE_$type"),
-                                'UF_ITC_SOURSE' => '26',
-                                'NAME' => $name,
-                                'EMAIL' => [
-                                    ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
-                                ],
-                                'COMMENTS' => "Уровень: " . Loc::getMessage("LEVEL_$level") . "<br/>" . "Направление: " . Loc::getMessage("TYPE_$type"),
-                                'ASSIGNED_BY_ID' => '29',
-                                'CREATED_BY_ID' => '29',
-                            ]
-                        ]
-                    );
-                }
+            if (!$eventSub || !class_exists('CRest')) {
+                return [];
             }
 
+            \CRest::call(
+                'crm.lead.add',
+                [
+                    'fields' => [
+                        'TITLE' => 'Подписка: ' . Loc::getMessage("TYPE_$type"),
+                        'UF_ITC_SOURSE' => '26',
+                        'NAME' => $name,
+                        'EMAIL' => [
+                            ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
+                        ],
+                        'COMMENTS' => "Уровень: " . Loc::getMessage("LEVEL_$level") . "<br/>" . "Направление: " . Loc::getMessage("TYPE_$type"),
+                        'ASSIGNED_BY_ID' => '29',
+                        'CREATED_BY_ID' => '29',
+                    ]
+                ]
+            );
             return [];
-
         } catch (\Throwable $exception) {
             $this->addError(new Error('Возникла ошибка, попробуйте отправить заявку позже.'));
             return [];

@@ -111,7 +111,8 @@ class UnisenderService
         string $type,
         string $level = null,
         string $name = '',
-        string $email = ''
+        string $email = '',
+        string $phone = ''
     ): int
     {
         if (!is_email($email)) {
@@ -135,6 +136,7 @@ class UnisenderService
             'fields' => [
                 'name' => $name,
                 'email' => $email,
+                'phone' => $phone,
             ],
             'tags' => implode(',', $tags),
             'double_optin' => 4,
