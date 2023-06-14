@@ -123,7 +123,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Главный бухгалтер
 			</td>
 			<td>
-				 Нестерова Ирина Юрьевна
+				 Лелётко Светлана Олеговна
 			</td>
 		</tr>
 		</tbody>
@@ -248,4 +248,5 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 		</tbody>
 		</table>
 	</div>
-</div><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+</div>
+ <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
