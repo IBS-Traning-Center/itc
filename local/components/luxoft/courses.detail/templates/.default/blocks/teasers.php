@@ -27,7 +27,21 @@ use Bitrix\Main\Localization\Loc;
                 <div class="course-teaser__description"><?=Loc::getMessage('TEASER_1_DESCRIPTION')?></div>
             </div>
         </div>
-        <div class="course-teaser">
+        <? if ($GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Biznes_analitik_spetsialist_po_biznes_protsessam.html'):?>
+
+<div class="course-teaser">
+            <div class="course-teaser__view">
+                <img src="<?=$templateFolder?>/src/images/course/detail/teasers/sdo.png" alt="" class="course-teaser__icon">
+            </div>
+            <div class="course-teaser__content">
+                <div class="course-teaser__title">СДО</div>
+                <div class="course-teaser__description">Изучайте материалы самостоятельно в СДО и участвуйте в практических семинарах.</div>
+            </div>
+            </div>
+
+<?else:?>
+
+<div class="course-teaser">
             <div class="course-teaser__view">
                 <img src="<?=$templateFolder?>/src/images/course/detail/teasers/live.svg" alt="" class="course-teaser__icon">
             </div>
@@ -36,6 +50,8 @@ use Bitrix\Main\Localization\Loc;
                 <div class="course-teaser__description"><?=Loc::getMessage('TEASER_2_DESCRIPTION')?></div>
             </div>
         </div>
+
+<?endif?>
         <div class="course-teaser">
             <div class="course-teaser__view">
                 <img src="<?=$templateFolder?>/src/images/course/detail/teasers/practice.svg" alt="" class="course-teaser__icon">
