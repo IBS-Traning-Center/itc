@@ -27,7 +27,7 @@ use Bitrix\Main\Localization\Loc;
                 <div class="course-teaser__description"><?=Loc::getMessage('TEASER_1_DESCRIPTION')?></div>
             </div>
         </div>
-        <? if ($GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Biznes_analitik_spetsialist_po_biznes_protsessam.html'):?>
+        <? if ($GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/BPM.html'):?>
 
 <div class="course-teaser">
             <div class="course-teaser__view">
