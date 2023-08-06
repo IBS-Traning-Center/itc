@@ -27,7 +27,19 @@ use Bitrix\Main\Localization\Loc;
                 <div class="course-teaser__description"><?=Loc::getMessage('TEASER_1_DESCRIPTION')?></div>
             </div>
         </div>
-        <? if ($GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/BPM.html'):?>
+        <? if ($GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/BPM.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Upravlenie_po_tseliam.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Upravlenie_biznes_protsessami_2.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Modelirovanie_protsessov_v_BPMN.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Biznes_analiz_na_osnove_BABOK.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Upravlenie_proektami.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Upravlenie_izmeneniiami.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Upravlenie_po_Agile_Scrum.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Upravlenie_trebovaniiami_i_UML.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/TSifrovaia_transformatsiia_i_tekhnologii.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Tekhnologii_otsenki_zrelosti_protsessov.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Upravlenie_korporativnoi_arkhitekturoi.html'
+        ):?>
 
 <div class="course-teaser">
             <div class="course-teaser__view">

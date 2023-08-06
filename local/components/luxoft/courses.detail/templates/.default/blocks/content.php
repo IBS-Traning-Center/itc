@@ -22,63 +22,79 @@ use Bitrix\Main\Localization\Loc;
     <?php }?>
 
     <?php if($arResult['certificate'] && $arResult['certificate'] !== 'not') {?>
+
+        <? if ($GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/BPM.html'):?>
     <div class="course-content__block <?=$arResult['isBabok'] ? 'course-certificate-group' : '';?>">
         <div class="course-certificate">
-        <?php switch ($arResult['certificate']) {
-            case 'lt':?>
-                <?php if ((int)$arResult['duration'] < 16) {?>
-                    <div class="course-certificate__icon">
-                        <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-lt.png"?>" alt="">
-                    </div>
-                    <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_LT')?></div>
-                <?php } else {?>
-                    <div class="course-certificate__icon">
-                        <img width="50" src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-lt-id.png"?>" alt="">
-                    </div>
-                    <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_LT_ID')?></div>
-                <?php }?>
-                <?php break;
-            case 'icagile':?>
-                <div class="course-certificate__icon">
-                    <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-icagile.png"?>" alt="">
-                </div>
-                <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_ICAGILE')?></div>
-                <?php break;
-            case 'iiba':?>
-                <div class="course-certificate__icon">
-                    <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-iiba.png"?>" alt="">
-                </div>
-                <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_IIBA')?></div>
-            <?php break;
-            case 'istqb':?>
-                <div class="course-certificate__icon">
-                    <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-istqb.png"?>" alt="">
-                </div>
-                <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_ISTQB')?></div>
-            <?php break;
-            case 'psm':?>
-                <div class="course-certificate__icon">
-                    <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-psm.png"?>" alt="">
-                </div>
-                <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_PSM')?></div>
-            <?php break;
-            case 'saf':?>
-                <div class="course-certificate__icon">
-                    <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-saf.png"?>" alt="">
-                </div>
-                <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_SAF')?></div>
-            <?php break;
-        }?>
-        </div>
-        <?php if ($arResult['isBabok']) {?>
-        <div class="course-certificate <?=$arResult['isBabok'] ? 'course-certificate_babok-book' : '';?>">
             <div class="course-certificate__icon">
-                <img width="58" src="<?="{$templateFolder}/src/images/course/detail/icons/babok-book.png"?>" alt="">
+                <img width="50" src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-lt-id.png"?>" alt="">
             </div>
-            <div class="course-certificate__text">Руководство&nbsp;<a href="https://ibs-training.ru/babok-book/" target="_blank">BABOK</a>&nbsp;на&nbsp;русском<br> языке&nbsp;бесплатно</div>
+            <div class="course-certificate__text">После прохождения программы </br>выдается
+                диплом о профессиональной переподготовки государственного образца
+            </div>
         </div>
-        <?php }?>
     </div>
+
+        <?else:?>
+            <div class="course-content__block <?=$arResult['isBabok'] ? 'course-certificate-group' : '';?>">
+                <div class="course-certificate">
+                    <?php switch ($arResult['certificate']) {
+                        case 'lt':?>
+                            <?php if ((int)$arResult['duration'] < 16) {?>
+                                <div class="course-certificate__icon">
+                                    <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-lt.png"?>" alt="">
+                                </div>
+                                <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_LT')?></div>
+                            <?php } else {?>
+                                <div class="course-certificate__icon">
+                                    <img width="50" src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-lt-id.png"?>" alt="">
+                                </div>
+                                <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_LT_ID')?></div>
+                            <?php }?>
+                            <?php break;
+                        case 'icagile':?>
+                            <div class="course-certificate__icon">
+                                <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-icagile.png"?>" alt="">
+                            </div>
+                            <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_ICAGILE')?></div>
+                            <?php break;
+                        case 'iiba':?>
+                            <div class="course-certificate__icon">
+                                <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-iiba.png"?>" alt="">
+                            </div>
+                            <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_IIBA')?></div>
+                            <?php break;
+                        case 'istqb':?>
+                            <div class="course-certificate__icon">
+                                <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-istqb.png"?>" alt="">
+                            </div>
+                            <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_ISTQB')?></div>
+                            <?php break;
+                        case 'psm':?>
+                            <div class="course-certificate__icon">
+                                <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-psm.png"?>" alt="">
+                            </div>
+                            <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_PSM')?></div>
+                            <?php break;
+                        case 'saf':?>
+                            <div class="course-certificate__icon">
+                                <img src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-saf.png"?>" alt="">
+                            </div>
+                            <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_SAF')?></div>
+                            <?php break;
+                    }?>
+                </div>
+                <?php if ($arResult['isBabok']) {?>
+                    <div class="course-certificate <?=$arResult['isBabok'] ? 'course-certificate_babok-book' : '';?>">
+                        <div class="course-certificate__icon">
+                            <img width="58" src="<?="{$templateFolder}/src/images/course/detail/icons/babok-book.png"?>" alt="">
+                        </div>
+                        <div class="course-certificate__text">Руководство&nbsp;<a href="https://ibs-training.ru/babok-book/" target="_blank">BABOK</a>&nbsp;на&nbsp;русском<br> языке&nbsp;бесплатно</div>
+                    </div>
+                <?php }?>
+            </div>
+        <?endif?>
+
     <?php }?>
 
     <?php if($arResult['content']['objectives']) {?>
