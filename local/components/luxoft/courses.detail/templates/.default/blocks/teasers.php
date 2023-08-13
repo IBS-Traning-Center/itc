@@ -39,6 +39,10 @@ use Bitrix\Main\Localization\Loc;
             || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/TSifrovaia_transformatsiia_i_tekhnologii.html'
             || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Tekhnologii_otsenki_zrelosti_protsessov.html'
             || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Upravlenie_korporativnoi_arkhitekturoi.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Direktor_programmy_vnedreniya_kompozitnykh_ERP_sistem.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Rukovoditel_proektov_v_programme_vnedreniya_kompozitnykh_ERP_sistem.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Rukovoditel_gruppy_v_programme_vnedreniya_kompozitnykh_ERP_sistem.html'
+            || $GLOBALS["APPLICATION"]->GetCurPage(true) == '/kurs/Arkhitektor_programmy_vnedreniya_kompozitnykh_ERP-sistem.html'
         ):?>
 
 <div class="course-teaser">
