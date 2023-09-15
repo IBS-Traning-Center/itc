@@ -30,7 +30,7 @@ declare(strict_types=1);
                     <div class="scheduleCertificationItem__order">
                         <div class="scheduleCertificationItem__price"><?=$item['priceFormatted']?></div>
                         <div class="scheduleCertificationItem__button">
-                            <a href="<?=$item['url']?>" class="Button">Записаться</a>
+                            <a href="<?=$item['url']?>#form" class="Button">Записаться</a>
                         </div>
                     </div>
                 </div>
