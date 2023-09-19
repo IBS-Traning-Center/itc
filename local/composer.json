@@ -6,12 +6,11 @@
     "psr-4": {
       "Bitrix24\\Rest\\": "lib/bitrix24.rest/",
       "Luxoft\\Dev\\": "modules/luxoft.dev/lib/",
-      "Itc\\Tools\\": "modules/itc.tools/lib/",
       "Itc\\Catalog\\": "modules/itc.catalog/lib/"
     }
   },
   "require": {
-    "php": ">=7.4, <=8.0",
+    "php": ">=7.4, <8.0",
     "symfony/console": "5.*",
     "webpractik/bitrixoa": "^1",
     "wapmorgan/morphos": "3.2.*",
@@ -20,8 +19,7 @@
     "illuminate/support": "^8.83",
 
     "andreyryabin/sprint.migration": "4.*",
-    "wikimedia/composer-merge-plugin": "dev-master",
-    "psr/log": "1.1.*",
+    "wikimedia/composer-merge-plugin": "dev-master"
   },
   "extra": {
     "installer-paths": {

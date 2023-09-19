@@ -38,3 +38,4 @@ $PERM["images_new"]["6"]="W";
 $PERM["images_edu"]["6"]="W";
 $PERM["training"]["6"]="W";
 $PERM["/"]["*"]="R";
+?>

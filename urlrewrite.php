@@ -112,14 +112,6 @@ $arUrlRewrite=array (
     'PATH' => '/library/analytics/detail.php',
     'SORT' => 100,
   ),
-  24 => 
-  array (
-    'CONDITION' => '#^/about/news/([a-zA-Z0-9_\\-]+)/($|\\#.+|\\?.+)#',
-    'RULE' => 'ID=$1',
-    'ID' => '',
-    'PATH' => '/about/news/detail.php',
-    'SORT' => 100,
-  ),
   13 => 
   array (
     'CONDITION' => '#^/training/testing/([0-9]*)/([0-9]*)(/?)(.+)#',
@@ -128,12 +120,12 @@ $arUrlRewrite=array (
     'PATH' => '/training/testing/index.php',
     'SORT' => 100,
   ),
-  14 => 
+  24 => 
   array (
-    'CONDITION' => '#^/training/catalog/word/([a-zA-Z0-9-]+)(/?)#',
-    'RULE' => 'CODE=$1',
+    'CONDITION' => '#^/about/news/([a-zA-Z0-9_\\-]+)/($|\\#.+|\\?.+)#',
+    'RULE' => 'ID=$1',
     'ID' => '',
-    'PATH' => '/training/catalog/export.php',
+    'PATH' => '/about/news/detail.php',
     'SORT' => 100,
   ),
   15 => 
@@ -142,6 +134,14 @@ $arUrlRewrite=array (
     'RULE' => 'CODE=$1',
     'ID' => '',
     'PATH' => '/training/it-guru/detail.php',
+    'SORT' => 100,
+  ),
+  14 => 
+  array (
+    'CONDITION' => '#^/training/catalog/word/([a-zA-Z0-9-]+)(/?)#',
+    'RULE' => 'CODE=$1',
+    'ID' => '',
+    'PATH' => '/training/catalog/export.php',
     'SORT' => 100,
   ),
   26 => 
@@ -232,20 +232,20 @@ $arUrlRewrite=array (
     'PATH' => '/frdo-form/detail.php',
     'SORT' => 100,
   ),
+  31 => 
+  array (
+    'CONDITION' => '#^/personal/library/([0-9]*)(/?)(.+)#',
+    'RULE' => 'ELEMENT_ID=$1',
+    'ID' => '',
+    'PATH' => '/personal/library/detail.php',
+    'SORT' => 100,
+  ),
   32 => 
   array (
     'CONDITION' => '#^/training/actions/([0-9]*)(/?)(.+)#',
     'RULE' => 'ID=$1',
     'ID' => '',
     'PATH' => '/training/actions/detail.php',
-    'SORT' => 100,
-  ),
-  30 => 
-  array (
-    'CONDITION' => '#^/training/seminar/([0-9]+)(/?)(.+)#',
-    'RULE' => 'ID=$1',
-    'ID' => '',
-    'PATH' => '/training/seminar/seminarinfo.php',
     'SORT' => 100,
   ),
   29 => 
@@ -256,12 +256,12 @@ $arUrlRewrite=array (
     'PATH' => '/it-guru/index.php',
     'SORT' => 100,
   ),
-  31 => 
+  30 => 
   array (
-    'CONDITION' => '#^/personal/library/([0-9]*)(/?)(.+)#',
-    'RULE' => 'ELEMENT_ID=$1',
+    'CONDITION' => '#^/training/seminar/([0-9]+)(/?)(.+)#',
+    'RULE' => 'ID=$1',
     'ID' => '',
-    'PATH' => '/personal/library/detail.php',
+    'PATH' => '/training/seminar/seminarinfo.php',
     'SORT' => 100,
   ),
   33 => 
@@ -352,6 +352,14 @@ $arUrlRewrite=array (
     'PATH' => '/clients/index.html',
     'SORT' => 100,
   ),
+  47 => 
+  array (
+    'CONDITION' => '#^/training/category/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/training/category/about.php',
+    'SORT' => 100,
+  ),
   45 => 
   array (
     'CONDITION' => '#^/online/(/?)([^/]*)#',
@@ -366,14 +374,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:iblock.element.add.form',
     'PATH' => '/about/experts/ask/index.php',
-    'SORT' => 100,
-  ),
-  47 => 
-  array (
-    'CONDITION' => '#^/training/category/#',
-    'RULE' => '',
-    'ID' => 'bitrix:catalog',
-    'PATH' => '/training/category/about.php',
     'SORT' => 100,
   ),
   48 => 
@@ -446,14 +446,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:socialnetwork',
     'PATH' => '/club/index.php',
-    'SORT' => 100,
-  ),
-  57 => 
-  array (
-    'CONDITION' => '#^/auth/#',
-    'RULE' => '',
-    'ID' => 'bitrix:main.register',
-    'PATH' => '/auth/registration.html',
     'SORT' => 100,
   ),
   65 => 

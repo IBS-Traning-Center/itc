@@ -24,6 +24,10 @@ use Bitrix\Catalog\PriceTable;
 use Bitrix\Iblock\Elements\ElementCertificationTable;
 use Bitrix\Iblock\Elements\ElementScheduleCertificationTable;
 require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
+require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/noti/ApiClient.php");
+
+
+
 
 class CertificationController extends JsonController
 {
@@ -232,6 +236,7 @@ class CertificationController extends JsonController
         $desiredDate = '',
         $type = '',
         $level = '',
+        $idsub = '',
         $subscribe = false
     ): array
     {
@@ -246,6 +251,7 @@ class CertificationController extends JsonController
 
             $answerType = mb_strtoupper(implode('_', [$type, $level ?? '']));
             $clintSendEvent = 'ITC_CERTIFICATION_REQUEST_ANSWER_'.$answerType;
+
 
             $eventSubscribe = \CEvent::Send(
                 $clintSendEvent,
@@ -335,17 +341,22 @@ class CertificationController extends JsonController
         }
     }
 
-    public function addSubscribeAction($code, $name, $email, $phone = '', $type = '', $level = ''): array
+    public function addSubscribeAction($code, $name, $email, $phone = '', $type = '', $level = '', $idsub = ''): array
     {
+
+        $ApiClient = new \ApiClient('2a20e381fd848245984f4f7abb6d5a80');
+        $emai = [
+            'email' => $email,
+            'unconfirmed' => false,
+        ];
+        $ApiClient->addEmail($idsub,$emai);
+
         try {
             if (!$type) {
                 $type = $code;
             }
 
-            $unisenderService = new UnisenderService();
-            $resultId = $unisenderService->subscribeCertification($type, $level, $name, $email, $phone);
-
-            if (!$resultId) {
+            if (!$ApiClient) {
                 $this->addError(new Error('Не удалось подписать на рассылку'));
                 return [];
             }
@@ -363,6 +374,8 @@ class CertificationController extends JsonController
                 ],
                 'N',
             );
+
+
 
             if (!$eventSub || !class_exists('CRest')) {
                 return [];
@@ -384,7 +397,10 @@ class CertificationController extends JsonController
                     ]
                 ]
             );
+
+
             return [];
+
         } catch (\Throwable $exception) {
             $this->addError(new Error('Возникла ошибка, попробуйте отправить заявку позже.'));
             return [];

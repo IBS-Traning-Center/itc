@@ -21,6 +21,10 @@ use Luxoft\Dev\Controller\ToolsController;
 use Luxoft\Dev\Controller\FormController;
 use Luxoft\Dev\Service\PageHomeService;
 
+use Itc\Catalog\Controller\CourseController;
+use Itc\Catalog\Controller\ScheduleController;
+use Itc\Catalog\Controller\TeacherController;
+
 return function (RoutingConfigurator $routes) {
     $routes->prefix('api')->group(function (RoutingConfigurator $routes) {
         $routes->any('errors/add/', function () {
@@ -101,6 +105,21 @@ return function (RoutingConfigurator $routes) {
             $routes->get('list/{code}/',       [CertificationController::class, 'getListAction']);
             $routes->post('request/{code}/',   [CertificationController::class, 'addRequestAction']);
             $routes->post('subscribe/{code}/', [CertificationController::class, 'addSubscribeAction']);
+        });
+
+        $routes->prefix('crm')->group(function (RoutingConfigurator $routes) {
+            $routes->prefix('course')->group(function (RoutingConfigurator $routes) {
+                $routes->get('getAllId/', [CourseController::class, 'getAllIdAction']);
+                $routes->get('getById/',  [CourseController::class, 'getByIdAction']);
+            });
+            $routes->prefix('schedule')->group(function (RoutingConfigurator $routes) {
+                $routes->get('getAllId/', [ScheduleController::class, 'getAllIdAction']);
+                $routes->get('getById/',  [ScheduleController::class, 'getByIdAction']);
+            });
+            $routes->prefix('teacher')->group(function (RoutingConfigurator $routes) {
+                $routes->get('getAllId/', [TeacherController::class, 'getAllIdAction']);
+                $routes->get('getById/',  [TeacherController::class, 'getByIdAction']);
+            });
         });
     });
 };

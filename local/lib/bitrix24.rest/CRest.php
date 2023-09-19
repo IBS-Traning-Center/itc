@@ -1,4 +1,9 @@
 <?php
+
+declare(strict_types=1);
+
+namespace Bitrix24\Rest;
+
 require_once (__DIR__.'/settings.php');
 
 /**
