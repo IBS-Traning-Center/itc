@@ -6,6 +6,7 @@
 *.zip
 *.log
 *.ics
+*.pdf
 
 .DS_Store
 ._.DS_Store
