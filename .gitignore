@@ -5,6 +5,7 @@
 *.rar
 *.zip
 *.log
+*.ics
 
 .DS_Store
 ._.DS_Store
