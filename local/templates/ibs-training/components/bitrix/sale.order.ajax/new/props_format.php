@@ -167,7 +167,18 @@ if (!function_exists("PrintPropsForm"))
 							</div>
 
 							<div class="bx_block r3x1">
-								<input type="text" maxlength="250" size="<?=$arProperties["SIZE1"]?>" value="<?=$arProperties["VALUE"]?>" name="<?=$arProperties["FIELD_NAME"]?>" id="<?=$arProperties["FIELD_NAME"]?>" />
+								<input type="text" maxlength="250" size="<?=$arProperties["SIZE1"]?>" value="<?=$arProperties["VALUE"]?>" name="<?=$arProperties["FIELD_NAME"]?>" id="<?=$arProperties["FIELD_NAME"]?>" onchange="replace_spaces(event)"/>
+                                <script>
+                                    function replace_spaces(event) {
+                                        if (document.getElementById("ORDER_PROP_8")){
+                                            event.target.value = event.target.value.replace(/^\s*|\s*$/g, '');
+                                        }
+                                        else {
+
+                                        }
+
+                                    }
+                                </script>
 
 								<?
 								if (strlen(trim($arProperties["DESCRIPTION"])) > 0):
