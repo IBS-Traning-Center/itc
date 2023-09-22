@@ -1,6 +1,7 @@
 <?php
 use Bitrix\Main\EventManager;
 use Luxoft\Dev\Tools;
+require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
 
 if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php")) {
     require_once($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php");
@@ -1489,9 +1490,30 @@ class MyClass
                         '<br/> <b>город: </b>' . $arFields3["PROPERTY_CITY_VALUE"] .
                         '<br/> <b>Стоимость: </b>' . $arSendEvent['COURSE_PRICE'] . ' ' . $arSendEvent['CITY_CURRENCY'] .
                         '<br/> <b>Комментарий к заявке: </b>' . $commentOrder;
-
                     CEvent::Send('NEW_COURSE_SUBSCRIBE', SITE_ID, $arSend, 'N');
+                    \CRest::call(
+                        'crm.lead.add',
+                        [
+                            'fields' => [
+                                'TITLE' => 'запись на событие: ' . $arFields3["NAME"],
+                                'NAME' => $arFields3["PROPERTY_FULLNAME_VALUE"],
+                                'UF_ITC_SOURSE' => '26',
+                                'STATUS_ID' => 'NEW',
+                                'COMPANY_TITLE' => $arFields3["PROPERTY_COMPANY_VALUE"],
+                                'EMAIL' => [
+                                    ["VALUE" => $arFields3["PROPERTY_EMAIL_VALUE"], "VALUE_TYPE" => "WORK"],
+                                ],
+                                'PHONE' => [['VALUE' => $arFields3["PROPERTY_TELEPHONE_VALUE"], 'VALUE_TYPE' => 'WORK']],
+                                'COMMENTS' =>  "тип: " . $arFields3["PROPERTY_TYPE_VALUE"] . "<br/>" . "Дата: " . $arSendEvent['EDU_EVENT_DATE'] . "<br/>" . "Город: " . $arFields3["PROPERTY_CITY_VALUE"] . "<br/>" . "Стоимость: " . $arSendEvent['COURSE_PRICE'] . "<br/>" . "Комментарий: " . $commentOrder,
+                                'ASSIGNED_BY_ID' => '29',
+                                'CREATED_BY_ID' => '29',
+                            ]
+                        ]
+                    );
+
                 }
+
+
 
                 if ($USER->IsAdmin()) {
                     //echo "<pre>";
