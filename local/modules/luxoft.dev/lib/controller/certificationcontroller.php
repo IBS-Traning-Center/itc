@@ -370,14 +370,13 @@ class CertificationController extends JsonController
                     'PHONE' => $phone,
                     'TYPE' => Loc::getMessage("TYPE_$type"),
                     'LEVEL' => Loc::getMessage("LEVEL_$level"),
-                    'UNISENDER_ID' => $resultId,
                 ],
                 'N',
             );
 
 
 
-            if (!$eventSub || !class_exists('CRest')) {
+            if (!$ApiClient || !class_exists('CRest')) {
                 return [];
             }
 
