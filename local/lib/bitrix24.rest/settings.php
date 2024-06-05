@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 //define('C_REST_WEB_HOOK_URL', 'http://web_server_crm/rest/1/7r0gwl9yhbzkxnh8/');
-define('C_REST_WEB_HOOK_URL', 'https://crm.ibs-training.ru/rest/1/7r0gwl9yhbzkxnh8/');
+define('C_REST_WEB_HOOK_URL', 'https://crm.ibs-training.ru/rest/29/lw8a7alvu2g4102z/');
 define('C_REST_IGNORE_SSL',true);//turn off validate ssl by curl
 define('PROPERTY_CRM_ID', 'CRM_DEV_ID');
 //define('C_REST_LOG_TYPE_DUMP',true); //logs save var_export for viewing convenience
