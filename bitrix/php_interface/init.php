@@ -1495,7 +1495,7 @@ class MyClass
                         'crm.lead.add',
                         [
                             'fields' => [
-                                'TITLE' => 'запись на событие: ' . $arFields3["NAME"],
+                                'TITLE' => 'Заявка. Программа: ' . $arFields3["NAME"],
                                 'NAME' => $arFields3["PROPERTY_FULLNAME_VALUE"],
                                 'UF_ITC_SOURSE' => '26',
                                 'STATUS_ID' => 'NEW',
@@ -1700,7 +1700,7 @@ class MyClass
                             'crm.lead.add',
                             [
                                 'fields' => [
-                                    'TITLE' => 'Запись на вибинар: ' . $arFields3["NAME"],
+                                    'TITLE' => 'Запись. Вебинар: ' . $arFields3["NAME"],
                                     'UF_ITC_SOURSE' => '26',
                                     'NAME' => $arFields3["PROPERTY_FULLNAME_VALUE"],
                                     'EMAIL' => [
@@ -1762,7 +1762,7 @@ class MyClass
                                 'crm.lead.add',
                                 [
                                     'fields' => [
-                                        'TITLE' => 'Запись на вибинар: ' . $arFields3["NAME"],
+                                        'TITLE' => 'Запись. Вебинар: ' . $arFields3["NAME"],
                                         'UF_ITC_SOURSE' => '26',
                                         'NAME' => $arFields3["PROPERTY_FULLNAME_VALUE"],
                                         'EMAIL' => [
