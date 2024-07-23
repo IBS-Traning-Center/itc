@@ -1265,6 +1265,15 @@ class MyClass
                     $firstname = $arFields3['PROPERTY_FIRSTNAME_VALUE'];
                     $lastname = $arFields3['PROPERTY_LASTNAME_VALUE'];
                     $secondname = $arFields3['PROPERTY_MIDDLENAME_VALUE'];
+
+                    $courseEducationFormat = false;
+                    if($orderer_courseID > 0 && $orderer_courseID != NULL) {
+                        $courseTypeData = CIBlockElement::GetList([], ["IBLOCK_ID" => 6, "ID" => $orderer_courseID], false, false, ["PROPERTY_EDUCATION_FORMAT"])->fetch();
+                        if ($courseTypeData['PROPERTY_EDUCATION_FORMAT_VALUE']) {
+                            $courseEducationFormat = $courseTypeData['PROPERTY_EDUCATION_FORMAT_VALUE'];
+                        }
+                    }
+
                 }
                 global $USER;
                 if (!$USER->IsAuthorized()) {
@@ -1491,11 +1500,14 @@ class MyClass
                         '<br/> <b>Стоимость: </b>' . $arSendEvent['COURSE_PRICE'] . ' ' . $arSendEvent['CITY_CURRENCY'] .
                         '<br/> <b>Комментарий к заявке: </b>' . $commentOrder;
                     CEvent::Send('NEW_COURSE_SUBSCRIBE', SITE_ID, $arSend, 'N');
+
+
+                    $bxLidNameEducation = $courseEducationFormat ?? "Курс";
                     \CRest::call(
                         'crm.lead.add',
                         [
                             'fields' => [
-                                'TITLE' => 'Заявка. Программа: ' . $arFields3["NAME"],
+                                'TITLE' => 'Заявка. ' . $bxLidNameEducation . ': ' . $arFields3["NAME"],
                                 'NAME' => $arFields3["PROPERTY_FULLNAME_VALUE"],
                                 'UF_ITC_SOURSE' => '26',
                                 'STATUS_ID' => 'NEW',
