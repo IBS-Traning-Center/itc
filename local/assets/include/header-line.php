@@ -28,9 +28,6 @@
             </div>
             <a href="/personal/cart/" class="sm-basket-icon">Корзина</a>
         </div>
-        <div class="bonus-header-wrap">
-            <a href="/personal_test/bonuses/" class="bonus-icon">Бонусы</a>
-        </div>
     </div>
     <nav class="horizontal-nav" id="oblique-nav">
         <div id="triangle-bottomleft"></div>

@@ -82,6 +82,12 @@ use Bitrix\Main\Localization\Loc;
                             </div>
                             <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_SAF')?></div>
                             <?php break;
+                    case 'ppg':?>
+                            <div class="course-certificate__icon">
+                                    <img width="50" src="<?="{$templateFolder}/src/images/course/detail/icons/certificate-lt-id.png"?>" alt="">
+                                </div>
+                                <div class="course-certificate__text"><?=Loc::getMessage('CERTIFICATE_PPG')?></div>
+                        <?php break;
                     }?>
                 </div>
                 <?php if ($arResult['isBabok']) {?>

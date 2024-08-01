@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 			 АНО ДПО "УЦ ИБС"
 		</div>
 		<div class="requisites__nav-item">
-			 ООО "ИБС ИнфиниСофт"
+			 ООО "ИБС Софт"
 		</div>
 	</div>
 </div>
@@ -19,6 +19,26 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Наименование
 			</td>
 			<td width="543" style="width: 407pt;">
+				<table cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+				<tbody>
+				<tr>
+					<td>
+ <b>АВТОНОМНАЯ НЕКОММЕРЧЕСКАЯ ОРГАНИЗАЦИЯ ОБРАЗОВАТЕЛЬНАЯ</b><br>
+ <b>
+						ОРГАНИЗАЦИЯ ДОПОЛНИТЕЛЬНОГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ</b><br>
+ <b>
+						"УЧЕБНЫЙ ЦЕНТР ИНФОРМАЦИОННЫЕ БИЗНЕС СИСТЕМЫ"&nbsp;</b>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr height="20" style="height: 15pt;">
+			<td width="179" height="20" style="height: 15pt; width: 134pt;">
+				 Наименование
+			</td>
+			<td width="543" style="width: 407pt;">
  <b>АНО ДПО "УЦ ИБС"</b>
 			</td>
 		</tr>
@@ -27,7 +47,15 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 ИНН / КПП
 			</td>
 			<td>
-				 7713388004 / 773401001
+				<table cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+				<tbody>
+				<tr>
+					<td>
+						 7713388004/771301001
+					</td>
+				</tr>
+				</tbody>
+				</table>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -35,7 +63,17 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Юридический адрес
 			</td>
 			<td>
-				 123060, г. Москва, вн. тер. г. муниципальный округ Щукино, проезд 1-й Волоколамский, д. 10, стр. 1, этаж/помещ. 1/I, ком. 60
+				<table cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+				<tbody>
+				<tr>
+					<td>
+						 127434, Г.Москва, ВН.ТЕР.Г. МУНИЦИПАЛЬНЫЙ ОКРУГ <br>
+						 ТИМИРЯЗЕВСКИЙ,<br>
+						 Ш ДМИТРОВСКОЕ, Д. 9Б, ЭТАЖ/ПОМЕЩ. 5/XIII, КОМ. 31<br>
+					</td>
+				</tr>
+				</tbody>
+				</table>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -56,18 +94,10 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
 			<td height="19" style="height: 14.25pt;">
-				 ОКПО
-			</td>
-			<td>
-				 68907823
-			</td>
-		</tr>
-		<tr height="19" style="height: 14.25pt;">
-			<td height="19" style="height: 14.25pt;">
 				 ОКВЭД
 			</td>
 			<td>
-				 85,23
+				 85.42, 18.1, 58, 85.23
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -80,7 +110,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
 			<td height="19" style="height: 14.25pt;">
-				 кор счет
+				 кор. счет
 			</td>
 			<td>
 				 30101810200000000593
@@ -138,7 +168,16 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Наименование
 			</td>
 			<td width="543" style="width: 407pt;">
- <b>ООО "ИБС ИнфиниСофт" (LLC "IBS InfiniSoft")</b>
+ <b> </b>
+				<table cellpadding="0" cellspacing="0">
+				<tbody>
+				<tr>
+					<td>
+ <b>ООО "ИБС Софт"&nbsp;</b><b> </b>
+					</td>
+				</tr>
+				</tbody>
+				</table>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -146,7 +185,15 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 ИНН / КПП
 			</td>
 			<td>
-				 7713605227 / 773401001
+				<table cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+				<tbody>
+				<tr>
+					<td>
+						 7713721689/771301001
+					</td>
+				</tr>
+				</tbody>
+				</table>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -154,7 +201,15 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Юридический адрес
 			</td>
 			<td>
-				 123060, г.Москва, 1-ый Волоколамский проезд, д.10, стр.3, этаж/помещ.1/I, ком.2
+				<table cellpadding="0" cellspacing="0">
+				<tbody>
+				<tr>
+					<td>
+						 127434, ГОРОД МОСКВА, ШОССЕ ДМИТРОВСКОЕ, ДОМ 9Б, ЭТ 5 ПОМ XIII КОМ 14
+					</td>
+				</tr>
+				</tbody>
+				</table>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -162,7 +217,15 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Адрес местонахождения
 			</td>
 			<td>
-				 123060, г.Москва, 1-ый Волоколамский проезд, д.10, стр.3
+				<table cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+				<tbody>
+				<tr>
+					<td>
+						 127434, ГОРОД МОСКВА, ШОССЕ ДМИТРОВСКОЕ, ДОМ 9Б, ЭТ 5 ПОМ XIII КОМ 14
+					</td>
+				</tr>
+				</tbody>
+				</table>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -170,7 +233,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 ОГРН
 			</td>
 			<td>
-				 1067761258190
+				 1117746016013
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -178,7 +241,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 ОКПО
 			</td>
 			<td>
-				 98932787
+				 69706676<br>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -186,7 +249,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 ОКВЭД
 			</td>
 			<td>
-				 62.02, 62.09,63.11, 63.11.1, 70.22, 72.19, 78.30
+				 62.01, 62.02, 62.09,63.11, 63.11.1, 69.20, 70.22, 72.19, 77.33.2, 26.20
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -194,15 +257,15 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Банк
 			</td>
 			<td width="543" style="width: 407pt;">
-				 АО «АЛЬФА-БАНК»
+				 ПАО "Росбанк" г. Москва
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
 			<td height="19" style="height: 14.25pt;">
-				 кор счет
+				 кор. счет
 			</td>
 			<td>
-				 30101810200000000593
+				 30101810000000000256
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -210,7 +273,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 расчетный счет
 			</td>
 			<td>
-				 40702810401400010744
+				 40702810297330000018<br>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -218,7 +281,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 БИК
 			</td>
 			<td>
-				 044525593
+				 044525256<br>
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -226,7 +289,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Телефон
 			</td>
 			<td>
-				 +7 (495) 967-8030
+				 967-80-80, 967-80-81 (факс)
 			</td>
 		</tr>
 		<tr height="19" style="height: 14.25pt;">
@@ -234,7 +297,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Директор
 			</td>
 			<td>
-				 Эйделанд Павел Вадимович
+				Эйделанд Павел Вадимович
 			</td>
 		</tr>
 		<tr height="20" style="height: 15pt;">
@@ -242,7 +305,7 @@ $APPLICATION->SetTitle("Юридическая информация");?><div cla
 				 Главный бухгалтер
 			</td>
 			<td>
-				 Лелётко Светлана Олеговна
+				 Гуляева Елена Викторовна
 			</td>
 		</tr>
 		</tbody>

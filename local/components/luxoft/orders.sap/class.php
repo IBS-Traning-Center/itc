@@ -45,6 +45,7 @@ class OrdersSapComponent extends CBitrixComponent
                 'ORDER_PRICE' => $orderObject->get('PRICE'),
             ];
             $orders[$order['ID']] = $order;
+
         }
 
         $orderProps = OrderPropsValueTable::getList([
@@ -84,17 +85,21 @@ class OrdersSapComponent extends CBitrixComponent
         ])->fetchAll();
         foreach ($orderProps as $orderProp) {
             $orders[$orderProp['ORDER_ID']][$orderProp['CODE']] = $orderProp['VALUE'];
+
         }
 
         foreach ($orders as &$order) {
             foreach ($order as &$value) {
                 if (is_string($value)) {
                     $value = trim($value);
+
                 }
             }
+
         }
 
         $orders = array_filter($orders, function ($order) {
+
             if (
                 $order['PERSON_TYPE_ID'] == 3
             ) {
@@ -108,10 +113,11 @@ class OrdersSapComponent extends CBitrixComponent
                 });
 
                 if (!count($clients)) {
-                    return false;
+                    return true;
                 }
             }
             return true;
+
         });
 
         $orders = array_combine(array_column($orders, 'BASKET_ID'), $orders);
@@ -138,7 +144,9 @@ class OrdersSapComponent extends CBitrixComponent
         $orders = array_values($orders);
         array_multisort(array_column($orders, 'DATE_INSERT', 'ID'), SORT_DESC, $orders);
 
+
         return $orders;
+
     }
 
     protected function parseClientInfo($clientInfo): array
@@ -201,6 +209,7 @@ class OrdersSapComponent extends CBitrixComponent
             return $a['sort'] <=> $b['sort'];
         });
         return $result;
+
     }
 
     protected function getNameGridRow($order)

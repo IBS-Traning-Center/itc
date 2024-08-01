@@ -85,7 +85,7 @@ class CertificationController extends JsonController
             'crm.lead.add',
             [
                 'fields' => [
-                    'TITLE' => 'Вопрос по сертификации направление: ' . Loc::getMessage("TYPE_$type") ,
+                    'TITLE' => 'Вопрос. Сертификация: ' . Loc::getMessage("TYPE_$type") ,
                     'NAME' => $name,
                     'UF_ITC_SOURSE' => '26',
                     'COMPANY_TITLE' => $company,
@@ -310,7 +310,7 @@ class CertificationController extends JsonController
                         'crm.lead.add',
                         [
                             'fields' => [
-                                'TITLE' => 'Сертификация: ' . Loc::getMessage("TYPE_$type") ,
+                                'TITLE' => 'Заявка. Сертификация: ' . Loc::getMessage("TYPE_$type") ,
                                 'UF_ITC_SOURSE' => '26',
                                 'STATUS_ID' => 'NEW',
                                 'NAME' => $name,
@@ -384,12 +384,13 @@ class CertificationController extends JsonController
                 'crm.lead.add',
                 [
                     'fields' => [
-                        'TITLE' => 'Подписка: ' . Loc::getMessage("TYPE_$type"),
+                        'TITLE' => 'Подписка. Сертификация: ' . Loc::getMessage("TYPE_$type"),
                         'UF_ITC_SOURSE' => '26',
                         'NAME' => $name,
                         'EMAIL' => [
                             ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
                         ],
+                        'PHONE' => [['VALUE' => $phone, 'VALUE_TYPE' => 'WORK']],
                         'COMMENTS' => "Уровень: " . Loc::getMessage("LEVEL_$level") . "<br/>" . "Направление: " . Loc::getMessage("TYPE_$type"),
                         'ASSIGNED_BY_ID' => '29',
                         'CREATED_BY_ID' => '29',

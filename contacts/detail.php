@@ -1,10 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("blue_title", "Контакты Luxoft Training");
-$APPLICATION->SetPageProperty("title", "Контакты Luxoft Training");
-$APPLICATION->SetPageProperty("keywords", "Адрес УЦ Luxoft, как проехать Luxoft, контакты Люксофт, телефон Люксофт, Luxoft Москва, luxoft Киев, Люксофт Омск, Luxoft Training, адрес Luxoft Training");
+$APPLICATION->SetPageProperty("blue_title", "Контакты");
+$APPLICATION->SetPageProperty("title", "Контакты");
 $APPLICATION->SetPageProperty("description", "Курсы по программированию: Москва, Санкт-Петербург, Омск, Киев, Днепропетровск, Одесса.");
-$APPLICATION->SetTitle("Контакты Luxoft Training  ");
+$APPLICATION->SetTitle("Контакты");
 ?>
 <div class="bg-main-wrap bg dark-blue " style="">
 		<div class="frame">

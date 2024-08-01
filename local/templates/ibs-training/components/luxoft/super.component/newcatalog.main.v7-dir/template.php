@@ -41,8 +41,8 @@
         if ($arSection["IS_PARENT"] == "Y") {
         if(empty($arSection["ELEMENT_CNT"])) continue;
         if ($key != 0) { ?>
-</div>
-    </li>
+<!--</div>-->
+<!--    </li>-->
         <?}?>
 <li>
     <a class="icon-click" href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>

@@ -1,5 +1,4 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-require_once $_SERVER['DOCUMENT_ROOT'] . '/local/lib/noti/ApiClient.php';
 GLOBAL $APPLICATION;
 $APPLICATION->RestartBuffer();
 CModule::IncludeModule("subscribe");
@@ -30,20 +29,12 @@ if($_REQUEST["sf_EMAIL"]) {
     );
     $idsubrscr = $subscr->Add($arFields);
 
-
     if($idsubrscr) {
       $popuptitle = array("success"=>'Y');
 	  $arSend["EMAIL"]=$EMAIL;
 	  $arSend["MAIL_ID"] = $idsubrscr;
 	  $arSend["MAIL_MD5"] = MyClass::GetMailHash($EMAIL);
 	  CEvent::Send('MAIN_SUBSCRIBE', SITE_ID, $arSend, 'N', 142);
-        $ApiClient = new \ApiClient('2a20e381fd848245984f4f7abb6d5a80');
-        $bookID = 422148;
-        $emai = [
-            'email' => $EMAIL,
-            'unconfirmed' => true
-        ];
-        $ApiClient->addEmail($bookID,$emai);
     } else {
       $popuptitle = array("success"=>'N');
     }

@@ -1,7 +1,6 @@
 <?php
 namespace Luxoft\Dev\Events;
 
-
 class IBlockElement
 {
     public static function OnBeforeIBlockElementAdd (&$arFields) {

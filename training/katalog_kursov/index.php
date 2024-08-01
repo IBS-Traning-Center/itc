@@ -1,7 +1,7 @@
 <?
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetPageProperty("title", "Каталог курсов по направлениям | Luxoft Training");
+$APPLICATION->SetPageProperty("title", "Каталог курсов по направлениям");
 $APPLICATION->SetPageProperty(
     "keywords",
     "тренинги,  процессы разработки, управление требованиями, разработка ПО, тестирование ПО, java, архитектура ПО, oracle, BEA, курсы, обучение в области разработки ПО"

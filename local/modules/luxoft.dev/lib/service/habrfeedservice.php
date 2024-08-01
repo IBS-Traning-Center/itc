@@ -392,7 +392,7 @@ class HabrFeedService
 
 
 
-
+            $offerNode->setAttribute('id', $course['id']);
             $offerNode->appendChild($dom->createElement('url', $course['url']));
             $offerNode->appendChild($dom->createElement('name', $course['name']));
             $offerNode->appendChild($dom->createElement('description', $course['description']));

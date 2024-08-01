@@ -43,7 +43,7 @@ $APPLICATION->IncludeComponent(
         'SHOW_ACTION_PANEL' => false,
         'SHOW_PAGINATION' => true,
         'SHOW_NAVIGATION_PANEL' => false,
-        'SHOW_GRID_SETTINGS_MENU' => false,
+        'SHOW_GRID_SETTINGS_MENU' => true,
     ]
 );
 ?>

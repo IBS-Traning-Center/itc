@@ -10,4 +10,6 @@ $MESS['LEVEL_advanced'] = 'Продвинутый';
 $MESS['LOCATION_msk'] = 'Москва';
 $MESS['LOCATION_spb'] = 'Санкт-Петербург';
 $MESS['LOCATION_omsk'] = 'Омск';
+$MESS['LOCATION_ulyanovs'] = 'Ульяновск';
 $MESS['LOCATION_other'] = 'Другой';
+$MESS['LOCATION_onlin'] = 'Онлайн';

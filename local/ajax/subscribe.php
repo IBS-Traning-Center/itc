@@ -1,6 +1,6 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-require_once $_SERVER['DOCUMENT_ROOT'] . '/local/lib/noti/ApiClient.php';
+require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
 global $formAnswer;
 $formAnswer = ['type' => 'error', 'message' => 'empty'];
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -25,19 +25,26 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
 
             $subscr = new CSubscription;
             $ID = $subscr->Add($subscribeFields);
-            $ApiClient = new \ApiClient('2a20e381fd848245984f4f7abb6d5a80');
-            $bookID = 422148;
-            $emai = [
-                'email' => $email,
-                'unconfirmed' => true
-            ];
-            $ApiClient->addEmail($bookID,$emai);
 
             if($ID > 0) {
                 $formAnswer['type'] = 'ok';
                 $formAnswer['message'] = 'ok';
                 CSubscription::Authorize($ID);
-
+                \CRest::call(
+                    'crm.lead.add',
+                    [
+                        'fields' => [
+                            'TITLE' => 'Подписка на ежемесячный дайджес',
+                            'NAME' => 'user',
+                            'UF_ITC_SOURSE' => '26',
+                            'EMAIL' => [
+                                ["VALUE" => $email, "VALUE_TYPE" => "WORK"],
+                            ],
+                            'ASSIGNED_BY_ID' => '29',
+                            'CREATED_BY_ID' => '29',
+                        ]
+                    ]
+                );
             } else {
                 $formAnswer['message'] = 'Вы уже подписаны на ежемесячный дайджест.';
             }

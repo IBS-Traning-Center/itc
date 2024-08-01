@@ -31,7 +31,7 @@ function subscribe($email)
                 'crm.lead.add',
                 [
                     'fields' => [
-                        'TITLE' => 'Подписка на дайджест' ,
+                        'TITLE' => 'Подписка. Дайджест' ,
                         'UF_ITC_SOURSE' => '26',
                         'EMAIL' => [
                             ["VALUE" => $email, "VALUE_TYPE" => "WORK"],

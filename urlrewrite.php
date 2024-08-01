@@ -112,14 +112,6 @@ $arUrlRewrite=array (
     'PATH' => '/library/analytics/detail.php',
     'SORT' => 100,
   ),
-  13 => 
-  array (
-    'CONDITION' => '#^/training/testing/([0-9]*)/([0-9]*)(/?)(.+)#',
-    'RULE' => 'COURSE_ID=$1&TEST_ID=$2',
-    'ID' => '',
-    'PATH' => '/training/testing/index.php',
-    'SORT' => 100,
-  ),
   24 => 
   array (
     'CONDITION' => '#^/about/news/([a-zA-Z0-9_\\-]+)/($|\\#.+|\\?.+)#',
@@ -128,12 +120,12 @@ $arUrlRewrite=array (
     'PATH' => '/about/news/detail.php',
     'SORT' => 100,
   ),
-  15 => 
+  13 => 
   array (
-    'CONDITION' => '#^/training/it-guru/([a-zA-Z0-9-]+).html(.*)#',
-    'RULE' => 'CODE=$1',
+    'CONDITION' => '#^/training/testing/([0-9]*)/([0-9]*)(/?)(.+)#',
+    'RULE' => 'COURSE_ID=$1&TEST_ID=$2',
     'ID' => '',
-    'PATH' => '/training/it-guru/detail.php',
+    'PATH' => '/training/testing/index.php',
     'SORT' => 100,
   ),
   14 => 
@@ -142,6 +134,14 @@ $arUrlRewrite=array (
     'RULE' => 'CODE=$1',
     'ID' => '',
     'PATH' => '/training/catalog/export.php',
+    'SORT' => 100,
+  ),
+  15 => 
+  array (
+    'CONDITION' => '#^/training/it-guru/([a-zA-Z0-9-]+).html(.*)#',
+    'RULE' => 'CODE=$1',
+    'ID' => '',
+    'PATH' => '/training/it-guru/detail.php',
     'SORT' => 100,
   ),
   26 => 

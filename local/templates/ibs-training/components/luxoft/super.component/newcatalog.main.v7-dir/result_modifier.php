@@ -127,4 +127,9 @@ if(array_key_exists($section_id, $arResult["ELEMENTS"]))
 
 
 //iwrite($arResult["ITEMS"]);
-?>
+
+//foreach ($arResult['ITEMS'] as $key => $item) {
+//    if (is_null($item["ELEMENT_CNT"])) {
+//        unset($arResult['ITEMS'][$key]);
+//    }
+//}
