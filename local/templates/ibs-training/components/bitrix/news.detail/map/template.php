@@ -54,7 +54,13 @@ $this->setFrameMode(true);
             <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 <p itemprop="streetAddress"><?= htmlspecialchars_decode($arResult["PROPERTIES"]["ADDRESS"]["VALUE"]["TEXT"]) ?></p>
             </div>
-            <? if (strlen($arResult["PROPERTIES"]["ADDITION"]["VALUE"]["TEXT"]) > 0) { ?>
+            <? if (
+                    is_array($arResult) &&
+                    is_array($arResult["PROPERTIES"]) &&
+                    is_array($arResult["PROPERTIES"]["ADDITION"]) &&
+                    is_array($arResult["PROPERTIES"]["ADDITION"]["VALUE"]) &&
+                    strlen($arResult["PROPERTIES"]["ADDITION"]["VALUE"]["TEXT"]) > 0
+            ) { ?>
                 <div class="addition">
                     <h3>Примечание</h3>
                     <p>
@@ -92,13 +98,25 @@ $this->setFrameMode(true);
 			<?}?>
 		</div>
 		<?}?>
-		<?if ($arResult["PROPERTIES"]["HOW_TO_GET"]["VALUE"]["TEXT"]) {?>
+		<?if (
+                is_array($arResult) &&
+                is_array($arResult["PROPERTIES"]) &&
+                is_array($arResult["PROPERTIES"]["HOW_TO_GET"]) &&
+                is_array($arResult["PROPERTIES"]["HOW_TO_GET"]["VALUE"]) &&
+                $arResult["PROPERTIES"]["HOW_TO_GET"]["VALUE"]["TEXT"]
+        ) {?>
 		<h3>Проезд</h3>
 		<div class="map-info-more">
 		<?=$arResult["PROPERTIES"]["HOW_TO_GET"]["VALUE"]["TEXT"]?>
 		</div>
 		<?}?>
-		<?if ($arResult["PROPERTIES"]["ATTENTION"]["VALUE"]["TEXT"]) {?>
+		<?if (
+                is_array($arResult) &&
+                is_array($arResult["PROPERTIES"]) &&
+                is_array($arResult["PROPERTIES"]["ATTENTION"]) &&
+                is_array($arResult["PROPERTIES"]["ATTENTION"]["VALUE"]) &&
+                $arResult["PROPERTIES"]["ATTENTION"]["VALUE"]["TEXT"]
+        ) {?>
 		<br>
 		<div class="map-info-more">
 		<?=htmlspecialchars_decode($arResult["PROPERTIES"]["ATTENTION"]["VALUE"]["TEXT"])?>

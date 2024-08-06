@@ -104,7 +104,10 @@ foreach ($elements as $element) {
 }
 unset($elements);
 
-krsort($sectionLevels);
+if (is_array($sectionLevels)) {
+    krsort($sectionLevels);
+}
+
 foreach ($sectionLevels as $sectionLevel) {
     foreach ($sectionLevel as $sectionID => $parentSectionID) {
         if($sections[$parentSectionID]) {

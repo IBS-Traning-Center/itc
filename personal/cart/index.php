@@ -58,7 +58,7 @@ $APPLICATION->SetTitle("Корзина выбранных услуг");
 	"IBLOCK_TYPE" => "edu",
 	"IBLOCK_ID" => "6",
 	"ITEMS_LIMIT" => "10",
-	"USER_ID" => CUser::GetID(),
+	"USER_ID" => (new CUser)->GetID(),
 	"AJAX_MODE" => "N",
 	"AJAX_OPTION_SHADOW" => "Y",
 	"AJAX_OPTION_JUMP" => "N",

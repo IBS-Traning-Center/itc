@@ -46,9 +46,9 @@ foreach($arResult["ITEMS"] as &$arItem){
             $arItem['DURATION'] = $countDay * round(($time/3600), 0, PHP_ROUND_HALF_UP);
         }
     }
-	if ($arItem['PROPERTIES'][trener]['VALUE']){
+	if ($arItem['PROPERTIES']['trener']['VALUE']){
 		$arSelect = Array("NAME", "PROPERTY_expert_name", "CODE", "ACTIVE");
-		$arFilter = Array("IBLOCK_ID"=>D_EXPERT_ID_IBLOCK, "ID"=>$arItem['PROPERTIES'][trener]['VALUE']);
+		$arFilter = Array("IBLOCK_ID"=>D_EXPERT_ID_IBLOCK, "ID"=>$arItem['PROPERTIES']['trener']['VALUE']);
 		$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
 		while($ar_fields = $res->GetNext()) {
 			$arResult['TRENER_INFO'][$arItem['ID']] = $ar_fields;

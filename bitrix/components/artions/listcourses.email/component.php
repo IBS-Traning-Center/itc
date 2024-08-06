@@ -17,7 +17,7 @@ if(!isset($arParams["ITEMS_LIMIT"])) {
 global $USER;
 if ($USER->IsAuthorized()) {
 	$arResult["IS_AUTHORIZED"] = "Y";
-	$arResult["USER_ID"] = CUser::GetID();	
+	$arResult["USER_ID"] = (new CUser)->GetID();
 }
 
 
@@ -88,7 +88,7 @@ if ( in_array(61, $USER->GetUserGroupArray())){
 	$arResult['SHOW_INFO'] = "Y";
 }; 
 
-	if ((count($arResult['BASKETITEMS'])>0) and ($_REQUEST['SEND_EMAIL'] === "Y") and (in_array(61, $USER->GetUserGroupArray()))){
+	if ((is_array($arResult['BASKETITEMS']) && count($arResult['BASKETITEMS'])>0) and ($_REQUEST['SEND_EMAIL'] === "Y") and (in_array(61, $USER->GetUserGroupArray()))){
 //echo "PRIVED";
 		$index = 0;
 		$arResult['BASKETITEMS'] = GetListCoursesOfArrayByDateASC($arResult['BASKETITEMS']);
@@ -479,7 +479,7 @@ if ( in_array(61, $USER->GetUserGroupArray())){
 	$arResult['SHOW_INFO'] = "Y";
 }; 
 
-	if ((count($arResult['BASKETITEMS'])>0) and ($_REQUEST['SEND_EMAIL'] === "Y") and (in_array(61, $USER->GetUserGroupArray()))){
+	if ((is_array($arResult['BASKETITEMS']) && count($arResult['BASKETITEMS'])>0) and ($_REQUEST['SEND_EMAIL'] === "Y") and (in_array(61, $USER->GetUserGroupArray()))){
 //echo "PRIVED";
 		$index = 0;
 		$arResult['BASKETITEMS'] = GetListCoursesOfArrayByDateASC($arResult['BASKETITEMS']);
@@ -818,7 +818,7 @@ if ( in_array(61, $USER->GetUserGroupArray())){
 global $USER;
 if ($USER->IsAuthorized()) {
 	$arResult["IS_AUTHORIZED"] = "Y";
-	$arResult["USER_ID"] = CUser::GetID();	
+	$arResult["USER_ID"] = (new CUser)->GetID();
 }
 
 
@@ -887,7 +887,7 @@ if ( in_array(61, $USER->GetUserGroupArray())){
 	$arResult['SHOW_INFO'] = "Y";
 }; 
 
-	if ((count($arResult['BASKETITEMS'])>0) and ($_REQUEST['SEND_EMAIL'] === "Y") and (in_array(61, $USER->GetUserGroupArray()))){
+	if ((is_array($arResult['BASKETITEMS']) && count($arResult['BASKETITEMS'])>0) and ($_REQUEST['SEND_EMAIL'] === "Y") and (in_array(61, $USER->GetUserGroupArray()))){
 //echo "PRIVED";
 		$index = 0;
 		$arResult['BASKETITEMS'] = GetListCoursesOfArrayByDateASC($arResult['BASKETITEMS']);

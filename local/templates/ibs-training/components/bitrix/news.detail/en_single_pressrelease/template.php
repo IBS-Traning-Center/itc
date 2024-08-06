@@ -93,7 +93,7 @@
 		?> 
 	
 	<div class="addition-right-text-wrap">
-		<?if (count($arTrainer)>0 && intval($arResult["PROPERTIES"]["trainert_name"]["VALUE"])>0) {?>
+		<?if (is_array($arTrainer) && count($arTrainer)>0 && intval($arResult["PROPERTIES"]["trainert_name"]["VALUE"])>0) {?>
 		<div class="list-of-news-small">
 			<div class="title-news-small">Другие статьи автора</div>
 			<?foreach ($arTrainer as $publ) {?>

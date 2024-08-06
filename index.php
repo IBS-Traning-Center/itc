@@ -1,4 +1,5 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
 global $USER, $APPLICATION;
 $APPLICATION->SetPageProperty("title", "Обучение по разработке ПО | IBS Training Center");
 $APPLICATION->SetPageProperty("keywords", "курсы для программистов,  учебный центр IBS, уц ibs, дистанционное обучение, корпоративное обучение");
@@ -472,4 +473,5 @@ if(false) {?>
     </section>
 <?php
 }?>
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

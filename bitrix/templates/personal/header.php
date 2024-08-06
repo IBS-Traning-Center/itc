@@ -336,7 +336,10 @@ GLOBAL $arReg;
 GLOBAL $arLinked;
 GLOBAL $arRegK;
 GLOBAL $arRecommend;
-$arRecommend["city"]=array_diff($arRecommend["city"],array('', 0));
+if (is_array($arRecommend["city"])) {
+    $arRecommend["city"]=array_diff($arRecommend["city"],array('', 0));
+}
+
 $arSelect=array("NAME", "ID");
 $arRecCourse[]=1;
 $arFilter = Array("IBLOCK_ID"=>9, array(">PROPERTY_startdate"=>date("Y-m-d"),  "PROPERTY_CITY"=>$arRecommend["city"], "ACTIVE"=>"Y", "PROPERTY_schedule_course"=> $arLinked));
@@ -348,7 +351,10 @@ while ($arFields=$res->GetNext()) {
 
 
 GLOBAL $arRec;
-$arReg=array_unique($arRegistered);
+if (is_array($arRegistered)) {
+    $arReg=array_unique($arRegistered);
+}
+
 $arRec=array_unique($arRecCourse);
 } else {
 	//echo "123";
