@@ -18,6 +18,7 @@
 /.htsecure
 /.idea
 /upload
+/.osp
 
 /bitrix/*
 !/bitrix/activities

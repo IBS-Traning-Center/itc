@@ -248,7 +248,7 @@ while ($ob = $res->GetNextElement())
     $res1 = CIBlockElement::GetByID($arFields["PROPERTY_SCHEDULE_COURSE_TYPE_VALUE"]);
     if ($ar_res1 = $res1->GetNext())
         //echo $ar_res1['NAME'];
-        if (in_array($arFields["PROPERTY_SCHEDULE_COURSE_TYPE_VALUE"], $_REQUEST["cat"]))
+        if (is_array($_REQUEST["cat"]) && in_array($arFields["PROPERTY_SCHEDULE_COURSE_TYPE_VALUE"], $_REQUEST["cat"]))
         {
             $arSelected[] = array("ID" => $arFields["PROPERTY_SCHEDULE_COURSE_TYPE_VALUE"], "NAME" => $ar_res1['NAME']);
         }
@@ -315,7 +315,7 @@ while ($ob = $res->GetNextElement())
                 <form id="filter">
                     <input type="text" name="qcat" value="<?=$_REQUEST["qcat"]?>" placeholder="Найти курс" />
                     <?foreach ($arCat as $catergory) {?>
-                        <input style="display: none;" type="checkbox" class="no_redraw" <?if (in_array($catergory["ID"], $_REQUEST["cat"])) {?>checked="checked"<?}?> value="<?=$catergory["ID"]?>" name="cat[]" />
+                        <input style="display: none;" type="checkbox" class="no_redraw" <?if (is_array($_REQUEST["cat"]) && in_array($catergory["ID"], $_REQUEST["cat"])) {?>checked="checked"<?}?> value="<?=$catergory["ID"]?>" name="cat[]" />
                     <?}?>
                 </form>
             </div>
@@ -427,7 +427,7 @@ if (($id_type==2) or ($id_type==4))
             {
                 $GLOBALS["arrFilter"][]=array("LOGIC"=>"OR", array("NAME"=> "%".$_REQUEST["qcat"]."%"), array("PROPERTY_course_code"=> "%".$_REQUEST["qcat"]."%"));
             }
-            if (count($_REQUEST["cat"])>0)
+            if (is_array($_REQUEST["cat"]) && count($_REQUEST["cat"])>0)
             {
                 $GLOBALS["arrFilter"]["PROPERTY_SCHEDULE_COURSE_TYPE"]=$_REQUEST["cat"];
             }
