@@ -8,36 +8,156 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $asset = Asset::getInstance();
 $asset->addCss('/local/components/luxoft/courses.detail/templates/.default/style.css');
 
+if (
+     is_array($arResult) &&
+     is_array($arResult['PROPERTIES'])
+) {
+    if (is_array($arResult['PROPERTIES']['expert_short'])) {
+        $expert_short = nl2br($arResult['PROPERTIES']['expert_short']['VALUE']);
+    }
 
-$expert_short = nl2br($arResult['PROPERTIES']['expert_short']['VALUE']);
-$expert_name = nl2br($arResult['PROPERTIES']['expert_name']['VALUE']);
-$expert_title = nl2br($arResult['PROPERTIES']['expert_title']['VALUE']);
-$expert_language = nl2br($arResult['PROPERTIES']['expert_language']['VALUE']);
-$expert_area = $arResult['PROPERTIES']['HTML_AREA']['~VALUE']['TEXT'];
-$expert_special = $arResult['PROPERTIES']['HTML_SPECIAL']['~VALUE']['TEXT'];
-$expert_experience = $arResult['PROPERTIES']['HTML_EXPERIENCE']['~VALUE']['TEXT'];
-$expert_teacher =$arResult['PROPERTIES']['HTML_TEACHER']['~VALUE']['TEXT'];
-$expert_edu = $arResult['PROPERTIES']['HTML_EDU']['~VALUE']['TEXT'];
-$expert_certified = $arResult['PROPERTIES']['HTML_CERTIFIED']['~VALUE']['TEXT'];
-$expert_publications = $arResult['PROPERTIES']['HTML_PUBLICATIONS']['~VALUE']['TEXT'];
-$expert_social = $arResult['PROPERTIES']['HTML_SOCIAL']['~VALUE']['TEXT'];
+    if (is_array($arResult['PROPERTIES']['expert_name'])) {
+        $expert_name = nl2br($arResult['PROPERTIES']['expert_name']['VALUE']);
+    }
 
-if ($arResult['PROPERTIES']['HTML_AREA']['VALUE']['TYPE'] == "text" )
-	$expert_area = nl2br($expert_area);
-if ($arResult['PROPERTIES']['HTML_SPECIAL']['VALUE']['TYPE'] == "text" )
-	$expert_special = nl2br($expert_special);
-if ($arResult['PROPERTIES']['HTML_EXPERIENCE']['VALUE']['TYPE'] == "text" )
-	$expert_experience = nl2br($expert_experience);
-if ($arResult['PROPERTIES']['HTML_TEACHER']['VALUE']['TYPE'] == "text" )
-	$expert_teacher = nl2br($expert_teacher);
-if ($arResult['PROPERTIES']['HTML_EDU']['VALUE']['TYPE'] == "text" )
-	$expert_edu = nl2br($expert_edu);
-if ($arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE']['TYPE'] == "text" )
-	$expert_certified = nl2br($expert_certified);
-if ($arResult['PROPERTIES']['HTML_PUBLICATIONS']['VALUE']['TYPE'] == "text" )
-	$expert_publications = nl2br($expert_publications);
-if ($arResult['PROPERTIES']['HTML_SOCIAL']['VALUE']['TYPE'] == "text" )
-	$expert_social = nl2br($expert_social);
+    if (is_array($arResult['PROPERTIES']['expert_title'])) {
+        $expert_title = nl2br($arResult['PROPERTIES']['expert_title']['VALUE']);
+    }
+
+    if (is_array($arResult['PROPERTIES']['expert_language'])) {
+        $expert_language = nl2br($arResult['PROPERTIES']['expert_language']['VALUE']);
+    }
+
+    if (
+            is_array($arResult['PROPERTIES']['HTML_AREA']) &&
+            is_array($arResult['PROPERTIES']['HTML_AREA']['~VALUE'])
+    ) {
+        $expert_area = $arResult['PROPERTIES']['HTML_AREA']['~VALUE']['TEXT'];
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_SPECIAL']) &&
+        is_array($arResult['PROPERTIES']['HTML_SPECIAL']['~VALUE'])
+    ) {
+        $expert_special = $arResult['PROPERTIES']['HTML_SPECIAL']['~VALUE']['TEXT'];
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_EXPERIENCE']) &&
+        is_array($arResult['PROPERTIES']['HTML_EXPERIENCE']['~VALUE'])
+    ) {
+        $expert_experience = $arResult['PROPERTIES']['HTML_EXPERIENCE']['~VALUE']['TEXT'];
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_TEACHER']) &&
+        is_array($arResult['PROPERTIES']['HTML_TEACHER']['~VALUE'])
+    ) {
+        $expert_teacher = $arResult['PROPERTIES']['HTML_TEACHER']['~VALUE']['TEXT'];
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_EDU']) &&
+        is_array($arResult['PROPERTIES']['HTML_EDU']['~VALUE'])
+    ) {
+        $expert_edu = $arResult['PROPERTIES']['HTML_EDU']['~VALUE']['TEXT'];
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_CERTIFIED']) &&
+        is_array($arResult['PROPERTIES']['HTML_CERTIFIED']['~VALUE'])
+    ) {
+        $expert_certified = $arResult['PROPERTIES']['HTML_CERTIFIED']['~VALUE']['TEXT'];
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_PUBLICATIONS']) &&
+        is_array($arResult['PROPERTIES']['HTML_PUBLICATIONS']['~VALUE'])
+    ) {
+        $expert_publications = $arResult['PROPERTIES']['HTML_PUBLICATIONS']['~VALUE']['TEXT'];
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_SOCIAL']) &&
+        is_array($arResult['PROPERTIES']['HTML_SOCIAL']['~VALUE'])
+    ) {
+        $expert_social = $arResult['PROPERTIES']['HTML_SOCIAL']['~VALUE']['TEXT'];
+    }
+
+
+    if (
+            is_array($arResult['PROPERTIES']['HTML_AREA']) &&
+            is_array($arResult['PROPERTIES']['HTML_AREA']['VALUE']) &&
+            $arResult['PROPERTIES']['HTML_AREA']['VALUE']['TYPE'] == "text"
+    ) {
+        $expert_area = nl2br($expert_area);
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_SPECIAL']) &&
+        is_array($arResult['PROPERTIES']['HTML_SPECIAL']['VALUE']) &&
+        $arResult['PROPERTIES']['HTML_SPECIAL']['VALUE']['TYPE'] == "text"
+    ) {
+        $expert_special = nl2br($expert_special);
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_EXPERIENCE']) &&
+        is_array($arResult['PROPERTIES']['HTML_EXPERIENCE']['VALUE']) &&
+        $arResult['PROPERTIES']['HTML_EXPERIENCE']['VALUE']['TYPE'] == "text"
+    ) {
+        $expert_experience = nl2br($expert_experience);
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_TEACHER']) &&
+        is_array($arResult['PROPERTIES']['HTML_TEACHER']['VALUE']) &&
+        $arResult['PROPERTIES']['HTML_TEACHER']['VALUE']['TYPE'] == "text"
+    ) {
+        $expert_teacher = nl2br($expert_teacher);
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_EDU']) &&
+        is_array($arResult['PROPERTIES']['HTML_EDU']['VALUE']) &&
+        $arResult['PROPERTIES']['HTML_EDU']['VALUE']['TYPE'] == "text"
+    ) {
+        $expert_edu = nl2br($expert_edu);
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_CERTIFIED']) &&
+        is_array($arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE']) &&
+        $arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE']['TYPE'] == "text"
+    ) {
+        $expert_certified = nl2br($expert_certified);
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_PUBLICATIONS']) &&
+        is_array($arResult['PROPERTIES']['HTML_PUBLICATIONS']['VALUE']) &&
+        $arResult['PROPERTIES']['HTML_PUBLICATIONS']['VALUE']['TYPE'] == "text"
+    ) {
+        $expert_publications = nl2br($expert_publications);
+    }
+
+    if (
+        is_array($arResult['PROPERTIES']['HTML_SOCIAL']) &&
+        is_array($arResult['PROPERTIES']['HTML_SOCIAL']['VALUE']) &&
+        $arResult['PROPERTIES']['HTML_SOCIAL']['VALUE']['TYPE'] == "text"
+    ) {
+        $expert_social = nl2br($expert_social);
+    }
+
+    if (is_array($arResult['PROPERTIES']['expert_featured'])) {
+        $expert_featured = nl2br($arResult['PROPERTIES']['expert_featured']['VALUE']);
+    }
+
+    if (is_array($arResult['PROPERTIES']['expert_blog'])) {
+        $expert_blog = nl2br($arResult['PROPERTIES']['expert_blog']['VALUE']);
+    }
+}
+
 //iwrite($arResult['PROPERTIES']['expert_featured']);
 
  //HTML_AREA
@@ -46,9 +166,6 @@ if ($arResult['PROPERTIES']['HTML_SOCIAL']['VALUE']['TYPE'] == "text" )
  //HTML_TEACHER
  //HTML_EDU
  //HTML_CERTIFIED
-
-$expert_featured = nl2br($arResult['PROPERTIES']['expert_featured']['VALUE']);
-$expert_blog = nl2br($arResult['PROPERTIES']['expert_blog']['VALUE']);
 
 if(($_SERVER["REAL_FILE_PATH"] === "/about/experts/detail.html") and ($arResult['PROPERTIES']['expert_featured']['VALUE_ENUM_ID'] !== "75")){
 	$vTempURL= str_replace("experts","treners",$_SERVER["REQUEST_URI"]);

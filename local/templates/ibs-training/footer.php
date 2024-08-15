@@ -5,7 +5,7 @@
     && $APPLICATION->GetCurDir() != "/talent-search/"
     && $APPLICATION->GetCurDir() != "/"
     && $APPLICATION->GetProperty('DONT_SHOW_PAGE_TOP') != 'Y'
-    && ERROR_404 != "Y"
+    && "ERROR_404" != "Y"
 ) { ?>
     </div>
     </div>
