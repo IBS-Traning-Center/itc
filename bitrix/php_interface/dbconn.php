@@ -1,5 +1,10 @@
 <?php
 define("BX_USE_MYSQLI", true);
+$DBType = "mysql";
+$DBHost = "mysql-8.0";
+$DBLogin = "root";
+$DBPassword = "";
+$DBName = "ibs.local";
 $DBDebug = false;
 $DBDebugToFile = false;
 
@@ -23,10 +28,10 @@ define("BX_UTF", true);
 mb_internal_encoding("UTF-8");
 define('BX_CRON TAB_SUPPORT', true);
 
-define("BX_CACHE_TYPE", "memcache");
-define("BX_CACHE_SID", $_SERVER["DOCUMENT_ROOT"]."#01");
-define("BX_MEMCACHE_HOST", "localhost");
-define("BX_MEMCACHE_PORT", "11211");
-
-define('BX_SECURITY_SESSION_MEMCACHE_HOST', 'localhost');
-define('BX_SECURITY_SESSION_MEMCACHE_PORT', 11211);
+//define("BX_CACHE_TYPE", "memcache");
+//define("BX_CACHE_SID", $_SERVER["DOCUMENT_ROOT"]."#01");
+//define("BX_MEMCACHE_HOST", "localhost");
+//define("BX_MEMCACHE_PORT", "11211");
+//
+//define('BX_SECURITY_SESSION_MEMCACHE_HOST', 'localhost');
+//define('BX_SECURITY_SESSION_MEMCACHE_PORT', 11211);

@@ -12,8 +12,14 @@
     margin-bottom: 180px;
 }
 
+.our-clients-block .slick-track {
+    display: flex;
+    align-items: center;
+}
+
 .container.our-clients-block .our-clients-item {
     margin: 0 24px;
+    max-width: 140px;
 }
 
 .container.our-clients-block .our-clients-item img {
@@ -32,13 +38,7 @@
     }
 
     .container.our-clients-block .our-clients-item {
-        max-width: 140px;
         margin: 0 12px;
-    }
-
-    .our-clients-block .slick-track {
-        display: flex;
-        align-items: center;
     }
 
     .container.our-clients-block {

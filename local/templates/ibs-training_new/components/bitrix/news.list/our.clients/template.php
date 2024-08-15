@@ -25,10 +25,6 @@ if (!empty($arResult['ITEMS'])) : ?>
                 <div class="our-clients-item">
                     <img src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $item['NAME'] ?>">
                 </div>
-            <?php else : ?>
-                <div class="our-clients-item">
-                    <span><?= $item['NAME'] ?></span>
-                </div>
             <?php endif; ?>
         <?php endforeach; ?>
     </div>
