@@ -1,4 +1,4 @@
-<?
+<?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("blue_title", "Контакты Luxoft Training");
 $APPLICATION->SetPageProperty("title", "Контакты Luxoft Training");
