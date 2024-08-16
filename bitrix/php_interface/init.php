@@ -694,7 +694,7 @@ class MyClass
             $ELEMENT_ID = $arFields["ID"];
             $IBLOCK_ID = $arFields["IBLOCK_ID"];
             $id_course = $arFields["PROPERTY_VALUES"][225]["$ELEMENT_ID:225"];
-            if (strlen($id_course) > 0) {
+            if (is_string($id_course) && strlen($id_course) > 0) {
                 $arSelect = array("PROPERTY_course_code");
                 $arFilter = array("IBLOCK_ID" => "6", "ID" => $id_course);
                 $res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);

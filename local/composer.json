@@ -6,7 +6,8 @@
     "psr-4": {
       "Bitrix24\\Rest\\": "lib/bitrix24.rest/",
       "Luxoft\\Dev\\": "modules/luxoft.dev/lib/",
-      "Itc\\Catalog\\": "modules/itc.catalog/lib/"
+      "Itc\\Catalog\\": "modules/itc.catalog/lib/",
+      "Local\\" : "classes/"
     }
   },
   "require": {
@@ -17,7 +18,6 @@
     "mpdf/mpdf": "8.2.*",
     "phpseclib/phpseclib": "^3",
     "illuminate/support": "^8.83",
-
     "andreyryabin/sprint.migration": "4.*",
     "wikimedia/composer-merge-plugin": "dev-master"
   },
@@ -36,9 +36,11 @@
   },
   "config": {
     "vendor-dir": "./vendor",
+    "component-dir": "assets/libs",
     "allow-plugins": {
       "composer/installers": true,
-      "wikimedia/composer-merge-plugin": true
+      "wikimedia/composer-merge-plugin": true,
+      "robloach/component-installer": true
     }
   }
 }

@@ -1,0 +1,93 @@
+.main-page-banner-block {
+    min-height: 832px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 225px;
+}
+
+.main-page-banner-menu {
+    max-width: 812px;
+    width: 100%;
+    padding-top: 120px;
+}
+
+.main-page-banner-menu .main-page-banner-menu_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--black);
+    background-color: transparent;
+    transition: all 0.3s;
+    gap: 10px;
+}
+
+.main-page-banner-menu .main-page-banner-menu_item:hover,
+.main-page-banner-menu .main-page-banner-menu_item.active {
+    padding: 16px;
+}
+
+.main-page-banner-menu .main-page-banner-menu_item .main-page-banner-menu_item-text {
+    color: var(--black);
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 400;
+    max-width: 770px;
+    width: 100%;
+}
+
+.main-page-banner-menu .main-page-banner-menu_item .main-page-banner-menu_item-text .mobile-number {
+    display: none
+}
+
+.mobile-middle-btn {
+    display: none;
+}
+
+@media (max-width: 1180px) {
+    .main-page-banner-block {
+        min-height: fit-content;
+        background-image: none !important;
+        margin-bottom: 40px;
+        background-color: var(--light-gray);
+    }
+
+    .main-page-banner-block .main-page-banner-menu {
+        padding: 16px 0;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .main-page-banner-menu .main-page-banner-menu_item:hover, .main-page-banner-menu .main-page-banner-menu_item.active {
+        padding: 16px 0;
+    }
+
+    .main-page-banner-menu .main-page-banner-menu_item {
+        padding: 16px 0;
+    }
+
+    .main-page-banner-menu .main-page-banner-menu_item .main-page-banner-menu_item-text {
+        font-size: 24px;
+        line-height: 36px;
+        display: flex;
+        align-items: start;
+        gap: 12px;
+        max-width: 100%;
+    }
+
+    .main-page-banner-menu .main-page-banner-menu_item .main-page-banner-menu_item-text .mobile-number {
+        display: block;
+    }
+
+    .mobile-middle-btn {
+        display: block;
+        margin-bottom: 40px !important;
+    }
+
+    .mobile-middle-btn a {
+        text-align: center;
+    }
+}
