@@ -1,5 +1,5 @@
 <?php
-$sSectionName = 'Контакты';
+$sSectionName = 'Платные образовательные услуги';
 $arDirProperties = [
     'BANNER_TITLE' => 'Сведения об образовательной организации',
     'SHOW_FULL_PAGE' => 'Y',

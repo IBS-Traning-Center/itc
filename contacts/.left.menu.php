@@ -1,48 +1,87 @@
-<?
-$aMenuLinks = Array(
-	Array(
-		"Москва", 
-		"/contacts/moscow/", 
-		Array(), 
-		Array("vip"=>"3"), 
-		"" 
-	),
-	Array(
-		"Санкт-Петербург", 
-		"/contacts/sankt-peterburg/", 
-		Array(), 
-		Array("vip"=>"3"), 
-		"" 
-	),
-	Array(
-		"Омск", 
-		"/contacts/omsk/", 
-		Array(), 
-		Array("vip"=>"3"), 
-		"" 
-	),
-    /*
-	Array(
-		"Киев", 
-		"/contacts/kiev/", 
-		Array(), 
-		Array("vip"=>"3"), 
-		"" 
-	),
-	Array(
-		"Одесса", 
-		"/contacts/odessa/", 
-		Array(), 
-		Array("vip"=>"3"), 
-		"" 
-	),
-	Array(
-		"Днепр", 
-		"/contacts/dnepr/", 
-		Array(), 
-		Array("vip"=>"3"), 
-		"" 
-	)
-    */
-);
-?>
+<?php
+$aMenuLinks = [
+	[
+		'Контакты',
+		'/contacts/',
+		[],
+		[],
+		''
+	],
+	[
+		'Реквизиты',
+		'/contacts/details/',
+		[],
+		[],
+		''
+	],
+	[
+		'Структура и органы управления',
+		'/contacts/structure/',
+		[],
+		[],
+		''
+	],
+    [
+        'Образование',
+        '/contacts/education/',
+        [],
+        [],
+        ''
+    ],
+    [
+        'Документы',
+        '/contacts/documents/',
+        [],
+        [],
+        ''
+    ],
+    [
+        'Образовательные стандарты',
+        '/contacts/standards/',
+        [],
+        [],
+        ''
+    ],
+    [
+        'Руководство. Педагогический состав',
+        '/contacts/management/',
+        [],
+        [],
+        ''
+    ],
+    [
+        'Материально-техническое обеспечение',
+        '/contacts/support/',
+        [],
+        [],
+        ''
+    ],
+    [
+        'Стипендии и иные виды материальной поддержки',
+        '/contacts/scholarships/',
+        [],
+        [],
+        ''
+    ],
+    [
+        'Платные образовательные услуги',
+        '/contacts/paid_educational/',
+        [],
+        [],
+        ''
+    ],
+    [
+        'Вакантные места для приема (перевода)',
+        '/contacts/vacant_places/',
+        [],
+        [],
+        ''
+    ],
+    [
+        'Политика в сфере персональных данных',
+        '/contacts/policy/',
+        [],
+        [],
+        ''
+    ]
+];
