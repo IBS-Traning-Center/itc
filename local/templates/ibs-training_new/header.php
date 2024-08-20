@@ -226,13 +226,13 @@ $cntBasketItems = CSaleBasket::GetList(
 </header>
 
 <main class="page _content">
-    <? if (
-    $APPLICATION->GetCurDir() != "/frdo-form/"
-    && $_SERVER['REAL_FILE_PATH'] !== '/frdo-form/detail.php'
-    && $APPLICATION->GetCurDir() != "/talent-search/"
-    && $APPLICATION->GetCurDir() != "/"
-    && $APPLICATION->GetProperty("DONT_SHOW_PAGE_TOP") != "Y"
-    && "ERROR_404" != "Y"
+    <?php if (
+        $APPLICATION->GetCurDir() != "/frdo-form/"
+        && $_SERVER['REAL_FILE_PATH'] !== '/frdo-form/detail.php'
+        && $APPLICATION->GetCurDir() != "/talent-search/"
+        && $APPLICATION->GetCurDir() != "/"
+        && $APPLICATION->GetProperty("DONT_SHOW_PAGE_TOP") != "Y"
+        && "ERROR_404" != "Y"
     ) { ?>
     <section class="bg-main-wrap"
              style="background: url('/local/assets/images/bg-b_dark.png') bottom;     background-color: #083056; background-size: cover;">
@@ -278,5 +278,5 @@ $cntBasketItems = CSaleBasket::GetList(
                 </div>
             <? } ?>
             <div class="one-big-wrap <? if ($APPLICATION->GetProperty("SHOW_FULL_PAGE") == "Y") { ?>no-margin<? } ?>">
-                <? } ?>
+    <? } ?>
 

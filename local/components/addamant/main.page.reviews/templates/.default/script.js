@@ -196,6 +196,7 @@ class ReviewsMainPage
 
                 startBtn.addEventListener('click', () => {
                     video.play();
+                    video.muted = false;
                     startBtn.style.display = 'none';
                     stopBtn.style.display = 'flex';
 
@@ -204,6 +205,7 @@ class ReviewsMainPage
 
                 stopBtn.addEventListener('click', () => {
                     video.pause();
+                    video.muted = true;
                     stopBtn.style.display = 'none';
                     startBtn.style.display = 'flex';
 

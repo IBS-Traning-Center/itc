@@ -1,5 +1,5 @@
 <?php
-$sSectionName = 'Контакты';
+$sSectionName = 'Вакантные места для приема (перевода)';
 $arDirProperties = [
     'BANNER_TITLE' => 'Сведения об образовательной организации',
     'SHOW_FULL_PAGE' => 'Y',
