@@ -1,0 +1,1 @@
+<h2>Об учебном центре IBS Training Center</h2>
