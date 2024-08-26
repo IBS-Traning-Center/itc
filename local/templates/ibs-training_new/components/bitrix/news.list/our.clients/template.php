@@ -17,7 +17,14 @@ $this->setFrameMode(false);
 
 if (!empty($arResult['ITEMS'])) : ?>
     <div class="container">
-        <h3 class="our-clients-h3"><?= Loc::getMessage('OUR_CLIENT_HEAD') ?></h3>
+        <?php if($arParams['SPECIAL_TITLE'] == NULL):?>
+            <h3 class="our-clients-h3"><?= Loc::getMessage('OUR_CLIENT_HEAD') ?></h3>  
+        <? else: ?>
+            <h2 class="our-clients-h2"><?= $arParams['SPECIAL_TITLE'];?></h2>
+        <?php endif; ?>
+        <?php if($arParams['SPECIAL_DESCRIPTON'] !== NULL):?>
+            <p class="our-clients-desc"><?= $arParams['SPECIAL_DESCRIPTON'];?></p>
+        <?php endif; ?>
     </div>
     <div class="container our-clients-block">
         <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
