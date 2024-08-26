@@ -7,9 +7,10 @@
       :close-on-click-modal="false"
       class="course-detail-modal"
       width="90%">
-    <el-form v-if="formStatus !== 'success'" :inline="true" ref="formData" class="demo-form-inline" label-position="top">
+    <el-form v-if="formStatus !== 'success'" :inline="true" ref="formData" class="demo-form-inline"
+             label-position="top">
       <el-row :gutter="30"
-        class="course-detail-modal__row course-detail-modal__row_select">
+              class="course-detail-modal__row course-detail-modal__row_select">
         <el-col :span="12" :xs="24">
           <el-form-item :label="lang.date">
             <el-select
@@ -17,10 +18,10 @@
                 v-model="formData.scheduleId" placeholder="Select"
                 @change="setScheduleDataFormData">
               <el-option
-                v-for="scheduleItem in scheduleDates"
-                :key="scheduleItem.id"
-                :label="scheduleItem.label"
-                :value="scheduleItem.value"
+                  v-for="scheduleItem in scheduleDates"
+                  :key="scheduleItem.id"
+                  :label="scheduleItem.label"
+                  :value="scheduleItem.value"
               >
               </el-option>
             </el-select>
@@ -109,18 +110,24 @@
     </el-form>
     <el-form v-else>
       <el-row :gutter="30">
-        <el-col :span="24" :xs="24"><div class="form-success__title">{{ lang.successTitle }}</div></el-col>
+        <el-col :span="24" :xs="24">
+          <div class="form-success__title">{{ lang.successTitle }}</div>
+        </el-col>
       </el-row>
       <el-row :gutter="30">
-        <el-col :span="24" :xs="24"><div class="form-success__message">{{ lang.successMessage }}</div></el-col>
+        <el-col :span="24" :xs="24">
+          <div class="form-success__message">{{ lang.successMessage }}</div>
+        </el-col>
       </el-row>
     </el-form>
-    <loader v-show="showLoader" />
+    <loader v-show="showLoader"/>
     <span v-if="formStatus !== 'success'" slot="footer" class="dialog-footer">
       <el-row :gutter="30">
         <el-col class="course-detail-modal__agree" :span="16">
-          <el-checkbox v-model="formData.agree_1" :class="{'is-error': $v.formData.agree_1.$error}" required><span v-html="lang.agree_1"></span></el-checkbox>
-          <el-checkbox v-model="formData.agree_2" :class="{'is-error': $v.formData.agree_2.$error}" required><span v-html="lang.agree_2"></span></el-checkbox>
+          <el-checkbox v-model="formData.agree_1" :class="{'is-error': $v.formData.agree_1.$error}" required><span
+              v-html="lang.agree_1"></span></el-checkbox>
+          <el-checkbox v-model="formData.agree_2" :class="{'is-error': $v.formData.agree_2.$error}" required><span
+              v-html="lang.agree_2"></span></el-checkbox>
         </el-col>
         <el-col :span="8" class="course-detail-modal__submit">
           <el-button type="primary" @click="submit('formData')">{{ lang.register }}</el-button>
@@ -221,7 +228,7 @@ export default {
   methods: {
     setScheduleDataFormData(select) {
       const self = this
-      if(select === 'openDate') {
+      if (select === 'openDate') {
         self.$set(self.formData, 'scheduleDateStart', '')
         self.$set(self.formData, 'scheduleDateEnd', '')
         self.$set(self.formData, 'scheduleTime', '')
@@ -233,7 +240,7 @@ export default {
         })
         self.$set(self.formData, 'scheduleDateStart', scheduleItems[0].date.start)
         self.$set(self.formData, 'scheduleDateEnd', scheduleItems[0].date.end)
-        self.$set(self.formData, 'scheduleTime',     scheduleItems[0].time)
+        self.$set(self.formData, 'scheduleTime', scheduleItems[0].time)
         self.$set(self.formData, 'scheduleLocation', scheduleItems[0].city)
         self.$set(self.formData, 'scheduleDuration', scheduleItems[0].duration)
       }
@@ -261,8 +268,7 @@ export default {
           self.formReset();
         } catch (response) {
           self.$set(self, 'showLoader', false);
-          if (typeof response.errors !== 'undefined')
-          {
+          if (typeof response.errors !== 'undefined') {
             response.errors.forEach(function (error) {
               setTimeout(
                   function () {
@@ -320,74 +326,90 @@ export default {
     formInit() {
       const self = this
 
-      if(self.id) {
+      if (self.id) {
         self.$set(self.formData, 'courseId', self.id)
       }
-      if(self.code) {
+      if (self.code) {
         self.$set(self.formData, 'courseCode', self.code)
       }
-      if(self.name) {
+      if (self.name) {
         self.$set(self.formData, 'courseName', self.name)
       }
-      if(self.detailUrl) {
+      if (self.detailUrl) {
         self.$set(self.formData, 'courseDetailUrl', self.detailUrl)
       }
-      if(self.location) {
+      if (self.location) {
         self.$set(self.formData, 'location', self.location)
       }
-      if(self.courses) {
+      if (self.courses) {
         self.$set(self.formData, 'recommendations', self.courses)
       }
 
 
       if (self.schedule.length) {
-        self.schedule.forEach(function(item) {
-          self.scheduleDates.push({ id: item.id, label: item.formLabel, value: item.id })
+        self.schedule.forEach(function (item) {
+          self.scheduleDates.push({id: item.id, label: item.formLabel, value: item.id})
         })
         self.$set(self.formData, 'scheduleId', self.schedule[0].id)
 
-        if(self.scheduleId) {
+        if (self.scheduleId) {
           self.$set(self.formData, 'scheduleId', self.scheduleId)
           const scheduleItems = self.schedule.filter(function (item) {
             return self.scheduleId === item.id
           })
           self.$set(self.formData, 'scheduleDateStart', scheduleItems[0].date.start)
-          self.$set(self.formData, 'scheduleDateEnd',   scheduleItems[0].date.end)
+          self.$set(self.formData, 'scheduleDateEnd', scheduleItems[0].date.end)
 
-          self.$set(self.formData, 'scheduleTime',     scheduleItems[0].time)
+          self.$set(self.formData, 'scheduleTime', scheduleItems[0].time)
           self.$set(self.formData, 'scheduleLocation', scheduleItems[0].city)
           self.$set(self.formData, 'scheduleDuration', scheduleItems[0].duration)
         }
       }
 
-      self.scheduleDates.push({ id: 0, label: self.lang.openDate, value: 'openDate' })
+      self.scheduleDates.push({id: 0, label: self.lang.openDate, value: 'openDate'})
     },
     sendAnalytics(resultId) {
       const self = this
 
-      const scheduleItems = self.schedule.filter(function (item) {
-        return self.formData.scheduleId === item.id
-      })
+      let transaction = {}
 
-      const transaction = {
-            id: resultId,
-            revenue: scheduleItems[0]['sale']['discountPrice'],
-            currency: scheduleItems[0]['sale']['currency']
-          },
-
-          item = {
-            id: resultId,
-            name: scheduleItems[0]['code']+' '+scheduleItems[0]['name']+' '+scheduleItems[0]['city']+' '+scheduleItems[0]['date']['start'],
-            sku: scheduleItems[0]['id'],
-            quantity: '1',
-            price: scheduleItems[0]['sale']['discountPrice'],
-            currency: scheduleItems[0]['sale']['currency'],
-          }
-
-      if(self.formData.scheduleId === 'openDate') {
+      if (self.formData.scheduleId === 'openDate') {
         window.targetEvents.noScheduleRegistration();
+
+        transaction = {
+          id: resultId,
+          revenue: self.sale.price,
+        },
+            item = {
+              id: resultId,
+              name: window.vueData.courseDetail.code + ' ' + window.vueData.courseDetail.name + ' ' + window.vueData.courseDetail.city,
+              sku: self.id,
+              quantity: '1',
+              price: self.sale.price,
+            }
+
+
       } else {
         window.targetEvents.scheduleRegistration();
+
+        const scheduleItems = self.schedule.filter(function (item) {
+          return self.formData.scheduleId === item.id
+        })
+
+        transaction = {
+          id: resultId,
+          revenue: scheduleItems[0]['sale']['discountPrice'],
+          currency: scheduleItems[0]['sale']['currency']
+        },
+            item = {
+              id: resultId,
+              name: scheduleItems[0]['code'] + ' ' + scheduleItems[0]['name'] + ' ' + scheduleItems[0]['city'] + ' ' + scheduleItems[0]['date']['start'],
+              sku: scheduleItems[0]['id'],
+              quantity: '1',
+              price: scheduleItems[0]['sale']['discountPrice'],
+              currency: scheduleItems[0]['sale']['currency'],
+            }
+
       }
 
       window.targetEvents.purchase(transaction, item);
@@ -405,6 +427,7 @@ export default {
 
   &__row {
     position: relative;
+
     &_select {
       border-bottom: 1px solid #cccdd7;
       margin-bottom: 20px;
@@ -433,6 +456,7 @@ export default {
   .el-form-item {
     width: 100%;
     margin-right: 0;
+
     &__label {
       font-size: 14px;
       line-height: 1;
@@ -460,6 +484,7 @@ export default {
     max-width: 875px;
     border-radius: 10px;
     overflow: hidden;
+
     &__header {
       padding: 30px 30px 22px;
     }
@@ -471,6 +496,7 @@ export default {
 
     &__body {
       padding: 0;
+
       .el-row {
         padding: 0 30px;
       }
@@ -499,12 +525,14 @@ export default {
   .el-checkbox.is-error .el-checkbox__inner {
     border-color: #f56c6c;
   }
+
   .form-success {
     &__title {
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 15px;
     }
+
     &__message {
       font-size: 18px;
       font-weight: 400;
@@ -520,18 +548,20 @@ export default {
       height: auto;
       margin-bottom: 15px;
     }
+
     &__submit {
       justify-content: center;
       width: 100%;
     }
 
     .el-dialog {
-      margin-top: 0!important;
-      width: 100%!important;
+      margin-top: 0 !important;
+      width: 100% !important;
       height: 100%;
       border-radius: 0;
       overflow-y: auto;
     }
+
     .dialog-footer .el-row {
       display: flex;
       flex-direction: column;
