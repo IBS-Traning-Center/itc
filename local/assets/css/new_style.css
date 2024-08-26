@@ -1,4 +1,10 @@
 /* ОСНОВНЫЕ */
+*{
+    user-select: none;
+    -webkit-user-select: none;       
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
 
 .page._content {
     padding: 0;
@@ -130,6 +136,12 @@ body {
     line-height: 92px;
     font-weight: 400;
     margin: 0;
+}
+
+.top-page-banner .container .banner-content p{
+    margin: 56px 0 0 0;
+    font-size: 32px;
+    line-height: 44px;
 }
 
 .top-page-banner .container .buttons-block-banner {
@@ -493,7 +505,11 @@ body {
 
 @media (max-width: 1180px) {
     .top-page-banner {
-        padding: 16px 40px;
+        padding: 16px;
+    }
+
+    #header{
+        padding: 12px 16px;
     }
 
     .top-page-banner .container {
@@ -589,6 +605,14 @@ body {
     .main-text-content .custom-ul {
         margin-bottom: 24px;
     }
+
+    .top-page-banner{
+        padding: 16px 16px 40px 16px;
+    }
+
+    #header{
+        padding: 12px 16px;
+    }
 }
 
 /* ГЛАВНАЯ СТРАНИЦА */
@@ -672,5 +696,389 @@ body {
 @media (max-width: 1180px) {
     .footer {
         display: none;
+    }
+}
+
+/* Корпоративное обучение */
+
+.text-page-block .text-block-left{
+    max-width: 596px;
+    width: 100%;
+    margin-right: 32px;
+}
+
+.text-page-block .text-block-right{
+    max-width: 1028px;
+    width: 100%;
+}
+
+.text-page-block .text-block-left h2,
+.text-page-block .text-block-right h2{
+    font-size: 56px;
+    line-height: 72px;
+    margin-bottom: 32px;
+    letter-spacing: -0.8px;
+}
+.text-page-block .text-block-left p,
+.text-page-block .text-block-right p{
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 24px;
+}
+
+.text-page-block .text-block-left p:last-child,
+.text-page-block .text-block-right p:last-child{
+    margin-bottom: 0px;
+}
+
+.text-page-block .text-block-left a,
+.text-page-block .text-block-right a{
+    font-size: 20px;
+    line-height: 32px;
+    color: #0827C4;
+}
+
+.text-page-block .text-block-right .edge-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px;
+}
+
+.text-page-block .text-block-right .edge-item{
+    display: flex;
+    align-items: flex-start;
+}
+
+.text-page-block .text-block-right .edge-item svg{
+    max-width: 72px;
+    width: 100%;
+    margin-right: 24px;
+}
+
+.text-page-block .text-block-right .edge-item__title{
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 16px;
+}
+
+.text-page-block.full-width .text-block-left{
+    max-width: 63%;
+}
+
+.offset-block {
+    background-image: url(../images/corporate/offset-img.png);
+    background-repeat: no-repeat;
+    background-position: 98% bottom ;
+}
+
+.offset-block .text-block-left p{
+    margin: 0 0 32px 0;
+}
+
+.offset-block .text-block-left .text-red{
+    color: #BF031B;
+}
+
+.offset-block .text-block-left .offset-number__wrap p,
+.offset-block .text-block-left .offset-link__wrap p{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.offset-block .text-block-left .offset-number__wrap h2{
+    margin-bottom: 6px;
+}
+
+.offset-block .text-block-left .offset-number__wrap,
+.offset-block .text-block-left .offset-link__wrap{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+}
+
+.you-need-block table{
+    margin-bottom: 32px;
+}
+
+.you-need-block table tr td{
+    padding: 24px 0;
+    font-size: 20px;
+    line-height: 32px;
+    width: 50%;
+    padding-left: 24px;
+    border-bottom: 1px solid #000000;
+}
+
+.you-need-block table tr td:first-child{
+    padding-left: 0px;
+    font-size: 32px;
+    line-height: 44px;
+}
+
+.suitable-block ul li{
+    font-size: 32px;
+    line-height: 44px;
+    padding-left: 68px;
+    background-image: url(../images/corporate/list-check.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+.suitable-block ul li + li{
+    margin-top: 56px;
+}
+
+.stage-block .text-block-right h2{
+    padding-bottom: 22px;
+    position: relative;
+    display: inline-block;
+}
+
+.stage-block .text-block-right h2:after{
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 11px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    border: 2px solid #FFFFFF;
+    background-color: #0827C4;
+}
+
+.stage-block ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px 32px;
+}
+
+.stage-block ul li:last-child h2:after{
+    bottom: 0;
+    left: auto;
+    right: 0;
+}
+
+.stage-block-wrap{
+    background-image: url('../images/corporate/stage_bg.png');
+    background-repeat: no-repeat;
+    background-position: center 207px;
+}
+
+.blue-page-block{
+    background-color: #0827C4;
+}
+
+.blue-page-block p,
+.blue-page-block h2, 
+.blue-page-block li{
+    color: #FFFFFF;
+}
+
+.grey-page-block{
+    background-color: #F8F7F7;
+}
+@media (max-width:1730px) {
+    .stage-block-wrap{
+        background-image: none;
+    }
+    
+    .stage-block ul li:last-child h2:after{
+        bottom: 0;
+        left: 0;
+        right: auto;
+    }
+}
+
+@media (max-width:1400px) {
+    .corporate-page .text-page-block{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .text-page-block .text-block-left,
+    .text-page-block .text-block-right{
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .edge-wrapper{
+        margin-top: 32px;
+    }
+}
+
+@media (max-width:1260px) {
+    .offset-block{
+        background-image: none;
+    }
+
+    .text-page-block.full-width .text-block-left{
+        max-width: 100%;
+    }
+}
+
+@media (max-width:1023px) {
+    .text-page-block .text-block-left h2,
+    .text-page-block .text-block-right h2{
+        font-size: 24px;
+        line-height: 32.69px;
+        letter-spacing: -0.8px;
+        margin-bottom: 24px;
+    }
+
+    .text-page-block .text-block-left p,
+    .text-page-block .text-block-right p,
+    .you-need-block table tr td{
+        font-size: 16px;
+        line-height: 21.79px;
+        margin-bottom: 16px;
+    }
+
+    .top-page-banner .container .banner-content p,
+    .text-page-block .text-block-right .edge-item__title,
+    .you-need-block table tr td:first-child,
+    .suitable-block ul li{
+        font-size: 20px;
+        line-height: 27.24px;
+    }
+
+    .top-page-banner .container .banner-content p{
+        margin-top: 16px;
+    }
+
+    .text-page-block .text-block-right .edge-item svg{
+        max-width: 32px;
+        height: 32px;
+        margin-right: 12px;
+    }
+
+    .corporate-page .offset-block{
+        padding-bottom: 435px;
+    }
+
+    .offset-block{
+        background-image: url(../images/corporate/offset-img.png);
+        background-repeat: no-repeat;
+        background-position: center 106%;
+        background-size: 293px;
+    }
+
+    .you-need-block table tr td{
+        display: block;
+        padding: 16px 0;
+        margin-bottom: 0;
+        width: 100%;
+        padding-left:0px;
+        border-bottom: 1px solid #000000;
+    }
+    
+    .you-need-block table tr td:first-child{
+        padding-left: 0px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .suitable-block ul li{
+        background-size: 24px;
+        padding-left: 36px;
+    }
+
+    .suitable-block ul li+li{
+        margin-top: 16px;
+    }
+
+    .stage-block ul{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+    }
+
+    .stage-block ul li{
+        display: flex;
+        align-items: stretch;
+    }
+
+    .stage-block .text-block-right ul li p{
+        padding-bottom: 16px;
+        padding-top: 7px;
+    }
+
+    .stage-block .text-block-right ul li h2{
+        padding-right: 15px;
+        margin-right: 16px;
+        margin-bottom: 0;
+    }
+
+    .stage-block .text-block-right h2{
+        padding-bottom: 0;
+        overflow: hidden;
+        max-width: 43px;
+        width: 100%;
+    }
+
+    .stage-block .text-block-right h2:after,
+    .stage-block ul li:last-child h2:after{
+        width: 7px;
+        height: 7px;
+        top: 13px;
+        right: 0;
+        left: auto;
+        bottom: auto;
+    }
+
+    .stage-block .text-block-right h2:before{
+        content: '';
+        display: block;
+        width: 1.5px;
+        height: 100%;
+        right: 3px;
+        position: absolute;
+        background-color: #FFFFFF;
+    }
+
+    .stage-block ul li:first-child h2:before{
+        top: 19px;
+    }
+
+    .stage-block ul li:last-child h2:before{
+       bottom: 19px; 
+    }
+
+    .stage-block ul li:last-child{
+        align-items: flex-start;
+    }
+}
+
+@media (max-width:900px) {
+    .you-need-block .table-responsive{
+        border: none;
+        margin: 0;
+    }
+}
+
+@media (max-width:768px) {
+    .text-page-block .text-block-right .edge-wrapper{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+    }
+
+    .offset-block .text-block-left .offset-number__wrap, 
+    .offset-block .text-block-left .offset-link__wrap{
+        margin-top: 32px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .offset-block .text-block-left .offset-number__wrap{
+        gap: 16px;
+    }
+
+    .offset-block .text-block-left .offset-link__wrap{
+        gap: 12px;
+    }
+
+    .stage-block .text-block-right ul li p{
+        padding-bottom: 16px;
+        padding-top: 3px;
     }
 }
