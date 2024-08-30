@@ -157,16 +157,15 @@ $APPLICATION->SetTitle("Жизнь УЦ IBS");
 	false
 ); ?>
 </div>
-<div class="container">
-    <div class="text-page-block telegram-block">
-    <?php $APPLICATION->IncludeFile(
-        SITE_DIR . 'include/subcribe_telegram.php', 
-        [
-            'telegram' => Functions::buildSVG('telegram-big', SITE_TEMPLATE_PATH. '/assets/images/icons'),
-        ], 
-        ['MODE' => 'html']);
-    ?>
-    </div>
-</div>
+<?php $APPLICATION->IncludeComponent(
+    "addamant:telegram.subscribe",
+    ".default",
+    Array(
+        "CACHE_TIME" => "3600",
+        "CACHE_TYPE" => "A",
+        'SUBSCRIBE_TITLE' => '',
+        'SUBSCRIBE_LINK' => '#'
+    )
+);?>
 <?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
