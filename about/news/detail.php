@@ -1,5 +1,9 @@
 <?php 
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php"); ?>
+
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php"); 
+
+?>
+
 <div class="top-page-banner" style="background-color: <?= $APPLICATION->GetPageProperty('BACKGROUND_COLOR_BANNER') ?>">
     <div class="container">
         <div class="banner-content">
@@ -18,7 +22,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php"); ?>
     </div>
 </div>
 <div class="container">
-    <?php $ElementID = $APPLICATION->IncludeComponent(
+    <?php $APPLICATION->IncludeComponent(
     	"bitrix:news.detail", 
     	"en_single_pressrelease", 
     	array(
