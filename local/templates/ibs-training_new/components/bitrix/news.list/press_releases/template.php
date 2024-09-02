@@ -1,30 +1,72 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true){
+	die();
+}
 
-<div id="content" class="bg not-main-page">
-		<div class="frame white-bg no-y-padding">
-			<div class="blog-list">
-			<?foreach($arResult["ITEMS"] as $arItem):?>
-			<div class="blog-item">
-								<h2><?echo $arItem["NAME"]?></h2>
-								<div class="date-n-trainer">
-									<?echo $arItem["DISPLAY_ACTIVE_FROM"]?> &nbsp;&nbsp;
-								</div>
-								<div class="preview-text">
-									<? $content = nl2br($arItem['PREVIEW_TEXT']); ?>
-									<? if ($content=="") {} else { ?>
-									<span class=""><?=$content?></span>
-									<? } ?>
-								</div>
-								<div class="links-more">
-									<a class="link-more" href="<?echo $arItem["DETAIL_PAGE_URL"]?>">Читать дальше <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-									<span class="wathers"><i class="fa fa-eye" aria-hidden="true"></i> <?=$arItem["SHOW_COUNTER"]?></span>
-									<?/*<span class="comment"><i class="fa fa-comment-o" aria-hidden="true"></i> 1</span>*/?>
-								</div>
-			</div>
-			<?endforeach;?>
-<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-	<br /><?=$arResult["NAV_STRING"]?>
-<?endif;?>
-</div>
-</div>
+/** @var array $arParams */
+/** @var array $arResult */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+/** @global CDatabase $DB */
+/** @var CBitrixComponentTemplate $this */
+/** @var string $templateName */
+/** @var string $templateFile */
+/** @var string $templateFolder */
+/** @var string $componentPath */
+/** @var CBitrixComponent $component */
+
+$this->setFrameMode(true);
+?>
+<div id="blog-list" class="blog-list">
+<!--RestartBuffer-->
+<?foreach($arResult["ITEMS"] as $key => $arItem):?>
+	<?
+	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+	?>
+	<div class="blog-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+		<a href="<?= $arItem["DETAIL_PAGE_URL"]?>">
+			<? if($arItem['PROPERTIES']['PREVIEW_PICTURES_CARD']['VALUE'][0] !== NULL){?>
+				<span class="blog-img" style="background-image: url('<?= CFile::GetPath($arItem['PROPERTIES']['PREVIEW_PICTURES_CARD']['VALUE'][0])?>');"></span>
+			<?}?>
+			<span class="blog-text">
+				<span class="blog-top">
+					<span class="blog-preview-title"><?= $arItem["NAME"]?></span>
+					<span class="blog-preview-text">
+						<?= strip_tags($arItem['PREVIEW_TEXT'])?>
+					</span>
+				</span>
+				<span class="blog-bottom">
+					<span><?= $arItem['PROPERTIES']['news_type']['VALUE']?></span>
+					<span><?= $arItem['DISPLAY_ACTIVE_FROM']?></span>
+				</span>
+			</span>
+		</a>
+	</div>
+<?endforeach;?>
+
+<?php
+	$paramName = 'PAGEN_'.$arResult['NAV_RESULT']->NavNum;
+	$paramValue = $arResult['NAV_RESULT']->NavPageNomer;
+	$pageCount = $arResult['NAV_RESULT']->NavPageCount;
+	
+	if ($paramValue < $pageCount) {
+	    $paramValue = (int) $paramValue + 1;
+	    $url = htmlspecialcharsbx(
+	        $APPLICATION->GetCurPageParam(
+	            sprintf('%s=%s', $paramName, $paramValue), 
+	            array($paramName, 'AJAX_PAGE',)
+	        )
+	    );
+	    echo sprintf('<div class="ajax-pager-wrap">
+	                      	<a class="ajax-pager-link" data-wrapper-class="blog-list" href="%s">
+						  		<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M11 6H34V34H11V36H34H36V34V6V4H34H6H4V6H6H11Z" fill="#0827C4"/>
+								</svg>
+							</a>
+	                  </div>',
+	        $url);
+	}
+?>
+<!--RestartBuffer-->
 </div>
