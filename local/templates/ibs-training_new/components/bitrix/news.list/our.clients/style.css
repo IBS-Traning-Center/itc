@@ -30,6 +30,17 @@
     overflow: visible;
 }
 
+.our-clients-h2{
+    font-size: 56px;
+    line-height: 72px;
+    margin-bottom: 32px;
+}
+
+.our-clients-desc{
+    font-size: 32px;
+    line-height: 44px;
+}
+
 @media (max-width: 1180px) {
     .our-clients-h3 {
         margin: 40px 0 16px;
@@ -43,5 +54,18 @@
 
     .container.our-clients-block {
         margin-bottom: 40px;
+    } 
+}
+
+@media (max-width: 1023px) {
+    .our-clients-h2{
+        font-size: 24px;
+        line-height: 32.69px;
+        margin-bottom: 24px;
+    }
+    
+    .our-clients-desc{
+        font-size: 20px;
+        line-height: 27.24px;
     }
 }

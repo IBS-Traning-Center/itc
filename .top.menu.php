@@ -37,7 +37,7 @@ $aMenuLinks = [
 	],
 	[
 		'О нас',
-		'/about/', 
+		'/contacts/',
 		[],
 		[],
 		''
