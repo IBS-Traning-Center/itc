@@ -161,26 +161,8 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 					?>
 					<div class="<?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):?>col-sm-6 col-md-4<?else:?>col-lg-12<?endif?> bx-filter-parameters-box <?if ($arItem["DISPLAY_EXPANDED"]== "Y"):?>bx-active<?endif?>">
 						<span class="bx-filter-container-modef"></span>
-                        <?php
-                            $titleText = $arItem['NAME'];
-
-                            switch ($arItem['CODE']) {
-                                case 'COMPLEXITY':
-                                    $titleText = 'Для кого';
-                                    break;
-                                case 'course_duration':
-                                    $titleText = 'Длительность';
-                                    break;
-                                case 'course_price':
-                                    $titleText = 'Стоимость';
-                                    break;
-                                case 'course_format':
-                                    $titleText = 'Формат';
-                                    break;
-                            }
-                        ?>
                         <div class="filter-block-title">
-                            <span class="f-16 f-bold"><?= $titleText ?></span>
+                            <span class="f-16 f-bold"><?= $arItem['NAME'] ?></span>
                         </div>
 
 						<div class="bx-filter-block" data-role="bx_filter_block">
