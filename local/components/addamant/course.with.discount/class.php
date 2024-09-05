@@ -58,6 +58,7 @@ class CourseWithDiscountComponent extends CBitrixComponent
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
+                '<startdate.VALUE' => $this->dateNow,
                 '>=enddate.VALUE' => $this->dateNow
             ]
         ])->fetchCollection();

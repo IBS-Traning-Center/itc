@@ -112,12 +112,16 @@ a:hover {
 }
 
 .courses-with-discount-block .discount-courses-block.container:before,
-.discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-description {
+.discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-description,
+.courses-with-discount-block .discount-courses-block.container:after {
     display: none !important;
 }
 
+.courses-with-discount-block .discount-courses-block.container {
+    padding-bottom: 24px;
+}
+
 .discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-name {
-    -webkit-line-clamp: 1 !important;
     font-size: 24px !important;
     line-height: 33px !important;
 }
@@ -275,6 +279,10 @@ a:hover {
 
     .courses-with-discount-block .slick-slider-arrows-block {
         display: none;
+    }
+
+    .courses-with-discount-block .discount-courses-block.container {
+        padding-bottom: 8px;
     }
 }
 
