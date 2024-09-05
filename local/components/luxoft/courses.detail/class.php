@@ -345,22 +345,9 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 }
             }
 
-            $skillsCodes = [];
             if ($courseObject->getImprovedSkills() && $courseObject->getImprovedSkills()->getAll()) {
                 foreach ($courseObject->getImprovedSkills()->getAll() as $value) {
-                    $skillsCodes[] = $value->getValue();
-                }
-
-                $skillsCodes = array_unique($skillsCodes);
-            }
-
-            if (!empty($skillsCodes)) {
-                $skillsTable = new HighloadblockManager('ImprovedSkills');
-                $skillsTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID'], [], ['UF_XML_ID' => $skillsCodes]);
-                $skillItems = $skillsTable->getDataAll();
-
-                if (!empty($skillItems)) {
-                    $this->course['skills_course'] = $skillItems;
+                    $this->course['skills_course'][] = $value->getValue();
                 }
             }
 
@@ -709,7 +696,6 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'HTML_EXPERIENCE',
                 'ABOUT_PROJECTS',
                 'WORKED_PROJECTS',
-                'TRAINER_CERT',
                 'ORGANIZATIONS_TRAINER'
             ],
             'cache' => ['ttl' => 3600],

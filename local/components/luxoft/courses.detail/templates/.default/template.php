@@ -147,7 +147,7 @@ $settings = Functions::getSiteSettings();
                 <div class="skills-improved-block">
                     <?php foreach ($arResult['skills_course'] as $item) : ?>
                         <div class="skill-course-item">
-                            <span class="f-16"><?= $item['UF_NAME'] ?></span>
+                            <span class="f-16"><?= $item ?></span>
                         </div>
                     <?php endforeach; ?>
                 </div>
