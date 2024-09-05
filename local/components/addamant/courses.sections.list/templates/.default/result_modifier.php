@@ -36,7 +36,7 @@ if (!empty($arResult['SECTIONS'])) {
             continue;
         }
 
-        if ($section['IBLOCK_ID'] == '94') {
+        if ($section['IBLOCK_ID'] == IBLOCK_ID_DIRECTION) {
             $elementsBD = ElementCourseDirectionsTable::getList([
                 'select' => [
                     'ID',
@@ -56,7 +56,7 @@ if (!empty($arResult['SECTIONS'])) {
                     ];
                 }
             }
-        } elseif ($section['IBLOCK_ID'] == '49') {
+        } elseif ($section['IBLOCK_ID'] == IBLOCK_ID_COMPLEX) {
             $elementsBD = ElementNewProgrammsTable::getList([
                 'select' => [
                     'ID',

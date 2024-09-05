@@ -59,7 +59,7 @@ class CourseSectionComponent extends CBitrixComponent
 
     public function getSectionElements()
     {
-        if ($this->arParams['IBLOCK_ID'] == 49) {
+        if ($this->arParams['IBLOCK_ID'] == IBLOCK_ID_COMPLEX) {
             return $this->courseSectionIBResult = ElementNewProgrammsTable::getList([
                 'select' => [
                     'pp_course'
@@ -70,7 +70,7 @@ class CourseSectionComponent extends CBitrixComponent
                     'IBLOCK_SECTION.CODE' => $this->arParams['SECTION_CODE'],
                 ]
             ])->fetchAll();
-        } elseif ($this->arParams['IBLOCK_ID'] == 94) {
+        } elseif ($this->arParams['IBLOCK_ID'] == IBLOCK_ID_DIRECTION) {
             return $this->courseSectionIBResult = ElementCourseDirectionsTable::getList([
                 'select' => [
                     'PP_COURSE'
@@ -92,12 +92,12 @@ class CourseSectionComponent extends CBitrixComponent
 
         foreach ($this->courseSectionIBResult as $item) {
             if (
-                $this->arParams['IBLOCK_ID'] == 49 &&
+                $this->arParams['IBLOCK_ID'] == IBLOCK_ID_COMPLEX &&
                 $item['IBLOCK_ELEMENTS_ELEMENT_NEW_PROGRAMMS_pp_course_VALUE']
             ) {
                 $this->needlCoursesIds[] = $item['IBLOCK_ELEMENTS_ELEMENT_NEW_PROGRAMMS_pp_course_VALUE'];
             } elseif (
-                $this->arParams['IBLOCK_ID'] == 94 &&
+                $this->arParams['IBLOCK_ID'] == IBLOCK_ID_DIRECTION &&
                 $item['IBLOCK_ELEMENTS_ELEMENT_COURSE_DIRECTIONS_PP_COURSE_VALUE']
             ) {
                 $this->needlCoursesIds[] = $item['IBLOCK_ELEMENTS_ELEMENT_COURSE_DIRECTIONS_PP_COURSE_VALUE'];

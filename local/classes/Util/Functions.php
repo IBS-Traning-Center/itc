@@ -62,11 +62,11 @@ class Functions
             ]
         ])->fetchObject();
 
-        $settings = [];
-
         if (!$elem) {
-            return $settings;
+            return [];
         }
+
+        $settings = [];
 
         if ($elem->getMoneyReturnLink() && $elem->getMoneyReturnLink()->getValue()) {
             $settings['MONEY_RETURN_LINK'] = $elem->getMoneyReturnLink()->getValue();
