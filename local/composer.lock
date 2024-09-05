@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "andreyryabin/sprint.migration",
-            "version": "4.11.4",
+            "version": "4.12.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreyryabin/sprint.migration.git",
-                "reference": "3f52d3fc2b36cf971ec74940a054cb171e200e86"
+                "reference": "8b59f07fff6f77c8fd6d0c6635a7a40fc09563f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreyryabin/sprint.migration/zipball/3f52d3fc2b36cf971ec74940a054cb171e200e86",
-                "reference": "3f52d3fc2b36cf971ec74940a054cb171e200e86",
+                "url": "https://api.github.com/repos/andreyryabin/sprint.migration/zipball/8b59f07fff6f77c8fd6d0c6635a7a40fc09563f4",
+                "reference": "8b59f07fff6f77c8fd6d0c6635a7a40fc09563f4",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
             ],
             "support": {
                 "issues": "https://github.com/andreyryabin/sprint.migration/issues",
-                "source": "https://github.com/andreyryabin/sprint.migration/tree/4.11.4"
+                "source": "https://github.com/andreyryabin/sprint.migration/tree/4.12.6"
             },
             "funding": [
                 {
@@ -56,7 +56,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-07-09T08:28:58+00:00"
+            "time": "2024-08-23T16:17:19+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",

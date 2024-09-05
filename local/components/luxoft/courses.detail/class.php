@@ -12,10 +12,12 @@ use Bitrix\Main\ErrorCollection;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Localization\Loc;
 use Luxoft\Dev\Tools as LuxoftTools;
+use \Bitrix\Iblock\Elements\ElementSettingsTable;
+use \Bitrix\Iblock\Elements\ElementClientsTable;
+use Local\Util\HighloadblockManager;
+use \Bitrix\Main\Web\Json;
 
-class CourseDetailComponent
-    extends CBitrixComponent
-    implements Controllerable, Errorable
+class CourseDetailComponent extends CBitrixComponent implements Controllerable, Errorable
 {
     use ErrorableImplementation;
 
@@ -75,7 +77,7 @@ class CourseDetailComponent
                 'price' => 'course_price',
                 'duration' => 'course_duration',
                 'location' => '',
-                'language' => '',
+                'language' => 'course_language.ITEM',
                 'shortDescription' => 'short_descr',
                 'description' => 'course_desc_new',
                 'certificate' => 'CERTIFICATE',
@@ -89,6 +91,12 @@ class CourseDetailComponent
                 'recommended' => 'RECOMMENDED',
                 'recommendedHtml' => 'course_addsources',
                 'similarCourses' => 'ID_LINKED_COURSES',
+                'complexity' => 'COMPLEXITY.ITEM',
+                'new' => 'IS_NEW.ITEM',
+                'price_ur' => 'COURSE_PRICE_UR',
+                'for_course' => 'FOR_COURSE',
+                'skills' => 'IMPROVED_SKILLS',
+                'what_learn' => 'WHAT_LEARN',
 
                 'metaTitle' => 'meta_title',
                 'metaDescription' => 'meta_desc',
@@ -108,6 +116,7 @@ class CourseDetailComponent
                 'city' => '',
                 'sale' => 'course_sale',
                 'price' => 'schedule_price',
+                'price_ur' => 'COURSE_PRICE_UR',
             ],
             'trainer' => [
                 'shortName' => 'expert_name',
@@ -261,6 +270,13 @@ class CourseDetailComponent
                 $this->mapping('course', 'metaDescription'),
                 $this->mapping('course', 'metaKeywords'),
                 $this->mapping('course', 'metaImage'),
+                $this->mapping('course', 'complexity'),
+                $this->mapping('course', 'new'),
+                $this->mapping('course', 'price_ur'),
+                $this->mapping('course', 'language'),
+                $this->mapping('course', 'for_course'),
+                $this->mapping('course', 'skills'),
+                $this->mapping('course', 'what_learn'),
             ],
             'filter' => [
                 'ACTIVE' => 'Y'
@@ -298,6 +314,62 @@ class CourseDetailComponent
             $this->course['xmlId'] = $courseObject->get($this->mapping('course', 'xmlId'));
             $this->course['detailUrl'] = $this->arParams['coursesPath'] . ($this->course['xmlId'] ? $courseObject->get($this->mapping('course', 'xmlId')) : $courseObject->get($this->mapping('course', 'code'))) . '/';
             $this->course['iblockId'] = $courseObject->get($this->mapping('course', 'iblockId'));
+            $this->course['complexity'] = ($courseObject->getComplexity() && $courseObject->getComplexity()->getItem() && $courseObject->getComplexity()->getItem()->getValue()) ? $courseObject->getComplexity()->getItem()->getValue() : '';
+            $this->course['is_new'] = $courseObject->getIsNew() && $courseObject->getIsNew()->getItem() && $courseObject->getIsNew()->getItem()->getValue();
+            $this->course['price_ur'] = ($courseObject->getCoursePriceUr() && $courseObject->getCoursePriceUr()->getValue()) ? $courseObject->getCoursePriceUr()->getValue() : '';
+            $this->course['language'] = ($courseObject->getCourseLanguage() && $courseObject->getCourseLanguage()->getItem() && $courseObject->getCourseLanguage()->getItem()->getValue()) ? $courseObject->getCourseLanguage()->getItem()->getValue() : '';
+
+            $forCourseCodes = [];
+            if ($courseObject->getForCourse() && $courseObject->getForCourse()->getAll()) {
+                foreach ($courseObject->getForCourse()->getAll() as $value) {
+                    $forCourseCodes[] = $value->getValue();
+                }
+
+                $forCourseCodes = array_unique($forCourseCodes);
+            }
+
+            if (!empty($forCourseCodes)) {
+                $hightTable = new HighloadblockManager('WhoCourse');
+                $hightTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE'], [], ['UF_XML_ID' => $forCourseCodes]);
+                $items = $hightTable->getDataAll();
+
+                if (!empty($items)) {
+                    foreach ($items as &$item) {
+                        if ($item['UF_PICTURE']) {
+                            $item['UF_PICTURE'] = CFile::GetPath($item['UF_PICTURE']);
+                        }
+                    }
+
+                    $this->course['for_course'] = $items;
+                }
+            }
+
+            $skillsCodes = [];
+            if ($courseObject->getImprovedSkills() && $courseObject->getImprovedSkills()->getAll()) {
+                foreach ($courseObject->getImprovedSkills()->getAll() as $value) {
+                    $skillsCodes[] = $value->getValue();
+                }
+
+                $skillsCodes = array_unique($skillsCodes);
+            }
+
+            if (!empty($skillsCodes)) {
+                $skillsTable = new HighloadblockManager('ImprovedSkills');
+                $skillsTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID'], [], ['UF_XML_ID' => $skillsCodes]);
+                $skillItems = $skillsTable->getDataAll();
+
+                if (!empty($skillItems)) {
+                    $this->course['skills_course'] = $skillItems;
+                }
+            }
+
+            $whatLearn = [];
+            if ($courseObject->getWhatLearn() && $courseObject->getWhatLearn()->getAll()) {
+                foreach ($courseObject->getWhatLearn()->getAll() as $whatItem) {
+                    $whatLearn[] = $whatItem->getValue();
+                }
+            }
+            $this->course['what_learn'] = $whatLearn;
 
             $this->course['category'] = $this->getCategory(['PP_COURSE.VALUE' => $this->course['id']]);
             if (empty($this->course['category']['name'])) {
@@ -408,7 +480,7 @@ class CourseDetailComponent
         $defaultConfig = [
             'order' => ['CODE' => 'ASC'],
             'filter' => ['ACTIVE' => 'Y'],
-            'select' => $this->mapping('course', ['ID', 'NAME', 'CODE', 'XML_ID', 'duration', 'shortDescription']),
+            'select' => $this->mapping('course', ['ID', 'NAME', 'CODE', 'XML_ID', 'duration', 'shortDescription', 'complexity', 'price']),
             'cache' => ['ttl' => 3600],
         ];
         $courseList = $entityClass::getList(array_merge_recursive($defaultConfig, $config));
@@ -422,11 +494,13 @@ class CourseDetailComponent
                 'code' => $course->get('CODE'),
                 'duration' => $course->get($this->mapping('course', 'duration')) ? $course->get($this->mapping('course', 'duration'))->getValue() : '',
                 'description' => $course->get($this->mapping('course', 'shortDescription')) ? $course->get($this->mapping('course', 'shortDescription'))->getValue() : '',
+                'complexity' => ($course->getComplexity() && $course->getComplexity()->getItem() && $course->getComplexity()->getItem()->getValue()) ? $course->getComplexity()->getItem()->getValue() : '',
+                'price' => ($course->getCoursePrice() && $course->getCoursePrice()->getValue()) ? $course->getCoursePrice()->getValue() : ''
             ];
 
             $result[$course->get('ID')]['link'] = $course->get('XML_ID')
-                ? $this->arParams['coursesPath'] . $course->get('XML_ID') . '.html'
-                : $this->arParams['coursesPath'] . $course->get('CODE') . '.html';
+                ? $this->arParams['coursesPath'] . $course->get('XML_ID') . '/'
+                : $this->arParams['coursesPath'] . $course->get('CODE')  . '/';
         }
 
         $schedule = $this->getSchedule(['filter' => [$this->mapping('schedule', 'course.VALUE') => array_keys($result)]]);
@@ -466,7 +540,8 @@ class CourseDetailComponent
                 'time',
                 'lang.ELEMENT',
                 'city.ELEMENT',
-                'sale'
+                'sale',
+                'price_ur'
             ]),
             'cache' => ['ttl' => 3600],
         ];
@@ -559,6 +634,10 @@ class CourseDetailComponent
                     ];
                 }
 
+                if ($collectionItem->getCoursePriceUr() && $collectionItem->getCoursePriceUr()->getValue()) {
+                    $currentItem['sale']['price_ur'] = $collectionItem->getCoursePriceUr()->getValue();
+                }
+
                 if (
                     (empty($currentItem['sale']['discountPrice']) || $currentItem['sale']['discountPrice'] === $currentItem['sale']['price'])
                     && $collectionItem->get($this->mapping('schedule', 'sale'))
@@ -593,10 +672,9 @@ class CourseDetailComponent
 
                 if ($collectionItem->get($this->mapping('schedule', 'trainer')) && $collectionItem->get($this->mapping('schedule', 'trainer'))->getValue()) {
                     $trainerId = $collectionItem->get($this->mapping('schedule', 'trainer'))->getValue();
-                    if (empty($this->trainers[$trainerId])) {
-                        $this->trainers[$trainerId] = [];
-                    }
-                    $currentItem['trainer'] = &$this->trainers[$trainerId];
+                    $trainer = $this->getTrainer($trainerId);
+
+                    $currentItem['trainer'] = $trainer;
                 } elseif (
                     $collectionItem->get($this->mapping('schedule', 'trainerString'))
                     && $collectionItem->get($this->mapping('schedule', 'trainerString'))->getValue()
@@ -611,16 +689,28 @@ class CourseDetailComponent
         return $result;
     }
 
-    protected function getTrainers($config = []): array
+    protected function getTrainer(int $trainerId = null, array $config = []): array
     {
+        if (!$trainerId) {
+            return [];
+        }
+
         $defaultConfig = [
-            'filter' => [],
-            'select' => $this->mapping('trainer', [
-                '*',
-                'shortName',
-                'shortDescription',
-                'position',
-            ]),
+            'filter' => [
+                'ID' => $trainerId
+            ],
+            'select' => [
+                'NAME',
+                'expert_name',
+                'expert_title',
+                'KNOW_LEVEL',
+                'DETAIL_PICTURE',
+                'HTML_EXPERIENCE',
+                'ABOUT_PROJECTS',
+                'WORKED_PROJECTS',
+                'TRAINER_CERT',
+                'ORGANIZATIONS_TRAINER'
+            ],
             'cache' => ['ttl' => 3600],
         ];
 
@@ -628,35 +718,130 @@ class CourseDetailComponent
         $entityClass = $entity->getDataClass();
 
         $resultConfig = array_merge_recursive($defaultConfig, $config);
-        $list = $entityClass::getList($resultConfig);
+        $element = $entityClass::getList($resultConfig);
 
-        $collection = $list->fetchCollection();
-        foreach ($collection as $collectionItem) {
-            $currentItem = [
-                'id' => $collectionItem->get('ID'),
-                'code' => $collectionItem->get('CODE'),
-                'name' => $collectionItem->get($this->mapping('trainer', 'shortName'))->getValue(),
-                'lastName' => $collectionItem->get('NAME'),
-                'link' => $this->arParams['trainersPath'] . $collectionItem->get('CODE') . '.html',
-                'shortDescription' => $collectionItem->get($this->mapping('trainer', 'shortDescription')) ? $collectionItem->get($this->mapping('trainer', 'shortDescription'))->getValue() : '',
-                'previewPicture' => \CFile::GetPath($collectionItem->get('PREVIEW_PICTURE')),
-                'detailPicture' => \CFile::GetPath($collectionItem->get('DETAIL_PICTURE')),
-                'previewText' => $collectionItem->get('PREVIEW_TEXT'),
-                'detailText' => $collectionItem->get('DETAIL_TEXT'),
-                'position' => $collectionItem->get($this->mapping('trainer', 'position'))->getValue(),
-            ];
-            $currentItem['fullName'] = implode(' ', [$currentItem['lastName'], $currentItem['name']]);
-            $this->trainers[$currentItem['id']] = $currentItem;
+        $trainer = $element->fetchObject();
+        $trainerInfo = [];
+
+        if ($trainer->getId()) {
+            $trainerInfo['ID'] = $trainer->getId();
         }
 
-        return $this->trainers;
+        if ($trainer->getName()) {
+            $trainerInfo['SURNAME'] = $trainer->getName();
+        }
+
+        if ($trainer->getExpertName() && $trainer->getExpertName()->getValue()) {
+            $trainerInfo['NAME'] = $trainer->getExpertName()->getValue();
+        }
+
+        if ($trainer->getExpertTitle() && $trainer->getExpertTitle()->getValue()) {
+            $trainerInfo['SHORT_DESCRIPTION'] = $trainer->getExpertTitle()->getValue();
+        }
+
+        if ($trainer->getKnowLevel() && $trainer->getKnowLevel()->getValue()) {
+            $trainerInfo['LEVEL'] = $trainer->getKnowLevel()->getValue();
+        }
+
+        if ($trainer->getDetailPicture()) {
+            $trainerInfo['PICTURE'] = CFile::GetPath($trainer->getDetailPicture());
+        }
+
+        if ($trainer->getHtmlExperience() && $trainer->getHtmlExperience()->getAll()) {
+            $experience = [];
+            foreach ($trainer->getHtmlExperience()->getAll() as $value) {
+                $experience[] = unserialize($value->getValue());
+            }
+
+            $trainerInfo['EXPERIENCE'] = $experience;
+        }
+
+        if ($trainer->getAboutProjects() && $trainer->getAboutProjects()->getValue()) {
+            $trainerInfo['ABOUT_PROJECTS'] = unserialize($trainer->getAboutProjects()->getValue());
+        }
+
+        if ($trainer->getWorkedProjects() && $trainer->getWorkedProjects()->getAll()) {
+            $workedProjectsIds = [];
+            foreach ($trainer->getWorkedProjects()->getAll() as $value) {
+                $workedProjectsIds[] = $value->getValue();
+            }
+
+            $workedProjectsIds = array_unique($workedProjectsIds);
+
+            if (!empty($workedProjectsIds)) {
+                $clients = ElementClientsTable::getList([
+                    'select' => [
+                        'ID',
+                        'NAME',
+                        'PREVIEW_PICTURE'
+                    ],
+                    'filter' => [
+                        'ID' => $workedProjectsIds,
+                        'ACTIVE' => 'Y'
+                    ]
+                ])->fetchCollection();
+
+                if ($clients) {
+                    $clientsInfo = [];
+                    foreach ($clients as $client) {
+                        if ($client->getId()) {
+                            if ($client->getName()) {
+                                $clientsInfo[$client->getId()]['NAME'] = $client->getName();
+                            }
+
+                            if ($client->getPreviewPicture()) {
+                                $clientsInfo[$client->getId()]['PICTURE'] = CFile::GetPath($client->getPreviewPicture());
+                            }
+                        }
+                    }
+
+                    $trainerInfo['CLIENTS'] = $clientsInfo;
+                }
+            }
+        }
+
+        if ($trainer->getTrainerCert() && $trainer->getTrainerCert()->getAll()) {
+            $certsIds = [];
+            foreach ($trainer->getTrainerCert()->getAll() as $value) {
+                $certsIds[] = $value->getValue();
+            }
+
+            $certsIds = array_unique($certsIds);
+
+            if (!empty($certsIds)) {
+                $certTable = new HighloadblockManager('TrainerCertificate');
+                $certTable->prepareParamsQuery(['UF_FULL_DESCRIPTION', 'UF_XML_ID', 'UF_PICTURE'], [], ['UF_XML_ID' => $certsIds]);
+                $certs = $certTable->getDataAll();
+
+                if (!empty($certs)) {
+                    foreach ($certs as &$item) {
+                        if ($item['UF_PICTURE']) {
+                            $item['UF_PICTURE'] = CFile::GetPath($item['UF_PICTURE']);
+                        }
+                    }
+
+                    $trainerInfo['CERTIFICATES'] = $certs;
+                }
+            }
+        }
+
+        if ($trainer->getOrganizationsTrainer() && $trainer->getOrganizationsTrainer()->getAll()) {
+            $trainerOrg = [];
+            foreach ($trainer->getOrganizationsTrainer()->getAll() as $value) {
+                $trainerOrg[] = $value->getValue();
+            }
+
+            $trainerInfo['TRAINER_ORG'] = $trainerOrg;
+        }
+
+        return $trainerInfo;
     }
 
     protected function getReviews($config = []): array
     {
         $defaultConfig = [
             'filter' => [],
-            'select' => $this->mapping('review', ['*', 'course', 'name', 'surname', 'review', 'client.ELEMENT']),
+            'select' => $this->mapping('review', ['*', 'course', 'USER_NAME', 'USER_SURNAME', 'USER_REVIEW', 'client.ELEMENT']),
             //'limit'     => 3,
             'count_total' => true,
             'cache' => ['ttl' => 3600],
@@ -676,7 +861,7 @@ class CourseDetailComponent
                 'code' => $collectionItem->get('CODE'),
             ];
 
-            $currentItem['text'] = $collectionItem->get('review')->getValue();
+            $currentItem['text'] = $collectionItem->get('USER_REVIEW')->getValue();
 
             if ($collectionItem->get('CLIENT') && $collectionItem->get('client')->getElement()) {
                 $currentItem['name'] = 'Компания ' . $collectionItem->get('client')->getElement()->getName();
@@ -685,13 +870,13 @@ class CourseDetailComponent
                     $currentItem['name'] .= ' (' . $collectionItem->get('client')->getElement()->getCity() . ')';
                 }
             } else {
-                if ($collectionItem->get('surname') && $collectionItem->get('surname')->getValue()) {
-                    $currentItem['name'] = $collectionItem->get('surname')->getValue();
+                if ($collectionItem->get('USER_SURNAME') && $collectionItem->get('USER_SURNAME')->getValue()) {
+                    $currentItem['name'] = $collectionItem->get('USER_SURNAME')->getValue();
                 }
 
                 //TODO конвертировать свойства как на английской версии
-                if (false && $collectionItem->get('name') && $collectionItem->get('name')->getValue()) {
-                    $currentItem['name'] .= ' ' . $collectionItem->get('name')->getValue();
+                if (false && $collectionItem->get('USER_NAME') && $collectionItem->get('USER_NAME')->getValue()) {
+                    $currentItem['name'] .= ' ' . $collectionItem->get('USER_NAME')->getValue();
                 }
 
                 if (empty($currentItem['name'])) {
@@ -825,8 +1010,6 @@ class CourseDetailComponent
                 $this->arResult['courses'] = $this->getCourses(['filter' => ['ID' => array_keys($this->courses)]]);
 
                 $this->arResult['schedule'] = $this->getSchedule(['filter' => [$this->mapping('schedule', 'course.VALUE') => $this->course['id']]], true);
-
-                $this->arResult['trainers'] = $this->getTrainers(['filter' => ['ID' => array_keys($this->trainers)]]);
 
                 $this->arResult['reviews'] = $this->getReviews(['filter' => ['COURSE.VALUE' => $this->course['id']]]);
 

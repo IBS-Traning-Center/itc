@@ -33,6 +33,36 @@ body {
     min-width: 100% !important;
 }
 
+.jq-checkbox, .jq-radio {
+    background: var(--white);
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    border: 1px solid var(--black);
+    margin-right: 16px;
+    border-radius: 0;
+}
+
+.jq-checkbox.checked, .jq-radio.checked {
+    background: var(--button-blue);
+    border-color: var(--button-blue);
+}
+
+.jq-checkbox.checked .jq-checkbox__div {
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    margin: -1px 0 0 -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 130%;
+    font-weight: 400;
+}
+
 @media (max-width: 1180px) {
     .container {
         padding: 0 16px;
@@ -673,4 +703,56 @@ body {
     .footer {
         display: none;
     }
+}
+
+/* ЛОАДЕР */
+
+#loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    aspect-ratio: 1;
+    --c1:linear-gradient(90deg,#0000 calc(100%/3), var(--button-blue) 0 calc(2*100%/3),#0000 0);
+    --c2:linear-gradient(0deg,#0000 calc(100%/3), var(--button-blue) 0 calc(2*100%/3),#0000 0);
+    background: var(--c1),var(--c2),var(--c1),var(--c2);
+    background-size: 300% 4px,4px 300%;
+    background-repeat: no-repeat;
+    animation: l3 1s infinite linear;
+    display: none;
+    z-index: 2001;
+}
+
+@keyframes l3 {
+    0% {
+        background-position: 50%  0,100% 100%,0    100%,0 0
+    }
+    25% {
+        background-position: 0    0,100% 50% ,0    100%,0 0
+    }
+    50% {
+        background-position: 0    0,100% 0   ,50%  100%,0 0
+    }
+    75% {
+        background-position: 0    0,100% 0   ,100% 100%,0 50%
+    }
+    75.01% {
+        background-position: 100% 0,100% 0   ,100% 100%,0 50%
+    }
+    100% {
+        background-position: 50%  0,100% 0   ,100% 100%,0 100%
+    }
+}
+
+#background-loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2000;
+    display: none;
+    background-color: var(--white);
+    opacity: 0.4;
 }

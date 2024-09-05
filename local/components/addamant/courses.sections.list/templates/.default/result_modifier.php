@@ -80,6 +80,7 @@ if (!empty($arResult['SECTIONS'])) {
     }
 
     $coursesInfo = [];
+    $tags = [];
 
     if (!empty($elements)) {
         foreach ($elements as $key => $courseInfo) {
@@ -94,7 +95,7 @@ if (!empty($arResult['SECTIONS'])) {
                 'ID' => $courseInfo['COURSE_ID']
             ]);
 
-            if (!empty($filter)) {
+            if (!empty($filter) && $filter[0] != 'all') {
                 $query->addFilter('COURSE_TAGS.VALUE', $filter);
             }
 
@@ -108,12 +109,7 @@ if (!empty($arResult['SECTIONS'])) {
 
                     if ($course->getCourseTags() && $course->getCourseTags()->getAll()) {
                         foreach ($course->getCourseTags()->getAll() as $tag) {
-                            $tagTable = new HighloadblockManager('TagsCatalog');
-
-                            $tagTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID'], [], ['UF_XML_ID' => $tag->getValue()]);
-                            $itemTags = $tagTable->getDataAll();
-
-                            $filterTabs[] = $itemTags;
+                            $tags[] = $tag->getValue();
                         }
                     }
 
@@ -128,6 +124,15 @@ if (!empty($arResult['SECTIONS'])) {
                 }
             }
         }
+    }
+
+    if (!empty($tags)) {
+        $tagTable = new HighloadblockManager('TagsCatalog');
+
+        $tagTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID'], [], ['UF_XML_ID' => $tags]);
+        $itemsTags = $tagTable->getDataAll();
+
+        $filterTabs = $itemsTags;
     }
 
     foreach ($arResult['SECTIONS'] as $key => $section) {
@@ -167,8 +172,8 @@ if (!empty($arResult['SECTIONS'])) {
     if (!empty($filterTabs)) {
         foreach ($filterTabs as $filterTab) {
             $newFilerTabs[] = [
-                'NAME' => $filterTab[0]['UF_NAME'],
-                'CODE' => $filterTab[0]['UF_XML_ID']
+                'NAME' => $filterTab['UF_NAME'],
+                'CODE' => $filterTab['UF_XML_ID']
             ];
         }
     }
