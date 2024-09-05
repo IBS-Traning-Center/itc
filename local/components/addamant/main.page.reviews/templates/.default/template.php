@@ -55,7 +55,7 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                 <div class="review-item">
                                     <?php if ($review['VIDEO']) : ?>
                                         <div class="reviews-video">
-                                            <video width="362" height="504">
+                                            <video width="402" height="394">
                                                 <source src="<?= $review['VIDEO'] ?>">
                                             </video>
                                             <div class="custom-controls">

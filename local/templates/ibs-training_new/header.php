@@ -9,6 +9,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 global $USER;
 
 Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 Asset::getInstance()->addCss('/local/assets/css/base.css');
 Asset::getInstance()->addCss('/local/assets/css/styles.css');
 Asset::getInstance()->addCss('/local/assets/css/font-awesome.min.css');

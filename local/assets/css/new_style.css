@@ -1,4 +1,8 @@
 /* ОСНОВНЫЕ */
+body {
+    font-family: 'Noto Sans';
+}
+
 *{
     user-select: none;
     -webkit-user-select: none;       
@@ -47,6 +51,7 @@
 
 .btn-main span {
     color: var(--white);
+    font-family: 'Noto Sans';
 }
 
 .btn-main.size-l {
