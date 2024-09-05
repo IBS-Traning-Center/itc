@@ -89,5 +89,6 @@
 
     .mobile-middle-btn a {
         text-align: center;
+        width: 100%;
     }
 }

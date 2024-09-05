@@ -101,6 +101,7 @@
 @media (max-width: 1350px) {
     .best-workers-block {
         flex-direction: column;
+        gap: 24px;
     }
 }
 
