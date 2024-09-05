@@ -284,11 +284,13 @@ $settings = Functions::getSiteSettings();
                             <div class="cert-block">
                                 <?php foreach ($trainer['CERTIFICATES'] as $cert) : ?>
                                     <div class="cert-item">
-                                        <?php if ($cert['UF_PICTURE']) : ?>
+                                        <?php if ($cert['PICTURE']) : ?>
                                             <div class="cert-picture">
-                                                <img src="<?= $cert['UF_PICTURE'] ?>">
+                                                <img src="<?= $cert['PICTURE'] ?>">
                                             </div>
-                                            <p class="f-20"><?= $cert['UF_FULL_DESCRIPTION'] ?></p>
+                                        <?php endif; ?>
+                                        <?php if ($cert['TEXT']) : ?>
+                                            <p class="f-20"><?= $cert['TEXT'] ?></p>
                                         <?php endif; ?>
                                     </div>
                                 <?php endforeach; ?>
@@ -344,7 +346,6 @@ $settings = Functions::getSiteSettings();
     </div>
 </div>
 <div id="sign">
-    <?php \Bitrix\Main\Diag\Debug::dumpToFile(var_export($arResult['schedule'], true), 'sch', '_log.txt'); ?>
     <?php
         $coursePrice = 0;
         $oldPrice = 0;

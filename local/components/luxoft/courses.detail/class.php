@@ -14,6 +14,7 @@ use Bitrix\Main\Localization\Loc;
 use Luxoft\Dev\Tools as LuxoftTools;
 use \Bitrix\Iblock\Elements\ElementSettingsTable;
 use \Bitrix\Iblock\Elements\ElementClientsTable;
+use \Bitrix\Iblock\Elements\ElementCertificatesTable;
 use Local\Util\HighloadblockManager;
 use \Bitrix\Main\Web\Json;
 
@@ -800,29 +801,34 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             }
         }
 
-        if ($trainer->getTrainerCert() && $trainer->getTrainerCert()->getAll()) {
-            $certsIds = [];
-            foreach ($trainer->getTrainerCert()->getAll() as $value) {
-                $certsIds[] = $value->getValue();
-            }
+        $certificates = ElementCertificatesTable::getList([
+            'select' => [
+                'PREVIEW_PICTURE',
+                'PREVIEW_TEXT'
+            ],
+            'filter' => [
+                'ACTIVE' => 'Y',
+                'EXPERT.VALUE' => $trainer->getId()
+            ]
+        ])->fetchCollection();
 
-            $certsIds = array_unique($certsIds);
+        if ($certificates) {
+            $trainerCertifications = [];
+            foreach ($certificates as $certificate) {
+                $cert = [];
 
-            if (!empty($certsIds)) {
-                $certTable = new HighloadblockManager('TrainerCertificate');
-                $certTable->prepareParamsQuery(['UF_FULL_DESCRIPTION', 'UF_XML_ID', 'UF_PICTURE'], [], ['UF_XML_ID' => $certsIds]);
-                $certs = $certTable->getDataAll();
-
-                if (!empty($certs)) {
-                    foreach ($certs as &$item) {
-                        if ($item['UF_PICTURE']) {
-                            $item['UF_PICTURE'] = CFile::GetPath($item['UF_PICTURE']);
-                        }
-                    }
-
-                    $trainerInfo['CERTIFICATES'] = $certs;
+                if ($certificate->getPreviewPicture()) {
+                    $cert['PICTURE'] = CFile::GetPath($certificate->getPreviewPicture());
                 }
+
+                if ($certificate->getPreviewText()) {
+                    $cert['TEXT'] = $certificate->getPreviewText();
+                }
+
+                $trainerCertifications[] = $cert;
             }
+
+            $trainerInfo['CERTIFICATES'] = $trainerCertifications;
         }
 
         if ($trainer->getOrganizationsTrainer() && $trainer->getOrganizationsTrainer()->getAll()) {
