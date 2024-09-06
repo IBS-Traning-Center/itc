@@ -96,14 +96,6 @@ $arUrlRewrite=array (
     'PATH' => '/training/catalog/section.php',
     'SORT' => 100,
   ),
-  67 => 
-  array (
-    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+).html($|\\#.+|\\?.+)#',
-    'RULE' => 'CODE=$1',
-    'ID' => 'luxoft:courses.detail',
-    'PATH' => '/kurs/index.php',
-    'SORT' => 100,
-  ),
   11 => 
   array (
     'CONDITION' => '#^/library/analytics/([a-zA-Z0-9_\\-]+)(/?)(.+)#',
@@ -352,6 +344,14 @@ $arUrlRewrite=array (
     'PATH' => '/clients/index.html',
     'SORT' => 100,
   ),
+  67 => 
+  array (
+    'CONDITION' => '#^/catalog/direction/#',
+    'RULE' => '',
+    'ID' => '',
+    'PATH' => '/catalog/direction/index.php',
+    'SORT' => 100,
+  ),
   47 => 
   array (
     'CONDITION' => '#^/training/category/#',
@@ -398,6 +398,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:catalog',
     'PATH' => '/internal/school/about.php',
+    'SORT' => 100,
+  ),
+  68 => 
+  array (
+    'CONDITION' => '#^/catalog/complex/#',
+    'RULE' => '',
+    'ID' => '',
+    'PATH' => '/catalog/complex/index.php',
     'SORT' => 100,
   ),
   51 => 
@@ -462,6 +470,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:blog',
     'PATH' => '/blog/index.php',
+    'SORT' => 100,
+  ),
+  69 =>
+  array (
+    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+)/($|\\#.+|\\?.+)#',
+    'RULE' => 'CODE=$1',
+    'ID' => 'luxoft:courses.detail',
+    'PATH' => '/kurs/index.php',
     'SORT' => 100,
   ),
 );

@@ -1,7 +1,11 @@
 /* ОСНОВНЫЕ */
+body {
+    font-family: 'Noto Sans';
+}
+
 *{
     user-select: none;
-    -webkit-user-select: none;       
+    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
 }
@@ -27,7 +31,7 @@
     width: fit-content;
 }
 
-.btn-border{   
+.btn-border{
     display: inline-block;
     padding: 24px;
     border: 1px solid var(--button-blue);
@@ -47,6 +51,7 @@
 
 .btn-main span {
     color: var(--white);
+    font-family: 'Noto Sans';
 }
 
 .btn-main.size-l {
@@ -55,6 +60,36 @@
 
 body {
     min-width: 100% !important;
+}
+
+.jq-checkbox, .jq-radio {
+    background: var(--white);
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    border: 1px solid var(--black);
+    margin-right: 16px;
+    border-radius: 0;
+}
+
+.jq-checkbox.checked, .jq-radio.checked {
+    background: var(--button-blue);
+    border-color: var(--button-blue);
+}
+
+.jq-checkbox.checked .jq-checkbox__div {
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    margin: -1px 0 0 -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 130%;
+    font-weight: 400;
 }
 
 @media (max-width: 1180px) {
@@ -890,7 +925,7 @@ body {
 }
 
 .blue-page-block p,
-.blue-page-block h2, 
+.blue-page-block h2,
 .blue-page-block li{
     color: #FFFFFF;
 }
@@ -925,7 +960,7 @@ body {
     .stage-block-wrap{
         background-image: none;
     }
-    
+
     .stage-block ul li:last-child h2:after{
         bottom: 0;
         left: 0;
@@ -1014,13 +1049,13 @@ body {
         padding-left:0px;
         border-bottom: 1px solid #000000;
     }
-    
+
     .you-need-block table tr td:first-child{
         padding-left: 0px;
         border-bottom: none;
         padding-bottom: 0;
     }
-    
+
     .suitable-block ul li{
         background-size: 24px;
         padding-left: 36px;
@@ -1084,7 +1119,7 @@ body {
     }
 
     .stage-block ul li:last-child h2:before{
-       bottom: 19px; 
+       bottom: 19px;
     }
 
     .stage-block ul li:last-child{
@@ -1100,7 +1135,7 @@ body {
     .text-page-block.telegram-block{
         padding-top: 24px;
     }
-  
+
     .bottom-telegram-block p{
         font-size: 16px;
         line-height: 22px;
@@ -1128,7 +1163,7 @@ body {
         gap: 24px;
     }
 
-    .offset-block .text-block-left .offset-number__wrap, 
+    .offset-block .text-block-left .offset-number__wrap,
     .offset-block .text-block-left .offset-link__wrap{
         margin-top: 32px;
         grid-template-columns: repeat(1, 1fr);
@@ -1156,12 +1191,64 @@ body {
     .bottom-telegram-block p{
         margin: 0 0 24px 0;
     }
-    
+
     .bottom-telegram-block svg{
         position: absolute;
         top: 0;
         left: 0;
     }
+}
+
+/* ЛОАДЕР */
+
+#loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    aspect-ratio: 1;
+    --c1:linear-gradient(90deg,#0000 calc(100%/3), var(--button-blue) 0 calc(2*100%/3),#0000 0);
+    --c2:linear-gradient(0deg,#0000 calc(100%/3), var(--button-blue) 0 calc(2*100%/3),#0000 0);
+    background: var(--c1),var(--c2),var(--c1),var(--c2);
+    background-size: 300% 4px,4px 300%;
+    background-repeat: no-repeat;
+    animation: l3 1s infinite linear;
+    display: none;
+    z-index: 2001;
+}
+
+@keyframes l3 {
+    0% {
+        background-position: 50%  0,100% 100%,0    100%,0 0
+    }
+    25% {
+        background-position: 0    0,100% 50% ,0    100%,0 0
+    }
+    50% {
+        background-position: 0    0,100% 0   ,50%  100%,0 0
+    }
+    75% {
+        background-position: 0    0,100% 0   ,100% 100%,0 50%
+    }
+    75.01% {
+        background-position: 100% 0,100% 0   ,100% 100%,0 50%
+    }
+    100% {
+        background-position: 50%  0,100% 0   ,100% 100%,0 100%
+    }
+}
+
+#background-loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2000;
+    display: none;
+    background-color: var(--white);
+    opacity: 0.4;
 }
 
 /* РАСПИСАНИЕ */
@@ -1216,7 +1303,7 @@ body {
     cursor: pointer;
 }
 
-.addition-menu li.active a, 
+.addition-menu li.active a,
 .addition-menu li:hover a{
     background-color: #000000;
     color: #FFFFFF;
@@ -1375,14 +1462,14 @@ body {
 .timetable-list{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-columns: 1fr 1fr 1fr; 
+    grid-auto-columns: 1fr 1fr 1fr;
     gap: 24px;
 }
 
 .timetable-list.quarter{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-auto-columns: 1fr 1fr 1fr; 
+    grid-auto-columns: 1fr 1fr 1fr;
     gap: 24px;
 }
 
@@ -1521,7 +1608,7 @@ body {
     line-height: 24px;
 }
 
-.time-wrapper-right .time{  
+.time-wrapper-right .time{
     text-decoration: underline;
     position: relative;
 }
@@ -1625,7 +1712,7 @@ span.time.time-with-tooltip {
     color: #1d427d;
     border-bottom: 1px dashed #1d427d;
 }
-  
+
 span.time.time-with-tooltip:hover .tooltip {
     display: block !important;
     left: -195px;
@@ -1794,11 +1881,11 @@ span.time.time-with-tooltip:hover .tooltip {
     .timetable-list{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-columns: 1fr 1fr; 
+        grid-auto-columns: 1fr 1fr;
     }
 
     .search-item-catalog{
-       max-width: 307px; 
+       max-width: 307px;
     }
 }
 
@@ -1848,7 +1935,7 @@ span.time.time-with-tooltip:hover .tooltip {
     }
 
     .search-item-catalog{
-        max-width: 100%; 
+        max-width: 100%;
         margin: 16px 0 56px;
     }
 
@@ -1888,11 +1975,11 @@ span.time.time-with-tooltip:hover .tooltip {
     .timetable-filter-type-submit{
         display: block;
     }
-    
+
     .timetable-filter-type-mobile{
         width: 100%;
     }
-    
+
     .timetable-filter-type-mobile .timetable-filter-type-btn{
         font-size: 16px;
         line-height: 24px;
@@ -1957,11 +2044,11 @@ span.time.time-with-tooltip:hover .tooltip {
         z-index: 1;
         bottom: 80px;
     }
-    
+
     .sorting-wrap span{
         display: none;
     }
-    
+
     .timetable-menu .simple-select>a{
         padding: 12px 16px;
         font-size: 16px;
@@ -2013,7 +2100,7 @@ span.time.time-with-tooltip:hover .tooltip {
     }
 
     .timetable-item.quarter .time-one-wrapper{
-       padding: 0 0 0 16px; 
+       padding: 0 0 0 16px;
     }
 
     .timetable-item.quarter .time-one-wrapper + .time-one-wrapper{
@@ -2053,14 +2140,14 @@ span.time.time-with-tooltip:hover .tooltip {
     .timetable-list{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-auto-columns: 1fr; 
+        grid-auto-columns: 1fr;
     }
 
     .timetable-menu{
         flex-direction: column;
         align-items: start;
     }
-    
+
     .timetable-menu .sorting-wrap{
         margin-left: 0;
         margin-top: 24px;
