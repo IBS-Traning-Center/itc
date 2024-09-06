@@ -18,7 +18,6 @@
     "mpdf/mpdf": "8.2.*",
     "phpseclib/phpseclib": "^3",
     "illuminate/support": "^8.83",
-    "andreyryabin/sprint.migration": "4.*",
     "wikimedia/composer-merge-plugin": "dev-master"
   },
   "extra": {
