@@ -264,6 +264,7 @@
     .reviews-main-block .reviews-top-block h2 {
         font-size: 32px;
         line-height: 40px;
+        text-align: left;
     }
 
     .reviews-main-block .reviews-top-block .reviews-top-block_buttons {
