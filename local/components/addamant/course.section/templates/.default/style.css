@@ -1,0 +1,37 @@
+.top-page-banner.section-page .container .banner-content {
+    max-width: 100%;
+}
+
+.courses-section-block.container {
+    max-width: 1920px;
+    padding: 80px 40px 180px;
+    display: flex;
+    gap: 24px;
+}
+
+.courses-section-block.container:before,
+.top-page-banner.section-page .container:after,
+.open-filter-mobile-btn {
+    display: none !important;
+}
+
+.courses-section-block .filter-course-block {
+    width: 442px;
+    max-width: 442px;
+    min-width: 442px;
+}
+
+@media (max-width: 1180px) {
+    .open-filter-mobile-btn {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 8px 40px !important;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .top-page-banner.section-page {
+        padding: 16px 16px 32px 16px;
+    }
+}
