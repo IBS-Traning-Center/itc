@@ -55,8 +55,8 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                 <div class="review-item">
                                     <?php if ($review['VIDEO']) : ?>
                                         <div class="reviews-video">
-                                            <video width="402" height="394">
-                                                <source src="<?= $review['VIDEO'] ?>">
+                                            <video width="402" height="394" muted="" loop="" disablepictureinpicture="" webkit-playsinline="" playsinline="" pip="false">
+                                                <source src="<?= $review['VIDEO'] ?>#t=0.001">
                                             </video>
                                             <div class="custom-controls">
                                                 <div class="buttons-block">
@@ -106,8 +106,8 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                 <div class="review-item">
                                     <?php if ($review['VIDEO']) : ?>
                                         <div class="reviews-video">
-                                            <video width="362" height="504">
-                                                <source src="<?= $review['VIDEO'] ?>">
+                                            <video width="402" height="394" muted="" loop="" disablepictureinpicture="" webkit-playsinline="" playsinline="" pip="false">
+                                                <source src="<?= $review['VIDEO'] ?>#t=0.001">
                                             </video>
                                             <div class="custom-controls">
                                                 <div class="buttons-block">
