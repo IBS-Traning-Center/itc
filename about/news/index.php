@@ -8,7 +8,6 @@ $APPLICATION->SetPageProperty("keywords", "Новости УЦ IBS, Учебны
 $APPLICATION->SetPageProperty("description", "Новости Учебного центра ИБС: бесплатные семинары, конференции, курсы для программистов, оплата услуг обучения");
 $APPLICATION->SetPageProperty("description", "Новости Учебного центра ИБС: бесплатные семинары, конференции, курсы для программистов, оплата услуг обучения");
 $APPLICATION->SetPageProperty("SHOW_FULL_PAGE", "Y");
-$APPLICATION->SetTitle("Жизнь УЦ IBS");
 ?>
 
 <div class="top-page-banner" style="background-color: <?= $APPLICATION->GetPageProperty('BACKGROUND_COLOR_BANNER') ?>">
@@ -36,9 +35,7 @@ $APPLICATION->SetTitle("Жизнь УЦ IBS");
         <div class="search-item-catalog">
 			<form>
 				<input type="text" name="news-search" value="<?=$_REQUEST["news-search"]?>" placeholder="Поиск по материалам" />
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6425 11.0896C19.6425 15.919 15.7276 19.8339 10.8982 19.8339C6.06883 19.8339 2.15387 15.919 2.15387 11.0896C2.15387 6.26024 6.06883 2.34528 10.8982 2.34528C15.7276 2.34528 19.6425 6.26024 19.6425 11.0896ZM17.5412 18.6838C15.7665 20.2376 13.4422 21.1792 10.8982 21.1792C5.32585 21.1792 0.808594 16.6619 0.808594 11.0896C0.808594 5.51725 5.32585 1 10.8982 1C16.4705 1 20.9878 5.51725 20.9878 11.0896C20.9878 13.6336 20.0462 15.9579 18.4924 17.7326L22.8086 22.0488L21.8573 23.0001L17.5412 18.6838Z" fill="black"/>
-                </svg>
+                <?= Functions::buildSVG('search-loop', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
 			</form>
 		</div>
 		<?/*div class="float-right mobile-hidden">Сортировка по:
