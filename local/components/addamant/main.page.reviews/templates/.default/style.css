@@ -248,6 +248,15 @@
     margin: 0;
 }
 
+.reviews-content > div .review-item .reviews-video video::-webkit-media-controls-start-playback-button,
+.reviews-content > div .review-item .reviews-video video::-webkit-media-controls-play-button,
+.reviews-content > div .review-item .reviews-video video::-webkit-media-controls-panel {
+    display: none !important;
+    -webkit-appearance: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
 @media (max-width: 1180px) {
     .reviews-main-block {
         padding: 40px 0;
