@@ -19,7 +19,7 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
     <div class="reviews-main-block">
         <div class="container">
             <div class="reviews-top-block">
-                <h1><?= $arResult['BLOCK_TITLE'] ?: Loc::getMessage('BLOCK_TITLE') ?></h1>
+                <h2><?= $arResult['BLOCK_TITLE'] ?: Loc::getMessage('BLOCK_TITLE') ?></h2>
                 <div class="reviews-top-block_buttons">
                     <a href="<?= $arResult['KVAL_LINK'] ?: '' ?>" class="btn-main size-l">
                         <span class="f-24"><?= Loc::getMessage('BTN_KVAL_TEXT') ?></span>
@@ -55,7 +55,7 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                 <div class="review-item">
                                     <?php if ($review['VIDEO']) : ?>
                                         <div class="reviews-video">
-                                            <video width="362" height="504">
+                                            <video width="402" height="394">
                                                 <source src="<?= $review['VIDEO'] ?>">
                                             </video>
                                             <div class="custom-controls">
