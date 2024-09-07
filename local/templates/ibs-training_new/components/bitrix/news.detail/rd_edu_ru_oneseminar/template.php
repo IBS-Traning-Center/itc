@@ -8,13 +8,6 @@ $APPLICATION->SetPageProperty("blue_title", $arResult["NAME"]);?>
                     <img class="seminar__banner-image" src="<?=$arResult['EVENT']['BANNER']?>" alt="<?=$arResult['EVENT']['NAME']?>">
                 </div>
             <?}?>
-<?
-if ($USER->IsAdmin()){
-echo '<pre>';
-//print_r($arResult)['PROPERTIES'];
-echo '</pre>';
-}
-?>
 
 <div class="seminar__header">
 	<?if($arResult['PROPERTIES']['type_event']['VALUE_ENUM_ID'] == 324) {?>

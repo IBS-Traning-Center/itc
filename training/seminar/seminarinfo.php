@@ -184,4 +184,6 @@ if (($result == 0) or ($result == -1) or ($typeEvent == 324)) {
 
             })
         </script>
+    </div>
+</div>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

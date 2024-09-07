@@ -188,9 +188,9 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
                             Поля, обязательные к заполнению, отмечены звездочкой (<font color="red"><span
                                         class="form-required starrequired">*</span></font>) </p>
                         <?= bitrix_sessid_post() ?>
-                        <? if ($arParams["MAX_FILE_SIZE"] > 0): ?><input type="hidden" name="MAX_FILE_SIZE"
-                                                                         value="<?= $arParams["MAX_FILE_SIZE"] ?>" /><? endif ?>
-                        <? if (is_array($arResult["PROPERTY_LIST"]) && count($arResult["PROPERTY_LIST"] > 0)): ?>
+                        <? var_export(is_array($arResult["PROPERTY_LIST"]))?>
+                        <? if ($arParams["MAX_FILE_SIZE"] > 0): ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>" /><? endif ?>
+                        <? if (is_array($arResult["PROPERTY_LIST"])): ?>
 
                             <? foreach ($arResult["PROPERTY_LIST"] as $propertyID): ?>
                                 <div class="form-section"
