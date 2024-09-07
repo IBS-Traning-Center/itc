@@ -90,12 +90,18 @@
     )
 ); ?>
 <div class="cookie-notice">
-    <p>Сайт IBS Training Center использует cookie. Это дает нам возможность следить за корректной работой сайта, а также
-        анализировать данные, чтобы развивать наши продукты и сервисы. Посещая сайт, вы соглашаетесь с обработкой ваших
-        персональных данных. В случае несогласия вам следует покинуть его</p>
-    <br>
-    <div class="text-center"><a href="javascript:void(0)" style="margin-bottom: 0;"
-                                class="sign-in close-notice btn-primary">Принимаю условия</a></div>
+    <div class="container">
+        <p class="f-16 cookie-text">Сайт IBS Training Center использует cookie. Это дает нам возможность следить за корректной работой сайта, а также анализировать данные, чтобы развивать наши продукты и сервисы. Посещая сайт, вы соглашаетесь с обработкой ваших персональных данных. В случае несогласия вам следует покинуть его.</p>
+        <p class="f-16 show-mobile-full">
+            <span>Развернуть</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 12H8.00001L8.70712 11.2929L8.70711 11.2929L14 6L13.2929 5.29289L8.00001 10.5858L2.70712 5.29289L2.00001 6L7.29289 11.2929L8 12Z" fill="white"/>
+            </svg>
+        </p>
+        <div class="text-center">
+            <a href="javascript:void(0)" style="margin-bottom: 0;" class="sign-in close-notice btn-primary">Принимаю условия</a>
+        </div>
+    </div>
 </div>
 <script>
     $(document).ready(function () {
@@ -203,6 +209,8 @@
     </div>
 </div>
 
+<div id="loader"></div>
+<div id="background-loader"></div>
 
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();

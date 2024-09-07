@@ -403,6 +403,22 @@ $(document).ready(function() {
 
 	//$(".client-slider.vid").scrollable({next: '.next-client.vid', prev: '.prev-client.vid', circular: false});
 	//$('.video-play').fancybox({'type': 'iframe', "allowfullscreen": "true", "width": 900, "height": 620});
+
+	let mobileCookieShowBtn = document.querySelector('.show-mobile-full');
+	let mobileCookieText = document.querySelector('.cookie-text');
+
+	if (mobileCookieShowBtn && mobileCookieText) {
+		mobileCookieShowBtn.addEventListener('click', () => {
+			if (mobileCookieShowBtn.classList.contains('show')) {
+				mobileCookieShowBtn.classList.remove('show');
+				mobileCookieText.classList.remove('show');
+			} else {
+				mobileCookieShowBtn.classList.add('show');
+				mobileCookieText.classList.add('show');
+			}
+		});
+	}
+
 });
 
 function stickyNavInit() {

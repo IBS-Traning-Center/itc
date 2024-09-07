@@ -13,6 +13,7 @@ use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\SystemException;
 use \Bitrix\Iblock\Elements\ElementCompanyReviewsTable;
 use \Bitrix\Iblock\Elements\ElementReviewsTable;
+use Bitrix\Main\Entity\Query;
 
 
 Loc::loadMessages(__FILE__);
@@ -21,6 +22,7 @@ class MainPageReviewsComponent extends CBitrixComponent
 {
     private $studentsReviewsIBResult;
     private $companyReviewsIBResult;
+    private $needleCourseId;
 
     /* Проверка подключения компонента */
     /**
@@ -39,8 +41,19 @@ class MainPageReviewsComponent extends CBitrixComponent
         return true;
     }
 
+    private function checkParams()
+    {
+        if ($this->arParams['NEEDLE_COURSE_ID']) {
+            $this->needleCourseId = $this->arParams['NEEDLE_COURSE_ID'];
+        }
+    }
+
     public function getCompanyIblock()
     {
+        if ($this->needleCourseId) {
+            return false;
+        }
+
         return $this->companyReviewsIBResult = ElementCompanyReviewsTable::getList([
             'select' => [
                 'ID',
@@ -59,21 +72,27 @@ class MainPageReviewsComponent extends CBitrixComponent
 
     public function getStudentsIblock()
     {
-        return $this->studentsReviewsIBResult = ElementReviewsTable::getList([
-            'select' => [
-                'ID',
-                'NAME',
-                'PREVIEW_PICTURE',
-                'USER_NAME',
-                'USER_SURNAME',
-                'USER_REVIEW',
-                'VIDEO_MESS.FILE',
-                'SHOW_ON_MAIN_PAGE.ITEM'
-            ],
-            'filter' => [
-                'ACTIVE' => 'Y'
-            ]
-        ])->fetchCollection();
+        $query = new Query(ElementReviewsTable::getEntity());
+        $query->setSelect([
+            'ID',
+            'NAME',
+            'PREVIEW_PICTURE',
+            'USER_NAME',
+            'USER_SURNAME',
+            'USER_REVIEW',
+            'VIDEO_MESS.FILE',
+            'SHOW_ON_MAIN_PAGE.ITEM'
+        ])
+        ->setFilter([
+            '=ACTIVE' => 'Y'
+        ]);
+
+        if ($this->needleCourseId) {
+            $query->addFilter('course.VALUE', $this->needleCourseId);
+        }
+
+        $result = $query->exec();
+        return $this->studentsReviewsIBResult = $result->fetchCollection();
     }
 
     private function companyReviewsToArray()
@@ -164,7 +183,9 @@ class MainPageReviewsComponent extends CBitrixComponent
                 $newReview['SHOW_ON_MAIN_PAGE'] = $review->getShowOnMainPage()->getItem()->getXmlId();
             }
 
-            if ($newReview['SHOW_ON_MAIN_PAGE'] === 'Y') {
+            if ($this->needleCourseId) {
+                $reviews[$key] = $newReview;
+            } elseif ($newReview['SHOW_ON_MAIN_PAGE'] === 'Y') {
                 $reviews[$key] = $newReview;
             }
         }
@@ -185,6 +206,7 @@ class MainPageReviewsComponent extends CBitrixComponent
     public function executeComponent(): void
     {
         $this->checkModules();
+        $this->checkParams();
 
         $this->getCompanyIblock();
         $this->getStudentsIblock();
