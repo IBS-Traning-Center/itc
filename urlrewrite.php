@@ -152,6 +152,14 @@ $arUrlRewrite=array (
     'PATH' => '/summer-school/index.php',
     'SORT' => 100,
   ),
+  69 => 
+  array (
+    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+)/($|\\#.+|\\?.+)#',
+    'RULE' => 'CODE=$1',
+    'ID' => 'luxoft:courses.detail',
+    'PATH' => '/kurs/index.php',
+    'SORT' => 100,
+  ),
   18 => 
   array (
     'CONDITION' => '#^/kurs_old/([a-zA-Z0-9-\\-_\\_]+).html(.*)#',
@@ -416,6 +424,14 @@ $arUrlRewrite=array (
     'PATH' => '/personal/order/index.php',
     'SORT' => 100,
   ),
+  70 => 
+  array (
+    'CONDITION' => '#^/about/experts/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/test.php',
+    'SORT' => 100,
+  ),
   52 => 
   array (
     'CONDITION' => '#^/training/faq/#',
@@ -470,14 +486,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:blog',
     'PATH' => '/blog/index.php',
-    'SORT' => 100,
-  ),
-  69 =>
-  array (
-    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+)/($|\\#.+|\\?.+)#',
-    'RULE' => 'CODE=$1',
-    'ID' => 'luxoft:courses.detail',
-    'PATH' => '/kurs/index.php',
     'SORT' => 100,
   ),
 );
