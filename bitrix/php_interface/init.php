@@ -1,6 +1,9 @@
 <?php
 use Bitrix\Main\EventManager;
 use Luxoft\Dev\Tools;
+
+define('INIT_DIR', dirname(__FILE__));
+
 require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
 
 if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php")) {
@@ -8,6 +11,10 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php")) {
 }
 if (Bitrix\Main\Loader::includeModule('luxoft.dev')) {
     \Luxoft\Dev\Core::getInstance();
+}
+
+if (file_exists(INIT_DIR . '/include/constants.php')) {
+    include_once INIT_DIR . '/include/constants.php';
 }
 
 include_once '2021/index.php';

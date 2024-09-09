@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 204px;
+    height: 154px;
     min-width: 421px;
     max-width: 421px;
     transition: all 0.3s;
@@ -52,10 +52,10 @@
 }
 
 .best-workers-return-elem .best-workers-return-elem_icon {
-    min-width: 72px;
-    max-width: 72px;
-    min-height: 72px;
-    max-height: 72px;
+    min-width: 56px;
+    max-width: 56px;
+    min-height: 56px;
+    max-height: 56px;
     border: 1px solid var(--button-blue);
     border-radius: 10px;
     display: flex;
@@ -101,6 +101,7 @@
 @media (max-width: 1350px) {
     .best-workers-block {
         flex-direction: column;
+        gap: 24px;
     }
 }
 

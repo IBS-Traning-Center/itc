@@ -18,7 +18,7 @@ if (!empty($arResult['ITEMS'])) : ?>
         <div class="best-workers-default">
             <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
                 <a href="<?= $item['PROPERTIES']['LINK']['VALUE'] ?>" class="best-workers-default_item">
-                    <span><?= $item['NAME'] ?></span>
+                    <span class="f-24"><?= $item['NAME'] ?></span>
                 </a>
             <?php endforeach; ?>
         </div>
