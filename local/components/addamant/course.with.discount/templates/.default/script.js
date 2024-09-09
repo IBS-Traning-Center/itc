@@ -6,7 +6,7 @@ class CoursesWithDiscount
 
     initCoursesWithDiscountSlider()
     {
-        let coursesDiscountContent = $('#coursesDiscountSlider');
+        let coursesDiscountContent = $('#coursesDiscountSlider.more-elem');
 
         if (coursesDiscountContent) {
             coursesDiscountContent.slick({

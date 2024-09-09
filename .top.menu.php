@@ -2,7 +2,7 @@
 $aMenuLinks = [
 	[
 		'Все курсы',
-		'/training/katalog_kursov/',
+		'/catalog/',
 		[],
 		['CATALOG' => 'Y'],
 		''
