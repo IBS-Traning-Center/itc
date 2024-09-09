@@ -1233,8 +1233,6 @@ body {
     }
 }
 
-<<<<<<< HEAD
-=======
 /* ЛОАДЕР */
 
 #loader {
@@ -1287,7 +1285,6 @@ body {
     opacity: 0.4;
 }
 
->>>>>>> 73036a5798f1b0e3a13d9c9edb5608707c270490
 /* РАСПИСАНИЕ */
 .top-page-banner.timetable{
     padding: 60px 16px;
@@ -2228,7 +2225,6 @@ span.time.time-with-tooltip:hover .tooltip {
     .pagination-quarter .next-quater span{
         display: none;
     }
-<<<<<<< HEAD
 
     .cookie-notice .text-center {
         width: 100%;
@@ -2302,6 +2298,4 @@ span.time.time-with-tooltip:hover .tooltip {
     background-color: var(--white);
     opacity: 0.4;
 }
-=======
 }
->>>>>>> 73036a5798f1b0e3a13d9c9edb5608707c270490

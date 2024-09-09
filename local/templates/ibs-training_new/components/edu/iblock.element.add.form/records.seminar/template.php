@@ -34,9 +34,11 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
 <div id="register" class="bg-main-wrap" style="background: url('/static/images/course-bg.jpg') center; background-size: cover;">
     <div class="frame">
         <div class="form-reg">
-            <script>$(document).ready(function () {
+            <script>
+                $(document).ready(function () {
                     $("#submit_form").validate();
-                });</script>
+                });
+            </script>
             <style type="text/css">
                 .form-reg h2 {
                     font-size: 32px;
@@ -96,7 +98,6 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
             <? if (count($arResult["ERRORS"])) { ?><?= ShowError(implode("<br />", $arResult["ERRORS"])) ?><? } ?>
             <? if (strlen($arResult["MESSAGE"]) > 0): ?>
                 <br/>
-
                 <h2 class="slogan"><?= $arResult["MESSAGE"] ?></h2>
                 <h2>В ближайшее время на указанный Вами email будет выслано письмо с дальнейшими инструкциями.</h2>
             <?
@@ -188,9 +189,9 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
                             Поля, обязательные к заполнению, отмечены звездочкой (<font color="red"><span
                                         class="form-required starrequired">*</span></font>) </p>
                         <?= bitrix_sessid_post() ?>
-                        <? if ($arParams["MAX_FILE_SIZE"] > 0): ?><input type="hidden" name="MAX_FILE_SIZE"
-                                                                         value="<?= $arParams["MAX_FILE_SIZE"] ?>" /><? endif ?>
-                        <? if (is_array($arResult["PROPERTY_LIST"]) && count($arResult["PROPERTY_LIST"] > 0)): ?>
+                        <? if ($arParams["MAX_FILE_SIZE"] > 0): ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>" /><? endif ?>
+
+                        <? if (is_array($arResult["PROPERTY_LIST"]) && count($arResult["PROPERTY_LIST"]) > 0): ?>
 
                             <? foreach ($arResult["PROPERTY_LIST"] as $propertyID): ?>
                                 <div class="form-section"

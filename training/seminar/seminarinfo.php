@@ -149,6 +149,8 @@ if (($result == 0) or ($result == -1) or ($typeEvent == 324)) {
             <h3>Хотите узнать больше?</h3>
             <p>По всем вопросам отправьте письмо по адресу <a href="mailto:<?=EMAIL_ADDRESS?>"><?=EMAIL_ADDRESS?></a></p>
         </div>
+    </div>
+</div>
         <script>
             $(document).ready(function () {
                 $("#ya_share").one("click", function () {
