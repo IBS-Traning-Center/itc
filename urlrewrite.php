@@ -80,12 +80,12 @@ $arUrlRewrite=array (
     'PATH' => '/training/selflearning/index.php',
     'SORT' => 100,
   ),
-  19 => 
+  19 =>
   array (
-    'CONDITION' => '#^/about/experts/([a-zA-Z0-9-]+).html($|\\#.+|\\?.+)#',
+    'CONDITION' => '#^/about/experts/#',
     'RULE' => 'CODE=$1',
     'ID' => '',
-    'PATH' => '/about/experts/detail.php',
+    'PATH' => '/about/experts/index.php',
     'SORT' => 100,
   ),
   10 => 
@@ -422,14 +422,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:sale.personal.order',
     'PATH' => '/personal/order/index.php',
-    'SORT' => 100,
-  ),
-  70 => 
-  array (
-    'CONDITION' => '#^/about/experts/#',
-    'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/test.php',
     'SORT' => 100,
   ),
   52 => 
