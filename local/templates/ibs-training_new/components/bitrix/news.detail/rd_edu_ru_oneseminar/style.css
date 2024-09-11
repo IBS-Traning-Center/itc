@@ -85,7 +85,8 @@
 }
 
 .seminar__section .seminar__audience-wrap{
-    margin-top: 0; 
+    margin-top: 0;
+    margin-bottom: -24px;
 }
 
 .seminar__section .seminar__audience-item{
@@ -95,8 +96,19 @@
     max-width: 360px;
     width: 100%;
     margin-right: 24px;
-    margin-bottom: 0;
+    margin-bottom: 24px;
     padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.seminar__section .seminar__audience-item::before{
+    content: '';
+    height: 72px;
+    width: 72px;
+    background: url(images/icon-how.jpg)no-repeat center center;
+    background-size: contain;
+    margin-right: 24px;
 }
 
 .seminar>.container{
@@ -114,6 +126,7 @@
     max-width: 323px;
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 
 .trainer-item{
@@ -183,6 +196,26 @@
 .seminar__order-no{
     background-color: #B2B2B2!important;
 }
+
+.seminar__section-other{
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 52px;
+    margin-bottom: 16px;
+}
+
+.seminar__section-other-links a{
+    color: var(--button-blue);
+    font-size: 20px;
+    line-height: 32px;
+    margin-right: 24px;
+    white-space: nowrap;
+}
+
+.seminar__section-other-links a:hover{
+    color: var(--black);
+}
+
 @media (max-width:1180px) {
     .seminar .top-page-banner{
         padding: 16px 16px 40px;
@@ -263,11 +296,7 @@
 
     .seminar__section .seminar__audience-item{
         max-width: 100%;
-        margin: 0;
-    }
-
-    .seminar__section .seminar__audience-item + .seminar__audience-item{
-        margin-top: 24px;
+        margin-right: 0;
     }
 
     .trainer-item{
@@ -330,6 +359,12 @@
     .trainer-header{
         margin-bottom: 32px;
     }
+
+    .seminar__section-other{
+        font-size: 18px;
+        line-height: 26px;
+        margin-top: 32px;             
+    }
 }
 
 @media (max-width: 767px) {
@@ -357,5 +392,11 @@
         margin-right: 0;
         font-size: 16px;
         line-height: 20px;
+    }
+
+    .seminar__section-other-links a + a{
+        width: 100%;
+        display: block;
+        margin-top: 24px;
     }
 }

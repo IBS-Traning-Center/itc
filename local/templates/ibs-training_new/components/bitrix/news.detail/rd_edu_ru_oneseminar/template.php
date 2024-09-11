@@ -6,6 +6,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true)
 }
 
 use Local\Util\Functions;
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
+
 $APPLICATION->SetTitle($arResult['EVENT']['TYPE'].": ".$arResult['NAME']);
 $APPLICATION->SetPageProperty('title', $arResult['NAME']);
 $APPLICATION->SetPageProperty('blue_title', $arResult['NAME']);
@@ -47,12 +50,12 @@ if (($result == 0) || ($result == -1)) {
                         <div class='seminar__time-date-place'>
                 		    <?php if(!empty($arResult['PROPERTIES']['startdate'])) {?>
                 		    	<div class='seminar__date'><b>
-                                    Доступ открыт:</b> 
+                                    <?= Loc::getMessage('ACCESS')?></b> 
                                     <?=date('d.m.Y', strtotime($arResult['PROPERTIES']['startdate']['VALUE']))?>-<?= date('d.m.Y',strtotime($arResult['PROPERTIES']['enddate']['VALUE']))?>
                 		    	</div>
                 		    <?php }?>
-                		    <div class='seminar__date'><b>Формат:</b> <?=$arResult['EVENT']['PLACE']?></div>
-                		    <div class='seminar__place'><b>Язык:</b> <?=$arResult['PROPERTIES']['LAGUAGE']['VALUE']?></div>
+                		    <div class='seminar__date'><b><?= Loc::getMessage('FORMAT')?></b> <?=$arResult['EVENT']['PLACE']?></div>
+                		    <div class='seminar__place'><b><?= Loc::getMessage('LANG')?></b> <?=$arResult['PROPERTIES']['LAGUAGE']['VALUE']?></div>
                 	    </div>
                 	<?php } else {?>
                         <?php if($arResult['EVENT']['TIME-DATE-PLACE'] === 'Y') {?>
@@ -60,7 +63,7 @@ if (($result == 0) || ($result == -1)) {
                                 <?php if(!empty($arResult['EVENT']['TIME'])) {?>
                 	        	    <div class='seminar__time'>
                                         <?=Functions::buildSVG('time', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                                        <b>Время:</b> 
+                                        <b><?= Loc::getMessage('TIME')?></b> 
                                         <?=$arResult['EVENT']['TIME']?>
                 	        	    	<?php if($arResult['EVENT']['TYPE'] == 'Вебинар') {?> 
                 	        	    		(мск.)
@@ -70,7 +73,7 @@ if (($result == 0) || ($result == -1)) {
                                 <?php if(!empty($arResult['EVENT']['DATE'])) {?>
                             	    <div class='seminar__date'>
                                         <?=Functions::buildSVG('calender', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                                        <b>Дата проведения:</b>
+                                        <b><?= Loc::getMessage('DATE')?></b>
                             		    <?=$arResult['EVENT']['DATE']?>
                                     </div>
                                 <?php }?>
@@ -89,24 +92,19 @@ if (($result == 0) || ($result == -1)) {
                 <div class='seminar__order-box'>
                     <div class="seminar__order-title"><?= $arResult['PROPERTIES']['type']['VALUE']?></div>
                     <? if($glFlagShowForm){?>
-                        <a href='#register' class='seminar__order btn-main size-l'>Зарегистрироваться</a>
+                        <a class='seminar__order btn-main size-l'><?= Loc::getMessage('REGISTRATION')?></a>
                     <?}else{?>
-                        <span class='seminar__order-no btn-main size-l'>Регистрация окончена</span>
+                        <span class='seminar__order-no btn-main size-l'><?= Loc::getMessage('NO_REGISTRATION')?></span>
                     <?}?>
                 </div>
             </div>
         </div>
     </div>
     <div class='container'>
-        <?/*php if(!empty($arResult['EVENT']['BANNER'])) {?>
-            <div class='seminar__banner'>
-                <img class='seminar__banner-image' src='<?=$arResult['EVENT']['BANNER']?>' alt='<?=$arResult['EVENT']['NAME']?>'>
-            </div>
-        <?php }*/?>
         <div class='seminar__main'>
             <?php if(!empty($arResult['PREVIEW_TEXT'])) {?>
                 <div class='seminar__section'>
-                    <div class='seminar__section-title'>Организаторы:</div>
+                    <div class='seminar__section-title'><?= Loc::getMessage('ORGANIZATION')?></div>
                     <div class='seminar__section-description'><?=$arResult['PREVIEW_TEXT']?></div>
                 </div>
             <?php }?>
@@ -117,20 +115,25 @@ if (($result == 0) || ($result == -1)) {
             <?php }?>
             <?php if(!empty($arResult['EVENT']['DESCRIPTION']) || !empty($arResult['EVENT']['SHORT_DESCRIPTION'])) {?>
                 <div class='seminar__section'>
-                    <div class='seminar__section-title'>О чём курс:</div>
+                    <div class='seminar__section-title'><?= Loc::getMessage('OF_KURS')?></div>
                     <?php if(!empty($arResult['EVENT']['DESCRIPTION'])) {?><div class='seminar__section-description'><?=$arResult['EVENT']['DESCRIPTION']?></div><?php }?>
                     <?php if(!empty($arResult['EVENT']['SHORT_DESCRIPTION'])) {?><div class='seminar__section-description'><?=$arResult['EVENT']['SHORT_DESCRIPTION']?></div><?php }?>
                 </div>
             <?php }?>
             <?php if(!empty($arResult['EVENT']['CONTENT'])) {?>
                 <div class='seminar__section'>
-                    <div class='seminar__section-title'>Содержание:</div>
+                    <div class='seminar__section-title'><?= Loc::getMessage('CONTENT')?></div>
                     <div class='seminar__section-description'><?=$arResult['EVENT']['CONTENT']?></div>
+                    
+                    <div class='seminar__section-other'><?= Loc::getMessage('OTHER_CONTENT')?></div>
+                    <div class='seminar__section-other-links'>
+                        <?php $APPLICATION->IncludeFile($templateFolder . '/include/other_link.php'); ?>
+                    </div>
                 </div>
             <?php }?>
             <?php if ($arResult['PROPERTIES']['AUDIENCE']['VALUE']){?>
                 <div class='seminar__section'>
-                    <div class='seminar__section-title'>Для кого:</div>
+                    <div class='seminar__section-title'><?= Loc::getMessage('FOR_HOW')?></div>
                     <div class='seminar__audience-wrap'>
                         <?php foreach($arResult['PROPERTIES']['AUDIENCE']['VALUE'] as $value){?>
                             <div class='seminar__audience-item'><?= $value?></div>
@@ -146,7 +149,7 @@ if (($result == 0) || ($result == -1)) {
             <?php }?>
             <?php if(!empty($arResult['EVENT']['TRAINER'])) {?>
                 <div id='trainer' class='not-main-page'>
-                    <div class='trainer-heading'>Тренер</div>
+                    <div class='trainer-heading'><?= Loc::getMessage('TRENER')?></div>
                     <div class='trainer-item'>
                         <div class='trainer-header'>
                             <div class='trainer-picture'>
@@ -167,7 +170,7 @@ if (($result == 0) || ($result == -1)) {
                 <div id='reccomend' class='bg not-main-page gray'>
                     <div class='frame'>
                         <?php if (count($arResult['ADDITONAL']['LINKED']) > 0) { ?>
-                            <div class='reccomend-heading'>Связанные курсы:</div>
+                            <div class='reccomend-heading'><?= Loc::getMessage('RELATED_KURS')?></div>
                             <div class='reccomend-list'>
                                 <?php foreach ($arResult['ADDITONAL']['LINKED'] as $arLinkedCourses) { ?>
                                     <div class='reccomend-item'>
@@ -204,7 +207,7 @@ if (($result == 0) || ($result == -1)) {
                                                 </div>
                                             </div>
                                             <div class='req-hours sw100p'>
-                                                <a class='reg-link' href='/training/catalog/course.html?ID=<?= $arLinkedCourses['COURSE_ID'] ?>'>Записаться</a>
+                                                <a class='reg-link' href='/training/catalog/course.html?ID=<?= $arLinkedCourses['COURSE_ID'] ?>'><?= Loc::getMessage('WRITE')?></a>
                                             </div>
                                         </div>
                                     </div>
@@ -215,7 +218,7 @@ if (($result == 0) || ($result == -1)) {
                             <?php if ($arResult['COURSE']['ADD_SOURCES']) { ?>
                                 <div class='small-2 padding-right'>
                                     <div class='descr-wrap margin-b-35'>
-                                        <h3 id='reco'>Рекомендуемые дополнительные материалы, источники:</h3>
+                                        <h3 id='reco'><?= Loc::getMessage('SING_UP')?></h3>
                                         <?= $arResult['COURSE']['ADD_SOURCES'];?>
                                     </div>
                                 </div>
@@ -223,7 +226,7 @@ if (($result == 0) || ($result == -1)) {
                             <?php if ($arResult['COURSE']['OTHER']) { ?>
                                 <div class='small-2 <?php if ($arResult['COURSE']['ADD_SOURCES']) { ?>padding-left<?php } ?>'>
                                     <div class='desr-wrap margin-b-35'>
-                                        <h3 id='primech'>Примечание:</h3>
+                                        <h3 id='primech'><?= Loc::getMessage('DATE')?></h3>
                                         <?= $arResult['COURSE']['OTHER'];?>
                                     </div>
                                 </div>
@@ -239,7 +242,7 @@ if (($result == 0) || ($result == -1)) {
                     <div class='seminar__time-date-place bottom'>
                         <?php if(!empty($arResult['EVENT']['TIME'])) {?>
                     	    <div class='seminar__time'>
-                                <b>Время:</b><br>
+                                <b><?= Loc::getMessage('TIME')?></b><br>
                                 <span><?=$arResult['EVENT']['TIME']?>
                     	    	<?php if($arResult['EVENT']['TYPE'] == 'Вебинар') {?> 
                     	    		(мск.)
@@ -248,7 +251,7 @@ if (($result == 0) || ($result == -1)) {
                         <?php }?>
                         <?php if(!empty($arResult['EVENT']['DATE'])) {?>
                     	    <div class='seminar__date'>
-                                <b>Дата проведения:</b><br>
+                                <b><?= Loc::getMessage('DATE')?></b><br>
                     		    <span><?=$arResult['EVENT']['DATE']?></span>
                             </div>
                         <?php }?>
@@ -256,9 +259,9 @@ if (($result == 0) || ($result == -1)) {
                 <?php }?>
                 <div class="seminar__order-title"><?= $arResult['PROPERTIES']['type']['VALUE']?></div>
                 <? if($glFlagShowForm){?>
-                    <a href='#register' class='seminar__order btn-main size-l'>Зарегистрироваться</a>
+                    <a class='seminar__order btn-main size-l'><?= Loc::getMessage('REGISTRATION')?></a>
                 <?}else{?>
-                    <span class='seminar__order-no btn-main size-l'>Регистрация окончена</span>
+                    <span class='seminar__order-no btn-main size-l'><?= Loc::getMessage('NO_REGISTRATION')?></span>
                 <?}?>
             </div>
         </div>

@@ -2205,38 +2205,6 @@ h3#primech {
 .grn {
   font-size: 14px;
 }
-.form-reg {
-  max-width: 585px;
-  background: #fff;
-  padding: 18px 52px 41px 52px;
-  margin: 0 auto;
-  border-radius: 7px;
-  margin-bottom: 57px;
-}
-.form-reg input[type="text"]{
-  width: 100%;
-  background: #f3f3f3;
-}
-.form-reg .label {
-  font-size: 11px;
-  color: #6e7d87;
-  margin-bottom: 4px;
-}
-.form-section {
-  margin-bottom: 6px;
-}
-.form-reg h3 {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #262626;
-}
-.form-reg h4 {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #262626;
-  line-height: 1.2;
-}
 input.sign-in, button.sign-in {
   font-size: 16px;
   border: 0;
@@ -2910,26 +2878,6 @@ table.bordered td {
 }
 .training-slider-inner.active {
   display: block !important;
-}
-.form-reg textarea{
-  border: 2px solid #7a8891;
-  border-radius: 10px;
-  padding: 10px 22px;
-  outline: none;
-  position: relative;
-  font-size: 16px;
-  width: 100%;
-  background: #f3f3f3;
-  resize: none;
-}
-.form-reg textarea:focus {
-  border-color: #0e82db;
-}
-.form-reg h2 {
-  color: #58595b;
-}
-.form-reg .agree-text {
-  color: #535353;
 }
 #content-3 .exp-heading {
   color: #262626
