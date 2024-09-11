@@ -10,12 +10,13 @@ $arResult['EVENT'] = [
 
     'DESCRIPTION' => nl2br(strip_tags($arResult['PROPERTIES']['description']['~VALUE'], '<a>')),
     'SHORT_DESCRIPTION' => trim($arResult['PROPERTIES']['ADDITIONAL_DESC']['~VALUE']['TEXT']),
-    'CONTENT' => nl2br($arResult['PROPERTIES']['content']['VALUE']),
+    'CONTENT' => nl2br($arResult['PROPERTIES']['content']['~VALUE']['TEXT']),
     'PEOPLE' => nl2br($arResult['PROPERTIES']['people']['VALUE']),
 
     'TITLE' => $arResult['PROPERTIES']['titlefile']['VALUE'],
     'BANNER' => CFile::GetPath($arResult['PROPERTIES']['BANNER']['VALUE'])
 ];
+
 
 $arResult['EVENT']['TIME-DATE-PLACE'] = (!empty($arResult['EVENT']['TIME']) || !empty($arResult['EVENT']['DATE']) || !empty($arResult['EVENT']['PLACE'])) ? 'Y' : 'N';
 

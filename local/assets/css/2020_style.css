@@ -202,11 +202,10 @@ a {
 }
 
 .page {
-    overflow-x: hidden;
+    
 }
 .page._content {
     padding-top: 100px;
-    overflow: hidden;
 }
 #header-sticky-wrapper {
     position: relative;

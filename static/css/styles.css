@@ -1871,10 +1871,6 @@ h2#auditory {
   color: #f26f21;
   margin-top: 37px;
 }
-.trainer-heading {
-  font-size: 24px;
-  margin-bottom: 29px;
-}
 .button {
   font-size: 16px;
   line-height: 36px;
@@ -1888,45 +1884,6 @@ h2#auditory {
 .button.active {
   background: #1d427d;
   color: #ffffff;
-}
-.trainer-header {
-  height: 150px;
-  padding-left: 62px;
-}
-.trainer-picture {
-  border: 1px solid #f0f0f0;
-  padding: 6px;
-  width: 114px;
-  float: left;
-  background: #fff;
-  border-radius: 5px;
-  height: 114px;
-}
-.trainer-short-description {
-  margin-left: 130px;
-  padding-right: 105px;
-  max-width: 510px;
-  line-height: 1.2;
-  font-size: 12px;
-  color: #797979;
-}
-.trainer-picture img {
-  border-radius: 5px;
-}
-.trainer-link {
-  font-size: 18px;
-  display: block;
-  margin-bottom: 7px;
-}
-.trainer-content {
-  position: relative;
-  margin-bottom: 80px;
-}
-.trainer-content.open .trainer-description{
-  height: auto;
-}
-.trainer-content.open .open-link {
-  display: none;
 }
 .date-nly {
   margin-bottom: 5px;
@@ -3051,9 +3008,6 @@ tbody tr td {
   margin: 5px;
   overflow: hidden;
 }
-.trainer-picture img {
-  width: 100px;
-}
 .main-knowledge, .cert-wrap, .video-wrap, .trainer-description {
   margin-bottom: 30px;
 }
@@ -3968,10 +3922,6 @@ div.reviews-collapse a {
   }
   .course-main-info .padding-right,  .course-main-info .padding-left{
     padding: 0;
-  }
-
-  .trainer-header {
-    padding-left: 0;
   }
   .slick-prev {
     display: none !important;
