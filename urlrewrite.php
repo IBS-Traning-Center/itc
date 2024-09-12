@@ -80,12 +80,12 @@ $arUrlRewrite=array (
     'PATH' => '/training/selflearning/index.php',
     'SORT' => 100,
   ),
-  19 => 
+  19 =>
   array (
-    'CONDITION' => '#^/about/experts/([a-zA-Z0-9-]+).html($|\\#.+|\\?.+)#',
+    'CONDITION' => '#^/about/experts/#',
     'RULE' => 'CODE=$1',
     'ID' => '',
-    'PATH' => '/about/experts/detail.php',
+    'PATH' => '/about/experts/index.php',
     'SORT' => 100,
   ),
   10 => 

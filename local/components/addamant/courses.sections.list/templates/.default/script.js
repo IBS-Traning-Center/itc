@@ -258,7 +258,7 @@ class CatalogSectionCustom
                     });
                 }
 
-                let coursesDiscountContent = $('#coursesDiscountSlider');
+                let coursesDiscountContent = $('#coursesDiscountSlider.more-elem');
 
                 if (coursesDiscountContent) {
                     coursesDiscountContent.slick({
