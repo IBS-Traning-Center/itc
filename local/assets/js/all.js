@@ -122,8 +122,26 @@ $(document).ready(function() {
 	});
 	$('.category-picker ul a').click(function() {
 		var id = $(this).data('id');
-		$('#filter input[value="'+id+'"]').prop("checked", true);
+		if($('#filter input[value="'+id+'"]').prop('checked')){
+			$('#filter input[value="'+id+'"]').prop("checked", false);
+		}else{
+			$('#filter input[value="'+id+'"]').prop("checked", true);
+		}
+		if ($(window).width() > '1023'){
+			$('#filter').submit();
+		}
+	});
+	$('.timetable-filter-type-submit').click(function() {
 		$('#filter').submit();
+	});
+
+	$('.timetable-filter-type-btn').click(function() {
+		$('.timetable-filter-type-wrap').show();
+		$('.timetable-filter-type-shadow').show();
+	});
+	$('.timetable-filter-type-submit, .timetable-filter-type-shadow').click(function() {
+		$('.timetable-filter-type-wrap').hide();
+		$('.timetable-filter-type-shadow').hide();
 	});
 	$('.languages-picker ul a').click(function() {
 		var id = $(this).data('id');
