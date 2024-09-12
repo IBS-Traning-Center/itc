@@ -1676,10 +1676,6 @@ h2#auditory {
   color: #f26f21;
   margin-top: 37px;
 }
-.trainer-heading {
-  font-size: 24px;
-  margin-bottom: 29px;
-}
 .button {
   font-size: 16px;
   line-height: 36px;
@@ -1693,45 +1689,6 @@ h2#auditory {
 .button.active {
   background: #1d427d;
   color: #ffffff;
-}
-.trainer-header {
-  height: 150px;
-  padding-left: 62px;
-}
-.trainer-picture {
-  border: 1px solid #f0f0f0;
-  padding: 6px;
-  width: 114px;
-  float: left;
-  background: #fff;
-  border-radius: 5px;
-  height: 114px;
-}
-.trainer-short-description {
-  margin-left: 130px;
-  padding-right: 105px;
-  max-width: 510px;
-  line-height: 1.2;
-  font-size: 12px;
-  color: #797979;
-}
-.trainer-picture img {
-  border-radius: 5px;
-}
-.trainer-link {
-  font-size: 18px;
-  display: block;
-  margin-bottom: 7px;
-}
-.trainer-content {
-  position: relative;
-  margin-bottom: 80px;
-}
-.trainer-content.open .trainer-description{
-  height: auto;
-}
-.trainer-content.open .open-link {
-  display: none;
 }
 .date-nly {
   margin-bottom: 5px;
@@ -2049,38 +2006,6 @@ h3#primech {
 }
 .grn {
   font-size: 14px;
-}
-.form-reg {
-  max-width: 585px;
-  background: #fff;
-  padding: 18px 52px 41px 52px;
-  margin: 0 auto;
-  border-radius: 7px;
-  margin-bottom: 57px;
-}
-.form-reg input[type="text"]{
-  width: 100%;
-  background: #f3f3f3;
-}
-.form-reg .label {
-  font-size: 11px;
-  color: #6e7d87;
-  margin-bottom: 4px;
-}
-.form-section {
-  margin-bottom: 6px;
-}
-.form-reg h3 {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #262626;
-}
-.form-reg h4 {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #262626;
-  line-height: 1.2;
 }
 input.sign-in, button.sign-in {
   font-size: 16px;
@@ -2755,26 +2680,6 @@ table.bordered td {
 .training-slider-inner.active {
   display: block !important;
 }
-.form-reg textarea{
-  border: 2px solid #7a8891;
-  border-radius: 10px;
-  padding: 10px 22px;
-  outline: none;
-  position: relative;
-  font-size: 16px;
-  width: 100%;
-  background: #f3f3f3;
-  resize: none;
-}
-.form-reg textarea:focus {
-  border-color: #0e82db;
-}
-.form-reg h2 {
-  color: #58595b;
-}
-.form-reg .agree-text {
-  color: #535353;
-}
 #content-3 .exp-heading {
   color: #262626
 }
@@ -2855,9 +2760,6 @@ tbody tr td {
 .client-slider .items .cert-item {
   margin: 5px;
   overflow: hidden;
-}
-.trainer-picture img {
-  width: 100px;
 }
 .main-knowledge, .cert-wrap, .video-wrap, .trainer-description {
   margin-bottom: 30px;
@@ -3507,9 +3409,6 @@ div.reviews-collapse a {
   .item-guru:nth-child(2) .item-guru-inner{
     border-top: 1px solid #f0f0f0;
   }
-  .medium-2 .form-reg {
-    margin: 0 auto;
-  }
   .trainer-slider-outer {
     padding-right: 0px;
     padding-bottom: 1px;
@@ -3744,10 +3643,6 @@ div.reviews-collapse a {
   .course-main-info .padding-right,  .course-main-info .padding-left{
     padding: 0;
   }
-
-  .trainer-header {
-    padding-left: 0;
-  }
   .slick-prev {
     display: none !important;
   }
@@ -3763,19 +3658,15 @@ div.reviews-collapse a {
     padding-left: 68px;
     padding-top: 15px;
   }
-  .form-reg {
-    padding: 18px 22px 32px 22px;
-  }
 }
 
-// CUSTOM FORM STYLE
-   .form-wrapper {
-     width: auto;
-     outline: none;
-     border: 1.5px solid #939393;
-     border-radius: 10px;
-     padding: 20px 20px;
-   }
+.form-wrapper {
+   width: auto;
+   outline: none;
+   border: 1.5px solid #939393;
+   border-radius: 10px;
+   padding: 20px 20px;
+}
 
 .form-wrapper i {
   font-size: 20px;
