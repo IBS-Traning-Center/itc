@@ -2154,3 +2154,19 @@ class MyClass
         }
     }
 }
+
+/* Функция отвечающая за вывод "хлебных-крошек" bitrix:breadcrumb */
+function ShowNavChain()
+{
+    global $APPLICATION;
+
+    $APPLICATION->IncludeComponent(
+        'bitrix:breadcrumb',
+        'bread',
+        [
+            'START_FROM' => '0',
+            'PATH' => '',
+            'SITE_ID' => 's1'
+        ]
+    );
+}

@@ -2,8 +2,9 @@
 
 use Bitrix\Main\Localization\Loc;
 use Local\Util\Functions;
+use Local\Util\ComponentHelper;
 
-if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
@@ -30,19 +31,13 @@ if (!empty($arResult['SECTIONS'])) : ?>
     <div class="top-page-banner catalog-page">
         <div class="container">
             <div class="banner-content">
-                <?php $APPLICATION->IncludeComponent(
-                    'bitrix:breadcrumb',
-                    'bread',
-                    [
-                        'START_FROM' => '0',
-                        'PATH' => '',
-                        'SITE_ID' => 's1',
-                    ],
-                    false
-                ); ?>
+                <?php
+                    $helper = new ComponentHelper($component);
+                    $helper->deferredCall('ShowNavChain');
+                ?>
                 <h1><?= $APPLICATION->GetTitle() ?></h1>
                 <div class="mobile-button-open-filter btn-main">
-                    <span class="f-16"><?= Loc::getMessage('MOBILE_OPEN_FILTER_BTN_TEXT') ?></div>
+                    <span class="f-16"><?= Loc::getMessage('MOBILE_OPEN_FILTER_BTN_TEXT') ?></span>
                 </div>
                 <?php $currentPage = $APPLICATION->GetCurPage(); ?>
                 <div class="sections-tabs-block tabs-by-section">
@@ -96,8 +91,9 @@ if (!empty($arResult['SECTIONS'])) : ?>
             ".default",
             Array(
                 "CACHE_TIME" => "3600",
-                "CACHE_TYPE" => "A"
-            )
+                "CACHE_TYPE" => "N"
+            ),
+            $component
         );?>
         <div class="container catalog-sections default">
             <?php foreach ($arResult['SECTIONS'] as $key => $section) : ?>
@@ -150,3 +146,5 @@ if (!empty($arResult['SECTIONS'])) : ?>
     </div>
 </div>
 <div class="background-modal-filter"></div>
+
+<?php $helper->saveCache(); ?>

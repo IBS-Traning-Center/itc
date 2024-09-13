@@ -24,14 +24,12 @@ if (!empty($arResult['COURSES'])) : ?>
 
             if (count($arResult['COURSES']) == 1) {
                 $dopClass = 'one-elem';
-            } elseif (count($arResult['COURSES']) == 2) {
-                $dopClass = 'two-elem';
-            } elseif (count($arResult['COURSES']) > 2) {
+            } elseif (count($arResult['COURSES']) > 1) {
                 $dopClass = 'more-elem';
             }
         ?>
-        <div class="discount-courses-block container <?= $dopClass ?>">
-            <div id="coursesDiscountSlider">
+        <div class="discount-courses-block container">
+            <div id="coursesDiscountSlider" class="<?= $dopClass ?>">
                 <?php foreach ($arResult['COURSES'] as $course) : ?>
                     <a href="/kurs/<?= $course['XML_ID'] ?>/" class="discount-course-item">
                         <div class="image-block">

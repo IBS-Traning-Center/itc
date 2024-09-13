@@ -1,5 +1,11 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
+{
+    die();
+}
+
+use Local\Util\Functions;?>
 <script>
 $(document).ready(function() {
 	var randInt;
@@ -139,18 +145,6 @@ function plural_form($number, $after) {
         }
         $schedule_dis = 0;
 
-
-        /*$arDiscounts = CCatalogDiscount::GetDiscountByPrice(
-        $ar_pes["ID"],
-        $USER->GetUserGroupArray(),
-        "N",
-        SITE_ID
-        );
-        $discountPrice = CCatalogProduct::CountPriceWithDiscount(
-        $ar_pes["ID"],
-        $ar_pes["CURRENCY"],
-        $arDiscounts
-        );*/
         $arDiscounts = array();
         unset($arResultDis);
         $cache = new CPHPCache();
@@ -162,9 +156,6 @@ function plural_form($number, $after) {
             if (is_array($res["discount"]) || (count($res["discount"]) > 0)) {
                 $arResultDis = $res["discount"];
             }
-            /*if ($USER->IsAdmin()) {
-                print_r($arResultDis);
-            }*/
             $arDiscounts = $arResultDis;
         }
         if (!is_array($arResultDis)) {
@@ -329,121 +320,93 @@ function plural_form($number, $after) {
         if ($arValueOfCourses[$ii]["no_basket"] == "Да") {
             $arValueOfCourses[$ii]["show_basket"] = "N";
         }
-        if ($USER->IsAdmin()) {
-            //print_r($arValueOfCourses[$ii]["no_basket"]);
-        }
         $ii = $ii + 1;
     };?>
-<?php
-	// далее будем сортировать многомерный массив
-	// по полю сортировку
-	// таким образом отсортируем по категориям
-	/*if ($arParams["SORT_BY2"]!="date") {
-		function cmp($a, $b)
-		{
-			if ($a["date_sort"] == $b["date_sort"]) {
-				return 0;
-			}
-			return ($a["date_sort"] < $b["date_sort"]) ? -1 : 1;
-		}
-		usort($arValueOfCourses, "cmp");  // сортируем полученный массив по полю sort
-	}*/
-?>
 
+    <div class="timetable-list 444">
 
-
-    <div class="timetable-list">
-
-<?
-	$sortirovka=0;
-
-    foreach ($arValueOfCourses as$key => $value) {
-        $sortirovka_new=$value["sort"];
-
-        switch ($value["cat_id"]) {
-            case "5735":
-                $icon="buisness";
-                break;
-            case "53918":
-            case "84094":
-                $icon="buisness";
-                break;
-            case "5725":
-                $icon="analys";
-                break;
-            case "84093":
-            case "5730":
-            case "84095":
-                $icon="developer-icon";
-                break;
-            case "83007":
-            case "5728":
-                $icon="arch";
-                break;
-            case "5729":
-                $icon="test";
-                break;
-            case "83005":
-            case "5723":
-                $icon="management";
-                break;
-            default:
-                $icon="analys";
-        }
-        ?>
-
-        <div class="timetable-item" itemscope itemtype="http://data-vocabulary.org/Event" >
-            <div class="frame no-y-padding clearfix timetable-flex">
-					<div class="timetable-name-wrap  <?=$icon?>">
-						<div class="name-n-code-wrap"><span class="code"><?=$value["course_code"]?></span> <a class="course-name-time"  <?if ($value['schedule_id']=="64888") {?>href="/scrum-master/" <?} elseif (strlen($value["landing_link"])==0) {?>href="/kurs/<?=$value['XML']?>.html<? if ($value["show_basket"] === "Y"){?>?ID_TIME=<?=$value['schedule_id']?><? } ?>"<?} else {?>href="<?=$value["landing_link"]?>"<?}?> data-type="Timetable" data-action="Click" data-name="<?=$value["course_code"] ?> <?=$value["name"]?> || <?=$value["course_id"]?> || <?=$value['schedule_id']?>"><?=$value["name"]?></a></div>
-						<div class="trener-cat-info">
-							<div class="cat-info"><?=$value["cat_name"]?> <?if ($value["schedule_new_icon"] == "Да") {
-							    ?><i class="icon newone">new</i><?
-							}?><?if ($value["schedule_city"] == CITY_ID_ONLINE) {
-							    ?><i class="icon new">online</i><?
-							}?><?if (preg_match('#PTRN#', $value["course_code"]) && $value["course_code"]!="PTRN-035" && $value["course_code"]!="PTRN-041" && $value["course_code"]!="PTRN-042" && $value["course_code"]!="PTRN-043" && $value["course_code"]!="PTRN-044") {
-							    ?><i class="icon guru">it-guru</i><?
-							}?><?if(isset($value["courseComplexity"]) ){
-                                    if(is_array($value["courseComplexity"])) {
-                                        foreach (array_values($value["courseComplexity"]) as $key=> $complexityValue) {?>
-                                            <i class="icon level <?=getLevel($complexityValue)?>"><?=$complexityValue?></i>
-                                            <?unset($key,$complexityValue);}
-                                    } else {?>
-                                        <i class="icon level <?=getLevel($value["courseComplexity"])?>"><?=$value["courseComplexity"]?></i>
-                                    <?}
-                                }?>
-							<?=$value['']?>
-                            <?if (intval($value["discount"])>0 && $value["discount_type"]=="P") {?><i class="icon discount">-<?=intval($value["discount"])?>%</i><?}?>
-							<?if (intval($value["discount"])>0 && $value["discount_type"]=="F") {?><i class="icon discount">-<?=number_format($value["discount"], 0, '', ' ');?> <?=$value["valuta"]?></i><?}?>
-                            <pre style="display: none"><?=var_export($value)?></pre>
-                            <?if ($value["popular"] == "Да") {?><i class="icon popular">popular</i><?}?><?if ($value["certified"] == "Yes") {?><i class="icon certified">certified</i><?}?><?if ($value["icon-sale"] == "yes") {?><i class="icon new-year"><a href="<?=$value["icon-sale-link"]?>" target="_blank"><b>%</b>Акция</a></i><?}?></div>
-							<? if ($value["prepod_active"]=="Y") {?>
-								<div class="trener-info">Тренер - <a  href="/about/experts/<?=$value['prepod_code']?>.html"><?=$value["prepod_surname"];?> <?=$value["prepod_name"];?></a></div>
-							<?} else {?>
-								<div class="trener-info">Тренер -  <?=$value["prepod_surname"];?>  <?=$value["prepod_name"];?></div>
-							<?}?>
+    <? $sortirovka=0;
+    foreach ($arValueOfCourses as $key => $value) {
+        $sortirovka_new=$value["sort"];?>
+        <?
+	    $this->AddEditAction($value['schedule_id'], $value['EDIT_LINK'], CIBlock::GetArrayByID($value["IBLOCK_ID"], "ELEMENT_EDIT"));
+	    $this->AddDeleteAction($value['schedule_id'], $value['DELETE_LINK'], CIBlock::GetArrayByID($value["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+	    ?>
+        <div class="timetable-item" id="<?=$this->GetEditAreaId($value['schedule_id']);?>" itemscope itemtype="http://data-vocabulary.org/Event" >
+            <div class="timetable-item-wrap">
+					<div class="timetable-name-wrap">
+						<div class="name-n-code-wrap">
+                            <div class="code-icon-wrap">
+                                <span class="code"><?=$value["course_code"]?></span>
+                                <div class="code-icon-right">
+                                    <? if(isset($value["courseComplexity"]) ){
+                                        if(is_array($value["courseComplexity"])) {
+                                            foreach (array_values($value["courseComplexity"]) as $key=> $complexityValue) {?>
+                                                <span class="icon level <?=getLevel($complexityValue)?>"><?=$complexityValue?></span>
+                                                <?unset($key,$complexityValue);}
+                                        } else {?>
+                                            <span class="icon level <?=getLevel($value["courseComplexity"])?>"><?=$value["courseComplexity"]?></span>
+                                        <?}
+                                    }?>
+                                    <span class="hours"> <?plural_form($value["duration"], array("час", "часа", "часов"))?></span>
+                                </div>
+                            </div>
+                            <a class="course-name-time"  <?if ($value['schedule_id']=="64888") {?>href="/scrum-master/" <?} elseif (strlen($value["landing_link"])==0) {?>href="/kurs/<?=$value['XML']?>.html<? if ($value["show_basket"] === "Y"){?>?ID_TIME=<?=$value['schedule_id']?><? } ?>"<?} else {?>href="<?=$value["landing_link"]?>"<?}?> data-type="Timetable" data-action="Click" data-name="<?=$value["course_code"] ?> <?=$value["name"]?> || <?=$value["course_id"]?> || <?=$value['schedule_id']?>"><?=$value["name"]?></a>
+                        </div>
+                       <div class="trener-cat-info">
+							<div class="cat-info">
+                            <?if ($value["schedule_new_icon"] == "Да") {?>
+                                <i class="icon newone"><?= Functions::buildSVG('icon-new', SITE_TEMPLATE_PATH. '/assets/images/icons')?> Новинка</i>
+                            <?}
+                            /*if ($value["schedule_city"] == CITY_ID_ONLINE) {?>
+                                <i class="icon new"><?= Functions::buildSVG('icon-new', SITE_TEMPLATE_PATH. '/assets/images/icons')?> online</i>
+                            <?}
+                            if (preg_match('#PTRN#', $value["course_code"]) && $value["course_code"]!="PTRN-035" && $value["course_code"]!="PTRN-041" && $value["course_code"]!="PTRN-042" && $value["course_code"]!="PTRN-043" && $value["course_code"]!="PTRN-044") {
+							    ?><i class="icon guru"><?= Functions::buildSVG('icon-new', SITE_TEMPLATE_PATH. '/assets/images/icons')?> it-guru</i><?
+							}
+                            if (intval($value["discount"])>0 && $value["discount_type"]=="P") {?>
+                                <i class="icon discount">-<?=intval($value["discount"])?>%</i>
+                            <?}
+                            if (intval($value["discount"])>0 && $value["discount_type"]=="F") {?>
+                                <i class="icon discount">-<?=number_format($value["discount"], 0, '', ' ');?> <?=$value["valuta"]?></i>
+                            <?}
+                            if ($value["popular"] == "Да") {?><i class="icon popular">popular</i><?}?><?if ($value["certified"] == "Yes") {?><i class="icon certified">certified</i><?}?><?if ($value["icon-sale"] == "yes") {?><i class="icon new-year"><a href="<?=$value["icon-sale-link"]?>" target="_blank"><b>%</b>Акция</a></i><?}*/?></div>
 						</div>
 					</div>
 					<div class="time-price-wrapper clearfix">
-						<div class="time-wrapper"><a class="add-to-calendar" href="/training/catalog/ics_course.html?ID=<?=$value['schedule_id']?>"></a>
-                            <div class="timedate" style="display: inline">
-                            <?=$value["startdate"]?><br/></div><span class="time <?if (strlen($value["time_interval"])>0){?>time-with-tooltip<?}?>">
-                            <?=$value["time"]?>
-                            <?if (strlen($value["time_interval"])>0){?>
-                        <span style="display: none;" class="tooltip">
-						    <?=$value["time_interval"]?>
-						</span><?}?></span><br/><span class="hours"> <?plural_form($value["duration"], array("час", "часа", "часов"))?></span></div>
+                        <? if ($value["prepod_active"]=="Y") {?>
+							<div class="trener-info">Тренер: <a  href="/about/experts/<?=$value['prepod_code']?>.html"><?=$value["prepod_surname"];?> <?=$value["prepod_name"];?></a></div>
+						<?} else {?>
+							<div class="trener-info">Тренер: <?=$value["prepod_surname"];?>  <?=$value["prepod_name"];?></div>
+						<?}?>
+                        <div class="time-wrapper">
+                            Дата и время:
+                            <div class="time-wrapper-right">
+                                <div class="timedate">
+                                    <?=$value["startdate"]?>
+                                </div>
+                                <div class="time<?if (strlen($value["time_interval"])>0){?> time-with-tooltip<?}?>">
+                                    <?=$value["time"]?>
+                                    <?if (strlen($value["time_interval"])>0){?>
+                                        <span style="display: none;" class="tooltip">
+                                            <?= Functions::buildSVG('arrow-tooltip', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+						                    <?=$value["time_interval"]?>
+						                </span>
+                                    <?}?>
+                                </div>
+                            </div>
+                        </div>
 						<div class="price-wrapper">
                             <?if (intval($value["schedule_course_sale"])>0) {?>
                                 <span class="sale-percent">
-                                    <?='-'.number_format($value["schedule_course_sale"]);?>%
+                                    <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+                                    Скидка
+                                    <?= number_format($value["schedule_course_sale"]);?>%
                                 </span>
                                 <div class="price-sale">
-
                             <?} else {?>
                         <div class="price">
                             <?}?>
-
                             <?if (intval($value["discount"])>0 && $value["discount_type"]=="P") {?>
 						        <?=number_format($value["price"]*(100-$value["discount"])/100, 0, '', ' ');?><br>
 					        <?} elseif (intval($value["discount"])>0 && $value["discount_type"]=="F") {?>
@@ -453,16 +416,12 @@ function plural_form($number, $after) {
                             <?}?>
                         </div>
                     <? if (intval($value["schedule_course_sale"])>0) {?>
-                    <div class="sale">
-                        <?=number_format($value["price"]*(100-$value["schedule_course_sale"])/100, 0, '', ' ');?>&nbsp;<?=$value["valuta"]?><br>
-                    </div>
-                                    <?php }?>
-<a style="margin-bottom: 0;" class="sign-in small" <?php if ($value['schedule_id']=="64888") {?>href="/scrum-master/"
-   <?php } elseif (strlen($value["landing_link"])==0) {?>href="/kurs/<?=$value['XML']?>.html<?php if ($value["show_basket"] === "Y"){?>?ID_TIME=<?=$value['schedule_id']?>#register<?php } ?>"
-   <?php } else {?>href="<?=$value["landing_link"]?>"<?php }?>>Записаться</a></div>
-					</div>
-
-
+                        <div class="sale">
+                            <?=number_format($value["price"]*(100-$value["schedule_course_sale"])/100, 0, '', ' ');?>&nbsp;<?=$value["valuta"]?><br>
+                        </div>
+                    <?php }?>
+                </div>
+				</div>
 			</div>
 		</div>
     <?php } ?>

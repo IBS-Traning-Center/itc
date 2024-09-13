@@ -67,7 +67,6 @@ font-weight: bold;
     display: none;
 	}
 }
-
 .time-one-wrapper .price-sale {
 	position: relative;
 }
@@ -79,15 +78,9 @@ font-weight: bold;
 	margin: auto;
 	height: 16px;
 }
-.price-wrapper .sale-percent,
-.big-price-sale .sale-percent {
-	background-color: #d65a50;
-}
 .timetable-more-info {
 	color: #000;
 }
-
-
 #corporate .bg-corp-1.bg-corp-1__corporate:before {
 	height: 1045px;
 }

@@ -9,7 +9,7 @@ $aMenuLinks = [
     ],
     [
         'Каталог курсов',
-        '/training/katalog_kursov/',
+        '/catalog/',
         [],
         [],
         ''

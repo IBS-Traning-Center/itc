@@ -80,12 +80,12 @@ $arUrlRewrite=array (
     'PATH' => '/training/selflearning/index.php',
     'SORT' => 100,
   ),
-  19 => 
+  19 =>
   array (
-    'CONDITION' => '#^/about/experts/([a-zA-Z0-9-]+).html($|\\#.+|\\?.+)#',
+    'CONDITION' => '#^/about/experts/#',
     'RULE' => 'CODE=$1',
     'ID' => '',
-    'PATH' => '/about/experts/detail.php',
+    'PATH' => '/about/experts/index.php',
     'SORT' => 100,
   ),
   10 => 
@@ -150,6 +150,14 @@ $arUrlRewrite=array (
     'RULE' => 'CODE=$1',
     'ID' => '',
     'PATH' => '/summer-school/index.php',
+    'SORT' => 100,
+  ),
+  69 => 
+  array (
+    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+)/($|\\#.+|\\?.+)#',
+    'RULE' => 'CODE=$1',
+    'ID' => 'luxoft:courses.detail',
+    'PATH' => '/kurs/index.php',
     'SORT' => 100,
   ),
   18 => 
@@ -470,14 +478,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:blog',
     'PATH' => '/blog/index.php',
-    'SORT' => 100,
-  ),
-  69 =>
-  array (
-    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+)/($|\\#.+|\\?.+)#',
-    'RULE' => 'CODE=$1',
-    'ID' => 'luxoft:courses.detail',
-    'PATH' => '/kurs/index.php',
     'SORT' => 100,
   ),
 );
