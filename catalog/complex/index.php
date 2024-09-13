@@ -17,7 +17,8 @@ $APPLICATION->IncludeComponent(
         'SEF_MODE' => 'Y',
         'SECTION_IBLOCK_ID' => ['49'],
         'CACHE_TIME' => '36000000',
-        'CACHE_TYPE' => 'A'
+        'CACHE_TYPE' => 'A',
+        'IS_COMPLEX' => true
     ]
 );
 ?>

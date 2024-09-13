@@ -231,31 +231,6 @@ class IBlockHandlerClass
 			}
 		}/* D_TEMPCATALOG_DIRECTIONS_IBLOCK ENDS */
 
-
-        /**
-         * D_CATALOG_COMPLEX_IBLOCK
-         *
-         *
-         */
-        if($arFields["IBLOCK_ID"] == D_CATALOG_COMPLEX_IBLOCK) {
-            $arSelect = array("ID", "PROPERTY_PP_COURSE.ID", "PROPERTY_PP_COURSE.NAME", "PROPERTY_PP_COURSE.CODE", "PROPERTY_PP_COURSE_CODE");
-            $arFilter = array("ID"=>$arFields["ID"], "IBLOCK_ID"=>D_CATALOG_COMPLEX_IBLOCK);
-            $res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
-            while($ob = $res->GetNextElement())
-            {
-                $ar_fields = $ob->GetFields();
-                if ($ar_fields['PROPERTY_PP_COURSE_CODE_VALUE'] !== $ar_fields['PROPERTY_PP_COURSE_CODE']){
-                    CIBlockElement::SetPropertyValuesEx($arFields["ID"], D_TEMPCATALOG_DIRECTIONS_IBLOCK, array("PP_COURSE_CODE" => $ar_fields['PROPERTY_PP_COURSE_CODE']));
-                }
-                if($arFields["NAME"] !==  $ar_fields['PROPERTY_PP_COURSE_CODE']." ".$ar_fields['PROPERTY_PP_COURSE_NAME']){
-                    $el = new CIBlockElement;
-                    $r = $el->Update($arFields["ID"], array("NAME" =>$ar_fields['PROPERTY_PP_COURSE_CODE']." ".$ar_fields['PROPERTY_PP_COURSE_NAME'] ), false, false, false);
-                }
-            }
-        }/* D_CATALOG_COMPLEX_IBLOCK ENDS */
-
-
-
         /**
 		* D_EXPERTS_ANSWERS
 		*

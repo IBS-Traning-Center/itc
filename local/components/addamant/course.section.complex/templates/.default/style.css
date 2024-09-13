@@ -1,0 +1,139 @@
+.top-page-banner.section-complex-page .container {
+    align-items: start;
+}
+
+.top-page-banner.section-complex-page .container .banner-content {
+    max-width: 1294px;
+}
+
+.top-page-banner.section-complex-page .container .banner-content h1 {
+    margin: 0;
+}
+
+.top-page-banner.section-complex-page .container .banner-content .courses-count {
+    color: #7B7B7B;
+    margin-bottom: 16px;
+    margin-top: 56px;
+    display: block;
+}
+
+.top-page-banner.section-complex-page .container .banner-content .complexity-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.top-page-banner.section-complex-page .container .banner-content .complexity-block .complexity-item {
+    background-color: var(--lime);
+    padding: 8px 18px;
+}
+
+.top-page-banner.section-complex-page .container .banner-content p.f-32 {
+    margin: 40px 0 0 0;
+}
+
+.top-page-banner.section-complex-page .container .banner-content .course-info-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 56px;
+    margin-top: 40px;
+}
+
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item .top-course-info_item-icon {
+    padding: 12px;
+}
+
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20 {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-diplom-btn {
+    cursor: pointer;
+    color: var(--button-blue);
+}
+
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-diplom-btn:hover {
+    text-decoration: underline;
+}
+
+.top-page-banner.section-complex-page .container .btn-banner-block,
+.main-content-complex-course .right-block {
+    margin-top: 113px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+}
+
+.top-page-banner.section-complex-page .container .btn-banner-block .buttons-block,
+.main-content-complex-course .right-block .buttons-block {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.top-page-banner.section-complex-page .container .btn-banner-block .buttons-block button,
+.main-content-complex-course .right-block .buttons-block button {
+    width: 100%;
+    cursor: pointer;
+}
+
+.top-page-banner.section-complex-page .container .btn-banner-block .buttons-block button:nth-child(2),
+.top-page-banner.section-complex-page .container .btn-banner-block .buttons-block button:nth-child(3),
+.main-content-complex-course .right-block .buttons-block button:nth-child(2),
+.main-content-complex-course .right-block .buttons-block button:nth-child(3) {
+    background-color: var(--white);
+    border: 1px solid var(--button-blue);
+}
+
+.top-page-banner.section-complex-page .container .btn-banner-block .buttons-block button:nth-child(2) span,
+.top-page-banner.section-complex-page .container .btn-banner-block .buttons-block button:nth-child(3) span,
+.main-content-complex-course .right-block .buttons-block button:nth-child(2) span,
+.main-content-complex-course .right-block .buttons-block button:nth-child(3) span {
+    color: var(--button-blue);
+    white-space: nowrap;
+}
+
+.top-page-banner.section-complex-page .container .btn-banner-block .course-price,
+.main-content-complex-course .right-block .course-price {
+    margin-bottom: 8px;
+    color: var(--black);
+    font-size: 56px;
+    line-height: 72px;
+    font-weight: 400;
+}
+
+.top-page-banner.section-complex-page .container .btn-banner-block .course-ur-price,
+.main-content-complex-course .right-block .course-ur-price,
+.main-content-complex-course .right-block {
+    margin: 0;
+}
+
+.top-page-banner.section-complex-page .container .btn-banner-block a.return-money,
+.main-content-complex-course .right-block a.return-money {
+    margin: 0;
+    color: var(--button-blue);
+}
+
+.main-content-complex-course {
+    display: flex;
+    align-items: start;
+    gap: 79px;
+    padding-top: 100px !important;
+    padding-bottom: 140px !important;
+}
