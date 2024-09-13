@@ -60,7 +60,7 @@ if (!empty($arResult['SECTIONS'])) {
             $elementsBD = ElementNewProgrammsTable::getList([
                 'select' => [
                     'ID',
-                    'pp_course'
+                    'COURSES'
                 ],
                 'filter' => [
                     'ACTIVE' => 'Y',
