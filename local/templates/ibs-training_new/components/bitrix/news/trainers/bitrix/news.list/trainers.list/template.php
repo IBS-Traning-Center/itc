@@ -2,6 +2,7 @@
 
 use Bitrix\Main\Localization\Loc;
 use Local\Util\Functions;
+use Local\Util\ComponentHelper;
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
@@ -26,16 +27,10 @@ $currentPage = $APPLICATION->GetCurPage();
 <div class="top-page-banner" style="background-color: <?= $APPLICATION->GetPageProperty('BACKGROUND_COLOR_BANNER') ?>">
     <div class="container">
         <div class="banner-content">
-            <?php $APPLICATION->IncludeComponent(
-                'bitrix:breadcrumb',
-                'bread',
-                [
-                    'START_FROM' => '0',
-                    'PATH' => '',
-                    'SITE_ID' => 's1',
-                ],
-                false
-            ); ?>
+            <?php
+                $helper = new ComponentHelper($component);
+                $helper->deferredCall('ShowNavChain');
+            ?>
             <h1><?= $APPLICATION->GetTitle() ?></h1>
         </div>
         <div class="buttons-block-banner">
@@ -104,3 +99,4 @@ $currentPage = $APPLICATION->GetCurPage();
         <?= $arResult['NAV_STRING'] ?>
     </div>
 <?php endif; ?>
+<?php $helper->saveCache(); ?>

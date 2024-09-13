@@ -90,6 +90,11 @@
     margin: 0;
 }
 
+.top-page-banner.course-detail .banner-content .right-banner-block p.f-20 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
 .top-page-banner.course-detail .banner-content .right-banner-block .price-course-block .old-course-price,
 .course-content .right-content-block .price-course-block .old-course-price {
     color: #7B7B7B;
@@ -914,6 +919,11 @@
 
     .course-content .left-content-block .what-learn-block .what-learn-item {
         flex-direction: row;
+    }
+
+    .top-page-banner.course-detail .banner-content .right-banner-block p.f-20 {
+        font-size: 16px;
+        line-height: 24px;
     }
 }
 
