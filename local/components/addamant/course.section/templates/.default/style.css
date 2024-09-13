@@ -9,7 +9,7 @@
     gap: 24px;
 }
 
-.courses-section-block.container:before,
+.top-page-banner.section-page .container:before,
 .top-page-banner.section-page .container:after,
 .open-filter-mobile-btn {
     display: none !important;
