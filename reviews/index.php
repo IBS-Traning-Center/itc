@@ -35,9 +35,11 @@ if($reviewTab == 'all' || $reviewTab == NULL){
             ); ?>
             <h1><?= $APPLICATION->GetPageProperty('title') ?></h1>
             <div class="reviews-tabs-block">
-				<a href="?reviews=all" class="reviews-tab f-16">Все</a>
-				<a href="?reviews=company" class="reviews-tab f-16">Отзывы компаний</a>
-				<a href="?reviews=student" class="reviews-tab f-16">Отзывы учеников</a>
+				<div class="tabs">
+					<a class="reviews-tab f-16<?= ($reviewTab == 'all' || $reviewTab == NULL)? ' active':''?>" href="?reviews=all" ><span>Все</span></a>
+					<a class="reviews-tab f-16<?= ($reviewTab == 'company')? ' active':''?>" href="?reviews=company" class="reviews-tab f-16"><span>Отзывы компаний</span></a>
+					<a class="reviews-tab f-16<?= ($reviewTab == 'student')? ' active':''?>" href="?reviews=student" class="reviews-tab f-16"><span>Отзывы учеников</span></a>
+				</div>
 			</div>
         </div>
     </div>
@@ -77,13 +79,13 @@ if($reviewTab == 'all' || $reviewTab == NULL){
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "1",
+		"NEWS_COUNT" => "16",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TEMPLATE" => "main.pagenavigation",
 		"PAGER_TITLE" => "Новости",
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
@@ -99,7 +101,7 @@ if($reviewTab == 'all' || $reviewTab == NULL){
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "ID",
+		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",

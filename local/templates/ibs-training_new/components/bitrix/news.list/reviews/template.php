@@ -1,4 +1,8 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<?php
+
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true){
+	die();
+}
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -11,79 +15,129 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */ 
 $this->setFrameMode(true);
+
+use Bitrix\Main\Localization\Loc;
+use Local\Util\Functions;
 ?>
-<div class="news-list">
-<?if($arParams["DISPLAY_TOP_PAGER"]):?>
-	<?=$arResult["NAV_STRING"]?><br />
-<?endif;?>
-<?$count = 0 ?>
-<?foreach($arResult["ITEMS"] as $arItem):?>
-	<?$count++;
-	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-	?>
-	<?echo $arItem["NAME"]?><br>
-	<?echo $arItem["IBLOCK_ID"]?>
-	<p class="news-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
-			<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
-				<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img
-						class="preview_picture"
-						border="0"
-						src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-						width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-						height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
-						alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
-						title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-						style="float:left"
-						/></a>
-			<?else:?>
-				<img
-					class="preview_picture"
-					border="0"
-					src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-					width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-					height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
-					alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
-					title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-					style="float:left"
-					/>
-			<?endif;?>
-		<?endif?>
-		<?if($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_FROM"]):?>
-			<span class="news-date-time"><?echo $arItem["DISPLAY_ACTIVE_FROM"]?></span>
-		<?endif?>
-		<?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
-			<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
-				<a href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><b><?echo $arItem["NAME"]?></b></a><br />
-			<?else:?>
-				<b><?echo $arItem["NAME"]?></b><br />
-			<?endif;?>
-		<?endif;?>
-		<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
-			<?echo $arItem["PREVIEW_TEXT"];?>
-		<?endif;?>
-		<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
-			<div style="clear:both"></div>
-		<?endif?>
-		<?foreach($arItem["FIELDS"] as $code=>$value):?>
-			<small>
-			<?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?=$value;?>
-			</small><br />
-		<?endforeach;?>
-		<?foreach($arItem["DISPLAY_PROPERTIES"] as $pid=>$arProperty):?>
-			<small>
-			<?=$arProperty["NAME"]?>:&nbsp;
-			<?if(is_array($arProperty["DISPLAY_VALUE"])):?>
-				<?=implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);?>
-			<?else:?>
-				<?=$arProperty["DISPLAY_VALUE"];?>
-			<?endif?>
-			</small><br />
-		<?endforeach;?>
-	</p>
-<?endforeach;?>
-<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-	<br /><?=$arResult["NAV_STRING"]?>
-<?endif;?>
+
+<div class="reviews-content">
+	<?php if($arParams["DISPLAY_TOP_PAGER"]) : ?>
+		<?=$arResult["NAV_STRING"]?><br />
+	<?php endif;?>
+	<div class="reviews-content-wrap">
+		<?php foreach($arResult["ITEMS"] as $arItem) : ?>
+			<?php 
+			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+			?>
+			<div class="review-item">
+		        <?php if ($arItem['VIDEO']) : ?>
+		            <div class="reviews-video">
+		                <video muted="" loop="" disablepictureinpicture="" webkit-playsinline="" playsinline="" pip="false">
+		                    <source src="<?= $arItem['VIDEO'] ?>#t=0.001">
+		                </video>
+		                <div class="custom-controls">
+		                    <div class="buttons-block">
+		                        <div class="start-video-btn">
+		                            <?= Functions::buildSVG('start-btn-icon', $templateFolder . '/images') ?>
+		                        </div>
+		                        <div class="stop-video-btn">
+		                            <?= Functions::buildSVG('stop-btn-icon', $templateFolder . '/images') ?>
+		                        </div>
+		                    </div>
+		                    <div class="current-video-time" data-review-id="<?= $key ?>">
+		                        <div class="current-video-time_back"></div>
+		                        <span class="f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
+		                    </div>
+		                </div>
+		            </div>
+		        <?php elseif ($arItem['PREVIEW_TEXT'] || $arItem['USER_REVIEW_VALUE']) : ?>
+		            <div class="review-text-block">
+		                <div class="main-text">
+		                    <span class="f-20"><?= ($arItem['PREVIEW_TEXT'])? $arItem['PREVIEW_TEXT'] : $arItem['USER_REVIEW_VALUE']?></span>
+		                </div>
+		            </div>
+		            <div class="user-info-block">
+						<div class="micro-elem">
+		                    <?= Functions::buildSVG('micro_elem', $templateFolder . '/images') ?>
+		                </div>
+		                <?php if ($arItem['PREVIEW_PICTURE']) : ?>
+		                    <div class="user-image" style="background-image: url('<?= CFile::GetPath($arItem["PREVIEW_PICTURE"]); ?>')"></div>
+		                <?php endif; ?>
+						<?php if($arItem['USER_REVIEW_VALUE']):?>
+							<div class="user-text-info">
+		                	    <span class="full-name f-20"><?= $arItem['USER_NAME'] . ' ' . $arItem['USER_SURNAME'] ?></span>
+		                	</div>
+						<?php else : ?>
+							<div class="user-text-info">
+		                	    <span class="full-name f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
+		                	    <span class="company-name f-20"><?= $arItem['NAME'] ?></span>
+		                	</div>
+						<?php endif; ?>
+		            </div>
+		        <?php endif; ?>
+		    </div>
+			<div class="review-item review-modal">
+					<div class="review-modal-title-wrap">
+						<div class="review-modal-title"><?= Loc::getMessage('REVIEW_MODAL_TITLE')?></div>
+						<div class="review-modal-close"><?=Functions::buildSVG('icon-close', SITE_TEMPLATE_PATH. '/assets/images/icons')?></div>
+					</div>
+				<?php if ($arItem['VIDEO']) : ?>
+		            <div class="reviews-video">
+		                <video muted="" loop="" disablepictureinpicture="" webkit-playsinline="" playsinline="" pip="false">
+		                    <source src="<?= $arItem['VIDEO'] ?>#t=0.001">
+		                </video>
+		                <div class="custom-controls">
+		                    <div class="buttons-block">
+		                        <div class="start-video-btn">
+		                            <?= Functions::buildSVG('start-btn-icon', $templateFolder . '/images') ?>
+		                        </div>
+		                        <div class="stop-video-btn">
+		                            <?= Functions::buildSVG('stop-btn-icon', $templateFolder . '/images') ?>
+		                        </div>
+		                    </div>
+		                    <div class="current-video-time" data-review-id="<?= $key ?>">
+		                        <div class="current-video-time_back"></div>
+		                        <span class="f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
+		                    </div>
+		                </div>
+		            </div>
+		        <?php elseif ($arItem['PREVIEW_TEXT'] || $arItem['USER_REVIEW_VALUE']) : ?>
+		            <div class="review-text-block">
+		                <div class="main-text">
+		                    <span class="f-20">
+								<?php if($arItem['DETAIL_TEXT']) : ?>
+									<?= ($arItem['DETAIL_TEXT'])?>
+								<?php elseif ($arItem['PREVIEW_TEXT'] || $arItem['USER_REVIEW_VALUE']) : ?>
+									<?= ($arItem['PREVIEW_TEXT'])? $arItem['PREVIEW_TEXT'] : $arItem['USER_REVIEW_VALUE']?>
+								<?php endif; ?>
+							</span>
+		                </div>
+		            </div>
+		            <div class="user-info-block">
+						<div class="micro-elem">
+		                    <?= Functions::buildSVG('micro_elem', $templateFolder . '/images') ?>
+		                </div>
+		                <?php if ($arItem['PREVIEW_PICTURE']) : ?>
+		                    <div class="user-image" style="background-image: url('<?= CFile::GetPath($arItem["PREVIEW_PICTURE"]); ?>')"></div>
+		                <?php endif; ?>
+						<?php if($arItem['USER_REVIEW_VALUE']):?>
+							<div class="user-text-info">
+		                	    <span class="full-name f-20"><?= $arItem['USER_NAME'] . ' ' . $arItem['USER_SURNAME'] ?></span>
+		                	</div>
+						<?php else : ?>
+							<div class="user-text-info">
+		                	    <span class="full-name f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
+		                	    <span class="company-name f-20"><?= $arItem['NAME'] ?></span>
+		                	</div>
+						<?php endif; ?>
+		            </div>
+		        <?php endif; ?>
+			</div>
+		<?php endforeach;?>
+	</div>
+	<div class="reviews-content-shadow"></div>
+	<?php if($arParams["DISPLAY_BOTTOM_PAGER"]) : ?>
+		<?=$arResult["NAV_STRING"]?>
+	<?php endif;?>
 </div>
