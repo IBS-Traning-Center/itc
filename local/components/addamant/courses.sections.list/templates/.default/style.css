@@ -117,6 +117,7 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     margin-bottom: 24px;
+    word-wrap: break-word;
 }
 
 .sections-block .container.catalog-sections.default .section-block .info-section-block {

@@ -261,6 +261,10 @@
     .bottom-mobile-block .is-new-course {
         margin-left: auto;
     }
+
+    .discount-courses-block .discount-course-item .course-bottom-block .is-new-course {
+        display: none;
+    }
 }
 
 @media (max-width: 1180px) {

@@ -1,16 +1,24 @@
 <?php
 
+use \Bitrix\Main\Localization\Loc;
+use Local\Util\ComponentHelper;
+
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
-use \Bitrix\Main\Localization\Loc;
-
 Loc::loadMessages(__FILE__);
 
-/** @var $arParams */
-/** @var $arResult */
-/** @var $templateFolder */
+/** @var array $arResult */
+/** @var array $arParams */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+/** @var CBitrixComponentTemplate $this */
+/** @var string $templateName */
+/** @var string $templateFile */
+/** @var string $templateFolder */
+/** @var string $componentPath */
+/** @var CBitrixComponent $component */
 
 global $APPLICATION;
 
@@ -25,16 +33,10 @@ if (!empty($arResult['COURSES_IDS'])) : ?>
     <div class="top-page-banner section-page">
         <div class="container">
             <div class="banner-content">
-                <?php $APPLICATION->IncludeComponent(
-                    'bitrix:breadcrumb',
-                    'bread',
-                    [
-                        'START_FROM' => '0',
-                        'PATH' => '',
-                        'SITE_ID' => 's1',
-                    ],
-                    false
-                ); ?>
+                <?php
+                $helper = new ComponentHelper($component);
+                $helper->deferredCall('ShowNavChain');
+                ?>
                 <h1><?= Loc::getMessage('TITLE_TEXT') ?><?= $APPLICATION->GetTitle() ?></h1>
                 <div class="open-filter-mobile-btn btn-main">
                     <span class="f-16"><?= Loc::getMessage('MOBILE_OPEN_FILTER_BTN_TEXT') ?></span>
@@ -84,8 +86,9 @@ if (!empty($arResult['COURSES_IDS'])) : ?>
                 ".default",
                 Array(
                     "CACHE_TIME" => "3600",
-                    "CACHE_TYPE" => "A"
-                )
+                    "CACHE_TYPE" => "N"
+                ),
+                $component
             );?>
             <?php
             $APPLICATION->IncludeComponent(
@@ -202,4 +205,5 @@ if (!empty($arResult['COURSES_IDS'])) : ?>
     <div class="mobile-filter-modal-content"></div>
 </div>
 <div class="background-modal-filter"></div>
+<?php $helper->saveCache(); ?>
 <?php endif; ?>
