@@ -10,12 +10,9 @@ global $USER, $arEventInfo, $arCoursesInfo, $gCourseFormat;
 if ($gCourseFormat) {
 	unset($arResult['PROPERTY_LIST_FULL']['392']['ENUM']['126']);
 }
-//echo "gCourseFormat= $gCourseFormat";
-//iwrite($arParams['PROPERTY_CODES_HIDDEN']);
+
 if (is_array($arCoursesInfo) && (count($arCoursesInfo)>0) and (isset($_REQUEST['ID_TIME']) === false) and (isset($_REQUEST['IN_CITY']) !== true)){
 	$vKeyInArray = array_search('313', $arParams['PROPERTY_CODES_HIDDEN']);
-	//$arParams['PROPERTY_CODES_HIDDEN'][$vKeyInArray] = "";
-	//$arResult['PROPERTY_HIDDEN'][$vKeyInArray] = "";
 	$arResult['PROPERTY_LIST_FULL']['313']['LIST_TYPE'] = "L";
 	$arResult['PROPERTY_LIST_FULL']['313']['~LIST_TYPE'] = "L";
 	$arResult['PROPERTY_LIST_FULL']['313']['PROPERTY_TYPE'] = "L";
@@ -34,10 +31,9 @@ if (is_array($arCoursesInfo) && (count($arCoursesInfo)>0) and (isset($_REQUEST['
 	$arResult['PROPERTY_LIST_FULL']['313']['SORT'] = 5;
 	$arResult['COUNT_RECORDS'] = count($arCoursesInfo);
 }
+
 if ((isset($_REQUEST['IN_CITY']) === true) or (is_array($arCoursesInfo) && count($arCoursesInfo) == 0)){
 	$vKeyInArray = array_search('407', $arParams['PROPERTY_CODES_HIDDEN']);
-	//$arParams['PROPERTY_CODES_HIDDEN'][$vKeyInArray] = "";
-	//$arResult['PROPERTY_HIDDEN'][$vKeyInArray] = "";
 	$arResult['PROPERTY_LIST_FULL']['407']['LIST_TYPE'] = "L";
 	$arResult['PROPERTY_LIST_FULL']['407']['~LIST_TYPE'] = "L";
 	$arResult['PROPERTY_LIST_FULL']['407']['PROPERTY_TYPE'] = "L";
@@ -57,14 +53,6 @@ if ((isset($_REQUEST['IN_CITY']) === true) or (is_array($arCoursesInfo) && count
 	 	$arResult['PROPERTY_LIST_FULL']['407']['ENUM'][$arSingleCity['ID']]['PROPERTY_ID'] = 407;
 	 	$arResult['PROPERTY_LIST_FULL']['407']['ENUM'][$arSingleCity['ID']]['~PROPERTY_ID'] = 407;
 	}
-	$arResult['PROPERTY_LIST_FULL']['407']['NAME'] = "Желаемое место проведения курса";
-	$arResult['PROPERTY_LIST_FULL']['407']['SORT'] = 3;
-	//$arResult['OWN_TITLE'] = "Регистрация на курс в городе: ". $arCityInfo[$_REQUEST['IN_CITY']]['NAME'];
-	//iwrite($arResult);
+		$arResult['PROPERTY_LIST_FULL']['407']['NAME'] = "Желаемое место проведения курса";
+		$arResult['PROPERTY_LIST_FULL']['407']['SORT'] = 3;
 }
-
-//iwrite($arResult["PROPERTY_HIDDEN"]);
-//iwrite($arParams['PROPERTY_CODES_HIDDEN']);
-
-
-

@@ -31,6 +31,10 @@ body {
     width: fit-content;
 }
 
+.btn-main:hover{
+    color: var(--white);
+}
+
 .btn-border{
     display: inline-block;
     padding: 24px;
