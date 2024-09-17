@@ -178,22 +178,10 @@ foreach ($arResult["ITEMS"] as $arItem):
         $course_online_enumid = $ar_fields["PROPERTY_COURSE_FORMAT_ENUM_ID"];
         $courseNameFromCatalog = $ar_fields["NAME"];
         $courseXML = $ar_fields["XML_ID"];
-        if($courseComplexity = unserialize($ar_fields['~PROPERTY_COMPLEXITY_VALUE'])) {
-            if(empty($courseComplexity['VALUE'])) {
-                unset($courseComplexity);
-            } else {
-                if(is_array($courseComplexity['VALUE'])) {
-                    $currentComplexity = [];
-                    foreach ($courseComplexity['VALUE'] as $complexity) {
-                        $currentComplexity[] = $COMPLEXITY[$complexity];
-                    }
-                    $courseComplexity = $currentComplexity;
-                } else {
-                    $courseComplexity = $COMPLEXITY[$courseComplexity['VALUE']];
-                }
-            }
-        }
+        $courseComplexity = $ar_fields['PROPERTY_COMPLEXITY_VALUE'];
     }
+
+     
     if ($schedule_price == "") {
         $schedule_price = $course_price;
     }
@@ -272,6 +260,8 @@ foreach ($arResult["ITEMS"] as $arItem):
     }
     $arValueOfCourses[$ii]["courseComplexity"] = $courseComplexity;
 
+   
+
     if (intval($arValueOfCourses[$ii]["schedule_course_sale"]) > 0) {
         $price = $arValueOfCourses[$ii]["price"] - ($arValueOfCourses[$ii]["price"] * intval($arValueOfCourses[$ii]["schedule_course_sale"]) / 100);
         $printPrice = "<div class='price-sale-wrap'><span class='price-sale'>" . number_format($arValueOfCourses[$ii]["price"], 0, '', ' ') . " " . $vCurrencyAdd /*. "<i class='icon discount'>-".$arValueOfCourses[$ii]["schedule_course_sale"]."%</i> */."</span>".
@@ -344,15 +334,6 @@ if ($arParams["SORT_BY2"] != "date") {
             </span>
         <? } ?>
     </div>
-    <?/*div class="frame no-y-padding clearfix timetable-flex">
-        <div class="timetable-name-wrap">
-        </div>
-        <div class="time-3-wrapper heading clearfix">
-            <div class="time-one-wrapper"><?= FormatDate('f', $now) ?></div>
-            <div class="time-one-wrapper"><?= FormatDate('f', $now1month) ?></div>
-            <div class="time-one-wrapper"><?= FormatDate('f', $now2month) ?></div>
-        </div>
-    </div*/?>
 <div class="timetable-list quarter">
     <?
     $sortirovka = 0;
@@ -364,15 +345,9 @@ if ($arParams["SORT_BY2"] != "date") {
                     <div class="code-icon-wrap">
                         <span class="code"><?= $value["course_code"] ?></span> 
                         <div class="code-icon-right">
-                            <? if(isset($value["courseComplexity"]) ){
-                                if(is_array($value["courseComplexity"])) {
-                                    foreach (array_values($value["courseComplexity"]) as $key=> $complexityValue) {?>
-                                        <span class="icon level <?=getLevel($complexityValue)?>"><?=$complexityValue?></span>
-                                        <?unset($key,$complexityValue);}
-                                } else {?>
-                                    <span class="icon level <?=getLevel($value["courseComplexity"])?>"><?=$value["courseComplexity"]?></span>
-                                <?}
-                            }?>
+                            <? if(isset($value["courseComplexity"]) ){?>
+                                <span class="icon level <?=getLevel($value["courseComplexity"])?>"><?=$value["courseComplexity"]?></span>
+                            <?}?>
                             <span class="hours"> <?plural_form($value["duration"], array("час", "часа", "часов"))?></span>
                         </div>
                     </div>
@@ -386,13 +361,6 @@ if ($arParams["SORT_BY2"] != "date") {
                     </a>
                 </div>
                 <div class="trener-cat-info">
-                    <?/*div class="cat-info"><?= $value["cat_name"] ?> <? if ($value["schedule_new_icon"] == "Да") { ?>
-                            <i class="icon newone">new</i><? } ?><? if ($value["schedule_city"] == CITY_ID_ONLINE) { ?>
-                            <i class="icon new">online</i><? } ?><? if (preg_match('#PTRN#', $value["course_code"]) && $value["course_code"] != "PTRN-035" && $value["course_code"] != "PTRN-041" && $value["course_code"] != "PTRN-042" && $value["course_code"] != "PTRN-043" && $value["course_code"] != "PTRN-044") { ?>
-                            <i class="icon guru">it-guru</i><? } ?>
-                        
-                        <? if ($value["popular"] == "Да") { ?><i class="popular">popular</i><? } ?><? if ($value["certified"] == "Yes") { ?><i class="icon certified">certified</i><? } ?>
-                    </div*/?>
                     <? if ($value["prepod_active"] == "Y") { ?>
                         <div class="trener-info">Тренер: <a href="/about/experts/<?= $value['prepod_code'] ?>.html"><?= $value["prepod_surname"]; ?> <?= $value["prepod_name"]; ?></a>
                         </div>
