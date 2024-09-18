@@ -85,6 +85,12 @@
 
 @media (max-width: 1180px) {
     #register{
-        padding: 16px;
+        padding: 16px;  
+    }
+}
+
+@media (max-height: 900px) {
+    #register{
+        height: 100%;
     }
 }

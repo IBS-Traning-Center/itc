@@ -43,7 +43,6 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
             <?php if (count($arResult["ERRORS"])) { ?><?= ShowError(implode("<br />", $arResult["ERRORS"])) ?><?php } ?>
             <?php if (strlen($arResult["MESSAGE"]) > 0): ?>
                 <br/>
-
                 <h2 class="slogan"><?= $arResult["MESSAGE"] ?></h2>
                 <h2>В ближайшее время на указанный Вами email будет выслано письмо с дальнейшими инструкциями.</h2>
             <?php
@@ -135,8 +134,14 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
                         </div>
                         <h3 id="event_n" style="display: none;"><?= $arEventInfo['CODE'] ?> <?= $arEventInfo['NAME'] ?></h3>
                         <?= bitrix_sessid_post() ?>
+<<<<<<< HEAD
+                        <? if ($arParams["MAX_FILE_SIZE"] > 0): ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>" /><? endif ?>
+
+                        <? if (is_array($arResult["PROPERTY_LIST"]) && count($arResult["PROPERTY_LIST"]) > 0): ?>
+=======
                         <?php if ($arParams["MAX_FILE_SIZE"] > 0): ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>" /><?php endif ?>
                         <?php if (is_array($arResult["PROPERTY_LIST"])): ?>
+>>>>>>> dev
 
                             <?php foreach ($arResult["PROPERTY_LIST"] as $propertyID): ?>
                                 <div class="form-section"

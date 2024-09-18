@@ -2,6 +2,7 @@
 
 use Bitrix\Main\Localization\Loc;
 use Local\Util\Functions;
+use Local\Util\ComponentHelper;
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) {
     die();
@@ -35,16 +36,10 @@ if ($arResult) : ?>
     <div class="top-page-banner" style="background-color: <?= $APPLICATION->GetPageProperty('BACKGROUND_COLOR_BANNER') ?>">
         <div class="container">
             <div class="banner-content">
-                <?php $APPLICATION->IncludeComponent(
-                    'bitrix:breadcrumb',
-                    'bread',
-                    [
-                        'START_FROM' => '0',
-                        'PATH' => '',
-                        'SITE_ID' => 's1',
-                    ],
-                    false
-                ); ?>
+                <?php
+                    $helper = new ComponentHelper($component);
+                    $helper->deferredCall('ShowNavChain');
+                ?>
                 <?php if ($arResult['DETAIL_PICTURE']['SRC']) : ?>
                     <img class="mobile-trainer-picture" src="<?= $arResult['DETAIL_PICTURE']['SRC'] ?>" alt="<?= $fullName ?>">
                 <?php endif; ?>
@@ -197,3 +192,4 @@ if ($arResult) : ?>
         </div>
     <?php endif; ?>
 <?php endif; ?>
+<?php $helper->saveCache(); ?>

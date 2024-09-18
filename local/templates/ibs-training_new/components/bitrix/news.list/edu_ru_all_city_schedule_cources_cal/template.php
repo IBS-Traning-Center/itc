@@ -208,21 +208,7 @@ function plural_form($number, $after) {
             $course_online_enumid = $ar_fields["PROPERTY_COURSE_FORMAT_ENUM_ID"];
             $courseNameFromCatalog = $ar_fields["NAME"];
             $courseXML = $ar_fields["XML_ID"];
-            if($courseComplexity = unserialize($ar_fields['~PROPERTY_COMPLEXITY_VALUE'])) {
-                if(empty($courseComplexity['VALUE'])) {
-                    unset($courseComplexity);
-                } else {
-                    if(is_array($courseComplexity['VALUE'])) {
-                        $currentComplexity = [];
-                        foreach ($courseComplexity['VALUE'] as $complexity) {
-                            $currentComplexity[] = $COMPLEXITY[$complexity];
-                        }
-                        $courseComplexity = $currentComplexity;
-                    } else {
-                        $courseComplexity = $COMPLEXITY[$courseComplexity['VALUE']];
-                    }
-                }
-            }
+            $courseComplexity = $ar_fields['PROPERTY_COMPLEXITY_VALUE'];
         }
         if ($schedule_price == "") {
             $schedule_price = $course_price;
@@ -339,15 +325,9 @@ function plural_form($number, $after) {
                             <div class="code-icon-wrap">
                                 <span class="code"><?=$value["course_code"]?></span>
                                 <div class="code-icon-right">
-                                    <? if(isset($value["courseComplexity"]) ){
-                                        if(is_array($value["courseComplexity"])) {
-                                            foreach (array_values($value["courseComplexity"]) as $key=> $complexityValue) {?>
-                                                <span class="icon level <?=getLevel($complexityValue)?>"><?=$complexityValue?></span>
-                                                <?unset($key,$complexityValue);}
-                                        } else {?>
-                                            <span class="icon level <?=getLevel($value["courseComplexity"])?>"><?=$value["courseComplexity"]?></span>
-                                        <?}
-                                    }?>
+                                    <? if(isset($value["courseComplexity"]) ){?>
+                                        <span class="icon level <?=getLevel($value["courseComplexity"])?>"><?=$value["courseComplexity"]?></span>
+                                    <?}?>
                                     <span class="hours"> <?plural_form($value["duration"], array("час", "часа", "часов"))?></span>
                                 </div>
                             </div>
