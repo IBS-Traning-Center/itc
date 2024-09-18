@@ -915,6 +915,20 @@
     .course-content .left-content-block .what-learn-block .what-learn-item {
         flex-direction: row;
     }
+
+    .diploma-modal-close-btn {
+        width: 64px;
+        height: 64px;
+    }
+
+    .diploma-modal .diploma-modal-content img {
+        max-width: 400px;
+    }
+
+    .diploma-modal {
+        max-width: 460px;
+        height: 410px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1011,5 +1025,24 @@
     .leader-block .trainer-main-info-block .trainer-org li {
         font-size: 16px;
         line-height: 22px;
+    }
+}
+
+@media (max-width: 500px) {
+    .diploma-modal {
+        max-width: 330px;
+        height: 300px;
+    }
+
+    .diploma-modal-close-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .diploma-modal-close-btn svg {
+        max-width: 32px;
+        min-width: 32px;
+        max-height: 32px;
+        min-height: 32px;
     }
 }

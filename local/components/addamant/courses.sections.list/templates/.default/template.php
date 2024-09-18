@@ -134,6 +134,7 @@ if (!empty($arResult['SECTIONS'])) : ?>
         </div>
     </div>
 </div>
+<?php $helper->saveCache(); ?>
 <?php endif; ?>
 
 <div class="mobile-filter-modal">
@@ -146,5 +147,3 @@ if (!empty($arResult['SECTIONS'])) : ?>
     </div>
 </div>
 <div class="background-modal-filter"></div>
-
-<?php $helper->saveCache(); ?>

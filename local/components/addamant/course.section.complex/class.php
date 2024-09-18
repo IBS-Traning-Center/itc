@@ -14,6 +14,7 @@ use Bitrix\Main\SystemException;
 use \Bitrix\Iblock\Elements\ElementNewProgrammsTable;
 use \Bitrix\Iblock\Elements\ElementTariffsTable;
 use \Bitrix\Iblock\Elements\ElementCoursesTable;
+use \Bitrix\Iblock\Elements\ElementScheduleTable;
 use Local\Util\HighloadblockManager;
 
 Loc::loadMessages(__FILE__);
@@ -22,6 +23,7 @@ class CourseSectionComplexComponent extends CBitrixComponent
 {
     private $courseSectionComplexIBResult;
     private $courseInfo;
+    private $dateNow;
 
     /* Проверка подключения компонента */
     /**
@@ -313,6 +315,46 @@ class CourseSectionComplexComponent extends CBitrixComponent
         }
     }
 
+    private function getDateNow()
+    {
+        return $this->dateNow = date('Y-m-d');
+    }
+
+    private function getSchedule()
+    {
+        if (!$this->courseInfo['ID']) {
+            return false;
+        }
+
+        $schedule = ElementScheduleTable::getList([
+            'select' => [
+                'startdate'
+            ],
+            'filter' => [
+                'ACTIVE' => 'Y',
+                'schedule_course.VALUE' => $this->courseInfo['ID'],
+                '<startdate.VALUE' => $this->dateNow,
+                '>=enddate.VALUE' => $this->dateNow
+            ]
+        ])->fetchAll();
+
+        if ($schedule) {
+            $scheduleInfo = [];
+
+            foreach ($schedule as $item) {
+                $sched = [];
+
+                if ($item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_startdate_VALUE']) {
+                    $sched['DATE_START'] = date('d.m.Y', strtotime($item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_startdate_VALUE']));
+                }
+
+                $scheduleInfo[] = $sched;
+            }
+
+            $this->courseInfo['SCHEDULE'] = $scheduleInfo;
+        }
+    }
+
     /* Записываем результат в переменную */
     public function makeReviewsResult()
     {
@@ -330,6 +372,9 @@ class CourseSectionComplexComponent extends CBitrixComponent
         $this->getCourseComplexity();
         $this->getCourseTariffs();
         $this->getCoursesInfo();
+
+        $this->getDateNow();
+        $this->getSchedule();
 
         $this->makeReviewsResult();
 

@@ -96,12 +96,14 @@ if (!empty($arResult)) : ?>
                     <button class="btn-main size-l open-sign-modal">
                         <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                     </button>
-                    <button class="btn-main open-sign-modal">
-                        <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
-                    </button>
-                    <button class="btn-main open-sign-modal">
-                        <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
-                    </button>
+                    <div class="line-buttons">
+                        <button class="btn-main open-sign-modal">
+                            <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
+                        </button>
+                        <button class="btn-main open-sign-modal">
+                            <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,8 +136,13 @@ if (!empty($arResult)) : ?>
                                 <?php if ($course['CODE']) : ?>
                                     <span class="f-16 num"><?= $course['CODE'] ?></span>
                                 <?php endif; ?>
-                                <p class="f-32 course-name"><?= $course['NAME'] ?></p>
-                                <?= Functions::buildSVG('arrow_right_icon', $templateFolder . '/images') ?>
+                                <div class="course-middle-block">
+                                    <p class="f-32 course-name"><?= $course['NAME'] ?></p>
+                                    <div class="courses-icons-block">
+                                        <?= Functions::buildSVG('arrow_right_icon', $templateFolder . '/images') ?>
+                                        <?= Functions::buildSVG('active_minus', $templateFolder . '/images') ?>
+                                    </div>
+                                </div>
                             </div>
                             <div class="linked-course-hide-block">
                                 <?php if ($course['COMPLEXITY'] || $course['DURATION']) : ?>
@@ -179,12 +186,14 @@ if (!empty($arResult)) : ?>
                     <button class="btn-main size-l open-sign-modal">
                         <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                     </button>
-                    <button class="btn-main open-sign-modal">
-                        <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
-                    </button>
-                    <button class="btn-main open-sign-modal">
-                        <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
-                    </button>
+                    <div class="line-buttons">
+                        <button class="btn-main open-sign-modal">
+                            <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
+                        </button>
+                        <button class="btn-main open-sign-modal">
+                            <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,12 +211,14 @@ if (!empty($arResult)) : ?>
                 <button class="btn-main size-l open-sign-modal">
                     <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                 </button>
-                <button class="btn-main open-sign-modal">
-                    <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
-                </button>
-                <button class="btn-main open-sign-modal">
-                    <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
-                </button>
+                <div class="line-buttons">
+                    <button class="btn-main open-sign-modal">
+                        <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
+                    </button>
+                    <button class="btn-main open-sign-modal">
+                        <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -229,12 +240,17 @@ if (!empty($arResult)) : ?>
                                     <?= $tariff['DESCRIPTION'] ?>
                                 </div>
                             <?php endif; ?>
+                            <?php if ($tariff['FOOTNOTE'] && $tariff['FOOTNOTE']['TEXT']) : ?>
+                                <div class="footnote-block">
+                                    <?= $tariff['FOOTNOTE']['TEXT'] ?>
+                                </div>
+                            <?php endif; ?>
                             <?php if ($tariff['PRICE'] || $tariff['TIME_PRICE']) : ?>
-                                <div class="tariff-price-block">
+                                <div class="tariff-price-block <?= (!$tariff['TIME_PRICE']) ? 'one-elem' : '' ?>">
                                     <?php if ($tariff['PRICE']) : ?>
                                         <div class="main-price">
                                             <span class="f-20"><?= Loc::getMessage('TARIFF_PRICE_BLOCK_TEXT') ?></span>
-                                            <span class="price-text"><?= $tariff['PRICE'] . ' ₽' ?></span>
+                                            <span class="price-text"><?= $tariff['PRICE']?><?= (!$tariff['TIME_PRICE']) ? '' : ' ₽' ?></span>
                                         </div>
                                     <?php endif; ?>
                                     <?php if ($tariff['TIME_PRICE']) : ?>
@@ -245,12 +261,7 @@ if (!empty($arResult)) : ?>
                                     <?php endif; ?>
                                 </div>
                             <?php endif; ?>
-                            <?php if ($tariff['FOOTNOTE'] && $tariff['FOOTNOTE']['TEXT']) : ?>
-                                <div class="footnote-block">
-                                    <?= $tariff['FOOTNOTE']['TEXT'] ?>
-                                </div>
-                            <?php endif; ?>
-                            <div class="sign-tariff-btn">
+                            <div class="sign-tariff-btn" data-type="<?= $tariff['TYPE'] ?: '' ?>">
                                 <span class="f-16"><?= Loc::getMessage('SIGN_TARIFF_BTN_TEXT') ?></span>
                             </div>
                         </div>
@@ -286,28 +297,80 @@ if (!empty($arResult)) : ?>
                         </div>
                         <p class="f-24 course-name"><?= $course['NAME'] ?></p>
                         <?php if ($course['DESCRIPTION']) : ?>
-                            <p class="f-16 course-description"><?= $course['DESCRIPTION'] ?></p>
+                            <p class="f-16 course-description"><?= HTMLToTxt($course['DESCRIPTION']) ?></p>
                         <?php endif; ?>
-                        <?php if ($course['PRICE']) : ?>
-                            <p class="course-price"><?= $course['PRICE'] . ' ₽' ?></p>
-                        <?php endif; ?>
-                        <?php if ($course['COMPLEXITY'] || $course['DURATION']) : ?>
-                            <div class="mobile-tags-course-block">
-                                <?php if ($course['COMPLEXITY']) : ?>
-                                    <div class="course-tag">
-                                        <span class="f-16"><?= $course['COMPLEXITY'] ?></span>
-                                    </div>
-                                <?php endif; ?>
-                                <?php if ($course['DURATION']) : ?>
-                                    <div class="course-tag">
-                                        <span class="f-16"><?= Functions::numWord($course['DURATION'], ['час', 'часа', 'часов']) ?></span>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
+                        <div class="bottom-block-course">
+                            <?php if ($course['PRICE']) : ?>
+                                <p class="course-price f-24"><?= $course['PRICE'] . ' ₽' ?></p>
+                            <?php endif; ?>
+                            <?php if ($course['COMPLEXITY'] || $course['DURATION']) : ?>
+                                <div class="mobile-tags-course-block">
+                                    <?php if ($course['COMPLEXITY']) : ?>
+                                        <div class="course-tag">
+                                            <span class="f-16"><?= $course['COMPLEXITY'] ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ($course['DURATION']) : ?>
+                                        <div class="course-tag">
+                                            <span class="f-16"><?= Functions::numWord($course['DURATION'], ['час', 'часа', 'часов']) ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                     </a>
                 <?php endforeach; ?>
             </div>
         </div>
     <?php endif; ?>
 <?php endif; ?>
+<div class="diploma-modal">
+    <div class="diploma-modal-content">
+        <img src="<?= $templateFolder . '/images/diplom.png' ?>">
+    </div>
+</div>
+<div class="diploma-modal-close-btn">
+    <?= Functions::buildSVG('close-modal-icon', $templateFolder . '/images') ?>
+</div>
+<div class="background-modal"></div>
+<?php
+    $schedule = [];
+    if ($arResult['SCHEDULE']) {
+        foreach ($arResult['SCHEDULE'] as $item) {
+            if ($item['DATE_START']) {
+                $schedule[] = $item['DATE_START'];
+            }
+        }
+    }
+
+    $tariffs = [];
+    if (!empty($arResult['TARIFFS'])) {
+        foreach ($arResult['TARIFFS'] as $tariff) {
+            if ($tariff['TYPE']) {
+                $tariffs[] = $tariff['TYPE'];
+            }
+        }
+    }
+?>
+<?php $APPLICATION->IncludeComponent(
+    "bitrix:form.result.new",
+    "sign.course.complex",
+    Array(
+        "CACHE_TIME" => "3600",
+        "CACHE_TYPE" => "A",
+        "CHAIN_ITEM_LINK" => "",
+        "CHAIN_ITEM_TEXT" => "",
+        "EDIT_URL" => "",
+        "IGNORE_CUSTOM_TEMPLATE" => "N",
+        "LIST_URL" => "",
+        "SEF_MODE" => "N",
+        "SUCCESS_URL" => "",
+        "AJAX_MODE" => "Y",
+        "USE_EXTENDED_ERRORS" => "N",
+        "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
+        "WEB_FORM_ID" => "41",
+        "COURSE_ID" => $arResult['ID'],
+        'DATES' => $schedule,
+        'TARIFFS' => $tariffs
+    )
+);?>
