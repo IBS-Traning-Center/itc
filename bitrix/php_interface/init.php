@@ -729,7 +729,7 @@ class MyClass
 
             //die();
 
-            if (strlen($id_course) > 0) {
+            if (is_string($id_course) && strlen($id_course) > 0) {
                 $arSelect = array("PROPERTY_course_code");
                 $arFilter = array("IBLOCK_ID" => "6", "ID" => $id_course);
                 $res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);

@@ -29,6 +29,7 @@ if (!empty($arResult['SECTIONS'])) {
 
     $filterTabs = [];
     $elements = [];
+    $complexInfo = [];
 
     foreach ($arResult['SECTIONS'] as $key => $section) {
         if ($section['ELEMENT_CNT'] <= 0) {
@@ -60,7 +61,8 @@ if (!empty($arResult['SECTIONS'])) {
             $elementsBD = ElementNewProgrammsTable::getList([
                 'select' => [
                     'ID',
-                    'pp_course'
+                    'COURSES',
+                    'NAME'
                 ],
                 'filter' => [
                     'ACTIVE' => 'Y',
@@ -71,7 +73,7 @@ if (!empty($arResult['SECTIONS'])) {
             if (!empty($elementsBD)) {
                 foreach ($elementsBD as $elem) {
                     $elements[] = [
-                        'COURSE_ID' => $elem['IBLOCK_ELEMENTS_ELEMENT_NEW_PROGRAMMS_pp_course_VALUE'],
+                        'COURSE_ID' => $elem['IBLOCK_ELEMENTS_ELEMENT_NEW_PROGRAMMS_COURSES_VALUE'],
                         'SECTION_ID' => $section['ID']
                     ];
                 }
