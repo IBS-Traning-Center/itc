@@ -21,7 +21,6 @@ class ReviewsPage
     addHandlerEventListener()
     {   
         this.reviewsItems.forEach(item => {
-            console.log(item);
             if(item.classList.contains('review-modal') == false) {
                 item.addEventListener('click', () => {
                     this.openModal(item);
@@ -54,6 +53,8 @@ class ReviewsPage
     }
 
     closeModal(item){
+        let video =  item.querySelector('video');
+        video.pause();
         item.style.display = 'none';
         this.reviewsModalShadow.style.display = 'none';
     }
