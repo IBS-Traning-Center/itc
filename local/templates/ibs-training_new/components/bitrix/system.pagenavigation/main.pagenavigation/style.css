@@ -1,3 +1,9 @@
+.pagination-container a,
+.pagination-container span,
+.pagination-container {
+    font-family: 'Noto Sans';
+}
+
 .pagination-container {
     display: flex;
     align-items: center;

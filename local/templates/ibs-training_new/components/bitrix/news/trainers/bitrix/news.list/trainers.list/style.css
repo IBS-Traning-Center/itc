@@ -1,3 +1,22 @@
+.page._content,
+.page._content div,
+.page._content p,
+.page._content span,
+.page._content ul,
+.page._content li,
+.page._content ol,
+.page._content b,
+.page._content i,
+.page._content h1,
+.page._content h2,
+.page._content h3,
+.page._content h4,
+.page._content h5,
+.page._content h6,
+.page._content a {
+    font-family: 'Noto Sans';
+}
+
 .top-page-banner .container .banner-content h1 span {
     display: block;
 }
