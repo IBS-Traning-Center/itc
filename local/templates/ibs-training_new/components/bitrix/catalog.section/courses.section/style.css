@@ -32,6 +32,7 @@ a:hover {
 .section-course-block .course-block p {
     color: var(--black);
     margin: 0;
+    font-family: 'Noto Sans';
 }
 
 .section-course-block .course-block:hover {
