@@ -223,6 +223,7 @@
 
 .container.catalog-sections.table .section-block .btn-section-block .min-section-price {
     margin-bottom: 24px;
+    text-align: right;
 }
 
 .container.catalog-sections.table .section-block .btn-section-block .btn-main {
