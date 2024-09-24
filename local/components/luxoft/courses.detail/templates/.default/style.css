@@ -1,3 +1,21 @@
+.course-detail-block,
+.course-detail-block div,
+.course-detail-block span,
+.course-detail-block p,
+.course-detail-block b,
+.course-detail-block i,
+.course-detail-block ul,
+.course-detail-block li,
+.course-detail-block ol,
+.course-detail-block h1,
+.course-detail-block h2,
+.course-detail-block h3,
+.course-detail-block h4,
+.course-detail-block h5,
+.course-detail-block h6 {
+    font-family: 'Noto Sans';
+}
+
 .top-page-banner.course-detail .banner-content {
     max-width: 100% !important;
     display: flex;
