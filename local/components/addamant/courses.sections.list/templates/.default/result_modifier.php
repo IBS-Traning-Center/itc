@@ -90,7 +90,7 @@ if (!empty($arResult['SECTIONS'])) {
             $query = new Query(ElementCoursesTable::getEntity());
             $query->setSelect([
                 'ID',
-                'COURSE_TAGS',
+                'category',
                 'course_price'
             ])
             ->setFilter([
@@ -99,7 +99,7 @@ if (!empty($arResult['SECTIONS'])) {
             ]);
 
             if (!empty($filter) && $filter[0] != 'all') {
-                $query->addFilter('COURSE_TAGS.VALUE', $filter);
+                $query->addFilter('category.VALUE', $filter);
             }
 
             $result = $query->exec();
@@ -109,10 +109,8 @@ if (!empty($arResult['SECTIONS'])) {
                 foreach ($coursesBD as $course) {
                     $coursePrice = 0;
 
-                    if ($course->getCourseTags() && $course->getCourseTags()->getAll()) {
-                        foreach ($course->getCourseTags()->getAll() as $tag) {
-                            $tags[] = $tag->getValue();
-                        }
+                    if ($course->getCategory() && $course->getCategory()->getValue()) {
+                        $tags[] = $course->getCategory()->getValue();
                     }
 
                     if ($course->getCoursePrice() && $course->getCoursePrice()->getValue()) {
@@ -137,7 +135,7 @@ if (!empty($arResult['SECTIONS'])) {
     $arResult['TOTAL_COUNTS'] = $totalCounts;
 
     if (!empty($tags)) {
-        $tagTable = new HighloadblockManager('TagsCatalog');
+        $tagTable = new HighloadblockManager('ItcCatalogCourseCategory');
 
         $tagTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID'], [], ['UF_XML_ID' => $tags]);
         $itemsTags = $tagTable->getDataAll();
