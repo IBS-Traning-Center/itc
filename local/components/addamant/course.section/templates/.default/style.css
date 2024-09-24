@@ -11,7 +11,9 @@
 
 .top-page-banner.section-page .container:before,
 .top-page-banner.section-page .container:after,
-.open-filter-mobile-btn {
+.open-filter-mobile-btn,
+.courses-section-block.container:before,
+.courses-section-block.container:after {
     display: none !important;
 }
 
