@@ -126,7 +126,7 @@ if (!empty($arResult['SECTIONS'])) : ?>
                             <?= ($section['PRICE'] > 0) ? 'от ' . $section['PRICE'] . ' ₽' : Loc::getMessage('FREE_COURSE_TEXT') ?>
                         </p>
                         <a href="<?= $section['SECTION_PAGE_URL'] ?>" class="btn-main size-l">
-                            <span class="f-24">Смотреть <?= Functions::numWord($section['ELEMENT_CNT'], ['курс', 'курса', 'курсов']) ?></span>
+                            <span class="f-24">Смотреть <?= Functions::numWord($arResult['TOTAL_COUNTS'][$section['ID']], ['курс', 'курса', 'курсов']) ?></span>
                         </a>
                     </div>
                 </div>
