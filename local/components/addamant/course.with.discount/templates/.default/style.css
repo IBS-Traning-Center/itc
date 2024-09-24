@@ -159,6 +159,7 @@
 #coursesDiscountSlider {
     max-width: 100%;
     position: unset;
+    width: 100%;
 }
 
 .discount-courses-block.container.more-elem .slick-arrow {
