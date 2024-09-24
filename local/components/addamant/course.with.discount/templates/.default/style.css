@@ -7,11 +7,12 @@
 .discount-courses-block.container {
     max-width: 1920px;
     padding: 40px;
+    position: relative;
 }
 
-.discount-courses-block.container.more-elem {
+.discount-courses-block.container .more-elem {
     display: grid;
-    grid-template-columns: 96.2% 10%;
+    /*grid-template-columns: 96.2% 10%;*/
     gap: 24px;
     position: relative;
 }
@@ -166,7 +167,7 @@
     width: 100%;
 }
 
-.discount-courses-block.container.more-elem .slick-arrow {
+.discount-courses-block.container .more-elem .slick-arrow {
     right: 44px;
     background-image: url("/local/components/addamant/course.with.discount/templates/.default/images/slider-arrows.svg");
     display: flex;
@@ -186,7 +187,7 @@
     top: unset;
 }
 
-.discount-courses-block.container.more-elem .slick-arrow.slick-prev {
+.discount-courses-block.container .more-elem .slick-arrow.slick-prev {
     left: unset;
     bottom: unset;
     top: 120px;
@@ -213,7 +214,7 @@
 }
 
 @media (max-width: 1250px) {
-    .discount-courses-block.container.more-elem {
+    .discount-courses-block.container .more-elem {
         grid-template-columns: unset;
     }
 
@@ -221,6 +222,8 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+        min-width: 100%;
+        max-width: 100%;
     }
 
     #coursesDiscountSlider .discount-course-item {
