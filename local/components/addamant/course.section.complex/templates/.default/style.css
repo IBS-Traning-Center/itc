@@ -68,6 +68,11 @@
     text-decoration: underline;
 }
 
+.main-content-complex-course .left-block {
+    max-width: 1294px;
+    width: 100%;
+}
+
 .top-page-banner.section-complex-page .container .btn-banner-block,
 .main-content-complex-course .right-block,
 .main-content-complex-course .left-block .mobile-buttons-block {
@@ -147,6 +152,7 @@
     display: flex;
     align-items: start;
     gap: 79px;
+    justify-content: space-between;
     padding-top: 100px !important;
     padding-bottom: 140px !important;
 }
