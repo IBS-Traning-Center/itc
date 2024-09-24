@@ -83,6 +83,7 @@ if (!empty($arResult['SECTIONS'])) {
 
     $coursesInfo = [];
     $tags = [];
+    $totalCounts = [];
 
     if (!empty($elements)) {
         foreach ($elements as $key => $courseInfo) {
@@ -102,7 +103,6 @@ if (!empty($arResult['SECTIONS'])) {
             }
 
             $result = $query->exec();
-
             $coursesBD = $result->fetchCollection();
 
             if (!empty($coursesBD)) {
@@ -123,10 +123,18 @@ if (!empty($arResult['SECTIONS'])) {
                         'PRICE' => $coursePrice,
                         'SECTION_ID' => $courseInfo['SECTION_ID']
                     ];
+
+                    if ($totalCounts[$courseInfo['SECTION_ID']]) {
+                        $totalCounts[$courseInfo['SECTION_ID']] = $totalCounts[$courseInfo['SECTION_ID']] + 1;
+                    } else {
+                        $totalCounts[$courseInfo['SECTION_ID']] = 1;
+                    }
                 }
             }
         }
     }
+
+    $arResult['TOTAL_COUNTS'] = $totalCounts;
 
     if (!empty($tags)) {
         $tagTable = new HighloadblockManager('TagsCatalog');
