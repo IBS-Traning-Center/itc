@@ -17,7 +17,10 @@ class CatalogSectionCustom
         mobileFilterModalClass: '.mobile-filter-modal',
         mobileFilterModalContentClass: '.mobile-filter-modal-content',
         backgroundModalFilterClass: '.background-modal-filter',
-        applyFilterClass: '.apply-filter'
+        applyFilterClass: '.apply-filter',
+        searchInputId: 'search-catalog',
+        searchHiddenBlockClass: '.search-hidden-block',
+        hiddenSearchInputId: 'search-text'
     }) {
         this.tabsByTags = document.querySelectorAll(data.tabsByTagsClass);
 
@@ -32,11 +35,14 @@ class CatalogSectionCustom
         this.mobileFilterModalBlock = document.querySelector(data.mobileFilterModalClass);
         this.backgroundModalFilterBlock = document.querySelector(data.backgroundModalFilterClass);
         this.applyFilterBtn = document.querySelector(data.applyFilterClass);
+        this.searchHiddenBlock = document.querySelector(data.searchHiddenBlockClass);
 
         this.loader = document.getElementById(data.loaderId);
         this.loaderBackground = document.getElementById(data.loaderBackgroundId);
         this.defaultViewBtn = document.getElementById(data.defaultViewBtnId);
         this.tabletViewBtn = document.getElementById(data.tabletViewBtnId);
+        this.searchInput = document.getElementById(data.searchInputId);
+        this.hiddenSearchInput = document.getElementById(data.hiddenSearchInputId);
 
         this.mainSectionsBlockClass = data.mainSectionsBlockClass;
         this.catalogSectionTableClass = data.catalogSectionTableClass;
@@ -47,12 +53,27 @@ class CatalogSectionCustom
         this.addEventHandlerListenerTabs();
         this.allTagsTabHandlerListener();
         this.swapViewCatalogSection();
+        this.addInputSearchClickEvent();
 
         if (window.innerWidth < 1181) {
             this.openModalFilterMobile();
             this.changeLocationMobileBlock();
             this.backgroundModalFilterListener();
             this.applyFilterMobileEventHandler();
+        }
+    }
+
+    addInputSearchClickEvent()
+    {
+        if (
+            this.searchHiddenBlock &&
+            this.searchInput &&
+            this.hiddenSearchInput
+        ) {
+            this.searchInput.addEventListener('focus', () => {
+                this.searchHiddenBlock.style.display = 'block';
+                this.hiddenSearchInput.focus();
+            });
         }
     }
 

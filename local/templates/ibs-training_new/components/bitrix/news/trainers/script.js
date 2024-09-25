@@ -6,16 +6,37 @@ class Trainers
         trainersBlockClass: '.trainers-block',
         loaderId: 'loader',
         loaderBackgroundId: 'background-loader',
+        searchInputId: 'search-catalog',
+        searchHiddenBlockClass: '.search-hidden-block',
+        hiddenSearchInputId: 'search-text'
     }) {
        this.tagBlock = document.querySelectorAll(data.tagBlockClass);
        this.allTagsBlock = document.querySelector(data.allTagsClass);
        this.trainersBlock = document.querySelector(data.trainersBlockClass);
+       this.searchHiddenBlock = document.querySelector(data.searchHiddenBlockClass);
        this.trainersBlockClass = data.trainersBlockClass;
 
-        this.loader = document.getElementById(data.loaderId);
-        this.loaderBackground = document.getElementById(data.loaderBackgroundId);
+       this.loader = document.getElementById(data.loaderId);
+       this.loaderBackground = document.getElementById(data.loaderBackgroundId);
+       this.searchInput = document.getElementById(data.searchInputId);
+       this.hiddenSearchInput = document.getElementById(data.hiddenSearchInputId);
 
        this.trainersEventHandler();
+       this.addInputSearchClickEvent();
+    }
+
+    addInputSearchClickEvent()
+    {
+        if (
+            this.searchHiddenBlock &&
+            this.searchInput &&
+            this.hiddenSearchInput
+        ) {
+            this.searchInput.addEventListener('focus', () => {
+                this.searchHiddenBlock.style.display = 'block';
+                this.hiddenSearchInput.focus();
+            });
+        }
     }
 
     trainersEventHandler()

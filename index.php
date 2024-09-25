@@ -22,7 +22,7 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 	Array(
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
-		"CATALOG_LINK_TITLE_MAIN_PAGE_BANNER" => "/training/katalog_kursov/",
+		"CATALOG_LINK_TITLE_MAIN_PAGE_BANNER" => "/catalog/",
 		"IBLOCKS_IDS_TITLE_MAIN_PAGE_BANNER" => "49, 94"
 	)
 );?>
