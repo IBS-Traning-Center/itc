@@ -41,6 +41,10 @@
     line-height: 44px;
 }
 
+.our-clients-block-wrap{
+    overflow: hidden;
+}
+
 @media (max-width: 1180px) {
     .our-clients-h3 {
         margin: 0 0 16px;
