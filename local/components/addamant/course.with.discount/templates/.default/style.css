@@ -226,7 +226,8 @@
         max-width: 100%;
     }
 
-    #coursesDiscountSlider .discount-course-item {
+    #coursesDiscountSlider .discount-course-item,
+    .courses-with-discount-block .slick-slider-arrows-block {
         display: none !important;
         margin: 0;
     }
