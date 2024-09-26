@@ -88,7 +88,7 @@ if ($arResult) : ?>
                 <h3><?= Loc::getMessage('CERTIFICATES_TITLE') ?></h3>
                 <ul class="certificates-content custom-trainer-ul">
                     <?php foreach ($arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE'] as $value) : ?>
-                        <li class="f-20"><?= $value['TEXT'] ?></li>
+                        <li class="f-20"><?= $value ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
