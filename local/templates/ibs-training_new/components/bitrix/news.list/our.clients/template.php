@@ -26,13 +26,15 @@ if (!empty($arResult['ITEMS'])) : ?>
             <p class="our-clients-desc"><?= $arParams['SPECIAL_DESCRIPTON'];?></p>
         <?php endif; ?>
     </div>
-    <div class="container our-clients-block">
-        <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
-            <?php if ($item['PREVIEW_PICTURE']['SRC']) : ?>
-                <div class="our-clients-item">
-                    <img src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $item['NAME'] ?>">
-                </div>
-            <?php endif; ?>
-        <?php endforeach; ?>
+    <div class="our-clients-block-wrap">
+        <div class="container our-clients-block">
+            <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
+                <?php if ($item['PREVIEW_PICTURE']['SRC']) : ?>
+                    <div class="our-clients-item">
+                        <img src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $item['NAME'] ?>">
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
 <?php endif; ?>
