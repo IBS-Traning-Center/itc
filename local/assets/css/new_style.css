@@ -3,7 +3,7 @@ body {
     font-family: 'Noto Sans';
 }
 
-*{
+* {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -12,6 +12,7 @@ body {
 
 .page._content {
     padding: 0;
+    overflow: hidden;
 }
 
 .container {
@@ -152,7 +153,11 @@ body {
     cursor: pointer;
 }
 
-#header .header-container .search-header-block > form #search-text {
+#header .header-container .search-header-block > form button {
+    pointer-events: none;
+}
+
+#header .header-container .search-header-block > form #search-text-header {
     padding: 0;
     border: none;
     height: 40px;
@@ -161,14 +166,114 @@ body {
     line-height: 24px;
     font-family: 'Inter', sans-serif;
     opacity: 1;
+    outline: none;
 }
 
-#header .header-container .search-header-block > form #search-text::placeholder {
+#header .header-container .search-header-block > form #search-text-header::placeholder {
     opacity: 1;
 }
 
-#header .header-container .search-header-block > form #search-text:focus::placeholder {
+#header .header-container .search-header-block > form #search-text-header:focus::placeholder {
     opacity: 0.5;
+}
+
+#header .search-hidden-block {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--white);
+    padding: 60px 120px;
+}
+
+#header .search-hidden-block .search-block {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+#header .search-hidden-block .search-block .close-search-block {
+    border: 1px solid #051F9D;
+    padding: 15px 32px;
+    background-color: var(--gray);
+    outline: none;
+}
+
+#header .search-hidden-block .search-block .close-search-block span {
+    color: #051F9D;
+    font-family: 'Noto Sans';
+}
+
+#header .search-hidden-block .search-block form {
+    width: 100%;
+    position: relative;
+}
+
+#header .search-hidden-block .search-block form input[type="text"].search-main {
+    border-bottom: 1px solid var(--black);
+    border-radius: 0;
+    height: 54px;
+    padding-left: 38px;
+}
+
+#header .search-hidden-block .search-block form button[type="submit"],
+#header .search-hidden-block .search-block form button[type="reset"] {
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+}
+
+#header .search-hidden-block .search-block form button[type="submit"] {
+    left: 0;
+}
+
+#header .search-hidden-block .search-block form button[type="reset"] {
+    right: 0;
+    display: none;
+}
+
+#header .search-hidden-block #search-dropdown {
+    margin-top: 24px;
+}
+
+#header .search-hidden-block #search-dropdown .title-search-result {
+    position: unset !important;
+    border: none !important;
+    width: 100%;
+}
+
+#header .search-hidden-block #search-dropdown table.title-search-result th {
+    border: none;
+    background: var(--white);
+}
+
+#header .search-hidden-block #search-dropdown table.title-search-result td {
+    border: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+#header .search-hidden-block #search-dropdown .title-search-fader,
+#header .search-hidden-block #search-dropdown table.title-search-result td.title-search-more {
+    display: none !important;
+}
+
+#header .search-hidden-block #search-dropdown table.title-search-result tr.title-search-selected td,
+#header .search-hidden-block #search-dropdown table.title-search-result tr.title-search-selected a,
+#header .search-hidden-block #search-dropdown table.title-search-result tr.title-search-selected td.title-search-more a {
+    background-color: var(--gray);
 }
 
 .top-page-banner {
@@ -196,7 +301,7 @@ body {
     margin: 0;
 }
 
-.top-page-banner .container .banner-content p{
+.top-page-banner .container .banner-content p {
     margin: 56px 0 0 0;
     font-size: 32px;
     line-height: 44px;
@@ -568,6 +673,10 @@ body {
 
     #header{
         padding: 12px 16px;
+    }
+
+    #header .search-hidden-block {
+        padding: 30px 16px;
     }
 
     .top-page-banner .container {

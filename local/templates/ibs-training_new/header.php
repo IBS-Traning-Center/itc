@@ -149,20 +149,19 @@ $request = $application->getContext()->getRequest();
             style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-<?php
-if ($USER->IsAdmin()) {
+<?php if ($USER->IsAdmin()) {
     $APPLICATION->ShowPanel();
 }?>
-<? CModule::IncludeModule("sale");
+<?php CModule::IncludeModule("sale");
 $cntBasketItems = CSaleBasket::GetList(
-    array(),
-    array(
-        "FUSER_ID" => CSaleBasket::GetBasketUserID(),
-        "LID" => SITE_ID,
-        "ORDER_ID" => "NULL",
-        "CAN_BUY" => "Y"
-    ),
-    array()
+    [],
+    [
+        'FUSER_ID' => CSaleBasket::GetBasketUserID(),
+        'LID' => SITE_ID,
+        'ORDER_ID' => 'NULL',
+        'CAN_BUY' => 'Y'
+    ],
+    []
 ); ?>
 <header id="header" class="header">
     <div class="header-container">
@@ -174,45 +173,8 @@ $cntBasketItems = CSaleBasket::GetList(
                 <button type="submit">
                     <?= Functions::buildSVG('search_button', SITE_TEMPLATE_PATH. '/assets/images') ?>
                 </button>
-                <input autocomplete="off" type="text" id="search-text" name="q" placeholder="Искать курсы" class="search-main">
+                <input id="search-text-header" placeholder="Искать курсы" class="search-main">
             </form>
-            <div id="search-dropdown">
-                <?php $APPLICATION->IncludeComponent("luxoft:search.title", "search-right-form", array(
-                    "NUM_CATEGORIES" => "3",
-                    "TOP_COUNT" => "5",
-                    "ORDER" => "rank",
-                    "USE_LANGUAGE_GUESS" => "N",
-                    "CHECK_DATES" => "N",
-                    "SHOW_OTHERS" => "N",
-                    "PAGE" => "/search/",
-                    "CATEGORY_0_TITLE" => "Курсы",
-                    "CATEGORY_0" => array(
-                        0 => "iblock_edu",
-                    ),
-                    "CATEGORY_0_iblock_edu" => array(
-                        0 => "6",
-                    ),
-                    "CATEGORY_1_TITLE" => "Тренеры",
-                    "CATEGORY_1" => array(
-                        0 => "iblock_edu",
-                    ),
-                    "CATEGORY_1_iblock_edu" => array(
-                        0 => "56",
-                    ),
-                    "CATEGORY_2_TITLE" => "Блоги",
-                    "CATEGORY_2" => array(
-                        0 => "iblock_edu",
-                    ),
-                    "CATEGORY_2_iblock_edu" => array(
-                        0 => "23",
-                    ),
-                    "SHOW_INPUT" => "N",
-                    "INPUT_ID" => "search-text",
-                    "CONTAINER_ID" => "search-dropdown"
-                ),
-                    false
-                ); ?>
-            </div>
         </div>
         <?php $APPLICATION->IncludeComponent(
             'bitrix:menu',
@@ -224,6 +186,62 @@ $cntBasketItems = CSaleBasket::GetList(
                 'USE_EXT' => 'Y'
             ]
         ); ?>
+    </div>
+    <div class="search-hidden-block">
+        <div class="search-block">
+            <form action="/search/">
+                <button type="submit">
+                    <?= Functions::buildSVG('search_button', SITE_TEMPLATE_PATH. '/assets/images') ?>
+                </button>
+                <input autocomplete="off" type="text" id="search-text" name="q" placeholder="Найти" class="search-main">
+                <button type="reset" id="search-reset">
+                    <?= Functions::buildSVG('clear-search-input', SITE_TEMPLATE_PATH. '/assets/images') ?>
+                </button>
+            </form>
+            <button class="close-search-block">
+                <span class="f-16">Закрыть</span>
+            </button>
+        </div>
+        <div id="search-dropdown">
+            <?php $APPLICATION->IncludeComponent(
+                'luxoft:search.title',
+                'search-right-form',
+                [
+                    'NUM_CATEGORIES' => '3',
+                    'TOP_COUNT' => '5',
+                    'ORDER' => 'rank',
+                    'USE_LANGUAGE_GUESS' => 'N',
+                    'CHECK_DATES' => 'N',
+                    'SHOW_OTHERS' => 'N',
+                    'PAGE' => '/search/',
+                    'CATEGORY_0_TITLE' => 'Курсы',
+                    'CATEGORY_0' => [
+                        0 => 'iblock_edu',
+                    ],
+                    'CATEGORY_0_iblock_edu' => [
+                        0 => '6',
+                    ],
+                    'CATEGORY_1_TITLE' => 'Тренеры',
+                    'CATEGORY_1' => [
+                        0 => 'iblock_edu',
+                    ],
+                    'CATEGORY_1_iblock_edu' => [
+                        0 => '56',
+                    ],
+                    'CATEGORY_2_TITLE' => 'Блоги',
+                    'CATEGORY_2' => [
+                        0 => 'iblock_edu',
+                    ],
+                    'CATEGORY_2_iblock_edu' => [
+                        0 => '23',
+                    ],
+                    'SHOW_INPUT' => 'N',
+                    'INPUT_ID' => 'search-text',
+                    'CONTAINER_ID' => 'search-dropdown'
+                ],
+                false
+            ); ?>
+        </div>
     </div>
 </header>
 
