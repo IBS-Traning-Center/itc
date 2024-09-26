@@ -2185,6 +2185,11 @@ span.time.time-with-tooltip:hover .tooltip {
     .timetable-item.quarter .code-icon-right{
         bottom: 24px;
     }
+
+    .cookie-notice .text-center {
+        width: 100%;
+        margin-top: 22px !important;
+    }
 }
 
 @media (max-width:767px) {
@@ -2232,6 +2237,7 @@ span.time.time-with-tooltip:hover .tooltip {
 
     .cookie-notice .text-center {
         width: 100%;
+        margin-top: 0 !important;
     }
 
     .cookie-notice .container .cookie-text {
