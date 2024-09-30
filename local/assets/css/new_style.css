@@ -1346,6 +1346,12 @@ body {
     }
 }
 
+@media (max-width: 440px) {
+    #header .header-container .search-header-block > form #search-text-header {
+        max-width: 100%;
+    }
+}
+
 /* ЛОАДЕР */
 
 #loader {
