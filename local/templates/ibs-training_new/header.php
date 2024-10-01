@@ -51,6 +51,7 @@ $request = $application->getContext()->getRequest();
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="yandex-verification" content="a63abf59d6bf064e"/>
     <meta name="yandex-verification" content="8f50c1eeeb059b18"/>
     <meta charset="UTF-8">

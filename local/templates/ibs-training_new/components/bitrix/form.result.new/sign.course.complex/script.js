@@ -30,6 +30,7 @@ class SignCourseComplex
         this.signCourseComplexBlock = document.querySelector(data.signCourseComplexBlockCLass);
 
         this.addSignCourseEventHandler();
+        this.changeFormInput();
     }
 
     addSignCourseEventHandler()
@@ -82,6 +83,19 @@ class SignCourseComplex
                 this.signCourseComplexBlock.style.display = 'none';
             });
         }
+    }
+
+    changeFormInput()
+    {
+        $(document).on('change keyup input click', 'input.phone', function() {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            }
+        });
+
+        document.querySelector('input.city').addEventListener('input', function(event) {
+            this.value = this.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, '');
+        });
     }
 }
 
