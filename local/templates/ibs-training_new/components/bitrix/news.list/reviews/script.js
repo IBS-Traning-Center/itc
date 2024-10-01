@@ -54,7 +54,11 @@ class ReviewsPage
 
     closeModal(item){
         let video =  item.querySelector('video');
-        video.pause();
+
+        if (video) {
+            video.pause();
+        }
+
         item.style.display = 'none';
         this.reviewsModalShadow.style.display = 'none';
     }
