@@ -16,6 +16,11 @@
     font-family: 'Noto Sans';
 }
 
+.top-page-banner.course-detail .container .banner-content p.f-16 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
 .top-page-banner.course-detail .banner-content {
     max-width: 100% !important;
     display: flex;
@@ -86,6 +91,10 @@
 .top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-text p.show-diplom-btn {
     color: var(--button-blue);
     cursor: pointer;
+}
+
+.top-page-banner.course-detail .banner-content .right-banner-block {
+    margin-top: 90px;
 }
 
 .top-page-banner.course-detail .banner-content .right-banner-block,
@@ -749,6 +758,7 @@
     .top-page-banner.course-detail .banner-content .right-banner-block {
         align-items: start;
         width: 100%;
+        margin-top: 0;
     }
 
     .top-page-banner.course-detail .banner-content .right-banner-block .price-course-block .course-price {
