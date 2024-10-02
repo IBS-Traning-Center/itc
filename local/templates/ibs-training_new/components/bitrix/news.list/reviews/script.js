@@ -136,6 +136,8 @@ class ReviewsPage
             if (totalWidth < widthBlock) {
                 currentTimeVideoBack.style.width = totalWidth + 'px';
             } else {
+                video.currentTime = 0;
+                video.pause();
                 currentTimeVideoBack.style.width = '0px';
                 stopBtn.style.display = 'none';
                 startBtn.style.display = 'flex';

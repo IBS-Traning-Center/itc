@@ -66,7 +66,7 @@ use Local\Util\Functions;
 		                <?php endif; ?>
 						<?php if($arItem['USER_REVIEW_VALUE']):?>
 							<div class="user-text-info">
-		                	    <span class="full-name f-20"><?= $arItem['USER_NAME'] . ' ' . $arItem['USER_SURNAME'] ?></span>
+		                	    <span class="full-name f-20"><?= $arItem['USER_NAME_VALUE'] . ' ' . $arItem['USER_SURNAME_VALUE'] ?></span>
 		                	</div>
 						<?php else : ?>
 							<div class="user-text-info">
@@ -123,7 +123,7 @@ use Local\Util\Functions;
 		                <?php endif; ?>
 						<?php if($arItem['USER_REVIEW_VALUE']):?>
 							<div class="user-text-info">
-		                	    <span class="full-name f-20"><?= $arItem['USER_NAME'] . ' ' . $arItem['USER_SURNAME'] ?></span>
+		                	    <span class="full-name f-20"><?= $arItem['USER_NAME_VALUE'] . ' ' . $arItem['USER_SURNAME_VALUE'] ?></span>
 		                	</div>
 						<?php else : ?>
 							<div class="user-text-info">
