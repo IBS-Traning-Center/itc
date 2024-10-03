@@ -284,6 +284,10 @@
     background-color: var(--button-blue);
 }
 
+.main-content-complex-course .left-block .linked-courses-block .linked-course-item .linked-course-content .num {
+    white-space: nowrap;
+}
+
 .main-content-complex-course .left-block .linked-courses-block .linked-course-item.active .linked-course-content .courses-icons-block svg:nth-child(2) {
     display: flex;
 }
