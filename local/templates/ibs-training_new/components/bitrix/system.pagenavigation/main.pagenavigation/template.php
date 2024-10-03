@@ -122,7 +122,7 @@ $middleSecond = (int)($prevPage + ($pageCount - $prevPage) / 2);
                         </svg>
                     </a>
                 <?php endif;?>
-                <a href="<?= replaceUrlTemplate($arResult, $page + 1)?>" class="f-20"><?= $page + 1 ?></a>
+                <a href="<?= replaceUrlTemplate($arResult, $pageCount)?>" class="f-20"><?= $pageCount ?></a>
             <?php endif;?>
         <?php endif;?>
 
