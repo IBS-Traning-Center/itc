@@ -357,7 +357,7 @@ function plural_form($number, $after) {
                         <? if ($value["prepod_active"]=="Y") {?>
 							<div class="trener-info">Тренер: <a  href="/about/experts/<?=$value['prepod_code']?>.html"><?=$value["prepod_surname"];?> <?=$value["prepod_name"];?></a></div>
 						<?} else {?>
-							<div class="trener-info">Тренер: <?=$value["prepod_surname"];?>  <?=$value["prepod_name"];?></div>
+							<div class="trener-info">Тренер: <span><?=$value["prepod_surname"];?>  <?=$value["prepod_name"];?></span></div>
 						<?}?>
                         <div class="time-wrapper">
                             Дата и время:
