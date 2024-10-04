@@ -167,6 +167,12 @@
     width: 100%;
 }
 
+#coursesDiscountSlider .slick-list,
+#coursesDiscountSlider .slick-list .slick-track {
+    display: flex;
+    align-items: stretch;
+}
+
 .discount-courses-block.container .more-elem .slick-arrow {
     right: 44px;
     background-image: url("/local/components/addamant/course.with.discount/templates/.default/images/slider-arrows.svg");
