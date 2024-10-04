@@ -101,3 +101,23 @@ table.form-table td
   background: #cd0505;
   opacity: 0.9;
 }
+
+
+.form-reg .agree-text {
+  color: var(--black);
+}
+
+.form-reg h4 {
+  font-size: 24px;
+  line-height: 130%;
+  font-weight: 700;
+}
+
+.form-reg .form-section .label,
+.form-reg .form-section input {
+  margin-bottom: 8px;
+}
+
+.form-reg .form-section .label span {
+  color: var(--red);
+}
