@@ -119,6 +119,9 @@ class CatalogSectionComplex {
         if (this.signCourseComplexBlock && this.backgroundModal) {
             this.signCourseComplexBlock.style.display = 'block';
             this.backgroundModal.style.display = 'flex';
+
+            let dynamicBlock = document.querySelector('.page._content > div > .sign-course-complex-block');
+            dynamicBlock.style.display = 'block';
         }
     }
 

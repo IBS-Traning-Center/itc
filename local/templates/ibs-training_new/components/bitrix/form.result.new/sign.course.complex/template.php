@@ -113,3 +113,24 @@ Loc::loadMessages(__FILE__);
 		<?php endif; ?>
 	</div>
 </div>
+
+<?php if ($arResult['FORM_NOTE']) : ?>
+    <script>
+        let closeCourseModal = document.querySelector('.close-course-modal');
+        let backgroundModal = document.querySelector('.background-modal');
+        let signCourseComplexBlock = document.querySelector('.sign-course-complex-block');
+
+        if (
+            closeCourseModal &&
+            backgroundModal &&
+            signCourseComplexBlock
+        ) {
+            signCourseComplexBlock.style.display = 'block';
+
+            closeCourseModal.addEventListener('click', () => {
+                backgroundModal.style.display = 'none';
+                signCourseComplexBlock.style.display = 'none';
+            });
+        }
+    </script>
+<?php endif; ?>
