@@ -1,0 +1,135 @@
+.scheme-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 56px;
+    column-gap: 32px;
+}
+
+.scheme-block .scheme-line {
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--button-blue);
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.scheme-block .scheme-line:before {
+    content: '';
+    display: block;
+    min-width: 11px;
+    max-width: 11px;
+    min-height: 11px;
+    max-height: 11px;
+    border: 1.5px solid var(--button-blue);
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    background-color: var(--white);
+}
+
+.scheme-block .scheme-line:after {
+    content: '';
+    display: block;
+    height: 1.5px;
+    background-color: var(--button-blue);
+    width: 6%;
+    left: 100%;
+    position: absolute;
+}
+
+.scheme-block .scheme-item:last-child .scheme-line {
+    width: 10px;
+}
+
+.scheme-block .scheme-item:nth-child(3) .scheme-line:after {
+    width: 50%;
+}
+
+.scheme-block .scheme-item:nth-child(4) .scheme-line:after {
+    width: 150%;
+    left: -120px;
+}
+
+.scheme-block .scheme-num {
+    margin-bottom: 12px;
+}
+
+.scheme-block .scheme-name {
+    margin-bottom: 16px;
+    display: block;
+}
+
+@media (max-width: 1620px) {
+    .scheme-block .scheme-line:after {
+        width: 8%;
+    }
+}
+
+@media (max-width: 1260px) {
+    .scheme-block .scheme-line:after {
+        width: 10%;
+    }
+}
+
+@media (max-width: 1180px) {
+    .scheme-block {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 24px;
+        column-gap: 0;
+    }
+
+    .scheme-item {
+        display: flex;
+        gap: 8px;
+    }
+
+    .scheme-block .scheme-num {
+        margin: 0;
+    }
+
+    .scheme-block .scheme-line {
+        width: 1.5px;
+        height: 100%;
+        margin-bottom: 0;
+    }
+
+    .scheme-block .scheme-line::before {
+        left: -3px;
+        top: 0;
+        min-width: 7px;
+        max-width: 7px;
+        min-height: 7px;
+        max-height: 7px;
+    }
+
+    .scheme-block .scheme-line::after {
+        height: 44%;
+        left: 0;
+        width: 100%;
+        top: 100%;
+    }
+
+    .scheme-item-content {
+        margin-left: 8px;
+    }
+
+    .scheme-block .scheme-item:nth-child(4) .scheme-line::after {
+        width: 100%;
+        left: 0;
+    }
+
+    .scheme-block .scheme-item:nth-child(3) .scheme-line::after {
+        width: 100%;
+    }
+
+    .scheme-block .scheme-item:nth-child(6) .scheme-line::after {
+        display: none;
+    }
+
+    .scheme-block .scheme-item:last-child .scheme-line {
+        width: 3px;
+        height: 100%;
+        background-color: var(--white);
+    }
+}
