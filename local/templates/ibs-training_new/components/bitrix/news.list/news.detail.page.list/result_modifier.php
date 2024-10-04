@@ -13,12 +13,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 if (!empty($arResult['ITEMS'])) {
     foreach ($arResult['ITEMS'] as $key => $item) {
         if ($item['PROPERTIES']['NEWS_TAGS']['VALUE']) {
+            $item['PROPERTIES']['NEWS_TAGS']['VALUE'] = array_unique($item['PROPERTIES']['NEWS_TAGS']['VALUE']);
+
             $tagTable = new HighloadblockManager('TagsNews');
 
             $tagTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID'], [], ['UF_XML_ID' => $item['PROPERTIES']['NEWS_TAGS']['VALUE']]);
             $itemTags = $tagTable->getDataAll();
-
-            $itemTags = array_unique($itemTags);
 
             $arResult['ITEMS'][$key]['TAGS'] = $itemTags;
         }
