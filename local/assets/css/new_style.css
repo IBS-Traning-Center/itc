@@ -30,6 +30,7 @@ body {
     background-color: var(--button-blue);
     color: var(--white);
     width: fit-content;
+    cursor: pointer;
 }
 
 .btn-main:hover{
