@@ -58,7 +58,7 @@ function plural_form($number, $after) {
     echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
     $grivna_sign = 'грн.';
-    $rubl_sign = 'руб.';
+    $rubl_sign = '₽';
 
 	// сначала  получим валюту города
 	// Рубли или Гривны

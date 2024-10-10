@@ -223,7 +223,7 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
                                                             ?><?= $arEventInfo['DATE'] ?><?php } ?>" <?php } ?>
                                                     <?php if (($propertyID == 244) or ($propertyID == 247) or ($propertyID == 249) or ($propertyID == 245) or ($propertyID == 265)) { ?>  class="required" <?php } ?>
                                                     <?php if ($propertyID == 244) {
-                                                        ?>  value="<?= $arUserInfo['LastName'] ?> <?= $arUserInfo['FirstName'] ?>"<?php } ?>
+                                                        ?>  value="<?= $arUserInfo['LastName'] ?><?= $arUserInfo['FirstName']?' '.$arUserInfo['FirstName']:'' ?>"<?php } ?>
                                                     <?php if ($propertyID == 245) {
                                                         ?>  value="<?= $arUserInfo['WORK_COMPANY'] ?>"<?php } ?>
                                                     <?php if ($propertyID == 246) {

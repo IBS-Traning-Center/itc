@@ -6,7 +6,7 @@ declare(strict_types=1);
  * @var array $arParams
  */
 ?>
-
+<div class="container">
 <div class="scheduleCertification">
     <div class="scheduleCertification__list timetable-list">
         <?php foreach ($arResult['items'] as $item) {?>
@@ -16,7 +16,9 @@ declare(strict_types=1);
                         <div class="name-n-code-wrap">
                             <div class="code-icon-wrap">
                                 <div class="code-icon-right">
-                                    <span class="icon level"><?=$item['complexity']?></span>
+                                    <? if($item['complexity'] !==''){?>
+                                        <span class="icon level"><?=$item['complexity']?></span>
+                                    <?}?>
                                     <span class="hours"> <?=$item['duration']?> мин</span>
                                 </div>
                             </div>
@@ -42,4 +44,5 @@ declare(strict_types=1);
             </div>
         <?php }?>
     </div>
+</div>
 </div>
