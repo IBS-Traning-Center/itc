@@ -6,7 +6,7 @@ declare(strict_types=1);
  * @var array $arParams
  */
 ?>
-
+<div class="container">
 <div class="scheduleCertification">
     <div class="scheduleCertification__list timetable-list">
         <?php foreach ($arResult['items'] as $item) {?>
@@ -44,4 +44,5 @@ declare(strict_types=1);
             </div>
         <?php }?>
     </div>
+</div>
 </div>
