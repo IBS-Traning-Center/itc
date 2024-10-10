@@ -146,7 +146,7 @@ $arUrlRewrite=array (
   ),
   69 => 
   array (
-    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+)/($|\\#.+|\\?.+)#',
+    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+).html($|\\#.+|\\?.+)#',
     'RULE' => 'CODE=$1',
     'ID' => 'luxoft:courses.detail',
     'PATH' => '/kurs/index.php',

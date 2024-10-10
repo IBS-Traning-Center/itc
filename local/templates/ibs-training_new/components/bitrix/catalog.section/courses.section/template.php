@@ -26,7 +26,7 @@ $this->setFrameMode(true);
 if (!empty($arResult['ITEMS'])) : ?>
     <div class="section-course-block">
         <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
-            <a href="/kurs/<?= $item['XML_ID'] ?>/" class="course-block">
+            <a href="/kurs/<?= $item['XML_ID'] ?>.html" class="course-block">
                 <div class="course-top-block">
                     <?php if ($item['PROPERTIES']['course_code']['VALUE']) : ?>
                         <p class="f-14 course-code">
