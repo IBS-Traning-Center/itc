@@ -16,7 +16,9 @@ declare(strict_types=1);
                         <div class="name-n-code-wrap">
                             <div class="code-icon-wrap">
                                 <div class="code-icon-right">
-                                    <span class="icon level"><?=$item['complexity']?></span>
+                                    <? if($item['complexity'] !==''){?>
+                                        <span class="icon level"><?=$item['complexity']?></span>
+                                    <?}?>
                                     <span class="hours"> <?=$item['duration']?> мин</span>
                                 </div>
                             </div>
