@@ -49,9 +49,9 @@ $APPLICATION->SetTitle('Контакты');
     <div class="main-text-content">
         <h2><?= $APPLICATION->GetTitle() ?></h2>
         <?php $APPLICATION->IncludeComponent(
-            "bitrix:news.list",
-            "map.list",
-            Array(
+	"bitrix:news.list", 
+	"map.list", 
+            array(
                 "ACTIVE_DATE_FORMAT" => "d.m.Y",
                 "ADD_SECTIONS_CHAIN" => "N",
                 "AJAX_MODE" => "N",
@@ -61,8 +61,8 @@ $APPLICATION->SetTitle('Контакты');
                 "AJAX_OPTION_STYLE" => "Y",
                 "CACHE_FILTER" => "N",
                 "CACHE_GROUPS" => "Y",
-                "CACHE_TIME" => "36000000",
-                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "3600",
+                "CACHE_TYPE" => "N",
                 "CHECK_DATES" => "Y",
                 "DETAIL_URL" => "",
                 "DISPLAY_BOTTOM_PAGER" => "N",
@@ -71,7 +71,10 @@ $APPLICATION->SetTitle('Контакты');
                 "DISPLAY_PICTURE" => "Y",
                 "DISPLAY_PREVIEW_TEXT" => "Y",
                 "DISPLAY_TOP_PAGER" => "N",
-                "FIELD_CODE" => array("",""),
+                "FIELD_CODE" => array(
+                    0 => "",
+                    1 => "",
+                ),
                 "FILTER_NAME" => "",
                 "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                 "IBLOCK_ID" => "119",
@@ -90,7 +93,10 @@ $APPLICATION->SetTitle('Контакты');
                 "PARENT_SECTION" => "",
                 "PARENT_SECTION_CODE" => "",
                 "PREVIEW_TRUNCATE_LEN" => "",
-                "PROPERTY_CODE" => array("MAP",""),
+                "PROPERTY_CODE" => array(
+                    0 => "MAP",
+                    1 => "",
+                ),
                 "SET_BROWSER_TITLE" => "N",
                 "SET_LAST_MODIFIED" => "N",
                 "SET_META_DESCRIPTION" => "N",
@@ -102,8 +108,10 @@ $APPLICATION->SetTitle('Контакты');
                 "SORT_BY2" => "ID",
                 "SORT_ORDER1" => "ASC",
                 "SORT_ORDER2" => "DESC",
-                "STRICT_SECTION_CHECK" => "N"
-            )
+                "STRICT_SECTION_CHECK" => "N",
+                "COMPONENT_TEMPLATE" => "map.list"
+            ),
+            false
         );?>
     </div>
 </div>

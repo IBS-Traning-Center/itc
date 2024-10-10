@@ -79,21 +79,21 @@ $aMenuLinks = [
     ],
     [
         'Москва',
-        '/contacts/moscow/',
+        '/contacts/?map=moskva',
         [],
         [],
         ''
     ],
     [
         'Санкт-Петербург',
-        '/contacts/sankt-peterburg/',
+        '/contacts/?map=sankt-peterburg',
         [],
         [],
         ''
     ],
     [
         'Омск',
-        '/contacts/omsk/',
+        '/contacts/?map=omsk',
         [],
         [],
         ''

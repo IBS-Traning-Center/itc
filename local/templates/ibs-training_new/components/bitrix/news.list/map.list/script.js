@@ -1,5 +1,4 @@
-class MapsContacts
-{
+class MapsContacts {
     constructor(data = {
         tabBlockClass: '.tab',
         tabContentBlockClass: '.tab-content-block'
@@ -8,6 +7,25 @@ class MapsContacts
         this.tabContentBlock = document.querySelectorAll(data.tabContentBlockClass);
 
         this.addTabsHandlerListener();
+        this.addActiveTab();
+    }
+
+    addActiveTab()
+    {
+        if (this.tabContentBlock && this.tabBlock) {
+            let hasActiveClass = false;
+
+            this.tabBlock.forEach(tab => {
+                if (tab.classList.contains('active')) {
+                    hasActiveClass = true;
+                }
+            });
+
+            if (!hasActiveClass) {
+                this.tabBlock[0].classList.add('active');
+                this.tabContentBlock[0].classList.add('active');
+            }
+        }
     }
 
     addTabsHandlerListener()
