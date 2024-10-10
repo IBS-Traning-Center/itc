@@ -201,6 +201,7 @@ body {
     padding: 15px 32px;
     background-color: var(--gray);
     outline: none;
+    cursor: pointer;
 }
 
 #header .search-hidden-block .search-block .close-search-block span {

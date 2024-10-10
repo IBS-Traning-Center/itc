@@ -427,25 +427,6 @@ $(document).ready(function() {
 	const searchCatalogInput = document.getElementById('search-catalog');
 
 	if (headerInput && hiddenSearchBlock && closeSearchBlock) {
-		document.addEventListener('click', (e) => {
-			const withinBoundaries = e.composedPath().includes(hiddenSearchBlock);
-			const withinBoundariesHeaderInput = e.composedPath().includes(headerInput);
-			let withinBoundariesCatalogInput = false;
-
-			if (searchCatalogInput) {
-				withinBoundariesCatalogInput = e.composedPath().includes(searchCatalogInput);
-			}
-
-			if (
-				!withinBoundaries &&
-				hiddenSearchBlock.style.display === 'block' &&
-				!withinBoundariesHeaderInput &&
-				!withinBoundariesCatalogInput
-			) {
-				hiddenSearchBlock.style.display = 'none';
-			}
-		});
-
 		closeSearchBlock.addEventListener('click', () => {
 			hiddenSearchBlock.style.display = 'none';
 		});
