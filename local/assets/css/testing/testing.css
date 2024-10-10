@@ -1,3 +1,16 @@
+.testing-content h1,
+.testing-content h2,
+.testing-content h3,
+.testing-content h4,
+.testing-content h5,
+.testing-content h6,
+.testing-content div,
+.testing-content p,
+.testing-content span,
+.top-page-banner .container .banner-content p {
+    font-family: "Noto Sans" !important;
+}
+
 .testing-content .testing-content-block {
     padding: 120px 0;
 }

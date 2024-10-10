@@ -1,0 +1,72 @@
+.rules-block {
+    width: 100%;
+}
+
+.rule-item {
+    cursor: pointer;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--black);
+    width: 100%;
+}
+
+.rule-item p {
+    margin-bottom: 0;
+}
+
+.rule-item .rule-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rule-item .rule-info .icons-block svg {
+    min-width: 32px;
+    max-width: 32px;
+    min-height: 32px;
+    max-height: 32px;
+}
+
+.rule-item .rule-info .icons-block .minus {
+    display: none;
+}
+
+.rule-item .rules-hidden-block {
+    display: none;
+    margin-top: 32px;
+}
+
+.rule-item.active {
+    background-color: var(--gray);
+    padding: 24px 32px 40px;
+}
+
+.rule-item.active .rule-info {
+    align-items: start;
+}
+
+.rule-item.active .rules-hidden-block {
+    display: block;
+}
+
+.rule-item.active .rule-info .icons-block .minus {
+    display: block;
+}
+
+.rule-item.active .rule-info .icons-block .arrow {
+    display: none;
+}
+
+@media (max-width: 1180px) {
+    .rule-item {
+        padding: 16px 0 20px;
+    }
+
+    .rule-item.active {
+        padding: 16px 32px 24px;
+    }
+
+    .rule-item .rules-hidden-block {
+        margin-top: 24px;
+    }
+}

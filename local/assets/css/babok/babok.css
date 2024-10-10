@@ -1,0 +1,196 @@
+.ruk-babok h1,
+.ruk-babok h2,
+.ruk-babok h3,
+.ruk-babok h4,
+.ruk-babok h5,
+.ruk-babok h6,
+.ruk-babok div,
+.ruk-babok p,
+.ruk-babok span {
+    font-family: "Noto Sans";
+}
+
+.ruk-babok p {
+    margin-bottom: 0;
+}
+
+.top-page-banner .container .buttons-block-banner img {
+    max-width: 100%;
+}
+
+.top-page-banner .container .btn-main {
+    margin-top: 56px;
+}
+
+.possibilities-babok {
+    background-color: #F4F0FE;
+}
+
+.babok-block {
+    padding: 120px 0;
+}
+
+.ruk-babok h2 {
+    font-size: 56px;
+    line-height: 72px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.ruk-babok .margin-bottom56 {
+    margin-bottom: 56px;
+}
+
+.ruk-babok .margin-bottom32 {
+    margin-bottom: 32px;
+}
+
+.possib h2 {
+    max-width: 596px;
+    width: 100%;
+}
+
+.possib p {
+    max-width: 1083px;
+    width: 100%;
+}
+
+.possib p a,
+.what-babok a {
+    color: var(--button-blue);
+    text-decoration: underline;
+}
+
+.what-babok {
+    padding: 60px 0 120px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 596px 1fr;
+    gap: 56px;
+    min-height: 720px;
+}
+
+.what-babok .what-babok-image {
+    position: absolute;
+    bottom: 0;
+    left: -60px;
+    max-width: 628px;
+    height: auto;
+    max-height: 450px;
+}
+
+.what-babok .what-babok-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.what-babok .with-border {
+    border-left: 1px solid var(--black);
+    padding-left: 32px;
+}
+
+.what-babok .flex-babok {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.what-babok .flex-babok svg {
+    max-width: 72px;
+    min-width: 72px;
+    max-height: 72px;
+    min-height: 72px;
+}
+
+.rule-block {
+    max-width: 1294px;
+    width: 100%;
+}
+
+.babok-block.telegram .subscribe-main-page-block {
+    padding-bottom: 0 !important;
+}
+
+@media (max-width: 1280px) {
+    .what-babok .what-babok-image {
+        left: -10px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .what-babok .what-babok-image {
+        display: none;
+    }
+
+    .what-babok {
+        min-height: unset;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .ruk-babok .top-page-banner .container {
+        display: grid;
+        grid-template-columns: 1fr 248px;
+        gap: 24px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .top-page-banner .container .btn-main {
+        padding: 15px 32px !important;
+        margin-top: 24px;
+    }
+
+    .top-page-banner .container .btn-main span {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .ruk-babok .top-page-banner .container .banner-content p {
+        font-size: 20px;
+        line-height: 27px;
+        margin-top: 16px;
+    }
+
+    .ruk-babok .margin-bottom56,
+    .ruk-babok .margin-bottom32 {
+        margin-bottom: 24px;
+    }
+
+    .possib h2,
+    .possib p {
+        max-width: 100%;
+    }
+
+    .ruk-babok h2 {
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    .babok-block,
+    .what-babok {
+        padding: 40px 0;
+    }
+
+    .what-babok .flex-babok {
+        gap: 12px;
+    }
+
+    .what-babok .flex-babok svg {
+        max-width: 32px;
+        min-width: 32px;
+        max-height: 32px;
+        min-height: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ruk-babok .top-page-banner .container {
+        grid-template-columns: 1fr;
+    }
+
+    .top-page-banner .container .buttons-block-banner {
+        max-width: 248px;
+        margin: 0 auto;
+    }
+}

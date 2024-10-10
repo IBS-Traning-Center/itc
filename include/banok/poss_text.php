@@ -1,0 +1,1 @@
+Пройдя обучение <a href="/training/katalog_kursov/kompleksnye-programmy/babok_dlya_biznes_analitika/?utm_source=blog&utm_medium=referral&utm_campaign=promo_babok">на наших курсах BABOK,</a> вы получите бумажную версию Руководства BABOK на русском языке в подарок!

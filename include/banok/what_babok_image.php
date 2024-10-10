@@ -1,0 +1,1 @@
+<img src="/local/templates/ibs-training_new/assets/images/what_babok.png"><br>
