@@ -92,7 +92,7 @@ class ReviewsMainPage
                 if (sliced.length < elem.textContent.length) {
                     let dataId = elem.dataset.id;
 
-                    sliced += '... <a href="/reviews/' + dataId +'/">Читать все</a>';
+                    sliced += '... <a href="/reviews/">Читать все</a>';
                     elem.innerHTML = sliced;
                 }
             });
