@@ -1664,6 +1664,10 @@ div.title-search-result {
     background-image: url("../images/icons/social-youtube.svg")
 }
 
+.social-list__item._rt {
+    background-image: url("../images/icons/social-rutube.png");
+}
+
 .social-list__item._in {
     background-image: url("../images/icons/social-linkedin.svg")
 }

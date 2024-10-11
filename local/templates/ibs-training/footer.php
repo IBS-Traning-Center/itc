@@ -28,7 +28,7 @@
             <div class="socials-questions">
                 <div class="social-list">
                     <a target="_blank" href="https://vk.com/ibs_training_center" class="social-list__item _vk"></a>
-                    <a target="_blank" href="https://www.youtube.com/c/IBSTrainingCenter" class="social-list__item _yt"></a>
+                    <a target="_blank" href="https://rutube.ru/channel/30034572" class="social-list__item _rt"></a>
                     <a target="_blank" href="https://t.me/IBS_Training_Center" class="social-list__item _telegram"></a>
                     <a target="_blank" href="https://dzen.ru/ibs_training_center" class="social-list__item _dzen"></a>
                 </div>

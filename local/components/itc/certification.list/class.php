@@ -26,6 +26,7 @@ extends CBitrixComponent
 
         $currentDay = new DateTime();
         $currentDay->setTime(0,0);
+        $currentDay->add("+6 day");
         $scheduleCollection = ElementScheduleCertificationTable::getList([
             'order'  => ['date.value' => 'asc', 'id' => 'asc'],
             'select' => ['id', 'active', 'certification', 'location', 'date', 'time'],

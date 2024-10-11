@@ -176,6 +176,7 @@ export default {
       comment: '',
       agree_1: '',
       agree_2: '',
+      clientId: '',
     },
     checkPhone,
   }),
@@ -321,6 +322,7 @@ export default {
         comment: '',
         agree_1: '',
         agree_2: '',
+        clientId: '',
       })
     },
     formInit() {
@@ -345,6 +347,12 @@ export default {
         self.$set(self.formData, 'recommendations', self.courses)
       }
 
+      ym(23056159, 'getClientID', function (clientID) {
+        console.log('clientID', clientID);
+        if (clientID) {
+          self.$set(self.formData, 'clientId', clientID)
+        }
+      });
 
       if (self.schedule.length) {
         self.schedule.forEach(function (item) {

@@ -902,7 +902,8 @@ class CourseDetailComponent
         $position = '',
         $scheduleDateStart = '',
         $scheduleDateEnd = '',
-        $recommendations = []
+        $recommendations = [],
+        $clientId = ''
     ): array
     {
         $application = \Bitrix\Main\Application::getInstance();
@@ -939,6 +940,7 @@ class CourseDetailComponent
             'recommendations' => $recommendations,
             'CLIENT_ID_YANDEX' => $request->getCookieRaw('_ym_uid'),
             'CLIENT_ID_GOOGLE' => $request->getCookieRaw('_ga'),
+            'client_id' => $clientId,
         ];
 
         if ($parseName = $this->parseName($name)) {

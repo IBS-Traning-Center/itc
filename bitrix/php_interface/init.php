@@ -1240,7 +1240,7 @@ class MyClass
                 $arSelectFields = array(
                     "NAME", "PROPERTY_FULLNAME", "PROPERTY_EMAIL", "PROPERTY_TYPE", "PROPERTY_DATE", "PROPERTY_COMPANY",
                     "PROPERTY_TELEPHONE", "PROPERTY_CAT_COURSE", "PROPERTY_CITY", "PROPERTY_DOLGNOST", "PROPERTY_DOLGNOST", "PROPERTY_EVENT_CITY", "PROPERTY_EVENT_ID",
-                    "PROPERTY_TIMETABLE_ID", "PROPERTY_COMMENT", "PROPERTY_ID_CITY_ORDER", "PROPERTY_LINK_DISCOUNT", "PROPERTY_lastname", "PROPERTY_firstname", "PROPERTY_middlename");
+                    "PROPERTY_TIMETABLE_ID", "PROPERTY_COMMENT", "PROPERTY_ID_CITY_ORDER", "PROPERTY_LINK_DISCOUNT", "PROPERTY_lastname", "PROPERTY_firstname", "PROPERTY_middlename", "PROPERTY_CLIENT_ID_YANDEX");
                 $res2 = CIBlockElement::GetList($arOrder, $arFilter, $arGroupBy, $arNavStartParams, $arSelectFields);
                 while ($ob = $res2->GetNextElement()) {
                     $arFields3 = $ob->GetFields();
@@ -1265,6 +1265,7 @@ class MyClass
                     $firstname = $arFields3['PROPERTY_FIRSTNAME_VALUE'];
                     $lastname = $arFields3['PROPERTY_LASTNAME_VALUE'];
                     $secondname = $arFields3['PROPERTY_MIDDLENAME_VALUE'];
+                    $clientID = $arFields3['PROPERTY_CLIENT_ID_YANDEX_VALUE'];
 
                     $courseEducationFormat = false;
                     if($orderer_courseID > 0 && $orderer_courseID != NULL) {
@@ -1519,6 +1520,7 @@ class MyClass
                                 'COMMENTS' =>  "тип: " . $arFields3["PROPERTY_TYPE_VALUE"] . "<br/>" . "Дата: " . $arSendEvent['EDU_EVENT_DATE'] . "<br/>" . "Город: " . $arFields3["PROPERTY_CITY_VALUE"] . "<br/>" . "Стоимость: " . $arSendEvent['COURSE_PRICE'] . "<br/>" . "Комментарий: " . $commentOrder,
                                 'ASSIGNED_BY_ID' => '29',
                                 'CREATED_BY_ID' => '29',
+                                'UF_CRM_CLIENT_ID' => $arFields3["PROPERTY_CLIENT_ID_YANDEX_VALUE"],
                             ]
                         ]
                     );
