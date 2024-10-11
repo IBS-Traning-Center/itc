@@ -73,6 +73,18 @@ class CatalogSectionCustom
             this.searchInput.addEventListener('focus', () => {
                 this.searchHiddenBlock.style.display = 'block';
                 this.hiddenSearchInput.focus();
+
+                if (window.innerWidth > 1350) {
+                    window.scrollTo({
+                        top: 450,
+                        behavior: "smooth",
+                    });
+                } else {
+                    window.scrollTo({
+                        top: 600,
+                        behavior: "smooth",
+                    });
+                }
             });
         }
     }

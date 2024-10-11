@@ -35,6 +35,11 @@ class Trainers
             this.searchInput.addEventListener('focus', () => {
                 this.searchHiddenBlock.style.display = 'block';
                 this.hiddenSearchInput.focus();
+
+                window.scrollTo({
+                    top: 450,
+                    behavior: "smooth",
+                });
             });
         }
     }
