@@ -1,0 +1,74 @@
+:root {
+    --main-blue: #4127E0;
+    --additional-lilac: #C294FF;
+    --button-blue: #0827C4;
+    --lime: #C4EB57;
+    --black: #000;
+    --red: #BF031B;
+    --white: #FFF;
+    --light-gray: #F8F7F7;
+    --gray: #F0F0F0;
+}
+
+.f-14 {
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.f-16 {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.f-18 {
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+}
+
+.f-20 {
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.f-24 {
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.f-32 {
+    font-size: 32px;
+    line-height: 44px;
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.f-bold {
+    font-weight: 700;
+}
+
+@media (max-width: 1180px) {
+    .f-20 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .f-32 {
+        font-size: 20px;
+        line-height: 27px;
+    }
+}

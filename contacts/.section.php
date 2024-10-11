@@ -1,8 +1,8 @@
-<?
-$sSectionName = "Контакты";
-$arDirProperties = Array(
-   "blue_title" => "Документы",
-   "SHOW_FULL_PAGE" => "Y",
-   "DONT_SHOW_PAGE_TOP" => "Y"
-);
-?>
+<?php
+$sSectionName = 'Контакты';
+$arDirProperties = [
+    'BANNER_TITLE' => 'Сведения об образовательной организации',
+    'SHOW_FULL_PAGE' => 'Y',
+    'DONT_SHOW_PAGE_TOP' => 'Y',
+    'BACKGROUND_COLOR_BANNER' => '#F8F7F7'
+];

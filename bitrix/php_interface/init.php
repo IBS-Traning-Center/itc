@@ -1,6 +1,9 @@
 <?php
 use Bitrix\Main\EventManager;
 use Luxoft\Dev\Tools;
+
+define('INIT_DIR', dirname(__FILE__));
+
 require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
 
 if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php")) {
@@ -8,6 +11,10 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php")) {
 }
 if (Bitrix\Main\Loader::includeModule('luxoft.dev')) {
     \Luxoft\Dev\Core::getInstance();
+}
+
+if (file_exists(INIT_DIR . '/include/constants.php')) {
+    include_once INIT_DIR . '/include/constants.php';
 }
 
 include_once '2021/index.php';
@@ -694,7 +701,7 @@ class MyClass
             $ELEMENT_ID = $arFields["ID"];
             $IBLOCK_ID = $arFields["IBLOCK_ID"];
             $id_course = $arFields["PROPERTY_VALUES"][225]["$ELEMENT_ID:225"];
-            if (strlen($id_course) > 0) {
+            if (is_string($id_course) && strlen($id_course) > 0) {
                 $arSelect = array("PROPERTY_course_code");
                 $arFilter = array("IBLOCK_ID" => "6", "ID" => $id_course);
                 $res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
@@ -722,7 +729,7 @@ class MyClass
 
             //die();
 
-            if (strlen($id_course) > 0) {
+            if (is_string($id_course) && strlen($id_course) > 0) {
                 $arSelect = array("PROPERTY_course_code");
                 $arFilter = array("IBLOCK_ID" => "6", "ID" => $id_course);
                 $res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
@@ -2148,4 +2155,20 @@ class MyClass
             }
         }
     }
+}
+
+/* Функция отвечающая за вывод "хлебных-крошек" bitrix:breadcrumb */
+function ShowNavChain()
+{
+    global $APPLICATION;
+
+    $APPLICATION->IncludeComponent(
+        'bitrix:breadcrumb',
+        'bread',
+        [
+            'START_FROM' => '0',
+            'PATH' => '',
+            'SITE_ID' => 's1'
+        ]
+    );
 }

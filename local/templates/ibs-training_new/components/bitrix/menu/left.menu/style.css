@@ -1,0 +1,113 @@
+.left-menu-block {
+    display: flex;
+    flex-direction: column;
+    padding-right: 32px;
+    max-width: 442px;
+    width: 100%;
+    min-width: 442px;
+}
+
+.left-menu-block .left-menu-item {
+    display: flex;
+    padding: 16px 24px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--black);
+    align-items: start;
+}
+
+.left-menu-block .left-menu-item .elems-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+}
+
+.left-menu-block .left-menu-item svg {
+    margin-left: auto;
+}
+
+.left-menu-block .left-menu-item .menu-num {
+    margin-top: -2px;
+    margin-right: 8px;
+}
+
+.left-menu-block .left-menu-item.selected {
+    background-color: var(--gray);
+}
+
+.left-menu-block .left-menu-item.selected .menu-num {
+    padding: 0 4px;
+    color: var(--white);
+    background-color: var(--button-blue);
+}
+
+.left-menu-block .mobile-select-menu-block,
+.left-menu-block .mobile-left-menu-block,
+.left-menu-block .background-hidden-mobile-menu {
+    display: none;
+}
+
+@media (max-width: 1180px) {
+    .left-menu-block {
+        max-width: 100%;
+        padding-right: 0;
+        min-width: unset;
+    }
+
+    .left-menu-block .left-menu-item {
+        display: none;
+    }
+
+    .left-menu-block .mobile-select-menu-block {
+        display: flex;
+        padding: 12px 16px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--black);
+        background-color: var(--gray);
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .background-hidden-mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: var(--black);
+        opacity: 0.4;
+        z-index: 1000;
+        display: none;
+    }
+
+    .background-hidden-mobile-menu.show {
+        display: block;
+    }
+
+    .mobile-left-menu-block.show {
+        display: flex;
+    }
+
+    .mobile-left-menu-block {
+        background-color: var(--white);
+        padding: 16px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 2000;
+        flex-direction: column;
+    }
+
+    .mobile-left-menu-block span,
+    .mobile-left-menu-block a {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--black);
+    }
+    .mobile-left-menu-block span:last-child,
+    .mobile-left-menu-block a:last-child {
+        border-bottom: 0;
+    }
+}
