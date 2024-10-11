@@ -232,7 +232,14 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 
                                     $precision = $arItem["DECIMALS"]? $arItem["DECIMALS"]: 0;
                                     $minValue = number_format($arItem["VALUES"]["MIN"]["VALUE"], $precision, ".", "");
+                                    if ($arItem["VALUES"]["MIN"]["HTML_VALUE"]) {
+                                        $minValue = number_format($arItem["VALUES"]["MIN"]["HTML_VALUE"], $precision, ".", "");
+                                    }
+
                                     $maxValue = number_format($arItem["VALUES"]["MAX"]["VALUE"], $precision, ".", "");
+                                    if ($arItem["VALUES"]["MAX"]["HTML_VALUE"]) {
+                                        $maxValue = number_format($arItem["VALUES"]["MAX"]["HTML_VALUE"], $precision, ".", "");
+                                    }
                                 ?>
 									<div class="col-xs-6 bx-filter-parameters-box-container-block bx-left min-value-block <?= $dopClass ?>">
 										<div class="bx-filter-input-container">

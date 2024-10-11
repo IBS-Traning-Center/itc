@@ -64,11 +64,13 @@ $APPLICATION->SetTitle("Бонусы");
 <div class="bonuses-box">
 	<div class="box">
 		 <?$APPLICATION->IncludeComponent(
-	"bitrix:sale.personal.account",
-	"acc-big",
-	Array(
-		"SET_TITLE" => "N"
-	)
+	"bitrix:sale.personal.account", 
+	"acc-big", 
+	array(
+		"SET_TITLE" => "N",
+		"COMPONENT_TEMPLATE" => "acc-big"
+	),
+	false
 );?>
 	</div>
 	<div class="learn-box" style="float: left; width: 597px;">

@@ -1,4 +1,5 @@
 <?
+$PERM["new-year-promoaction-2021"]["33"]="D";
 $PERM["pub"]["101"]="T_8";
 $PERM["upload"]["101"]="T_8";
 $PERM["upload"]["77"]="X";

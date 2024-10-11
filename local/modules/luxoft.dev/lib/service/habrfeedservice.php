@@ -107,8 +107,8 @@ class HabrFeedService
     protected function checkCourseObject($courseObject): bool
     {
         if (
-            !$courseObject->getCategoryYandex()
-            || !$courseObject->getCategoryYandex()->getAll()
+            !$courseObject->getHabrSpec()
+            || !$courseObject->getHabrSpec()->getValue()
         ) {
             return false;
         }
@@ -175,6 +175,11 @@ class HabrFeedService
                 'ROADMAP_TITLE_' => 'ROADMAP_TITLE',
                 'ROADMAP_DESCRIPTION_' => 'ROADMAP_DESCRIPTION',
                 'COMPLEXITY.ITEM',
+                'HABR_SPEC_' => 'HABR_SPEC',
+                'HABR_MIN_KVAL_' => 'HABR_MIN_KVAL',
+                'HABR_MAX_KVAL_' => 'HABR_MAX_KVAL',
+                'HABR_SKILLS_' => 'HABR_SKILLS',
+                'course_format_' => 'course_format.ITEM'
             ])
             ->where('ACTIVE', 'Y')
             ->countTotal(true)
@@ -192,15 +197,25 @@ class HabrFeedService
                 continue;
             }
 
+            $couseName = $course->getCode() . ' ' . htmlspecialchars($course->getName());
+
             $arCourse = [
                 'id' => $course->getId(),
-                'name' => htmlspecialchars($course->getName()),
+                'name' => $couseName,
                 'code' => $course->getCode(),
                 'description' => $course->getShortDescr() ? $course->getShortDescr()->getValue() : '',
                 'url' => "{$this->trainingCenterInfo['url']}/kurs/{$course->getXmlId()}.html",
                 'price' => $course->getCoursePrice() ? $course->getCoursePrice()->getValue() : '',
                 'duration' => $course->getCourseDuration() ? $course->getCourseDuration()->getValue() : '',
+                'spec' => $course->getHabrSpec() ? $course->getHabrSpec()->getValue() : '',
+                'kval_min' => $course->getHabrMinKval() ? $course->getHabrMinKval()->getValue() : '',
+                'kval_max' => $course->getHabrMaxKval() ? $course->getHabrMaxKval()->getValue() : '',
+                'format' => ($course->getCourseFormat() && $course->getCourseFormat()->getItem()) ? $course->getCourseFormat()->getItem()->getXmlId() : 'online',
             ];
+
+            if ($course->getHabrSkills() && $course->getHabrSkills()->getValue()) {
+                $arCourse['skills'] = explode(',', $course->getHabrSkills()->getValue());
+            }
 
             $roadmapTitles = $course->getRoadmapTitle()->getAll();
             foreach ($roadmapTitles as $key => $roadmapTitle) {
@@ -389,29 +404,54 @@ class HabrFeedService
             $offerNode = $dom->createElement('offer');
 
 
+            $fullDescription = '<p>' . $course['description'] . '</p><br>';
 
+            foreach ($course['roadmap'] as $roadmapKey => $roadmapItem) {
+                $fullDescription .= $roadmapItem['description'];
+            }
 
+            $fullDescription = "<![CDATA[" . $fullDescription ."]]>";
+            $course['url'] = $course['url'] . '?utm_source=habr&utm_campaign=career_habr';
 
             $offerNode->setAttribute('id', $course['id']);
-            $offerNode->appendChild($dom->createElement('url', $course['url']));
+
+            $urlNode = $dom->createElement('url');
+            $urlNode->textContent = $course['url'];
+            $offerNode->appendChild($urlNode);
+
             $offerNode->appendChild($dom->createElement('name', $course['name']));
-            $offerNode->appendChild($dom->createElement('description', $course['description']));
+
+            $descriptionNode = $dom->createElement('description');
+            $descriptionNode->textContent = $fullDescription;
+            $offerNode->appendChild($descriptionNode);
+
             $offerNode->appendChild($dom->createElement('price', $course['price']));
             $offerNode->appendChild($dom->createElement('currencyId', 'RUR'));
+
+            if ($course['spec']) {
+                $offerNode->appendChild($dom->createElement('specialization', $course['spec']));
+            }
+
+            if ($course['skills']) {
+                $skillsDom = $dom->createElement('skills');
+
+                foreach ($course['skills'] as $key => $skill) {
+                    $num = $key + 1;
+                    $skillDom = $dom->createElement('skill', trim($skill));
+                    $skillDom->setAttribute('id', $num);
+                    $skillsDom->appendChild($skillDom);
+                }
+
+                $offerNode->appendChild($skillsDom);
+            }
+
             if ($course['sale']) {
                 $saleNode = $dom->createElement('param', $course['sale']);
 
                 $offerNode->appendChild($saleNode);
             }
 
-            foreach ($course['roadmap'] as $roadmapKey => $roadmapItem) {
-                $planNode = $dom->createElement('param');
-                $planNode ->setAttribute('name', 'Разбираемые темы');
-                $planNode->textContent = "<![CDATA[{$roadmapItem['description']}]]>";
-                $offerNode->appendChild($planNode);
-            }
-
-            $educationFormatNode = $dom->createElement('param', 'С преподавателем');
+            $educationFormatNode = $dom->createElement('param', $course['format']);
             $educationFormatNode->setAttribute('name', 'Формат');
             $offerNode->appendChild($educationFormatNode);
 
@@ -421,20 +461,32 @@ class HabrFeedService
                 $offerNode->appendChild($nextDateNode);
             }
 
-            $complexity = $dom->createElement('param', $course['complexity']);
-            $complexity ->setAttribute('name', 'Для кого');
+            if ($course['kval_min']) {
+                $kvalMin = $dom->createElement('param', $course['kval_min']);
+                $kvalMin ->setAttribute('name', 'Требуемая квалификация');
+                $offerNode->appendChild($kvalMin);
+            }
 
-            $offerNode->appendChild($complexity);
+            if ($course['kval_max']) {
+                $kvalMax = $dom->createElement('param', $course['kval_max']);
+                $kvalMax ->setAttribute('name', 'Получаемая квалификация');
+                $offerNode->appendChild($kvalMax);
+            }
 
-            $durationNode = $dom->createElement('param', $course['duration']);
-            $durationNode ->setAttribute('name', 'Длительногость часов');
+//            $complexity = $dom->createElement('param', $course['complexity']);
+//            $complexity ->setAttribute('name', 'Для кого');
+//
+//            $offerNode->appendChild($complexity);
 
+            $duration = round($course['duration'] / 168, 3);
+            $durationNode = $dom->createElement('duration', $duration);
+            $durationNode ->setAttribute('unit', 'week');
 
             $offerNode->appendChild($durationNode);
 
-            $certificateNode = $dom->createElement('param', 'Сертификат');
-            $certificateNode ->setAttribute('name', 'Выдается после прохождения');
-                        $offerNode->appendChild($certificateNode);
+            $certificateNode = $dom->createElement('param', 'Да');
+            $certificateNode ->setAttribute('name', 'Выдаётся сертификат');
+            $offerNode->appendChild($certificateNode);
                         
 
             $offersNode->appendChild($offerNode);

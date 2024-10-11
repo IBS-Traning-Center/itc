@@ -667,12 +667,11 @@ BX.Iblock.SmartFilter = (function()
 	{
 		var newMinPrice = (this.priceDiff*this.leftPercent)/100;
 		newMinPrice = (this.minPrice + newMinPrice).toFixed(this.precision);
-		var minValue = this.minInput.dataset.minValue;
 
 		if (newMinPrice != this.minPrice)
 			this.minInput.value = newMinPrice;
 		else
-			this.minInput.value = minValue;
+			this.minInput.value = this.minPrice;
 		/** @global JCSmartFilter smartFilter */
 		smartFilter.keyup(this.minInput);
 	};
@@ -681,12 +680,11 @@ BX.Iblock.SmartFilter = (function()
 	{
 		var newMaxPrice = (this.priceDiff*this.rightPercent)/100;
 		newMaxPrice = (this.maxPrice - newMaxPrice).toFixed(this.precision);
-        var maxValue = this.maxInput.dataset.maxValue;
 
 		if (newMaxPrice != this.maxPrice)
 			this.maxInput.value = newMaxPrice;
 		else
-			this.maxInput.value = maxValue;
+			this.maxInput.value = this.maxPrice;
 		/** @global JCSmartFilter smartFilter */
 		smartFilter.keyup(this.maxInput);
 	};
