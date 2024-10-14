@@ -256,7 +256,7 @@ if (!empty($arResult)) : ?>
                                     <?php if ($tariff['TIME_PRICE']) : ?>
                                         <div class="time-price">
                                             <span class="f-20"><?= Loc::getMessage('TARIFF_TIME_PRICE_BLOCK_TEXT') ?></span>
-                                            <span class="price-text"><?= $tariff['PRICE'] . ' ₽/мес.' ?></span>
+                                            <span class="price-text"><?= $tariff['TIME_PRICE'] . ' ₽/мес.' ?></span>
                                         </div>
                                     <?php endif; ?>
                                 </div>
