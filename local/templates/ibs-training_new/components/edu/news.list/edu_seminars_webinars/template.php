@@ -47,7 +47,7 @@ if (count($arResult["ITEMS"]) > 0) { ?>
                                     <?}?>
                                 </div>
                                 <? if(strlen($arItem['PROPERTIES']['time']['VALUE'])>0) {?>
-                                     <span class="time"><?= $arItem['PROPERTIES']['time']['VALUE'] ?> <?if($arItem['PROPERTIES']['type_event']['VALUE_ENUM_ID'] == 92) {?> (мск.)<?}?></span>
+                                     <span class="time"><?= $arItem['PROPERTIES']['time']['VALUE'] ?> <?if($arItem['PROPERTIES']['type_event']['VALUE_ENUM_ID'] == 92) {?><?}?></span>
                                <?}?>
                             </div>
                                 

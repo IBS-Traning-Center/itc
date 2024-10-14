@@ -5,6 +5,7 @@ use Bitrix\Main\Routing\RoutingConfigurator;
 use Bitrix\Main\Routing\Controllers\PublicPageController;
 use Luxoft\Dev\Service\YandexFeedService;
 use Luxoft\Dev\Service\HabrFeedService;
+use Luxoft\Dev\Service\VkFeedService;
 use Bitrix\Main\Grid\Options as GridOptions;
 
 return function (RoutingConfigurator $routes) {
@@ -36,6 +37,21 @@ return function (RoutingConfigurator $routes) {
 
             $habrFeedService = new HabrFeedService();
             $xmlString = $habrFeedService->getXml();
+            return $xmlString;
+        });
+    });
+
+    $routes->prefix('feed')->group(function (RoutingConfigurator $routes) {
+        $routes->get('vk_v1-1/', function () {
+            define('BX_SESSION_ID_CHANGE', false);
+            define('BX_SKIP_POST_UNQUOTE', true);
+            define('NO_AGENT_CHECK', true);
+            define("STATISTIC_SKIP_ACTIVITY_CHECK", true);
+            define("BX_FORCE_DISABLE_SEPARATED_SESSION_MODE", true);
+            header("Content-Type: application/xml; charset=utf-8");
+
+            $vkFeedService = new VkFeedService();
+            $xmlString = $vkFeedService->getXml();
             return $xmlString;
         });
     });

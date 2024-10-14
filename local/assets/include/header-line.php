@@ -32,7 +32,7 @@
     <nav class="horizontal-nav" id="oblique-nav">
         <div id="triangle-bottomleft"></div>
         <div class="top-right-corner">
-            <span class="lang"><a class="opacity-transition ru" title="" rel="nofollow" href="http://www.luxoft-training.com">En</a></span>
+<span class="lang"><a class="opacity-transition ru" title="" rel="nofollow" href="http://www.luxoft-training.com">En</a></span>
             <span class="lang  active"><a class="opacity-transition ru" title="" href="/">Ru</a></span>
         </div>
     </nav>

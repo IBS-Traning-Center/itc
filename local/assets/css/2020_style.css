@@ -202,7 +202,7 @@ a {
 }
 
 .page {
-    
+
 }
 .page._content {
     padding-top: 100px;
@@ -1661,6 +1661,10 @@ div.title-search-result {
 
 .social-list__item._yt {
     background-image: url("../images/icons/social-youtube.svg")
+}
+
+.social-list__item._rt {
+    background-image: url("../images/icons/social-rutube.png");
 }
 
 .social-list__item._in {
