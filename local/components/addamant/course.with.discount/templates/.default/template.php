@@ -31,7 +31,7 @@ if (!empty($arResult['COURSES'])) : ?>
         <div class="discount-courses-block container">
             <div id="coursesDiscountSlider" class="<?= $dopClass ?>">
                 <?php foreach ($arResult['COURSES'] as $course) : ?>
-                    <a href="/kurs/<?= $course['XML_ID'] ?>/" class="discount-course-item">
+                    <a href="/kurs/<?= $course['XML_ID'] ?>.html" class="discount-course-item">
                         <div class="image-block">
                             <img src="<?= $course['PICTURE'] ?: $defaultCourseImage ?>" alt="<?= $course['NAME'] ?>">
                         </div>

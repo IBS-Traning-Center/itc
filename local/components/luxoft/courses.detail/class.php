@@ -487,8 +487,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             ];
 
             $result[$course->get('ID')]['link'] = $course->get('XML_ID')
-                ? $this->arParams['coursesPath'] . $course->get('XML_ID') . '/'
-                : $this->arParams['coursesPath'] . $course->get('CODE')  . '/';
+                ? $this->arParams['coursesPath'] . $course->get('XML_ID') . '.html'
+                : $this->arParams['coursesPath'] . $course->get('CODE')  . '.html';
         }
 
         $schedule = $this->getSchedule(['filter' => [$this->mapping('schedule', 'course.VALUE') => array_keys($result)]]);

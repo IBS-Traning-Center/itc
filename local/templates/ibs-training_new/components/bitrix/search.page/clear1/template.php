@@ -46,7 +46,7 @@ $APPLICATION->AddChainItem($title, '');
             <h3><?= Loc::getMessage('COURSE_BLOCK_TITLE') ?></h3>
             <div class="section-course-block">
                 <?php foreach ($arResult['COURSES'] as $course) : ?>
-                    <a href="/kurs/<?= $course['XML_ID'] ?>/" class="course-block">
+                    <a href="/kurs/<?= $course['XML_ID'] ?>.html" class="course-block">
                         <div class="course-top-block">
                             <?php if ($course['CODE']) : ?>
                                 <p class="f-14 course-code">
