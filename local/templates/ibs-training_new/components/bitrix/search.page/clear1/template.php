@@ -136,7 +136,7 @@ $APPLICATION->AddChainItem($title, '');
             <div class="trainers-block">
                 <div class="big-trainer-cards-block">
                     <?php foreach ($arResult['TRAINERS'] as $key => $item) : ?>
-                        <a href="/about/experts/<?= $item['CODE'] ?>/" class="trainer-item">
+                        <a href="/about/experts/<?= $item['CODE'] ?>.html" class="trainer-item">
                             <?php if ($item['PICTURE']) : ?>
                                 <div class="trainer-image-block">
                                     <img src="<?= $item['PICTURE'] ?>" alt="<?= $item['NAME'] ?>">
