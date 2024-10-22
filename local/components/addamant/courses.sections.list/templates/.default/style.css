@@ -124,6 +124,7 @@
     -webkit-box-orient: vertical;
     margin-bottom: 24px;
     font-family: 'Noto Sans';
+    word-break: break-word;
 }
 
 .sections-block .container.catalog-sections.default .section-block .info-section-block {
