@@ -10,7 +10,7 @@ $arResult['EVENT'] = [
 
     'DESCRIPTION' => nl2br(strip_tags($arResult['PROPERTIES']['description']['~VALUE'], '<a>')),
     'SHORT_DESCRIPTION' => trim($arResult['PROPERTIES']['ADDITIONAL_DESC']['~VALUE']['TEXT']),
-    'CONTENT' => nl2br($arResult['PROPERTIES']['content']['~VALUE']['TEXT']),
+    'CONTENT' => (is_array($arResult['PROPERTIES']) && is_array($arResult['PROPERTIES']['content']) && is_array($arResult['PROPERTIES']['content']['~VALUE'])) ? nl2br($arResult['PROPERTIES']['content']['~VALUE']['TEXT']) : '',
     'PEOPLE' => nl2br($arResult['PROPERTIES']['people']['VALUE']),
 
     'TITLE' => $arResult['PROPERTIES']['titlefile']['VALUE'],
