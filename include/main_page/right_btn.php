@@ -1,0 +1,1 @@
+<a href="/timetable/?type=events" class="btn-main"> <span class="f-16">Начать учиться бесплатно</span> </a>

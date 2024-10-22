@@ -13,7 +13,7 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 	<h4 class="left-text"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/top_left_text.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Верхний текст.']);?></h4>
 	<div class="right-text-block">
 		<h4 class="right-text"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/top_right_text.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Верхний текст.']);?></h4>
-        <a href="/training/katalog_kursov/" class="btn-main"> <span class="f-16">Начать учиться бесплатно</span> </a>
+        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/right_btn.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Правая кнопка.']);?>
     </div>
 </div>
 <?php $APPLICATION->IncludeComponent(
