@@ -412,6 +412,11 @@ body {
     line-height: 32px;
 }
 
+.main-text-content .quote-block .text {
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--button-blue);
+}
+
 .main-text-content .custom-table-block {
     display: flex;
     flex-direction: column;
@@ -669,6 +674,10 @@ body {
 }
 
 @media (max-width: 1180px) {
+    .main-text-content .quote-block .text {
+        padding-bottom: 16px;
+    }
+
     .top-page-banner {
         padding: 16px;
     }
