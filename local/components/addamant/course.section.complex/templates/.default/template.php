@@ -84,10 +84,10 @@ if (!empty($arResult)) : ?>
             </div>
             <div class="btn-banner-block">
                 <?php if ($arResult['PRICE']) : ?>
-                    <h2 class="course-price"><?= $arResult['PRICE'] . ' ₽' ?></h2>
+                    <h2 class="course-price"><?= number_format($arResult['PRICE'], 0, '', ' ') . ' ₽' ?></h2>
                 <?php endif; ?>
                 <?php if ($arResult['PRICE_UR']) : ?>
-                    <p class="f-20 course-ur-price"><?= Loc::getMessage('COURSE_UR_PRICE', ['#PRICE#' => $arResult['PRICE_UR']]) ?></p>
+                    <p class="f-20 course-ur-price"><?= Loc::getMessage('COURSE_UR_PRICE', ['#PRICE#' => number_format($arResult['PRICE_UR'], 0, '', ' ')]) ?></p>
                 <?php endif; ?>
                 <?php if ($settings['MONEY_RETURN_LINK']) : ?>
                     <a class="f-16 return-money" href="<?= $settings['MONEY_RETURN_LINK'] ?>"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
@@ -174,10 +174,10 @@ if (!empty($arResult)) : ?>
             <?php endif; ?>
             <div class="mobile-buttons-block">
                 <?php if ($arResult['PRICE']) : ?>
-                    <h2 class="course-price"><?= $arResult['PRICE'] . ' ₽' ?></h2>
+                    <h2 class="course-price"><?= number_format($arResult['PRICE'], 0, '', ' ') . ' ₽' ?></h2>
                 <?php endif; ?>
                 <?php if ($arResult['PRICE_UR']) : ?>
-                    <p class="f-20 course-ur-price"><?= Loc::getMessage('COURSE_UR_PRICE', ['#PRICE#' => $arResult['PRICE_UR']]) ?></p>
+                    <p class="f-20 course-ur-price"><?= Loc::getMessage('COURSE_UR_PRICE', ['#PRICE#' => number_format($arResult['PRICE_UR'], 0, '', ' ')]) ?></p>
                 <?php endif; ?>
                 <?php if ($settings['MONEY_RETURN_LINK']) : ?>
                     <a class="f-16 return-money" href="<?= $settings['MONEY_RETURN_LINK'] ?>"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
@@ -199,10 +199,10 @@ if (!empty($arResult)) : ?>
         </div>
         <div class="right-block">
             <?php if ($arResult['PRICE']) : ?>
-                <h2 class="course-price"><?= $arResult['PRICE'] . ' ₽' ?></h2>
+                <h2 class="course-price"><?= number_format($arResult['PRICE'], 0, '', ' ') . ' ₽' ?></h2>
             <?php endif; ?>
             <?php if ($arResult['PRICE_UR']) : ?>
-                <p class="f-20 course-ur-price"><?= Loc::getMessage('COURSE_UR_PRICE', ['#PRICE#' => $arResult['PRICE_UR']]) ?></p>
+                <p class="f-20 course-ur-price"><?= Loc::getMessage('COURSE_UR_PRICE', ['#PRICE#' => number_format($arResult['PRICE_UR'], 0, '', ' ')]) ?></p>
             <?php endif; ?>
             <?php if ($settings['MONEY_RETURN_LINK']) : ?>
                 <a class="f-16 return-money" href="<?= $settings['MONEY_RETURN_LINK'] ?>"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
@@ -250,13 +250,13 @@ if (!empty($arResult)) : ?>
                                     <?php if ($tariff['PRICE']) : ?>
                                         <div class="main-price">
                                             <span class="f-20"><?= Loc::getMessage('TARIFF_PRICE_BLOCK_TEXT') ?></span>
-                                            <span class="price-text"><?= $tariff['PRICE']?><?= (!$tariff['TIME_PRICE']) ? '' : ' ₽' ?></span>
+                                            <span class="price-text"><?= (intval($tariff['PRICE']) > 0) ? number_format($tariff['PRICE'], 0, '', ' ') : $tariff['PRICE'] ?><?= (!$tariff['TIME_PRICE']) ? '' : ' ₽' ?></span>
                                         </div>
                                     <?php endif; ?>
                                     <?php if ($tariff['TIME_PRICE']) : ?>
                                         <div class="time-price">
                                             <span class="f-20"><?= Loc::getMessage('TARIFF_TIME_PRICE_BLOCK_TEXT') ?></span>
-                                            <span class="price-text"><?= $tariff['TIME_PRICE'] . ' ₽/мес.' ?></span>
+                                            <span class="price-text"><?= number_format($tariff['TIME_PRICE'], 0, '', ' ') . ' ₽/мес.' ?></span>
                                         </div>
                                     <?php endif; ?>
                                 </div>
@@ -275,7 +275,7 @@ if (!empty($arResult)) : ?>
             <h2 class="container"><?= Loc::getMessage('LINKED_COURSES_BLOCK_TITLE') ?></h2>
             <div class="linked-courses-content">
                 <?php foreach ($arResult['COURSES'] as $course) : ?>
-                    <a href="/kurs/<?= $course['XML_ID'] ?>/" class="course-block">
+                    <a href="/kurs/<?= $course['XML_ID'] ?>.html" class="course-block">
                         <div class="top-course-block">
                             <?php if ($course['CODE']) : ?>
                                 <span class="f-14 course-code"><?= $course['CODE'] ?></span>
@@ -301,7 +301,7 @@ if (!empty($arResult)) : ?>
                         <?php endif; ?>
                         <div class="bottom-block-course">
                             <?php if ($course['PRICE']) : ?>
-                                <p class="course-price f-24"><?= $course['PRICE'] . ' ₽' ?></p>
+                                <p class="course-price f-24"><?= number_format($course['PRICE'], 0, '', ' ') . ' ₽' ?></p>
                             <?php endif; ?>
                             <?php if ($course['COMPLEXITY'] || $course['DURATION']) : ?>
                                 <div class="mobile-tags-course-block">
