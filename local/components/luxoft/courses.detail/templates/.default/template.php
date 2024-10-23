@@ -88,14 +88,14 @@ $settings = Functions::getSiteSettings();
                             $arResult['schedule'][0]['sale']['price'] < $arResult['sale']['price']
                         ) : ?>
                             <p class="f-24 old-course-price">
-                                <?= $arResult['sale']['price'] ?>
+                                <?= number_format($arResult['sale']['price'], 0, '', ' ') ?>
                             </p>
                             <p class="course-price">
-                                <?= $arResult['schedule'][0]['sale']['price'] . ' ₽' ?>
+                                <?= number_format($arResult['schedule'][0]['sale']['price'], 0, '', ' ') . ' ₽' ?>
                             </p>
                         <?php elseif (!empty($arResult['sale'])) : ?>
                             <h2 class="course-price">
-                                <?= $arResult['sale']['price'] . ' ₽' ?>
+                                <?= number_format($arResult['sale']['price'], 0, '', ' ') . ' ₽' ?>
                             </h2>
                         <?php endif; ?>
                     </div>
@@ -103,9 +103,9 @@ $settings = Functions::getSiteSettings();
                         $arResult['schedule'][0]['sale']['price_ur'] && $arResult['price_ur'] &&
                         $arResult['schedule'][0]['sale']['price_ur'] < $arResult['price_ur']
                     ) : ?>
-                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => $arResult['schedule'][0]['sale']['price_ur']]) ?></p>
+                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['schedule'][0]['sale']['price_ur'], 0, '', ' ')]) ?></p>
                     <?php elseif ($arResult['price_ur']) : ?>
-                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => $arResult['price_ur']]) ?></p>
+                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
                     <?php endif; ?>
                     <?php if ($settings['MONEY_RETURN_LINK']) : ?>
                         <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
@@ -184,14 +184,14 @@ $settings = Functions::getSiteSettings();
                         $arResult['schedule'][0]['sale']['price'] < $arResult['sale']['price']
                     ) : ?>
                         <p class="f-24 old-course-price">
-                            <?= $arResult['sale']['price'] ?>
+                            <?= number_format($arResult['sale']['price'], 0, '', ' ') ?>
                         </p>
                         <p class="course-price">
-                            <?= $arResult['schedule'][0]['sale']['price'] . ' ₽' ?>
+                            <?= number_format($arResult['schedule'][0]['sale']['price'], 0, '', ' ') . ' ₽' ?>
                         </p>
                     <?php elseif (!empty($arResult['sale'])) : ?>
                         <h2 class="course-price">
-                            <?= $arResult['sale']['price'] . ' ₽' ?>
+                            <?= number_format($arResult['sale']['price'], 0, '', ' ') . ' ₽' ?>
                         </h2>
                     <?php endif; ?>
                 </div>
@@ -199,9 +199,12 @@ $settings = Functions::getSiteSettings();
                     $arResult['schedule'][0]['sale']['price_ur'] && $arResult['price_ur'] &&
                     $arResult['schedule'][0]['sale']['price_ur'] < $arResult['price_ur']
                 ) : ?>
-                    <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => $arResult['schedule'][0]['sale']['price_ur']]) ?></p>
+                    <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['schedule'][0]['sale']['price_ur'], 0, '', ' ')]) ?></p>
                 <?php elseif ($arResult['price_ur']) : ?>
-                    <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => $arResult['price_ur']]) ?></p>
+                    <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
+                <?php endif; ?>
+                <?php if ($settings['MONEY_RETURN_LINK']) : ?>
+                    <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
                 <?php endif; ?>
                 <?php if ($settings['MONEY_RETURN_LINK']) : ?>
                     <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
@@ -316,14 +319,14 @@ $settings = Functions::getSiteSettings();
                     $arResult['schedule'][0]['sale']['price'] < $arResult['sale']['price']
                 ) : ?>
                     <p class="f-24 old-course-price">
-                        <?= $arResult['sale']['price'] ?>
+                        <?= number_format($arResult['sale']['price'], 0, '', ' ') ?>
                     </p>
                     <p class="course-price">
-                        <?= $arResult['schedule'][0]['sale']['price'] . ' ₽' ?>
+                        <?= number_format($arResult['schedule'][0]['sale']['price'], 0, '', ' ') . ' ₽' ?>
                     </p>
                 <?php elseif (!empty($arResult['sale'])) : ?>
                     <h2 class="course-price">
-                        <?= $arResult['sale']['price'] . ' ₽' ?>
+                        <?= number_format($arResult['sale']['price'], 0, '', ' ') . ' ₽' ?>
                     </h2>
                 <?php endif; ?>
             </div>
@@ -331,9 +334,12 @@ $settings = Functions::getSiteSettings();
                 $arResult['schedule'][0]['sale']['price_ur'] && $arResult['price_ur'] &&
                 $arResult['schedule'][0]['sale']['price_ur'] < $arResult['price_ur']
             ) : ?>
-                <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => $arResult['schedule'][0]['sale']['price_ur']]) ?></p>
+                <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['schedule'][0]['sale']['price_ur'], 0, '', ' ')]) ?></p>
             <?php elseif ($arResult['price_ur']) : ?>
-                <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => $arResult['price_ur']]) ?></p>
+                <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
+            <?php endif; ?>
+            <?php if ($settings['MONEY_RETURN_LINK']) : ?>
+                <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
             <?php endif; ?>
             <?php if ($settings['MONEY_RETURN_LINK']) : ?>
                 <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
@@ -355,19 +361,19 @@ $settings = Functions::getSiteSettings();
             !empty($arResult['schedule'][0]['sale']) && !empty($arResult['sale']) &&
             $arResult['schedule'][0]['sale']['price'] < $arResult['sale']['price']
         ) {
-            $coursePrice = $arResult['schedule'][0]['sale']['price'];
-            $oldPrice = $arResult['sale']['price'];
+            $coursePrice = number_format($arResult['schedule'][0]['sale']['price'], 0, '', ' ');
+            $oldPrice = number_format($arResult['sale']['price'], 0, '', ' ');
         } elseif (!empty($arResult['sale'])) {
-            $coursePrice = $arResult['sale']['price'];
+            $coursePrice = number_format($arResult['sale']['price'], 0, '', ' ');
         }
 
         if (
             $arResult['schedule'][0]['sale']['price_ur'] && $arResult['price_ur'] &&
             $arResult['schedule'][0]['sale']['price_ur'] < $arResult['price_ur']
         ) {
-            $urPrice = $arResult['schedule'][0]['sale']['price_ur'];
+            $urPrice = number_format($arResult['schedule'][0]['sale']['price_ur'], 0, '', ' ');
         } elseif ($arResult['price_ur']) {
-            $urPrice = $arResult['price_ur'];
+            $urPrice = number_format($arResult['price_ur'], 0, '', ' ');
         }
 
         $schedule = [];
@@ -442,7 +448,7 @@ $settings = Functions::getSiteSettings();
                         </div>
                     <?php endif; ?>
                     <?php if ($course['price']) : ?>
-                        <p class="f-24 course-price"><?= $course['price'] . ' ₽' ?></p>
+                        <p class="f-24 course-price"><?= number_format($course['price'], 0, '', ' ') . ' ₽' ?></p>
                     <?php endif; ?>
                 </div>
             </a>
