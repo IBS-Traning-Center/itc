@@ -66,10 +66,10 @@ if (!empty($arResult['COURSES'])) : ?>
                             </div>
                             <div class="course-bottom-block">
                                 <?php if ($course['OLD_PRICE']) : ?>
-                                    <p class="f-20 old-course-price"><?= $course['OLD_PRICE'] ?></p>
+                                    <p class="f-20 old-course-price"><?= number_format($course['OLD_PRICE'], 0, '', ' ') ?></p>
                                 <?php endif; ?>
                                 <?php if ($course['NEW_PRICE']) : ?>
-                                    <p class="f-32 new-course-price"><?= $course['NEW_PRICE'] . ' ₽' ?></p>
+                                    <p class="f-32 new-course-price"><?= number_format($course['NEW_PRICE'], 0, '', ' ') . ' ₽' ?></p>
                                 <?php endif; ?>
                                 <?php if ($course['IS_NEW'] === 'Y') : ?>
                                     <div class="is-new-course">

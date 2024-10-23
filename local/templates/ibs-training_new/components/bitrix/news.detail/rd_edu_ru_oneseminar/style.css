@@ -213,7 +213,20 @@
     color: var(--black);
 }
 
+.seminar__order,
+.seminar__order-box {
+    font-size: 24px;
+    line-height: 32.69px;
+    white-space: nowrap;
+}
+
 @media (max-width:1180px) {
+    .seminar__order,
+    .seminar__order-box {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
     .seminar__section .seminar__audience-wrap {
         flex-direction: column;
     }

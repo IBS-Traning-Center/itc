@@ -88,10 +88,10 @@ $APPLICATION->AddChainItem($title, '');
                                 !is_null($coursePrice) &&
                                 $coursePrice < $oldCoursePrice
                             ) : ?>
-                                <span class="f-20 old-course-price"><?= $oldCoursePrice ?></span>
-                                <span class="f-24 new-course-price"><?= $coursePrice ?> ₽</span>
+                                <span class="f-20 old-course-price"><?= number_format($oldCoursePrice, 0, '', ' ') ?></span>
+                                <span class="f-24 new-course-price"><?= number_format($coursePrice, 0, '', ' ') ?> ₽</span>
                             <?php elseif ($coursePrice > 0) : ?>
-                                <span class="f-24 new-course-price"><?= $coursePrice ?> ₽</span>
+                                <span class="f-24 new-course-price"><?= number_format($coursePrice, 0, '', ' ') ?> ₽</span>
                             <?php else : ?>
                                 <span class="f-24 new-course-price"><?= Loc::getMessage('FREE_TEXT_COURSE') ?></span>
                             <?php endif;
@@ -136,7 +136,7 @@ $APPLICATION->AddChainItem($title, '');
             <div class="trainers-block">
                 <div class="big-trainer-cards-block">
                     <?php foreach ($arResult['TRAINERS'] as $key => $item) : ?>
-                        <a href="/about/experts/<?= $item['CODE'] ?>/" class="trainer-item">
+                        <a href="/about/experts/<?= $item['CODE'] ?>.html" class="trainer-item">
                             <?php if ($item['PICTURE']) : ?>
                                 <div class="trainer-image-block">
                                     <img src="<?= $item['PICTURE'] ?>" alt="<?= $item['NAME'] ?>">
