@@ -100,15 +100,12 @@
     padding: 0;
     display: flex;
     align-items: center;
+    gap: 24px;
 }
 
-.seminar__section .seminar__audience-item::before{
-    content: '';
-    height: 72px;
-    width: 72px;
-    background: url(images/icon-how.jpg)no-repeat center center;
-    background-size: contain;
-    margin-right: 24px;
+.seminar__section .seminar__audience-item img {
+    max-width: 72px;
+    height: auto;
 }
 
 .seminar>.container{
@@ -228,6 +225,10 @@
     .seminar__order-box {
         font-size: 16px;
         line-height: 24px;
+    }
+
+    .seminar__section .seminar__audience-wrap {
+        flex-direction: column;
     }
 
     .seminar .top-page-banner{
