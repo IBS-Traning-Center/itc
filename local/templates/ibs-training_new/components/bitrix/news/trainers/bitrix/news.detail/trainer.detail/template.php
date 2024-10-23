@@ -48,13 +48,13 @@ if ($arResult) : ?>
                     <?php if ($arResult['PROPERTIES']['KNOW_LEVEL']['VALUE']) : ?>
                         <div class="know-level-block">
                             <?= Functions::buildSVG('know_level_icon', $templateFolder . '/images') ?>
-                            <span class="f-20"><?= Loc::getMessage('KNOW_LEVEL_TEXT') ?></span>
+                            <span class="f-20"><?= $arResult['PROPERTIES']['KNOW_LEVEL']['VALUE'] ?></span>
                         </div>
                     <?php endif; ?>
                     <?php if ($arResult['PROPERTIES']['expert_title']['VALUE']) : ?>
                         <div class="expert-text-block">
                             <?= Functions::buildSVG('expert_icon', $templateFolder . '/images') ?>
-                            <span class="f-20"><?= Loc::getMessage('EXPERT_TEXT_TITLE') ?></span>
+                            <span class="f-20"><?= $arResult['PROPERTIES']['expert_title']['VALUE'] ?></span>
                         </div>
                     <?php endif; ?>
                 </div>
