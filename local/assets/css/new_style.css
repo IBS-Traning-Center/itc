@@ -668,6 +668,12 @@ body {
     }
 }
 
+@media (-webkit-min-device-pixel-ratio: 1.25) {
+    html {
+        zoom: 0.8;
+    }
+}
+
 @media (max-width: 1180px) {
     .top-page-banner {
         padding: 16px;
@@ -762,6 +768,10 @@ body {
     .main-text-content .quote-block .text p:last-child {
         font-size: 16px;
         line-height: 24px;
+    }
+
+    html {
+        zoom: 1 !important;
     }
 }
 
