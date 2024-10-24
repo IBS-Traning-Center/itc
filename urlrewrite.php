@@ -96,6 +96,14 @@ $arUrlRewrite=array (
     'PATH' => '/library/analytics/detail.php',
     'SORT' => 100,
   ),
+  69 => 
+  array (
+    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+).html($|\\#.+|\\?.+)#',
+    'RULE' => 'CODE=$1',
+    'ID' => 'luxoft:courses.detail',
+    'PATH' => '/kurs/index.php',
+    'SORT' => 100,
+  ),
   24 => 
   array (
     'CONDITION' => '#^/about/news/([a-zA-Z0-9_\\-]+)/($|\\#.+|\\?.+)#',
@@ -142,14 +150,6 @@ $arUrlRewrite=array (
     'RULE' => 'CODE=$1',
     'ID' => '',
     'PATH' => '/summer-school/index.php',
-    'SORT' => 100,
-  ),
-  69 => 
-  array (
-    'CONDITION' => '#^/kurs/([a-zA-Z0-9-\\-_\\_]+).html($|\\#.+|\\?.+)#',
-    'RULE' => 'CODE=$1',
-    'ID' => 'luxoft:courses.detail',
-    'PATH' => '/kurs/index.php',
     'SORT' => 100,
   ),
   18 => 
