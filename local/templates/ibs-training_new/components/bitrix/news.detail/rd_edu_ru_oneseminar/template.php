@@ -38,10 +38,10 @@ if (($result == 0) || ($result == -1)) {
                         false
                 ); ?>
                 <h1><?= $APPLICATION->GetPageProperty('title') ?></h1>
-                <?php if ($arResult['PROPERTIES']['AUDIENCE']['VALUE']){?>
+                <?php if (!empty($arResult['WHO_ELEMENT'])){?>
                     <div class='seminar__audience-wrap'>
-                        <?php foreach($arResult['PROPERTIES']['AUDIENCE']['VALUE'] as $value){?>
-                            <div class='seminar__audience-item'><?= $value?></div>
+                        <?php foreach($arResult['WHO_ELEMENT'] as $value){?>
+                            <div class='seminar__audience-item'><?= $value['WHO_ELEMENT']?></div>
                         <?php }?>
                     </div>
                 <?php }?>
@@ -65,9 +65,6 @@ if (($result == 0) || ($result == -1)) {
                                         <?=Functions::buildSVG('time', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
                                         <b><?= Loc::getMessage('TIME')?></b> 
                                         <?=$arResult['EVENT']['TIME']?>
-                	        	    	<?php if($arResult['EVENT']['TYPE'] == 'Вебинар') {?> 
-                	        	    		(мск.)
-                	        	    	<?php }?>
                 	        	    </div>
                                 <?php }?>
                                 <?php if(!empty($arResult['EVENT']['DATE'])) {?>
@@ -131,12 +128,15 @@ if (($result == 0) || ($result == -1)) {
                     </div>
                 </div>
             <?php }?>
-            <?php if ($arResult['PROPERTIES']['AUDIENCE']['VALUE']){?>
+            <?php if (!empty($arResult['WHO_ELEMENT'])){?>
                 <div class='seminar__section'>
                     <div class='seminar__section-title'><?= Loc::getMessage('FOR_HOW')?></div>
                     <div class='seminar__audience-wrap'>
-                        <?php foreach($arResult['PROPERTIES']['AUDIENCE']['VALUE'] as $value){?>
-                            <div class='seminar__audience-item'><?= $value?></div>
+                        <?php foreach($arResult['WHO_ELEMENT'] as $value){?>
+                            <div class='seminar__audience-item'>
+                                <img src="<?= CFile::GetPath($value['UF_PICTURE']) ?>" alt="">
+                                <span><?= $value['UF_NAME']?></span>
+                            </div>
                         <?php }?>
                     </div>
                 </div>
@@ -243,10 +243,7 @@ if (($result == 0) || ($result == -1)) {
                         <?php if(!empty($arResult['EVENT']['TIME'])) {?>
                     	    <div class='seminar__time'>
                                 <b><?= Loc::getMessage('TIME')?></b><br>
-                                <span><?=$arResult['EVENT']['TIME']?>
-                    	    	<?php if($arResult['EVENT']['TYPE'] == 'Вебинар') {?> 
-                    	    		(мск.)
-                    	    	<?php }?></span>
+                                <span><?=$arResult['EVENT']['TIME']?></span>
                     	    </div>
                         <?php }?>
                         <?php if(!empty($arResult['EVENT']['DATE'])) {?>

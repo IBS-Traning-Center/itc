@@ -1,4 +1,9 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<?php
+
+use Local\Util\HighloadblockManager;
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
 $arResult['EVENT'] = [
     'NAME' => $arResult["NAME"],
     'TYPE' => ($arResult["PROPERTIES"]["type_event"]["VALUE_ENUM_ID"] == 92) ? 'Вебинар' : 'Семинар',
@@ -10,7 +15,7 @@ $arResult['EVENT'] = [
 
     'DESCRIPTION' => nl2br(strip_tags($arResult['PROPERTIES']['description']['~VALUE'], '<a>')),
     'SHORT_DESCRIPTION' => trim($arResult['PROPERTIES']['ADDITIONAL_DESC']['~VALUE']['TEXT']),
-    'CONTENT' => nl2br($arResult['PROPERTIES']['content']['~VALUE']['TEXT']),
+    'CONTENT' =>(is_array($arResult['PROPERTIES']) && is_array($arResult['PROPERTIES']['content']) && is_array($arResult['PROPERTIES']['content']['~VALUE'])) ? nl2br($arResult['PROPERTIES']['content']['~VALUE']['TEXT']) : '',
     'PEOPLE' => nl2br($arResult['PROPERTIES']['people']['VALUE']),
 
     'TITLE' => $arResult['PROPERTIES']['titlefile']['VALUE'],
@@ -66,7 +71,12 @@ if (CModule::IncludeModule("iblock")) {
     }
 }
 
-
+if ($arResult['PROPERTIES']['ELEMENT_FOR']['VALUE']) {
+    $whoCourseTable = new HighloadblockManager('WhoCourse');
+    $whoCourseTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE'], [], ['UF_XML_ID' => $arResult['PROPERTIES']['ELEMENT_FOR']['VALUE']]);
+    $items = $whoCourseTable->getDataAll();
+    $arResult['WHO_ELEMENT'] = $items;
+}
 
 $cp = $this->__component;
 if (is_object($cp))
