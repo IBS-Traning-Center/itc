@@ -142,7 +142,9 @@ $request = $application->getContext()->getRequest();
     <!--  nootisend  -->
     <script charset='utf-8' src='https://cdn.pushdealer.com/5bd629bc/script_0.js' async></script>
     <script>
-        document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio));
+        if (window.innerWidth > 1180) {
+            document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio));
+        }
     </script>
 </head>
 <body>
