@@ -26,7 +26,7 @@ $GLOBALS['arrReviewsID'] = [
     [
         'LOGIC' => 'OR',
         ['!PROPERTY_VIDEO_MESS' => false],
-        ['!PROPERTY_PREVIEW_TEXT' => false],
+        ['!PREVIEW_TEXT' => false],
         ['!PROPERTY_USER_REVIEW' => false]
     ]
 ];
