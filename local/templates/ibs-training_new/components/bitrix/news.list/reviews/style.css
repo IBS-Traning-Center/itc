@@ -55,6 +55,7 @@
 	border: 1px solid #F8F7F7;
 	display: flex;
 	flex-direction: column;
+    max-width: 402px;
 }
 
 .reviews-content > div .review-item .review-text-block {
@@ -281,7 +282,13 @@
 	.reviews-content > div .review-item {
 		min-height: 530px;
 		max-height: 530px;
+        max-width: 100%;
 	}
+
+    .reviews-content > div .review-item .reviews-video video{
+        min-height: 474px;
+		max-height: 474px;
+    }
 }
 
 @media (max-width: 1180px) {
@@ -311,6 +318,7 @@
 	.reviews-content > div .review-item {
 		min-height: 560px;
 		max-height: 560px;
+        max-width: 100%;
 	}
 
     .reviews-content > div .review-item .review-text-block .main-text > span {
@@ -332,6 +340,11 @@
 		width: 26px;
 		height: 26px;
 	}
+
+    .reviews-content > div .review-item .reviews-video video{
+        min-height: 502px;
+		max-height: 502px;
+    }
 }
 
 @media (max-width: 767px) {

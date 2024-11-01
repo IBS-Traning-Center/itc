@@ -34,4 +34,5 @@ foreach($arResult["ITEMS"] as $key => &$arItem){
 		$element['VIDEO'] = $elementVideo;
 		$arItem = $element;
 	}
+	
 }
