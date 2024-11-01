@@ -105,7 +105,7 @@ if (!empty($arResult['SECTIONS'])) : ?>
                     <div class="info-section-block">
                         <div class="image-block" style="background-image: url('<?= ($section['PICTURE'] && $section['PICTURE']['SRC']) ? $section['PICTURE']['SRC'] : $defaultImage ?>')"></div>
                         <p class="min-section-price f-24">
-                            <?= ($section['PRICE'] > 0) ? 'от ' . $section['PRICE'] . ' ₽' : Loc::getMessage('FREE_COURSE_TEXT') ?>
+                            <?= ($section['PRICE'] > 0) ? 'от ' . number_format($section['PRICE'], 0, '', ' ') . ' ₽' : Loc::getMessage('FREE_COURSE_TEXT') ?>
                         </p>
                     </div>
                 </a>
@@ -123,7 +123,7 @@ if (!empty($arResult['SECTIONS'])) : ?>
                     </div>
                     <div class="btn-section-block">
                         <p class="min-section-price f-24">
-                            <?= ($section['PRICE'] > 0) ? 'от ' . $section['PRICE'] . ' ₽' : Loc::getMessage('FREE_COURSE_TEXT') ?>
+                            <?= ($section['PRICE'] > 0) ? 'от ' . number_format($section['PRICE'], 0, '', ' ') . ' ₽' : Loc::getMessage('FREE_COURSE_TEXT') ?>
                         </p>
                         <a href="<?= $section['SECTION_PAGE_URL'] ?>" class="btn-main size-l">
                             <span class="f-24">Смотреть <?= Functions::numWord($arResult['TOTAL_COUNTS'][$section['ID']], ['курс', 'курса', 'курсов']) ?></span>

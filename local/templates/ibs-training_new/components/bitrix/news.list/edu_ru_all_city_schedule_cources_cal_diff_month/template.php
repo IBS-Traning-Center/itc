@@ -56,7 +56,7 @@ function plural_form($number, $after) {
     echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
     $grivna_sign = 'грн.';
-    $rubl_sign = 'руб.';
+    $rubl_sign = '₽';
 
 
 // сначала  получим валюту города
@@ -72,16 +72,16 @@ while ($ar_fields = $res->GetNext()) {
 }
 switch ($valuta_ENUM_ID) {
     case CITY_CURRENCY_RUB:
-        $vCurrencyAdd = " р.";
+        $vCurrencyAdd = " ₽";
         break;
     case CITY_CURRENCY_BYR:
-        $vCurrencyAdd = " р.";
+        $vCurrencyAdd = " ₽";
         break;
     case CITY_CURRENCY_GRN:
         $vCurrencyAdd = " грн.";
         break;
     default:
-        $vCurrencyAdd = " р.";
+        $vCurrencyAdd = " ₽";
 }
 // для массива куда мы будем ложить значения
 $ii = 0;
@@ -123,16 +123,16 @@ foreach ($arResult["ITEMS"] as $arItem):
         $schedule_landing_code = $ar_res['CODE'];
     $ar_pes = CPrice::GetBasePrice($arItem["ID"]);
     if ($ar_pes["CURRENCY"] == "RUB") {
-        $vCurrencyAdd = " <span>р.</span>";
+        $vCurrencyAdd = " <span>₽</span>";
     } elseif ($ar_pes["CURRENCY"] == "USD") {
         $vCurrencyAdd = "$";
 
     } elseif ($ar_pes["CURRENCY"] == "BYR") {
-        $vCurrencyAdd = "<span>р.</span>";
+        $vCurrencyAdd = "<span>₽</span>";
     } elseif ($ar_pes["CURRENCY"] == "GRN") {
         $vCurrencyAdd = "<span>грн.</span>";
     } else {
-        $vCurrencyAdd = " <span>р.</span>";
+        $vCurrencyAdd = " <span>₽</span>";
     }
     $schedule_dis = 0;
 

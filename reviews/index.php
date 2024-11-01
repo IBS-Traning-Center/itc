@@ -10,15 +10,26 @@ use Local\Util\IblockHelper;
 
 $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 $reviewTab = $request->get('reviews');
-$GLOBALS['arrReviewsID']['IBLOCK_ID'] = [];
+
+$iblockId = null;
 if($reviewTab == 'all' || $reviewTab == NULL){
-	$GLOBALS['arrReviewsID']['IBLOCK_ID'][] = IblockHelper::getIdByCode('reviews');
-	$GLOBALS['arrReviewsID']['IBLOCK_ID'][] = IblockHelper::getIdByCode('companyreviews');
+    $iblockId[] = IblockHelper::getIdByCode('reviews');
+    $iblockId[] = IblockHelper::getIdByCode('companyreviews');
 }elseif($reviewTab == 'company'){
-	$GLOBALS['arrReviewsID']['IBLOCK_ID'][] = IblockHelper::getIdByCode('companyreviews');
+    $iblockId[] = IblockHelper::getIdByCode('companyreviews');
 }else{
-	$GLOBALS['arrReviewsID']['IBLOCK_ID'][] = IblockHelper::getIdByCode('reviews');
+    $iblockId[] = IblockHelper::getIdByCode('reviews');
 }
+
+$GLOBALS['arrReviewsID'] = [
+    'IBLOCK_ID' => $iblockId,
+    [
+        'LOGIC' => 'OR',
+        ['!PROPERTY_VIDEO_MESS' => false],
+        ['!PREVIEW_TEXT' => false],
+        ['!PROPERTY_USER_REVIEW' => false]
+    ]
+];
 ?>
 <div class="top-page-banner" style="background-color: <?= $APPLICATION->GetPageProperty('BACKGROUND_COLOR_BANNER') ?>">
     <div class="container">

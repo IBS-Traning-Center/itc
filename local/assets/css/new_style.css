@@ -412,6 +412,11 @@ body {
     line-height: 32px;
 }
 
+.main-text-content .quote-block .text {
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--button-blue);
+}
+
 .main-text-content .custom-table-block {
     display: flex;
     flex-direction: column;
@@ -668,7 +673,17 @@ body {
     }
 }
 
+@media (-webkit-min-device-pixel-ratio: 1.25) {
+    html {
+        zoom: 0.8;
+    }
+}
+
 @media (max-width: 1180px) {
+    .main-text-content .quote-block .text {
+        padding-bottom: 16px;
+    }
+
     .top-page-banner {
         padding: 16px;
     }
@@ -762,6 +777,10 @@ body {
     .main-text-content .quote-block .text p:last-child {
         font-size: 16px;
         line-height: 24px;
+    }
+
+    html {
+        zoom: 1 !important;
     }
 }
 

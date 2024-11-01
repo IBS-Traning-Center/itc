@@ -1,101 +1,102 @@
-<?php
-$aMenuLinks = [
-    [
-        'Курсы',
-        '#',
-        [],
-        ['TITLE' => 'Y'],
-        ''
-    ],
-    [
-        'Каталог курсов',
-        '/catalog/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Бесплатные',
-        '/timetable/index.php?type=events',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Расписание курсов',
-        '/timetable/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'О нас',
-        '#',
-        [],
-        ['TITLE' => 'Y'],
-        ''
-    ],
-    [
-        'Контакты',
-        '/contacts/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Сертификация',
-        '/certification/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Основные сведения',
-        '/about/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Руководство',
-        '/about/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Юридическая информация',
-        '/about/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Офисы',
-        '#',
-        [],
-        ['TITLE' => 'Y', 'OFFICE' => 'Y'],
-        ''
-    ],
-    [
-        'Москва',
-        '/contacts/?map=moskva',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Санкт-Петербург',
-        '/contacts/?map=sankt-peterburg',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Омск',
-        '/contacts/?map=omsk',
-        [],
-        [],
-        ''
-    ]
-];
+<?
+$aMenuLinks = Array(
+	Array(
+		"Курсы", 
+		"", 
+		Array(), 
+		Array("TITLE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Каталог курсов", 
+		"/catalog/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Бесплатные", 
+		"/timetable/index.php?type=events", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Расписание курсов", 
+		"/timetable/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О нас", 
+		"", 
+		Array(), 
+		Array("TITLE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сертификация", 
+		"/certification/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Основные сведения", 
+		"/contacts/structure/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Руководство", 
+		"contacts/management/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Юридическая информация", 
+		"/contacts/details/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Офисы", 
+		"/contacts/", 
+		Array(), 
+		Array("TITLE"=>"Y", "OFFICE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Москва", 
+		"/contacts/?map=moskva", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Санкт-Петербург", 
+		"/contacts/?map=sankt-peterburg", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Омск", 
+		"/contacts/?map=omsk", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

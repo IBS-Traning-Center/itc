@@ -161,8 +161,8 @@ if ($id_city!=14909) {
                 <a class="title dropdown-link" href=""><span>Выберите направление</span><?= Functions::buildSVG('arrow-down', SITE_TEMPLATE_PATH. '/assets/images/icons')?></a>
                 <?if ($_REQUEST["type"]!="online") {?>
                     <ul class='timetable-menu-ul dropdown'>
-                        <li class="active"><a href="/timetable/">Полное расписание</a></li>
-                        <li><a href="/timetable/quarter/">Расписание на квартал</a></li>
+                        <li><a href="/timetable/">Полное расписание</a></li>
+                        <li class="active"><a href="/timetable/quarter/">Расписание на квартал</a></li>
                     </ul>
                 <?}?>
             </div>

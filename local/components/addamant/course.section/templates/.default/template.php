@@ -37,7 +37,7 @@ if (!empty($arResult['COURSES_IDS'])) : ?>
                 $helper = new ComponentHelper($component);
                 $helper->deferredCall('ShowNavChain');
                 ?>
-                <h1><?= Loc::getMessage('TITLE_TEXT') ?><?= $APPLICATION->GetTitle() ?></h1>
+                <h1><?= $APPLICATION->GetTitle() ?></h1>
                 <div class="open-filter-mobile-btn btn-main">
                     <span class="f-16"><?= Loc::getMessage('MOBILE_OPEN_FILTER_BTN_TEXT') ?></span>
                 </div>
@@ -153,7 +153,7 @@ if (!empty($arResult['COURSES_IDS'])) : ?>
                     "PAGER_SHOW_ALWAYS" => "N",
                     "PAGER_TEMPLATE" => "arrows",
                     "PAGER_TITLE" => "Товары",
-                    "PAGE_ELEMENT_COUNT" => "18",
+                    "PAGE_ELEMENT_COUNT" => "999",
                     "PARTIAL_PRODUCT_PROPERTIES" => "N",
                     "PRICE_CODE" => array(),
                     "PRICE_VAT_INCLUDE" => "N",

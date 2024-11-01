@@ -26,7 +26,7 @@ use Local\Util\Functions;
 	<?php endif;?>
 	<div class="reviews-content-wrap">
 		<?php foreach($arResult["ITEMS"] as $arItem) : ?>
-			<?php 
+			<?php
 			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
@@ -45,7 +45,7 @@ use Local\Util\Functions;
 		                            <?= Functions::buildSVG('stop-btn-icon', $templateFolder . '/images') ?>
 		                        </div>
 		                    </div>
-		                    <div class="current-video-time" data-review-id="<?= $key ?>">
+		                    <div class="current-video-time">
 		                        <div class="current-video-time_back"></div>
 		                        <span class="f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?><?= $arItem['USER_NAME_VALUE'] . ' ' . $arItem['USER_SURNAME_VALUE'] ?></span>
 		                    </div>
@@ -96,7 +96,7 @@ use Local\Util\Functions;
 		                            <?= Functions::buildSVG('stop-btn-icon', $templateFolder . '/images') ?>
 		                        </div>
 		                    </div>
-		                    <div class="current-video-time" data-review-id="<?= $key ?>">
+		                    <div class="current-video-time">
 		                        <div class="current-video-time_back"></div>
 		                        <span class="f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
 		                    </div>
