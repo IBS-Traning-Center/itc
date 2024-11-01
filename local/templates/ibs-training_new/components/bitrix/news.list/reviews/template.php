@@ -30,7 +30,7 @@ use Local\Util\Functions;
 			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
-			<div class="review-item">
+			<div class="review-item" id="<?=$arItem['ID']?>">
 		        <?php if ($arItem['VIDEO']) : ?>
 		            <div class="reviews-video">
 		                <video muted="" loop="" disablepictureinpicture="" webkit-playsinline="" playsinline="" pip="false">
@@ -47,7 +47,7 @@ use Local\Util\Functions;
 		                    </div>
 		                    <div class="current-video-time" data-review-id="<?= $key ?>">
 		                        <div class="current-video-time_back"></div>
-		                        <span class="f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
+		                        <span class="f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?><?= $arItem['USER_NAME_VALUE'] . ' ' . $arItem['USER_SURNAME_VALUE'] ?></span>
 		                    </div>
 		                </div>
 		            </div>
