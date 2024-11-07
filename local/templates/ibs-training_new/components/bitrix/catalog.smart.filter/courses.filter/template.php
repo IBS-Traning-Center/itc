@@ -13,8 +13,11 @@
 
 use Bitrix\Iblock\SectionPropertyTable;
 use Local\Util\Functions;
+use \Bitrix\Main\Localization\Loc;
 
 $this->setFrameMode(true);
+
+Loc::loadMessages(__FILE__);
 
 $templateData = array(
 	'TEMPLATE_THEME' => $this->GetFolder().'/themes/'.$arParams['TEMPLATE_THEME'].'/colors.css',
@@ -159,7 +162,7 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 					)
 						continue;
 					?>
-					<div class="<?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):?>col-sm-6 col-md-4<?else:?>col-lg-12<?endif?> bx-filter-parameters-box <?if ($arItem["DISPLAY_EXPANDED"]== "Y"):?>bx-active<?endif?>">
+					<div class="<?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):?>col-sm-6 col-md-4<?else:?>col-lg-12<?endif?> bx-filter-parameters-box bx-active">
 						<span class="bx-filter-container-modef"></span>
                         <div class="filter-block-title">
                             <span class="f-16 f-bold"><?= $arItem['NAME'] ?></span>
@@ -676,6 +679,10 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 												</label>
 											</div>
 										<?endforeach;?>
+                                        <div class="visible-button">
+                                            <span><?= Loc::getMessage('SHOW_ALL_CHECKBOX'); ?> <i>0</i></span>
+                                            <?= Functions::buildSVG('show_all_checkbox', $templateFolder . '/images') ?>
+                                        </div>
 									</div>
 							<?
 							}

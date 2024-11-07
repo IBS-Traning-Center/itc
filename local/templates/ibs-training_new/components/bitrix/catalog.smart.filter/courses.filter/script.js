@@ -579,6 +579,8 @@ BX.Iblock.SmartFilter = (function()
 		}
 
 		this.setMaxFilteredValue(this.fltMaxPrice);
+
+		this.hideElementsFilter();
 	};
 
 	SmartFilter.prototype.setMinFilteredValue = function (fltMinPrice)
@@ -822,6 +824,47 @@ BX.Iblock.SmartFilter = (function()
 		}
 
 		return false;
+	};
+
+	SmartFilter.prototype.hideElementsFilter = function ()
+	{
+		let filterElementsBlock = document.querySelectorAll('.bx-filter-parameters-box.bx-active .row.bx-filter-parameters-box-container .col-xs-12');
+
+		if (filterElementsBlock) {
+			filterElementsBlock.forEach(block => {
+				let elements = block.querySelectorAll('.checkbox');
+				let showButton = block.querySelector('.visible-button');
+
+				if (showButton) {
+					if (elements && elements.length > 5) {
+						let showButtonCount = showButton.querySelector('i');
+						let hiddenElementsCount = elements.length - 5;
+
+						if (showButtonCount) {
+							showButtonCount.textContent = String(hiddenElementsCount);
+						}
+
+						for (let i = 0; i < elements.length; i++) {
+							if (i > 4) {
+								elements[i].classList.add('hide');
+							}
+						}
+
+						showButton.classList.add('show');
+
+						showButton.addEventListener('click', () => {
+							showButton.classList.remove('show');
+
+							elements.forEach(element => {
+								element.classList.remove('hide');
+							});
+						});
+					} else {
+						showButton.classList.remove('show');
+					}
+				}
+			});
+		}
 	};
 
 	SmartFilter.prototype.makeRightSliderMove = function(recountPrice)
