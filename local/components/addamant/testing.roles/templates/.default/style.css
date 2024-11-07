@@ -14,6 +14,18 @@
     max-width: 250px;
     display: flex;
     flex-shrink: 0;
+    margin-right: 48px;
+}
+
+.pictures-block .slick-list,
+.pictures-block .slick-list .slick-track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pictures-block .picture-item:last-child {
+    margin-right: 0;
 }
 
 .pictures-block .picture-item img {
@@ -91,5 +103,6 @@
 
     .pictures-block .picture-item {
         max-width: 120px;
+        margin-right: 17px;
     }
 }
