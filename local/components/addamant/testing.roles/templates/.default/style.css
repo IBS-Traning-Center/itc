@@ -8,6 +8,12 @@
     padding-bottom: 48px;
     margin-bottom: 48px;
     border-bottom: 1px solid var(--black);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.pictures-block::-webkit-scrollbar {
+    display: none;
 }
 
 .pictures-block .picture-item {
