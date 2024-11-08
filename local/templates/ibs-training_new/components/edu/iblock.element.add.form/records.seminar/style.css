@@ -44,7 +44,7 @@
 
 .form-section input[type="text"],
 .form-section textarea{
-    border: none;
+    border: 1px solid var(--gray);
     border-radius: 0;
     background-color: var(--gray);
     font-size: 16px;
@@ -81,6 +81,10 @@
 
 .register-close{
     cursor: pointer;
+}
+
+input[type="text"].error {
+    border-color: #cd0505;
 }
 
 @media (max-width: 1180px) {

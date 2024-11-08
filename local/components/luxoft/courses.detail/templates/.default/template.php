@@ -111,7 +111,7 @@ $settings = Functions::getSiteSettings();
                         <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
                     <?php endif; ?>
                     <?php ?>
-                    <a href="#sign" class="btn-main size-l">
+                    <a data-scroll="sign" class="btn-main size-l">
                         <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
                     </a>
                 </div>
@@ -210,7 +210,7 @@ $settings = Functions::getSiteSettings();
                     <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
                 <?php endif; ?>
                 <?php ?>
-                <a href="#sign" class="btn-main size-l">
+                <a data-scroll="sign" class="btn-main size-l">
                     <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
                 </a>
             </div>
@@ -345,7 +345,7 @@ $settings = Functions::getSiteSettings();
                 <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
             <?php endif; ?>
             <?php ?>
-            <a href="#sign" class="btn-main size-l">
+            <a data-scroll="sign" class="btn-main size-l">
                 <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
             </a>
         </div>
