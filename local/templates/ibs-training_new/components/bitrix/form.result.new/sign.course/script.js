@@ -7,7 +7,8 @@ class SignCourse
         dateInputClass: '.sign-course-form-input.date',
         faceInputClass: '.sign-course-form-input.face',
         signCourseTabPhysClass: '.sign-course-tab.phys',
-        signCourseTabUrClass: '.sign-course-tab.ur'
+        signCourseTabUrClass: '.sign-course-tab.ur',
+        signBtnClass: '.btn-main',
     }) {
         this.selectDatesContent = document.querySelector(data.selectDatesContentClass);
         this.selectDatesBlock = document.querySelector(data.selectDatesBlockClass);
@@ -16,12 +17,20 @@ class SignCourse
         this.faceInput = document.querySelector(data.faceInputClass);
         this.signCourseTabPhys = document.querySelector(data.signCourseTabPhysClass);
         this.signCourseTabUr = document.querySelector(data.signCourseTabUrClass);
+        this.signBtn = document.querySelectorAll(data.signBtnClass);
 
         this.addSignCourseEventHandler();
     }
-
     addSignCourseEventHandler()
     {
+        if (this.signBtn) {
+            this.signBtn.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelector('#'+btn.getAttribute("data-scroll")).scrollIntoView();
+                });
+            });
+        }
+
         if (this.selectDatesContent && this.selectDatesBlock) {
             this.selectDatesContent.addEventListener('click', () => {
                 if (this.selectDatesBlock.classList.contains('active')) {
