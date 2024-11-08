@@ -26,7 +26,7 @@ $APPLICATION->SetTitle('Руководство BABOK бесплатно');
                 ); ?>
                 <h1><?= $APPLICATION->GetTitle() ?></h1>
                 <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/banok/banner_text.php', [], ['MODE' => 'html', 'NAME' => 'Текст на баннере']); ?></p>
-                <a class="btn-main size-l" href="#mainFeedbackFormBlock">
+                <a class="btn-main size-l" data-scroll="mainFeedbackFormBlock">
                     <span class="f-24">Оставить заявку</span>
                 </a>
             </div>

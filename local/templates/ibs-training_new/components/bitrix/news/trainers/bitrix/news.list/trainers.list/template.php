@@ -34,7 +34,7 @@ $currentPage = $APPLICATION->GetCurPage();
             <h1><?= $APPLICATION->GetTitle() ?></h1>
         </div>
         <div class="buttons-block-banner">
-            <a class="btn-main size-l" href="#mainFeedbackFormBlock">
+            <a class="btn-main size-l" data-scroll="mainFeedbackFormBlock">
                 <span class="f-24"><?= Loc::getMessage('TAKE_KONS_TEXT') ?></span>
             </a>
         </div>
