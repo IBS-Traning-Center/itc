@@ -79,13 +79,13 @@ a:hover {
 }
 
 .section-course-block .course-block .course-description {
-    margin-top: 16px;
+    margin: 16px 0 32px;
 }
 
 .section-course-block .course-block .course-bottom-block {
     display: flex;
     align-items: center;
-    margin-top: 32px;
+    margin-top: auto;
     gap: 16px;
 }
 
