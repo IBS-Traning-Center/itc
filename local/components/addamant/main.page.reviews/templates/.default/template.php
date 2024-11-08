@@ -69,7 +69,7 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                                 </div>
                                                 <div class="current-video-time" data-review-id="<?= $key ?>">
                                                     <div class="current-video-time_back"></div>
-                                                    <span class="f-20"><?= $review['REVIEW_USER_NAME'] ?></span>
+                                                    <span class="f-20"><?= $review['REVIEW_USER_NAME'] ?><?= $review['USER_NAME'] . ' ' . $review['USER_SURNAME'] ?></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +120,7 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                                 </div>
                                                 <div class="current-video-time" data-review-id="<?= $key ?>">
                                                     <div class="current-video-time_back"></div>
-                                                    <span class="f-20"><?= $review['REVIEW_USER_NAME'] ?></span>
+                                                    <span class="f-20"><?= $review['REVIEW_USER_NAME'] ?><?= $review['USER_NAME'] . ' ' . $review['USER_SURNAME'] ?></span>
                                                 </div>
                                             </div>
                                         </div>
