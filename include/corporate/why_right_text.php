@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="edge-item">
-        <?= $problem?>
+        <?= $operat?>
         <div class="edge-item__text-wrap">
             <div class="edge-item__title">Оперативность</div>
             <p>Если вам нужно «вчера», разработаем кастомный тренинг в короткие сроки</p>
