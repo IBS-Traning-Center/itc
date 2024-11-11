@@ -30,7 +30,7 @@ $APPLICATION->SetTitle('Тестирование сотрудников IT-по�
             <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/testing/heading_text.php', [], ['MODE' => 'html', 'NAME' => 'Текст под заголовком']); ?></p>
         </div>
         <div class="buttons-block-banner">
-            <a class="btn-main size-l" href="#mainFeedbackFormBlock">
+            <a class="btn-main size-l" data-scroll="mainFeedbackFormBlock">
                 <span class="f-24">Получить консультацию</span>
             </a>
         </div>
@@ -125,7 +125,7 @@ $APPLICATION->SetTitle('Тестирование сотрудников IT-по�
                     <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/testing/process_experts_text.php', [], ['MODE' => 'html', 'NAME' => 'Количество экспертов текст']); ?></p>
                 </div>
             </div>
-            <a class="btn-main size-l" href="#mainFeedbackFormBlock">
+            <a class="btn-main size-l" data-scroll="mainFeedbackFormBlock">
                 <span class="f-24">Получить консультацию</span>
             </a>
         </div>

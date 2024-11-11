@@ -26,7 +26,7 @@ $APPLICATION->SetTitle('Контакты');
             <h1><?= $APPLICATION->GetPageProperty('BANNER_TITLE') ?></h1>
         </div>
         <div class="buttons-block-banner">
-            <a class="btn-main size-l" href="#mainFeedbackFormBlock">
+            <a class="btn-main size-l" data-scroll="mainFeedbackFormBlock">
                 <span class="f-24">Получить консультацию</span>
             </a>
         </div>
