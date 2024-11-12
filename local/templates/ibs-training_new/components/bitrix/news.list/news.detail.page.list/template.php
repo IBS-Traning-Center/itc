@@ -24,7 +24,7 @@ if (!empty($arResult['ITEMS'])) : ?>
             <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
                 <a href="<?= $item['DETAIL_PAGE_URL'] ?>" class="detail-page-news-list-item <?= ($key % 2) ? 'back-white' : '' ?>">
                     <h2><?= $item['NAME'] ?></h2>
-                    <p class="f-32 description-news"><?= $item['PREVIEW_TEXT'] ?></p>
+                    <p class="f-32 description-news"><?= strip_tags($item['PREVIEW_TEXT']) ?></p>
                     <div class="bottom-news-item-block">
                         <?php if ($item['TAGS']) : ?>
                             <div class="tags-block">
