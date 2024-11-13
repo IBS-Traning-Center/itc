@@ -2596,9 +2596,15 @@ span.time.time-with-tooltip:hover .tooltip {
 @media (max-width: 1023px) {
     .corporate-page .scheme-block .scheme-line::after{
         height: 55%;
-    }
+    } 
+}
 
-    .corporate-page .scheme-block .scheme-item:last-child .scheme-line{
-        background-color: var(--button-blue);
-    }
+.corporate-page .scheme-block .scheme-item:last-child .scheme-line{
+    background-color: var(--button-blue);
+}
+
+.corporate-page .scheme-block .scheme-item:last-child .scheme-line::after{
+    width: 100%;
+    background-color: var(--button-blue);
+    z-index: 1;
 }
