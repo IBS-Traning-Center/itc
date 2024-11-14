@@ -212,12 +212,14 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 	)
 );?>
 <?$APPLICATION->IncludeComponent(
-	"addamant:telegram.subscribe",
-	".default",
-	Array(
+	"addamant:telegram.subscribe", 
+	".default", 
+	array(
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
-		"SUBSCRIBE_LINK" => "#",
-		"SUBSCRIBE_TITLE" => ""
-	)
+		"SUBSCRIBE_LINK" => "https://t.me/IBS_Training_Center",
+		"SUBSCRIBE_TITLE" => "",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
 );?><?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

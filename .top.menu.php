@@ -1,45 +1,46 @@
-<?php
-$aMenuLinks = [
-	[
-		'Все курсы',
-		'/catalog/',
-		[],
-		['CATALOG' => 'Y'],
-		''
-	],
-	[
-		'Расписание курсов',
-		'/timetable/',
-		[],
-		[],
-		''
-	],
-	[
-		'Корпоративное обучение',
-		'/corporate/', 
-		[],
-		[],
-		''
-	],
-	[
-		'Оценка персонала',
-		'/testing/',
-		[],
-		[],
-		''
-	],
-	[
-		'Сертификация',
-		'/certification/',
-		[],
-		[],
-		''
-	],
-	[
-		'О нас',
-		'/contacts/',
-		[],
-		[],
-		''
-	]
-];
+<?
+$aMenuLinks = Array(
+	Array(
+		"Все курсы", 
+		"/catalog/", 
+		Array(), 
+		Array("CATALOG"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Расписание курсов", 
+		"/timetable/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Корпоративное обучение", 
+		"/corporate/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Оценка персонала", 
+		"/testing/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сертификация", 
+		"/certification/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О нас", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

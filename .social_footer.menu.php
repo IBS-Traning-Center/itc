@@ -1,25 +1,25 @@
-<?php
-
-$aMenuLinks = [
-    [
-        'telegram',
-        '#',
-        [],
-        [],
-        ''
-    ],
-    [
-        'vk',
-        '#',
-        [],
-        [],
-        ''
-    ],
-    [
-        'whatsapp',
-        '#',
-        [],
-        [],
-        ''
-    ],
-];
+<?
+$aMenuLinks = Array(
+	Array(
+		"telegram", 
+		"https://t.me/IBS_Training_Center", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"vk", 
+		"https://vk.com/ibs_training_center", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"whatsapp", 
+		"#", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
