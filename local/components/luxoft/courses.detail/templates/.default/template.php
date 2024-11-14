@@ -131,6 +131,18 @@ $settings = Functions::getSiteSettings();
                 <h2><?= Loc::getMessage('ABOUT_COURSE_TITLE') ?></h2>
                 <div class="f-20"><?= $arResult['content']['description'] ?></div>
             <?php endif; ?>
+            <?php if ($arResult['content']['objectives']) : ?>
+                <h2><?= Loc::getMessage('OBJECTIVES_TITLE') ?></h2>
+                <div class="f-20"><?= $arResult['content']['objectives'] ?></div>
+            <?php endif; ?>
+            <?php if ($arResult['content']['audience']) : ?>
+                <h2><?= Loc::getMessage('AUDIENCE_TITLE') ?></h2>
+                <div class="f-20"><?= $arResult['content']['audience'] ?></div>
+            <?php endif; ?>
+            <?php if ($arResult['content']['prerequisites']) : ?>
+                <h2><?= Loc::getMessage('PREREQUISITES_TITLE') ?></h2>
+                <div class="f-20"><?= $arResult['content']['prerequisites'] ?></div>
+            <?php endif; ?>
             <?php if ($arResult['for_course'] && is_array($arResult['for_course'])) : ?>
                 <h2><?= Loc::getMessage('FOR_COURSE_TITLE') ?></h2>
                 <div class="for-course-block">
