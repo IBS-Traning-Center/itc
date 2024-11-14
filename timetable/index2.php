@@ -310,7 +310,7 @@ while ($ob = $res->GetNextElement())
                     <form name="send_price_from" method="POST" enctype="application/json">
                         <i class="fa fa-times" onclick="closeSendPriceForm(); return false;"></i>
                         <!-- FORM BODY -->
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="display: block!important;">
                             <table class="form-table data-table">
                                 <tbody>
                                 <tr>
