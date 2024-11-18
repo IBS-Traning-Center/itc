@@ -512,7 +512,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
         $defaultConfig = [
             'filter' => [
                 'ACTIVE' => 'Y',
-                "<{$this->mapping('schedule','startDate')}.VALUE" => date('Y-m-d'),
+                //"<{$this->mapping('schedule','startDate')}.VALUE" => date('Y-m-d'),
                 ">={$this->mapping('schedule','endDate')}.VALUE" => date('Y-m-d')
             ],
             'order' => [$this->mapping('schedule', 'startDate.VALUE') => 'ASC', $this->mapping('schedule', 'endDate.VALUE') => 'ASC'],
