@@ -86,6 +86,8 @@
 
 .top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-text p {
     margin: 0;
+    font-size: 20px;
+    line-height: 32px;
 }
 
 .top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-text p.show-diplom-btn {
@@ -733,6 +735,11 @@
 
     .top-page-banner.course-detail .banner-content .left-banner-block .short-description {
         margin: 16px 0 0 0;
+    }
+
+    .top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-text p {
+        font-size: 16px;
+        line-height: 24px;
     }
 
     .top-page-banner.course-detail .banner-content .left-banner-block .top-course-info {
