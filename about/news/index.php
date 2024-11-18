@@ -92,7 +92,7 @@ $APPLICATION->SetPageProperty("SHOW_FULL_PAGE", "Y");
 		"IBLOCK_TYPE" => "edu",
 		"IBLOCK_ID" => "23",
 		"NEWS_COUNT" => "8",
-		"SORT_BY1" => "SORT",
+		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "NAME",
 		"SORT_ORDER2" => "ASC",
