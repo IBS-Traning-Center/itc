@@ -50,12 +50,12 @@ if (($result == 0) || ($result == -1)) {
                         <div class='seminar__time-date-place'>
                 		    <?php if(!empty($arResult['PROPERTIES']['startdate'])) {?>
                 		    	<div class='seminar__date'><b>
-                                    <?= Loc::getMessage('ACCESS')?></b> 
-                                    <?=date('d.m.Y', strtotime($arResult['PROPERTIES']['startdate']['VALUE']))?>-<?= date('d.m.Y',strtotime($arResult['PROPERTIES']['enddate']['VALUE']))?>
+                                    <?= Loc::getMessage('ACCESS')?>
+                                    <?=date('d.m.Y', strtotime($arResult['PROPERTIES']['startdate']['VALUE']))?>-<?= date('d.m.Y',strtotime($arResult['PROPERTIES']['enddate']['VALUE']))?></b> 
                 		    	</div>
                 		    <?php }?>
-                		    <div class='seminar__date'><b><?= Loc::getMessage('FORMAT')?></b> <?=$arResult['EVENT']['PLACE']?></div>
-                		    <div class='seminar__place'><b><?= Loc::getMessage('LANG')?></b> <?=$arResult['PROPERTIES']['LAGUAGE']['VALUE']?></div>
+                		    <div class='seminar__date'><b><?= Loc::getMessage('FORMAT')?> <?=$arResult['EVENT']['PLACE']?></b></div>
+                		    <div class='seminar__place'><b><?= Loc::getMessage('LANG')?> <?=$arResult['PROPERTIES']['LAGUAGE']['VALUE']?></b></div>
                 	    </div>
                 	<?php } else {?>
                         <?php if($arResult['EVENT']['TIME-DATE-PLACE'] === 'Y') {?>
@@ -63,21 +63,21 @@ if (($result == 0) || ($result == -1)) {
                                 <?php if(!empty($arResult['EVENT']['TIME'])) {?>
                 	        	    <div class='seminar__time'>
                                         <?=Functions::buildSVG('time', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                                        <b><?= Loc::getMessage('TIME')?></b> 
-                                        <?=$arResult['EVENT']['TIME']?>
+                                        <b><?= Loc::getMessage('TIME')?> 
+                                        <?=$arResult['EVENT']['TIME']?></b>
                 	        	    </div>
                                 <?php }?>
                                 <?php if(!empty($arResult['EVENT']['DATE'])) {?>
                             	    <div class='seminar__date'>
                                         <?=Functions::buildSVG('calender', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                                        <b><?= Loc::getMessage('DATE')?></b>
-                            		    <?=$arResult['EVENT']['DATE']?>
+                                        <b><?= Loc::getMessage('DATE')?>
+                            		    <?=$arResult['EVENT']['DATE']?></b>
                                     </div>
                                 <?php }?>
                                 <?php if(!empty($arResult['EVENT']['PLACE'])) {?>
                             	    <div class='seminar__place'>
-                                        <b>Место проведения:</b> 
-                            	        <?=$arResult['EVENT']['PLACE']?>
+                                        <b><?= Loc::getMessage('PLACE')?>
+                            	        <?=$arResult['EVENT']['PLACE']?></b> 
                             	    </div>
                             	<?php }?>
                             </div>

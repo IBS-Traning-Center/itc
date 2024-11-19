@@ -16,4 +16,5 @@ $MESS['DATE'] = 'Дата проведения: ';
 $MESS['ACCESS'] = 'Доступ открыт: ';
 $MESS['FORMAT'] = 'Формат: ';
 $MESS['LANG'] = 'Язык: ';
+$MESS['PLACE'] = 'Место проведения:';
 $MESS['OTHER_CONTENT'] = 'Другие разделы';
