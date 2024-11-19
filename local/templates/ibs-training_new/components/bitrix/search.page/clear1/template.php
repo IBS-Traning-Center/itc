@@ -73,11 +73,9 @@ $APPLICATION->AddChainItem($title, '');
                         <p class="f-24 course-name">
                             <?= $course['NAME'] ?>
                         </p>
-                        <?php if ($course['DESCRIPTION']) : ?>
-                            <p class="f-16 course-description">
-                                <?= HTMLToTxt($course['DESCRIPTION']) ?>
-                            </p>
-                        <?php endif; ?>
+                        <p class="f-16 course-description">
+                            <?= HTMLToTxt($course['DESCRIPTION']) ?>
+                        </p>
                         <div class="course-bottom-block">
                             <?php
                             $oldCoursePrice = round($course['OLD_PRICE']) ?: null;

@@ -182,6 +182,9 @@ if (!empty($arResult['SEARCH'])) {
 
     if (!empty($newsIds)) {
         $newsBD = ElementArticlesTable::getList([
+            'order' => [
+              'ACTIVE_FROM' => 'DESC'
+            ],
             'select' => [
                 'ID',
                 'NAME',

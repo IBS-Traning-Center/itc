@@ -79,15 +79,17 @@ $APPLICATION->SetTitle('Руководство BABOK бесплатно');
     </div>
     <div class="babok-block telegram">
         <?php $APPLICATION->IncludeComponent(
-            "addamant:telegram.subscribe",
-            ".default",
-            Array(
-                "CACHE_TIME" => "3600",
-                "CACHE_TYPE" => "A",
-                'SUBSCRIBE_TITLE' => '',
-                'SUBSCRIBE_LINK' => '#'
-            )
-        );?>
+	"addamant:telegram.subscribe", 
+	".default", 
+	array(
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"SUBSCRIBE_TITLE" => "",
+		"SUBSCRIBE_LINK" => "https://t.me/IBS_Training_Center",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
     </div>
 </div>
 
