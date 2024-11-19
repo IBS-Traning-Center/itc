@@ -143,7 +143,7 @@ if (($result == 0) || ($result == -1)) {
             <?php }?>
             <?php if(empty($arResult['EVENT']['TRAINER']) && (strlen(trim($arResult['EVENT']['LECTURE'])) > 0)) {?>
                 <div class='seminar__section'>
-                    <div class='seminar__section-title'>Докладчик:</div>
+                    <div class='seminar__section-title'><?= Loc::getMessage('SPEAKER')?></div>
                     <div class='seminar__section-description'><?=$arResult['EVENT']['LECTURE']?></div>
                 </div>
             <?php }?>
