@@ -38,6 +38,10 @@
     margin-right: 0;
 }
 
+.discount-courses-block .two-elem {
+    display: flex;
+}
+
 .discount-courses-block .discount-course-item .discount-percent-course {
     display: flex;
     gap: 8px;

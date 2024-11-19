@@ -24,7 +24,9 @@ if (!empty($arResult['COURSES'])) : ?>
 
             if (count($arResult['COURSES']) == 1) {
                 $dopClass = 'one-elem';
-            } elseif (count($arResult['COURSES']) > 1) {
+            } elseif (count($arResult['COURSES']) == 2) {
+                $dopClass = 'two-elem';
+            } elseif (count($arResult['COURSES']) > 2) {
                 $dopClass = 'more-elem';
             }
         ?>

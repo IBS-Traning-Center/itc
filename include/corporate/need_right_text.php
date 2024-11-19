@@ -23,6 +23,6 @@
     </tboby>
 </table>
 
-<a class="btn-main size-l" href="/training/katalog_kursov/">
+<a class="btn-main size-l" href="/catalog/">
     <span class="f-24">Перейти в каталог</span>
 </a>
