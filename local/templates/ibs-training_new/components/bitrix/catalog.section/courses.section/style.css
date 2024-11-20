@@ -197,6 +197,7 @@ a:hover {
     }
 
     .discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-tags {
+        flex-wrap: wrap;
         flex-direction: row;
     }
 
@@ -260,6 +261,12 @@ a:hover {
 
     .discount-courses-block.container.more-elem .slick-arrow {
         bottom: 140px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-tags {
+        flex-direction: column;
     }
 }
 
