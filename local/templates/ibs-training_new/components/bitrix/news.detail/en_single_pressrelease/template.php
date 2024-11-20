@@ -44,6 +44,6 @@ $this->setFrameMode(true);?>
 
     <div class="detail-text-sidebar"> 
         <div class="detail-social-title"><?= Loc::getMessage('TELLING_FRIENDS')?></div>
-        <div class="ya-share2" data-curtain data-size="l" data-shape="round" data-services="vkontakte,odnoklassniki,twitter,moimir"></div>   
+        <div class="ya-share2" data-curtain data-size="l" data-shape="round" data-services="telegram,vkontakte,whatsapp"></div>
     </div>
 </div>
