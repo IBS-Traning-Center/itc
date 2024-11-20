@@ -1,3 +1,7 @@
+.banner-content{
+    max-width: 100%!important;
+}
+
 .ya-share2__list.ya-share2__list_direction_horizontal > .ya-share2__item{
     margin-top: 0!important;
     margin-right: 9px!important;
