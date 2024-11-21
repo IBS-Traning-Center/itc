@@ -2467,9 +2467,9 @@ span.time.time-with-tooltip:hover .tooltip {
     position: absolute;
 }
 
-.corporate-page .scheme-block .scheme-item:last-child .scheme-line {
+/*.corporate-page .scheme-block .scheme-item:last-child .scheme-line {
     width: 10px;
-}
+}*/
 
 .corporate-page .scheme-block .scheme-item:nth-child(3) .scheme-line:after {
     width: 135%;
