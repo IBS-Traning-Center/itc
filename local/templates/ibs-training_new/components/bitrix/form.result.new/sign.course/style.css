@@ -287,6 +287,20 @@
 
     .sign-course-form-block .sign-course-form-container .sign-course-tabs-block {
         flex-wrap: nowrap;
-        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 500px) {
+    .sign-course-form-block .sign-course-form-container .sign-course-tabs-block {
+        align-items: stretch;
+    }
+
+    .sign-course-form-block .sign-course-form-container .sign-course-tabs-block > div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sign-course-form-block .sign-course-form-container .sign-course-tabs-block .sign-course-tab i {
+        display: none;
     }
 }

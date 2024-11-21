@@ -75,7 +75,7 @@ $currentPage = $APPLICATION->GetCurPage();
             <a href="<?= $item['DETAIL_PAGE_URL'] ?>" class="trainer-item">
                 <?php if ($item['PREVIEW_PICTURE']['SRC']) : ?>
                     <div class="trainer-image-block">
-                        <img src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $item['NAME'] ?>">
+                        <img src="<?= $item['DETAIL_PICTURE']['SRC'] ?>" alt="<?= $item['NAME'] ?>">
                     </div>
                 <?php else : ?>
                     <div class="trainer-image-block no-photo">

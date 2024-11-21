@@ -12,7 +12,7 @@ class mainFeedbackFormBlock
         if (this.feedbackFormBtn) {
             this.feedbackFormBtn.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    document.querySelector('#'+btn.getAttribute("data-scroll")).scrollIntoView();
+                    document.querySelector('#'+btn.getAttribute("data-scroll")).scrollIntoView({ block: "start", behavior: "smooth" });
                 });
             });
         }

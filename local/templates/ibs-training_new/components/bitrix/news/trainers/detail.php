@@ -47,7 +47,7 @@ $APPLICATION->IncludeComponent(
         'INCLUDE_IBLOCK_INTO_CHAIN' => $arParams['INCLUDE_IBLOCK_INTO_CHAIN'],
         'ADD_SECTIONS_CHAIN' => $arParams['ADD_SECTIONS_CHAIN'],
         'ACTIVE_DATE_FORMAT' => $arParams['DETAIL_ACTIVE_DATE_FORMAT'],
-        'CACHE_TYPE' => $arParams['CACHE_TYPE'],
+        'CACHE_TYPE' => 'N',
         'CACHE_TIME' => $arParams['CACHE_TIME'],
         'CACHE_GROUPS' => $arParams['CACHE_GROUPS'],
         'USE_PERMISSIONS' => $arParams['USE_PERMISSIONS'],

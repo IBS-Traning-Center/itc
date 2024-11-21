@@ -120,7 +120,7 @@ if (!empty($arResult['COURSES_IDS'])) : ?>
                     "DISPLAY_BOTTOM_PAGER" => "N",
                     "DISPLAY_COMPARE" => "N",
                     "DISPLAY_TOP_PAGER" => "N",
-                    "ELEMENT_SORT_FIELD" => "shows",
+                    "ELEMENT_SORT_FIELD" => "property_course_code",
                     "ELEMENT_SORT_FIELD2" => "shows",
                     "ELEMENT_SORT_ORDER" => "asc",
                     "ELEMENT_SORT_ORDER2" => "asc",

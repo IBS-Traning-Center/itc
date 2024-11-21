@@ -11,9 +11,9 @@ $APPLICATION->SetTitle('Эксперты <span>IBS Training Center</span>');
 ?>
 
 <?php $APPLICATION->IncludeComponent(
-	"bitrix:news",
-	"trainers",
-	Array(
+	"bitrix:news", 
+	"trainers", 
+	array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -30,11 +30,18 @@ $APPLICATION->SetTitle('Эксперты <span>IBS Training Center</span>');
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array("",""),
+		"DETAIL_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => ['*'],
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "*",
+			2 => "",
+		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_NAME" => "N",
@@ -44,8 +51,25 @@ $APPLICATION->SetTitle('Эксперты <span>IBS Training Center</span>');
 		"IBLOCK_TYPE" => "edu",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array("",""),
-		"LIST_PROPERTY_CODE" => ['expert_name','expert_title','TRAINER_TAGS'],
+		"LIST_FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			4 => "TAGS",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "",
+		),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "expert_name",
+			1 => "expert_title",
+			2 => "TRAINER_TAGS",
+			3 => "",
+		),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -60,14 +84,13 @@ $APPLICATION->SetTitle('Эксперты <span>IBS Training Center</span>');
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"SEF_FOLDER" => "/about/experts/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("detail"=>"#ELEMENT_CODE#.html","news"=>"/about/experts/","section"=>""),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY1" => "NAME",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
@@ -76,8 +99,15 @@ $APPLICATION->SetTitle('Эксперты <span>IBS Training Center</span>');
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
-		"USE_SEARCH" => "N"
-	)
+		"USE_SEARCH" => "N",
+		"COMPONENT_TEMPLATE" => "trainers",
+		"SEF_URL_TEMPLATES" => array(
+			"news" => "/about/experts/",
+			"section" => "",
+			"detail" => "#ELEMENT_CODE#.html",
+		)
+	),
+	false
 );?>
 
 <?php require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php'); ?>

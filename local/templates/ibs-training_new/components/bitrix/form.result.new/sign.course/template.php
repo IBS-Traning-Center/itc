@@ -62,7 +62,7 @@ $settings = Functions::getSiteSettings();
             <?php endif; ?>
             <div class="select-dates-block" <?= ($arResult["FORM_NOTE"]) ? 'style="display: none"' : '' ?>>
                 <div class="select-dates-content">
-                    <span class="f-24"><?= Loc::getMessage('OPEN_DATES_TITLE') ?></span>
+                    <span class="f-24"><?= (!empty($arParams['DATES'])) ? $arParams['DATES'][0] : Loc::getMessage('OPEN_DATES_TITLE') ?></span>
                     <?= (!empty($arParams['DATES'])) ? Functions::buildSVG('down-arrow-icon', $templateFolder . '/images') : '' ?>
                 </div>
                 <?php if (!empty($arParams['DATES'])) : ?>
@@ -92,7 +92,12 @@ $settings = Functions::getSiteSettings();
                                     }
                                     break;
                                 case 'date':
-                                    $value = 'Открытая дата';
+                                    if (!empty($arParams['DATES'])) {
+                                        $value = $arParams['DATES'][0];
+                                    } else {
+                                        $value = 'Открытая дата';
+                                    }
+
                                     break;
                                 case 'face':
                                     if ($arParams['COURSE_PRICE']) {

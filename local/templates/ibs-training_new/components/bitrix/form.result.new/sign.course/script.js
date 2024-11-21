@@ -26,7 +26,12 @@ class SignCourse
         if (this.signBtn) {
             this.signBtn.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    document.querySelector('#'+btn.getAttribute("data-scroll")).scrollIntoView();
+                    const topPosition = document.querySelector('#'+btn.getAttribute("data-scroll")).getBoundingClientRect().top + window.pageYOffset - 50;
+
+                    window.scrollTo({
+                        top: topPosition,
+                        behavior: 'smooth'
+                    });
                 });
             });
         }
