@@ -67,14 +67,14 @@ $settings = Functions::getSiteSettings();
                 </div>
                 <?php if (!empty($arParams['DATES'])) : ?>
                     <div class="select-dates-dropdown-block">
-                        <div class="select-date">
-                            <span class="f-24"><?= Loc::getMessage('OPEN_DATES_TITLE') ?></span>
-                        </div>
                         <?php foreach ($arParams['DATES'] as $date) : ?>
                             <div class="select-date">
                                 <span class="f-24"><?= $date ?></span>
                             </div>
                         <?php endforeach; ?>
+                        <div class="select-date">
+                            <span class="f-24"><?= Loc::getMessage('OPEN_DATES_TITLE') ?></span>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>

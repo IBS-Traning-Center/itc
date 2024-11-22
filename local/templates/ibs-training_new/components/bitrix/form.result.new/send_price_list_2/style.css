@@ -48,7 +48,7 @@ table.form-table td
   position: absolute;
   background: white !important;
   z-index: 999;
-  top: 5%;
+  top: 300px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px;
@@ -120,4 +120,9 @@ table.form-table td
 
 .form-reg .form-section .label span {
   color: var(--red);
+}
+@media (max-width: 768px) {
+  .send-price-form-area{
+    top: 50px
+  }
 }

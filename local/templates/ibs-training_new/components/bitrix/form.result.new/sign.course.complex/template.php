@@ -26,24 +26,24 @@ Loc::loadMessages(__FILE__);
 		<?php if ($arResult["FORM_NOTE"]) : ?>
 			<p class="f-20 success-text"><?= $arResult["FORM_NOTE"] ?></p>
 		<?php endif; ?>
-		<div class="select-dates-block" <?= ($arResult["FORM_NOTE"]) ? 'style="display: none"' : '' ?>>
-			<div class="select-dates-content">
-				<span class="f-16"><?= Loc::getMessage('OPEN_DATES_TITLE') ?></span>
-				<?= (!empty($arParams['DATES'])) ? Functions::buildSVG('down-arrow-icon', $templateFolder . '/images') : '' ?>
-			</div>
-			<?php if (!empty($arParams['DATES'])) : ?>
-				<div class="select-dates-dropdown-block">
-					<div class="select-date">
-						<span class="f-16"><?= Loc::getMessage('OPEN_DATES_TITLE') ?></span>
-					</div>
-					<?php foreach ($arParams['DATES'] as $date) : ?>
-						<div class="select-date">
-							<span class="f-16"><?= $date ?></span>
-						</div>
-					<?php endforeach; ?>
-				</div>
-			<?php endif; ?>
-		</div>
+        <div class="select-dates-block" <?= ($arResult["FORM_NOTE"]) ? 'style="display: none"' : '' ?>>
+            <div class="select-dates-content">
+                <span class="f-24"><?= (!empty($arParams['DATES'])) ? $arParams['DATES'][0] : Loc::getMessage('OPEN_DATES_TITLE') ?></span>
+                <?= (!empty($arParams['DATES'])) ? Functions::buildSVG('down-arrow-icon', $templateFolder . '/images') : '' ?>
+            </div>
+            <?php if (!empty($arParams['DATES'])) : ?>
+                <div class="select-dates-dropdown-block">
+                    <?php foreach ($arParams['DATES'] as $date) : ?>
+                        <div class="select-date">
+                            <span class="f-24"><?= $date ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                    <div class="select-date">
+                        <span class="f-24"><?= Loc::getMessage('OPEN_DATES_TITLE') ?></span>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
         <?php if (!empty($arParams['TARIFFS'])) : ?>
             <div class="select-tariffs-block" <?= ($arResult["FORM_NOTE"]) ? 'style="display: none"' : '' ?>>
                 <div class="select-tariffs-content">
@@ -73,7 +73,12 @@ Loc::loadMessages(__FILE__);
 							}
 							break;
 						case 'date':
-							$value = 'Открытая дата';
+                            if (!empty($arParams['DATES'])) {
+                                $value = $arParams['DATES'][0];
+                            } else {
+                                $value = 'Открытая дата';
+                            }
+
 							break;
                         case 'tariff':
                             if (!empty($arParams['TARIFFS'])) {
