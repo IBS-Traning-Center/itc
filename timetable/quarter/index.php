@@ -170,7 +170,14 @@ if ($id_city!=14909) {
                 <span>Сортировка по: </span> <a <?if ($_REQUEST["sort"]!="direction") {?>class="active"<?}?> href="<?=$APPLICATION->GetCurPageParam("sort=date", array("sort"));?>">Дате</a><a <?if ($_REQUEST["sort"]=="direction") {?>class="active"<?}?> href="<?=$APPLICATION->GetCurPageParam("sort=direction", array("sort"));?>">Направлению</a>
             </div>
         </div>		
-		<?$APPLICATION->IncludeComponent(
+		<?
+		if($_REQUEST["sort"] == NULL){
+			$sorting = 'date';
+		}else{
+			$sorting = $_REQUEST["sort"];
+		}
+		
+		$APPLICATION->IncludeComponent(
 			"bitrix:news.list",
 			"edu_ru_all_city_schedule_cources_cal_diff_month",
 			Array(
@@ -180,7 +187,7 @@ if ($id_city!=14909) {
 			"NEWS_COUNT" => "100",	// Количество новостей на странице
 			"SORT_BY1" => "PROPERTY_startdate",	// Поле для первой сортировки новостей
 			"SORT_ORDER1" => "ASC",	// Направление для первой сортировки новостей
-			"SORT_BY2" => $_REQUEST["sort"],	// Поле для второй сортировки новостей
+			"SORT_BY2" => $sorting,	// Поле для второй сортировки новостей
 			"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
 			"FILTER_NAME" => "arrFilter",	// Фильтр
 			"FIELD_CODE" => array(	// Поля
