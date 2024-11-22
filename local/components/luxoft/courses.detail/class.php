@@ -241,6 +241,117 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
         return $result;
     }
 
+    protected function getWhatLearn()
+    {
+        $defaultConfig = [
+            'select' => [
+                $this->mapping('course', 'what_learn')
+            ],
+            'filter' => [
+                'ACTIVE' => 'Y',
+                [
+                    'LOGIC' => 'OR',
+                    ['CODE' => $this->request['CODE']],
+                    ['XML_ID' => $this->request['CODE']]
+                ]
+            ],
+            'cache' => [
+                'ttl' => 3600
+            ],
+        ];
+
+        $entity = IblockTable::compileEntity('courses');
+        $entityClass = $entity->getDataClass();
+
+        $whatLearn = $entityClass::getList($defaultConfig);
+
+        $whatObject = $whatLearn->fetchObject();
+
+        $whatList = [];
+
+        if ($whatObject->getWhatLearn() && $whatObject->getWhatLearn()->getAll()) {
+            foreach ($whatObject->getWhatLearn()->getAll() as $whatItem) {
+                $whatList[] = $whatItem->getValue();
+            }
+        }
+
+        return $whatList;
+    }
+
+    protected function getImprovedSkills()
+    {
+        $defaultConfig = [
+            'select' => [
+                $this->mapping('course', 'skills')
+            ],
+            'filter' => [
+                'ACTIVE' => 'Y',
+                [
+                    'LOGIC' => 'OR',
+                    ['CODE' => $this->request['CODE']],
+                    ['XML_ID' => $this->request['CODE']]
+                ]
+            ],
+            'cache' => [
+                'ttl' => 3600
+            ],
+        ];
+
+        $entity = IblockTable::compileEntity('courses');
+        $entityClass = $entity->getDataClass();
+
+        $skills = $entityClass::getList($defaultConfig);
+
+        $skillsObject = $skills->fetchObject();
+
+        $skillsList = [];
+
+        if ($skillsObject->getImprovedSkills() && $skillsObject->getImprovedSkills()->getAll()) {
+            foreach ($skillsObject->getImprovedSkills()->getAll() as $skill) {
+                $skillsList[] = $skill->getValue();
+            }
+        }
+
+        return $skillsList;
+    }
+
+    protected function getforCourse()
+    {
+        $defaultConfig = [
+            'select' => [
+                $this->mapping('course', 'for_course')
+            ],
+            'filter' => [
+                'ACTIVE' => 'Y',
+                [
+                    'LOGIC' => 'OR',
+                    ['CODE' => $this->request['CODE']],
+                    ['XML_ID' => $this->request['CODE']]
+                ]
+            ],
+            'cache' => [
+                'ttl' => 3600
+            ],
+        ];
+
+        $entity = IblockTable::compileEntity('courses');
+        $entityClass = $entity->getDataClass();
+
+        $forCourse = $entityClass::getList($defaultConfig);
+
+        $forCourseObject = $forCourse->fetchObject();
+
+        $forCourseList = [];
+
+        if ($forCourseObject->getForCourse() && $forCourseObject->getForCourse()->getAll()) {
+            foreach ($forCourseObject->getForCourse()->getAll() as $course) {
+                $forCourseList[] = $course->getValue();
+            }
+        }
+
+        return $forCourseList;
+    }
+
     protected function getCourse($config = []): array
     {
         $defaultConfig = [
@@ -274,10 +385,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 $this->mapping('course', 'complexity'),
                 $this->mapping('course', 'new'),
                 $this->mapping('course', 'price_ur'),
-                $this->mapping('course', 'language'),
-                $this->mapping('course', 'for_course'),
-                $this->mapping('course', 'skills'),
-                $this->mapping('course', 'what_learn'),
+                $this->mapping('course', 'language')
             ],
             'filter' => [
                 'ACTIVE' => 'Y'
@@ -320,16 +428,10 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             $this->course['price_ur'] = ($courseObject->getCoursePriceUr() && $courseObject->getCoursePriceUr()->getValue()) ? $courseObject->getCoursePriceUr()->getValue() : '';
             $this->course['language'] = ($courseObject->getCourseLanguage() && $courseObject->getCourseLanguage()->getItem() && $courseObject->getCourseLanguage()->getItem()->getValue()) ? $courseObject->getCourseLanguage()->getItem()->getValue() : '';
 
-            $forCourseCodes = [];
-            if ($courseObject->getForCourse() && $courseObject->getForCourse()->getAll()) {
-                foreach ($courseObject->getForCourse()->getAll() as $value) {
-                    $forCourseCodes[] = $value->getValue();
-                }
-
-                $forCourseCodes = array_unique($forCourseCodes);
-            }
+            $forCourseCodes = $this->getforCourse();
 
             if (!empty($forCourseCodes)) {
+                $forCourseCodes = array_unique($forCourseCodes);
                 $hightTable = new HighloadblockManager('WhoCourse');
                 $hightTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE'], [], ['UF_XML_ID' => $forCourseCodes]);
                 $items = $hightTable->getDataAll();
@@ -345,19 +447,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 }
             }
 
-            if ($courseObject->getImprovedSkills() && $courseObject->getImprovedSkills()->getAll()) {
-                foreach ($courseObject->getImprovedSkills()->getAll() as $value) {
-                    $this->course['skills_course'][] = $value->getValue();
-                }
-            }
-
-            $whatLearn = [];
-            if ($courseObject->getWhatLearn() && $courseObject->getWhatLearn()->getAll()) {
-                foreach ($courseObject->getWhatLearn()->getAll() as $whatItem) {
-                    $whatLearn[] = $whatItem->getValue();
-                }
-            }
-            $this->course['what_learn'] = $whatLearn;
+            $this->course['skills_course'] = $this->getImprovedSkills();
+            $this->course['what_learn'] = $this->getWhatLearn();
 
             $this->course['category'] = $this->getCategory(['PP_COURSE.VALUE' => $this->course['id']]);
             if (empty($this->course['category']['name'])) {
@@ -1014,7 +1105,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                     'catalog' => '/training/katalog_kursov/',
                 ];
 
-                //TODO переписать кусок
+//                TODO переписать кусок
                 foreach ($this->arResult['schedule'] as $scheduleItem) {
                     $this->arResult['scheduleId'] = (string)$scheduleItem['id'];
                     if (!empty($ID_TIME = $this->request['ID_TIME'])) {

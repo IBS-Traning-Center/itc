@@ -88,7 +88,7 @@ $ii = 0;
 $arValueOfCourses = array();
 $arCoursesInner = array();
 foreach ($arResult["ITEMS"] as $arItem):
-
+    var_export($arItem['PROPERTIES']['startdate']['VALUE']);
     $prepod_surname = "";
     $prepod_name = "";
     $prepod_code = "";
@@ -278,7 +278,9 @@ foreach ($arResult["ITEMS"] as $arItem):
     if (count($arCoursesInner[$arValueOfCourses[$ii]["course_id"]], COUNT_RECURSIVE) >= 3) {
         unset($arValueOfCourses[$ii]);
     }
-     $ii = $ii + 1; ?>
+     $ii = $ii + 1; 
+     
+     ?>
 <? endforeach; ?>
 
 <?php
@@ -302,17 +304,19 @@ if ($arParams["SORT_BY2"] != "PROPERTY_startdate") {
 }
 ?>
 
-<? if ($arParams["NEXT"] != "Y") { 
+<? /*if ($arParams["NEXT"] != "Y") { 
     $now = time(); 
     $nowdate = date("Y-m"); 
     $now = strtotime($nowdate . "-1");
     $now1month = strtotime(date("Y-m") . '-1 +1 month');
     $now2month = strtotime(date("Y-m") . '-1 +2 month');
 } else { 
-    $now = strtotime(date("Y-m") . '-15 +3 month');
-    $now1month = strtotime(date("Y-m") . '-15 +4 month');
-    $now2month = strtotime(date("Y-m") . '-15 +5 month');
-} ?>
+    $now = strtotime(date("Y-m") . '-1 +3 month');
+    $now1month = strtotime(date("Y-m") . '-1 +4 month');
+    $now2month = strtotime(date("Y-m") . '-1 +5 month');
+} */
+
+?>
     <div class="pagination-quarter">
         <? if ($_REQUEST["showquart"] != "next") { ?>
             <span class="before-quater">
@@ -387,7 +391,7 @@ if ($arParams["SORT_BY2"] != "PROPERTY_startdate") {
                         <div class="date-nly"><?= $date ?></div>
                     <? } ?>
                 </div>
-                <div class="time-one-wrapper<?= ($arCoursesInner[$value["course_id"]][date('n', $now1month)] !== NULL)? ' active':''?>"">
+                <div class="time-one-wrapper<?= ($arCoursesInner[$value["course_id"]][date('n', $now1month)] !== NULL)? ' active':''?>">
                 <? if($arCoursesInner[$value["course_id"]][date('n', $now1month)] !== NULL){?>
                         <div class="month-nly"><?= FormatDate('f', $now1month);?></div>
                     <?}?>
@@ -395,7 +399,7 @@ if ($arParams["SORT_BY2"] != "PROPERTY_startdate") {
                         <div class="date-nly"><?= $date ?></div>
                     <? } ?>
                 </div>
-                <div class="time-one-wrapper<?= ($arCoursesInner[$value["course_id"]][date('n', $now2month)] !== NULL)? ' active':''?>"">
+                <div class="time-one-wrapper<?= ($arCoursesInner[$value["course_id"]][date('n', $now2month)] !== NULL)? ' active':''?>">
                 <? if($arCoursesInner[$value["course_id"]][date('n', $now2month)] !== NULL){?>
                         <div class="month-nly"><?= FormatDate('f', $now2month);?></div>
                     <?}?>
