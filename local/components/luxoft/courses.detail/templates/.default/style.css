@@ -211,6 +211,10 @@
     line-height: 72px;
 }
 
+.left-content-block > h2:first-child {
+    margin-top: 0;
+}
+
 .course-content .left-content-block .for-course-block {
     display: flex;
     align-items: center;
