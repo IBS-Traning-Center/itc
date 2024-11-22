@@ -171,10 +171,13 @@ if ($id_city!=14909) {
             </div>
         </div>		
 		<?
-		if($_REQUEST["sort"] == NULL){
-			$sorting = 'date';
-		}else{
-			$sorting = $_REQUEST["sort"];
+		if ($_REQUEST["sort"]!="direction")
+		{
+			$sorting="PROPERTY_startdate";
+		}
+		else
+		{
+			$sorting="PROPERTY_SCHEDULE_COURSE_TYPE";
 		}
 		
 		$APPLICATION->IncludeComponent(
@@ -185,9 +188,9 @@ if ($id_city!=14909) {
 			"IBLOCK_TYPE" => "edu",	// Тип информационного блока (используется только для проверки)
 			"IBLOCK_ID" => "9",	// Код информационного блока
 			"NEWS_COUNT" => "100",	// Количество новостей на странице
-			"SORT_BY1" => "PROPERTY_startdate",	// Поле для первой сортировки новостей
+			"SORT_BY1" => $sorting,	// Поле для первой сортировки новостей
 			"SORT_ORDER1" => "ASC",	// Направление для первой сортировки новостей
-			"SORT_BY2" => $sorting,	// Поле для второй сортировки новостей
+			"SORT_BY2" => "PROPERTY_startdate",	// Поле для второй сортировки новостей
 			"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
 			"FILTER_NAME" => "arrFilter",	// Фильтр
 			"FIELD_CODE" => array(	// Поля

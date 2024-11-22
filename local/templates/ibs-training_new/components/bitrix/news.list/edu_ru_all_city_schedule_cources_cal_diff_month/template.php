@@ -289,7 +289,7 @@ $currentValue = $arValueOfCourses;
 // по полю сортировку
 // таким образом отсортируем по категориям
 
-if ($arParams["SORT_BY2"] != "date") {
+if ($arParams["SORT_BY2"] != "PROPERTY_startdate") {
     function cmp($a, $b)
     {
         if ($a["date_sort"] == $b["date_sort"]) {
