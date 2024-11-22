@@ -41,7 +41,7 @@ if (($result == 0) || ($result == -1)) {
                 <?php if (!empty($arResult['WHO_ELEMENT'])){?>
                     <div class='seminar__audience-wrap'>
                         <?php foreach($arResult['WHO_ELEMENT'] as $value){?>
-                            <div class='seminar__audience-item'><?= $value['WHO_ELEMENT']?></div>
+                            <div class='seminar__audience-item'><?= $value['UF_NAME']?></div>
                         <?php }?>
                     </div>
                 <?php }?>
