@@ -36,10 +36,16 @@ $this->setFrameMode(true);
 						<?= strip_tags($arItem['PREVIEW_TEXT'])?>
 					</span>
 				</span>
-				<span class="blog-bottom">
-					<span><?= $arItem['PROPERTIES']['news_type']['VALUE']?></span>
-					<span><?= $arItem['DISPLAY_ACTIVE_FROM']?></span>
-				</span>
+				<div class="bottom-news-item-block">
+                    <?php if ($arItem['TAGS']) : ?>
+                        <div class="tags-block">
+                            <?php foreach ($arItem['TAGS'] as $tag) : ?>
+                                <span class="f-16"><?= $tag['UF_NAME'] ?></span>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                    <span class="date-create f-16"><?= $arItem['DATE_CREATE'] ?></span>
+                </div>
 			</span>
 		</a>
 	</div>
