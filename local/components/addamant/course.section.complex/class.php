@@ -73,7 +73,8 @@ class CourseSectionComplexComponent extends CBitrixComponent
                 'WHO_COURSE',
                 'COURSE_FORMAT',
                 'TARIFFS',
-                'COMPLEXITY'
+                'COMPLEXITY',
+                'COURSE_LINKED'
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
@@ -102,6 +103,12 @@ class CourseSectionComplexComponent extends CBitrixComponent
         if ($courseObject->getCourses() && $courseObject->getCourses()->getAll()) {
             foreach ($courseObject->getCourses()->getAll() as $course) {
                 $courseArray['COURSES'][] = $course->getValue();
+            }
+        }
+
+        if ($courseObject->getCourseLinked() && $courseObject->getCourseLinked()->getAll()) {
+            foreach ($courseObject->getCourseLinked()->getAll() as $course) {
+                $courseArray['LINKED_COURSES'][] = $course->getValue();
             }
         }
 
@@ -315,6 +322,72 @@ class CourseSectionComplexComponent extends CBitrixComponent
         }
     }
 
+    private function getLinkedCoursesInfo()
+    {
+        if (empty($this->courseInfo['LINKED_COURSES'])) {
+            return false;
+        }
+
+        $courses = ElementCoursesTable::getList([
+            'select' => [
+                'XML_ID',
+                'course_code',
+                'short_descr',
+                'NAME',
+                'COMPLEXITY.ITEM',
+                'course_duration',
+                'course_price'
+            ],
+            'filter' => [
+                'ACTIVE' => 'Y',
+                'ID' => $this->courseInfo['LINKED_COURSES']
+            ]
+        ])->fetchCollection();
+
+        if ($courses) {
+            $coursesInfo = [];
+            foreach ($courses as $course) {
+                $courseInfo = [];
+
+                if ($course->getName()) {
+                    $courseInfo['NAME'] = $course->getName();
+                }
+
+                if ($course->getXmlId()) {
+                    $courseInfo['XML_ID'] = $course->getXmlId();
+                }
+
+                if ($course->getCourseCode() && $course->getCourseCode()->getValue()) {
+                    $courseInfo['CODE'] = $course->getCourseCode()->getValue();
+                }
+
+                if ($course->getShortDescr() && $course->getShortDescr()->getValue()) {
+                    $courseInfo['DESCRIPTION'] = $course->getShortDescr()->getValue();
+                }
+
+                if ($course->getCourseDuration() && $course->getCourseDuration()->getValue()) {
+                    $courseInfo['DURATION'] = $course->getCourseDuration()->getValue();
+                }
+
+                if ($course->getCoursePrice() && $course->getCoursePrice()->getValue()) {
+                    $courseInfo['PRICE'] = $course->getCoursePrice()->getValue();
+                }
+
+                if (
+                    $course->getComplexity() &&
+                    $course->getComplexity()->getItem() &&
+                    $course->getComplexity()->getItem()->getValue()
+                ) {
+                    $courseInfo['COMPLEXITY'] = $course->getComplexity()->getItem()->getValue();
+                }
+
+                $coursesInfo[] = $courseInfo;
+            }
+
+            $this->courseInfo['LINKED_COURSES'] = $coursesInfo;
+        }
+    }
+
     private function getDateNow()
     {
         return $this->dateNow = date('Y-m-d');
@@ -372,6 +445,7 @@ class CourseSectionComplexComponent extends CBitrixComponent
         $this->getCourseComplexity();
         $this->getCourseTariffs();
         $this->getCoursesInfo();
+        $this->getLinkedCoursesInfo();
 
         $this->getDateNow();
         $this->getSchedule();

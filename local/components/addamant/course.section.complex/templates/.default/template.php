@@ -270,11 +270,11 @@ if (!empty($arResult)) : ?>
             </div>
         </div>
     <?php endif; ?>
-    <?php if ($arResult['COURSES']) : ?>
+    <?php if ($arResult['LINKED_COURSES']) : ?>
         <div class="linked-courses-slider">
             <h2 class="container"><?= Loc::getMessage('LINKED_COURSES_BLOCK_TITLE') ?></h2>
             <div class="linked-courses-content">
-                <?php foreach ($arResult['COURSES'] as $course) : ?>
+                <?php foreach ($arResult['LINKED_COURSES'] as $course) : ?>
                     <a href="/kurs/<?= $course['XML_ID'] ?>.html" class="course-block">
                         <div class="top-course-block">
                             <?php if ($course['CODE']) : ?>
