@@ -15,8 +15,15 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"whatsapp", 
-		"#", 
+		"dzen", 
+		"https://dzen.ru/ibs_training_center", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"rutube", 
+		"https://rutube.ru/channel/30034572/", 
 		Array(), 
 		Array(), 
 		"" 

@@ -26,8 +26,11 @@ if (!empty($arResult)) : ?>
                 case 'vk' :
                     echo Functions::buildSVG('vk', $templateFolder . '/images');
                     break;
-                case 'whatsapp' :
-                    echo Functions::buildSVG('whatsapp', $templateFolder . '/images');
+                case 'dzen' :
+                    echo Functions::buildSVG('dzen', $templateFolder . '/images');
+                    break;
+                case 'rutube' :
+                    echo Functions::buildSVG('rutube', $templateFolder . '/images');
                     break;
             } ?>
         </a>
