@@ -356,6 +356,7 @@
 
 .diploma-modal .diploma-modal-content img {
     max-width: 800px;
+    max-height: 650px;
 }
 
 .diploma-modal-close-btn {
@@ -980,6 +981,7 @@
 
     .diploma-modal .diploma-modal-content img {
         max-width: 400px;
+        max-height: 280px;
     }
 
     .diploma-modal {
