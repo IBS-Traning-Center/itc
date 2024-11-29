@@ -1,7 +1,8 @@
 <?php
 
 $MESS['NEW_COURSE_TEXT'] = 'Новинка';
-$MESS['DIPLOM_TEXT'] = 'Диплом о прохождении';
+$MESS['CERTIFICATE_TEXT'] = 'Сертификат о прохождении';
+$MESS['LICENSE_TEXT'] = 'Удостоверение о прохождении';
 $MESS['DIPLOM_BTN_SHOW_TEXT'] = 'Смотреть пример';
 $MESS['HOUR_COUNT_TEXT'] = '#COUNT# академ. часов';
 $MESS['RETURN_MONEY_TEXT'] = 'Как вернуть до 90% стоимости';

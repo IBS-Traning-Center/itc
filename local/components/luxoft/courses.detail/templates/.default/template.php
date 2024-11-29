@@ -55,7 +55,11 @@ $settings = Functions::getSiteSettings();
                                 <?= Functions::buildSVG('diplom_icon', $templateFolder . '/images') ?>
                             </div>
                             <div class="top-course-info_item-text">
-                                <p class="f-20"><?= Loc::getMessage('DIPLOM_TEXT') ?></p>
+                                <?php if ($arResult['duration'] && $arResult['duration'] >= 16) : ?>
+                                    <p class="f-20"><?= Loc::getMessage('LICENSE_TEXT') ?></p>
+                                <?php else : ?>
+                                    <p class="f-20"><?= Loc::getMessage('CERTIFICATE_TEXT') ?></p>
+                                <?php endif; ?>
                                 <p class="f-20 show-diplom-btn"><?= Loc::getMessage('DIPLOM_BTN_SHOW_TEXT') ?></p>
                             </div>
                         </div>
@@ -531,7 +535,11 @@ $settings = Functions::getSiteSettings();
 </div>
 <div class="diploma-modal">
     <div class="diploma-modal-content">
-        <img src="<?= $templateFolder . '/images/diplom.png' ?>">
+        <?php if ($arResult['duration'] && $arResult['duration'] >= 16) : ?>
+            <img src="<?= $templateFolder . '/images/license-preview.png' ?>">
+        <?php else : ?>
+            <img src="<?= $templateFolder . '/images/certificate-preview.png' ?>">
+        <?php endif; ?>
     </div>
 </div>
 <div class="diploma-modal-close-btn">
