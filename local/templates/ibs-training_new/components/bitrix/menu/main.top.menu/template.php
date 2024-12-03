@@ -31,7 +31,4 @@ global $USER;
             </a>
         <?php endforeach; ?>
     <?php endif; ?>
-    <a href="<?= ($USER->IsAuthorized()) ? '/personal/' : '/personal_test/' ?>" class="main-top-profile-icon">
-        <?=Functions::buildSVG('profile_icon', $templateFolder . '/images')?>
-    </a>
 </div>
