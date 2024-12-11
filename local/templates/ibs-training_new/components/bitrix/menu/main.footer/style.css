@@ -28,6 +28,15 @@
     margin-right: 0;
 }
 
+.main-footer-menu-block .main-footer-menu-item.certificate-block {
+    max-width: 31%;
+}
+
+.main-footer-menu-block .main-footer-menu-item.certificate-block .image{
+    display: flex;
+    align-items: flex-start;
+}
+
 .main-footer-menu-block .main-footer-menu-item span,
 .main-footer-menu-block .main-footer-menu-item a {
     color: var(--white);

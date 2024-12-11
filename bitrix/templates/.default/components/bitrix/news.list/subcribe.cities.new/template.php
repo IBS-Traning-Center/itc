@@ -111,7 +111,7 @@
 	<? $ii=$ii+1;?>
 <?endforeach;?>
 				
-						<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
+						<!-- <table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
 							<tr>
 								<td style="width: 86px; padding-bottom: 18px;">
 									<?if ($arItem['PROPERTIES']['city']['VALUE']==CITY_ID_OMSK) {?>
@@ -206,7 +206,7 @@
 										<img src="/images/email/spacer.gif" height="25" alt="" border="0"/>
 									</td>
 								</tr>
-								</table>
+								</table> -->
 								
 									
 							

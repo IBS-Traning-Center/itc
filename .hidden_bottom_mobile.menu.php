@@ -1,52 +1,46 @@
-<?php
-$aMenuLinks = [
-    [
-        'Корпоративное обучение',
-        '/corporate/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Оценка персонала',
-        '/testing/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Сертификация',
-        '/certification/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'О нас',
-        '/about/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Стань тренером',
-        '/talent_search/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Жизнь УЦ IBS',
-        '/about/news/',
-        [],
-        [],
-        ''
-    ],
-    [
-        'Личный кабинет',
-        '/personal_test/',
-        [],
-        [],
-        ''
-    ]
-];
+<?
+$aMenuLinks = Array(
+	Array(
+		"Корпоративное обучение", 
+		"/corporate/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Оценка персонала", 
+		"/testing/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сертификация", 
+		"/certification/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О нас", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Стань тренером", 
+		"/talent_search/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Блог", 
+		"/about/news/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

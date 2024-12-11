@@ -85,17 +85,45 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Санкт-Петербург", 
-		"/contacts/?map=sankt-peterburg", 
+		"Контакты", 
+		"", 
 		Array(), 
-		Array(), 
+		Array("TITLE"=>"Y"), 
 		"" 
 	),
 	Array(
-		"Омск", 
-		"/contacts/?map=omsk", 
+		"+7 (495) 609-6967", 
+		"84956096967", 
 		Array(), 
+		Array("PHONE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"+7 (931) 009-6926", 
+		"89310096926", 
 		Array(), 
+		Array("PHONE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"education@ibs.ru", 
+		"", 
+		Array(), 
+		Array("MAIL"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Сертификат соответствия", 
+		"", 
+		Array(), 
+		Array("TITLE"=>"Y", "CERTIFICATE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Качество обучения обеспечено сертифицированной системой менеджмента качества, соответствующей требованиям стандарта ГОСТ Р ИСО 9001-2015", 
+		"", 
+		Array(), 
+		Array("IMG"=>"/local/assets/images/footer-certificate-6.png"), 
 		"" 
 	)
 );
