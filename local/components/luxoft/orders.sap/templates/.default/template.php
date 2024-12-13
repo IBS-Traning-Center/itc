@@ -1,29 +1,29 @@
 <?php
+
 /**
  * @var array $arParams
  * @var array $arResult
  */
 
 global $APPLICATION;
-use Bitrix\UI\Toolbar\Facade\Toolbar;
-use Bitrix\UI\Buttons\Button;
-use Bitrix\UI\Buttons\Color;
-use Bitrix\UI\Toolbar\ButtonLocation;
+
 Bitrix\Main\Page\Asset::getInstance()->addCss('/bitrix/css/main/grid/webform-button.css');
 
 // Выводим 2 поля и кнопку скачать и добавляем лоудер
 
 ?>
-<form method="get" action="<?=$APPLICATION->GetCurPage()?>">
-    <input class="field" type="date" name="search_date_from" value="<?=$arResult['SEARCH_DATE_FROM']?>" placeholder="Дата от">
-    <input class="field" type="date" name="search_date_to" value="<?=$arResult['SEARCH_DATE_TO']?>" placeholder="Дата до">
+<form method="get" action="<?= $APPLICATION->GetCurPage() ?>">
+    <input class="field" type="date" name="search_date_from" value="<?= $arResult['SEARCH_DATE_FROM'] ?>" placeholder="Дата от">
+    <input class="field" type="date" name="search_date_to" value="<?= $arResult['SEARCH_DATE_TO'] ?>" placeholder="Дата до">
     <button type="submit">Посмотреть</button>
     <button type="submit" name="mode" value="excel">Скачать</button>
 </form>
 <br>
+
 <?php
 $APPLICATION->IncludeComponent(
-    'bitrix:main.ui.grid', '',
+    'bitrix:main.ui.grid',
+    '',
     [
         'GRID_ID' => 'orders-sap',
         'HEADERS' => $arResult['HEADERS'],

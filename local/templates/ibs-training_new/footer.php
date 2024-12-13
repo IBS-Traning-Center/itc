@@ -1,9 +1,10 @@
 <?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+</main>
 <?php global $APPLICATION; ?>
 <?php $APPLICATION->IncludeComponent(
     "bitrix:form.result.new",
     "main.feedback",
-    Array(
+    array(
         "CACHE_TIME" => "3600",
         "CACHE_TYPE" => "A",
         "CHAIN_ITEM_LINK" => "",
@@ -15,10 +16,10 @@
         "SUCCESS_URL" => "",
         "AJAX_MODE" => "Y",
         "USE_EXTENDED_ERRORS" => "N",
-        "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
+        "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
         "WEB_FORM_ID" => "39"
     )
-);?>
+); ?>
 <footer class="footer">
     <div class="container">
         <div class="top-menu-block-footer">
@@ -95,7 +96,7 @@
         <p class="f-16 show-mobile-full">
             <span>Развернуть</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 12H8.00001L8.70712 11.2929L8.70711 11.2929L14 6L13.2929 5.29289L8.00001 10.5858L2.70712 5.29289L2.00001 6L7.29289 11.2929L8 12Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 12H8.00001L8.70712 11.2929L8.70711 11.2929L14 6L13.2929 5.29289L8.00001 10.5858L2.70712 5.29289L2.00001 6L7.29289 11.2929L8 12Z" fill="white" />
             </svg>
         </p>
         <div class="text-center">
@@ -104,7 +105,7 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         function getCookie(name) {
             let matches = document.cookie.match(new RegExp(
                 "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
@@ -114,17 +115,17 @@
 
         if (getCookie('notice') !== 'Y') {
             $('.cookie-notice').addClass('show');
-            $('.close-notice').click(function () {
+            $('.close-notice').click(function() {
                 document.cookie = 'notice=Y'
                 $('.cookie-notice').removeClass('show');
             });
         }
     });
 </script>
-<div <?php if ($_REQUEST["formresult"] == "addok") { ?>style="display: block;"<?php } ?> class="mask">
+<div <?php if ($_REQUEST["formresult"] == "addok") { ?>style="display: block;" <?php } ?> class="mask">
     <div class="success-message">
         <a href="#" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
-        Спасибо! <br/>Форма отправлена успешно.
+        Спасибо! <br />Форма отправлена успешно.
     </div>
 </div>
 <div id="talent-search" class="modals" style="display: none">
@@ -133,17 +134,17 @@
         <div class="modal__box">
             <div class="modal__close">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                     y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
-                        <path fill="#ffffff"
-                              d="M538.7,500L981.9,56.8c10.8-10.8,10.8-27.9,0-38.7c-10.8-10.8-27.9-10.8-38.7,0L500,461.3L56.8,18.1C46,7.3,28.9,7.3,18.1,18.1S7.3,46,18.1,56.8L461.3,500L18.1,943.2c-10.8,10.8-10.8,27.9,0,38.7c10.8,10.8,27.9,10.8,38.7,0L500,538.7l443.2,443.2c10.8,10.8,27.9,10.8,38.7,0c10.8-10.8,10.8-27.9,0-38.7L538.7,500z"/>
-                    </svg>
+                    y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                    <path fill="#ffffff"
+                        d="M538.7,500L981.9,56.8c10.8-10.8,10.8-27.9,0-38.7c-10.8-10.8-27.9-10.8-38.7,0L500,461.3L56.8,18.1C46,7.3,28.9,7.3,18.1,18.1S7.3,46,18.1,56.8L461.3,500L18.1,943.2c-10.8,10.8-10.8,27.9,0,38.7c10.8,10.8,27.9,10.8,38.7,0L500,538.7l443.2,443.2c10.8,10.8,27.9,10.8,38.7,0c10.8-10.8,10.8-27.9,0-38.7L538.7,500z" />
+                </svg>
             </div>
             <div class="modal__header">
                 <div class="modal__title section-box__title"><b>Стать тренером</b></div>
             </div>
             <div class="modal__main">
                 <form class="callback-mini form" name="talent-search" data-form-type="webform" data-form-id="20"
-                      enctype="multipart/form-data">
+                    enctype="multipart/form-data">
                     <div class="form__content">
                         <div class="fields">
                             <?= bitrix_sessid_post() ?>
@@ -163,11 +164,11 @@
                             </label>
                             <label class="field-box">
                                 <input type="text" class="field" name="specialisation"
-                                       placeholder="Специализация и ключевые области знаний" value="">
+                                    placeholder="Специализация и ключевые области знаний" value="">
                             </label>
                             <label class="field-box">
                                 <input type="text" class="field" name="prof"
-                                       placeholder="Страница в соц.сетях (LinkedIn, Хабр)" value="">
+                                    placeholder="Страница в соц.сетях (LinkedIn, Хабр)" value="">
                             </label>
                             <div class="form-section file-box">
                                 <div class="click-wrap">
@@ -181,7 +182,7 @@
                             <div class="form-row">
                                 <label class="field-box _wide">
                                     <textarea class="field" name="message"
-                                              placeholder="Дополнительная информация"></textarea>
+                                        placeholder="Дополнительная информация"></textarea>
                                 </label>
                             </div>
                             <br>
@@ -213,9 +214,11 @@
 <div id="background-loader"></div>
 
 <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function() {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
         s1.async = true;
         s1.src = 'https://embed.tawk.to/56c443c6427448592519f5af/default';
         s1.charset = 'UTF-8';
@@ -240,10 +243,11 @@
 <!-- Google Code for tawk.to Chat Conversion -->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {};
-    Tawk_API.onChatStarted = function () {
+    Tawk_API.onChatStarted = function() {
         window.targetEvents.tawk();
     };
 </script>
 <?php $APPLICATION->IncludeComponent('luxoft:vue.eventbus', ''); ?>
 </body>
+
 </html>
