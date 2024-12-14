@@ -19,13 +19,14 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
             <input type="text" placeholder="Контактный e-mail" name="form_email_772" value="">
         </div>
         <div class="form-section">
-            <input type="text" placeholder="Компания" name="form_email_770" value="">
+            <input type="text" placeholder="Компания" name="form_text_770" value="">
         </div>
         <div class="form-section">
-            <textarea placeholder="Сообщение" name="form_email_774"></textarea>
+            <textarea placeholder="Сообщение" name="form_textarea_774"></textarea>
         </div>
 
-        <input type="hidden" name="form_hidden_695" value="http://www.luxoft-training.ru<?= $APPLICATION->GetCurPage(); ?>">
+        <input type="hidden" name="form_hidden_948" id="clientID" value="">
+        <input type="hidden" name="form_hidden_775" value="http://ibs-training.ru<?= $APPLICATION->GetCurPage(); ?>">
         <label class="agree-text">
             <input class="form-reg-agree" checked="checked" name="agree" value="Y" type="checkbox"
             />Настоящим я подтверждаю, что я ознакомлен с <a style="color: #fff; text-decoration: underline;" target="_blank" href="/terms-of-use/">Условиями использования</a>, условия мне понятны и я согласен соблюдать их.
@@ -65,5 +66,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
             }
         });
 
+        ym(23056159, 'getClientID', function(clientID) {
+            document.getElementById('clientID').value = clientID;
+        });
     })
 </script>

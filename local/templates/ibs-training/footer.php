@@ -1,5 +1,4 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
-<? if (
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?><? if (
     $APPLICATION->GetCurDir() != "/frdo-form/"
     && $_SERVER['REAL_FILE_PATH'] !== '/frdo-form/detail.php'
     && $APPLICATION->GetCurDir() != "/talent-search/"
@@ -47,11 +46,13 @@
                 <a class="footer__col-item" href="/sitemap.html">Карта сайта</a>
                 <a class="footer__col-item" href="/terms-of-use/">Условия использования</a>
                 <a class="footer__col-item" href="/privacy-policy/">Политика в сфере персональных данных</a>
+                <a class="footer__col-item" href="/anti-corruption/">Антикоррупционная политика</a>
             </div>
             <div class="footer__col _contacts" itemscope="" itemtype="http://schema.org/Organization">
                 <span style="display: none" itemprop="name">IBS Training Center</span>
                 <a class="footer__col-item" href="/contacts/">Контакты:</a>
                 <a class="footer__col-item" itemprop="telephone" href="tel:84956096967" style="color: inherit;font-weight: 200;">+7 (495) 609-6967</a>
+                <a class="footer__col-item" itemprop="telephone" href="tel:89310096926" style="color: inherit;font-weight: 200;">+7 (931) 009-6926</a>
                 <a class="footer__col-item" itemprop="email" href="mailto:education@ibs.ru" style="color: inherit;font-weight: 200;">education@ibs.ru</a>
                 <a class="footer__col-item">Адрес:</a>
                 <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" style="max-width: 240px;line-height: 1.4;">
@@ -59,39 +60,23 @@
                     <span style="display: inline-block" itemprop="streetAddress">ул. Складочная, д. 3, стр. 1</span>
                 </div>
             </div>
-            <?php
-            if (false) {?>
-                <div class="footer__col _certificates">
-                    <div class="footer-certificate">
-                        <div class="footer-certificates__title"><b>Сертификации</b></div>
-                        <ul class="footer-certificate__list">
-                            <li class="footer-certificate__item">
-                                <img class="footer-certificate__image"
-                                     src="/local/assets/images/footer-certificate-1.png" alt="">
-                            </li>
-                            <li class="footer-certificate__item">
-                                <img class="footer-certificate__image"
-                                     src="/local/assets/images/footer-certificate-4.png" alt="">
-                            </li>
-
-                            <? if (false) { ?>
-                                <li class="footer-certificate__item">
-                                    <img class="footer-certificate__image"
-                                         src="/local/assets/images/footer-certificate-3.png" alt="">
-                                </li>
-                            <? } ?>
-                            <li class="footer-certificate__item">
-                                <img class="footer-certificate__image"
-                                     src="/local/assets/images/footer-certificate-2.png" alt="">
-                            </li>
-                            <li class="footer-certificate__item">
-                                <img class="footer-certificate__image"
-                                     src="/local/assets/images/footer-certificate-5.png" alt="">
-                            </li>
-                        </ul>
-                    </div>
+            <div class="footer__col _certificates">
+                <div class="footer-certificate">
+                    <a class="footer__col-item" style="font-size: 18px;font-weight: 600;">Сертификат соответствия:</a>
+                    <ul class="footer-certificate__list" style="max-width: 70%;">
+                        <li>
+                            <a style="color: inherit;font-weight: 200;font-size: 18px;line-height: 24px;">
+                                Качество обучения обеспечено сертифицированной системой менеджмента качества, соответствующей требованиям стандарта ГОСТ Р ИСО 9001-2015
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about/news/Uchebnyy_tsentr_IBS_poluchil_sertifikat_GOST_R_ISO_9001_2015/" target="_blank">
+                            <img src="/local/assets/images/footer-certificate-6.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            <?php }?>
+            </div>
         </div>
         <div class="footer__row">
             <div class="copyright">© <?= date('Y') ?> IBS, all rights reserved</div>
@@ -113,9 +98,7 @@
     )
 ); ?>
 <div class="cookie-notice">
-    <p>Сайт IBS Training Center использует cookie. Это дает нам возможность следить за корректной работой сайта, а также
-        анализировать данные, чтобы развивать наши продукты и сервисы. Посещая сайт, вы соглашаетесь с обработкой ваших
-        персональных данных. В случае несогласия вам следует покинуть его</p>
+    <p>Файлы куки — это как ваши любимые библиотеки и фреймворки: они помогают нам обеспечить лучший опыт для вас. Подтвердите согласие с политикой конфиденциальности, нажав «Принимаю условия», чтобы продолжить.</p>
     <br>
     <div class="text-center"><a href="javascript:void(0)" style="margin-bottom: 0;"
                                 class="sign-in close-notice btn-primary">Принимаю условия</a></div>
@@ -226,20 +209,48 @@
     </div>
 </div>
 
+<script>
+    window.addEventListener('onBitrixLiveChat', function(event){
+        var widget = event.detail.widget;
+        widget.setOption('checkSameDomain', false);
+    });
 
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/56c443c6427448592519f5af/default';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
+    window.addEventListener('onBitrixLiveChat', function(event)
+    {
+        var widget = event.detail.widget;
+
+        // Обработка событий 
+        widget.subscribe({
+            type: BX.LiveChatWidget.SubscriptionType.userMessage,
+            callback: function(data) {
+        
+            // любая команда
+            if (typeof(dataLayer) == 'undefined')
+                {
+                dataLayer = [];
+                }
+                dataLayer.push({
+                    "ecommerce": {
+                        "purchase": {
+                            "actionField": {
+                                "id" : "chatsend",
+                                "goal_id" : "351203050"
+                            },
+                            "products": [ {} ]
+                        }
+                    }
+                });
+            }
+        });
+    });
 </script>
 
-<!--End of Tawk.to Script-->
+<script type="text/javascript">
+    (function(w,d,u){
+        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+    })(window,document,'https://crm.ibs-training.ru/upload/crm/site_button/loader_2_43u4sb.js');
+</script>
 
 <!-- Код тега ремаркетинга Google -->
 <!--------------------------------------------------
@@ -253,12 +264,6 @@
     /* ]]> */
 </script>
 <!-- Google Code for tawk.to Chat Conversion -->
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {};
-    Tawk_API.onChatStarted = function () {
-        window.targetEvents.tawk();
-    };
-</script>
 <?php $APPLICATION->IncludeComponent('luxoft:vue.eventbus', ''); ?>
 </body>
 </html>

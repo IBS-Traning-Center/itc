@@ -62,6 +62,7 @@ if ($arResult["isFormTitle"])
                           </div>
                           <input type="text" name="form_text_691" value="">
 				</div>
+                          <input type="hidden" name="form_hidden_950" id="clientID" value="">
 
 <?
 if($arResult["isUseCaptcha"] == "Y")
@@ -96,7 +97,7 @@ if($arResult["isUseCaptcha"] == "Y")
 ?>
 <script type="text/javascript">
 	$(document).ready(function() {
-$('.checkspam').val('iamnotbot');
+		$('.checkspam').val('iamnotbot');
 		$('#form-reg-agree').change(function() {
 			if ($(this).prop('checked')==true) {
 				console.info($(this).prop('checked'));
@@ -135,5 +136,9 @@ $('.checkspam').val('iamnotbot');
 					return false;
 			}
 		});
+
+		ym(23056159, 'getClientID', function(clientID) {
+            		document.getElementById('clientID').value = clientID;
+        	});
 	});
 </script>

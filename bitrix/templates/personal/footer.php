@@ -59,16 +59,18 @@
     Array("MODE"=>"php")
 );?>
 
+<script>
+    window.addEventListener('onBitrixLiveChat', function(event){
+        var widget = event.detail.widget;
+        widget.setOption('checkSameDomain', false);
+    });
+</script>
+
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/56c443c6427448592519f5af/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+    (function(w,d,u){
+        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+    })(window,document,'https://crm.ibs-training.ru/upload/crm/site_button/loader_2_43u4sb.js');
 </script>
 <!--End of Tawk.to Script-->
 

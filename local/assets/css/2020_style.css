@@ -2087,7 +2087,6 @@ a.footer__col-item {
     }
 
     .footer-certificate__list {
-        margin: 0 -20px -20px;
         flex-wrap: wrap;
         justify-content: space-between;
         max-width: 224px;
@@ -2224,7 +2223,6 @@ a.footer__col-item {
         margin-bottom: 16px;
     }
     .footer__col._certificates {
-        padding-left: 10px;
         margin-left: 0;
         border-left: none;
     }

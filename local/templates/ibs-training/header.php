@@ -42,8 +42,7 @@ Asset::getInstance()->addJs( '/local/vendors/script.js');
 
 $application = Application::getInstance();
 $request = $application->getContext()->getRequest();
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta name="yandex-verification" content="a63abf59d6bf064e"/>
@@ -424,4 +423,3 @@ $cntBasketItems = CSaleBasket::GetList(
             <? } ?>
             <div class="one-big-wrap <? if ($APPLICATION->GetProperty("SHOW_FULL_PAGE") == "Y") { ?>no-margin<? } ?>">
                 <? } ?>
-

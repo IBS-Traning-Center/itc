@@ -263,7 +263,7 @@ class CertificationController extends JsonController
                 'N',
             );
 
-            if ($eventSubscribe) {
+            /* if ($eventSubscribe) {
                 if (class_exists('CRest')) {
                     \CRest::call(
                         'crm.lead.add',
@@ -281,7 +281,7 @@ class CertificationController extends JsonController
                         ]
                     );
                 }
-            }
+            } */
 
 
             $eventResult = \CEvent::Send(
