@@ -156,7 +156,8 @@ $APPLICATION->SetPageProperty("description", "Получите бумажный 
 						<div class="form-row">
  <label class="field-box _wide"> <textarea class="field" name="message" placeholder="Сообщение"></textarea> </label>
 						</div>
- <br>
+<input class="field" type="hidden" name="cid" id="clientID" value="">
+<br>
  <label class="agree-text" style="color: #003979"> <input checked="checked" name="agree" value="Y" type="checkbox">Настоящим я подтверждаю, что я ознакомлен с <a style="text-decoration: underline;" target="_blank" href="/terms-of-use/">Условиями использования</a>, условия мне понятны и я согласен соблюдать их.</label> <label class="agree-text" style="color: #003979"> <input checked="checked" name="agree-2" value="Y" type="checkbox">
 						Я ознакомлен с порядком обработки моих персональных данных согласно <a style="text-decoration: underline; color: #fb9024" target="_blank" href="/privacy-policy/">Политике в сфере персональных данных</a>. </label>
 					</div>
@@ -624,4 +625,8 @@ $APPLICATION->SetPageProperty("description", "Получите бумажный 
                 }
             })
         })
+
+    ym(23056159, 'getClientID', function(clientID) {
+        document.getElementById('clientID').value = clientID;
+    });
 </script><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

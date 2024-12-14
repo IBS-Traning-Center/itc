@@ -17,7 +17,7 @@
             <label class="field-box">
                 <input class="field" type="text" name="phone" placeholder="Телефон" value="">
             </label>
-            <label class="field-box" style="display: none">
+            <label class="field-box">
                 <input class="field" type="text" name="message" placeholder="Сообщение" value="">
             </label>
             <label class="agree-text"><input checked="checked" name="agree" value="Y" type="checkbox">Настоящим я подтверждаю, что я ознакомлен с <a style="text-decoration: underline;" target="_blank" href="/terms-of-use/">Terms of use</a>, условия мне понятны и я согласен соблюдать их.</label>

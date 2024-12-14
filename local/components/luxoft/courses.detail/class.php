@@ -141,7 +141,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 if ($map[$object][$arValue[0]]) {
                     $arValue[0] = $map[$object][$arValue[0]];
                     $result[] = implode('.', $arValue);
-                } elseif(!isset($map[$object][$arValue[0]])) {
+                } elseif (!isset($map[$object][$arValue[0]])) {
                     $result[] = implode('.', $arValue);
                 }
             }
@@ -151,7 +151,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             if ($map[$object][$arValue[0]]) {
                 $arValue[0] = $map[$object][$arValue[0]];
                 $property = implode('.', $arValue);
-            } elseif(!isset($map[$object][$arValue[0]])) {
+            } elseif (!isset($map[$object][$arValue[0]])) {
                 $property = implode('.', $arValue);
             }
             return $property;
@@ -604,7 +604,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             'filter' => [
                 'ACTIVE' => 'Y',
                 //"<{$this->mapping('schedule','startDate')}.VALUE" => date('Y-m-d'),
-                ">={$this->mapping('schedule','endDate')}.VALUE" => date('Y-m-d')
+                ">={$this->mapping('schedule', 'endDate')}.VALUE" => date('Y-m-d')
             ],
             'order' => [$this->mapping('schedule', 'startDate.VALUE') => 'ASC', $this->mapping('schedule', 'endDate.VALUE') => 'ASC'],
             'select' => $this->mapping('schedule', [
@@ -698,7 +698,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                         'currency' => $arPrice['RESULT_PRICE']['CURRENCY']
                     ];
                     unset($arPrice);
-                } elseif ($collectionItem->has($this->mapping('schedule', 'price'))
+                } elseif (
+                    $collectionItem->has($this->mapping('schedule', 'price'))
                     && $collectionItem->get($this->mapping('schedule', 'price'))->getValue()
                 ) {
                     $currentItem['sale'] = [
@@ -1072,7 +1073,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
     public function executeComponent()
     {
         //TODO кеширование
-        if ($this->checkModules()
+        if (
+            $this->checkModules()
             && $this->checkRequiredParameters()
         ) {
             $this->setInitData();
@@ -1105,7 +1107,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                     'catalog' => '/training/katalog_kursov/',
                 ];
 
-//                TODO переписать кусок
+                //                TODO переписать кусок
                 foreach ($this->arResult['schedule'] as $scheduleItem) {
                     $this->arResult['scheduleId'] = (string)$scheduleItem['id'];
                     if (!empty($ID_TIME = $this->request['ID_TIME'])) {
@@ -1122,7 +1124,6 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 }
 
                 $this->setSeoParams();
-
             } else {
                 Tools::process404(
                     Loc::getMessage('ERROR_404'),
@@ -1170,8 +1171,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
         $scheduleDateStart = '',
         $scheduleDateEnd = '',
         $recommendations = []
-    ): array
-    {
+    ): array {
         $application = \Bitrix\Main\Application::getInstance();
         $request = $application->getContext()->getRequest();
 

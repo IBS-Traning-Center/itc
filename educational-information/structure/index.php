@@ -29,7 +29,11 @@ $APPLICATION->SetTitle("Структура и органы управления 
     <br>
 </div>
 <p>
-    <b>Телефон:</b> <span class="less"> +7 (495) 609-6967</span>
+    <b>Телефоны:</b>
+    <span class="less">
+        <a href="tel:+7 (495) 609-6967">+7 (495) 609-6967</a>,
+        <a href="tel:+7 (931) 009-6926">+7 (931) 009-6926</a>
+    </span>
 </p>
 <p>
     <b>E-mail:</b> <span class="less"><a title="Написать письмо" href="mailto:education@ibs.ru">education@ibs.ru</a></span>
