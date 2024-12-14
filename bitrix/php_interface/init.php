@@ -3,13 +3,6 @@
 use Bitrix\Main\EventManager;
 use Luxoft\Dev\Tools;
 
-function debug($var)
-{
-    print_r('<pre>');
-    print_r($var);
-    print_r('</pre>');
-}
-
 define('INIT_DIR', dirname(__FILE__));
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/local/lib/bitrix24.rest/CRest.php");

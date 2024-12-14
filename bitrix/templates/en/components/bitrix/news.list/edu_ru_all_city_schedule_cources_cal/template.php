@@ -91,7 +91,7 @@ foreach ($arResult["ITEMS"] as $arItem): ?>
     $schedule_enddate = $arItem['PROPERTIES']['enddate']['VALUE'];
     $schedule_enddate_origin = date("Y-m-d", strtotime($arItem['PROPERTIES']['enddate']['VALUE']));
     $schedule_time = $arItem['PROPERTIES']['schedule_time']['VALUE'];
-    $schedule_description = $arItem['PROPERTIES']['schedule_description']['VALUE'] ? $arItem['PROPERTIES']['schedule_description']['VALUE']['TEXT'] : '';
+    $schedule_description = $arItem['PROPERTIES']['schedule_description']['VALUE'] ? $arItem['PROPERTIES']['schedule_description']['VALUE'] : '';
     $schedule_price = $arItem['PROPERTIES']['schedule_price']['VALUE'];
     $schedule_onl_price = $arItem['PROPERTIES']['schedule_onl_price']['VALUE'];
     $schedule_duration = $arItem['PROPERTIES']['schedule_duration']['VALUE'];
