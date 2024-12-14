@@ -3,7 +3,7 @@
 <?//print_r($arResult["ACCOUNT_LIST"][0]["ACCOUNT_LIST"]["CURRENT_BUDGET"])?>
 <?
 foreach ($arResult["ACCOUNT_LIST"] as $arList) {
-	if ($arList["CURRENCY"]["CURRENCY"]=="RUB") {
+	if (is_array($arList) && is_array($arList["CURRENCY"]) && $arList["CURRENCY"]["CURRENCY"]=="RUB") {
 		$value=$arList["ACCOUNT_LIST"]["CURRENT_BUDGET"];
 	}
 }

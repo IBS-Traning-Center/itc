@@ -1,7 +1,12 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Поиск");
+<?php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
+global $APPLICATION;
+
+$APPLICATION->SetTitle('Результат поиска');
 $GLOBALS['arFilterSearch'] = ['ACTIVE' => 'Y'];
-?> <?$APPLICATION->IncludeComponent(
+?>
+<?php $APPLICATION->IncludeComponent(
 	"bitrix:search.page",
 	"clear1",
 	array(
@@ -58,26 +63,6 @@ $GLOBALS['arFilterSearch'] = ['ACTIVE' => 'Y'];
 		)
 	),
 	false
-);?><?$APPLICATION->IncludeComponent(
-	"bitrix:search.tags.cloud",
-	"",
-	Array(
-		"FONT_MAX" => "50",
-		"FONT_MIN" => "10",
-		"COLOR_NEW" => "3E74E6",
-		"COLOR_OLD" => "C0C0C0",
-		"PERIOD_NEW_TAGS" => "",
-		"SHOW_CHAIN" => "Y",
-		"COLOR_TYPE" => "Y",
-		"WIDTH" => "100%",
-		"SORT" => "NAME",
-		"PAGE_ELEMENTS" => "150",
-		"PERIOD" => "",
-		"URL_SEARCH" => "/search/index.php",
-		"TAGS_INHERIT" => "Y",
-		"CHECK_DATES" => "N",
-		"arrFILTER" => "all",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600"
-	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php"); ?>

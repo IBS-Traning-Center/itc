@@ -19,7 +19,7 @@ $lang = [
 ];
 
 if (strlen($arResult["ERROR_MESSAGE"]) <= 0) {
-    if (count($arResult["items"]) > 0) { ?>
+    if ($arResult["items"] && count($arResult["items"]) > 0) { ?>
         <div class="basket-page" id="basketPage"></div>
         <script>
             if(typeof window.vueData === 'undefined') {

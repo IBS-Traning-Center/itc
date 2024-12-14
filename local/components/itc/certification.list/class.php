@@ -44,7 +44,6 @@ extends CBitrixComponent
             if ($date) {
                 $date = (new DateTime($date, 'Y-m-d H:i:s'))->format('d.m.Y');
             }
-
             $scheduleItem = [
                 'id' => $item->getId(),
                 'certificationId' => $item->getCertification()
@@ -61,7 +60,7 @@ extends CBitrixComponent
         }, $scheduleCollection->getAll());
 
         $certificationCollection = ElementCertificationTable::getList([
-            'select' => ['id', 'active', 'name', 'preview_picture', 'type', 'level', 'duration', 'time'],
+            'select' => ['id', 'active', 'name', 'preview_picture', 'type', 'level', 'duration', 'time', 'COMPLEXITY.ITEM'],
             'filter' => ['active' => true, 'id' => array_column($schedule, 'certificationId')],
         ])->fetchCollection();
 
@@ -69,12 +68,15 @@ extends CBitrixComponent
             $previewPictureId = $item->getPreviewPicture() ?? '';
             $previewPicture = $previewPictureId ? \CFile::GetPath($previewPictureId) : '';
 
+
             $result[$item->getId()] = [
                 'id' => $item->getId(),
                 'logo' => $previewPicture,
                 'name' => $item->getName(),
                 'type' => $item->getType()
                     ? $item->getType()->getValue() : '',
+                'complexity' => $item->getComplexity()
+                    ? $item->getComplexity()->getItem()->getValue() : '',
                 'duration' => $item->getDuration()
                     ? $item->getDuration()->getValue() : '',
                 'time'  => $item->getTime()

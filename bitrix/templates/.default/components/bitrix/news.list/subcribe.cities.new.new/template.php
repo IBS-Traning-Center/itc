@@ -111,7 +111,7 @@
 	<? $ii=$ii+1;?>
 <?endforeach;?>
 				
-						<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
+						<!-- <table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
 							<tr>
 								<td colspan="4">
 								<table cellspacing="0" cellpadding="0" border="0" style="width: 676px; border-collapse:collapse;">
@@ -254,7 +254,7 @@
 										<img src="/images/email/spacer.gif" height="25" alt="" border="0"/>
 									</td>
 								</tr>
-								</table>
+								</table> -->
 								
 									
 							

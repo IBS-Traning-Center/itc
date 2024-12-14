@@ -1,0 +1,130 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Курсы", 
+		"", 
+		Array(), 
+		Array("TITLE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Каталог курсов", 
+		"/catalog/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Бесплатные", 
+		"/timetable/index.php?type=events", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Расписание курсов", 
+		"/timetable/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О нас", 
+		"", 
+		Array(), 
+		Array("TITLE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сертификация", 
+		"/certification/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Основные сведения", 
+		"/contacts/structure/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Руководство", 
+		"contacts/management/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Юридическая информация", 
+		"/contacts/details/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Офисы", 
+		"/contacts/", 
+		Array(), 
+		Array("TITLE"=>"Y", "OFFICE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Москва", 
+		"/contacts/?map=moskva", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"", 
+		Array(), 
+		Array("TITLE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"+7 (495) 609-6967", 
+		"84956096967", 
+		Array(), 
+		Array("PHONE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"+7 (931) 009-6926", 
+		"89310096926", 
+		Array(), 
+		Array("PHONE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"education@ibs.ru", 
+		"", 
+		Array(), 
+		Array("MAIL"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Сертификат соответствия", 
+		"", 
+		Array(), 
+		Array("TITLE"=>"Y", "CERTIFICATE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Качество обучения обеспечено сертифицированной системой менеджмента качества, соответствующей требованиям стандарта ГОСТ Р ИСО 9001-2015", 
+		"", 
+		Array(), 
+		Array("IMG"=>"/local/assets/images/footer-certificate-6.png"), 
+		"" 
+	)
+);
+?>

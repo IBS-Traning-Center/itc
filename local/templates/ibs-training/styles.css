@@ -258,3 +258,6 @@ body .testing-exp:after{
         display: block;
     }
 }*/
+.table-responsive{
+    display: none !important;
+}

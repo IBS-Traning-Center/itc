@@ -1,0 +1,114 @@
+.pictures-block {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 48px;
+    align-items: center;
+    overflow-x: scroll;
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--black);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.pictures-block::-webkit-scrollbar {
+    display: none;
+}
+
+.pictures-block .picture-item {
+    max-width: 250px;
+    display: flex;
+    flex-shrink: 0;
+    margin-right: 48px;
+}
+
+.pictures-block .slick-list,
+.pictures-block .slick-list .slick-track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pictures-block .picture-item:last-child {
+    margin-right: 0;
+}
+
+.pictures-block .picture-item img {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.roles-content {
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--black);
+}
+
+.roles-content ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 56px;
+    row-gap: 24px;
+}
+
+.roles-content ul li {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+}
+
+.roles-content ul li:before {
+    content: '';
+    display: block;
+    min-width: 6px;
+    max-width: 6px;
+    min-height: 6px;
+    max-height: 6px;
+    border-radius: 50%;
+    background-color: var(--button-blue);
+    margin: 11px;
+}
+
+.roles-content:last-child {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+@media (max-width: 1180px) {
+    .pictures-block .picture-item img {
+        max-height: 40px;
+    }
+
+    .pictures-block {
+        gap: 17px;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+
+    .roles-content ul {
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 0;
+        row-gap: 16px;
+    }
+
+    .roles-content ul li::before {
+        min-width: 4.12px;
+        max-width: 4.12px;
+        min-height: 4.12px;
+        max-height: 4.12px;
+    }
+
+    .roles-content {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+
+    .pictures-block .picture-item {
+        max-width: 120px;
+        margin-right: 17px;
+    }
+}

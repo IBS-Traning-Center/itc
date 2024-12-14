@@ -356,38 +356,39 @@ function plural_form($number, $after) {
 
 <?
 	$sortirovka=0;
-	while (list($key, $value) = each($arValueOfCourses)) {
-		$sortirovka_new=$value["sort"];
-		?>
-        <?switch ($value["cat_id"]) {
-        case "5735":
-        $icon="buisness";
-        break;
-		case "53918":
-		case "84094":
-        $icon="buisness";
-        break;
-        case "5725":
-        $icon="analys";
-        break;
-		case "84093":
-        case "5730":
-		case "84095":
-        $icon="developer-icon";
-        break;
-		case "83007":
-        case "5728":
-        $icon="arch";
-        break;
-        case "5729":
-        $icon="test";
-        break;
-		case "83005":
-        case "5723":
-        $icon="management";
-        break;
-		default:
-		$icon="analys";
+
+    foreach ($arValueOfCourses as$key => $value) {
+        $sortirovka_new=$value["sort"];
+
+        switch ($value["cat_id"]) {
+            case "5735":
+                $icon="buisness";
+                break;
+            case "53918":
+            case "84094":
+                $icon="buisness";
+                break;
+            case "5725":
+                $icon="analys";
+                break;
+            case "84093":
+            case "5730":
+            case "84095":
+                $icon="developer-icon";
+                break;
+            case "83007":
+            case "5728":
+                $icon="arch";
+                break;
+            case "5729":
+                $icon="test";
+                break;
+            case "83005":
+            case "5723":
+                $icon="management";
+                break;
+            default:
+                $icon="analys";
         }
         ?>
 

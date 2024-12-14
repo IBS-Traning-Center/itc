@@ -1,13 +1,28 @@
 <?php
+
 use Bitrix\Main\EventManager;
 use Luxoft\Dev\Tools;
-require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
+
+function debug($var)
+{
+    print_r('<pre>');
+    print_r($var);
+    print_r('</pre>');
+}
+
+define('INIT_DIR', dirname(__FILE__));
+
+require_once($_SERVER['DOCUMENT_ROOT'] . "/local/lib/bitrix24.rest/CRest.php");
 
 if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php")) {
     require_once($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php");
 }
 if (Bitrix\Main\Loader::includeModule('luxoft.dev')) {
     \Luxoft\Dev\Core::getInstance();
+}
+
+if (file_exists(INIT_DIR . '/include/constants.php')) {
+    include_once INIT_DIR . '/include/constants.php';
 }
 
 include_once '2021/index.php';
@@ -19,11 +34,11 @@ include "inc_iblock.php";
 
 include "inc_functionality.php";
 include "inc_property.php";
-require_once($_SERVER['DOCUMENT_ROOT']. "/local/lib/bitrix24.rest/CRest.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/local/lib/bitrix24.rest/CRest.php");
 AddEventHandler('main', 'OnBeforeEventSend', "CheckEmailOnBeforeEventSend");
-function CheckEmailOnBeforeEventSend($arFields, & $arTemplate)
+function CheckEmailOnBeforeEventSend($arFields, &$arTemplate)
 {
-    foreach ($arTemplate as & $field) {
+    foreach ($arTemplate as &$field) {
         $field = str_replace('#EMPLOYEE_GROUP#', EMAIL_ADDRESS, $field);
     }
 }
@@ -68,17 +83,27 @@ function OrderPayment($ID, $val)
             ),
             false,
             false,
-            array("ID", "CALLBACK_FUNC", "MODULE",
-                "PRODUCT_ID", "QUANTITY", "DELAY",
-                "CAN_BUY", "PRICE", "WEIGHT")
+            array(
+                "ID",
+                "CALLBACK_FUNC",
+                "MODULE",
+                "PRODUCT_ID",
+                "QUANTITY",
+                "DELAY",
+                "CAN_BUY",
+                "PRICE",
+                "WEIGHT"
+            )
         );
         while ($arItems = $dbBasketItems->Fetch()) {
             if (strlen($arItems["CALLBACK_FUNC"]) > 0) {
-                CSaleBasket::UpdatePrice($arItems["ID"],
+                CSaleBasket::UpdatePrice(
+                    $arItems["ID"],
                     $arItems["CALLBACK_FUNC"],
                     $arItems["MODULE"],
                     $arItems["PRODUCT_ID"],
-                    $arItems["QUANTITY"]);
+                    $arItems["QUANTITY"]
+                );
                 $arItems = CSaleBasket::GetByID($arItems["ID"]);
             }
 
@@ -119,7 +144,6 @@ function OrderPayment($ID, $val)
                             $arSendFields["TEST_NAME"] = $arTest["NAME"];
                         }
                     }
-
                 }
 
 
@@ -136,7 +160,6 @@ function OrderPayment($ID, $val)
                 //die();
 
             }
-
         }
     }
 }
@@ -264,7 +287,6 @@ function BasketUpdate($ID, $arFields)
             $key = array_search($arBasketIt["PRODUCT_ID"], $arrDis);
             if ($key !== false) {
                 unset($arrDis[$key]);
-
             }
         }
     }
@@ -280,7 +302,6 @@ function BasketUpdate($ID, $arFields)
             LocalRedirect('/personal/cart/');
         }
     }
-
 }
 
 AddEventHandler("subscribe", "BeforePostingSendMail", array("MyClass", "BeforePostingSendMailHandler"));
@@ -404,7 +425,8 @@ class MyClass
             }
             if (($ar_fields['PROPERTY_CITY_VALUE'] == "5745")
                 or ($ar_fields['PROPERTY_CITY_VALUE'] == "5746")
-                or ($ar_fields['PROPERTY_CITY_VALUE'] == "5747")) {
+                or ($ar_fields['PROPERTY_CITY_VALUE'] == "5747")
+            ) {
                 $arVariables['currency'] = "GRN";
             } else {
                 $arVariables['currency'] = "RUB";
@@ -463,7 +485,8 @@ class MyClass
 
             if (($ar_fields['PROPERTY_CITY_VALUE'] == "5745")
                 or ($ar_fields['PROPERTY_CITY_VALUE'] == "5746")
-                or ($ar_fields['PROPERTY_CITY_VALUE'] == "5747")) {
+                or ($ar_fields['PROPERTY_CITY_VALUE'] == "5747")
+            ) {
                 $arVariables['currency'] = "GRN";
             } else {
                 $arVariables['currency'] = "RUB";
@@ -472,7 +495,8 @@ class MyClass
                 $arVariables['currency'] = "BYR";
         }
 
-        if ($arFields['CATALOG_GROUP_ID'] !== 3 &&
+        if (
+            $arFields['CATALOG_GROUP_ID'] !== 3 &&
             $arVariables["price"] !== 0
         ) {
             $arFields["PRICE"] = $arVariables["price"];
@@ -503,7 +527,6 @@ class MyClass
         if ($APPLICATION->GetCurDir() == '/system-test-registration/') {
             $arFields["GROUP_ID"][] = 89;
             $arFields["GROUP_ID"][] = 94;
-
         }
     }
 
@@ -694,7 +717,7 @@ class MyClass
             $ELEMENT_ID = $arFields["ID"];
             $IBLOCK_ID = $arFields["IBLOCK_ID"];
             $id_course = $arFields["PROPERTY_VALUES"][225]["$ELEMENT_ID:225"];
-            if (strlen($id_course) > 0) {
+            if (is_string($id_course) && strlen($id_course) > 0) {
                 $arSelect = array("PROPERTY_course_code");
                 $arFilter = array("IBLOCK_ID" => "6", "ID" => $id_course);
                 $res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
@@ -722,7 +745,7 @@ class MyClass
 
             //die();
 
-            if (strlen($id_course) > 0) {
+            if (is_string($id_course) && strlen($id_course) > 0) {
                 $arSelect = array("PROPERTY_course_code");
                 $arFilter = array("IBLOCK_ID" => "6", "ID" => $id_course);
                 $res = CIBlockElement::GetList(array(), $arFilter, false, false, $arSelect);
@@ -747,7 +770,7 @@ class MyClass
             if (strlen($id_class) > 0) {
                 $res = CIBlockSection::GetByID($id_class);
                 if ($ar_res = $res->GetNext()) {
-                    $id_parent_section = $ar_res ["IBLOCK_SECTION_ID"];
+                    $id_parent_section = $ar_res["IBLOCK_SECTION_ID"];
                     CIBlockElement::SetPropertyValues($ELEMENT_ID, $IBLOCK_ID, $id_parent_section, "parent_section_id");
                     $res2 = CIBlockSection::GetByID($id_parent_section);
                     if ($ar_res2 = $res2->GetNext()) {
@@ -755,7 +778,6 @@ class MyClass
                     }
                 }
             }
-
         }
 
         /*
@@ -777,8 +799,21 @@ class MyClass
             $arGroupBy = false;
             $arNavStartParams = false;
             $arFilter = array("IBLOCK_ID" => $arFields["IBLOCK_ID"], "ID" => $arFields["ID"]);
-            $arSelectFields = array("ID", "PROPERTY_FLAG_SEND_MAIL", "PROPERTY_ID_LINKED_COURSES", "PROPERTY_FLAG_TEST_SEND",
-                "PROPERTY_TYPE_EVENT", "PROPERTY_SEND_MAIL_TEXT", "PROPERTY_STARTDATE", "PROPERTY_USE_EMPTY_TPL", "PROPERTY_ID_LINKED_REFER", "PROPERTY_MAX_NUM", "PROPERTY_REGISTRATION_LINK", "PROPERTY_TIME", "PROPERTY_SEND_TITLE");
+            $arSelectFields = array(
+                "ID",
+                "PROPERTY_FLAG_SEND_MAIL",
+                "PROPERTY_ID_LINKED_COURSES",
+                "PROPERTY_FLAG_TEST_SEND",
+                "PROPERTY_TYPE_EVENT",
+                "PROPERTY_SEND_MAIL_TEXT",
+                "PROPERTY_STARTDATE",
+                "PROPERTY_USE_EMPTY_TPL",
+                "PROPERTY_ID_LINKED_REFER",
+                "PROPERTY_MAX_NUM",
+                "PROPERTY_REGISTRATION_LINK",
+                "PROPERTY_TIME",
+                "PROPERTY_SEND_TITLE"
+            );
             $res = CIBlockElement::GetList($arOrder, $arFilter, $arGroupBy, $arNavStartParams, $arSelectFields);
             while ($ob = $res->GetNextElement()) {
                 $arFieldsForEmail = $ob->GetFields();
@@ -812,7 +847,6 @@ class MyClass
                     if (strlen($ar_fields["PROPERTY_FILE_VALUE"]) > 0) {
                         $arSend["MATERIALS_URL"] = "https://ibs-training.ru" . CFile::GetPath($ar_fields['PROPERTY_FILE_VALUE']);
                         $arSend["MATERIALS"] = "Материалы по этому мероприятию  доступны по <a href=" . $arSend['MATERIALS_URL'] . ">ссылке</a>";
-
                     }
                     //global $USER;
                     //if ($USER->GetID() == 1){
@@ -854,9 +888,25 @@ class MyClass
                 $arGroupBy = false;
                 $arNavStartParams = false;
                 $arFilter = array("IBLOCK_ID" => 9, "ACTIVE" => "Y", ">=PROPERTY_STARTDATE" => $todayDate, "PROPERTY_SCHEDULE_COURSE" => $arIDCourses);
-                $arSelectFields = array("ID", "NAME", "PROPERTY_COURSE_CODE", "PROPERTY_STARTDATE", "PROPERTY_ENDDATE", "PROPERTY_SCHEDULE_TIME",
-                    "PROPERTY_SCHEDULE_PRICE", "PROPERTY_SCHEDULE_COURSE.NAME", "PROPERTY_SCHEDULE_DURATION", "PROPERTY_SCHEDULE_TIME", "PROPERTY_CITY.NAME", "PROPERTY_CITY.ID", "PROPERTY_CITY",
-                    "PROPERTY_TEACHER", "PROPERTY_TEACHER.NAME", "PROPERTY_TEACHER.CODE", "PROPERTY_SCHEDULE_COURSE");
+                $arSelectFields = array(
+                    "ID",
+                    "NAME",
+                    "PROPERTY_COURSE_CODE",
+                    "PROPERTY_STARTDATE",
+                    "PROPERTY_ENDDATE",
+                    "PROPERTY_SCHEDULE_TIME",
+                    "PROPERTY_SCHEDULE_PRICE",
+                    "PROPERTY_SCHEDULE_COURSE.NAME",
+                    "PROPERTY_SCHEDULE_DURATION",
+                    "PROPERTY_SCHEDULE_TIME",
+                    "PROPERTY_CITY.NAME",
+                    "PROPERTY_CITY.ID",
+                    "PROPERTY_CITY",
+                    "PROPERTY_TEACHER",
+                    "PROPERTY_TEACHER.NAME",
+                    "PROPERTY_TEACHER.CODE",
+                    "PROPERTY_SCHEDULE_COURSE"
+                );
                 $res = CIBlockElement::GetList($arSort, $arFilter, $arGroupBy, $arNavStartParams, $arSelectFields);
                 $textCourseBlockData = "<p>Приглашаем Вас и Ваших коллег посетить следующие тренинги по данной тематике:</p>";
                 $countLinkedCourses = 0;
@@ -888,7 +938,8 @@ class MyClass
                             //$textCourseBlockData .= "Длительность: ". $ar_fields["PROPERTY_SCHEDULE_DURATION_VALUE"]." часа <br />";
                         }
                         if (($ar_fields["PROPERTY_CITY_VALUE"] == 5745) or ($ar_fields["PROPERTY_CITY_VALUE"] == 5746)
-                            or ($ar_fields["PROPERTY_CITY_VALUE"] == 5747)) {
+                            or ($ar_fields["PROPERTY_CITY_VALUE"] == 5747)
+                        ) {
                             $curCurrency = "грн.";
                         } else {
                             $curCurrency = "руб.";
@@ -915,7 +966,6 @@ class MyClass
                 $textCourseBlockData .= "";
                 if (count($arIDCourses) == 0) {
                     $textCourseBlockData = "";
-
                 }
                 $arSend["BLOCK_COURSES"] = $textCourseBlockData;
                 //
@@ -936,7 +986,6 @@ class MyClass
                             CEvent::Send('EVENTS_SUBSCRIBE', SITE_ID, $arSend, 'N', 71);
                         }
                     }
-
                 } else {
                     //получаем email подписчиков
                     $arOrder = array();
@@ -956,9 +1005,7 @@ class MyClass
                         } else {
                             CEvent::Send('EVENTS_SUBSCRIBE', SITE_ID, $arSend, 'N', 71);
                         }
-
                     }
-
                 }
                 //iwrite($arSend);
                 //die();
@@ -974,8 +1021,17 @@ class MyClass
                 $arGroupBy = false;
                 $arNavStartParams = array();
                 $arFilter = array("IBLOCK_ID" => 73, "ID" => $idLinkedReferenceEvent);
-                $arSelectFields = array("ID", "PROPERTY_TYPE_EVENT", "PROPERTY_VERSION", "PROPERTY_DURATION", "PROPERTY_DESCRIPTION",
-                    "PROPERTY_CONTENT", "PROPERTY_PEOPLE", "PROPERTY_ID_LINKED_COURSES", "PROPERTY_LECTURER");
+                $arSelectFields = array(
+                    "ID",
+                    "PROPERTY_TYPE_EVENT",
+                    "PROPERTY_VERSION",
+                    "PROPERTY_DURATION",
+                    "PROPERTY_DESCRIPTION",
+                    "PROPERTY_CONTENT",
+                    "PROPERTY_PEOPLE",
+                    "PROPERTY_ID_LINKED_COURSES",
+                    "PROPERTY_LECTURER"
+                );
                 $res = CIBlockElement::GetList($arOrder, $arFilter, $arGroupBy, $arNavStartParams, $arSelectFields);
                 while ($ar_fields = $res->GetNext()) {
                     //PROPERTY_TYPE_EVENT
@@ -994,7 +1050,6 @@ class MyClass
                     $arValues['lecturer'] = $ar_fields["PROPERTY_LECTURER_VALUE"];
                     $arValues['ID_LINKED_COURSES'] = $ar_fields["PROPERTY_ID_LINKED_COURSES_VALUE"];
                     $arValues['ID_LINKED_REFER'] = "";
-
                 }
                 CIBlockElement::SetPropertyValuesEx($arFields["ID"], $arFields["IBLOCK_ID"], $arValues);
                 //iwrite($arValues);
@@ -1238,9 +1293,28 @@ class MyClass
                 $arGroupBy = false;
                 $arNavStartParams = false;
                 $arSelectFields = array(
-                    "NAME", "PROPERTY_FULLNAME", "PROPERTY_EMAIL", "PROPERTY_TYPE", "PROPERTY_DATE", "PROPERTY_COMPANY",
-                    "PROPERTY_TELEPHONE", "PROPERTY_CAT_COURSE", "PROPERTY_CITY", "PROPERTY_DOLGNOST", "PROPERTY_DOLGNOST", "PROPERTY_EVENT_CITY", "PROPERTY_EVENT_ID",
-                    "PROPERTY_TIMETABLE_ID", "PROPERTY_COMMENT", "PROPERTY_ID_CITY_ORDER", "PROPERTY_LINK_DISCOUNT", "PROPERTY_lastname", "PROPERTY_firstname", "PROPERTY_middlename", "PROPERTY_CLIENT_ID_YANDEX");
+                    "NAME",
+                    "PROPERTY_FULLNAME",
+                    "PROPERTY_EMAIL",
+                    "PROPERTY_TYPE",
+                    "PROPERTY_DATE",
+                    "PROPERTY_COMPANY",
+                    "PROPERTY_TELEPHONE",
+                    "PROPERTY_CAT_COURSE",
+                    "PROPERTY_CITY",
+                    "PROPERTY_DOLGNOST",
+                    "PROPERTY_DOLGNOST",
+                    "PROPERTY_EVENT_CITY",
+                    "PROPERTY_EVENT_ID",
+                    "PROPERTY_TIMETABLE_ID",
+                    "PROPERTY_COMMENT",
+                    "PROPERTY_ID_CITY_ORDER",
+                    "PROPERTY_LINK_DISCOUNT",
+                    "PROPERTY_lastname",
+                    "PROPERTY_firstname",
+                    "PROPERTY_middlename",
+                    "PROPERTY_CLIENT_ID_YANDEX"
+                );
                 $res2 = CIBlockElement::GetList($arOrder, $arFilter, $arGroupBy, $arNavStartParams, $arSelectFields);
                 while ($ob = $res2->GetNextElement()) {
                     $arFields3 = $ob->GetFields();
@@ -1268,13 +1342,12 @@ class MyClass
                     $clientID = $arFields3['PROPERTY_CLIENT_ID_YANDEX_VALUE'];
 
                     $courseEducationFormat = false;
-                    if($orderer_courseID > 0 && $orderer_courseID != NULL) {
+                    if ($orderer_courseID > 0 && $orderer_courseID != NULL) {
                         $courseTypeData = CIBlockElement::GetList([], ["IBLOCK_ID" => 6, "ID" => $orderer_courseID], false, false, ["PROPERTY_EDUCATION_FORMAT"])->fetch();
                         if ($courseTypeData['PROPERTY_EDUCATION_FORMAT_VALUE']) {
                             $courseEducationFormat = $courseTypeData['PROPERTY_EDUCATION_FORMAT_VALUE'];
                         }
                     }
-
                 }
                 global $USER;
                 if (!$USER->IsAuthorized()) {
@@ -1303,7 +1376,8 @@ class MyClass
                             $password_chars[] = ",.<>/?;:'\"[]{}\|`~!@#\$%^&*()-_+=";
                         $NEW_PASSWORD = $NEW_PASSWORD_CONFIRM = randString($password_min_length + 2, $password_chars);
                         $user = new CUser;
-                        $arAuthResult = $user->Add(array(
+                        $arAuthResult = $user->Add(
+                            array(
                                 "LOGIN" => strtolower($NEW_EMAIL),
                                 "WORK_COMPANY" => $orderer_company,
                                 "NAME" => $firstname,
@@ -1328,7 +1402,6 @@ class MyClass
                                 "LAST_NAME" => "",
                             );
                             CEvent::Send("NEW_USER_LK", SITE_ID, $arEventFields, "Y", "135");
-
                         }
                     }
                 } else {
@@ -1362,7 +1435,7 @@ class MyClass
 
                 $arSend = array(
                     'TEXT' =>
-                        '<b>запись на событие: </b>' . $arFields3["NAME"] .
+                    '<b>запись на событие: </b>' . $arFields3["NAME"] .
                         '<br/> <b>тип: </b>' . $arFields3["PROPERTY_TYPE_VALUE"] .
                         '<br/> <b>дата: </b>' . $arFields3["PROPERTY_DATE_VALUE"] .
                         '<br/> <b>фио: </b>' . $arFields3["PROPERTY_FULLNAME_VALUE"] .
@@ -1408,8 +1481,20 @@ class MyClass
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 78) and (strlen($arFields3["PROPERTY_TIMETABLE_ID_VALUE"]) > 0)) {
                     $arFilterCourseTimetable = array("IBLOCK_ID" => 9, "ACTIVE" => "Y", "ID" => $arFields3["PROPERTY_TIMETABLE_ID_VALUE"]);
                     $arSelectFieldsCourseTimetable = array(
-                        "NAME", "ID", "PROPERTY_SCHEDULE_TIME", "PROPERTY_COURSE_CODE", "PROPERTY_SCHEDULE_COURSE", "PROPERTY_SCHEDULE_DURATION",
-                        "PROPERTY_SCHEDULE_PRICE", "PROPERTY_COURSE_SALE", "PROPERTY_CITY", "PROPERTY_STARTDATE", "PROPERTY_ENDDATE", "PROPERTY_CITY.NAME", "PROPERTY_COURSE_ID",);
+                        "NAME",
+                        "ID",
+                        "PROPERTY_SCHEDULE_TIME",
+                        "PROPERTY_COURSE_CODE",
+                        "PROPERTY_SCHEDULE_COURSE",
+                        "PROPERTY_SCHEDULE_DURATION",
+                        "PROPERTY_SCHEDULE_PRICE",
+                        "PROPERTY_COURSE_SALE",
+                        "PROPERTY_CITY",
+                        "PROPERTY_STARTDATE",
+                        "PROPERTY_ENDDATE",
+                        "PROPERTY_CITY.NAME",
+                        "PROPERTY_COURSE_ID",
+                    );
                     $resTimetable = CIBlockElement::GetList(array(), $arFilterCourseTimetable, false, false, $arSelectFieldsCourseTimetable);
                     while ($obCourseTimetable = $resTimetable->GetNextElement()) {
                         $arFieldsCourseTimetable = $obCourseTimetable->GetFields();
@@ -1524,7 +1609,6 @@ class MyClass
                             ]
                         ]
                     );
-
                 }
 
 
@@ -1572,7 +1656,8 @@ class MyClass
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 78) and
                     (strlen($arFields3["PROPERTY_DATE_VALUE"]) == 0) and
-                    ($pos === false)) {
+                    ($pos === false)
+                ) {
                     if (
                         preg_match("#dxc#", strtolower($arFields["PROPERTY_VALUES"]['company'])) ||
                         preg_match("#luxoft#", strtolower($arFields["PROPERTY_VALUES"]['company'])) ||
@@ -1606,7 +1691,8 @@ class MyClass
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 78) and
                     (strlen($arFields3["PROPERTY_DATE_VALUE"]) == 0) and
-                    ($pos !== false)) {
+                    ($pos !== false)
+                ) {
                     CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 90);
                     //также добавим данного пользоватлея в списко подписчиков на данный тренинг
                     $newRecord = new CIBlockElement;
@@ -1630,7 +1716,8 @@ class MyClass
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 78) and
                     (strlen($arFields3["PROPERTY_DATE_VALUE"]) > 0) and
-                    ($pos === false) and ($arSendEvent['CITY_ID'] != CITY_ID_MOSCOW)) {
+                    ($pos === false) and ($arSendEvent['CITY_ID'] != CITY_ID_MOSCOW)
+                ) {
                     if (
                         preg_match("#dxc#", strtolower($arFields["PROPERTY_VALUES"]['company'])) ||
                         preg_match("#luxoft#", strtolower($arFields["PROPERTY_VALUES"]['company'])) ||
@@ -1647,7 +1734,8 @@ class MyClass
 
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 78) and
                     (strlen($arFields3["PROPERTY_DATE_VALUE"]) > 0) and
-                    ($pos === false) and ($arSendEvent['CITY_ID'] == CITY_ID_MOSCOW)) {
+                    ($pos === false) and ($arSendEvent['CITY_ID'] == CITY_ID_MOSCOW)
+                ) {
                     if (
                         preg_match("#dxc#", strtolower($arFields["PROPERTY_VALUES"]['company'])) ||
                         preg_match("#luxoft#", strtolower($arFields["PROPERTY_VALUES"]['company'])) ||
@@ -1668,7 +1756,8 @@ class MyClass
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 78) and
                     (strlen($arFields3["PROPERTY_DATE_VALUE"]) > 0) and
-                    ($pos !== false)) {
+                    ($pos !== false)
+                ) {
                     CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 82);
                 }
                 /*
@@ -1677,7 +1766,8 @@ class MyClass
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 79) and
                     (strlen($arFields3["PROPERTY_DATE_VALUE"]) > 0) and
-                    ($pos_online === false)) {
+                    ($pos_online === false)
+                ) {
                     $arSendEvent['CLASS_INFO'] = getClassFullInfo($arFields3["PROPERTY_EVENT_ID_VALUE"]);
                     CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 83);
                 }
@@ -1687,7 +1777,8 @@ class MyClass
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 79) and
                     (strlen($arFields3["PROPERTY_DATE_VALUE"]) > 0) and
-                    ($pos_online !== false)) {
+                    ($pos_online !== false)
+                ) {
                     $arSendEvent['CLASS_INFO'] = getClassFullInfo($arFields3["PROPERTY_EVENT_ID_VALUE"]);
                     CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 84);
                 }
@@ -1696,7 +1787,8 @@ class MyClass
                 https://ibs-training.ru/bitrix/admin/message_edit.php?lang=ru&ID=85&type=this&tabControl_active_tab=edit1
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 80) and ($arFieldsSeminar["PROPERTY_TYPE_EVENT_ENUM_ID"] == 91) and
-                    (strlen($arSendEvent['WEBINAR_LINK']) == 0)) {
+                    (strlen($arSendEvent['WEBINAR_LINK']) == 0)
+                ) {
                     CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 85);
                 }
                 /*
@@ -1705,7 +1797,8 @@ class MyClass
                 если существует линк на вебинар
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 80) and ($arFieldsSeminar["PROPERTY_TYPE_EVENT_ENUM_ID"] == 92) and
-                    (strlen($arSendEvent['WEBINAR_LINK']) > 0)) {
+                    (strlen($arSendEvent['WEBINAR_LINK']) > 0)
+                ) {
                     $arSendEvent["EDU_EVENT_TIME"] = $reg_time;
                     $arSendEvent["REGISTRATION_LINK"] = $arFieldsSeminar['PROPERTY_REGISTRATION_LINK_VALUE'];
                     CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 86);
@@ -1728,7 +1821,6 @@ class MyClass
                             ]
                         );
                     }
-
                 }
                 /*
                         8.1 Повод:  Регистрация на Self-learning курс
@@ -1755,7 +1847,6 @@ class MyClass
                             $arSendEvent['CURRENT_COUNT_RECORDS'] = $arNewData['CURRENT_COUNT'];
                             $arSendEvent['MAX_COUNT_RECORDS'] = $vGetMaxCountForEvent;
                             CEvent::Send('EVENTS_NOTIFICATION', SITE_ID, $arSendEvent, "N", 100);
-
                         }
                     }
                     CIBlockElement::SetPropertyValuesEx($arSendEvent['EDU_EVENT_EVENT_ID'], D_SEMINARS_IBLOCK, $arNewData);
@@ -1766,7 +1857,8 @@ class MyClass
                 если существует линк на вебинар  =  пусто
                 */
                 if (($arFields3["PROPERTY_TYPE_ENUM_ID"] == 80) and ($arFieldsSeminar["PROPERTY_TYPE_EVENT_ENUM_ID"] == 92) and
-                    (strlen($arSendEvent['WEBINAR_LINK']) == 0)) {
+                    (strlen($arSendEvent['WEBINAR_LINK']) == 0)
+                ) {
                     $arSendEvent["EDU_EVENT_TIME"] = $reg_time;
                     $arSendEvent["REGISTRATION_LINK"] = $arFieldsSeminar['PROPERTY_REGISTRATION_LINK_VALUE'];
                     $evenwebinar = CEvent::Send('DIFF_EVENTS_SEND', SITE_ID, $arSendEvent, "N", 87);
@@ -1829,7 +1921,7 @@ class MyClass
 
                     $arSendMC = array(
                         'TEXT' =>
-                            '<b>запись на событие: </b>' . $arFields3["NAME"] .
+                        '<b>запись на событие: </b>' . $arFields3["NAME"] .
                             '<br/> <b>тип: </b>' . $arFields3["PROPERTY_TYPE_VALUE"] .
                             '<br/> <b>дата: </b>' . $dateEvent .
                             '<br/> <b>цена: </b>' . $curPrice .
@@ -1949,11 +2041,18 @@ class MyClass
                                 $rsStructure = CIBlockElement::GetList(
                                     array('PROPERTY_START_DAY' => 'ASC'),
                                     array('IBLOCK_ID' => '9', 'ID' => $arSchool['structure']),
-                                    false, false,
+                                    false,
+                                    false,
                                     array(
-                                        'IBLOLCK_ID', 'ID', 'NAME',
-                                        'PROPERTY_SCHEDULE_COURSE', 'PROPERTY_STARTDATE', 'PROPERTY_ENDDATE',
-                                        'PROPERTY_SCHEDULE_TIME', 'PROPERTY_SCHEDULE_PRICE', 'PROPERTY_SCHEDULE_ONL_PRICE',
+                                        'IBLOLCK_ID',
+                                        'ID',
+                                        'NAME',
+                                        'PROPERTY_SCHEDULE_COURSE',
+                                        'PROPERTY_STARTDATE',
+                                        'PROPERTY_ENDDATE',
+                                        'PROPERTY_SCHEDULE_TIME',
+                                        'PROPERTY_SCHEDULE_PRICE',
+                                        'PROPERTY_SCHEDULE_ONL_PRICE',
                                         'PROPERTY_SCHEDULE_DURATION'
                                     )
                                 );
@@ -1979,7 +2078,8 @@ class MyClass
                                         $currentCourse['DATE_RANGE'] = date('d.m.Y', strtotime($currentCourse['DATE_START']));
                                     }
 
-                                    if (!empty($currentCourse['COURSE_ID']) && (
+                                    if (
+                                        !empty($currentCourse['COURSE_ID']) && (
                                             empty($currentCourse['PRICE']) ||
                                             empty($currentCourse['PRICE_UA']) ||
                                             empty($currentCourse['DURATION'])
@@ -1988,7 +2088,8 @@ class MyClass
                                         $rsCourses = CIBlockElement::GetList(
                                             array('PROPERTY_START_DAY' => 'ASC'),
                                             array('IBLOCK_ID' => '6', 'ID' => $arSchool['structure']),
-                                            false, false,
+                                            false,
+                                            false,
                                             array('IBLOLCK_ID', 'ID', 'NAME', 'PROPERTY_COURSE_PRICE', 'COURSE_PRICE_UA', 'COURSE_DURATION')
                                         );
                                         if ($arCourse = $rsCourses->GetNext()) {
@@ -2023,7 +2124,7 @@ class MyClass
 
                         $arSendMC = array(
                             'TEXT' =>
-                                '<b>запись на событие: </b>' . $arFields3["NAME"] .
+                            '<b>запись на событие: </b>' . $arFields3["NAME"] .
                                 '<br/> <b>тип: </b>' . $arFields3["PROPERTY_TYPE_VALUE"] .
                                 '<br/> <b>дата: </b>' . $arSchool['date_start'] .
                                 '<br/> <b>цена: </b>' . $arSchool['current_price'] .
@@ -2148,4 +2249,20 @@ class MyClass
             }
         }
     }
+}
+
+/* Функция отвечающая за вывод "хлебных-крошек" bitrix:breadcrumb */
+function ShowNavChain()
+{
+    global $APPLICATION;
+
+    $APPLICATION->IncludeComponent(
+        'bitrix:breadcrumb',
+        'bread',
+        [
+            'START_FROM' => '0',
+            'PATH' => '',
+            'SITE_ID' => 's1'
+        ]
+    );
 }

@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"telegram", 
+		"https://t.me/IBS_Training_Center", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"vk", 
+		"https://vk.com/ibs_training_center", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"dzen", 
+		"https://dzen.ru/ibs_training_center", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"rutube", 
+		"https://rutube.ru/channel/30034572/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

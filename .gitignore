@@ -18,6 +18,9 @@
 /.htsecure
 /.idea
 /upload
+/.osp
+_log.txt
+test.php
 
 /bitrix/*
 !/bitrix/activities

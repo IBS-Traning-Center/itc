@@ -12,7 +12,6 @@ $PERM["self-education"]["33"]="R";
 $PERM["self-education"]["2"]="D";
 $PERM["self-education"]["*"]="D";
 $PERM["babok-testing"]["*"]="D";
-$PERM["testing"]["*"]="D";
 $PERM["land-new"]["*"]="D";
 $PERM["contacts_older"]["6"]="W";
 $PERM["current-budget"]["*"]="D";

@@ -1,0 +1,24 @@
+.social-footer-menu-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.social-footer-menu-block .social-footer-menu-icon {
+    min-width: 48px;
+    max-width: 48px;
+    min-height: 48px;
+    max-height: 48px;
+    background-color: #1F1F1F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.social-footer-menu-block .social-footer-menu-icon:hover {
+    opacity: 0.6
+}

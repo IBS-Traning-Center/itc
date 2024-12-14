@@ -376,7 +376,7 @@ $cntBasketItems = CSaleBasket::GetList(
     && $APPLICATION->GetCurDir() != "/talent-search/"
     && $APPLICATION->GetCurDir() != "/"
     && $APPLICATION->GetProperty("DONT_SHOW_PAGE_TOP") != "Y"
-    && ERROR_404 != "Y"
+    && "ERROR_404" != "Y"
     ) { ?>
     <section class="bg-main-wrap"
              style="background: url('/local/assets/images/bg-b_dark.png') bottom;     background-color: #083056; background-size: cover;">

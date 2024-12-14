@@ -1,42 +1,49 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Главная", 
-		"/", 
+		"Все курсы", 
+		"/catalog/", 
+		Array(), 
+		Array("CATALOG"=>"Y"), 
+		"" 
+	),
+	Array(
+		"Расписание курсов", 
+		"/timetable/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Обучение", 
-		"/training/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Корпоративным клиентам", 
+		"Корпоративное обучение", 
 		"/corporate/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Тестирование", 
-		"/corporate/testing_it/", 
+		"Оценка персонала", 
+		"/testing/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"О центре", 
-		"/about/", 
+		"Сертификация", 
+		"/certification/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Контакты", 
+		"Блог", 
+		"/about/news/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О нас", 
 		"/contacts/", 
 		Array(), 
 		Array(), 
