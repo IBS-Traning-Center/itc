@@ -96,14 +96,6 @@ if (!empty($arResult)) : ?>
                     <button class="btn-main size-l open-sign-modal">
                         <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                     </button>
-                    <div class="line-buttons">
-                        <button class="btn-main open-sign-modal">
-                            <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
-                        </button>
-                        <button class="btn-main open-sign-modal">
-                            <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -186,14 +178,6 @@ if (!empty($arResult)) : ?>
                     <button class="btn-main size-l open-sign-modal">
                         <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                     </button>
-                    <div class="line-buttons">
-                        <button class="btn-main open-sign-modal">
-                            <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
-                        </button>
-                        <button class="btn-main open-sign-modal">
-                            <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -211,14 +195,6 @@ if (!empty($arResult)) : ?>
                 <button class="btn-main size-l open-sign-modal">
                     <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                 </button>
-                <div class="line-buttons">
-                    <button class="btn-main open-sign-modal">
-                        <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
-                    </button>
-                    <button class="btn-main open-sign-modal">
-                        <span class="f-16"><?= Loc::getMessage('TEST_BTN_TEXT') ?></span>
-                    </button>
-                </div>
             </div>
         </div>
     </div>
