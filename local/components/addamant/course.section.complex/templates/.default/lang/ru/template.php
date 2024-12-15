@@ -3,7 +3,7 @@
 $MESS['DIPLOM_TEXT'] = 'Диплом о переподготовке';
 $MESS['DIPLOM_BTN_SHOW_TEXT'] = 'Смотреть пример';
 $MESS['HOUR_COUNT_TEXT'] = '#COUNT# академ. часов';
-$MESS['COURSE_UR_PRICE'] = '#PRICE# ₽ — для юр. лиц';
+$MESS['COURSE_UR_PRICE'] = '#PRICE# ₽ — для физ. лиц';
 $MESS['RETURN_MONEY_TEXT'] = 'Как вернуть до 90% стоимости';
 $MESS['MAIN_BTN_TEXT'] = 'Записаться на курс';
 $MESS['DEMO_BTN_TEXT'] = 'Пройти демокурс';
