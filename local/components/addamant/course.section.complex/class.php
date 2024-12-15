@@ -74,7 +74,9 @@ class CourseSectionComplexComponent extends CBitrixComponent
                 'COURSE_FORMAT',
                 'TARIFFS',
                 'COMPLEXITY',
-                'COURSE_LINKED'
+                'COURSE_LINKED',
+                'LINK',
+                'CODE'
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
@@ -122,6 +124,14 @@ class CourseSectionComplexComponent extends CBitrixComponent
 
         if ($courseObject->getPrice() && $courseObject->getPrice()->getValue()) {
             $courseArray['PRICE'] = $courseObject->getPrice()->getValue();
+        }
+
+        if ($courseObject->getLink() && $courseObject->getLink()->getValue()) {
+            $courseArray['LINK'] = $courseObject->getLink()->getValue();
+        }
+
+        if ($courseObject->getCode()) {
+            $courseArray['CODE'] = $courseObject->getCode();
         }
 
         if ($courseObject->getPriceUr() && $courseObject->getPriceUr()->getValue()) {

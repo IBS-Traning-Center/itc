@@ -104,6 +104,31 @@ $settings = Functions::getSiteSettings();
                                         $value = $arParams['COURSE_PRICE'];
                                     }
                                     break;
+                                 case 'course_name':
+                                    if ($arParams['COURSE_SIGN']) {
+                                        $value = $arParams['COURSE_SIGN'] . ' ';
+                                    }
+                                    if ($arParams['COURSE_NAME']) {
+                                        $value = $value . $arParams['COURSE_NAME'];
+                                    }
+                                    break;
+                                case 'course_link':
+                                    if ($arParams['COURSE_LINK']) {
+                                        $value = 'https://ibs-training.ru/kurs/' . $arParams['COURSE_LINK'] . '.html';
+                                    }
+                                    break;
+                                case 'course_name_crm':
+                                    $name = false;
+                                    if ($arParams['COURSE_SIGN']) {
+                                        $name = $arParams['COURSE_SIGN'] . ' ';
+                                    }
+                                    if ($arParams['COURSE_NAME']) {
+                                        $name = $name . $arParams['COURSE_NAME'];
+                                    }
+                                    if ($name) {
+                                        $value = 'Заявка. Курс: ' . $name;
+                                    }       
+                                    break;
                             }
                         ?>
                         <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>

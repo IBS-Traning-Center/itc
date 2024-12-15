@@ -370,6 +370,9 @@ if (!empty($arResult)) : ?>
         "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
         "WEB_FORM_ID" => "41",
         "COURSE_ID" => $arResult['ID'],
+        "COURSE_NAME" => $arResult['NAME'],
+        "COURSE_SIGN" => $arResult['CODE'],
+        "COURSE_LINK" => $arResult['LINK'],
         'DATES' => $schedule,
         'TARIFFS' => $tariffs
     )

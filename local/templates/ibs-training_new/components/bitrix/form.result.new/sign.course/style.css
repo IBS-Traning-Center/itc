@@ -147,7 +147,10 @@
 
 .sign-course-form-block .question-block.course_id,
 .sign-course-form-block .question-block.date,
-.sign-course-form-block .question-block.face {
+.sign-course-form-block .question-block.face,
+.sign-course-form-block .question-block.course_name,
+.sign-course-form-block .question-block.course_link,
+.sign-course-form-block .question-block.course_name_crm {
     display: none !important;
 }
 

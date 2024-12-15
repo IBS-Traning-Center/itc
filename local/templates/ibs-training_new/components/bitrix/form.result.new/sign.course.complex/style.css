@@ -69,7 +69,10 @@
 
 .sign-course-complex-block .questions-block .question-block.date,
 .sign-course-complex-block .questions-block .question-block.tariff,
-.sign-course-complex-block .questions-block .question-block.course_id {
+.sign-course-complex-block .questions-block .question-block.course_id,
+.sign-course-complex-block .questions-block .question-block.course_link,
+.sign-course-complex-block .questions-block .question-block.course_name,
+.sign-course-complex-block .questions-block .question-block.course_name_crm {
     display: none;
 }
 
