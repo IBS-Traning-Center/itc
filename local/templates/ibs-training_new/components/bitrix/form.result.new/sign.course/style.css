@@ -150,7 +150,10 @@
 .sign-course-form-block .question-block.face,
 .sign-course-form-block .question-block.course_name,
 .sign-course-form-block .question-block.course_link,
-.sign-course-form-block .question-block.course_name_crm {
+.sign-course-form-block .question-block.course_name_crm,
+.sign-course-form-block .question-block.course_comment_crm,
+.sign-course-form-block .question-block.stage,
+.sign-course-form-block .question-block.client_id {
     display: none !important;
 }
 
