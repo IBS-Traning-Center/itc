@@ -144,14 +144,16 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 	)
 ); ?>
 <? $APPLICATION->IncludeComponent(
-	"addamant:main.page.reviews",
-	".default",
+	"addamant:main.page.reviews", 
+	".default", 
 	array(
 		"BLOCK_TITLE" => "Чувствуете, что застряли в своей зарплате или роли?",
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
-		"KVAL_LINK" => "#"
-	)
+		"KVAL_LINK" => "/catalog/complex/",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
 ); ?>
 <?php $GLOBALS['arMainPageNewsFilter'] = ['!PROPERTY_NOT_SHOW_HOME_PAGE_VALUE' => 'Да']; ?>
 <? $APPLICATION->IncludeComponent(

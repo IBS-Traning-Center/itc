@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 use Local\Util\Functions;
 $APPLICATION->SetPageProperty("blue_title", "Новости обучения разработке ПО");
-$APPLICATION->SetPageProperty("title", "Жизнь УЦ IBS");
+$APPLICATION->SetPageProperty("title", "Блог");
 $APPLICATION->SetPageProperty("keywords", "Новости УЦ IBS, Учебный центр IBS, ИБС, УЦ ИБС, дистанционное обучение, корпоративное обучение, IT семинары, ИТ конференции");
 $APPLICATION->SetPageProperty("description", "Новости Учебного центра ИБС: бесплатные семинары, конференции, курсы для программистов, оплата услуг обучения");
 $APPLICATION->SetPageProperty("description", "Новости Учебного центра ИБС: бесплатные семинары, конференции, курсы для программистов, оплата услуг обучения");

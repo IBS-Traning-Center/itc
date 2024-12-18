@@ -2,7 +2,7 @@
 $MESS['REGISTRATION'] = 'Зарегистрироваться';
 $MESS['NO_REGISTRATION'] = 'Регистрация окончена';
 $MESS['ORGANIZATION'] = 'Организаторы';
-$MESS['OF_KURS'] = 'О чём курс';
+$MESS['OF_KURS'] = 'О чём вебинар';
 $MESS['CONTENT'] = 'Содержание';
 $MESS['FOR_HOW'] = 'Для кого';
 $MESS['SPEAKER'] = 'Докладчик';

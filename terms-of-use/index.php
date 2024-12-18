@@ -2,7 +2,8 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Условия использования");
 ?>
-    <div class="course-main-info news-item-wrap">
+    <div class="course-main-info news-item-wrap" style="padding:50px;">
+        <h2>Условия использования</h2>
         <p>
             Благодарим Вас за посещение сайта АНО ДПО «УЦ ИБС» (ОГРН 1107799030470, ИНН 7713388004, КПП 773401001,
             адрес: 123060, г. Москва, вн. тер. г. муниципальный округ Щукино, проезд 1-й Волоколамский, д. 10, стр. 3,
