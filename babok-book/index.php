@@ -23,7 +23,7 @@ $APPLICATION->SetPageProperty("description", "Получите бумажный 
 	</p>
 	<div class="section-box__content">
 		<p>
-			 Пройдя обучение <a href="https://ibs-training.ru/training/katalog_kursov/kompleksnye-programmy/babok_dlya_biznes_analitika/?utm_source=blog&utm_medium=referral&utm_campaign=promo_babok">на наших курсах BABOK</a>, вы получите&nbsp;бумажную версию Руководства BABOK на русском языке в подарок!
+			 Пройдя обучение <a href="https://ibs-training.ru/catalog/direction/biznes-analiz/">на наших курсах BABOK</a>, вы получите&nbsp;бумажную версию Руководства BABOK на русском языке в подарок!
 		</p>
 		<p class="selected-text">
 			 "ВАВОК™ представляет собой структурированный справочник с полным перечнем принципов, правил и действий, необходимых бизнес-аналитику в его работе. ВАВОК можно рассматривать как набор инструментов, которые годятся для организации работы по бизнес-анализу в любой предметной области. Свод знаний BABOK используется и для сертификации – все вопросы сертификационных экзаменов построены на его основе. Тот, кто хочет успешно сдать сертификационный экзамен, должен знать терминологию ВАВОК и понимать суть изложенных в нем правил." Подробнее о BABOK и сертификациях <a href="https://ibs-training.ru/about/news/Programmy_sertifikatsii_dlya_biznes_analitika/">читайте в статье</a> нашего эксперта по бизнес-анализу.
@@ -32,7 +32,7 @@ $APPLICATION->SetPageProperty("description", "Получите бумажный 
 			 Книга выдается индивидуально участникам, прошедшим обучение на курсах BABOK не менее 24 акад. часов суммарно, начиная с 1 октября 2021 года.
 		</p>
 		<p>
- <b style="font-weight:600"><a href="https://ibs-training.ru/training/katalog_kursov/kompleksnye-programmy/babok_dlya_biznes_analitika/?utm_source=blog&utm_medium=referral&utm_campaign=promo_babok">Регистрируйтесь на курсы</a>, в комментарии к заявке или ответным письмом напишите <span style="color: #003979">«Хочу Руководство BABOK»</span>, пройдите обучение и получите свою книгу! Количество книг ограничено.</b>
+ <b style="font-weight:600"><a href="https://ibs-training.ru/catalog/direction/biznes-analiz/">Регистрируйтесь на курсы</a>, в комментарии к заявке или ответным письмом напишите <span style="color: #003979">«Хочу Руководство BABOK»</span>, пройдите обучение и получите свою книгу! Количество книг ограничено.</b>
 		</p>
 	</div>
 </div>
@@ -51,7 +51,7 @@ $APPLICATION->SetPageProperty("description", "Получите бумажный 
 						</div>
 						<div class="landing-accordion-item__body">
 							<p>
-								 Тот, кто прошел обучение в IBS Training Center <a href="https://ibs-training.ru/training/katalog_kursov/kompleksnye-programmy/babok_dlya_biznes_analitika/?utm_source=blog&utm_medium=referral&utm_campaign=promo_babok">на курсах по BABOK Guide</a> общей длительностью 24 часа и более*.
+								 Тот, кто прошел обучение в IBS Training Center <a href="https://ibs-training.ru/catalog/direction/biznes-analiz/">на курсах по BABOK Guide</a> общей длительностью 24 часа и более*.
 							</p>
 							<p>
 								 *Также обучение на авторизованных курсах BABOK Guide 3.0 гарантирует получение необходимого количества PD Hours (21 час) для сертификации IIBA.
@@ -105,7 +105,7 @@ $APPLICATION->SetPageProperty("description", "Получите бумажный 
 						</div>
 						<div class="landing-accordion-item__body">
 							<p>
-								 На курсы, в названии которых указано «BABOK». На все курсы из <a href="https://ibs-training.ru/training/katalog_kursov/kompleksnye-programmy/babok_dlya_biznes_analitika/?utm_source=blog&utm_medium=referral&utm_campaign=promo_babok">Программы BABOK для бизнес-аналитика.</a>
+								 На курсы, в названии которых указано «BABOK». На все курсы из <a href="https://ibs-training.ru/catalog/direction/biznes-analiz/">Программы BABOK для бизнес-аналитика.</a>
 							</p>
 						</div>
 					</div>
@@ -156,8 +156,7 @@ $APPLICATION->SetPageProperty("description", "Получите бумажный 
 						<div class="form-row">
  <label class="field-box _wide"> <textarea class="field" name="message" placeholder="Сообщение"></textarea> </label>
 						</div>
-<input class="field" type="hidden" name="cid" id="clientID" value="">
-<br>
+ <input class="field" type="hidden" name="cid" id="clientID" value=""> <br>
  <label class="agree-text" style="color: #003979"> <input checked="checked" name="agree" value="Y" type="checkbox">Настоящим я подтверждаю, что я ознакомлен с <a style="text-decoration: underline;" target="_blank" href="/terms-of-use/">Условиями использования</a>, условия мне понятны и я согласен соблюдать их.</label> <label class="agree-text" style="color: #003979"> <input checked="checked" name="agree-2" value="Y" type="checkbox">
 						Я ознакомлен с порядком обработки моих персональных данных согласно <a style="text-decoration: underline; color: #fb9024" target="_blank" href="/privacy-policy/">Политике в сфере персональных данных</a>. </label>
 					</div>
