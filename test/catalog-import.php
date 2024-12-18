@@ -62,34 +62,37 @@ COption::SetOptionString("main", "check_agents", "Y");
         $arNewsFields = $ob->GetFields();
         $arResult["NEWS"][] = $arNewsFields;
     }
+
+    //print_r($arResult['PROPERTIES']);
+
     $expert_short = nl2br($arResult['PROPERTIES']['expert_short']['VALUE']);
     $expert_name = nl2br($arResult['PROPERTIES']['expert_name']['VALUE']);
     $expert_title = nl2br($arResult['PROPERTIES']['expert_title']['VALUE']);
     $expert_language = nl2br($arResult['PROPERTIES']['expert_language']['VALUE']);
-    $expert_area = $arResult['PROPERTIES']['HTML_AREA']['~VALUE']['TEXT'];
-    $expert_special = $arResult['PROPERTIES']['HTML_SPECIAL']['~VALUE']['TEXT'];
-    $expert_experience = $arResult['PROPERTIES']['HTML_EXPERIENCE']['~VALUE']['TEXT'];
-    $expert_teacher = $arResult['PROPERTIES']['HTML_TEACHER']['~VALUE']['TEXT'];
-    $expert_edu = $arResult['PROPERTIES']['HTML_EDU']['~VALUE']['TEXT'];
-    $expert_certified = $arResult['PROPERTIES']['HTML_CERTIFIED']['~VALUE']['TEXT'];
-    $expert_publications = $arResult['PROPERTIES']['HTML_PUBLICATIONS']['~VALUE']['TEXT'];
-    $expert_social = $arResult['PROPERTIES']['HTML_SOCIAL']['~VALUE']['TEXT'];
+    $expert_area = $arResult['PROPERTIES']['HTML_AREA']['~VALUE'] ? $arResult['PROPERTIES']['HTML_AREA']['~VALUE']['TEXT'] : '';
+    $expert_special = $arResult['PROPERTIES']['HTML_SPECIAL']['~VALUE'] ? $arResult['PROPERTIES']['HTML_SPECIAL']['~VALUE']['TEXT'] : '';
+    $expert_experience = $arResult['PROPERTIES']['HTML_EXPERIENCE']['~VALUE'] ? $arResult['PROPERTIES']['HTML_EXPERIENCE']['~VALUE']['TEXT'] : '';
+    $expert_teacher = $arResult['PROPERTIES']['HTML_TEACHER']['~VALUE'] ? $arResult['PROPERTIES']['HTML_TEACHER']['~VALUE']['TEXT'] : '';
+    $expert_edu = $arResult['PROPERTIES']['HTML_EDU']['~VALUE'] ? $arResult['PROPERTIES']['HTML_EDU']['~VALUE']['TEXT'] : '';
+    $expert_certified = $arResult['PROPERTIES']['HTML_CERTIFIED']['~VALUE'] ? $arResult['PROPERTIES']['HTML_CERTIFIED']['~VALUE']['TEXT'] : '';
+    $expert_publications = $arResult['PROPERTIES']['HTML_PUBLICATIONS']['~VALUE'] ? $arResult['PROPERTIES']['HTML_PUBLICATIONS']['~VALUE']['TEXT'] : '';
+    $expert_social = $arResult['PROPERTIES']['HTML_SOCIAL']['~VALUE'] ? $arResult['PROPERTIES']['HTML_SOCIAL']['~VALUE']['TEXT'] : '';
 
-    if ($arResult['PROPERTIES']['HTML_AREA']['VALUE']['TYPE'] == "text")
+    if ($arResult['PROPERTIES']['HTML_AREA']['VALUE'] && $arResult['PROPERTIES']['HTML_AREA']['VALUE']['TYPE'] == "text")
         $expert_area = nl2br($expert_area);
-    if ($arResult['PROPERTIES']['HTML_SPECIAL']['VALUE']['TYPE'] == "text")
+    if ($arResult['PROPERTIES']['HTML_SPECIAL']['VALUE'] && $arResult['PROPERTIES']['HTML_SPECIAL']['VALUE']['TYPE'] == "text")
         $expert_special = nl2br($expert_special);
-    if ($arResult['PROPERTIES']['HTML_EXPERIENCE']['VALUE']['TYPE'] == "text")
+    if ($arResult['PROPERTIES']['HTML_EXPERIENCE']['VALUE'] && $arResult['PROPERTIES']['HTML_EXPERIENCE']['VALUE']['TYPE'] == "text")
         $expert_experience = nl2br($expert_experience);
-    if ($arResult['PROPERTIES']['HTML_TEACHER']['VALUE']['TYPE'] == "text")
+    if ($arResult['PROPERTIES']['HTML_TEACHER']['VALUE'] && $arResult['PROPERTIES']['HTML_TEACHER']['VALUE']['TYPE'] == "text")
         $expert_teacher = nl2br($expert_teacher);
-    if ($arResult['PROPERTIES']['HTML_EDU']['VALUE']['TYPE'] == "text")
+    if ($arResult['PROPERTIES']['HTML_EDU']['VALUE'] && $arResult['PROPERTIES']['HTML_EDU']['VALUE']['TYPE'] == "text")
         $expert_edu = nl2br($expert_edu);
-    if ($arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE']['TYPE'] == "text")
+    if ($arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE'] && $arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE']['TYPE'] == "text")
         $expert_certified = nl2br($expert_certified);
-    if ($arResult['PROPERTIES']['HTML_PUBLICATIONS']['VALUE']['TYPE'] == "text")
+    if ($arResult['PROPERTIES']['HTML_PUBLICATIONS']['VALUE'] && $arResult['PROPERTIES']['HTML_PUBLICATIONS']['VALUE']['TYPE'] == "text")
         $expert_publications = nl2br($expert_publications);
-    if ($arResult['PROPERTIES']['HTML_SOCIAL']['VALUE']['TYPE'] == "text")
+    if ($arResult['PROPERTIES']['HTML_SOCIAL']['VALUE'] && $arResult['PROPERTIES']['HTML_SOCIAL']['VALUE']['TYPE'] == "text")
         $expert_social = nl2br($expert_social);
     ?>
     <?/*function UTF($string) {
@@ -412,64 +415,93 @@ margin-bottom: 18px;
     $course_other = checkHtmlN($course_other);*/
 
 
-    $course_topics_html_text = UTF($arResult['PROPERTIES']['course_top_html']['VALUE']['TEXT']);
-    $course_topics_html_type = $arResult['PROPERTIES']['course_top_html']['VALUE']['TYPE'];
-    if (($course_topics_html_type == "text") or ($course_topics_html_type == "TEXT")) {
-        $course_topics = UTF(nl2br($course_topics_html_text));
+    if ($arResult['PROPERTIES']['course_top_html']['VALUE']) {
+        $course_topics_html_text = UTF($arResult['PROPERTIES']['course_top_html']['VALUE']['TEXT']);
+        $course_topics_html_type = $arResult['PROPERTIES']['course_top_html']['VALUE']['TYPE'];
+        if (($course_topics_html_type == "text") or ($course_topics_html_type == "TEXT")) {
+            $course_topics = UTF(nl2br($course_topics_html_text));
+        } else {
+            $course_topics = UTF($arResult['PROPERTIES']['course_top_html']['~VALUE']['TEXT']);
+        }
     } else {
-        $course_topics = UTF($arResult['PROPERTIES']['course_top_html']['~VALUE']['TEXT']);
-    }
-    $course_tran_topics_html_text = UTF($arResult['PROPERTIES']['tran_course_top_html']['VALUE']['TEXT']);
-    $course_tran_topics_html_type = $arResult['PROPERTIES']['tran_course_top_html']['VALUE']['TYPE'];
-    if (($course_tran_topics_html_type == "text") or ($course_tran_topics_html_type == "TEXT")) {
-        $course_tran_topics = UTF(nl2br($course_tran_topics_html_text));
-    } else {
-        $course_tran_topics = UTF($arResult['PROPERTIES']['tran_course_top_html']['~VALUE']['TEXT']);
+        $course_topics = '';
     }
 
-    $course_desc_html_text = UTF($arResult['PROPERTIES']['course_desc_new']['VALUE']['TEXT']);
-    $course_desc_html_type = $arResult['PROPERTIES']['course_desc_new']['VALUE']['TYPE'];
-
-
-    if (($course_desc_html_type == "text") or ($course_desc_html_type == "TEXT")) {
-        $course_description = UTF(nl2br($course_desc_html_text));
+    if ($arResult['PROPERTIES']['tran_course_top_html']['VALUE']) {
+        $course_tran_topics_html_text = UTF($arResult['PROPERTIES']['tran_course_top_html']['VALUE']['TEXT']);
+        $course_tran_topics_html_type = $arResult['PROPERTIES']['tran_course_top_html']['VALUE']['TYPE'];
+        if (($course_tran_topics_html_type == "text") or ($course_tran_topics_html_type == "TEXT")) {
+            $course_tran_topics = UTF(nl2br($course_tran_topics_html_text));
+        } else {
+            $course_tran_topics = UTF($arResult['PROPERTIES']['tran_course_top_html']['~VALUE']['TEXT']);
+        }
     } else {
-
-        $course_description = UTF($arResult['PROPERTIES']['course_desc_new']['~VALUE']['TEXT']);
+        $course_tran_topics = '';
     }
 
-    $course_tran_desc_html_text = UTF($arResult['PROPERTIES']['tran_course_desc_new']['VALUE']['TEXT']);
-    $course_tran_desc_html_type = $arResult['PROPERTIES']['tran_course_desc_new']['VALUE']['TYPE'];
-    if (($course_tran_desc_html_type == "text") or ($course_tran_desc_html_type == "TEXT")) {
-        $course_tran_description = UTF(nl2br($course_tran_desc_html_text));
-    } else {
+    if ($arResult['PROPERTIES']['course_desc_new']['VALUE']) {
+        $course_desc_html_text = UTF($arResult['PROPERTIES']['course_desc_new']['VALUE']['TEXT']);
+        $course_desc_html_type = $arResult['PROPERTIES']['course_desc_new']['VALUE']['TYPE'];
+        if (($course_desc_html_type == "text") or ($course_desc_html_type == "TEXT")) {
+            $course_description = UTF(nl2br($course_desc_html_text));
+        } else {
 
-        $course_tran_description = UTF($arResult['PROPERTIES']['tran_course_desc_new']['~VALUE']['TEXT']);
+            $course_description = UTF($arResult['PROPERTIES']['course_desc_new']['~VALUE']['TEXT']);
+        }
+    } else {
+        $course_description = '';
     }
 
-    $course_linked_html_text = UTF($arResult['PROPERTIES']['course_linked_new']['VALUE']['TEXT']);
-    $course_linked_html_type = $arResult['PROPERTIES']['course_linked_new']['VALUE']['TYPE'];
-    if (($course_linked_html_type == "text") or ($course_linked_html_type == "TEXT")) {
-        $course_linkedcourses = UTF(nl2br($course_linked_html_text));
-    } else {
+    if ($arResult['PROPERTIES']['tran_course_desc_new']) {
+        $course_tran_desc_html_text = UTF($arResult['PROPERTIES']['tran_course_desc_new']['VALUE']['TEXT']);
+        $course_tran_desc_html_type = $arResult['PROPERTIES']['tran_course_desc_new']['VALUE']['TYPE'];
+        if (($course_tran_desc_html_type == "text") or ($course_tran_desc_html_type == "TEXT")) {
+            $course_tran_description = UTF(nl2br($course_tran_desc_html_text));
+        } else {
 
-        $course_linkedcourses = UTF($arResult['PROPERTIES']['course_linked_new']['~VALUE']['TEXT']);
+            $course_tran_description = UTF($arResult['PROPERTIES']['tran_course_desc_new']['~VALUE']['TEXT']);
+        }
+    } else {
+        $course_tran_description = '';
     }
 
-    $course_required_html_text = UTF($arResult['PROPERTIES']['course_req_new']['VALUE']['TEXT']);
-    $course_required_html_type = $arResult['PROPERTIES']['course_req_new']['VALUE']['TYPE'];
-    if (($course_required_html_type == "text") or ($course_required_html_type == "TEXT")) {
-        $course_required = nl2br($course_required_html_text);
+    if ($arResult['PROPERTIES']['course_linked_new']) {
+        $course_linked_html_text = UTF($arResult['PROPERTIES']['course_linked_new']['VALUE'] ? $arResult['PROPERTIES']['course_linked_new']['VALUE']['TEXT'] : '');
+        $course_linked_html_type = $arResult['PROPERTIES']['course_linked_new']['VALUE'] ? $arResult['PROPERTIES']['course_linked_new']['VALUE']['TYPE'] : '';
+        if (($course_linked_html_type == "text") or ($course_linked_html_type == "TEXT")) {
+            $course_linkedcourses = UTF(nl2br($course_linked_html_text));
+        } else {
+
+            $course_linkedcourses = UTF($arResult['PROPERTIES']['course_linked_new']['~VALUE'] ? $arResult['PROPERTIES']['course_linked_new']['~VALUE'] : '');
+        }
     } else {
-        $course_required = $arResult['PROPERTIES']['course_req_new']['~VALUE']['TEXT'];
+        $course_linkedcourses = '';
     }
-    $course_tran_required_html_text = UTF($arResult['PROPERTIES']['tran_course_req']['VALUE']['TEXT']);
-    $course_tran_required_html_type = $arResult['PROPERTIES']['tran_course_req']['VALUE']['TYPE'];
-    if (($course_tran_required_html_type == "text") or ($course_tran_required_html_type == "TEXT")) {
-        $course_tran_required = UTF(nl2br($course_required_html_text));
+
+    if ($arResult['PROPERTIES']['course_req_new']['VALUE']) {
+        $course_required_html_text = UTF($arResult['PROPERTIES']['course_req_new']['VALUE']['TEXT']);
+        $course_required_html_type = $arResult['PROPERTIES']['course_req_new']['VALUE']['TYPE'];
+        if (($course_required_html_type == "text") or ($course_required_html_type == "TEXT")) {
+            $course_required = nl2br($course_required_html_text);
+        } else {
+            $course_required = $arResult['PROPERTIES']['course_req_new']['~VALUE']['TEXT'];
+        }
     } else {
-        $course_tran_required = UTF($arResult['PROPERTIES']['tran_course_req']['~VALUE']['TEXT']);
+        $course_required = '';
     }
+
+    if ($arResult['PROPERTIES']['tran_course_req']['VALUE']) {
+        $course_tran_required_html_text = UTF($arResult['PROPERTIES']['tran_course_req']['VALUE']['TEXT']);
+        $course_tran_required_html_type = $arResult['PROPERTIES']['tran_course_req']['VALUE']['TYPE'];
+        if (($course_tran_required_html_type == "text") or ($course_tran_required_html_type == "TEXT")) {
+            $course_tran_required = UTF(nl2br($course_required_html_text));
+        } else {
+            $course_tran_required = UTF($arResult['PROPERTIES']['tran_course_req']['~VALUE']['TEXT']);
+        }
+    } else {
+        $course_tran_required = '';
+    }
+
 
     //print_r($arResult);
     ?>
