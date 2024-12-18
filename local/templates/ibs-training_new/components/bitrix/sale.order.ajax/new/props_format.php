@@ -65,7 +65,7 @@ if (!function_exists("PrintPropsForm"))
                         <?if($arProperties['ID'] === '95') {?>
                         <label id="clientsInfo__label" style="display: block;font-size: 18px;margin-bottom: 15px;"><input id="isShowUserInfo" checked="checked" type="checkbox"/>Оферта для АНО (ФИС ФРДО)</label>
 						<?}?>
-                        <div <?if ((($arProperties["ID"]=="56" || $arProperties["ID"]=="57") && (!in_array("34", $arGroups))) || $arProperties["ID"]=="78" || $arProperties["ID"]=="79") {?>style='display: none;'<?}?> data-property-id-row="<?=intval(intval($arProperties["ID"]))?>">
+                        <div <?if ((($arProperties["ID"]=="56" || $arProperties["ID"]=="57")/*&& (!in_array("34", $arGroups))*/) || $arProperties["ID"]=="78" || $arProperties["ID"]=="79") {?>style='display: none;'<?}?> data-property-id-row="<?=intval(intval($arProperties["ID"]))?>">
 
 						<?
                         if($arProperties['ID'] === '95') {?>

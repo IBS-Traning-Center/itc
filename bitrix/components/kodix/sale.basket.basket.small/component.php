@@ -44,6 +44,7 @@ $bReady = False;
 $bDelay = False;
 $bNotAvail = False;
 $sArticleID = '';
+$arProducts = [];
 for ($i = 0; $i<count($arItems); $i++)
 {
 	if ($arItems[$i]["DELAY"]=="N" && $arItems[$i]["CAN_BUY"]=="Y")

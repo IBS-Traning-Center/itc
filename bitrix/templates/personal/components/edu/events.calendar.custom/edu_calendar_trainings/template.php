@@ -29,12 +29,12 @@
 
 						<? $index = $index + 1; ?>
 
-						<? if (in_array($arEvent["id"], $arReg)) { ?>
+						<? if (is_array($arReg) && in_array($arEvent["id"], $arReg ?? [])) { ?>
 
 							<? $green[] = $arEvent["id"] ?>
 							<? $registered = "Y" ?>
 						<? } ?>
-						<? if (in_array($arEvent["id"], $arRec)) { ?>
+						<? if (is_array($arRec) && in_array($arEvent["id"], $arRec ?? [])) { ?>
 
 							<? $yellow[] = $arEvent["id"] ?>
 							<? $recommended = "Y" ?>
