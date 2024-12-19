@@ -103,6 +103,11 @@
     color: var(--white);
 }
 
+.main-feedback-form-block .question-block.client_id,
+.main-feedback-form-block .question-block.job {
+    display: none !important;
+}
+
 @media (max-width: 1180px) {
     .main-feedback-form-block {
         padding: 40px 0 80px;

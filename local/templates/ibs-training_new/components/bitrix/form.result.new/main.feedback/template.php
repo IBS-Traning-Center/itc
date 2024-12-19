@@ -38,6 +38,7 @@ Loc::loadMessages(__FILE__);
                                 <input
                                         class="inputtext main-feedback-form-input <?= $questionId ?> <?= isset($arResult['FORM_ERRORS'][$questionId]) ? 'has-error' : '' ?>"
                                         <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
+                                        <?= ($questionId == 'client_id') ? 'id="clientID"' : '' ?>
                                         placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '*' : '(не обязательно)' ?>"
                                         name="form_text_<?= $question['STRUCTURE'][0]['ID'] ?>"
                                         type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>">
