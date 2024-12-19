@@ -15,7 +15,7 @@ Loc::loadMessages(__FILE__);
 
 $this->setFrameMode(false);
 
-$defaultCourseImage = $templateFolder . '/images/default_course_image.png';
+$defaultCourseImage = $templateFolder . '/images/image.png';
 
 if (!empty($arResult['COURSES'])) : ?>
     <div class="courses-with-discount-block">
