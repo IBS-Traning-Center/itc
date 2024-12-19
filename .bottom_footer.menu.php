@@ -8,8 +8,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Сведения о cookies-файлах", 
-		"/terms-of-use/", 
+		"Антикоррупционная политика", 
+		"/anti-corruption/", 
 		Array(), 
 		Array(), 
 		"" 

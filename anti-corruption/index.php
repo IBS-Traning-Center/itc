@@ -1,11 +1,9 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Title");
-?><?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Противодействие коррупции");
 ?>
-<div class="course-main-info news-item-wrap">
+<div class="course-main-info news-item-wrap" style="padding:50px;">
+	<h2><?= $APPLICATION->GetTitle() ?></h2>
 	<p>
 		АНО ДПО «УЦ ИБС» придерживается высоких стандартов ведения добросовестного и прозрачного бизнеса. Наш принцип — нулевая терпимость к коррупции в любых ее формах и проявлениях.
 	</p>
@@ -43,4 +41,4 @@ $APPLICATION->SetTitle("Противодействие коррупции");
 	</p>
 </div>
 <br>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

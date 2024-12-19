@@ -121,7 +121,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Качество обучения обеспечено сертифицированной системой менеджмента качества, соответствующей требованиям стандарта ГОСТ Р ИСО 9001-2015", 
-		"", 
+		"/about/news/Uchebnyy_tsentr_IBS_poluchil_sertifikat_GOST_R_ISO_9001_2015/", 
 		Array(), 
 		Array("IMG"=>"/local/assets/images/footer-certificate-6.png"), 
 		"" 
