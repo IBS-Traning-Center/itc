@@ -52,6 +52,52 @@ AddEventHandler("main", "OnAfterUserAdd", "OnAfterUserRegisterHandler");
 AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserRegisterHandler");
 AddEventHandler("sale", "OnBasketUpdate", "BasketUpdate");
 AddEventHandler("sale", "OnSalePayOrder", "OrderPayment");
+AddEventHandler("form", "OnBeforeResultAdd", "CheckResult");
+
+function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
+{
+    global $APPLICATION;
+
+    if ($WEB_FORM_ID == 39) {
+        if ($arrVALUES['form_text_992'] && $arrVALUES['form_text_992'] != NULL)
+        {
+            $APPLICATION->ThrowException('Ошибка');
+            return false;
+        }
+    }
+
+    if ($WEB_FORM_ID == 40) {
+        if ($arrVALUES['form_textarea_987'] == NULL) {
+            $value = $arrVALUES['form_textarea_987'];
+            if ($arrVALUES['form_text_959']) {
+                $value = $value . 'Дата: ' . $arrVALUES['form_text_959'];
+            }
+            if ($arrVALUES['form_text_960']) {
+                $value = $value . "\n" . 'Стоимость: ' . $arrVALUES['form_text_960'];
+            }
+            if ($arrVALUES['form_text_957']) {
+                $value = $value . "\n" . 'Комментарий: ' . $arrVALUES['form_text_957'];
+            }
+            $arrVALUES['form_textarea_987'] = $value;
+        }
+    }
+
+    if ($WEB_FORM_ID == 41) {
+        if ($arrVALUES['form_textarea_994'] == NULL) {
+            $value = $arrVALUES['form_textarea_994'];
+            if ($arrVALUES['form_text_968']) {
+                $value = $value . 'Дата: ' . $arrVALUES['form_text_968'];
+            }
+            if ($arrVALUES['form_text_969']) {
+                $value = $value . "\n" . 'Тариф: ' . $arrVALUES['form_text_969'];
+            }
+            if ($arrVALUES['form_text_967']) {
+                $value = $value . "\n" . 'Комментарий: ' . $arrVALUES['form_text_967'];
+            }
+            $arrVALUES['form_textarea_994'] = $value;
+        }
+    }
+}
 
 function OrderPayment($ID, $val)
 {
