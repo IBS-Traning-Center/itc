@@ -79,9 +79,8 @@
     gap: 16px;
 }
 
-.sign-course-complex-block .questions-block .question-block.date,
-.sign-course-complex-block .questions-block .question-block.tariff,
-.sign-course-complex-block .questions-block .question-block.course_id {
+.sign-course-complex-block .questions-block .question-block.client_id,
+.sign-course-complex-block .questions-block .question-block.training {
     display: none;
 }
 
