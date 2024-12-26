@@ -59,15 +59,15 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
     global $APPLICATION;
 
     if ($WEB_FORM_ID == 39) {
-        if ($arrVALUES['form_text_992'] && $arrVALUES['form_text_992'] != NULL)
-        {
+        if ($arrVALUES['form_text_992'] && $arrVALUES['form_text_992'] != NULL) {
             $APPLICATION->ThrowException('Ошибка');
             return false;
         }
-    }
-
-    if ($WEB_FORM_ID == 40) {
-        if ($arrVALUES['form_textarea_987'] == NULL) {
+    } else if ($WEB_FORM_ID == 40) {
+        if ($arrVALUES['form_text_996'] && $arrVALUES['form_text_996'] != NULL) {
+            $APPLICATION->ThrowException('Ошибка');
+            return false;
+        } else if ($arrVALUES['form_textarea_987'] == NULL) {
             $value = $arrVALUES['form_textarea_987'];
             if ($arrVALUES['form_text_959']) {
                 $value = $value . 'Дата: ' . $arrVALUES['form_text_959'];
@@ -80,10 +80,11 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
             }
             $arrVALUES['form_textarea_987'] = $value;
         }
-    }
-
-    if ($WEB_FORM_ID == 41) {
-        if ($arrVALUES['form_textarea_994'] == NULL) {
+    } else if ($WEB_FORM_ID == 41) {
+        if ($arrVALUES['form_text_997'] && $arrVALUES['form_text_997'] != NULL) {
+            $APPLICATION->ThrowException('Ошибка');
+            return false;
+        } else if ($arrVALUES['form_textarea_994'] == NULL) {
             $value = $arrVALUES['form_textarea_994'];
             if ($arrVALUES['form_text_968']) {
                 $value = $value . 'Дата: ' . $arrVALUES['form_text_968'];
@@ -95,6 +96,11 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
                 $value = $value . "\n" . 'Комментарий: ' . $arrVALUES['form_text_967'];
             }
             $arrVALUES['form_textarea_994'] = $value;
+        }
+    } else if ($WEB_FORM_ID == 42) {
+        if ($arrVALUES['form_text_998'] && $arrVALUES['form_text_998'] != NULL) {
+            $APPLICATION->ThrowException('Ошибка');
+            return false;
         }
     }
 }
