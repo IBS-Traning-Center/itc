@@ -64,7 +64,7 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Юридическая информация", 
+		"Реквизиты", 
 		"/contacts/details/", 
 		Array(), 
 		Array(), 
