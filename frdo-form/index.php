@@ -92,6 +92,8 @@ $APPLICATION->SetTitle("Контакты Luxoft Training  ");
                         </label>
                         <label class="agree-text" style="color: #003979;line-height: 1.4">
                             <input name="agree" value="Y" type="checkbox">Настоящим  я подтверждаю, что уведомлен и согласен на передачу моих <a style="text-decoration: underline;" target="_blank" href="/privacy-policy/">Персональных данных</a> в целях формирования и ведения ФИС ФРДО</label>
+                        <label class="agree-text" style="color: #003979;line-height: 1.4">
+                            <input id="form-reg-two" name="agree-2" value="Y" type="checkbox">Настоящим  я подтверждаю, что уведомлен и согласен с <a style="text-decoration: underline;" target="_blank" href="/agree_of_subject/">условиями обработки персональных данных</a></label>
                     </div>
                     <button type="submit" class="button _submit _w-full _size-l"><span>Отправить анкету</span></button>
                 </div>

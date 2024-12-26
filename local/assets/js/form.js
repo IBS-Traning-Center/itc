@@ -191,6 +191,9 @@ $(function () {
             },
             'agree': {
                 required: true,
+            },
+            "agree-2": {
+                required: true
             }
         },
         'summer-school': {
