@@ -1,6 +1,6 @@
 <?
-
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+LocalRedirect("/catalog/");
 $APPLICATION->SetPageProperty("title", "Каталог курсов по направлениям");
 $APPLICATION->SetPageProperty(
     "keywords",
