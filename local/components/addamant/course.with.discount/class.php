@@ -53,6 +53,7 @@ class CourseWithDiscountComponent extends CBitrixComponent
             'select' => [
                 'ID',
                 'schedule_course',
+                'startdate',
                 'enddate',
                 'schedule_price',
                 'course_sale'
@@ -74,6 +75,8 @@ class CourseWithDiscountComponent extends CBitrixComponent
             $elemPrice = null;
             $coursePrice = null;
             $courseSale = null;
+            $startDate = null;
+            $endDate = null;
 
             if ($review->getCourseSale() && $review->getCourseSale()->getValue()) {
                 $courseSale = $review->getCourseSale()->getValue();
@@ -94,6 +97,16 @@ class CourseWithDiscountComponent extends CBitrixComponent
                     $coursePrice = $course->getCoursePrice()->getValue();
                 }
 
+                if ($review->getStartdate() && $review->getStartdate()->getValue()) {
+                    $value = $review->getStartdate()->getValue();
+                    $startDate = date("d.m.Y", strtotime($value));
+                }
+
+                if ($review->getEnddate() && $review->getEnddate()->getValue()) {
+                    $value = $review->getEnddate()->getValue();
+                    $endDate = date("d.m.Y", strtotime($value));
+                }
+
                 if (
                     !is_null($courseSale) &&
                     !is_null($coursePrice)
@@ -102,7 +115,9 @@ class CourseWithDiscountComponent extends CBitrixComponent
                     $elemPrice = $coursePrice * (100 - $courseSale) / 100;
                     $this->newCoursesPrice[$review->getScheduleCourse()->getValue()] = [
                         'NEW_PRICE' => $elemPrice,
-                        'COURSE_SALE' => $courseSale
+                        'COURSE_SALE' => $courseSale,
+                        'START_DATE' => $startDate,
+                        'END_DATE' => $endDate
                     ];
                     $this->coursesIds[] = $review->getScheduleCourse()->getValue();
                 }
@@ -154,6 +169,8 @@ class CourseWithDiscountComponent extends CBitrixComponent
 
                 $course['NEW_PRICE'] = $this->newCoursesPrice[$item->getId()] ? $this->newCoursesPrice[$item->getId()]['NEW_PRICE'] : '';
                 $course['COURSE_SALE'] = $this->newCoursesPrice[$item->getId()] ? $this->newCoursesPrice[$item->getId()]['COURSE_SALE'] : '';
+                $course['START_DATE'] = $this->newCoursesPrice[$item->getId()] ? $this->newCoursesPrice[$item->getId()]['START_DATE'] : '';
+                $course['END_DATE'] = $this->newCoursesPrice[$item->getId()] ? $this->newCoursesPrice[$item->getId()]['END_DATE'] : '';
             }
 
             if ($item->getName()) {

@@ -62,6 +62,7 @@
 }
 
 .discount-courses-block .discount-course-item .course-info-block {
+    width:100%;
     display: flex;
     flex-direction: column;
     height: unset;
@@ -69,6 +70,7 @@
 
 .discount-courses-block .discount-course-item .course-info-block .course-middle-block {
     display: flex;
+    justify-content: space-between;
     gap: 32px;
     align-items: start;
 }
@@ -100,7 +102,9 @@
 .discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-tags,
 .discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-tags .course-tags-complexity {
     display: flex;
-    align-items: start;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
     gap: 2px;
 }
 
@@ -260,8 +264,7 @@
     }
 
     .discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-tags,
-    .discount-courses-block .discount-course-item .image-block,
-    .discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-text-info .course-description {
+    .discount-courses-block .discount-course-item .image-block {
         display: none;
     }
 

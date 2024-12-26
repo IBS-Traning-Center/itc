@@ -41,9 +41,12 @@ if (!empty($arResult['COURSES'])) : ?>
                             <div class="course-middle-block">
                                 <div class="course-text-info">
                                     <p class="f-32 course-name"><?= $course['NAME'] ?></p>
-                                    <?php if ($course['DESCRIPTION']) : ?>
+                                    <?php if ($course['START_DATE']) : ?>
                                         <p class="f-20 course-description">
-                                            <?= HTMLToTxt($course['DESCRIPTION']) ?>
+                                            Дата: <?= HTMLToTxt($course['START_DATE']) ?>
+                                            <?php if ($course['START_DATE']) : ?>
+                                                - <?= HTMLToTxt($course['END_DATE']) ?>
+                                            <?php endif; ?>
                                         </p>
                                     <?php endif; ?>
                                 </div>

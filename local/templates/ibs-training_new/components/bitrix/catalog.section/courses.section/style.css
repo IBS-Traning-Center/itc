@@ -113,7 +113,6 @@ a:hover {
 }
 
 .courses-with-discount-block .discount-courses-block.container:before,
-.discount-courses-block .discount-course-item .course-info-block .course-middle-block .course-description,
 .courses-with-discount-block .discount-courses-block.container:after {
     display: none !important;
 }
