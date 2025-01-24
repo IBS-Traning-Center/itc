@@ -1,7 +1,7 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Курсы", 
+		"Услуги", 
 		"", 
 		Array(), 
 		Array("TITLE"=>"Y"), 
@@ -15,29 +15,22 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Бесплатные", 
-		"/timetable/index.php?type=events", 
+		"Каталог профессий", 
+		"/catalog/complex/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Расписание курсов", 
+		"Бесплатное обучение", 
+		"/timetable/?type=events", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Расписание", 
 		"/timetable/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"О нас", 
-		"", 
-		Array(), 
-		Array("TITLE"=>"Y"), 
-		"" 
-	),
-	Array(
-		"Контакты", 
-		"/contacts/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -50,15 +43,15 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Основные сведения", 
-		"/contacts/structure/", 
+		"Об организации", 
+		"", 
 		Array(), 
-		Array(), 
+		Array("TITLE"=>"Y"), 
 		"" 
 	),
 	Array(
-		"Руководство", 
-		"contacts/management/", 
+		"О нас", 
+		"/contacts/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -71,15 +64,22 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Офисы", 
-		"/contacts/", 
+		"Кейсы и отзывы", 
+		"/reviews/", 
 		Array(), 
-		Array("TITLE"=>"Y", "OFFICE"=>"Y"), 
+		Array(), 
 		"" 
 	),
 	Array(
-		"Москва", 
-		"/contacts/?map=moskva", 
+		"Стать тренером", 
+		"/talent-search/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости и акции", 
+		"/about/news/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -89,6 +89,13 @@ $aMenuLinks = Array(
 		"", 
 		Array(), 
 		Array("TITLE"=>"Y"), 
+		"" 
+	),
+	Array(
+		"127018, Москва, ул. Складочная, д. 3, стр. 1", 
+		"/contacts/?map=moskva", 
+		Array(), 
+		Array("TEXT"=>"Y"), 
 		"" 
 	),
 	Array(

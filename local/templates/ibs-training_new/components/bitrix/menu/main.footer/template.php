@@ -34,6 +34,8 @@ if (!empty($arResult)) : ?>
                         <span class="f-16"><?= $item['TEXT'] ?></span>
                         <a href="<?= $item['LINK'] ?>" target="_blank"><img src="<?= $item['PARAMS']['IMG'] ?>"></a>
                     </div>
+                <?php elseif ($item['PARAMS']['TEXT'] === 'Y') : ?>
+                    <a class="f-16" style="text-decoration: none;"><?= $item['TEXT'] ?></a>
                 <?php else : ?>
                     <a href="<?= $item['LINK'] ?>" class="f-16"><?= $item['TEXT'] ?></a>
                 <?php endif; ?>
