@@ -1399,55 +1399,6 @@ class MyClass
                     $rsUsers = CUser::GetList(($by = "ID"), ($order = "desc"), array("EMAIL" => trim($orderer_email)));
                     if ($arUser = $rsUsers->GetNext()) {
                         $PROP["USER"] = $arUser["ID"];
-                    } else {
-                        $NEW_LOGIN = $orderer_email;
-                        $NEW_EMAIL = $orderer_email;
-                        $def_group = COption::GetOptionString("main", "new_user_registration_def_group", "");
-                        if ($def_group != "") {
-                            $GROUP_ID = explode(",", $def_group);
-                            $arPolicy = $USER->GetGroupPolicy($GROUP_ID);
-                        } else {
-                            $arPolicy = $USER->GetGroupPolicy(array());
-                        }
-                        $password_min_length = intval($arPolicy["PASSWORD_LENGTH"]);
-                        if ($password_min_length <= 0)
-                            $password_min_length = 6;
-                        $password_chars = array(
-                            "abcdefghijklnmopqrstuvwxyz",
-                            "ABCDEFGHIJKLNMOPQRSTUVWXYZ",
-                            "0123456789",
-                        );
-                        if ($arPolicy["PASSWORD_PUNCTUATION"] === "Y")
-                            $password_chars[] = ",.<>/?;:'\"[]{}\|`~!@#\$%^&*()-_+=";
-                        $NEW_PASSWORD = $NEW_PASSWORD_CONFIRM = randString($password_min_length + 2, $password_chars);
-                        $user = new CUser;
-                        $arAuthResult = $user->Add(
-                            array(
-                                "LOGIN" => strtolower($NEW_EMAIL),
-                                "WORK_COMPANY" => $orderer_company,
-                                "NAME" => $firstname,
-                                "LAST_NAME" => $lastname,
-                                "SECOND_NAME" => $secondname,
-                                "PASSWORD" => $NEW_PASSWORD,
-                                "PASSWORD_CONFIRM" => $NEW_PASSWORD_CONFIRM,
-                                "EMAIL" => strtolower($NEW_EMAIL),
-                                "GROUP_ID" => $GROUP_ID,
-                                "ACTIVE" => "Y",
-                                "LID" => SITE_ID,
-                            )
-                        );
-                        if (IntVal($arAuthResult) <= 0) {
-                            $arResult["FORM_ERRORS"] = $arResult["FORM_ERRORS"] . "\n\r" . $user->LAST_ERROR;
-                        } else {
-                            $PROP["USER"] = IntVal($arAuthResult);
-                            $arEventFields = array(
-                                "EMAIL" => strtolower($NEW_EMAIL),
-                                "PASSWORD" => $NEW_PASSWORD,
-                                "NAME" => "",
-                                "LAST_NAME" => "",
-                            );
-                            CEvent::Send("NEW_USER_LK", SITE_ID, $arEventFields, "Y", "135");
-                        }
                     }
                 } else {
                     $PROP["USER"] = $USER->GetID();
