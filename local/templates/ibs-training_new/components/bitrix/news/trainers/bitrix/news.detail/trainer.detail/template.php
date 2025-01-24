@@ -87,8 +87,12 @@ if ($arResult) : ?>
             <div class="certificates-block">
                 <h3><?= Loc::getMessage('CERTIFICATES_TITLE') ?></h3>
                 <ul class="certificates-content custom-trainer-ul">
-                    <?php foreach ($arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE'] as $value) : ?>
-                        <li class="f-20"><?= $value ?></li>
+                    <?php foreach ($arResult['PROPERTIES']['HTML_CERTIFIED']['VALUE'] as $values) : ?>
+                        <?php foreach ($values as $value) : ?>
+                            <?php if ($value != "HTML" && $value != "TEXT") : ?>
+                                <li class="f-20"><?= $value ?></li>
+                             <?php endif; ?>
+                        <?php endforeach; ?>
                     <?php endforeach; ?>
                 </ul>
             </div>
