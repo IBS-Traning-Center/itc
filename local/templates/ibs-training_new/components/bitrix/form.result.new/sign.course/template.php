@@ -134,7 +134,7 @@ $settings = Functions::getSiteSettings();
                         <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>
                             <?php echo $question['HTML_CODE']; ?>
                         <?php else : ?>
-                            <?php if ($questionId == 'email') : ?>
+                            <?php if ($questionId == 'email' || $questionId == 'company') : ?>
                                 <div class="flex-question-block">
                             <?php endif; ?>
                             <div class="question-block <?= $questionId ?>">
@@ -147,7 +147,7 @@ $settings = Functions::getSiteSettings();
                                         type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
                                         value="<?= $value ?: '' ?>">
                             </div>
-                            <?php if ($questionId == 'phone') : ?>
+                            <?php if ($questionId == 'phone' || $questionId == 'job') : ?>
                                 </div>
                             <?php endif; ?>
                         <?php endif; ?>
