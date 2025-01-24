@@ -204,53 +204,26 @@ function generatePriceAll()
     file_put_contents($_SERVER["DOCUMENT_ROOT"] . '/files/ibs-training-price.xls', $html);
 }
 
-function CreateXLSfiles($cityid = CITY_ID_MOSCOW, $isColored = false)
+function CreateXLSfiles($isColored = false)
 {
-    $cityname = GetCityNameByID($cityid);
-    if ($cityid == CITY_ID_OMSK) {
-        $textAddress = 'Омск, проспект Карла Маркса 41, корпус 7';
-        $textPhone = 'Тел: +7 (3812) 33-23-08 (доп. 6251, 6250, 6172)';
-        $textEmail = 'e-mail: ' . EMAIL_ADDRESS;
+    $textCompany = 'Учебный центр IBS';
+    $textCompanyDescription = 'ведущий центр обучения и сертификации в сфере разработки и внедрения ПО';
 
-        $address = $textAddress . '<br> ' . $textPhone . '<br> ' . $textEmail;
-        $currency = "руб.";
-    } elseif ($cityid == CITY_ID_SPB) {
-        $textAddress = 'Санкт-Петербург, Свердловская набережная, 44, литер Б, корпус 18';
-        $textPhone = 'Тел: +7 (812) 457-1044 (доп. 6251, 6250, 6172 )';
-        $textEmail = 'e-mail: ' . EMAIL_ADDRESS;
-
-        $address = $textAddress . '<br> ' . $textPhone . '<br> ' . $textEmail;
-        $currency = "руб.";
-    } else {
-        $textAddress = 'Москва, ул. Складочная, д. 3, стр. 1';
-        $textPhone = 'тел.:+7 (495) 609 69 67,  +7 (495) 967 80 30 доп. 6251, 6250, 6172';
-        $textEmail = 'e-mail: ' . EMAIL_ADDRESS;
-
-        $address = $textAddress . '<br> ' . $textPhone . '<br> ' . $textEmail;
-        $currency = "руб.";
-    }
-
-    $textCompany = 'Учебный Центр IBS Training Center';
-    $textCompanyDescription = 'Обучение и консалтинг от экспертов-практиков по разработке ПО';
-    $textAddress = $textAddress;
-    $textPhone = $textPhone;
-    $textEmail = $textEmail;
-
-    $phone = 'Москва: +7 (495) 609-69-67';
-    $email = 'e-mail: education@ibs.ru';
+    $phone = '+7 (495) 609-69-67';
+    $phone2 = '+7 (931) 009-69-26';
+    $email = 'education@ibs.ru';
 
 
-    $textFullAddress = $phone . '<br> ' . $email;
+    $textFullAddress = 'тел.: ' . '<a href="tel:84956096967">' . $phone . '</a>' . '<br>'
+    . '<a href="tel:89310096926">' . $phone2 . '</a>' . '<br>'
+    . 'e-mail: ' . '<a href="mailto:education@ibs.ru">' . $email . '</a>';
 
-
-    $textTitle = 'Открытое расписание г. ' . $cityname;
     $textDocumentName = 'Прайс-лист';
     $textDescriptionPrice = 'Указана стоимость обучения одного слушателя за весь курс в формате открытого расписания онлайн на ' . date('d.m.Y');
     $textHeadColumn1 = 'Код курса';
     $textHeadColumn2 = 'Название курса';
     $textHeadColumn3 = 'Длительность, акад. ч';
     $textHeadColumn4 = 'Стоимость, руб.';
-
 
     $html .= '<html xmlns:v="urn:schemas-microsoft-com:vml"
 	xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -297,14 +270,12 @@ function CreateXLSfiles($cityid = CITY_ID_MOSCOW, $isColored = false)
 	</xml>
 	<![endif]--> 
 	</head>
-	<body>
+		<body>
 		<table  cellspacing="0" cellpadding="0" width="824" border="0">
 			<tr>
-				<td rowspan="3" style="border: none;" height="" colspan="2"><img style="padding: 12px;" src="https://ibs-training.ru/static/images/logo_ibs.png"></td>
+				<td rowspan="3" style="border: none;" height="" colspan="2"><img style="padding: 12px;" src="https://ibs-training.ru/static/images/main_logo_mini.png"></td>
 				<td colspan="4" style="border: none;" style="font-size: 10pt;" align="right">
-					<i>
-					<b>' . $textCompany . '</b></i><br/>
-					<i><b>' . $textCompanyDescription . '</b></i><br/>
+					<i><b>'. $textCompany . ' - '. $textCompanyDescription . '</b></i><br/>
 				</td>
 			</tr>
 			<tr>
@@ -312,11 +283,6 @@ function CreateXLSfiles($cityid = CITY_ID_MOSCOW, $isColored = false)
 			</tr>
 			<tr>
 				<td style="border: none;" colspan="4" style="font-size: 10pt;" align="right">' . $textFullAddress . '</td>
-			</tr>
-			<tr >
-				<td valign="middle" style="border: none;" align="center" style="font-size: 16pt; height: 50px; vertical-align: middle;" colspan="6">
-					<b>' . $textTitle . '</b>
-				</td>
 			</tr>
 			<tr >
 				<td valign="middle" style="border: none;" align="center" style="font-size: 16pt; height: 40px; vertical-align: middle;" colspan="6">
@@ -327,10 +293,10 @@ function CreateXLSfiles($cityid = CITY_ID_MOSCOW, $isColored = false)
 				<td valign="bottom" align="center" style="border: none; font-size: 10pt;" colspan="6">' . $textDescriptionPrice . '</td>
 			</tr>
 			<tr>
-				<td style="font-size: 10pt; height:34px; vertical-align: middle;"  class="border" align="center"><b>' . $textHeadColumn1 . '</b></td>
+				<td style="font-size: 10pt; height:40px; vertical-align: middle;"  class="border" align="center"><b>' . $textHeadColumn1 . '</b></td>
 				<td style="font-size: 10pt; vertical-align: middle;"  width="536" class="border" colspan="3"   align="center"><b>' . $textHeadColumn2 . '</b></td>
-				<td style="font-size: 10pt; vertical-align: middle;" width="99" class="border" align="center" align="center"><b>' . $textHeadColumn3 . '</b></td>
-				<td style="font-size: 10pt; vertical-align: middle;" border="1" class="border" width="99" align="center" align="center"><b>' . $textHeadColumn4 . '</b></td>
+				<td style="font-size: 10pt; vertical-align: middle;" width="125" class="border" align="center" align="center"><b>' . $textHeadColumn3 . '</b></td>
+				<td style="font-size: 10pt; vertical-align: middle;" border="1" class="border" width="115" align="center" align="center"><b>' . $textHeadColumn4 . '</b></td>
 			</tr>';
 
     if (CModule::IncludeModule("iblock")) {
@@ -392,7 +358,7 @@ function CreateXLSfiles($cityid = CITY_ID_MOSCOW, $isColored = false)
         unset($res);
 
         foreach ($sectionsLink as $index => $section) {
-            if ($section['DEPTH_LEVEL'] > 2 && count($section['ITEMS']) < 1) {
+            if (!isset($section['ITEMS']) || ($section['ITEMS'] && count($section['ITEMS']) < 1)) {
                 continue;
             }
             $html .= '<tr > 
@@ -412,7 +378,7 @@ function CreateXLSfiles($cityid = CITY_ID_MOSCOW, $isColored = false)
                 if (intval($price) > 0) {
                     $html .=
                         '<tr>' .
-                        '<td style="font-size: 10pt; height:34px; vertical-align: middle;" class="border" align="center">' . $item["CODE"] . '</td>' .
+                        '<td style="font-size: 10pt; height:45px; vertical-align: middle;" class="border" align="center">' . $item["CODE"] . '</td>' .
                         '<td style="font-size: 10pt; vertical-align: middle;" colspan="3" class="border" align="left"><a href="' . $item['LINK'] . '">' . $item["NAME"] . '</a></td>' .
                         '<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">' . $item["DURATION"] . '</td>' .
                         '<td style="font-size: 10pt; vertical-align: middle;" class="border" align="center">' . $price . '</td>' .
@@ -755,7 +721,7 @@ function generateCatalogPDF()
 
             if (
                 $section['DEPTH_LEVEL'] > 2
-                && count($section['ITEMS']) > 1
+                && $section['ITEMS'] && count($section['ITEMS']) > 1
             ) {
                 $mpdf->WriteHTML($currentHtml);
                 $sectionHeader = <<<HTML
@@ -769,7 +735,7 @@ function generateCatalogPDF()
                 $currentHtml = '';
             }
 
-            if (count($section['ITEMS'])) {
+            if ($section['ITEMS'] && count($section['ITEMS'])) {
                 foreach ($section['ITEMS'] as $item) {
                     $currentHtml .= <<<HTML
                             <tr>

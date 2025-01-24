@@ -234,7 +234,7 @@ margin-bottom: 18px;
         'margin_top' => 30,
         'margin_bottom' => 30,
     ]);
-    $mpdf->SetHTMLHeader('<div style="text-align: right;"><img src="/static/images/logo_IBS.png" alt="" title="" border="0"  /></div>');
+    $mpdf->SetHTMLHeader('<div style="text-align: right;"><img src="/static/images/main_logo_mini.png" alt="" title="" border="0"  /></div>');
     $mpdf->SetHTMLFooter('<table class="footer"><tr><td>По всем вопросам обращайтесь <a taget="_blank" style="color: #a1a1a1" href="mailto:' . EMAIL_ADDRESS . '">' . EMAIL_ADDRESS . '</a></td><td style="width: 34%;text-align: center;">{PAGENO}</td><td style="text-align: right;">Версия {DATE j.m.Y}</td></tr></table>');
     $mpdf->WriteHTML($html);
     $filename = "trainer_" . $arResult["CODE"] . ".pdf";
@@ -338,7 +338,7 @@ margin-bottom: 18px;
         'margin_right' => 30,
         'margin_top' => 20,
     ]);
-    $mpdf->SetHTMLHeader('<div style="text-align: right;"><img src="/static/images/logo_IBS.png" alt="" title="" border="0"  /></div>');
+    $mpdf->SetHTMLHeader('<div style="text-align: right;"><img src="/static/images/main_logo_mini.png" alt="" title="" border="0"  /></div>');
     $mpdf->SetHTMLFooter('<table class="footer"><tr><td>По всем вопросам обращайтесь <a style="color: #a1a1a1" href="mailto:' . EMAIL_ADDRESS . '">' . EMAIL_ADDRESS . '</a></td><td style="width: 34%;text-align: center;">{PAGENO}</td><td style="text-align: right;">Версия {DATE j.m.Y}</td></tr></table>');
     $mpdf->WriteHTML($html);
     $mpdf->h2toc = array('H3' => 0);
@@ -370,12 +370,9 @@ margin-bottom: 18px;
             $mpdf->AddPage();
         }
     }
-    $info = '	<h4>Об учебном центре IBS Training Center</h4>
+    $info = '	<h4>Об учебном центре IBS</h4>
 			<p><b>IBS Training Center</b> – лидер в области обучения и консалтинга по важнейшим дисциплинам Software Engineering. Учебный центр существует с 2007 г. и предлагает более 150 курсов, тренингов и учебных программ. Обучение проводят более 120 профессиональных тренеров – экспертов-практиков. 
-			За это время в IBS Training Center прошли обучение сотрудники ведущих российских и международных компаний. Эффективность обучения подтверждается многочисленными положительными отзывами наших клиентов:</p>
-			<p><b>РАЙФФАЙЗЕН БАНК АВАЛЬ</b>: «Неоднократные тренинги, которые проводились экспертами Учебного центра для сотрудников Банка в разрезе информационных технологий, в частности бизнес-аналитики и тестирования, повысили квалификацию участников обучения, дали более глубокое представление о рассматриваемых темах, позволили систематизировать уже имеющиеся знания и найти пути практического их применения».</p>
-			<p><b>НОРДЕА БАНК</b>: «Эксперт по управлению и коммуникациями УЦ IBS Дмитрий Башакин на протяжении всего тренинга удерживал внимание аудитории благодаря интересному диалогу, примерам из практики и легкой подаче материала...  Выражаем благодарность за хорошую организацию обучения, высокий профессионализм экспертов и качественно разработанные курсы. Надеемся на дальнейшее сотрудничество с Учебным Центром IBS».</p>
-			<p><b>ЛАБОРАТОРИЯ КАСПЕРСКОГО</b>: «Впечатления от тренинга исключительно положительные. Тренер динамично и интересно подавал материал, было интересно слушать и заниматься практическими заданиями. После тренинга в голове остается много полезной и хорошо структурированной информации».</p>
+			За это время в IBS Training Center прошли обучение сотрудники ведущих российских и международных компаний.</p>
 			<p>Обучение проходит в открытом, корпоративном и онлайн-формате. Центры обучения расположены в Москве, Санкт-Петербурге, Омске.<br/>Обучение может быть организовано на территории заказчика, с учетом требований производственного процесса.</p>
 		';
     $mpdf->AddPage();
@@ -472,7 +469,7 @@ margin-bottom: 18px;
             $course_linkedcourses = UTF(nl2br($course_linked_html_text));
         } else {
 
-            $course_linkedcourses = UTF($arResult['PROPERTIES']['course_linked_new']['~VALUE'] ? $arResult['PROPERTIES']['course_linked_new']['~VALUE'] : '');
+            $course_linkedcourses = UTF($arResult['PROPERTIES']['course_linked_new']['~VALUE'] ? $arResult['PROPERTIES']['course_linked_new']['~VALUE']['TEXT'] : '');
         }
     } else {
         $course_linkedcourses = '';
@@ -633,7 +630,7 @@ margin-bottom: 18px;
         'margin_bottom' => 30,
     ]);
 
-    $mpdf->SetHTMLHeader('<div style="text-align: right !important; width: 100%;"><img src="/static/images/logo_IBS.png" alt="" title="" border="0"  style="float: right" /></div>');
+    $mpdf->SetHTMLHeader('<div style="text-align: right !important; width: 100%;"><img src="/static/images/main_logo_mini.png" alt="" title="" border="0"  style="float: right" /></div>');
     $mpdf->SetHTMLFooter('<table class="footer"><tr><td>По всем вопросам обращайтесь <a taget="_blank" style="color: #a1a1a1" href="mailto:' . EMAIL_ADDRESS . '" class="underline">' . EMAIL_ADDRESS . '</a></td><td style="width: 34%;text-align: center;">{PAGENO}</td><td style="text-align: right;">Версия {DATE j.m.Y}</td></tr></table>');
     $mpdf->WriteHtml($html);
     $filename = "training_" . UTF($arResult['PROPERTIES']['course_code']['VALUE']) . ".pdf";
