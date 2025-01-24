@@ -328,6 +328,10 @@ class CourseSectionComplexComponent extends CBitrixComponent
                 $coursesInfo[] = $courseInfo;
             }
 
+            usort($coursesInfo, function ($a, $b) {
+                return $a['CODE'] <=> $b['CODE'];
+            });
+
             $this->courseInfo['COURSES'] = $coursesInfo;
         }
     }
