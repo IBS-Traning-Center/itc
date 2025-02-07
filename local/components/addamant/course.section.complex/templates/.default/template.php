@@ -155,9 +155,11 @@ if (!empty($arResult)) : ?>
                                     <?php if ($course['DESCRIPTION']) : ?>
                                         <p class="f-16"><?= $course['DESCRIPTION'] ?></p>
                                     <?php endif; ?>
-                                    <a href="/kurs/<?= $course['XML_ID'] ?>.html" class="linked-course-link">
-                                        <span class="f-16"><?= Loc::getMessage('LINKED_COURSE_LINK_TEXT') ?></span>
-                                    </a>
+                                    <?php if ($course['ACTIVE']) : ?>
+                                        <a href="/kurs/<?= $course['XML_ID'] ?>.html" class="linked-course-link">
+                                            <span class="f-16"><?= Loc::getMessage('LINKED_COURSE_LINK_TEXT') ?></span>
+                                        </a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
