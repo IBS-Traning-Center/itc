@@ -376,16 +376,28 @@ function plural_form($number, $after) {
                                 </div>
                             </div>
                         </div>
-						<div class="price-wrapper">
                             <?if (intval($value["schedule_course_sale"])>0) {?>
+				<div class="price-wrapper">
                                 <span class="sale-percent">
                                     <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
                                     Скидка
                                     <?= number_format($value["schedule_course_sale"]);?>%
                                 </span>
                                 <div class="price-sale">
+                            <?} elseif ($value["icon-sale"] && $value["icon-sale-link"]) {?>
+                                <div class="price-wrapper" style="justify-content:space-between;">
+                                <div style="order:2;">
+                                <a href="<?=$value["icon-sale-link"]?>">
+                                    <span class="sale-percent">
+                                        <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+                                        Двойная выгода
+                                    </span>
+                                </a>
+                                </div>
+                                <div class="price">
                             <?} else {?>
-                        <div class="price">
+				<div class="price-wrapper">
+				<div class="price">
                             <?}?>
                             <?if (intval($value["discount"])>0 && $value["discount_type"]=="P") {?>
 						        <?=number_format($value["price"]*(100-$value["discount"])/100, 0, '', ' ');?><br>

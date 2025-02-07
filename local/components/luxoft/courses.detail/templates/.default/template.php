@@ -49,6 +49,13 @@ $settings = Functions::getSiteSettings();
                                     <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
                                     <span class="f-16" style="color: var(--white);">Скидка <?= $arResult['schedule'][0]['sale']['percent'] ?>%</span>
                                 </div>
+                            <?php elseif ($arResult['schedule'][0]['iconSale'] && $arResult['schedule'][0]['iconSaleLink']) : ?>
+                                <a href="<?= $arResult['schedule'][0]['iconSaleLink'] ?>">
+                                    <div class="banner-tag" style="background-color: var(--red);">
+                                        <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
+                                        <span class="f-16" style="color: var(--white);">Двойная выгода</span>
+                                    </div>
+                                </a>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
@@ -164,6 +171,7 @@ $settings = Functions::getSiteSettings();
                 <div class="themes-block">
                     <?php foreach ($arResult['content']['roadmapBlocks'] as $num => $roadItem) : ?>
                         <?php $num++; ?>
+                        <?php if ($roadItem['description']) : ?>
                         <div class="theme-item-block">
                             <div class="theme-item-content">
                                 <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
@@ -181,6 +189,14 @@ $settings = Functions::getSiteSettings();
                                 <?= $roadItem['description'] ?>
                             </div>
                         </div>
+                        <?php else : ?>
+                        <div class="theme-item-block none">
+                            <div class="theme-item-content">
+                                <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
+                                <span class="f-32"><?= $roadItem['title'] ?></span>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>

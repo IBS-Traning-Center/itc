@@ -64,6 +64,7 @@ class CourseSectionComplexComponent extends CBitrixComponent
             'select' => [
                 'ID',
                 'NAME',
+                'COURSE',
                 'COURSES',
                 'PREVIEW_TEXT',
                 'DETAIL_TEXT',
@@ -100,6 +101,10 @@ class CourseSectionComplexComponent extends CBitrixComponent
 
         if ($courseObject->getName()) {
             $courseArray['NAME'] = $courseObject->getName();
+        }
+
+        if ($courseObject->getCourse() && $courseObject->getCourse()->getValue()) {
+            $courseArray['COURSE'] = $courseObject->getCourse()->getValue();
         }
 
         if ($courseObject->getCourses() && $courseObject->getCourses()->getAll()) {
@@ -280,10 +285,10 @@ class CourseSectionComplexComponent extends CBitrixComponent
                 'NAME',
                 'COMPLEXITY.ITEM',
                 'course_duration',
-                'course_price'
+                'course_price',
+                'ACTIVE'
             ],
             'filter' => [
-                'ACTIVE' => 'Y',
                 'ID' => $this->courseInfo['COURSES']
             ]
         ])->fetchCollection();
@@ -323,6 +328,10 @@ class CourseSectionComplexComponent extends CBitrixComponent
                     $course->getComplexity()->getItem()->getValue()
                 ) {
                     $courseInfo['COMPLEXITY'] = $course->getComplexity()->getItem()->getValue();
+                }
+
+                if ($course->getActive()) {
+                    $courseInfo['ACTIVE'] = $course->getActive();
                 }
 
                 $coursesInfo[] = $courseInfo;
@@ -413,7 +422,7 @@ class CourseSectionComplexComponent extends CBitrixComponent
 
     private function getSchedule()
     {
-        if (!$this->courseInfo['ID']) {
+        if (!$this->courseInfo['COURSE']) {
             return false;
         }
 
@@ -423,9 +432,8 @@ class CourseSectionComplexComponent extends CBitrixComponent
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
-                'schedule_course.VALUE' => $this->courseInfo['ID'],
-                '<startdate.VALUE' => $this->dateNow,
-                '>=enddate.VALUE' => $this->dateNow
+                'schedule_course.VALUE' => $this->courseInfo['COURSE'],
+                '>startdate.VALUE' => $this->dateNow
             ]
         ])->fetchAll();
 

@@ -116,6 +116,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'lang' => '',
                 'city' => '',
                 'sale' => 'course_sale',
+                'iconSale' => 'ICON_SALE',
+                'iconSaleLink' => 'ICON_SALE_LINK',
                 'price' => 'schedule_price',
                 'price_ur' => 'COURSE_PRICE_UR',
             ],
@@ -621,6 +623,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'lang.ELEMENT',
                 'city.ELEMENT',
                 'sale',
+                'iconSale',
+                'iconSaleLink',
                 'price_ur'
             ]),
             'cache' => ['ttl' => 3600],
@@ -657,6 +661,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                         ? $collectionItem->get($this->mapping('schedule', 'endDate'))->getValue()
                         : '',
                 ],
+                'iconSale' => $collectionItem->get($this->mapping('schedule', 'iconSale')) ? $collectionItem->get($this->mapping('schedule', 'iconSale'))->getValue() : '',
+                'iconSaleLink' => $collectionItem->get($this->mapping('schedule', 'iconSaleLink')) ? $collectionItem->get($this->mapping('schedule', 'iconSaleLink'))->getValue() : '',
             ];
 
             $currentItem['formLabel'] = $currentItem['date']['start']
