@@ -283,6 +283,10 @@
     display: none;
 }
 
+.course-content .left-content-block .themes-block .theme-item-block.none {
+    pointer-events: none;
+}
+
 .course-content .left-content-block .themes-block .theme-item-block.active {
     padding: 24px 32px 40px;
     background-color: var(--gray);
@@ -880,6 +884,10 @@
         margin-top: 24px;
     }
 
+    .course-content .left-content-block .themes-block .theme-item-block.none {
+        pointer-events: none;
+    }
+
     .course-content .left-content-block .themes-block .theme-item-block.active {
         padding: 16px 32px 24px;
     }
@@ -981,7 +989,7 @@
 
     .diploma-modal .diploma-modal-content img {
         max-width: 400px;
-        max-height: 280px;
+        max-height: 250px;
     }
 
     .diploma-modal {
@@ -1089,7 +1097,7 @@
 
 @media (max-width: 500px) {
     .diploma-modal {
-        max-width: 330px;
+        max-width: 400px;
         height: 300px;
     }
 

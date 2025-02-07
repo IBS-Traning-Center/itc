@@ -505,9 +505,9 @@ if (!empty($arResult['sale'])) {
 <div class="diploma-modal">
     <div class="diploma-modal-content">
         <?php if ($arResult['duration'] && $arResult['duration'] >= 16) : ?>
-            <img src="<?= $templateFolder . '/images/license-preview.png' ?>">
+            <img src="<?= $templateFolder . '/images/license-preview.jpg' ?>">
         <?php else : ?>
-            <img src="<?= $templateFolder . '/images/certificate-preview.png' ?>">
+            <img src="<?= $templateFolder . '/images/certificate-preview.jpg' ?>">
         <?php endif; ?>
     </div>
 </div>
