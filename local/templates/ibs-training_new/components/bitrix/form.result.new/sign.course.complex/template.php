@@ -102,7 +102,7 @@ Loc::loadMessages(__FILE__);
                                 $name = $name . $arParams['COURSE_NAME'];
                             }
                             if ($name) {
-                                $value = 'Заявка. Курс: ' . $name;
+                                $value = 'Заявка. Программа: ' . $name;
                             }       
                             break;
                         case 'course_link':

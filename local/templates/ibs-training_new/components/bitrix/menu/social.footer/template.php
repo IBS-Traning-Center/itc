@@ -18,7 +18,7 @@ if (!empty($arResult)) : ?>
     <div class="social-footer-menu-block">
     <?php foreach ($arResult as $key => $item) : ?>
         <?php $lowerName = $item['TEXT']; ?>
-        <a class="social-footer-menu-icon" href="<?= $item['LINK']?>">
+        <a class="social-footer-menu-icon" href="<?= $item['LINK']?>" target="_blank">
             <?php switch ($lowerName) {
                 case 'telegram' :
                     echo Functions::buildSVG('telegram', $templateFolder . '/images');
