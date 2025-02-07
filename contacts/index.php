@@ -4,8 +4,8 @@ global $APPLICATION;
 
 $APPLICATION->SetPageProperty('BANNER_TITLE', 'Сведения об образовательной организации');
 $APPLICATION->SetPageProperty('BACKGROUND_COLOR_BANNER', '#F8F7F7');
-$APPLICATION->SetPageProperty('keywords', 'Адрес УЦ Luxoft, как проехать Luxoft, контакты Люксофт, телефон Люксофт, Luxoft Москва, luxoft Киев, Люксофт Омск, Luxoft Training, адрес Luxoft Training');
-$APPLICATION->SetPageProperty('description', 'Курсы по программированию: Москва, Санкт-Петербург, Омск, Киев, Днепропетровск, Одесса.');
+$APPLICATION->SetPageProperty('keywords', 'УЦ IBS, Учебный центр IBS, IBS Training, как проехать Учебный центр IBS, как проехать IBS Training, контакты Учебный центр IBS, контакты IBS Training, телефон Учебный центр IBS, телефон IBS Training, Учебный центр IBS Москва, IBS Training Москва, Учебный центр IBS Санкт-Петербург, IBS Training Санкт-Петербург, Учебный центр IBS Омск, IBS Training Омск, адрес Учебный центр IBS, адрес IBS Training, адрес УЦ IBS, учебный центр ibs');
+$APPLICATION->SetPageProperty('description', 'Обучение в сфере разработки и внедрения ПО: онлайн, Москва, Санкт-Петербург, Омск.');
 $APPLICATION->SetTitle('Контакты');
 
 
