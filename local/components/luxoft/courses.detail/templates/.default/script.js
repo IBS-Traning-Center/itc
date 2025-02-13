@@ -6,15 +6,21 @@ class CourseDetail {
       diplomModalClass: ".diploma-modal",
       backgroundModalClass: ".background-modal",
       diplomCloseBtnModalClass: ".diploma-modal-close-btn",
+      signDateBtnClass: '.sign-date-btn',
+      selectDateClass: '.select-date',
+      dateInputClass: '.sign-course-form-input.date',
+      selectDatesContentClass: '.select-dates-content',
     }
   ) {
     this.themesCourse = document.querySelectorAll(data.themesCourseClass);
     this.showDiplomBtn = document.querySelector(data.showDiplomBtnClass);
     this.diplomModal = document.querySelector(data.diplomModalClass);
     this.backgroundModal = document.querySelector(data.backgroundModalClass);
-    this.diplomCloseBtnModal = document.querySelector(
-      data.diplomCloseBtnModalClass
-    );
+    this.diplomCloseBtnModal = document.querySelector(data.diplomCloseBtnModalClass);
+    this.signDateBtn = document.querySelectorAll(data.signDateBtnClass);
+    this.selectDate = document.querySelectorAll(data.selectDateClass);
+    this.dateInput = document.querySelector(data.dateInputClass);
+    this.selectDatesContent = document.querySelector(data.selectDatesContentClass);
 
     this.addCourseDetailEventHandler();
     this.initLinkedCoursesSlider();
@@ -48,6 +54,23 @@ class CourseDetail {
     if (this.backgroundModal) {
       this.backgroundModal.addEventListener("click", () => {
         this.closeDiplomModal();
+      });
+    }
+
+    if (this.signDateBtn && this.selectDate && this.selectDatesContent && this.dateInput) {
+      this.signDateBtn.forEach(block => {
+        block.addEventListener('click', () => {
+          let data = block.getAttribute('data-date');
+
+          this.selectDate.forEach(date => {
+            let text = date.textContent;
+            if (text.indexOf(data) !== -1) {
+              let value = date.querySelector('span').textContent;
+              this.selectDatesContent.querySelector('span').textContent = value;
+              this.dateInput.value = value;
+            }
+          });
+        });
       });
     }
   }

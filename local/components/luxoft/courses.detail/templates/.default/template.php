@@ -22,6 +22,11 @@ use Local\Util\Functions;
 Loc::loadMessages(__FILE__);
 
 $settings = Functions::getSiteSettings();
+
+function plural_form($number, $after) {
+    $cases = array (2, 0, 1, 1, 1, 2);
+    echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
+}
 ?>
 
 <div class="course-detail-block">
@@ -31,7 +36,7 @@ $settings = Functions::getSiteSettings();
                 <div class="left-banner-block">
                     <p class="f-16 course-code"><?= $arResult['code'] ?: '' ?></p>
                     <h1><?= $arResult['name'] ?: '' ?></h1>
-                    <?php if ($arResult['complexity'] || $arResult['is_new']) : ?>
+                    <?php if ($arResult['complexity'] || $arResult['is_new'] || $arResult['schedule'][0]['sale'] || ($arResult['schedule'][0]['iconSale'] && $arResult['schedule'][0]['iconSaleLink'])) : ?>
                         <div class="tags-banner-block">
                             <?php if ($arResult['complexity']) : ?>
                                 <div class="banner-tag">
@@ -47,13 +52,13 @@ $settings = Functions::getSiteSettings();
                             <?php if ($arResult['schedule'][0]['sale']['percent']) : ?>
                                 <div class="banner-tag" style="background-color: var(--red);">
                                     <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
-                                    <span class="f-16" style="color: var(--white);">Скидка <?= $arResult['schedule'][0]['sale']['percent'] ?>%</span>
+                                    <span class="f-16" style="color: var(--white);"><?= Loc::getMessage('ACTION_COURSE_TEXT') ?> <?= $arResult['schedule'][0]['sale']['percent'] ?>%</span>
                                 </div>
                             <?php elseif ($arResult['schedule'][0]['iconSale'] && $arResult['schedule'][0]['iconSaleLink']) : ?>
                                 <a href="<?= $arResult['schedule'][0]['iconSaleLink'] ?>">
                                     <div class="banner-tag" style="background-color: var(--red);">
                                         <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
-                                        <span class="f-16" style="color: var(--white);">Двойная выгода</span>
+                                        <span class="f-16" style="color: var(--white);"><?= Loc::getMessage('DOUBLE_COURSE_TEXT') ?></span>
                                     </div>
                                 </a>
                             <?php endif; ?>
@@ -166,29 +171,122 @@ $settings = Functions::getSiteSettings();
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
+            <?php if ($arResult['schedule']) : ?>
+                <h2><?= Loc::getMessage('TIMETABLE_TITLE') ?></h2>
+                <div class="timetable-list quarter">
+                    <?php foreach ($arResult['schedule'] as $item) : ?>
+                        <div class="timetable-item quarter">
+                            <div class="date-info">
+                                 <p class="f-24"><?= $item['date']['start'] ?> - <?= $item['date']['end'] ?></p>
+                                 <div class="time-wrapper-left">
+                                    <div class="time<?if (strlen($item["time_interval"])>0){?> time-with-tooltip<?}?>">
+                                        <?=$item["time"]?>
+                                        <?if (strlen($item["time_interval"])>0){?>
+                                            <span style="display: none;" class="tooltip">
+                                                <?= Functions::buildSVG('arrow-tooltip', $templateFolder . '/images') ?>
+                                                <?=$item["time_interval"]?>
+                                            </span>
+                                        <?}?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="date-info-mobile">
+                                <?= Loc::getMessage('DATE_COURSE_TEXT') ?>
+                                <div class="time-wrapper-right">
+                                    <div class="timedate">
+                                        <?= $item['date']['start'] ?>-<?= $item['date']['end'] ?>
+                                    </div>
+                                    <div class="time<?if (strlen($item["time_interval"])>0){?> time-with-tooltip<?}?>">
+                                        <?=$item["time"]?>
+                                        <?if (strlen($item["time_interval"])>0){?>
+                                            <span style="display: none;" class="tooltip">
+                                                <?= Functions::buildSVG('arrow-tooltip', $templateFolder . '/images') ?>
+                                                <?=$item["time_interval"]?>
+                                            </span>
+                                        <?}?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trener-info">
+                                 <?php if ($item['trainer']) : ?>
+                                    <?= Loc::getMessage('TRAINER_COURSE_TEXT') ?><a  href="/about/experts/<?= $item['trainer']['CODE'] ?>.html"><?= $item['trainer']['SURNAME'] ?> <?= $item['trainer']['NAME'] ?></a>
+                                 <?php elseif ($item['trainerString']) : ?>
+                                    <?= Loc::getMessage('TRAINER_COURSE_TEXT') ?><span class="f-16"><?= $item['trainerString'] ?></span>
+                                 <?php endif; ?>
+                            </div>
+                            <div class="code-icon-wrap">
+                                 <div class="code-icon-right" style="float: right; text-align: center;">
+                                    <? if($arResult['complexity'] !==''){?>
+                                        <p><span class="icon level"><?=$arResult['complexity']?></span>
+                                    <?}?>
+                                    <? if($arResult['duration'] !==''){?>
+                                        <span class="hours"><?plural_form($arResult["duration"], array("час", "часа", "часов"))?></span></p>
+                                    <?}?>
+                                    <? if ($item['iconSale'] && $item['iconSaleLink']) {?>
+                                        <a href="<?=$item['iconSaleLink']?>">
+                                            <span class="sale-percent" style="justify-content: center;">
+                                                <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+                                                <?= Loc::getMessage('DOUBLE_COURSE_TEXT') ?>
+                                            </span>
+                                        </a>
+                                    <?} else if ($item['sale']['percent']) {?>
+                                            <span class="sale-percent" style="justify-content: center;">
+                                                <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+                                                <?= Loc::getMessage('ACTION_COURSE_TEXT') ?> <?= $item['sale']['percent'] ?>%
+                                            </span>
+                                    <?}?>
+                                </div>
+                            </div>
+                                 <? if ($item['sale']['percent']) {?>
+                                 <div class="price-info course-sale">
+                                    <div class="price-sale">
+                                    <p class="f-20"><?= number_format($item['sale']['price'], 0, '', ' ') . ' ₽' ?></p>
+                                    </div>
+                                    <div class="sale" style="margin-right: 0px">
+                                    <p class="f-24"><?= number_format(($item['sale']['price'] - ($item['sale']['price'] * $item['sale']['percent'] / 100)), 0, '', ' ') . ' ₽' ?></p>
+                                    </div>
+                                 </div>
+                                 <? } else {?>
+                                 <div class="price-info">
+                                    <p class="f-24"><?= number_format($item['sale']['price'], 0, '', ' ') . ' ₽' ?></p>
+                                    <?php if ($item['sale']['price_ur']) : ?>
+                                    <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($item['sale']['price_ur'], 0, '', ' ')]) ?></p>
+                                 </div>
+                                    <?php endif; ?>
+                                 <?}?>
+                            <div class="sign-date-btn" data-date="<?= $item['date']['start'] ?>">
+                                <a data-scroll="sign" class="btn-main size-l">
+                                    <span class="f-24"><?= Loc::getMessage('TIMETABLE_BTN') ?></span>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="btn-timetable"><a href="/timetable/"><?= Loc::getMessage('TIMETABLE_ALL_BTN') ?></a></div>
+            <?php endif; ?>
             <?php if (!empty($arResult['content']['roadmapBlocks'])) : ?>
                 <h2><?= Loc::getMessage('THEMES_TITLE') ?></h2>
                 <div class="themes-block">
                     <?php foreach ($arResult['content']['roadmapBlocks'] as $num => $roadItem) : ?>
                         <?php $num++; ?>
                         <?php if ($roadItem['description']) : ?>
-                        <div class="theme-item-block">
-                            <div class="theme-item-content">
-                                <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
-                                <span class="f-32"><?= $roadItem['title'] ?></span>
-                                <div class="theme-item-icons-block">
-                                    <div class="arrow">
-                                        <?= Functions::buildSVG('arrow', $templateFolder . '/images') ?>
-                                    </div>
-                                    <div class="minus">
-                                        <?= Functions::buildSVG('minus', $templateFolder . '/images') ?>
+                            <div class="theme-item-block">
+                                <div class="theme-item-content">
+                                    <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
+                                    <span class="f-32"><?= $roadItem['title'] ?></span>
+                                    <div class="theme-item-icons-block">
+                                        <div class="arrow">
+                                            <?= Functions::buildSVG('arrow', $templateFolder . '/images') ?>
+                                        </div>
+                                        <div class="minus">
+                                            <?= Functions::buildSVG('minus', $templateFolder . '/images') ?>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="theme-hidden-content">
+                                    <?= $roadItem['description'] ?>
+                                </div>
                             </div>
-                            <div class="theme-hidden-content">
-                                <?= $roadItem['description'] ?>
-                            </div>
-                        </div>
                         <?php else : ?>
                         <div class="theme-item-block none">
                             <div class="theme-item-content">

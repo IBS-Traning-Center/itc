@@ -620,6 +620,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'trainerString',
                 'timeZone',
                 'time',
+                'TIME_INTERVAL',
                 'lang.ELEMENT',
                 'city.ELEMENT',
                 'sale',
@@ -647,6 +648,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'courseId' => $collectionItem->get($this->mapping('schedule', 'course')) ? $collectionItem->get($this->mapping('schedule', 'course'))->getValue() : '',
 
                 'time' => ($collectionItem->has($this->mapping('schedule', 'time')) && $collectionItem->get($this->mapping('schedule', 'time'))->getValue()) ? $collectionItem->get($this->mapping('schedule', 'time'))->getValue() : '',
+                'time_interval' => ($collectionItem->has($this->mapping('schedule', 'TIME_INTERVAL')) && $collectionItem->get($this->mapping('schedule', 'TIME_INTERVAL'))->getValue()) ? $collectionItem->get($this->mapping('schedule', 'TIME_INTERVAL'))->getValue() : '',                
                 //TODO подтянуть локацию из инфоблока
                 //'location' => ($collectionItem->has($this->mapping('schedule','city')) && $collectionItem->get($this->mapping('schedule','city'))->getElement()) ? $collectionItem->get($this->mapping('schedule','cityId'))->getElement()->getName() : '',
                 'city' => 'Онлайн',
@@ -788,6 +790,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             ],
             'select' => [
                 'NAME',
+                'CODE',
                 'expert_name',
                 'expert_title',
                 'KNOW_LEVEL',
@@ -811,6 +814,10 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
 
         if ($trainer->getId()) {
             $trainerInfo['ID'] = $trainer->getId();
+        }
+
+        if ($trainer->getCode()) {
+            $trainerInfo['CODE'] = $trainer->getCode();
         }
 
         if ($trainer->getName()) {
