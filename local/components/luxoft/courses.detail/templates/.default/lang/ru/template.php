@@ -33,3 +33,4 @@ $MESS['ACTION_COURSE_TEXT'] = 'Скидка';
 $MESS['DOUBLE_COURSE_TEXT'] = 'Двойная выгода';
 $MESS['DATE_COURSE_TEXT'] = 'Дата и время: ';
 $MESS['TRAINER_COURSE_TEXT'] = 'Тренер: ';
+$MESS['TRAINER_DEFAULT_TEXT'] = 'В процессе согласования';

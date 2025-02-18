@@ -212,6 +212,8 @@ function plural_form($number, $after) {
                                     <?= Loc::getMessage('TRAINER_COURSE_TEXT') ?><a  href="/about/experts/<?= $item['trainer']['CODE'] ?>.html"><?= $item['trainer']['SURNAME'] ?> <?= $item['trainer']['NAME'] ?></a>
                                  <?php elseif ($item['trainerString']) : ?>
                                     <?= Loc::getMessage('TRAINER_COURSE_TEXT') ?><span class="f-16"><?= $item['trainerString'] ?></span>
+                                 <?php else : ?>
+                                    <?= Loc::getMessage('TRAINER_COURSE_TEXT') ?><span class="f-16"><?= Loc::getMessage('TRAINER_DEFAULT_TEXT') ?></span>
                                  <?php endif; ?>
                             </div>
                             <div class="code-icon-wrap">
@@ -247,12 +249,18 @@ function plural_form($number, $after) {
                                     </div>
                                  </div>
                                  <? } else {?>
-                                 <div class="price-info">
-                                    <p class="f-24"><?= number_format($item['sale']['price'], 0, '', ' ') . ' ₽' ?></p>
-                                    <?php if ($item['sale']['price_ur']) : ?>
-                                    <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($item['sale']['price_ur'], 0, '', ' ')]) ?></p>
-                                 </div>
+                                <div class="price-info">
+                                    <?php if ($item['sale']['price']) : ?>
+                                        <p class="f-24"><?= number_format($item['sale']['price'], 0, '', ' ') . ' ₽' ?></p>
+                                    <?php elseif (!empty($arResult['sale'])) : ?>
+                                        <p class="f-24"><?= number_format($arResult['sale'], 0, '', ' ') . ' ₽' ?></p>
                                     <?php endif; ?>
+                                    <?php if ($item['sale']['price_ur']) : ?>
+                                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($item['sale']['price_ur'], 0, '', ' ')]) ?></p>
+                                    <?php elseif (!empty($arResult['price_ur'])) : ?>
+                                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
+                                    <?php endif; ?>
+                                </div>
                                  <?}?>
                             <div class="sign-date-btn" data-date="<?= $item['date']['start'] ?>">
                                 <a data-scroll="sign" class="btn-main size-l">
