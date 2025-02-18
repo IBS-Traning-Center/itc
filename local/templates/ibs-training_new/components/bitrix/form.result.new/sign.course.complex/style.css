@@ -119,11 +119,13 @@
     cursor: pointer;
 }
 
-.sign-course-complex-block .under-main-feedback-form {
+.sign-course-complex-block .under-main-feedback-form,
+.sign-course-complex-block .question-block span {
     margin-top: 32px;
 }
 
-.sign-course-complex-block .under-main-feedback-form a {
+.sign-course-complex-block .under-main-feedback-form a,
+.sign-course-complex-block .question-block span a {
     text-decoration: underline;
     color: var(--button-blue);
 }
