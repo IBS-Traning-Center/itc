@@ -123,11 +123,13 @@
     cursor: pointer;
 }
 
-.sign-course-complex-block .under-main-feedback-form {
+.sign-course-complex-block .under-main-feedback-form,
+.sign-course-complex-block .questions-block span {
     margin-top: 32px;
 }
 
-.sign-course-complex-block .under-main-feedback-form a {
+.sign-course-complex-block .under-main-feedback-form a,
+.sign-course-complex-block .questions-block span a {
     text-decoration: underline;
     color: var(--button-blue);
 }
@@ -153,6 +155,7 @@
 
 .file-block {
     position: relative;
+    margin-bottom: 20px;
 }
 
 .file-block input {

@@ -68,13 +68,23 @@ Loc::loadMessages(__FILE__);
                                 <div class="flex-question-block">
                             <?php endif; ?>
                             <div class="question-block <?= $questionId ?>">
-                                <input
+                                <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'checkbox') : ?>
+                                    <input
+                                        <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
+                                        name="form_checkbox_<?= $questionId ?>[]"
+                                        type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
+                                        id="<?= $question['STRUCTURE'][0]['ID'] ?>"
+                                        value="<?= $question['STRUCTURE'][0]['ID'] ?>">
+                                    <span><?= $question['CAPTION'] ?></span>
+                                <?php else : ?>
+                                    <input
                                         class="inputtext sign-course-form-input <?= $questionId ?> <?= isset($arResult['FORM_ERRORS'][$questionId]) ? 'has-error' : '' ?>"
                                         <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
                                         <?= ($questionId == 'client_id') ? 'id="clientID"' : '' ?>
                                         placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '*' : '(не обязательно)' ?>"
                                         name="form_text_<?= $question['STRUCTURE'][0]['ID'] ?>"
                                         type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>">
+                                <?php endif; ?>
                             </div>
                             <?php if ($questionId == 'last_name' || $questionId == 'phone'  || $questionId == 'city') : ?>
                                 </div>
