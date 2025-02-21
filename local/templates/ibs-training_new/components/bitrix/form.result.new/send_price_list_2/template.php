@@ -74,12 +74,9 @@ if ($USER->IsAuthorized()) {
                 }
             } ?>
             <div style="margin-top: 20px;">
-                <label class="agree-text"><input checked="checked" name="agree" value="Y" type="checkbox">Настоящим я
-                    подтверждаю, что я ознакомлен с <a style="color: #535353; text-decoration: underline;" target="_blank" href="/terms-of-use/">Условиями использования</a>, условия
-                    мне понятны и я согласен соблюдать их.</label>
-                <label class="agree-text"><input checked="checked" name="agree-2" value="Y" type="checkbox">Я ознакомлен
-                    с порядком обработки моих персональных данных согласно <a
-                            style="color: #535353; text-decoration: underline;" target="_blank" href="/privacy-policy/">Политике в сфере персональных данных</a>.</label>
+                <label class="agree-text"><input name="agree" value="N" type="checkbox">Ознакомлен с <a style="color: #535353; text-decoration: underline;" target="_blank" href="/privacy-policy/">политикой обработки персональных данных</a></label>
+                <label class="agree-text"><input name="agree-2" value="N" type="checkbox">Cоглашаюсь с <a
+                            style="color: #535353; text-decoration: underline;" target="_blank" href="/agree_of_subject/">условиями обработки персональных данных</a></label>
             </div>
             <? if ($arResult["isUseCaptcha"] == "Y") { ?>
                 <input type="hidden" name="captcha_sid" value="<?= htmlspecialchars($arResult["CAPTCHACode"]); ?>"/>
