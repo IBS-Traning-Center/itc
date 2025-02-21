@@ -414,16 +414,15 @@ $arUserInfo["WORK_POSITION"] = $arUser["WORK_POSITION"];
                         <label class="agree-text">
                             <input class='agree' id="form-reg-agree" checked="checked" name="agree" value="Y"
                                    type="checkbox"/>
-                            Настоящим я подтверждаю, что я ознакомлен с <a target="_blank"
-                                    href="/terms-of-use/">Условиями использования</a>,
-                            условия мне понятны и я согласен соблюдать их.
+                            Ознакомлен с <a target="_blank"
+                                    href="/privacy-policy/">политикой обработки персональных данных</a>
                         </label>
                         <label class="agree-text">
                             <input class='agree' id="form-reg-two" checked="checked" name="agree-2" value="Y"
                                    type="checkbox"/>
-                            Я ознакомлен с порядком обработки моих персональных данных согласно
+                            Cоглашаюсь с
                             <a target="_blank"
-                               href="/privacy-policy/">Политике в сфере персональных данных</a>.
+                               href="/agree_of_subject/">условиями обработки персональных данных</a>
                         </label>
 
                         <input class="btn-main" id="submit_button_register"
