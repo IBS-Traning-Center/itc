@@ -146,21 +146,32 @@ $APPLICATION->SetPageProperty("description", "Получите бумажный 
 				</div>
 				<div class="form__content">
 					<div class="fields">
-						 <?= bitrix_sessid_post() ?> <input type="hidden" name="addField" value=""> <input type="hidden" name="school" value="Промостраница">
+						<?= bitrix_sessid_post() ?>
+                        <input type="hidden" name="addField" value="">
+                        <input type="hidden" name="school" value="Промостраница">
 						<div class="form-row">
- <label class="field-box"> <input class="field" type="text" name="name" placeholder="Имя" value=""> </label> <label class="field-box"> <input class="field" type="text" name="company" placeholder="Компания" value=""> </label>
+                            <label class="field-box"> <input class="field" type="text" name="name" placeholder="Имя" value=""></label>
+                            <label class="field-box"> <input class="field" type="text" name="company" placeholder="Компания" value=""></label>
 						</div>
 						<div class="form-row">
- <label class="field-box"> <input class="field" type="text" name="email" placeholder="E-mail" value=""> </label> <label class="field-box"> <input class="field" type="tel" name="phone" placeholder="Телефон" value=""> </label>
+                            <label class="field-box"> <input class="field" type="text" name="email" placeholder="E-mail" value=""></label>
+                            <label class="field-box"> <input class="field" type="tel" name="phone" placeholder="Телефон" value=""></label>
 						</div>
 						<div class="form-row">
- <label class="field-box _wide"> <textarea class="field" name="message" placeholder="Сообщение"></textarea> </label>
+                            <label class="field-box _wide">
+                                <textarea class="field" name="message" placeholder="Сообщение"></textarea>
+                            </label>
 						</div>
- <input class="field" type="hidden" name="cid" id="clientID" value=""> <br>
- <label class="agree-text" style="color: #003979"> <input checked="checked" name="agree" value="Y" type="checkbox">Настоящим я подтверждаю, что я ознакомлен с <a style="text-decoration: underline;" target="_blank" href="/terms-of-use/">Условиями использования</a>, условия мне понятны и я согласен соблюдать их.</label> <label class="agree-text" style="color: #003979"> <input checked="checked" name="agree-2" value="Y" type="checkbox">
-						Я ознакомлен с порядком обработки моих персональных данных согласно <a style="text-decoration: underline; color: #fb9024" target="_blank" href="/privacy-policy/">Политике в сфере персональных данных</a>. </label>
+                        <input class="field" type="hidden" name="cid" id="clientID" value="">
+                        <br>
+                        <label class="agree-text" style="color: #003979">
+                            <input name="agree" value="N" type="checkbox">Ознакомлен с <a style="text-decoration: underline;" target="_blank" href="/privacy-policy/">политикой обработки персональных данных</a>
+                        </label>
+                        <label class="agree-text" required style="color: #003979">
+                            <input required name="agree-2" value="N" type="checkbox">Cоглашаюсь с <a style="text-decoration: underline; color: #fb9024" target="_blank" href="/agree_of_subject/">условиями обработки персональных данных</a>
+                        </label>
 					</div>
- <button type="submit" class="button _submit _w-full _size-l">Отправить</button>
+                    <button type="submit" class="button _submit _w-full _size-l">Отправить</button>
 				</div>
 			</form>
 		</div>
