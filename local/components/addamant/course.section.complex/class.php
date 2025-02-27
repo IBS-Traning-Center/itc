@@ -77,7 +77,9 @@ class CourseSectionComplexComponent extends CBitrixComponent
                 'COMPLEXITY',
                 'COURSE_LINKED',
                 'LINK',
-                'CODE'
+                'CODE',
+                'DEMO_CODE',
+                'DEMO_NAME'
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
@@ -184,6 +186,14 @@ class CourseSectionComplexComponent extends CBitrixComponent
             foreach ($courseObject->getTariffs()->getAll() as $tariff) {
                 $courseArray['TARIFFS'][] = $tariff->getValue();
             }
+        }
+
+        if ($courseObject->getDemoCode() && $courseObject->getDemoCode()->getValue()) {
+            $courseArray['DEMO_CODE'] = $courseObject->getDemoCode()->getValue();
+        }
+
+        if ($courseObject->getDemoName() && $courseObject->getDemoName()->getValue()) {
+            $courseArray['DEMO_NAME'] = $courseObject->getDemoName()->getValue();
         }
 
         $this->courseInfo = $courseArray;

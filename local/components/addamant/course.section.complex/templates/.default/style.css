@@ -94,6 +94,14 @@
     margin-top: 24px;
 }
 
+.top-page-banner.section-complex-page .container .btn-banner-block .buttons-block .line-buttons,
+.main-content-complex-course .right-block .buttons-block .line-buttons,
+.main-content-complex-course .left-block .mobile-buttons-block .buttons-block .line-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .top-page-banner.section-complex-page .container .btn-banner-block .buttons-block button,
 .main-content-complex-course .right-block .buttons-block button,
 .main-content-complex-course .left-block .mobile-buttons-block .buttons-block button {
@@ -651,6 +659,17 @@
         line-height: 24px;
     }
 
+    .top-page-banner.section-complex-page .container .btn-banner-block .buttons-block .line-buttons,
+    .main-content-complex-course .left-block .mobile-buttons-block .buttons-block .line-buttons {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .top-page-banner.section-complex-page .container .btn-banner-block .buttons-block .line-buttons button,
+    .main-content-complex-course .left-block .mobile-buttons-block .buttons-block .line-buttons button {
+        width: 100%;
+    }
+
     .top-page-banner.section-complex-page .container .btn-banner-block .course-price,
     .main-content-complex-course .left-block .mobile-buttons-block .course-price {
         font-size: 24px;
@@ -817,6 +836,13 @@
     .diploma-modal {
         max-width: 460px;
         height: 410px;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-page-banner.section-complex-page .container .btn-banner-block .buttons-block .line-buttons,
+    .main-content-complex-course .left-block .mobile-buttons-block .buttons-block .line-buttons {
+        flex-direction: column;
     }
 }
 

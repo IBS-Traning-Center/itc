@@ -6,6 +6,7 @@ $MESS['HOUR_COUNT_TEXT'] = '#COUNT# академ. часов';
 $MESS['COURSE_UR_PRICE'] = '#PRICE# ₽ — для физ. лиц';
 $MESS['RETURN_MONEY_TEXT'] = 'Как вернуть до 90% стоимости';
 $MESS['MAIN_BTN_TEXT'] = 'Записаться на курс';
+$MESS['DEMO_BTN_TEXT'] = 'Пройти демокурс';
 $MESS['DESCRIPTION_COURSE_TITLE'] = 'О чём программа';
 $MESS['WHO_COURSE_TITLE'] = 'Для кого';
 $MESS['COURSES_LINK_TITLE'] = 'Состав программы';

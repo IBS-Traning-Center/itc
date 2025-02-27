@@ -96,6 +96,13 @@ if (!empty($arResult)) : ?>
                     <button class="btn-main size-l open-sign-modal">
                         <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                     </button>
+                    <?php if ($arResult['DEMO_CODE']) : ?>
+                        <div class="line-buttons">
+                            <button class="btn-main open-demo-modal">
+                                <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -180,6 +187,13 @@ if (!empty($arResult)) : ?>
                     <button class="btn-main size-l open-sign-modal">
                         <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                     </button>
+                    <?php if ($arResult['DEMO_CODE']) : ?>
+                        <div class="line-buttons">
+                            <button class="btn-main open-demo-modal">
+                                <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -197,6 +211,13 @@ if (!empty($arResult)) : ?>
                 <button class="btn-main size-l open-sign-modal">
                     <span class="f-24"><?= Loc::getMessage('MAIN_BTN_TEXT') ?></span>
                 </button>
+                <?php if ($arResult['DEMO_CODE']) : ?>
+                    <div class="line-buttons">
+                        <button class="btn-main open-demo-modal">
+                            <span class="f-16"><?= Loc::getMessage('DEMO_BTN_TEXT') ?></span>
+                        </button>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -353,5 +374,28 @@ if (!empty($arResult)) : ?>
         "COURSE_LINK" => $arResult['LINK'],
         'DATES' => $schedule,
         'TARIFFS' => $tariffs
+    )
+);?>
+
+<?php $APPLICATION->IncludeComponent(
+    "bitrix:form.result.new",
+    "sign.course.complex.demo",
+    Array(
+        "CACHE_TIME" => "3600",
+        "CACHE_TYPE" => "A",
+        "CHAIN_ITEM_LINK" => "",
+        "CHAIN_ITEM_TEXT" => "",
+        "EDIT_URL" => "",
+        "IGNORE_CUSTOM_TEMPLATE" => "N",
+        "LIST_URL" => "",
+        "SEF_MODE" => "N",
+        "SUCCESS_URL" => "",
+        "AJAX_MODE" => "Y",
+        "USE_EXTENDED_ERRORS" => "N",
+        "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
+        "WEB_FORM_ID" => "43",
+        "COURSE_NAME" => $arResult['NAME'],
+        "LEAD_NAME" => $arResult['DEMO_NAME'],
+        "COURSE_SIGN" => $arResult['DEMO_CODE']
     )
 );?>

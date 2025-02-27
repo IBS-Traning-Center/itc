@@ -8,7 +8,9 @@ class CatalogSectionComplex {
         signCourseComplexBlockCLass: '.sign-course-complex-block',
         openSignModalClass: '.open-sign-modal',
         signTariffBtnClass: '.sign-tariff-btn',
-        selectTariffClass: '.select-tariff'
+        selectTariffClass: '.select-tariff',
+        signCourseComplexBlockDemoCLass: '.sign-course-complex-block.demo',
+        openDemoModalClass: '.open-demo-modal'
     }) {
         this.linkedCourseItem = document.querySelectorAll(data.linkedCourseItemClass);
         this.showDiplomBtn = document.querySelector(data.showDiplomBtnClass);
@@ -19,6 +21,8 @@ class CatalogSectionComplex {
         this.openSignModal = document.querySelectorAll(data.openSignModalClass);
         this.signTariffBtn = document.querySelectorAll(data.signTariffBtnClass);
         this.selectTariff = document.querySelectorAll(data.selectTariffClass);
+        this.signCourseComplexBlockDemo = document.querySelector(data.signCourseComplexBlockDemoCLass);
+        this.openDemoModal = document.querySelectorAll(data.openDemoModalClass);
 
         this.addEventHandlerSectionComplex();
         this.initLinkedCourses();
@@ -56,6 +60,9 @@ class CatalogSectionComplex {
                 if (this.signCourseComplexBlock) {
                     this.signCourseComplexBlock.style.display = 'none';
                 }
+                if (this.signCourseComplexBlockDemo) {
+                    this.signCourseComplexBlockDemo.style.display = 'none';
+                }
             });
         }
 
@@ -63,6 +70,14 @@ class CatalogSectionComplex {
             this.openSignModal.forEach(elem => {
                elem.addEventListener('click', () => {
                   this.openSignComplexModal();
+               });
+            });
+        }
+
+        if (this.openDemoModal) {
+            this.openDemoModal.forEach(elem => {
+               elem.addEventListener('click', () => {
+                this.openSignComplexModalDemo();
                });
             });
         }
@@ -122,6 +137,14 @@ class CatalogSectionComplex {
 
             let dynamicBlock = document.querySelector('.page._content > div > .sign-course-complex-block');
             dynamicBlock.style.display = 'block';
+        }
+    }
+
+    openSignComplexModalDemo()
+    {
+        if (this.signCourseComplexBlockDemo && this.backgroundModal) {
+            this.signCourseComplexBlockDemo.style.display = 'block';
+            this.backgroundModal.style.display = 'flex';
         }
     }
 
