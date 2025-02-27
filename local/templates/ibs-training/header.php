@@ -45,8 +45,6 @@ $request = $application->getContext()->getRequest();
 ?><!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="yandex-verification" content="a63abf59d6bf064e"/>
-    <meta name="yandex-verification" content="8f50c1eeeb059b18"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <meta name=viewport content="width=device-width">
@@ -99,7 +97,6 @@ $request = $application->getContext()->getRequest();
     <?php }?>
     <script data-skip-moving="true" src="/static/libs/modernizr.js"></script>
     <script data-skip-moving="true" src="/static/libs/jquery.js"></script>
-    <meta name="yandex-verification" content="5d503f9f5bb0b3f6" />
     <!--  nootisend  -->
     <script charset='utf-8' src='https://cdn.pushdealer.com/5bd629bc/script_0.js' async></script>
 </head>
