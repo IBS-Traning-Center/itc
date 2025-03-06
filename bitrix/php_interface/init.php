@@ -102,6 +102,11 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
             $APPLICATION->ThrowException('Ошибка');
             return false;
         }
+    } else if ($WEB_FORM_ID == 43) {
+        if ($arrVALUES['form_text_1026'] && $arrVALUES['form_text_1026'] != NULL) {
+            $APPLICATION->ThrowException('Ошибка');
+            return false;
+        }
     }
 }
 

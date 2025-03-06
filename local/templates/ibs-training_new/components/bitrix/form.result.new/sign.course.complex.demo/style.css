@@ -69,7 +69,8 @@
 
 .sign-course-complex-block .questions-block .question-block.course_name_crm,
 .sign-course-complex-block .questions-block .question-block.client_id,
-.sign-course-complex-block .questions-block .question-block.demo_code {
+.sign-course-complex-block .questions-block .question-block.demo_code,
+.sign-course-complex-block .questions-block .question-block.training {
     display: none;
 }
 

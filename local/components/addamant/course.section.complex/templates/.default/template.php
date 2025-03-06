@@ -396,6 +396,6 @@ if (!empty($arResult)) : ?>
         "WEB_FORM_ID" => "43",
         "COURSE_NAME" => $arResult['NAME'],
         "LEAD_NAME" => $arResult['DEMO_NAME'],
-        "COURSE_SIGN" => $arResult['DEMO_CODE']
+        "DEMO_SIGN" => $arResult['DEMO_CODE']
     )
 );?>
