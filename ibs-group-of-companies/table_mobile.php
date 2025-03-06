@@ -270,11 +270,11 @@
         </div>
         <div class="custom-table_mobile-item">
             <p class="f-16 f-bold">Полное название</p>
-            <p class="f-16">Общество с ограниченной ответственностью «Дунайс Альянс»</p>
+            <p class="f-16">Общество с ограниченной ответственностью «Образовательные траектории»</p>
         </div>
         <div class="custom-table_mobile-item">
             <p class="f-16 f-bold">Краткое название</p>
-            <p class="f-16">ООО «Дунайс Альянс»</p>
+            <p class="f-16">ООО «Образовательные траектории»</p>
         </div>
         <div class="custom-table_mobile-item">
             <p class="f-16 f-bold">ОГРН</p>

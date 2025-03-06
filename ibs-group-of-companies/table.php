@@ -304,10 +304,10 @@
                     <span class="f-20">13</span>
                 </div>
                 <div class="custom-table_content-item">
-                    <span class="f-20">Общество с ограниченной ответственностью «Дунайс Альянс»</span>
+                    <span class="f-20">Общество с ограниченной ответственностью «Образовательные траектории»</span>
                 </div>
                 <div class="custom-table_content-item">
-                    <span class="f-20">ООО «Дунайс Альянс»</span>
+                    <span class="f-20">ООО «Образовательные траектории»</span>
                 </div>
                 <div class="custom-table_content-item">
                     <span class="f-20">1136154009892</span>
