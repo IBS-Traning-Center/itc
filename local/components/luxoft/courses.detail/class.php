@@ -120,6 +120,10 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'iconSaleLink' => 'ICON_SALE_LINK',
                 'price' => 'schedule_price',
                 'price_ur' => 'COURSE_PRICE_UR',
+                'saleLink' => 'sale_link',
+                'saleName' => 'sale_name',
+                'saleStartDate' => 'sale_start_date',
+                'saleEndDate' => 'sale_end_date',
             ],
             'trainer' => [
                 'shortName' => 'expert_name',
@@ -626,7 +630,11 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'sale',
                 'iconSale',
                 'iconSaleLink',
-                'price_ur'
+                'price_ur',
+                'saleLink',
+                'saleName',
+                'saleStartDate',
+                'saleEndDate'
             ]),
             'cache' => ['ttl' => 3600],
         ];
@@ -721,6 +729,25 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                         'discountPrice' => $this->course['sale']['price'],
                         'currency' => $this->currency,
                     ];
+                }
+
+                $currentItem['sale']['date'] = false;
+
+                $saleStartDate = $collectionItem->get($this->mapping('schedule', 'saleStartDate')) ? $collectionItem->get($this->mapping('schedule', 'saleStartDate'))->getValue() : '';
+                $saleEndDate = $collectionItem->get($this->mapping('schedule', 'saleEndDate')) ? $collectionItem->get($this->mapping('schedule', 'saleEndDate'))->getValue() : '';
+                if ($saleStartDate && $saleEndDate) {
+                    $today = date('Y-m-d');
+                    if ((strtotime($today) >= strtotime($saleStartDate)) && (strtotime($today) <= strtotime($saleEndDate))) {
+                        $currentItem['sale']['date'] = true;
+                    }
+                }
+
+                if ($collectionItem->get($this->mapping('schedule', 'saleLink')) && $collectionItem->get($this->mapping('schedule', 'saleLink'))->getValue()) {
+                    $currentItem['sale']['link'] = $collectionItem->get($this->mapping('schedule', 'saleLink'))->getValue();
+                }
+
+                if ($collectionItem->get($this->mapping('schedule', 'saleName')) && $collectionItem->get($this->mapping('schedule', 'saleName'))->getValue()) {
+                    $currentItem['sale']['name'] = $collectionItem->get($this->mapping('schedule', 'saleName'))->getValue();
                 }
 
                 if ($collectionItem->getCoursePriceUr() && $collectionItem->getCoursePriceUr()->getValue()) {

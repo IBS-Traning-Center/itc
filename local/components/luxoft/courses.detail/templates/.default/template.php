@@ -36,7 +36,7 @@ function plural_form($number, $after) {
                 <div class="left-banner-block">
                     <p class="f-16 course-code"><?= $arResult['code'] ?: '' ?></p>
                     <h1><?= $arResult['name'] ?: '' ?></h1>
-                    <?php if ($arResult['complexity'] || $arResult['is_new'] || $arResult['schedule'][0]['sale'] || ($arResult['schedule'][0]['iconSale'] && $arResult['schedule'][0]['iconSaleLink'])) : ?>
+                    <?php if ($arResult['complexity'] || $arResult['is_new'] || $arResult['schedule'][0]['sale']) : ?>
                         <div class="tags-banner-block">
                             <?php if ($arResult['complexity']) : ?>
                                 <div class="banner-tag">
@@ -49,18 +49,28 @@ function plural_form($number, $after) {
                                     <span class="f-16"><?= Loc::getMessage('NEW_COURSE_TEXT') ?></span>
                                 </div>
                             <?php endif; ?>
-                            <?php if ($arResult['schedule'][0]['sale']['percent']) : ?>
-                                <div class="banner-tag" style="background-color: var(--red);">
-                                    <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
-                                    <span class="f-16" style="color: var(--white);"><?= Loc::getMessage('ACTION_COURSE_TEXT') ?> <?= $arResult['schedule'][0]['sale']['percent'] ?>%</span>
-                                </div>
-                            <?php elseif ($arResult['schedule'][0]['iconSale'] && $arResult['schedule'][0]['iconSaleLink']) : ?>
-                                <a href="<?= $arResult['schedule'][0]['iconSaleLink'] ?>">
+                            <?php if ($arResult['schedule'][0]['sale']['percent'] && $arResult['schedule'][0]['sale']['date']) : ?>
+                                <?php if ($arResult['schedule'][0]['sale']['link']) : ?>
+                                    <a href="<?= $arResult['schedule'][0]['sale']['link'] ?>" target="_blank">
+                                <?php endif; ?>
                                     <div class="banner-tag" style="background-color: var(--red);">
                                         <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
-                                        <span class="f-16" style="color: var(--white);"><?= Loc::getMessage('DOUBLE_COURSE_TEXT') ?></span>
+                                        <span class="f-16" style="color: var(--white);"><?= Loc::getMessage('ACTION_COURSE_TEXT') ?> <?= $arResult['schedule'][0]['sale']['percent'] ?>%</span>
                                     </div>
-                                </a>
+                                <?php if ($arResult['schedule'][0]['sale']['link']) : ?>
+                                    </a>
+                                <?php endif; ?>
+                            <?php elseif ($arResult['schedule'][0]['sale']['name'] && $arResult['schedule'][0]['sale']['date']) : ?>
+                                <?php if ($arResult['schedule'][0]['sale']['link']) : ?>
+                                    <a href="<?= $arResult['schedule'][0]['sale']['link'] ?>" target="_blank">
+                                <?php endif; ?>
+                                    <div class="banner-tag" style="background-color: var(--red);">
+                                        <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
+                                        <span class="f-16" style="color: var(--white);"><?= $arResult['schedule'][0]['sale']['name'] ?></span>
+                                    </div>
+                                <?php if ($arResult['schedule'][0]['sale']['link']) : ?>
+                                    </a>
+                                <?php endif; ?>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
@@ -224,22 +234,32 @@ function plural_form($number, $after) {
                                     <? if($arResult['duration'] !==''){?>
                                         <span class="hours"><?plural_form($arResult["duration"], array("час", "часа", "часов"))?></span></p>
                                     <?}?>
-                                    <? if ($item['iconSale'] && $item['iconSaleLink']) {?>
-                                        <a href="<?=$item['iconSaleLink']?>">
+                                    <? if ($item['sale']['name'] && $item['sale']['date']) {?>
+                                        <? if ($item['sale']['link']) {?>
+                                            <a href="<?=$item['sale']['link']?>" target="_blank">
+                                        <?}?>
                                             <span class="sale-percent" style="justify-content: center;">
                                                 <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                                                <?= Loc::getMessage('DOUBLE_COURSE_TEXT') ?>
+                                                <?= $item['sale']['name'] ?>
                                             </span>
-                                        </a>
-                                    <?} else if ($item['sale']['percent']) {?>
+                                        <? if ($item['sale']['link']) {?>
+                                            </a>
+                                        <?}?>
+                                    <?} else if ($item['sale']['percent'] && $item['sale']['date']) {?>
+                                        <? if ($item['sale']['link']) {?>
+                                            <a href="<?=$item['sale']['link']?>" target="_blank">
+                                        <?}?>
                                             <span class="sale-percent" style="justify-content: center;">
                                                 <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
                                                 <?= Loc::getMessage('ACTION_COURSE_TEXT') ?> <?= $item['sale']['percent'] ?>%
                                             </span>
+                                        <? if ($item['sale']['link']) {?>
+                                            </a>
+                                        <?}?>
                                     <?}?>
                                 </div>
                             </div>
-                                 <? if ($item['sale']['percent']) {?>
+                                 <? if ($item['sale']['percent'] && $item['sale']['date']) {?>
                                  <div class="price-info course-sale">
                                     <div class="price-sale">
                                     <p class="f-20"><?= number_format($item['sale']['price'], 0, '', ' ') . ' ₽' ?></p>

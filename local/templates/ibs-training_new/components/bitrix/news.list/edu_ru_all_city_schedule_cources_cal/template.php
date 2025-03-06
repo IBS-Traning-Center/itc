@@ -115,6 +115,11 @@ function plural_form($number, $after) {
         $schedule_new_icon = $arItem['PROPERTIES']['NEW_ICON']['VALUE'];
         $schedule_icon_sale = $arItem['PROPERTIES']['ICON_SALE']['VALUE'];
         $schedule_icon_sale_link = $arItem['PROPERTIES']['ICON_SALE_LINK']['VALUE'];
+        $schedule_sale_link = $arItem['PROPERTIES']['sale_link']['VALUE'];
+        $schedule_sale_name = $arItem['PROPERTIES']['sale_name']['VALUE'];
+        $schedule_sale_start_date = date("Y-m-d", strtotime($arItem['PROPERTIES']['sale_start_date']['VALUE']));
+        $schedule_sale_end_date = date("Y-m-d", strtotime($arItem['PROPERTIES']['sale_end_date']['VALUE']));
+        $schedule_sale_date = false;
         $schedule_onl_price = $arItem['PROPERTIES']['schedule_onl_price']['VALUE'];
         $schedule_yes_basket = $arItem['PROPERTIES']['CAN_BUY']['VALUE'];
         $schedule_duration = $arItem['PROPERTIES']['schedule_duration']['VALUE'];
@@ -125,6 +130,13 @@ function plural_form($number, $after) {
         if ($schedule_enddate == "") {
         } else {
             $schedule_startdate = "<time itemprop='startDate' datetime='" . $schedule_startdate_origin . "'>" . $schedule_startdate . "-</time><br />" . "<time itemprop='endDate' datetime='" . $schedule_enddate_origin . "'>" . $schedule_enddate . "</time>";
+        }
+
+        if ($schedule_sale_start_date != "" && $schedule_sale_end_date != "") {
+            $date = date('Y-m-d');
+            if ((strtotime($date) >= strtotime($schedule_sale_start_date)) && (strtotime($date) <= strtotime($schedule_sale_end_date))) {
+                $schedule_sale_date = true;
+            }
         }
         //iwrite($arItem['PROPERTIES']['IS_CLOSE']);
         $les = CIBlockElement::GetByID($schedule_landing);
@@ -283,6 +295,9 @@ function plural_form($number, $after) {
         $arValueOfCourses[$ii]["schedule_new_icon"] = $schedule_new_icon;
         $arValueOfCourses[$ii]["icon-sale"] = $schedule_icon_sale;
         $arValueOfCourses[$ii]["icon-sale-link"] = $schedule_icon_sale_link;
+        $arValueOfCourses[$ii]["sale-name"] = $schedule_sale_name;
+        $arValueOfCourses[$ii]["sale-link"] = $schedule_sale_link;
+        $arValueOfCourses[$ii]["sale-date"] = $schedule_sale_date;
         $arValueOfCourses[$ii]["prepod_surname"] = $prepod_surname;
         $arValueOfCourses[$ii]["prepod_code"] = $prepod_code;
         $arValueOfCourses[$ii]["prepod_name"] = $prepod_name;
@@ -376,28 +391,40 @@ function plural_form($number, $after) {
                                 </div>
                             </div>
                         </div>
-                            <?if (intval($value["schedule_course_sale"])>0) {?>
-				<div class="price-wrapper">
+                            <?if (intval($value["schedule_course_sale"])>0 && $value["sale-date"]) {?>
+				            <div class="price-wrapper">
+                                <?if ($value["sale-link"]) {?>
+                                    <div style="order:2;">
+                                        <a href="<?=$value["sale-link"]?>">
+                                <?}?>
                                 <span class="sale-percent">
                                     <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
                                     Скидка
                                     <?= number_format($value["schedule_course_sale"]);?>%
                                 </span>
+                                <?if ($value["sale-link"]) {?>
+                                        </a>
+                                    </div>
+                                <?}?>
                                 <div class="price-sale">
-                            <?} elseif ($value["icon-sale"] && $value["icon-sale-link"]) {?>
+                            <?} elseif ($value["sale-name"] && $value["sale-date"]) {?>
                                 <div class="price-wrapper" style="justify-content:space-between;">
-                                <div style="order:2;">
-                                <a href="<?=$value["icon-sale-link"]?>">
-                                    <span class="sale-percent">
-                                        <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                                        Двойная выгода
-                                    </span>
-                                </a>
-                                </div>
+                                <?if ($value["sale-link"]) {?>
+                                    <div style="order:2;">
+                                        <a href="<?=$value["sale-link"]?>">
+                                <?}?>
+                                <span class="sale-percent">
+                                    <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+                                    <?=$value["sale-name"]?>
+                                </span>
+                                <?if ($value["sale-link"]) {?>
+                                        </a>
+                                    </div>
+                                <?}?>
                                 <div class="price">
                             <?} else {?>
-				<div class="price-wrapper">
-				<div class="price">
+                                <div class="price-wrapper">
+                                    <div class="price">
                             <?}?>
                             <?if (intval($value["discount"])>0 && $value["discount_type"]=="P") {?>
 						        <?=number_format($value["price"]*(100-$value["discount"])/100, 0, '', ' ');?><br>
@@ -407,7 +434,7 @@ function plural_form($number, $after) {
                                 <?=number_format($value["price"], 0, '', ' ');?> <?=$value["valuta"]?><br>
                             <?}?>
                         </div>
-                    <? if (intval($value["schedule_course_sale"])>0) {?>
+                    <? if (intval($value["schedule_course_sale"])>0 && $value["sale-date"]) {?>
                         <div class="sale">
                             <?=number_format($value["price"]*(100-$value["schedule_course_sale"])/100, 0, '', ' ');?>&nbsp;<?=$value["valuta"]?><br>
                         </div>
