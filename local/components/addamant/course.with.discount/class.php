@@ -56,11 +56,15 @@ class CourseWithDiscountComponent extends CBitrixComponent
                 'startdate',
                 'enddate',
                 'schedule_price',
-                'course_sale'
+                'course_sale',
+                'sale_start_date',
+                'sale_end_date'
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
-                '>startdate.VALUE' => $this->dateNow
+                '>startdate.VALUE' => $this->dateNow,
+                '<=sale_start_date.VALUE' => $this->dateNow,
+                '>=sale_end_date.VALUE' => $this->dateNow
             ]
         ])->fetchCollection();
     }
