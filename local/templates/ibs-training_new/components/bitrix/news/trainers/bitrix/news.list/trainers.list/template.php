@@ -67,7 +67,7 @@ $currentPage = $APPLICATION->GetCurPage();
         <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
             <?php $key++; ?>
             <?php if ($key == 1) : ?>
-                <div class="big-trainer-cards-block">
+                <div class="small-trainer-cards-block">
             <?php endif; ?>
             <?php if ($key == 9) : ?>
                 <div class="small-trainer-cards-block">
