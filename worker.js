@@ -6,7 +6,7 @@ function handleNotificationClick(event) {
   event.notification.close();
 
   var id = event.notification.data.id;
-  var clickUrl = 'https://pushdealer.com/projects/5bb88f46e2cc97b357be8b240557c8ff/notifications/' + id + '/click';
+  var clickUrl = 'https://pushdealer.msndr.net/projects/5bb88f46e2cc97b357be8b240557c8ff/notifications/' + id + '/click';
 
   fetch(clickUrl);
 
@@ -25,7 +25,7 @@ self.addEventListener('push', function(event) {
           regID = subscription.endpoint;
         }
 
-        var url = 'https://pushdealer.com/projects/5bb88f46e2cc97b357be8b240557c8ff/subscriptions/' + encodeURIComponent(regID) + '/notification';
+        var url = 'https://pushdealer.msndr.net/projects/5bb88f46e2cc97b357be8b240557c8ff/subscriptions/' + encodeURIComponent(regID) + '/notification';
         return fetch(url)
           .then(function(response) {
             return response.json()

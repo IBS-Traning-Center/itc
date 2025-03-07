@@ -106,7 +106,7 @@ $request = $application->getContext()->getRequest();
     <script data-skip-moving="true" src="/static/libs/jquery.js"></script>
 
     <!--  nootisend  -->
-    <script charset='utf-8' src='https://cdn.pushdealer.com/5bd629bc/script_0.js' async></script>
+    <script charset='utf-8' src='https://cdn.pushdealer.msndr.net/5bd629bc/script_0.js' async></script>
     <script>
         if (window.innerWidth > 1180) {
             document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio));
