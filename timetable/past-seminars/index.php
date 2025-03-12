@@ -53,29 +53,6 @@ use Local\Util\Functions;
                 <div class="catalog-info-links">
                     <a onclick="$('.send-price-form-area').show(); return;"> <?= Functions::buildSVG('download-catalog', SITE_TEMPLATE_PATH. '/assets/images/icons')?> Скачать прайс</a>
                 </div>
-            </div>            
-            <div class="timetable-filter-wrap">
-                <div <?if ($_REQUEST["type"]=="online") {?> style="margin-left: 0;"<?}?> class="simple-select category-picker">
-                    <div class="timetable-filter-title">Направления</div>
-                    <ul>
-                        <li><a class="<?= ($_REQUEST["cat"]=='' || $_REQUEST["cat"]==NULL)? 'active':''; ?>" href="/timetable/">Все курсы</a></li>
-                        <?foreach ($arCat as $catergory) {?>
-                            <li style="display: none;"><a data-id="<?=$catergory["ID"]?>" <?=(is_array($_REQUEST["cat"]) && in_array($catergory["ID"], $_REQUEST["cat"]))? 'class="active"':''?> href="javascript:void(0)"><?=$catergory["NAME"]?></a></li>
-                        <?}?>
-                    </ul>
-                    <div class="more-item" style="display: none;">
-                        <span>Показать ещё</span><?= Functions::buildSVG('arrow-down', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                    </div>  
-                </div>  
-                <div class="search-item-catalog">
-                    <form id="filter">
-                        <input type="text" name="qcat" value="<?=$_REQUEST["qcat"]?>" placeholder="Поиск курса" />
-                        <?= Functions::buildSVG('search-loop', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                        <?foreach ($arCat as $catergory) {?>
-                            <input style="display: none;" type="checkbox" class="no_redraw" <?=(is_array($_REQUEST["cat"]) && in_array($catergory["ID"], $_REQUEST["cat"]))? 'checked="checked"':''?> value="<?=$catergory["ID"]?>" name="cat[]" />
-                        <?}?>
-                    </form>
-                </div>
             </div>
             <div class="timetable-filter-type-submit btn-main size-l">Показать</div>
         </div>
