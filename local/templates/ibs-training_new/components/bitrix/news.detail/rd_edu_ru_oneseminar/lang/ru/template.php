@@ -1,6 +1,7 @@
 <?php
 $MESS['REGISTRATION'] = 'Зарегистрироваться';
 $MESS['NO_REGISTRATION'] = 'Регистрация окончена';
+$MESS['WATCH_RECORD'] = 'Смотреть запись';
 $MESS['ORGANIZATION'] = 'Организаторы';
 $MESS['OF_KURS'] = 'О чём вебинар';
 $MESS['CONTENT'] = 'Содержание';

@@ -90,6 +90,8 @@ if (($result == 0) || ($result == -1)) {
                     <div class="seminar__order-title"><?= $arResult['PROPERTIES']['type']['VALUE']?></div>
                     <? if($glFlagShowForm){?>
                         <a class='seminar__order btn-main size-l'><?= Loc::getMessage('REGISTRATION')?></a>
+                    <?}else if($arResult['PROPERTIES']['record_link']['VALUE']) {?>
+                        <a class='seminar__order btn-main size-l' href='<?= $arResult['PROPERTIES']['record_link']['VALUE'] ?>'><?= Loc::getMessage('WATCH_RECORD')?></a>
                     <?}else{?>
                         <span class='seminar__order-no btn-main size-l'><?= Loc::getMessage('NO_REGISTRATION')?></span>
                     <?}?>
@@ -257,6 +259,8 @@ if (($result == 0) || ($result == -1)) {
                 <div class="seminar__order-title"><?= $arResult['PROPERTIES']['type']['VALUE']?></div>
                 <? if($glFlagShowForm){?>
                     <a class='seminar__order btn-main size-l'><?= Loc::getMessage('REGISTRATION')?></a>
+                <?}else if($arResult['PROPERTIES']['record_link']['VALUE']) {?>
+                    <a class='seminar__order btn-main size-l' href='<?= $arResult['PROPERTIES']['record_link']['VALUE'] ?>'><?= Loc::getMessage('WATCH_RECORD')?></a>
                 <?}else{?>
                     <span class='seminar__order-no btn-main size-l'><?= Loc::getMessage('NO_REGISTRATION')?></span>
                 <?}?>

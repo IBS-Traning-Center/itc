@@ -511,6 +511,11 @@ if ($id_type==3)
 
         <section id="content" class="not-main-page">
             <div class="container">
+                <div class="timetable-menu">
+                    <div class="simple-select">
+                        <a href="/timetable/past-seminars/">Прошедшие семинары</a>
+                    </div>
+                </div>
                 <?$APPLICATION->IncludeComponent(
                 	"edu:news.list", 
                 	"edu_seminars_webinars", 
