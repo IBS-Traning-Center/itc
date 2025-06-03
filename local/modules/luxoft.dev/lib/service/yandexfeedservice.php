@@ -26,13 +26,12 @@ class YandexFeedService
         Loader::includeModule('iblock');
 
         $this->trainingCenterInfo = [
-            'name' => 'IBS Training Center',
+            'name' => 'Учебный центр IBS',
             'company' => 'АНО ДПО "УЦ ИБС"',
             'url' => $this->siteUrl,
             'email' => 'education@ibs.ru',
-            'picture' => "{$this->siteUrl}/local/templates/ibs-training/assets/images/logo_gradient.svg",
-            'description' => 'Обучение для программистов, аналитиков, менеджеров проектов: тренинги, курсы, ' .
-                'бесплатные семинары и вебинары, конференции',
+            'picture' => "{$this->siteUrl}/local/templates/ibs-training_new/assets/images/IBS_logo_gradient.svg",
+            'description' => 'Обучение в сфере разработки и внедрения ПО для аналитиков, архитекторов, разработчиков, тестировщиков, Big Data и DevOps, а также менеджеров IT-проектов: курсы, вебинары, корпоративное обучение и сертификация',
             'currencies' => [
                 'RUR' => '1',
             ]
@@ -179,6 +178,7 @@ class YandexFeedService
                 'ROADMAP_TITLE_' => 'ROADMAP_TITLE',
                 'ROADMAP_DESCRIPTION_' => 'ROADMAP_DESCRIPTION',
                 'COMPLEXITY.ITEM',
+                'FORMAT_' => 'FORMAT',
             ])
             ->where('ACTIVE', 'Y')
             ->countTotal(true)
@@ -204,6 +204,7 @@ class YandexFeedService
                 'url' => "{$this->trainingCenterInfo['url']}/kurs/{$course->getXmlId()}.html",
                 'price' => $course->getCoursePrice() ? $course->getCoursePrice()->getValue() : '',
                 'duration' => $course->getCourseDuration() ? $course->getCourseDuration()->getValue() : '',
+                'format' => ($course->getFormat() && $course->getFormat()->getValue()) ? $course->getFormat()->getValue() : 'online',
             ];
 
             $roadmapTitles = $course->getRoadmapTitle()->getAll();
@@ -216,7 +217,7 @@ class YandexFeedService
             $roadmapDescriptions = $course->getRoadmapDescription()->getAll();
             foreach ($roadmapDescriptions as $key => $roadmapDescription) {
                 $description = $roadmapDescription->getValue() ?: '';
-                $arCourse['roadmap'][$key]['description'] = $this->getText($description);
+                $arCourse['roadmap'][$key]['description'] = strip_tags($this->getText($description));
             }
 
             $categories = [];
@@ -226,14 +227,11 @@ class YandexFeedService
             $arCourse['categoryId'] = (string)$categories[0];
             $arCourse['categoryIdAdd'] = (string)$categories[1];
 
-            $arCourse['complexity'] = [];
+            $arCourse['complexity'] = '';
             if (
-                $course->getComplexity()
+                $course->getComplexity() && $course->getComplexity()->getItem() && $course->getComplexity()->getItem()->getValue()
             ) {
-                foreach ($course->getComplexity()->getAll() as $complexity) {
-                    $complexity = $complexity->getItem();
-                    $arCourse['complexity'][] = $complexity->getXmlId();
-                }
+                $arCourse['complexity'] = $course->getComplexity()->getItem()->getValue();
             }
 
             $courses[$arCourse['id']] = $arCourse;
@@ -262,12 +260,11 @@ class YandexFeedService
                 'ID',
                 'CODE',
                 'schedule_course_' => 'schedule_course',
-                'schedule_price_' => 'schedule_price',
                 'course_sale_' => 'course_sale',
                 'startdate_' => 'startdate',
             ])
             ->where('ACTIVE', 'Y')
-            ->where('startdate.VALUE', '>', (new DateTime())->format('Y-m-d H:i:s'))
+            ->where('startdate.VALUE', '>', (new DateTime())->format('Y-m-d'))
             ->countTotal(true)
             ->setCacheTtl(3600)
             ->exec();
@@ -283,13 +280,12 @@ class YandexFeedService
                 'id' => $itemCollection->getId(),
                 'code' => $itemCollection->getCode(),
                 'courseId' => $itemCollection->getScheduleCourse() ? $itemCollection->getScheduleCourse()->getValue() : '',
-                'price' => $itemCollection->getSchedulePrice() ? $itemCollection->getSchedulePrice()->getValue() : '',
                 'sale' => $itemCollection->getCourseSale() ? $itemCollection->getCourseSale()->getValue() : '',
                 'nextDate' => $itemCollection->getStartdate() ? $itemCollection->getStartdate()->getValue() : '',
             ];
 
             if ($scheduleItem['nextDate']) {
-                //$scheduleItem['nextDate'] = ($scheduleItem['nextDate'])->format('Y-m-d H:i:s');
+                $scheduleItem['nextDate'] = (new DateTime($scheduleItem['nextDate'], 'Y-m-d H:i:s'))->format('Y-m-d');
             }
             // todo: переделать
             if (empty($schedule[$scheduleItem['courseId']])) {
@@ -347,9 +343,15 @@ class YandexFeedService
         });
 
         $courses = array_map(function ($course) {
-            $course['complexity'] = array_intersect(['junior'], $course['complexity'])
-                ? 'Для новичков'
-                : 'Для опытных';
+            $course['complexity'] = ($course['complexity'] == 'junior') ? 'Для новичков' : 'Для опытных';
+            $course['type'] = (str_contains($course['code'], 'PRG')) ? 'Профессия' : 'Курс';
+            if ($course['format'] == 'Self_Study') {
+                $course['format'] = 'Самостоятельно';
+            } elseif ($course['format'] == 'gibrid') {
+                $course['format'] = 'Самостоятельно с наставником';
+            } else {
+                $course['format'] = 'С преподавателем';
+            }
             return $course;
         }, $courses);
 
@@ -392,9 +394,6 @@ class YandexFeedService
         $offersNode = $dom->createElement('offers');
         foreach ($courses as $course) {
             if ($schedule[$course['id']]) {
-                if ($schedule[$course['id']]['price']) {
-                    $course['price'] = $schedule[$course['id']]['price'];
-                }
                 if ($schedule[$course['id']]['sale']) {
                     $price = $course['price'];
                     $sale = $schedule[$course['id']]['sale'];
@@ -436,7 +435,7 @@ class YandexFeedService
                 $offerNode->appendChild($planNode);
             }
 
-            $educationFormatNode = $dom->createElement('param', 'С преподавателем');
+            $educationFormatNode = $dom->createElement('param', $course['format']);
             $educationFormatNode->setAttribute('name', 'Формат обучения');
             $offerNode->appendChild($educationFormatNode);
 
@@ -449,6 +448,10 @@ class YandexFeedService
             $complexity = $dom->createElement('param', $course['complexity']);
             $complexity->setAttribute('name', 'Сложность');
             $offerNode->appendChild($complexity);
+
+            $courseType = $dom->createElement('param', $course['type']);
+            $courseType->setAttribute('name', 'Тип обучения');
+            $offerNode->appendChild($courseType);
 
             $durationNode = $dom->createElement('param', $course['duration']);
             $durationNode->setAttribute('name', 'Продолжительность');

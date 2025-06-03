@@ -16,7 +16,8 @@ if ($arResult) {
     $certificates = ElementCertificatesTable::getList([
         'select' => [
             'NAME',
-            'PREVIEW_PICTURE'
+            'PREVIEW_PICTURE',
+            'DETAIL_PICTURE'
         ],
         'filter' => [
             'EXPERT.VALUE' => $arResult['ID']
@@ -25,7 +26,12 @@ if ($arResult) {
 
     if (!empty($certificates)) {
         foreach ($certificates as $certificate) {
-            if ($certificate['PREVIEW_PICTURE']) {
+            if ($certificate['DETAIL_PICTURE']) {
+                $arResult['CERTIFICATES'][] = [
+                    'NAME' => $certificate['NAME'] ?: '',
+                    'PICTURE' => CFile::GetPath($certificate['DETAIL_PICTURE'])
+                ];
+            } else if ($certificate['PREVIEW_PICTURE']) {
                 $arResult['CERTIFICATES'][] = [
                     'NAME' => $certificate['NAME'] ?: '',
                     'PICTURE' => CFile::GetPath($certificate['PREVIEW_PICTURE'])
@@ -44,6 +50,29 @@ if ($arResult) {
         $videosTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE', 'UF_VIDEO_LINK'], [], ['UF_XML_ID' => $videosCode]);
 
         $videos = $videosTable->getDataAll();
+
+        foreach ($videos as &$video) {
+            $value = $video['UF_VIDEO_LINK'];
+            $isRutube = strpos($value, 'rutube') !== false;
+            $isYoutube = strpos($value, 'youtube') !== false;
+            if (!$isRutube && !$isYoutube) continue;
+    
+            if ($isRutube) {
+                preg_match("/\/video\/([a-zA-Z0-9_-]+)/", $value, $matches);
+                if (!empty($matches[1])) {
+                    $video['ID'] = $matches[1]; // ID для RuTube
+                    $video['PLATFORM'] = 'rutube';
+                } else {
+                    continue;
+                }
+            }	
+
+            if ($isYoutube) {
+                $video['PLATFORM'] = 'youtube';
+            } else {
+                continue;
+            }
+        }
         $arResult['VIDEOS'] = $videos;
     }
 

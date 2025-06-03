@@ -201,7 +201,8 @@ function plural_form($number, $after) {
             "PROPERTY_course_code",
             "PROPERTY_course_format",
             "NAME",
-            "PROPERTY_COMPLEXITY"
+            "PROPERTY_COMPLEXITY",
+            "PROPERTY_IS_DEV"
         );
         $arFilter = array(
             "IBLOCK_ID" => 6,
@@ -221,6 +222,7 @@ function plural_form($number, $after) {
             $courseNameFromCatalog = $ar_fields["NAME"];
             $courseXML = $ar_fields["XML_ID"];
             $courseComplexity = $ar_fields['PROPERTY_COMPLEXITY_VALUE'];
+            $courseDev = $ar_fields['PROPERTY_IS_DEV_VALUE'];
         }
         if ($schedule_price == "") {
             $schedule_price = $course_price;
@@ -313,6 +315,7 @@ function plural_form($number, $after) {
         $arValueOfCourses[$ii]["no_basket"] = $schedule_no_basket;
         $arValueOfCourses[$ii]["schedule_course_sale"] = $schedule_course_sale;
         $arValueOfCourses[$ii]["courseComplexity"] = $courseComplexity;
+        $arValueOfCourses[$ii]["courseDev"] = $courseDev;
 
         $arValueOfCourses[$ii]["schedule_city"] = $arItem['PROPERTIES']['city']['VALUE'];
         if ($arItem['PROPERTIES']['IS_CLOSE']['VALUE_ENUM_ID'] === "136") {
@@ -421,6 +424,13 @@ function plural_form($number, $after) {
                                         </a>
                                     </div>
                                 <?}?>
+                                <div class="price">
+                            <?} elseif ($value["courseDev"]) {?>
+                                <div class="price-wrapper" style="justify-content:space-between;">
+                                <span class="sale-percent" style="background-color: #FF7B00; color:black">
+                                    <?= Functions::buildSVG('icon-dev', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+                                    В разработке
+                                </span>
                                 <div class="price">
                             <?} else {?>
                                 <div class="price-wrapper">

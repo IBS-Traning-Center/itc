@@ -132,6 +132,12 @@
     background-color: var(--white);
 }
 
+.trainer-gray-block .videos-block .videos-items .video-item iframe {
+    padding: 8px;
+    width: 100%;
+    background-color: var(--white);
+}
+
 .trainer-gray-block .videos-block .videos-items .video-item span {
     overflow: hidden;
     text-overflow: ellipsis;

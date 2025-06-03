@@ -1,9 +1,11 @@
 <?php
 
 $MESS['NEW_COURSE_TEXT'] = 'Новинка';
+$MESS['DEV_COURSE_TEXT'] = 'В разработке';
 $MESS['CERTIFICATE_TEXT'] = 'Сертификат о прохождении';
 $MESS['LICENSE_TEXT'] = 'Удостоверение о прохождении';
 $MESS['DIPLOM_BTN_SHOW_TEXT'] = 'Смотреть пример';
+$MESS['FORMAT_BTN_SHOW_TEXT'] = 'Подробнее';
 $MESS['HOUR_COUNT_TEXT'] = '#COUNT# академ. часов';
 $MESS['RETURN_MONEY_TEXT'] = 'Как вернуть до 90% стоимости';
 $MESS['SIGN_TEXT_BTN'] = 'Записаться на курс';
@@ -17,10 +19,10 @@ $MESS['AUDIENCE_TITLE'] = 'Целевая аудитория';
 $MESS['PREREQUISITES_TITLE'] = 'Предварительная подготовка';
 $MESS['FOR_COURSE_TITLE'] = 'Для кого';
 $MESS['SKILLS_IMPROVED_TITLE'] = 'Улучшаемые навыки';
-$MESS['THEMES_TITLE'] = 'Темы курса';
+$MESS['THEMES_TITLE'] = 'Программа курса';
 $MESS['WHAT_LEARN_TITLE'] = 'Чему вы научитесь';
-$MESS['COURSE_LEADER_TITLE'] = 'Ведущий курса';
-$MESS['ABOUT_PROJECTS_TITLE'] = 'О проектах';
+$MESS['COURSE_LEADER_TITLE'] = 'Курс проводят';
+$MESS['ABOUT_PROJECTS_TITLE'] = 'О тренере';
 $MESS['COMPANY_TITLE'] = 'Работал(а) над проектами компаний';
 $MESS['CERT_TITLE'] = 'Курсы и сертификаты';
 $MESS['ORG_MEMBER'] = '#NAME# является членом организаций:';

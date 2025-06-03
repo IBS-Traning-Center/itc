@@ -101,12 +101,12 @@ if (!empty($arResult['COURSES'])) : ?>
                                             </div>
                                         <?php endif; ?>
                                     </div>
-                                    <?php //if ($course['IS_NEW'] === 'Y') : ?>
+                                    <?php if ($course['IS_NEW'] === 'Y') : ?>
                                         <div class="is-new-course">
                                             <?= Functions::buildSVG('is_new', $templateFolder . '/images') ?>
                                             <span class="f-16"><?= Loc::getMessage('IS_NEW_TEXT') ?></span>
                                         </div>
-                                    <?php //endif; ?>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                             </div>
                         </div>

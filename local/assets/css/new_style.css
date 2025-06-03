@@ -4,8 +4,8 @@ body {
 }
 
 * {
-    user-select: none;
-    -webkit-user-select: none;
+    /* user-select: none;
+    -webkit-user-select: none; */
     -moz-user-select: none;
     -ms-user-select: none;
 }
@@ -1128,6 +1128,7 @@ body {
 
 @media (max-width:1730px) {
     .stage-block-wrap{
+        margin-bottom: 120px;
         background-image: none;
     }
 

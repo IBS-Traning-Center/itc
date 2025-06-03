@@ -17,7 +17,7 @@ Loc::loadMessages(__FILE__);
 
 $this->setFrameMode(false);
 
-$defaultImage = $templateFolder . '/images/picture.png';
+$defaultImage = $templateFolder . '/images/Banner6.png';
 
 ?>
 

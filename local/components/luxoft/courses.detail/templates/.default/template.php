@@ -36,7 +36,7 @@ function plural_form($number, $after) {
                 <div class="left-banner-block">
                     <p class="f-16 course-code"><?= $arResult['code'] ?: '' ?></p>
                     <h1><?= $arResult['name'] ?: '' ?></h1>
-                    <?php if ($arResult['complexity'] || $arResult['is_new'] || $arResult['schedule'][0]['sale']) : ?>
+                    <?php if ($arResult['complexity'] || $arResult['is_new'] || $arResult['is_dev'] || $arResult['schedule'][0]['sale']) : ?>
                         <div class="tags-banner-block">
                             <?php if ($arResult['complexity']) : ?>
                                 <div class="banner-tag">
@@ -47,6 +47,12 @@ function plural_form($number, $after) {
                                 <div class="banner-tag">
                                     <?= Functions::buildSVG('new_icon', $templateFolder . '/images') ?>
                                     <span class="f-16"><?= Loc::getMessage('NEW_COURSE_TEXT') ?></span>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($arResult['is_dev']) : ?>
+                                <div class="banner-tag" style="background-color: #FF7B00">
+                                    <?= Functions::buildSVG('dev_icon', $templateFolder . '/images') ?>
+                                    <span class="f-16"><?= Loc::getMessage('DEV_COURSE_TEXT') ?></span>
                                 </div>
                             <?php endif; ?>
                             <?php if ($arResult['schedule'][0]['sale']['percent'] && $arResult['schedule'][0]['sale']['date']) : ?>
@@ -101,13 +107,16 @@ function plural_form($number, $after) {
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <?php if ($arResult['city']) : ?>
+                        <?php if ($arResult['format']) : ?>
                             <div class="top-course-info_item">
                                 <div class="top-course-info_item-icon">
-                                    <?= Functions::buildSVG('online_icon', $templateFolder . '/images') ?>
+                                    <img src="<?= $arResult['format']['UF_PICTURE'] ?>" alt="<?= $arResult['format']['UF_NAME'] ?>">
                                 </div>
                                 <div class="top-course-info_item-text">
-                                    <p class="f-20"><?= $arResult['city'] ?></p>
+                                    <p class="f-20"><?= $arResult['format']['UF_NAME'] ?></p>
+                                    <?php if ($arResult['format']['UF_FULL_PICTURE']) : ?>
+                                        <p class="f-20 show-format-btn"><?= Loc::getMessage('FORMAT_BTN_SHOW_TEXT') ?></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -638,6 +647,14 @@ if (!empty($arResult['sale'])) {
     </div>
 </div>
 <div class="diploma-modal-close-btn">
+    <?= Functions::buildSVG('close-modal-icon', $templateFolder . '/images') ?>
+</div>
+<div class="format-modal">
+    <div class="format-modal-content">
+        <img src="<?= $arResult['format']['UF_FULL_PICTURE'] ?>">
+    </div>
+</div>
+<div class="format-modal-close-btn">
     <?= Functions::buildSVG('close-modal-icon', $templateFolder . '/images') ?>
 </div>
 <div class="background-modal"></div>

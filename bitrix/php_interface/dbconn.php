@@ -21,7 +21,7 @@ define("BX_DISABLE_INDEX_PAGE", true);
 
 define("BX_UTF", true);
 mb_internal_encoding("UTF-8");
-define('BX_CRON TAB_SUPPORT', true);
+define('BX_CRON TAB_SUPPORT', false);
 
 define("BX_CACHE_TYPE", "memcache");
 define("BX_CACHE_SID", $_SERVER["DOCUMENT_ROOT"]."#01");

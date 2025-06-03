@@ -480,4 +480,12 @@ $arUrlRewrite=array (
     'PATH' => '/blog/index.php',
     'SORT' => 100,
   ),
+  70 => 
+  array (
+    'CONDITION' => '#^/#',
+    'RULE' => '',
+    'ID' => 'bitrix:form.result.new',
+    'PATH' => '/timetable/index.php',
+    'SORT' => 100,
+  ),
 );

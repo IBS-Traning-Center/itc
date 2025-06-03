@@ -29,6 +29,11 @@ Loc::loadMessages(__FILE__);
 		<?php if ($arResult["isFormNote"] != "Y") : ?>
 			<?=$arResult["FORM_HEADER"]?>
 			<div class="form-table data-table">
+				<?php if ($arResult['FORM_DESCRIPTION']) : ?>
+					<div class="question-block">
+						<span class="f-16"><?= $arResult['FORM_DESCRIPTION'] ?></span>
+					</div>
+				<?php endif; ?>
 				<?php foreach ($arResult["QUESTIONS"] as $questionId => $question) : ?>
 					<?php
 					$value = false;
@@ -38,8 +43,13 @@ Loc::loadMessages(__FILE__);
                             if ($arParams['LEAD_NAME']) {
                                 $value = $arParams['LEAD_NAME'];
                             }
-                            else if ($arParams['COURSE_NAME']) {
-                                $value = 'Демо-уроки. Программа: ' . $arParams['COURSE_NAME'];
+                            else {
+                                if ($arParams['COURSE_SIGN']) {
+                                    $value = 'Демо-уроки. Программа: ' . $arParams['COURSE_SIGN'] . ' ';
+                                }
+                                if ($arParams['COURSE_NAME']) {
+                                    $value = $value . $arParams['COURSE_NAME'];
+                                }
                             }
                             break;
                         case 'demo_code':
@@ -75,11 +85,6 @@ Loc::loadMessages(__FILE__);
 					<?php endif; ?>
 				<?php endforeach; ?>
 				<input class="submit-sig-course-complex" <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> type="submit" name="web_form_submit" value="<?=htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]);?>" />
-				<?php if ($arResult['FORM_DESCRIPTION']) : ?>
-					<div class="under-main-feedback-form">
-						<span class="f-16"><?= $arResult['FORM_DESCRIPTION'] ?></span>
-					</div>
-				<?php endif; ?>
 			</div>
 			<?=$arResult["FORM_FOOTER"]?>
 		<?php endif; ?>

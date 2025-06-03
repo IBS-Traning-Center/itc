@@ -38,13 +38,39 @@ if (!empty($arResult)) : ?>
                 ); ?>
                 <span class="f-16 courses-count"><?= Functions::numWord(count($arResult['COURSES']), ['курс', 'курса', 'курсов']) ?></span>
                 <h1><?= $APPLICATION->GetTitle() ?></h1>
-                <?php if ($arResult['COMPLEXITY']) : ?>
+                <?php if ($arResult['COMPLEXITY'] || $arResult['IS_NEW'] || $arResult['IS_DEV']) : ?>
                     <div class="complexity-block">
+                        <?php if ($arResult['COMPLEXITY']) : ?>
                         <?php foreach ($arResult['COMPLEXITY'] as $complexity) : ?>
                             <div class="complexity-item">
                                 <span class="f-16"><?= $complexity ?></span>
                             </div>
                         <?php endforeach; ?>
+                        <?php endif; ?>
+                        <?php if ($arResult['IS_NEW'] === 'Y') : ?>
+                            <div class="complexity-item">
+                                <?= Functions::buildSVG('new_icon', $templateFolder . '/images') ?>
+                                <span class="f-16"><?= Loc::getMessage('NEW_COURSE_TEXT') ?></span>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($arResult['IS_DEV']) : ?>
+                            <div class="complexity-item" style="background-color: #FF7B00">
+                                <?= Functions::buildSVG('dev_icon', $templateFolder . '/images') ?>
+                                <span class="f-16"><?= Loc::getMessage('DEV_COURSE_TEXT') ?></span>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($arResult['SCHEDULE'][0]['SALE']['PERCENT'] && $arResult['SCHEDULE'][0]['SALE']['DATE']) : ?>
+                            <?php if ($arResult['SCHEDULE'][0]['SALE']['LINK']) : ?>
+                                <a href="<?= $arResult['SCHEDULE'][0]['SALE']['LINK'] ?>" target="_blank">
+                            <?php endif; ?>
+                            <div class="complexity-item" style="background-color: var(--red);">
+                                <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
+                                <span class="f-16" style="color: var(--white);"><?= Loc::getMessage('ACTION_COURSE_TEXT') ?> <?= $arResult['SCHEDULE'][0]['SALE']['PERCENT'] ?>%</span>
+                            </div>
+                            <?php if ($arResult['SCHEDULE'][0]['SALE']['LINK']) : ?>
+                                </a>
+                            <?php endif; ?>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <?php if ($arResult['SHORT_DESCRIPTION']) : ?>
@@ -73,10 +99,24 @@ if (!empty($arResult)) : ?>
                     <?php if ($arResult['COURSE_FORMAT']) : ?>
                         <div class="top-course-info_item">
                             <div class="top-course-info_item-icon">
-                                <?= Functions::buildSVG('online_icon', $templateFolder . '/images') ?>
+                                <img src="<?= $arResult['COURSE_FORMAT']['UF_PICTURE'] ?>" alt="<?= $arResult['COURSE_FORMAT']['UF_NAME'] ?>">
                             </div>
                             <div class="top-course-info_item-text">
-                                <p class="f-20"><?= $arResult['COURSE_FORMAT'] ?></p>
+                                <p class="f-20"><?= $arResult['COURSE_FORMAT']['UF_NAME'] ?></p>
+                                <?php if ($arResult['COURSE_FORMAT']['UF_FULL_PICTURE']) : ?>
+                                    <p class="f-20 show-format-btn"><?= Loc::getMessage('FORMAT_BTN_SHOW_TEXT') ?></p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($arResult['COURSE_AWARD']) : ?>
+                        <div class="top-course-info_item">
+                            <div class="top-course-info_item-icon">
+                                <?= Functions::buildSVG('cup', $templateFolder . '/images') ?>
+                            </div>
+                            <div class="top-course-info_item-text">
+                                <p class="f-20"><?= Loc::getMessage('REWARD_TEXT') ?></p>
+                                <p class="f-20 show-award-btn"><?= Loc::getMessage('REWARD_BTN_SHOW_TEXT') ?></p>
                             </div>
                         </div>
                     <?php endif; ?>
@@ -113,17 +153,6 @@ if (!empty($arResult)) : ?>
                 <h2><?= Loc::getMessage('DESCRIPTION_COURSE_TITLE') ?></h2>
                 <div class="f-20">
                     <?= $arResult['DESCRIPTION'] ?>
-                </div>
-            <?php endif; ?>
-            <?php if (!empty($arResult['WHO_COURSE'])) : ?>
-                <h2><?= Loc::getMessage('WHO_COURSE_TITLE') ?></h2>
-                <div class="who-course-block">
-                    <?php foreach ($arResult['WHO_COURSE'] as $item) : ?>
-                        <div class="who-course-item">
-                            <img src="<?= $item['UF_PICTURE'] ?>" alt="<?= $item['UF_NAME'] ?>">
-                            <span class="f-20"><?= $item['UF_NAME'] ?></span>
-                        </div>
-                    <?php endforeach; ?>
                 </div>
             <?php endif; ?>
             <?php if (!empty($arResult['COURSES'])) : ?>
@@ -169,6 +198,17 @@ if (!empty($arResult)) : ?>
                                     <?php endif; ?>
                                 </div>
                             </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty($arResult['WHO_COURSE'])) : ?>
+                <h2><?= Loc::getMessage('WHO_COURSE_TITLE') ?></h2>
+                <div class="who-course-block">
+                    <?php foreach ($arResult['WHO_COURSE'] as $item) : ?>
+                        <div class="who-course-item">
+                            <img src="<?= $item['UF_PICTURE'] ?>" alt="<?= $item['UF_NAME'] ?>">
+                            <span class="f-20"><?= $item['UF_NAME'] ?></span>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -331,6 +371,22 @@ if (!empty($arResult)) : ?>
 <div class="diploma-modal-close-btn">
     <?= Functions::buildSVG('close-modal-icon', $templateFolder . '/images') ?>
 </div>
+<div class="award-modal">
+    <div class="award-modal-content">
+        <img src="<?= $arResult['COURSE_AWARD'] ?>">
+    </div>
+</div>
+<div class="award-modal-close-btn">
+    <?= Functions::buildSVG('close-modal-icon', $templateFolder . '/images') ?>
+</div>
+<div class="format-modal">
+    <div class="format-modal-content">
+        <img src="<?= $arResult['COURSE_FORMAT']['UF_FULL_PICTURE'] ?>">
+    </div>
+</div>
+<div class="format-modal-close-btn">
+    <?= Functions::buildSVG('close-modal-icon', $templateFolder . '/images') ?>
+</div>
 <div class="background-modal"></div>
 <?php
     $schedule = [];
@@ -396,6 +452,7 @@ if (!empty($arResult)) : ?>
         "WEB_FORM_ID" => "43",
         "COURSE_NAME" => $arResult['NAME'],
         "LEAD_NAME" => $arResult['DEMO_NAME'],
-        "DEMO_SIGN" => $arResult['DEMO_CODE']
+        "DEMO_SIGN" => $arResult['DEMO_CODE'],
+        "COURSE_SIGN" => $arResult['CODE']
     )
 );?>

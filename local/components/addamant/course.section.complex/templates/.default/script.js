@@ -4,6 +4,12 @@ class CatalogSectionComplex {
         showDiplomBtnClass: '.show-diplom-btn',
         diplomaModalClass: '.diploma-modal',
         diplomaModalCloseBtnClass: '.diploma-modal-close-btn',
+        showAwardBtnClass: '.show-award-btn',
+        awardModalClass: '.award-modal',
+        awardModalCloseBtnClass: '.award-modal-close-btn',
+        showFormatBtnClass: '.show-format-btn',
+        formatModalClass: '.format-modal',
+        formatModalCloseBtnClass: '.format-modal-close-btn',
         backgroundModalClass: '.background-modal',
         signCourseComplexBlockCLass: '.sign-course-complex-block',
         openSignModalClass: '.open-sign-modal',
@@ -16,6 +22,12 @@ class CatalogSectionComplex {
         this.showDiplomBtn = document.querySelector(data.showDiplomBtnClass);
         this.diplomaModal = document.querySelector(data.diplomaModalClass);
         this.diplomaModalCloseBtn = document.querySelector(data.diplomaModalCloseBtnClass);
+        this.showAwardBtn = document.querySelector(data.showAwardBtnClass);
+        this.awardModal = document.querySelector(data.awardModalClass);
+        this.awardModalCloseBtn = document.querySelector(data.awardModalCloseBtnClass);
+        this.showFormatBtn = document.querySelector(data.showFormatBtnClass);
+        this.formatModal = document.querySelector(data.formatModalClass);
+        this.formatModalCloseBtn = document.querySelector(data.formatModalCloseBtnClass);
         this.backgroundModal = document.querySelector(data.backgroundModalClass);
         this.signCourseComplexBlock = document.querySelector(data.signCourseComplexBlockCLass);
         this.openSignModal = document.querySelectorAll(data.openSignModalClass);
@@ -53,9 +65,35 @@ class CatalogSectionComplex {
             });
         }
 
+        if (this.showAwardBtn) {
+            this.showAwardBtn.addEventListener('click', () => {
+                this.openAwardModal();
+            });
+        }
+
+        if (this.awardModalCloseBtn) {
+            this.awardModalCloseBtn.addEventListener('click', () => {
+                this.closeAwardModal();
+            });
+        }
+
+        if (this.showFormatBtn) {
+            this.showFormatBtn.addEventListener('click', () => {
+                this.openFormatModal();
+            });
+        }
+
+        if (this.formatModalCloseBtn) {
+            this.formatModalCloseBtn.addEventListener('click', () => {
+                this.closeFormatModal();
+            });
+        }
+
         if (this.backgroundModal) {
             this.backgroundModal.addEventListener('click', () => {
                 this.closeDiplomModal();
+                this.closeAwardModal();
+                this.closeFormatModal();
 
                 if (this.signCourseComplexBlock) {
                     this.signCourseComplexBlock.style.display = 'none';
@@ -125,6 +163,58 @@ class CatalogSectionComplex {
         ) {
             this.diplomaModal.style.display = 'none';
             this.diplomaModalCloseBtn.style.display = 'none';
+            this.backgroundModal.style.display = 'none';
+        }
+    }
+
+    openAwardModal()
+    {
+        if (
+            this.backgroundModal &&
+            this.awardModal &&
+            this.awardModalCloseBtn
+        ) {
+            this.awardModal.style.display = 'flex';
+            this.awardModalCloseBtn.style.display = 'flex';
+            this.backgroundModal.style.display = 'flex';
+        }
+    }
+
+    closeAwardModal()
+    {
+        if (
+            this.backgroundModal &&
+            this.awardModal &&
+            this.awardModalCloseBtn
+        ) {
+            this.awardModal.style.display = 'none';
+            this.awardModalCloseBtn.style.display = 'none';
+            this.backgroundModal.style.display = 'none';
+        }
+    }
+
+    openFormatModal()
+    {
+        if (
+            this.backgroundModal &&
+            this.formatModal &&
+            this.formatModalCloseBtn
+        ) {
+            this.formatModal.style.display = 'flex';
+            this.formatModalCloseBtn.style.display = 'flex';
+            this.backgroundModal.style.display = 'flex';
+        }
+    }
+
+    closeFormatModal()
+    {
+        if (
+            this.backgroundModal &&
+            this.formatModal &&
+            this.formatModalCloseBtn
+        ) {
+            this.formatModal.style.display = 'none';
+            this.formatModalCloseBtn.style.display = 'none';
             this.backgroundModal.style.display = 'none';
         }
     }

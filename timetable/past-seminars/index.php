@@ -70,7 +70,11 @@ use Local\Util\Functions;
     <div class="container">
         <div class="timetable-menu">
             <div class="simple-select">
-                <a href="/timetable/?type=events">Предстоящие семинары</a>
+                <a class="title dropdown-link" href=""><span><?= $APPLICATION->GetPageProperty("title") ?></span><?= Functions::buildSVG('arrow-down', SITE_TEMPLATE_PATH. '/assets/images/icons')?></a>
+                <ul class='timetable-menu-ul dropdown'>
+                    <li class="active"><a href="/timetable/past-seminars/"><?= $APPLICATION->GetPageProperty("title") ?></a></li>
+                    <li><a href="/timetable/?type=events">Предстоящие семинары</a></li>
+                </ul>
             </div>
         </div>
         <?$APPLICATION->IncludeComponent(

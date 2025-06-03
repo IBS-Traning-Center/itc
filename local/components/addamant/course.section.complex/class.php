@@ -79,7 +79,8 @@ class CourseSectionComplexComponent extends CBitrixComponent
                 'LINK',
                 'CODE',
                 'DEMO_CODE',
-                'DEMO_NAME'
+                'DEMO_NAME',
+                'COURSE_AWARD'
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
@@ -155,6 +156,13 @@ class CourseSectionComplexComponent extends CBitrixComponent
             }
         }
 
+        if ($courseObject->getCourseAward() && $courseObject->getCourseAward()->getValue()) {
+             $award = $courseObject->getCourseAward()->getValue();
+             if ($award) {
+                $courseArray['COURSE_AWARD'] = CFile::GetPath($award);
+             }
+        }
+
         if ($courseObject->getWhoCourse() && $courseObject->getWhoCourse()->getAll()) {
             $whoCourseCodes = [];
             foreach ($courseObject->getWhoCourse()->getAll() as $value) {
@@ -172,14 +180,40 @@ class CourseSectionComplexComponent extends CBitrixComponent
                             $item['UF_PICTURE'] = CFile::GetPath($item['UF_PICTURE']);
                         }
                     }
-                }
 
-                $courseArray['WHO_COURSE'] = $items;
+                    $data = [];
+                    foreach ($whoCourseCodes as $code) {
+                        foreach ($items as &$item) {
+                            if ($item['UF_XML_ID'] == $code) {
+                                $data[] = $item;
+                                break;
+                            }
+                        }
+                    }
+                    $courseArray['WHO_COURSE'] = $data;
+                }
             }
         }
 
         if ($courseObject->getCourseFormat() && $courseObject->getCourseFormat()->getValue()) {
-            $courseArray['COURSE_FORMAT'] = $courseObject->getCourseFormat()->getValue();
+            $courseFormat = $courseObject->getCourseFormat()->getValue();
+            if (!empty($courseFormat)) {
+                $hightTable = new HighloadblockManager('CourseFormats');
+                $hightTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE', 'UF_FULL_PICTURE'], [], ['UF_XML_ID' => $courseFormat]);
+                $format = $hightTable->getData();
+    
+                if (!empty($format)) {
+                    if ($format['UF_PICTURE']) {
+                        $format['UF_PICTURE'] = CFile::GetPath($format['UF_PICTURE']);
+                    }
+
+                    if ($format['UF_FULL_PICTURE']) {
+                        $format['UF_FULL_PICTURE'] = CFile::GetPath($format['UF_FULL_PICTURE']);
+                    }
+    
+                    $courseArray['COURSE_FORMAT'] = $format;
+                }
+            }
         }
 
         if ($courseObject->getTariffs() && $courseObject->getTariffs()->getAll()) {
@@ -278,6 +312,33 @@ class CourseSectionComplexComponent extends CBitrixComponent
             }
 
             $this->courseInfo['TARIFFS'] = $tariffsItems;
+        }
+    }
+
+    private function getCourseInfo()
+    {
+        if (empty($this->courseInfo['COURSE'])) {
+            return false;
+        }
+
+        $course = ElementCoursesTable::getList([
+            'select' => [
+                'IS_NEW.ITEM',
+                'IS_DEV',
+            ],
+            'filter' => [
+                'ACTIVE' => 'Y',
+                'ID' => $this->courseInfo['COURSE'],
+            ]
+        ])->fetchObject();
+
+        if ($course) {
+            if ($course->getIsNew() && $course->getIsNew()->getItem() && $course->getIsNew()->getItem()->getXmlId()) {
+                $this->courseInfo['IS_NEW'] = $course->getIsNew()->getItem()->getXmlId();
+            }
+            if ($course->getIsDev() && $course->getIsDev()->getValue()) {
+                $this->courseInfo['IS_DEV'] = $course->getIsDev()->getValue();
+            }
         }
     }
 
@@ -438,7 +499,11 @@ class CourseSectionComplexComponent extends CBitrixComponent
 
         $schedule = ElementScheduleTable::getList([
             'select' => [
-                'startdate'
+                'startdate',
+                'course_sale',
+                'sale_link',
+                'sale_start_date',
+                'sale_end_date'
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
@@ -455,6 +520,26 @@ class CourseSectionComplexComponent extends CBitrixComponent
 
                 if ($item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_startdate_VALUE']) {
                     $sched['DATE_START'] = date('d.m.Y', strtotime($item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_startdate_VALUE']));
+                }
+
+                if ($item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_course_sale_VALUE']) {
+                    $sched['SALE']['PERCENT'] = intval($item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_course_sale_VALUE']);
+                    $sched['SALE']['DATE'] = false;
+
+                    if ($item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_sale_start_date_VALUE'] && $item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_sale_end_date_VALUE']) {
+                        $saleStartDate = $item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_sale_start_date_VALUE'];
+                        $saleEndDate = $item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_sale_end_date_VALUE'];
+                        if ($saleStartDate && $saleEndDate) {
+                            $today = date('Y-m-d');
+                            if ((strtotime($today) >= strtotime($saleStartDate)) && (strtotime($today) <= strtotime($saleEndDate))) {
+                                $sched['SALE']['DATE'] = true;
+                            }
+                        }
+                    }
+
+                    if ($item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_sale_link_VALUE']) {
+                        $sched['SALE']['LINK'] = $item['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_sale_link_VALUE'];
+                    }
                 }
 
                 $scheduleInfo[] = $sched;
@@ -480,6 +565,7 @@ class CourseSectionComplexComponent extends CBitrixComponent
 
         $this->getCourseComplexity();
         $this->getCourseTariffs();
+        $this->getCourseInfo();
         $this->getCoursesInfo();
         $this->getLinkedCoursesInfo();
 

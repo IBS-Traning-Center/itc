@@ -26,7 +26,7 @@ class HabrFeedService
         Loader::includeModule('iblock');
 
         $this->trainingCenterInfo = [
-            'name' => 'IBS Training Center',
+            'name' => 'Учебный центр IBS',
             'company' => 'АНО ДПО "УЦ ИБС"',
             'url' => $this->siteUrl,
             'currencies' => [
@@ -179,7 +179,7 @@ class HabrFeedService
                 'HABR_MIN_KVAL_' => 'HABR_MIN_KVAL',
                 'HABR_MAX_KVAL_' => 'HABR_MAX_KVAL',
                 'HABR_SKILLS_' => 'HABR_SKILLS',
-                'course_format_' => 'course_format.ITEM'
+                'FORMAT_' => 'FORMAT'
             ])
             ->where('ACTIVE', 'Y')
             ->countTotal(true)
@@ -210,7 +210,7 @@ class HabrFeedService
                 'spec' => $course->getHabrSpec() ? $course->getHabrSpec()->getValue() : '',
                 'kval_min' => $course->getHabrMinKval() ? $course->getHabrMinKval()->getValue() : '',
                 'kval_max' => $course->getHabrMaxKval() ? $course->getHabrMaxKval()->getValue() : '',
-                'format' => ($course->getCourseFormat() && $course->getCourseFormat()->getItem()) ? $course->getCourseFormat()->getItem()->getXmlId() : 'online',
+                'format' => ($course->getFormat() && $course->getFormat()->getValue()) ? 'online' : 'online',
             ];
 
             if ($course->getHabrSkills() && $course->getHabrSkills()->getValue()) {
@@ -227,7 +227,7 @@ class HabrFeedService
             $roadmapDescriptions = $course->getRoadmapDescription()->getAll();
             foreach ($roadmapDescriptions as $key => $roadmapDescription) {
                 $description = $roadmapDescription->getValue() ?: '';
-                $arCourse['roadmap'][$key]['description'] = $this->getText($description);
+                $arCourse['roadmap'][$key]['description'] = strip_tags($this->getText($description));
             }
 
             $categories = [];
@@ -238,12 +238,9 @@ class HabrFeedService
 
             $arCourse['complexity'] = [];
             if (
-                $course->getComplexity()
+                $course->getComplexity() && $course->getComplexity()->getItem() && $course->getComplexity()->getItem()->getValue()
             ) {
-                foreach ($course->getComplexity()->getAll() as $complexity) {
-                    $complexity = $complexity->getItem();
-                    $arCourse['complexity'][] = $complexity->getXmlId();
-                }
+                $arCourse['complexity'] = $course->getComplexity()->getItem()->getValue();
             }
 
             $courses[$arCourse['id']] = $arCourse;
@@ -272,7 +269,6 @@ class HabrFeedService
                 'ID',
                 'CODE',
                 'schedule_course_' => 'schedule_course',
-                'schedule_price_' => 'schedule_price',
                 'course_sale_' => 'course_sale',
                 'startdate_' => 'startdate',
             ])
@@ -293,7 +289,6 @@ class HabrFeedService
                 'id' => $itemCollection->getId(),
                 'code' => $itemCollection->getCode(),
                 'courseId' => $itemCollection->getScheduleCourse() ? $itemCollection->getScheduleCourse()->getValue() : '',
-                'price' => $itemCollection->getSchedulePrice() ? $itemCollection->getSchedulePrice()->getValue() : '',
                 'sale' => $itemCollection->getCourseSale() ? $itemCollection->getCourseSale()->getValue() : '',
                 'nextDate' => $itemCollection->getStartdate() ? $itemCollection->getStartdate()->getValue() : '',
             ];
@@ -356,12 +351,12 @@ class HabrFeedService
             return (bool)array_intersect($category['includeElementsId'], $allCoursesId);
         });
 
-        $courses = array_map(function ($course) {
+        /*$courses = array_map(function ($course) {
             $course['complexity'] = array_intersect(['junior'], $course['complexity'])
                 ? 'Для новичков'
                 : 'Для опытных';
             return $course;
-        }, $courses);
+        }, $courses);*/
 
         $dom = new DOMDocument('1.0', 'utf-8');
         $dom->formatOutput = true;
@@ -388,9 +383,6 @@ class HabrFeedService
         $offersNode = $dom->createElement('offers');
         foreach ($courses as $course) {
             if ($schedule[$course['id']]) {
-                if ($schedule[$course['id']]['price']) {
-                    $course['price'] = $schedule[$course['id']]['price'];
-                }
                 if ($schedule[$course['id']]['sale']) {
                     $price = $course['price'];
                     $sale = $schedule[$course['id']]['sale'];
@@ -404,13 +396,12 @@ class HabrFeedService
             $offerNode = $dom->createElement('offer');
 
 
-            $fullDescription = '<p>' . $course['description'] . '</p><br>';
+            $fullDescription = $course['description'];
 
             foreach ($course['roadmap'] as $roadmapKey => $roadmapItem) {
                 $fullDescription .= $roadmapItem['description'];
             }
 
-            $fullDescription = "<![CDATA[" . $fullDescription ."]]>";
             $course['url'] = $course['url'] . '?utm_source=habr&utm_campaign=career_habr';
 
             $offerNode->setAttribute('id', $course['id']);

@@ -139,10 +139,18 @@ if ($arResult) : ?>
                         <h3><?= Loc::getMessage('VIDEOS_BLOCK_TITLE') ?></h3>
                         <div class="videos-items">
                             <?php foreach ($arResult['VIDEOS'] as $key => $video) : ?>
-                                <a data-fancybox="video" href="<?= $video['UF_VIDEO_LINK'] ?>" class="video-item">
-                                    <img alt="<?= $video['UF_NAME'] ?>" src="<?= CFile::GetPath($video['UF_PICTURE']) ?>">
+                                <?php if ($video['PLATFORM'] == 'rutube'): ?>
+                                    <a class="video-item">
+                                    <iframe src="https://rutube.ru/play/embed/<?= $video['ID'] ?>" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                                     <span class="f-24"><?= $video['UF_NAME'] ?></span>
-                                </a>
+                                    </a>
+                                <?php endif; ?>
+                                <?php if ($video['PLATFORM'] == 'youtube'): ?>
+                                    <a data-fancybox="video" href="<?= $video['UF_VIDEO_LINK'] ?>" class="video-item">
+                                        <img alt="<?= $video['UF_NAME'] ?>" src="<?= CFile::GetPath($video['UF_PICTURE']) ?>">
+                                        <span class="f-24"><?= $video['UF_NAME'] ?></span>
+                                    </a>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
                     </div>

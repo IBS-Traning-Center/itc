@@ -75,7 +75,16 @@ if ($arResult['PROPERTIES']['ELEMENT_FOR']['VALUE']) {
     $whoCourseTable = new HighloadblockManager('WhoCourse');
     $whoCourseTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE'], [], ['UF_XML_ID' => $arResult['PROPERTIES']['ELEMENT_FOR']['VALUE']]);
     $items = $whoCourseTable->getDataAll();
-    $arResult['WHO_ELEMENT'] = $items;
+    $data = [];
+    foreach ($arResult['PROPERTIES']['ELEMENT_FOR']['VALUE'] as $value) {
+        foreach ($items as &$item) {
+            if ($item['UF_XML_ID'] == $value) {
+                $data[] = $item;
+                break;
+            }
+        }
+    }
+    $arResult['WHO_ELEMENT'] = $data;
 }
 
 $cp = $this->__component;

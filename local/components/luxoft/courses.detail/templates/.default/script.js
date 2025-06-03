@@ -6,6 +6,9 @@ class CourseDetail {
       diplomModalClass: ".diploma-modal",
       backgroundModalClass: ".background-modal",
       diplomCloseBtnModalClass: ".diploma-modal-close-btn",
+      showFormatBtnClass: ".show-format-btn",
+      formatModalClass: ".format-modal",
+      formatCloseBtnModalClass: ".format-modal-close-btn",
       signDateBtnClass: '.sign-date-btn',
       selectDateClass: '.select-date',
       dateInputClass: '.sign-course-form-input.date',
@@ -17,6 +20,9 @@ class CourseDetail {
     this.diplomModal = document.querySelector(data.diplomModalClass);
     this.backgroundModal = document.querySelector(data.backgroundModalClass);
     this.diplomCloseBtnModal = document.querySelector(data.diplomCloseBtnModalClass);
+    this.showFormatBtn = document.querySelector(data.showFormatBtnClass);
+    this.formatModal = document.querySelector(data.formatModalClass);
+    this.formatCloseBtnModal = document.querySelector(data.formatCloseBtnModalClass);
     this.signDateBtn = document.querySelectorAll(data.signDateBtnClass);
     this.selectDate = document.querySelectorAll(data.selectDateClass);
     this.dateInput = document.querySelector(data.dateInputClass);
@@ -51,9 +57,22 @@ class CourseDetail {
       });
     }
 
+    if (this.showFormatBtn) {
+      this.showFormatBtn.addEventListener("click", () => {
+        this.openFormatModal();
+      });
+    }
+
+    if (this.formatCloseBtnModal) {
+      this.formatCloseBtnModal.addEventListener("click", () => {
+        this.closeFormatModal();
+      });
+    }
+
     if (this.backgroundModal) {
       this.backgroundModal.addEventListener("click", () => {
         this.closeDiplomModal();
+        this.closeFormatModal();
       });
     }
 
@@ -88,6 +107,22 @@ class CourseDetail {
       this.diplomModal.style.display = "none";
       this.backgroundModal.style.display = "none";
       this.diplomCloseBtnModal.style.display = "none";
+    }
+  }
+
+  openFormatModal() {
+    if (this.formatModal && this.backgroundModal && this.formatCloseBtnModal) {
+      this.formatModal.style.display = "flex";
+      this.backgroundModal.style.display = "block";
+      this.formatCloseBtnModal.style.display = "flex";
+    }
+  }
+
+  closeFormatModal() {
+    if (this.formatModal && this.backgroundModal && this.formatCloseBtnModal) {
+      this.formatModal.style.display = "none";
+      this.backgroundModal.style.display = "none";
+      this.formatCloseBtnModal.style.display = "none";
     }
   }
 

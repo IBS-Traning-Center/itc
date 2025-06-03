@@ -1,0 +1,194 @@
+AddHandler application/x-httpd-php  .html
+
+Options -Indexes
+ErrorDocument 404 /404.php
+
+php_flag session.use_trans_sid off
+php_value display_errors 1
+php_flag allow_call_time_pass_reference on
+php_value suhosin.simulation on
+
+
+<IfModule mod_rewrite.c>
+	#Header set Access-Control-Allow-Origin "*"
+	RewriteEngine On
+	RewriteBase /
+	Options +FollowSymLinks
+
+    RewriteCond %{SERVER_PORT} !^443$ [OR]
+    RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+    RewriteRule ^(.*)$ https://ibs-training.ru/$1 [R=301,L]
+
+
+    RewriteRule ^(.php|html+)/$  /$1 [R=301,L]
+	RewriteRule ^(.*)/index\.(php|html?)$ /$1 [R=301,NC,L]
+
+	RewriteCond %{THE_REQUEST} //
+    RewriteCond %{QUERY_STRING} !http(s|)://
+    RewriteRule .* /$0 [R=301,L]
+
+    RewriteCond %{REQUEST_URI} \..+$
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_URI} ^(.+)/$
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+    RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !\..+$
+    RewriteCond %{REQUEST_URI} ^(.+)$
+    RewriteRule ^(.*)$ $1/ [L,R=301]
+
+    #RewriteRule ^(blog)(.*/?)$ https://ibs-training.ru/about/news/ [L,R=301]
+    RewriteRule ^(certificate-new/)([a-z/_]*)$ https://ibs-training.ru/certification-new/$2 [L,R=301]
+    RewriteRule ^(babok_book)(/?)$ https://ibs-training.ru/babok-book/$2 [L,R=301]
+	RewriteRule ^(talent_search)(/?)$ https://ibs-training.ru/talent-search/$2 [L,R=301]
+	RewriteRule ^(educational_information)(/?)$ https://ibs-training.ru/educational-information/$2 [L,R=301]
+	RewriteRule ^(educational-information/paid_services/)(/?)$ https://ibs-training.ru/educational-information/paid-services/$2 [L,R=301]
+
+	RewriteRule ^(training/katalog_kursov/skriptovye_yazyki)(/?)$ https://ibs-training.ru/training/katalog_kursov/python/ [L,R=301]
+	RewriteRule ^(/files/catalog_courses_intramural\.pdf)(/?)$ https://ibs-training.ru/training/catalog/ [L,R=301]
+	RewriteRule ^(master-class/)([a-z0-9_]*)(?)$ https://ibs-training.ru/master-class/$2/ [L,R=301]
+	RewriteRule ^(timetable/onlinecourse)(/?)$ /timetable/index.php?online=Y&type=online&city=online [L,QSA]
+	RewriteRule ^(timetable_old/onlinecourse)(/?)$ /timetable_old/index.html?online=Y&type=online&city=online [L,QSA]
+	RewriteRule ^(events/seminar/seminarinfo.html\?ID=)([0-9]+)$ https://ibs-training.ru/events/seminar/seminarinfo.php?ID=$2 [L,R=301]
+	RewriteRule ^(timetable/onlineschool)(/?)$ https://ibs-training.ru/timetable/ [L,R=301]
+	RewriteRule ^(about/contacts/)([a-z]+)(.html)(/?)$ https://ibs-training.ru/contacts/$2.html [L,R=301]
+	#RewriteRule ^(training/catalog_directions/)([a-z/_]*)(/?)$ https:/ibs-training.ru//training/katalog_kursov/$2 [L,R=301]
+	RewriteRule ^(training/catalog_directions/)([a-z/_]*)(/?)$ https://ibs-training.ru/training/katalog_kursov/$2 [L,R=301]
+	RewriteRule ^(about/treners/)(/?)$ https://ibs-training.ru/about/experts/ [L,R=301]
+	RewriteRule ^(about/news/57912/)(/?)$ https://ibs-training.ru/about/news/58003/ [L,R=301]
+	RewriteRule ^(training/katalog_kursov/te)(/?)$ https://ibs-training.ru/training/katalog_kursov/ [L,R=301]
+	RewriteRule ^(about/documents/)(/?)$ https://ibs-training.ru/educational_information/documents/ [L,R=301]
+	#RewriteRule ^(training/katalog_kursov/po-rolyam/)(/?)$ https://ibs-training.ru/training/katalog_kursov/[L,R=301]
+	RewriteRule ^(master-class/yakov_fain/)(/?)$ https://ibs-training.ru/kurs/prakticheskaya_razrabotka_veb-prilogeniy_na_javascript_i_angularjs.html [L,R=301]
+	RewriteRule ^(about/treners/)([A-z0-9_]*).html(/?)$ https://ibs-training.ru/about/experts/$2.html [L,R=301]
+	RewriteRule ^(training/catalog/code/)(/?)([a-z0-9/_]*)$ https://ibs-training.ru/timetable/? [L,R=301]
+	RewriteRule ^(edu/news)(/?)$ https://ibs-training.ru/about/news/? [L,R=301]
+	RewriteRule ^(kurs/osnovy_vysokoproizvoditelnyh_sistem.html)(/?)$ https://ibs-training.ru/kurs/proektirovanie_vysokoproizvoditelnyh_prilogeniy_.html [L,R=301]
+	RewriteRule ^(kurs/shkola_testirovaniya_chast_7_vvedenie_v_test-menedgment_dlya_junior.html)(/?)$ https://ibs-training.ru/kurs/shkola_testirovaniya_chast_7_osnovy_upravleniya_testirovaniem.html [L,R=301]
+	#RewriteRule ^(consulting)(/?)$ https://ibs-training.ru/corporate/consulting/? [L,R=301]
+	RewriteRule ^(consulting/itconsulting)(/?)$ https://ibs-training.ru/consulting/? [L,R=302]
+	RewriteRule ^(corporate/razrabotka-interaktivnykh-kursov)(/?)$ https://ibs-training.ru/corporate/? [L,R=301]
+	RewriteRule ^(news)(/?)$ https://ibs-training.ru/about/news/? [L,R=301]
+	RewriteRule ^(events/video)(/?)$ https://ibs-training.ru/events/partners/? [L,R=301]
+	RewriteRule ^(offers)(/?)$ https://ibs-training.ru/events/gifts/? [L,R=301]
+	RewriteRule ^(about/education/)(/?)$ https://ibs-training.ru/about/why/? [L,R=301]
+	RewriteRule ^(kurs/avtomatizatsiya_testirovaniya_s_ispolzovaniem_selenium_2.html)(/?)$ https://ibs-training.ru/kurs/avtomatizatsiya_testirovaniya_s_ispolzovaniem_selenium_webdriver.html [L,R=301]
+	RewriteRule ^(kurs/vvedenie_v_biznes-analiz.html)(/?)$ https://ibs-training.ru/kurs/babok_guide_30_vvedenie_v_biznes-analiz.html [L,R=301]
+	RewriteRule ^(kurs/planirovanie_i_monitoring_biznes-analiza.html)(/?)$ https://ibs-training.ru/kurs/babok_guide_30_planirovanie_i_monitoring_biznes-analiza.html [L,R=301]
+	RewriteRule ^(kurs/obzornyy_onlayn_trening_po_skramu_chto_takoe_skram_kakaya_polza_ot_nego__dlya_proekta_s_chego_nachat_ego_vnedrenie.html)(/?)$ https://ibs-training.ru/kurs/obzornyy_onlayn-trening_po_scrum_chto_takoe_scrum_kakaya_polza_ot_nego_dlya_proekta_s_chego_nachat_ego_vnedrenie.html [L,R=301]
+	RewriteRule ^(kurs/java_se_6_chast_2.html)(/?)$ https://ibs-training.ru/kurs/razrabotka_na_platforme_java_se_7_rasshirennye_temy.html [L,R=301]
+	RewriteRule ^(kurs/osnovy_vizualnogo_modelirovaniya_s_ispolzovaniem_uml_20_online.html)(/?)$ https://ibs-training.ru/kurs/osnovy_vizualnogo_modelirovaniya_s_ispolzovaniem_uml_2x_online.html [L,R=301]
+	RewriteRule ^(kurs/ecmascript_2015.html)(/?)$ https://ibs-training.ru/kurs/ecmascript_2015_novye_vozmognosti_yazyka_javascript.html [L,R=301]
+	RewriteRule ^(kurs/java_8.html)(/?)$ https://ibs-training.ru/kurs/java_8_novye_vozmognosti_yazyka_java.html [L,R=301]
+	RewriteRule ^(kurs/scala.html)(/?)$ https://ibs-training.ru/kurs/yazyk_scala_dlya_java-razrabotchikov.html [L,R=301]
+	RewriteRule ^(kurs/podgotovka_k_sertifikatsii_po_pmbok_50_.html)(/?)$ https://ibs-training.ru/kurs/podgotovka_k_sertifikatsii_po_pmbok_60_.html [L,R=301]
+	RewriteRule ^(training/faq/)(/?)$ https://ibs-training.ru/about/news/78943/ [L,R=301]
+	RewriteRule ^(kurs/introduction_to_git.html)(/?)$ https://ibs-training.ru/kurs/vvedenie_v_sistemu_kontrolya_versiy_git.html [L,R=301]
+	RewriteRule ^(kurs/)([a-z0-9/_-]+)(?!\.html)(/?)$ https://ibs-training.ru/training/katalog_kursov/? [L,R=301]
+	RewriteRule ^(internal/school)([a-z0-9/_]*)$ https://ibs-training.ru/training/katalog_kursov/? [L,R=301]
+	RewriteRule ^(forum/)([a-z0-9/_]*)$ https://ibs-training.ru/? [L,R=301]
+	RewriteRule ^(timetable/onlinecourse/index.html)(/?)$ https://ibs-training.ru/timetable/onlinecourse/ [L,R=301]
+	#RewriteRule ^(scrum-master/)([A-z0-9/_-]*)(?!\.php)(/?)$ https://ibs-training.ru/agile/ [L,R=301]
+	RewriteRule ^(timetable_old/onlinecourse/index.html)(/?)$ https://ibs-training.ru/timetable_old/onlinecourse/ [L,R=301]
+	RewriteRule ^(training/online/catalog/course.html)(/?)$ https://ibs-training.ru/training/catalog/course.html [L,R=301]
+	RewriteRule ^(agile/icagile-icp-agile-team-facilitation-kiev-16-17-fevralya-2017)(/?)$ https://ibs-training.ru/agile/icagile-icp-agile-team-facilitation-icagile-icp-atf-kiev-27-28-fevralya-2017/ [L,R=301]
+	RewriteRule ^(kurs/osnovy_raboty_s_platformoy_aspnet_mvc_30.html)(/?)$ https://ibs-training.ru/kurs/osnovy_raboty_s_platformoy_aspnet_mvc_50.html [L,R=301]
+	RewriteRule ^(kurs/postroenie_freymvorka_avtomaticheskogo_testirovaniya_s_pomoshchyu_qtp.html)(/?)$ https://ibs-training.ru/kurs/osnovy_postroeniya_freymvorka_avtomatizirovannogo_testirovaniya_na_hp_uft.html [L,R=301]
+	RewriteCond %{REQUEST_URI} !^/about/experts/ask/
+	RewriteCond %{REQUEST_URI} !^/about/experts/interview/
+	RewriteCond %{REQUEST_URI} !^/about/experts/answers/
+	RewriteRule ^(about/experts/)([a-z/_]+)(/?)$ https://ibs-training.ru/about/experts/$2.html [L,R=301]
+	RewriteRule ^(timetable/onlinecourse/index.php)(/?)$ https://ibs-training.ru/timetable/onlinecourse/ [L,R=301]
+	RewriteRule ^(clients/clients_speak.html)(/?)$ https://ibs-training.ru/about/clients/corporate.html? [L,R=301]
+	RewriteRule ^(kurs/oracle_11g_yazyk_pl-sql_dlya_razrabotchikov.html)(/?)$ https://ibs-training.ru/kurs/oracle_osnovy__pl-sql_dlya_razrabotchikov.html? [L,R=301]
+	RewriteRule ^(kurs/oracle_11g_osnovy_yazyka_pl-sql.html)(/?)$ https://ibs-training.ru/kurs/oracle_11g_osnovy_yazyka_pl-sql.html? [L,R=301]
+	RewriteRule ^(kurs/pattern_vnedreniya_zavisimosti_cdi.html)(/?)$ https://ibs-training.ru/kurs/vnedrenie_zavisimostey_v_java_ee_cdi.html? [L,R=301]
+	RewriteRule ^(kurs/vladenie_karkasom_razrabotki_spring_framework.html)(/?)$ https://ibs-training.ru/kurs/vladenie_karkasom_razrabotki_spring_framework_40.html? [L,R=301]
+	RewriteRule ^(corporate/testing_it/)(/?)$ https://ibs-training.ru/testing/? [L,R=301]
+	RewriteRule ^(corporate/testing_it/index.php)(/?)$ https://ibs-training.ru/testing/? [L,R=301]
+	RewriteRule ^(corporate/testing_it/best-of-the-best/)(/?)$ https://ibs-training.ru/corporate/? [L,R=301]
+	RewriteRule ^(training/career/index.php)(/?)$ https://ibs-training.ru/corporate/? [L,R=301]
+	RewriteRule ^(training/career/)(/?)$ https://ibs-training.ru/corporate/? [L,R=301]
+	RewriteRule ^(training/)(/?)$ https://ibs-training.ru/training/katalog_kursov/? [L,R=301]
+	RewriteRule ^(about/clients/all_clients.html)(/?)$ https://ibs-training.ru/corporate/? [L,R=301]
+	RewriteRule ^(kurs/angular_2_polnostyu_pererabotannaya_versiya_populyarnogo_veb-freymvorka.html)(/?)$ https://ibs-training.ru/kurs/angular_6_polnostyu_pererabotannaya_versiya_populyarnogo_veb-freymvorka.html? [L,R=301]
+	RewriteRule ^(training/katalog_kursov/sertifitsirovannye-kursy-atlassian-jira/)(/?)$ https://ibs-training.ru/training/katalog_kursov/sertifitsirovannye-kursy-po-poduktam-atlassian/ [L,R=301]
+	RewriteRule ^(kurs/obzornyy_onlayn-trening_po_scrum_chto_takoe_scrum_kakaya_polza_ot_nego_dlya_proekta_s_chego_nachat_ego_vnedrenie.html)(/?)$ https://ibs-training.ru/kurs/obzornyy_onlayn-trening_po_scrum_polza_riski_primery_ispolzovaniya.html? [L,R=301]
+	RewriteRule ^(kurs/nepreryvnaya_postavka_po_s_docker.html)(/?)$ https://ibs-training.ru/kurs/nepreryvnaya_postavka_po_s_docker_i_vvedenie_v_kubernetes.html [L,R=301]
+	RewriteRule ^(training/katalog_kursov/sertifitsirovannye-kursy-po-poduktam-atlassian/)(/?)$ https://ibs-training.ru/training/katalog_kursov/kursy-po-poduktam-atlassian/ [L,R=301]
+
+    RewriteRule ^(kurs/printsipy_sozdaniya_polzovatelskih_interfeysov.html)(/?)$ https://ibs-training.ru/kurs/proektirovanie_audit_i_testirovanie_polzovatelskih_interfeysov.html [L,R=301]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-l
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !/bitrix/routing_index.php$
+    RewriteRule ^(.*)$ /bitrix/routing_index.php [L]
+	#RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+	#RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+</IfModule>
+
+<IfModule mod_mime.c>
+	AddType application/x-httpd-php .ico
+</IfModule>
+
+<IfModule mod_dir.c>
+	DirectoryIndex index.html index.php
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddType image/svg+xml .svg
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType application/x-font-opentype "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+<IfModule mod_headers.c>
+    <filesmatch "\.(ico|flv|jpg|jpeg|webp|png|gif|css|swf|woff|pdf)$">
+    Header set Cache-Control "max-age=31536000, public"
+    </filesmatch>
+    <filesmatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=7200, private, must-revalidate"
+    </filesmatch>
+    <filesmatch "\.(pdf)$">
+    Header set Cache-Control "max-age=86400, public"
+    </filesmatch>
+    <filesmatch "\.(js|otf|ttf|woff|woff2)$">
+    Header set Cache-Control "max-age=31536000, private"
+    </filesmatch>
+</IfModule>

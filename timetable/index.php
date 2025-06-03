@@ -511,9 +511,13 @@ if ($id_type==3)
 
         <section id="content" class="not-main-page">
             <div class="container">
-                <div class="timetable-menu">
+               <div class="timetable-menu">
                     <div class="simple-select">
-                        <a href="/timetable/past-seminars/">Прошедшие семинары</a>
+                        <a class="title dropdown-link" href=""><span>Предстоящие семинары</span><?= Functions::buildSVG('arrow-down', SITE_TEMPLATE_PATH. '/assets/images/icons')?></a>
+                        <ul class='timetable-menu-ul dropdown'>
+                            <li class="active"><a href="/timetable/?type=events">Предстоящие семинары</a></li>
+                            <li><a href="/timetable/past-seminars/">Прошедшие семинары</a></li>
+                        </ul>
                     </div>
                 </div>
                 <?$APPLICATION->IncludeComponent(

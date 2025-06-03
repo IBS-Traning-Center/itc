@@ -1,4 +1,6 @@
 <?
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+LocalRedirect("/catalog/direction/" . $_REQUEST['SECTION_CODE'] . "/");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 $APPLICATION->SetTitle(" ");
 $APPLICATION->SetPageProperty("SHOW_BOTTOM_MAP", "Y");

@@ -98,6 +98,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'for_course' => 'FOR_COURSE',
                 'skills' => 'IMPROVED_SKILLS',
                 'what_learn' => 'WHAT_LEARN',
+                'format' => 'FORMAT',
+                'dev' => 'IS_DEV',
 
                 'metaTitle' => 'meta_title',
                 'metaDescription' => 'meta_desc',
@@ -391,7 +393,9 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 $this->mapping('course', 'complexity'),
                 $this->mapping('course', 'new'),
                 $this->mapping('course', 'price_ur'),
-                $this->mapping('course', 'language')
+                $this->mapping('course', 'language'),
+                $this->mapping('course', 'format'),
+                $this->mapping('course', 'dev')
             ],
             'filter' => [
                 'ACTIVE' => 'Y'
@@ -431,6 +435,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             $this->course['iblockId'] = $courseObject->get($this->mapping('course', 'iblockId'));
             $this->course['complexity'] = ($courseObject->getComplexity() && $courseObject->getComplexity()->getItem() && $courseObject->getComplexity()->getItem()->getValue()) ? $courseObject->getComplexity()->getItem()->getValue() : '';
             $this->course['is_new'] = $courseObject->getIsNew() && $courseObject->getIsNew()->getItem() && $courseObject->getIsNew()->getItem()->getValue();
+            $this->course['is_dev'] = $courseObject->getIsDev() && $courseObject->getIsDev()->getValue();
             $this->course['price_ur'] = ($courseObject->getCoursePriceUr() && $courseObject->getCoursePriceUr()->getValue()) ? $courseObject->getCoursePriceUr()->getValue() : '';
             $this->course['language'] = ($courseObject->getCourseLanguage() && $courseObject->getCourseLanguage()->getItem() && $courseObject->getCourseLanguage()->getItem()->getValue()) ? $courseObject->getCourseLanguage()->getItem()->getValue() : '';
 
@@ -449,7 +454,35 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                         }
                     }
 
-                    $this->course['for_course'] = $items;
+                    $data = [];
+                    foreach ($forCourseCodes as $code) {
+                        foreach ($items as &$item) {
+                            if ($item['UF_XML_ID'] == $code) {
+                                $data[] = $item;
+                                break;
+                            }
+                        }
+                    }
+                    $this->course['for_course'] = $data;
+                }
+            }
+
+            $courseFormat = $courseObject->get($this->mapping('course', 'format'))->getValue() ? $courseObject->get($this->mapping('course', 'format'))->getValue() : '';
+            if (!empty($courseFormat)) {
+                $hightTable = new HighloadblockManager('CourseFormats');
+                $hightTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE', 'UF_FULL_PICTURE'], [], ['UF_XML_ID' => $courseFormat]);
+                $format = $hightTable->getData();
+
+                if (!empty($format)) {
+                    if ($format['UF_PICTURE']) {
+                        $format['UF_PICTURE'] = CFile::GetPath($format['UF_PICTURE']);
+                    }
+
+                    if ($format['UF_FULL_PICTURE']) {
+                        $format['UF_FULL_PICTURE'] = CFile::GetPath($format['UF_FULL_PICTURE']);
+                    }
+
+                    $this->course['format'] = $format;
                 }
             }
 
@@ -923,7 +956,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
         $certificates = ElementCertificatesTable::getList([
             'select' => [
                 'PREVIEW_PICTURE',
-                'PREVIEW_TEXT'
+                'PREVIEW_TEXT',
+                'DETAIL_PICTURE'
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
@@ -936,7 +970,9 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             foreach ($certificates as $certificate) {
                 $cert = [];
 
-                if ($certificate->getPreviewPicture()) {
+                if ($certificate->getDetailPicture()) {
+                    $cert['PICTURE'] = CFile::GetPath($certificate->getDetailPicture());
+                } else if ($certificate->getPreviewPicture()) {
                     $cert['PICTURE'] = CFile::GetPath($certificate->getPreviewPicture());
                 }
 

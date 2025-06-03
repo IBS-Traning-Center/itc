@@ -203,7 +203,8 @@
     line-height: 32px;
 }
 
-.top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-text p.show-diplom-btn {
+.top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-text p.show-diplom-btn,
+.top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-text p.show-format-btn {
     color: var(--button-blue);
     cursor: pointer;
 }
@@ -471,12 +472,26 @@
     display: none;
 }
 
-.diploma-modal .diploma-modal-content img {
+.format-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background-color: var(--white);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    display: none;
+}
+
+.diploma-modal .diploma-modal-content img,
+.format-modal .format-modal-content img {
     max-width: 800px;
     max-height: 650px;
 }
 
-.diploma-modal-close-btn {
+.diploma-modal-close-btn,
+.format-modal-close-btn {
     display: none;
     position: fixed;
     top: 0;
@@ -490,7 +505,8 @@
     background-color: var(--white);
 }
 
-.diploma-modal-close-btn svg {
+.diploma-modal-close-btn svg,
+.format-modal-close-btn svg {
     max-width: 48px;
     min-width: 48px;
     max-height: 48px;
@@ -636,7 +652,8 @@
 
 .leader-block .trainer-main-info-block .cert-block {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 32px;
 }
 
@@ -888,6 +905,11 @@
         max-height: 32px;
     }
 
+    .top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-icon img {
+        max-width: 32px;
+        max-height: 32px;
+    }
+
     .top-page-banner.course-detail .banner-content .left-banner-block .top-course-info .top-course-info_item .top-course-info_item-text {
         gap: 0;
     }
@@ -1095,17 +1117,20 @@
         line-height: 24px;
     }
 
-    .diploma-modal-close-btn {
+    .diploma-modal-close-btn,
+    .format-modal-close-btn {
         width: 64px;
         height: 64px;
     }
 
-    .diploma-modal .diploma-modal-content img {
+    .diploma-modal .diploma-modal-content img,
+    .format-modal .format-modal-content img {
         max-width: 400px;
         max-height: 250px;
     }
 
-    .diploma-modal {
+    .diploma-modal,
+    .format-modal {
         max-width: 460px;
         height: 410px;
     }
@@ -1351,17 +1376,20 @@
 }
 
 @media (max-width: 500px) {
-    .diploma-modal {
+    .diploma-modal,
+    .format-modal {
         max-width: 400px;
         height: 300px;
     }
 
-    .diploma-modal-close-btn {
+    .diploma-modal-close-btn,
+    .format-modal-close-btn {
         width: 48px;
         height: 48px;
     }
 
-    .diploma-modal-close-btn svg {
+    .diploma-modal-close-btn svg,
+    .format-modal-close-btn svg {
         max-width: 32px;
         min-width: 32px;
         max-height: 32px;

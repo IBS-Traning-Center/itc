@@ -20,14 +20,17 @@
 .top-page-banner.section-complex-page .container .banner-content .complexity-block {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 16px;
+    align-items: stretch;
+    gap: 4px;
     margin-top: 16px;
 }
 
 .top-page-banner.section-complex-page .container .banner-content .complexity-block .complexity-item {
     background-color: var(--lime);
     padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .top-page-banner.section-complex-page .container .banner-content p.f-32 {
@@ -59,12 +62,16 @@
     margin: 0;
 }
 
-.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-diplom-btn {
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-diplom-btn,
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-award-btn,
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-format-btn {
     cursor: pointer;
     color: var(--button-blue);
 }
 
-.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-diplom-btn:hover {
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-diplom-btn:hover,
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-award-btn:hover,
+.top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item p.f-20.show-format-btn:hover {
     text-decoration: underline;
 }
 
@@ -91,6 +98,7 @@
     align-items: end;
     justify-content: end;
     gap: 16px;
+    align-items: stretch;
     margin-top: 24px;
 }
 
@@ -112,7 +120,7 @@
 .top-page-banner.section-complex-page .container .btn-banner-block .buttons-block button:not(.size-l),
 .main-content-complex-course .right-block .buttons-block button:not(.size-l),
 .main-content-complex-course .left-block .mobile-buttons-block .buttons-block button:not(.size-l) {
-    background-color: var(--white);
+    background-color: var(--lime);
     border: 1px solid var(--button-blue);
 }
 
@@ -552,11 +560,14 @@
     display: none;
 }
 
-.diploma-modal .diploma-modal-content img {
+.diploma-modal .diploma-modal-content img,
+.format-modal .format-modal-content img {
     max-width: 800px;
 }
 
-.diploma-modal-close-btn {
+.diploma-modal-close-btn,
+.award-modal-close-btn,
+.format-modal-close-btn {
     display: none;
     position: fixed;
     top: 0;
@@ -570,11 +581,31 @@
     background-color: var(--white);
 }
 
-.diploma-modal-close-btn svg {
+.diploma-modal-close-btn svg,
+.award-modal-close-btn svg,
+.format-modal-close-btn svg {
     max-width: 48px;
     min-width: 48px;
     max-height: 48px;
     min-height: 48px;
+}
+
+.award-modal,
+.format-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    max-width: 0px;
+    background-color: var(--white);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    display: none;
+}
+
+.award-modal .award-modal-content img {
+    max-width: 450px;
 }
 
 .background-modal {
@@ -626,7 +657,8 @@
         padding: 8px;
     }
 
-    .top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item .top-course-info_item-icon svg {
+    .top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item .top-course-info_item-icon svg,
+    .top-page-banner.section-complex-page .container .banner-content .course-info-block .top-course-info_item .top-course-info_item-icon img {
         max-width: 36px;
     }
 
@@ -824,18 +856,27 @@
         padding: 0 16px;
     }
 
-    .diploma-modal-close-btn {
+    .diploma-modal-close-btn,
+    .award-modal-close-btn,
+    .format-modal-close-btn {
         width: 64px;
         height: 64px;
     }
 
-    .diploma-modal .diploma-modal-content img {
+    .diploma-modal .diploma-modal-content img,
+    .award-modal .award-modal-content img,
+    .format-modal .format-modal-content img {
         max-width: 400px;
     }
 
     .diploma-modal {
         max-width: 460px;
         height: 410px;
+    }
+
+    .award-modal,
+    .format-modal {
+        max-width: 0px;
     }
 }
 
@@ -852,15 +893,24 @@
         height: 300px;
     }
 
-    .diploma-modal-close-btn {
+    .diploma-modal-close-btn,
+    .award-modal-close-btn,
+    .format-modal-close-btn {
         width: 48px;
         height: 48px;
     }
 
-    .diploma-modal-close-btn svg {
+    .diploma-modal-close-btn svg,
+    .award-modal-close-btn svg,
+    .format-modal-close-btn svg {
         max-width: 32px;
         min-width: 32px;
         max-height: 32px;
         min-height: 32px;
+    }
+
+    .award-modal,
+    .format-modal {
+        max-width: 0px;
     }
 }

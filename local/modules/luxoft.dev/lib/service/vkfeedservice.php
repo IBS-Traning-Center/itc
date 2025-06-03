@@ -27,11 +27,11 @@ class VkFeedService
 
         $this->trainingCenterInfo = [
             'title' => 'ibs-training.ru Feed',
-            'name' => 'IBS Training Center',
+            'name' => 'Учебный центр IBS',
             'company' => 'АНО ДПО "УЦ ИБС"',
             'url' => $this->siteUrl,
             'email' => 'education@ibs.ru',
-            'picture' => "{$this->siteUrl}/local/templates/ibs-training/assets/images/logo_gradient.svg",
+            'picture' => '{$this->siteUrl}/local/templates/ibs-training_new/assets/images/IBS_logo_gradient.svg',
             'description' => 'Обучение для программистов, аналитиков, менеджеров проектов: тренинги, курсы, ' .
                 'бесплатные семинары и вебинары, конференции',
             'currencies' => [
@@ -180,7 +180,7 @@ class VkFeedService
                 'ROADMAP_TITLE_' => 'ROADMAP_TITLE',
                 'ROADMAP_DESCRIPTION_' => 'ROADMAP_DESCRIPTION',
                 'COMPLEXITY.ITEM',
-                'course_format_' => 'course_format.ITEM'
+                'course_format_' => 'course_format'
             ])
             ->where('ACTIVE', 'Y')
             ->countTotal(true)
@@ -206,7 +206,7 @@ class VkFeedService
                 'url' => "{$this->trainingCenterInfo['url']}/kurs/{$course->getXmlId()}.html",
                 'price' => $course->getCoursePrice() ? $course->getCoursePrice()->getValue() : '',
                 'duration' => $course->getCourseDuration() ? $course->getCourseDuration()->getValue() : '',
-                'format' => ($course->getCourseFormat() && $course->getCourseFormat()->getItem()) ? $course->getCourseFormat()->getItem()->getXmlId() : 'online',
+                'format' => ($course->getCourseFormat() && $course->getCourseFormat()->getValue()) ? $course->getCourseFormat()->getValue() : 'online',
             ];
 
             $roadmapTitles = $course->getRoadmapTitle()->getAll();
@@ -231,12 +231,9 @@ class VkFeedService
 
             $arCourse['complexity'] = [];
             if (
-                $course->getComplexity()
+                $course->getComplexity() && $course->getComplexity()->getItem() && $course->getComplexity()->getItem()->getValue()
             ) {
-                foreach ($course->getComplexity()->getAll() as $complexity) {
-                    $complexity = $complexity->getItem();
-                    $arCourse['complexity'][] = $complexity->getXmlId();
-                }
+                $arCourse['complexity'] = $course->getComplexity()->getItem()->getValue();
             }
 
             $courses[$arCourse['id']] = $arCourse;
@@ -349,12 +346,12 @@ class VkFeedService
             return (bool)array_intersect($category['includeElementsId'], $allCoursesId);
         });
 
-        $courses = array_map(function ($course) {
+        /*$courses = array_map(function ($course) {
             $course['complexity'] = array_intersect(['junior'], $course['complexity'])
                 ? 'Для новичков'
                 : 'Для опытных';
             return $course;
-        }, $courses);
+        }, $courses);*/
 
         $dom = new DOMDocument('1.0', 'utf-8');
         $dom->formatOutput = true;
