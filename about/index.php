@@ -6,7 +6,10 @@ $APPLICATION->SetPageProperty("keywords", "обучение для разраб�
 $APPLICATION->SetPageProperty("description", "Обучение для программистов: курсы, корпоративное обучение, консалтинг, конференции, бесплатные семинары и вебинары.");
 $APPLICATION->SetTitle("Тренинги, корпоративное обучение, консалтинг по разработке ПО");
 ?> 
-<table cellspacing="0" class="info_1"> 
+
+
+
+<!-- <table cellspacing="0" class="info_1"> 
   <tbody> 
     <tr><td class="facts" style="border: medium none;"> 
         <h2 align="left">Приветствие Директора 
@@ -58,5 +61,7 @@ $APPLICATION->SetTitle("Тренинги, корпоративное обуче�
          <span class="links"><a href="/contacts/" >Подробнее</a></span> </p>
        </td></tr>
    </tbody>
- </table>
+ </table> -->
+
+
  <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

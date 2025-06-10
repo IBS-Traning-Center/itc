@@ -1,0 +1,26 @@
+.breadcrumbs {
+    margin-bottom: 56px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+    .breadcrumbs {
+        margin-bottom: 16px;
+    }
+
+    .breadcrumbs a,
+    .breadcrumbs span {
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
