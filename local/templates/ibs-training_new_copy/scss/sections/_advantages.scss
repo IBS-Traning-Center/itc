@@ -1,0 +1,60 @@
+.advantages {
+    background: linear-gradient(259.83deg, #4DA567 0%, #2A408B 100%);
+    @include sectionSpaces;
+
+    &__item {
+        background-color: #fff;
+        padding: 24px;
+
+        &__key {
+            @include key;
+        }
+
+        &__title {
+            color: #000;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 12px;
+            text-align: left;
+
+            @include breakpoint(lg) {
+                font-size: 32px;
+                line-height: 40px;
+                margin-bottom: 24px;
+                text-align: center;
+            }
+        }
+
+        &__points {
+            padding-bottom: 16px;
+            border-bottom: 1px solid #000;
+            margin-bottom: 12px;
+
+            @include breakpoint(lg) {
+                padding-bottom: 40px;
+                margin-bottom: 24px;
+            }
+
+            li {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 24px;
+
+                @include breakpoint(lg) {
+                    font-size: 20px;
+                    line-height: 24px;
+                    @include enter-point;
+                }
+
+                &:not(:last-of-type) {
+                    margin-bottom: 8px;
+                }
+            }
+
+            & + a {
+                @include link;
+            }
+        }
+    }
+}

@@ -15,7 +15,7 @@ Loc::loadMessages(__FILE__);
 
 ?>
 
-<div class="main-feedback-form-block" id="mainFeedbackFormBlock">
+<div class="main-feedback-form-block <?=$arParams['CUSTOM_CLASSES'];?>" id="mainFeedbackFormBlock">
     <div class="container main-feedback-form-container">
         <?php if ($arResult['arForm']['NAME']) : ?>
             <h1><?= $arResult['arForm']['NAME'] ?></h1>
@@ -27,14 +27,51 @@ Loc::loadMessages(__FILE__);
             <?php if ($arResult["isFormNote"] != "Y") : ?>
                 <?=$arResult["FORM_HEADER"]?>
                 <div class="form-table data-table">
+                    <?php
+                    // echo $arResult["QUESTIONS"]["cert_location"]["HTML_CODE"];
+                    // unset($arResult["QUESTIONS"]["cert_location"]);
+                    ?>
+
                     <?php foreach ($arResult["QUESTIONS"] as $questionId => $question) : ?>
-                        <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>
+
+                        <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden' 
+                              || $question['STRUCTURE'][0]['FIELD_TYPE'] == 'dropdown') : ?>
                             <?php echo $question['HTML_CODE']; ?>
+
+                        <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'radio') : ?>
+
+                            <?php
+                            // echo '<pre>';
+                            // var_dump($question);
+                            // echo '</pre>';
+                            ?>
+                            
+                            <div class="form-radio-btns">
+                                
+                            <?
+                                foreach ($question['STRUCTURE'] as $key => $item) {?>
+
+                                <label class="form-radio-btns__item">
+                                    <input
+                                        <?= ($item['REQUIRED'] == 'Y') ? 'required' : '' ?>
+                                        <?= (!empty($item['FIELD_PARAM'])) ? ' '.$item['FIELD_PARAM'] : '' ?>
+                                        name="form_radio_<?= $questionId ?>[]"
+                                        type="<?= $item['FIELD_TYPE'] ?>"
+                                        id="<?= $item['ID'] ?>"
+                                        value="<?= $item['ID'] ?>">
+                                        <span>
+                                            <?= $item['MESSAGE'] ?>
+                                        </span>
+                                </label>
+                            <?}?>
+                            </div>
+
                         <?php else : ?>
                             <?php if ($questionId == 'email') : ?>
                                 <div class="flex-question-block">
                             <?php endif; ?>
                             <div class="question-block <?= $questionId ?>">
+
                                 <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'checkbox') : ?>
                                     <input
                                         <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
@@ -43,6 +80,7 @@ Loc::loadMessages(__FILE__);
                                         id="<?= $question['STRUCTURE'][0]['ID'] ?>"
                                         value="<?= $question['STRUCTURE'][0]['ID'] ?>">
                                     <span><?= $question['CAPTION'] ?></span>
+
                                 <?php else : ?>
                                     <input
                                         class="inputtext main-feedback-form-input <?= $questionId ?> <?= isset($arResult['FORM_ERRORS'][$questionId]) ? 'has-error' : '' ?>"

@@ -23,6 +23,13 @@ Asset::getInstance()->addCss('/local/assets/libs/fancybox/jquery.fancybox.min.cs
 Asset::getInstance()->addCss('/local/assets/libs/highlight.js/efault.min.css');
 Asset::getInstance()->addCss('/local/assets/css/2020_style.css');
 Asset::getInstance()->addCss('/local/assets/css/new_style.css');
+Asset::getInstance()->addCss('/local/assets/css/talent/talent.css');
+
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/bootstrap/bootstrap-grid.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/bootstrap/bootstrap-utilities.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/swiper/swiper-bundle.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/css/app.css');
+
 
 Asset::getInstance()->addJs('/local/assets/js/targetEvents.js');
 
@@ -45,9 +52,14 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/script.js');
 Asset::getInstance()->addJs( '/local/runtime/script.js');
 Asset::getInstance()->addJs( '/local/vendors/script.js');
 
+// Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/jquery-3.7.1.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/swiper/swiper-bundle.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/js/app.js');
+
 $application = Application::getInstance();
 $request = $application->getContext()->getRequest();
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -55,7 +67,7 @@ $request = $application->getContext()->getRequest();
     <meta name="yandex-verification" content="e0363bd7fb634c51"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <meta name=viewport content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://ibs-training.ru<?=$APPLICATION->GetCurPage();?>">
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
@@ -75,12 +87,15 @@ $request = $application->getContext()->getRequest();
             $component,
             array("HIDE_ICONS" => "Y")
         ); ?></title>
+
+
     <?php
     $APPLICATION->ShowMeta("robots");
     $APPLICATION->ShowMeta("keywords");
     $APPLICATION->ShowMeta("description");
     $APPLICATION->ShowCSS();
     $APPLICATION->ShowHead();
+
 
     $errorsService = new ErrorsService();
     if (!$errorsService->botDetected()) {?>
@@ -107,11 +122,11 @@ $request = $application->getContext()->getRequest();
 
     <!--  nootisend  -->
     <script charset='utf-8' src='https://cdn.pushdealer.msndr.net/5bd629bc/script_0.js' async></script>
-    <script>
+    <!-- <script>
         if (window.innerWidth > 1180) {
             document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio));
         }
-    </script>
+    </script> -->
 </head>
 <body>
 <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(23056159, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ecommerce:"dataLayer" }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/23056159" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
@@ -132,7 +147,13 @@ $cntBasketItems = CSaleBasket::GetList(
 <header id="header" class="header">
     <div class="header-container">
         <a href="/" class="logo-block">
-            <?= Functions::buildSVG('main_logo', SITE_TEMPLATE_PATH. '/assets/images') ?>
+            <?
+            if(strpos($APPLICATION->GetCurPage(false), '/sertifikatsiya/') === 0):
+                echo Functions::buildSVG('certification_logo', SITE_TEMPLATE_PATH. '/assets/images');
+            else:
+                echo Functions::buildSVG('main_logo', SITE_TEMPLATE_PATH. '/assets/images');
+            endif;
+            ?>
         </a>
         <div class="search-header-block">
             <form action="/search/">

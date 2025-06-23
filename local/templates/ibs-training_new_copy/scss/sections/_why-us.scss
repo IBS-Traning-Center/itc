@@ -1,0 +1,97 @@
+.why-us {
+    padding: 40px 0 0;
+
+    @include breakpoint(lg) {
+        padding: 120px 0 0;
+    }
+
+    .title--h2 {
+        margin-bottom: 32px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 56px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        @include breakpoint(lg) {
+            gap: 16px;
+        }
+
+        img {
+            display: block;
+            width: 32px;
+            min-width: 32px;
+            height: 32px;
+            object-fit: contain;
+
+            @include breakpoint(lg) {
+                width: 72px;
+                min-width: 72px;
+                height: 72px;
+            }
+        }
+
+        &__title {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+
+            @include breakpoint(lg) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+    }
+
+    &.with-titles {
+        .why-us__item {
+            align-items: flex-start;
+        }
+        
+        .why-us__item__title {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.35;
+
+            @include breakpoint(lg) {
+                font-size: 32px;
+            }
+
+            @include breakpoint(full-hd) {
+                font-size: 40px;
+            }
+        }
+
+        .why-us__item__desc {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+
+            @include breakpoint(lg) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            b {
+                font-weight: 400;
+            }
+
+            p {
+                font: inherit;
+            }
+        }
+    }
+
+    & + .fundamental__btns {
+        margin-bottom: 40px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 120px;
+        }
+    }
+}

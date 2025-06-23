@@ -1,0 +1,406 @@
+.levels {
+    padding: 32px 0 40px;
+    width: 125%;
+
+    @include breakpoint(xl) {
+        padding: 120px 0;
+    }
+
+    .title--h2 {
+        margin-bottom: 32px;
+
+        @include breakpoint(xl) {
+            margin-bottom: 56px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+        @include breakpoint(xl) {
+            flex-direction: row;
+            justify-content: center;
+            overflow: hidden;
+        }
+    }
+
+    span, b {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000;
+        display: block;
+    }
+
+    b {
+        font-weight: 600;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        border-top: 1px solid #000;
+        z-index: 1;
+        background-color: #fff;
+        transition: all .3s ease-in-out;
+        max-height: 100%;
+        height: 100%;
+        max-width: unset;
+        
+        @include breakpoint(xl) {
+            flex: 1;
+            min-width: 0;
+            flex-direction: row;
+            align-items: stretch;
+            padding: 0 0 0 32px;
+        }
+
+        &__showmore {
+            display: none;
+
+            @include breakpoint(xl) {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                right: 0;
+                width: 64px;
+                height: 100%;
+                background: linear-gradient(180deg, #4DA467 0%, #2A428B 100%);
+                margin-left: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all .7s ease-in-out;
+            }
+
+            p {
+                @include breakpoint(xl) {
+                    transform: rotate(-90deg);
+                    transform-origin: center;
+                    display: block;
+                    white-space: nowrap;
+                    font-family: 'Stag Sans', sans-serif;
+                    line-height: 24px;
+                    padding-right: 34px;
+                    color: #fff;
+                    position: relative;
+                    padding-right: 34px;
+                    text-align: center;
+                    display: block;
+                    width: fit-content;
+
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        right: 0;
+                        transform: rotate(90deg);
+                        transform-origin: center;
+                        display: block;
+                        width: 24px;
+                        height: 24px;
+                        background: url(/local/templates/ibs-training_new_copy/assets/images/icons/arrow--white.svg) no-repeat center center;
+                        transition: all .2s ease-in-out;
+                    }
+
+                    &.active {
+                        &:after {
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+            }
+
+            &--mobile {
+                @include breakpoint(xl) {
+                    display: none;
+                }
+
+                p {
+                    font-family: 'Noto Sans', sans-serif;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 1;
+                    color: #0827C4;
+                    position: relative;
+                    padding-right: 24px;
+                    text-align: center;
+                    display: block;
+                    width: fit-content;
+                    cursor: pointer;
+                    margin: 0 auto;
+
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        transform-origin: center;
+                        display: block;
+                        width: 16px;
+                        height: 16px;
+                        background: url(/local/templates/ibs-training_new_copy/assets/images/icons/arrow--blue.svg) no-repeat center center;
+                        transition: all .2s ease-in-out;
+                    }
+
+                    &.active {
+                        &:after {
+                            transform: translateY(-50%) rotate(-180deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__content {
+            @include breakpoint(xl) {
+                display: flex;
+                justify-content: center;
+                padding-right: 96px;
+                width: 100%;
+                max-width: 100%;
+                transition: all .2s ease-in-out;
+                padding-top: 0;
+            }
+        }
+
+        &__head {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding-top: 32px;
+            margin-bottom: 24px;
+            
+            @include breakpoint(xl) {
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 32px;
+            }
+
+            > div:nth-of-type(2) {
+                display: flex;
+                align-items: center;
+
+                @include breakpoint(xl) {
+                    flex-direction: column;
+                    align-items: flex-end;
+                }
+            }
+        }
+
+        &__image {
+            min-width: 100px;
+            width: 100px;
+            height: 100px;
+            margin-right: 24px;
+            display: block;
+
+            @include breakpoint(xl) {
+                min-width: 120px;
+                width: 120px;
+                height: 120px;
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+        }
+
+        &__title {
+            max-width: 100%;
+
+            @include breakpoint(xl) {
+                max-width: calc(208px * 1.25);
+                // max-width: calc(100% - 120px - 16px);
+            }
+            
+            p {
+                font-weight: 700;
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 20px;
+                line-height: 32px;
+                margin-bottom: 24px;
+    
+                @include breakpoint(xl) {
+                    font-family: 'Stag Sans', sans-serif;
+                    font-weight: 400;
+                    font-size: 32px;
+                    line-height: 40px;
+                }
+            }
+        }
+
+        &:first-child {
+            border-top: none;
+            .levels__item__head {
+                padding-top: 0;
+
+                @include breakpoint(xl) {
+                    padding-top: 32px;
+                }
+            }
+        }
+
+        &:last-child {
+            border-bottom: 1px solid #000;
+
+            @include breakpoint(xl) {
+                border-bottom: none;
+            }
+        }
+
+        &__cost {
+            b {
+                font-family: 'Noto Sans', sans-serif;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 32px;
+                white-space: nowrap;
+
+                @include breakpoint(xl) {
+                    font-family: 'Stag Sans', sans-serif;
+                    font-weight: 400;
+                    font-size: 34px;
+                    line-height: 52px;
+                    margin-bottom: 32px;
+                }
+            }
+        }
+
+        &__period {
+            span {
+                line-height: 22px;
+            }
+
+            @include breakpoint(xl) {
+                text-align: center;
+                width: 120px;
+            }
+        }
+
+        &__props {
+            &__title {
+                font-family: 'Noto Sans', sans-serif;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 32px;
+                margin-bottom: 16px;
+    
+                @include breakpoint(xl) {
+                    font-family: 'Stag Sans', sans-serif;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+
+            &__list {
+                margin-bottom: 24px;
+
+                @include breakpoint(xl) {
+                    margin-bottom: 32px;
+                }
+                
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 16px;
+                    }
+                }
+
+                img {
+                    min-width: 32px;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+
+        &__btns {
+            margin-bottom: 32px;
+
+            @include breakpoint(xl) {
+                margin-bottom: 22px;
+            }
+
+            a {
+                width: 100%;
+                max-width: 100%;
+                font-size: 16px;
+
+                &:not(:last-child) {
+                    margin-bottom: 4px;
+                }
+            }
+        }
+
+        &__desc {
+            @include breakpoint(xl) {
+                padding: 32px;
+                margin-left: 32px;
+
+                ul {
+                    li {
+                        @include enter-point;
+
+                        &:not(:last-of-type) {
+                            margin-bottom: 16px;
+                        }
+                    }
+                    
+                    &:not(:last-child) {
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+
+        &__desc--mobile {
+            padding: 24px 0 32px;
+
+            &__text {
+                padding: 24px 0;
+            }
+
+            ul {
+                li {
+                    @include enter-point;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 16px;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 24px;
+                }
+            }
+        }
+
+        &.opened {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: calc(100% - 330px);
+            height: 100%;
+            z-index: 50;
+            box-shadow: -4px -4px 48px 0px #0000000F;
+
+            .levels__item__showmore {
+                background: #F0F0F0;
+                
+                p {
+                    color: #000;
+                }
+            }
+
+        }
+    }
+}

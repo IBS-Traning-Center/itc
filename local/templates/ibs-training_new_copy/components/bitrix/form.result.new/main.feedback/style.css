@@ -1,5 +1,6 @@
 .main-feedback-form-block {
-    background-color: var(--button-blue);
+    /* background-color: var(--button-blue); */
+    /* background: linear-gradient(256.17deg, #4CA069 -0.76%, #2C4789 100%); */
     padding: 140px 0 180px;
 }
 
@@ -43,9 +44,9 @@
     border: none;
     background-color: #F0F0F0;
     padding: 24px;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 33px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 32px;
     color: var(--black);
     border-radius: 0;
     height: fit-content;
@@ -84,7 +85,7 @@
 .main-feedback-form-block .main-feedback-form-container .questions-block .under-main-feedback-form,
 .main-feedback-form-block .main-feedback-form-container .questions-block span {
     color: var(--white);
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
     line-height: 24px;
     margin-top: 32px;
@@ -95,7 +96,7 @@
     text-decoration: underline;
     transition: all 0.3s;
     color: var(--white);
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
     line-height: 24px;
 }

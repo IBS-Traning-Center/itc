@@ -1,0 +1,63 @@
+.fundamental {
+    $space: 24px;
+
+    h2 {
+        margin-bottom: $space;
+
+        @include breakpoint(md) {
+            margin-bottom: $space * 2;
+        }
+    }
+
+    &__item {
+        background-color: #F0F0F0;
+        padding: $space;
+        height: 100%;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.5;
+
+        p, li {
+            // &:not(:last-of-type) {
+                margin-bottom: $space;
+            // }
+        }
+
+        &__title {
+            font-weight: 400;
+            font-size: 24px;
+            margin-bottom: $space;
+        }
+
+
+        // &__desc {}
+
+        ul {
+            li {
+                @include enter-point;
+            }
+        }
+
+        &:hover {
+            background-color: #0827C4;
+
+            * {
+                color: #fff;
+            }
+
+            li {
+                @include enter-point-white;
+            }
+        }
+    }
+
+    &__btns {
+        margin-top: $space * 2;
+        margin-bottom: 120px;
+
+        a {
+            width: 100%;
+            display: block;
+        }
+    }
+}

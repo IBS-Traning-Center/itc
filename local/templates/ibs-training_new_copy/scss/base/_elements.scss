@@ -1,0 +1,251 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Stag Sans", sans-serif;
+	line-height: 1.2;
+	font-weight: 500;
+	color: #000;
+}
+
+.fancybox-enabled body {
+	overflow: scroll;
+}
+
+.title--h1 {
+	@include h1;
+}
+
+.title--h2 {
+	@include h2;
+}
+
+// h3, .title--h3 {
+// 	@include h3;
+// }
+
+section {
+	max-width: 100%;
+    width: 100%;
+	overflow: hidden;
+	position: relative;
+    // left: 50%;
+    // transform: translateX(-50%);
+}
+
+section img {
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+.image-wrapper {
+	overflow: hidden;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: #EFF4FF;
+
+	img {
+		display: block;
+		max-height: inherit;
+		transition: all .5s ease-in-out;
+		
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+}
+
+ul,
+ol {
+	list-style-type: none;
+	padding-left: unset;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: all .2s ease-in-out;
+
+	&:hover, &:focus {
+		text-decoration: none;
+		color: inherit;
+		// opacity: .7;
+	}
+}
+
+p {
+	margin: 0;
+	font-size: 14px;
+
+	@include breakpoint(md) {
+		font-size: 16px;
+	}
+
+	@include breakpoint(full-hd) {
+		font-size: 18px;
+	}
+	
+	&:not(:last-of-type) {
+		margin-bottom: 10px;
+	}
+}
+
+i {
+	font-style: italic;
+}
+
+b, b.f-20 {
+	font-weight: bold;
+}
+
+label {
+	cursor: inherit;
+}
+
+// .btn {
+// 	@include btn;
+// }
+
+.btn--dark {
+	@include btn--dark;
+}
+
+.btn--light {
+	@include btn--light;
+}
+
+.btn--white {
+	@include btn--white;
+}
+
+.link {
+	@include link;
+}
+
+.tabs {
+	@include tabs;
+}
+
+.spaces {
+	@include sectionSpaces;
+}
+// input {
+// 	&[type='text'],
+// 	&[type='number']:not(.product-item-amount-field),
+// 	&[type='email'],
+// 	&[type='search'],
+// 	&[type='tel'],
+// 	&[type='url']{
+// 		@include field;
+// 	}
+// }
+
+// .checkbox--dark {
+// 	@include checkbox--dark;
+// }
+
+// .checkbox--light {
+// 	@include checkbox--light;
+// }
+
+// .checkbox--circle {
+// 	@include checkbox--circle;
+// }
+
+
+.phone {
+	font-weight: 700;
+	font-size: 14px;
+	white-space: nowrap;
+
+	&:hover {
+		color: #49AD33;
+	}
+}
+
+.b24-window-mounts {
+	.b24-window-popup {
+		z-index: 1100002;
+	}
+}
+
+.logo-block {
+	svg {
+		min-width: 124px;
+		width: 124px;
+		height: 40px;
+
+		@include breakpoint(lg) {
+			min-width: calc(124px * 1.25);
+			width: calc(124px * 1.25);
+			height: calc(40px * 1.25);
+		}
+	}
+}
+
+.page_about {
+	.offset-block {
+		background-position: 98% 40px;
+		background-color: #fff;
+	
+		@include breakpoint(xl) {
+			background-position: 98% 120px;
+		}
+	}
+
+	.talent-grid-block {
+		.item {
+			padding: 14px 16px 30px;
+			&:hover {
+				background-color: #fff;
+				* {
+					color: #0827C4;
+				}
+
+				.line-block {
+					background-color: #0827C4;
+				}
+			}
+		}
+	}
+}
+
+.gradient-title {
+	color: #fff;
+	display: block;
+	padding: 4px 16px;
+	background: linear-gradient(90.16deg, #25234E 0.29%, #4E71B1 99.71%);
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1;
+	width: fit-content;
+
+	@include breakpoint(xl) {
+		font-size: 20px;
+		line-height: 32px;
+	}
+
+	@include breakpoint(full-hd) {
+		font-size: 34px;
+		line-height: 52px;
+	}
+}
+
+.f-42 {
+	font-size: 42px;
+	margin-bottom: 56px;
+	font-weight: 400;
+}

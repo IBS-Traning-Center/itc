@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Сертификация";
+$arDirProperties = Array(
+
+);
+?>

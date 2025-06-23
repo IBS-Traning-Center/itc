@@ -1,7 +1,8 @@
 <?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 </main>
 <?php global $APPLICATION; ?>
-<?php $APPLICATION->IncludeComponent(
+
+<?/*php $APPLICATION->IncludeComponent(
     "bitrix:form.result.new",
     "main.feedback",
     array(
@@ -19,7 +20,7 @@
         "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
         "WEB_FORM_ID" => "39"
     )
-); ?>
+);*/ ?>
 <footer class="footer">
     <div class="container">
         <div class="top-menu-block-footer">

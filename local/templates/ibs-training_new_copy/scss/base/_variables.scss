@@ -1,0 +1,29 @@
+// $dark-60: rgba(0, 0, 0, .6);
+$blue: #2B418B;
+$green: #4C9F69;
+// $family: "Stag Sans", sans-serif;
+
+
+.bg--blue {
+	background: #0827C4 !important;
+}
+
+.bg--lightblue {
+	background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%) !important;
+
+	*, div.breadcrumbs * {
+		color: #fff !important;
+	}
+}
+
+.bg--green {
+	background: linear-gradient(79.51deg, #2A418B 0%, #4DA567 100%) !important;
+}
+
+.bg--gray {
+	background-color: #F8F7F7 !important;
+
+	*, div.breadcrumbs * {
+		color: #000 !important;
+	}
+}

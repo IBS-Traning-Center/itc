@@ -1,0 +1,145 @@
+.jq-selectbox {
+    margin-bottom: 24px;
+    background-color: #fff;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 32px;
+    color: #000;
+
+    @include breakpoint(md) {
+        font-size: 20px;
+    }
+
+    &__select {
+        height: 56px;
+        padding: 12px 56px 12px 16px;
+        font: inherit;
+        border: none;
+
+        @include breakpoint(md) {
+            height: 80px;
+            padding: 24px 80px 24px 24px;
+        }
+
+        &-text {
+            padding: 0;
+        }
+    }
+
+    &__trigger {
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include breakpoint(md) {
+            right: 24px;
+        }
+
+        &-arrow {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__dropdown {
+        top: calc(100% + 4px) !important;
+        bottom: unset !important;
+        font: inherit;
+        margin: 0;
+        border: 1px solid #000;
+        box-shadow: none;
+        height: 192px;
+
+        ul {
+            background-color: #fff;
+            max-height: 250px !important;
+            padding: 0 !important;
+        }
+
+        li {
+            height: 56px;
+            padding: 12px 56px 12px 16px;
+            font: inherit;
+            color: #000;
+            position: relative;
+
+            @include breakpoint(md) {
+                height: 80px;
+                padding: 24px 80px 24px 24px;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                opacity: 0;
+                visibility: hidden;
+                width: 24px;
+                min-width: 24px;
+                height: 24px;
+                top: 50%;
+                right: 16px;
+                transform: translateY(-50%);
+                background: url(/local/templates/ibs-training_new_copy/assets/images/icons/agree.svg) no-repeat center center;
+                transition: all .1s ease-in-out;
+
+                @include breakpoint(md) {
+                    right: 24px;
+                }
+            }
+
+            &.selected, &:hover {
+                color: #000;
+
+                &:after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+.form-radio-btns {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    &:first-child {
+        margin-bottom: 24px;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    &__item {
+        position: relative;
+        
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            padding: 8px 16px;
+            background-color: #fff;
+            color: #000 !important;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+            margin-top: 0 !important;
+        }
+    }
+
+    input:checked + span {
+        background-color: #000;
+        color: #fff !important;
+    }
+}

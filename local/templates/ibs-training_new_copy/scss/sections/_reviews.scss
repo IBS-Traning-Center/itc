@@ -1,0 +1,90 @@
+.reviews {
+    @include sectionSpaces;
+
+    &__link {
+        text-align: right;
+        width: 100%;
+        max-width: 100%;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 32px;
+        color: #000;
+        display: none;
+        padding-right: 42px;
+        position: relative;
+        
+        @include breakpoint(xl) {
+            display: block;
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            min-width: 32px;
+            width: 32px;
+            height: 32px;
+            background: url(/local/templates/ibs-training_new_copy/assets/images/icons/arrow-all-reviews.svg) no-repeat center center;
+        }
+    }
+
+    &__slider {
+        height: auto;
+    }
+
+    &__item {
+        height: auto !important;
+        padding-bottom: 35px;
+
+        &__text {
+            background-color: #F8F7F7;
+            padding: 24px;
+            @include text;
+            position: relative;
+            height: 100%;
+            margin-bottom: 35px;
+    
+            &:before {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: -23px;
+                background: url(/local/templates/ibs-training_new_copy/assets/images/icons/review-item-rectangle.svg) no-repeat center center;
+                width: 23px;
+                height: 23px;
+            }
+        }
+
+        &__image {
+            min-width: 100px;
+            width: 100px;
+            height: 50px;
+            object-position: left center;
+            display: block;
+        }
+    }
+
+    .swiper-pagination {
+        bottom: 0;
+
+        &-bullet {
+            width: 14px;
+            height: 14px;
+
+            &-active {
+                background: #0827C4;
+            }
+        }
+    }
+
+    .swiper-wrapper {
+        padding-bottom: 100px;
+
+        @include breakpoint(xl) {
+            padding-bottom: 130px;
+        }
+    }
+}

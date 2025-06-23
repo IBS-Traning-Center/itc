@@ -1,0 +1,147 @@
+.start {
+    margin-bottom: 120px;
+    // background: linear-gradient(259.83deg, #4DA567 0%, #2A408B 100%);
+    padding: 60px 0;
+    position: relative;
+
+    $certWidth: 736px;
+
+    .breadcrumbs {
+        * {
+            color: #fff !important;
+        }
+
+        svg path {
+            fill: #fff;
+        }
+    }
+
+    .title--h1 {
+        color: #fff;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 16px;
+
+        @include breakpoint(lg) {
+            max-width: 860px;
+        }
+
+        @include breakpoint(xl) {
+            font-size: 72px;
+            line-height: 80px;
+            margin-bottom: 40px;
+        }
+
+        @media screen and (min-width: 1400px) {
+            max-width: calc(100% - ($certWidth * 0.65));
+        }
+
+        // @include breakpoint(xxl) {
+        //     max-width: calc(100% - ($certWidth * 0.55));
+        // }
+
+        & + p {
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24px;
+            color: #fff;
+            margin-bottom: 32px;
+
+            @include breakpoint(xl) {
+                font-size: 32px;
+                line-height: 40px;
+                margin-bottom: 56px;
+            }
+            
+            @media screen and (min-width: 1400px) {
+                max-width: calc(100% - ($certWidth * 0.65));
+            }
+    
+            @include breakpoint(xxl) {
+                max-width: 700px;
+            }
+        }
+    }
+
+    .btn--white {
+        white-space: normal;
+        justify-content: flex-start;
+        gap: 5px;
+        padding: 24px 24px 24px 16px;
+
+        &:first-child {
+            max-width: 385px;
+
+            img {
+                width: 61px;
+                min-width: 61px;
+                height: 55px;
+            }
+        }
+
+        &:last-child {
+            max-width: 357px;
+
+            img {
+                width: 68px;
+                min-width: 68px;
+                height: 73px;
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: $certWidth;
+        height: 520px;
+        object-fit: contain;
+    }
+
+    &__numbers {
+        font-family: 'Noto Sans', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+
+        @include breakpoint(xl) {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        @include breakpoint(full-hd) {
+            line-height: 32px;
+        }
+
+        span {
+            display: block;
+            font-size: 32px;
+            line-height: 40px;
+
+            @include breakpoint(xl) {
+                font-size: 42px;
+                line-height: 60px;
+            }
+
+            @include breakpoint(full-hd) {
+                font-size: 56px;
+                line-height: 72px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+.page_about {
+    .start {
+        color: #fff;
+
+        .title--h2 {
+            color: #fff;
+            margin-bottom: 56px;
+        }
+    }
+}
