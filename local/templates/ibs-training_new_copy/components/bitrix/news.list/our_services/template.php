@@ -17,14 +17,14 @@ $this->setFrameMode(true);
 	<div class="container">
 		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/our-services-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?></h2>
 
-		<div class="row g-5 justify-content-center">
-			<div class="d-none d-xl-block col-6">
+		<div class="row g-5 justify-content-lg-center">
+			<div class="d-none d-lg-block col-6">
 				<div class="our-services__image">
 					<img src="<?=$arResult["ITEMS"][0]['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arResult["NAME"];?> - фото">
 				</div>
 			</div>
 
-			<div class="col-6">
+			<div class="col-12 col-lg-6">
 				<?foreach($arResult["ITEMS"] as $key => $arItem):
 					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));

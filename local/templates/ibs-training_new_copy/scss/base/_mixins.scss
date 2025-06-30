@@ -1,3 +1,7 @@
+@mixin notosans {
+    font-family: "Noto Sans", sans-serif;
+}
+
 @mixin btn {
     display: flex;
     justify-content: center;
@@ -103,7 +107,7 @@
 }
 
 @mixin h1 {
-    font-family: 'Noto Sans', sans-serif;
+    @include notosans;
     font-weight: 400;
     font-size: 32px;
     line-height: 40px;
@@ -133,16 +137,16 @@
     line-height: 1.35;
     color: #000;
 
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
         font-size: 32px;
     }
 
-    @include breakpoint(lg) {
+    @include breakpoint(xxl) {
         font-size: 42px;
         line-height: 1.45;
     }
 
-    @include breakpoint(xxl) {
+    @include breakpoint(full-hd) {
         font-size: 56px;
         line-height: 1.15;
     }
@@ -154,9 +158,14 @@
     line-height: 24px;
 
     @include breakpoint(lg) {
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height: 28px;
     }
+
+    // @include breakpoint(full-hd) {
+    //     font-size: 24px;
+    //     line-height: 30px;
+    // }
 }
 
 @mixin enter-point {
@@ -198,8 +207,20 @@
 @mixin tabs {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     gap: 8px;
+    padding-bottom: 12px;
+    min-width: fit-content;
+
+    &--wrapper {
+        max-width: 100%;
+        overflow: auto;
+        margin-bottom: 20px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 44px;
+        }
+    }
 
     &__item {
         font-weight: 400;
@@ -210,11 +231,7 @@
         text-align: center;
         padding: 9px 18px;
         cursor: pointer;
-        margin-bottom: 32px;
-
-        @include breakpoint(lg) {
-            margin-bottom: 56px;
-        }
+        white-space: nowrap;
 
         &:hover {
             background-color: #dad8d8;
@@ -231,13 +248,10 @@
 @mixin sectionSpaces {
     padding: 40px 0 !important;
 
-    @include breakpoint(lg) {
+    @include breakpoint(xl) {
         padding: 120px 0 !important;
     }
 }
-
-
-
 
 
 

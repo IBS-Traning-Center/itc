@@ -4,11 +4,11 @@
     padding: 140px 0 180px;
 }
 
-.main-feedback-form-block .main-feedback-form-container {
+/* .main-feedback-form-block .main-feedback-form-container {
     display: flex;
     align-items: start;
     gap: 48px;
-}
+} */
 
 .main-feedback-form-block .main-feedback-form-container h1 {
     color: var(--white);
@@ -117,10 +117,10 @@
         padding: 40px 0 80px;
     }
 
-    .main-feedback-form-block .main-feedback-form-container {
+    /* .main-feedback-form-block .main-feedback-form-container {
         flex-direction: column;
         gap: 32px;
-    }
+    } */
 
     .main-feedback-form-block .main-feedback-form-container h1 {
         max-width: 100%;

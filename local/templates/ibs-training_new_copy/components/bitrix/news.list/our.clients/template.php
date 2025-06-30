@@ -31,7 +31,13 @@ if (!empty($arResult['ITEMS'])) : ?>
             <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
                 <?php if ($item['PREVIEW_PICTURE']['SRC']) : ?>
                     <div class="our-clients-item">
+                        <? if($arParams['USE_IMAGES_GALLERY'] === 'Y') {?>
+                            <a href="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" data-fancybox>
+                        <?}?>
                         <img src="<?= $item['PREVIEW_PICTURE']['SRC'] ?>" alt="<?= $item['NAME'] ?>">
+                        <? if($arParams['USE_IMAGES_GALLERY'] === 'Y') {?>
+                            </a>
+                        <?}?>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>

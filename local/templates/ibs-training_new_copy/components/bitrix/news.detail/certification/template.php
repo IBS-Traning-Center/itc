@@ -39,7 +39,7 @@ $this->setFrameMode(true);
 			
 			if($arResult['PROPERTIES']["START_BUTTONS"]['VALUE'] != NULL) :
 			?>
-				<div class="row g-1 g-md-3 g-lg-32">
+				<div class="row g-1 g-md-3 g-lg-32 start__btns">
 					<?
 					$arFilter = Array("IBLOCK_ID"=>193, "ID" => $arResult['PROPERTIES']["START_BUTTONS"]['VALUE']);
 					$arSelect = Array("ID", "NAME", "PREVIEW_PICTURE", "PROPERTY_LINK", "PROPERTY_TARGET");
@@ -49,7 +49,7 @@ $this->setFrameMode(true);
 						$arFields = $ob->GetFields();
 			
 						?>
-						<div class="col-auto">
+						<div class="col-12 col-sm-auto">
 							<a href="<?=$arFields['PROPERTY_LINK_VALUE']?>" <?=($arFields['PROPERTY_TARGET_VALUE'] == 'Да') ? ' target="_blank"' : '' ?> class="btn--white">
 								<img src="<?=CFile::GetPath($arFields['PREVIEW_PICTURE']);?>" alt="<?=$arFields['NAME']?>">
 			
@@ -217,7 +217,7 @@ $this->setFrameMode(true);
 		"bitrix:news.list",
 		"why-us",
 		Array(
-			"CUSTOM_CLASS" => "with-titles",
+			"CUSTOM_CLASS" => "with-titles spaces",
 			"CUSTOM_TITLE" => "Бизнес-аналитик на рынке труда",
 			"ACTIVE_DATE_FORMAT" => "d.m.Y",
 			"ADD_SECTIONS_CHAIN" => "N",
@@ -275,7 +275,7 @@ $this->setFrameMode(true);
 
 	<?// Блок с детальным текстом курса, редактируется в админке?>
 	<section class="basically">
-		<div class="container">
+		<div class="container p-0">
 			<div class="row g-4 g-lg-5 w-100 flex-column flex-md-row">
 				<div class="col-12 col-md-4">
 					<img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" alt="detail-image" class="basically__image">
@@ -286,21 +286,25 @@ $this->setFrameMode(true);
 				</div>
 			</div>
 
-			<?
-			if(!empty($arResult['PROPERTIES']['BASICALLY']['VALUE'])):
-			?>
-			<h2 class="title--h2"><?=$arResult['PROPERTIES']['BASICALLY']['NAME']?></h2>
-
-			<ul class="basically__list">
-				<?
-				foreach ($arResult['PROPERTIES']['BASICALLY']['VALUE'] as $key => $item) {
-					?>
-					<li><?=$item?></li>
+			<div class="row mb-0">
+				<div class="col-12">
 					<?
-				}
-				?>
-			</ul>
-			<?endif;?>
+					if(!empty($arResult['PROPERTIES']['BASICALLY']['VALUE'])):
+					?>
+					<h2 class="title--h2"><?=$arResult['PROPERTIES']['BASICALLY']['NAME']?></h2>
+		
+					<ul class="basically__list mb-0">
+						<?
+						foreach ($arResult['PROPERTIES']['BASICALLY']['VALUE'] as $key => $item) {
+							?>
+							<li><?=$item?></li>
+							<?
+						}
+						?>
+					</ul>
+					<?endif;?>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -470,12 +474,12 @@ $this->setFrameMode(true);
 		<div class="container">
 			<h2 class="title--h2 text-center">Сертифицируйтесь в&nbsp;IBS и&nbsp;откройте новые горизонты возможностей!</h2>
 
-			<div class="row g-32 justify-content-center mb-0">
-				<div class="col-auto">
+			<div class="row g-32 justify-content-center mb-0 basically__btns">
+				<div class="col-12 col-sm-auto">
 					<a class="btn-main btn--dark" data-scroll="levels">Пройти бесплатный тест</a>
 				</div>
 
-				<div class="col-auto">
+				<div class="col-12 col-sm-auto">
 					<a href="/timetable/certification/" target="_blank" class="btn--light">Посмотреть расписание</a>
 				</div>
 			</div>

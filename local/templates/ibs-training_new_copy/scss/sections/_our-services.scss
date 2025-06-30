@@ -12,7 +12,6 @@
         max-width: 100%;
         width: 100%;
         height: 100%;
-        // border: 1px solid #000;
     }
 
     &__item {
@@ -22,6 +21,10 @@
         padding-right: 42px;
         position: relative;
         transition: all .3s ease-in-out;
+        
+        &:not(:last-child) {
+            border-bottom: 1px solid #000;
+        }
 
         &:after {
             position: absolute;
@@ -48,7 +51,7 @@
         // }
 
         &__title {
-            font-family: 'Noto Sans', sans-serif;
+            @include notosans;
             font-weight: 400;
             font-size: 16px;
             line-height: 1;

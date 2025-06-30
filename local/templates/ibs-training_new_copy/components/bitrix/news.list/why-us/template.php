@@ -20,7 +20,7 @@ $this->setFrameMode(true);
 		<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/why-us-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?>
 		<?//=($arParams['CUSTOM_TITLE']) ? $arParams['CUSTOM_TITLE'] : $arResult["NAME"];?></h2>
 
-		<div class="row g-4 justify-content-between">
+		<div class="row g-4 g-xxl-5 justify-content-between">
 			<?foreach($arResult["ITEMS"] as $key => $arItem):
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));

@@ -1,6 +1,6 @@
 .assessment_types {
     * {
-        font-family: 'Noto Sans', sans-serif;
+        @include notosans;
         font-weight: 400;
     }
 
@@ -48,6 +48,8 @@
     &__item {
         &__cell {
             padding: 16px 32px;
+            font-size: 20px;
+            line-height: 32px;
         }
 
         &__title {

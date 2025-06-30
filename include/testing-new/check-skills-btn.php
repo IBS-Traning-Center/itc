@@ -1,1 +1,1 @@
-<a href="" class="btn--white w-100" style="color: black !important; height: auto;">Узнать больше</a>
+<a href="/sertifikatsiya/" target="_blank" class="btn--white w-100" style="color: black !important; height: auto;">Узнать больше</a>

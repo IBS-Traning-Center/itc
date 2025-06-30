@@ -98,7 +98,7 @@ body {
     font-weight: 400;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
     .container {
         padding: 0 16px;
     }
@@ -679,7 +679,7 @@ body {
     }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
     .main-text-content .quote-block .text {
         padding-bottom: 16px;
     }
@@ -844,7 +844,7 @@ body {
     margin-bottom: 8px;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
     .top-main-page-block {
         padding-top: 32px;
         padding-bottom: 32px;
@@ -882,7 +882,7 @@ body {
     justify-content: space-between;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
     .footer {
         display: none;
     }
@@ -2534,7 +2534,7 @@ span.time.time-with-tooltip:hover .tooltip {
     }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
     .corporate-page .scheme-block {
         grid-template-columns: repeat(1, 1fr);
         row-gap: 24px;

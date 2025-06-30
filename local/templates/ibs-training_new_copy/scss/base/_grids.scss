@@ -1,29 +1,56 @@
 .container {
-	max-width: 125%;
+	max-width: 100%;
 	padding: 0 15px;
 
 	@include breakpoint(sm) {
-		max-width: calc((540px * 1.25) + 30px);
+		max-width: calc(540px + 30px);
 	}
 
 	@include breakpoint(md) {
-		max-width: calc((720px * 1.25) + 30px);
+		max-width: calc(720px + 30px);
 	}
 
 	@include breakpoint(lg) {
-		max-width: calc((960px * 1.25) + 30px);
+		max-width: calc(960px + 30px);
 	}
 
 	@include breakpoint(xl) {
-		max-width: calc((1216px * 1.25) + 64px);
+		max-width: calc((1216px * 1.25) + 64px + 20px);
 		padding: 0 32px;
 	}
 
 	@include breakpoint(full-hd) {
-		max-width: calc((1680px * 1.25) + 120px);
+		max-width: calc((1680px * 1.2) + 120px);
 		padding: 0 60px;
 	}
 }
+
+// .container {
+// 	max-width: 125%;
+// 	padding: 0 15px;
+
+// 	@include breakpoint(sm) {
+// 		max-width: calc((540px * 1.25) + 30px);
+// 	}
+
+// 	@include breakpoint(md) {
+// 		max-width: calc((720px * 1.25) + 30px);
+// 	}
+
+// 	@include breakpoint(lg) {
+// 		max-width: calc((960px * 1.25) + 30px);
+// 	}
+
+// 	@include breakpoint(xl) {
+// 		max-width: calc((1216px * 1.25) + 64px);
+// 		padding: 0 32px;
+// 	}
+
+// 	@include breakpoint(full-hd) {
+// 		max-width: calc((1680px * 1.25) + 120px);
+// 		padding: 0 60px;
+// 	}
+// }
 
 // $fluid-gutter: 56px;
 

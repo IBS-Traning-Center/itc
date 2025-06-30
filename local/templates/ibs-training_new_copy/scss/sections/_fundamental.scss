@@ -35,6 +35,10 @@
         ul {
             li {
                 @include enter-point;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 16px;
+                }
             }
         }
 
@@ -52,8 +56,13 @@
     }
 
     &__btns {
-        margin-top: $space * 2;
-        margin-bottom: 120px;
+        margin-top: $space;
+        margin-bottom: 40px;
+
+        @include breakpoint(xxl) {
+            margin-top: $space * 2;
+            margin-bottom: 120px;
+        }
 
         a {
             width: 100%;

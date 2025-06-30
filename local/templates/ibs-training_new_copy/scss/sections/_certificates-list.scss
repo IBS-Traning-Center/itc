@@ -16,7 +16,7 @@
 
         @include breakpoint(lg) {
             flex-direction: row;
-            justify-content: flex-start;
+            justify-content: space-between;
             padding: 32px;
             min-height: 204px;
         }
@@ -62,9 +62,9 @@
                     line-height: 32px;
                 }
 
-                // @include breakpoint(xxl) {
-                //     font-size: 32px;
-                // }
+                @include breakpoint(xxl) {
+                    font-size: 32px;
+                }
             }
 
             .link {

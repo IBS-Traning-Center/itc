@@ -1,2 +1,5 @@
-<p class="title--h1 mb-4">25+ лет на&nbsp;рынке</p>
-<p class="title--h1 small">История Учебного центра</p>
+<h2 class="title--h1">
+25+&nbsp;лет на&nbsp;рынке </h2>
+<p>
+	 История Учебного центра
+</p>

@@ -1,8 +1,12 @@
 .start {
-    margin-bottom: 120px;
+    margin-bottom: 40px;
     // background: linear-gradient(259.83deg, #4DA567 0%, #2A408B 100%);
     padding: 60px 0;
     position: relative;
+
+    @include breakpoint(xxl) {
+        margin-bottom: 120px;
+    }
 
     $certWidth: 736px;
 
@@ -19,23 +23,34 @@
     .title--h1 {
         color: #fff;
         font-weight: 400;
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 24px;
+        line-height: 32px;
         margin-bottom: 16px;
+
+        @include breakpoint(xs) {
+            font-size: 32px;
+            line-height: 40px;
+        }
 
         @include breakpoint(lg) {
             max-width: 860px;
         }
 
         @include breakpoint(xl) {
+            font-size: 64px;
+            line-height: 72px;
+        }
+
+        @include breakpoint(full-hd) {
+            max-width: 950px;
             font-size: 72px;
             line-height: 80px;
             margin-bottom: 40px;
         }
 
-        @media screen and (min-width: 1400px) {
-            max-width: calc(100% - ($certWidth * 0.65));
-        }
+        // @media screen and (min-width: 1400px) {
+        //     max-width: calc(100% - ($certWidth * 0.65));
+        // }
 
         // @include breakpoint(xxl) {
         //     max-width: calc(100% - ($certWidth * 0.55));
@@ -47,6 +62,7 @@
             line-height: 24px;
             color: #fff;
             margin-bottom: 32px;
+            @include notosans;
 
             @include breakpoint(xl) {
                 font-size: 32px;
@@ -55,38 +71,80 @@
             }
             
             @media screen and (min-width: 1400px) {
-                max-width: calc(100% - ($certWidth * 0.65));
+                // max-width: calc(100% - ($certWidth * 0.65));
+                max-width: 700px;
             }
     
             @include breakpoint(xxl) {
-                max-width: 700px;
+                max-width: 850px;
             }
         }
     }
 
-    .btn--white {
+    .btn--white, .btn--dark {
         white-space: normal;
         justify-content: flex-start;
         gap: 5px;
-        padding: 24px 24px 24px 16px;
+        
+        position: relative;
+        width: 100%;
+        min-height: 80px;
 
-        &:first-child {
-            max-width: 385px;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 2; /* Ограничение в 2 строки */
+        // -webkit-box-orient: vertical;
 
-            img {
-                width: 61px;
-                min-width: 61px;
-                height: 55px;
-            }
+        &:not(.btn--dark) {
+            padding: 24px 24px 24px 16px;
         }
 
-        &:last-child {
-            max-width: 357px;
+        img {
+            // margin: -12px 0;
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
 
-            img {
-                width: 68px;
-                min-width: 68px;
-                height: 73px;
+    .btn--dark {
+        color: #fff !important;
+    }
+
+    &__btns {
+        > div {
+            &:first-child {
+                .btn--white {
+                    max-width: 340px;
+                    padding-left: 87px;
+
+                    @include breakpoint(lg) {
+                        max-width: 385px;
+                    }
+
+                    img {
+                        width: 61px;
+                        min-width: 61px;
+                        height: 55px;
+                    }
+                }
+            }
+    
+            &:last-child {
+                .btn--white {
+                    max-width: 340px;
+                    padding-left: 94px;
+
+                    @include breakpoint(lg) {
+                        max-width: 365px;
+                    }
+        
+                    img {
+                        width: 68px;
+                        min-width: 68px;
+                        height: 73px;
+                    }
+                }
             }
         }
     }
@@ -97,12 +155,12 @@
         top: 50%;
         transform: translateY(-50%);
         width: $certWidth;
-        height: 520px;
+        height: calc(100% - 120px);
         object-fit: contain;
     }
 
     &__numbers {
-        font-family: 'Noto Sans', sans-serif;
+        @include notosans;
         font-weight: 400;
         font-size: 16px;
         line-height: 22px;
@@ -130,6 +188,16 @@
                 font-size: 56px;
                 line-height: 72px;
                 margin-bottom: 8px;
+            }
+        }
+    }
+
+    &.fullwidth {
+        .title--h1 {
+            max-width: 100%;
+
+            & + p {
+                max-width: 100%;
             }
         }
     }

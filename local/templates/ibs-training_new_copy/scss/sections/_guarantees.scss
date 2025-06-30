@@ -13,7 +13,9 @@
     }
 
     &__image {
-        max-width: 304px;
+        @include breakpoint(xs) {
+            max-width: 304px;
+        }
     }
 
     &__content {

@@ -57,23 +57,26 @@
             font-weight: 400;
             font-size: 20px;
             line-height: 1.35;
+            @include notosans;
 
             @include breakpoint(lg) {
                 font-size: 32px;
+                line-height: 44px;
             }
 
-            @include breakpoint(full-hd) {
-                font-size: 40px;
-            }
+            // @include breakpoint(full-hd) {
+            //     font-size: 40px;
+            // }
         }
 
         .why-us__item__desc {
             font-weight: 300;
             font-size: 16px;
             line-height: 24px;
+            @include notosans;
 
             @include breakpoint(lg) {
-                font-size: 24px;
+                font-size: 20px;
                 line-height: 32px;
             }
 

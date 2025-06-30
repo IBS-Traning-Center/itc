@@ -57,7 +57,7 @@ $arCurSection = $arCurSection[0];
 
 		<?=$arCurSection["DESCRIPTION"]?>
 
-		<div class="row g-1 g-md-3 g-lg-32">
+		<div class="row g-1 g-md-3 g-lg-32 start__btns">
 		<?
 		$arFilter = Array("IBLOCK_ID"=>193, "ID" => $arCurSection["UF_BUTTONS"]);
 		$arSelect = Array("ID", "NAME", "PREVIEW_PICTURE", "PROPERTY_LINK", "PROPERTY_TARGET");
@@ -67,7 +67,7 @@ $arCurSection = $arCurSection[0];
 			$arFields = $ob->GetFields();
 
 			?>
-			<div class="col-auto">
+			<div class="col-12 col-sm-auto">
 				<a href="<?=$arFields['PROPERTY_LINK_VALUE']?>" <?=($arFields['PROPERTY_TARGET_VALUE'] == 'Да') ? ' target="_blank"' : '' ?> class="btn--white">
 					<img src="<?=CFile::GetPath($arFields['PREVIEW_PICTURE']);?>" alt="<?=$arFields['NAME']?>">
 
@@ -140,7 +140,9 @@ $APPLICATION->IncludeComponent(
 	)
 );?>
 
-<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/fundamental-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки']); ?>
+<div class="container">
+	<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/fundamental-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки']); ?>
+</div>
 
 <?
 // Список элементов - курсов сертификации в текущем разделе
@@ -315,8 +317,9 @@ $APPLICATION->IncludeComponent(
 	)
 );?>
 
-
-<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/why-us-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки']); ?>
+<div class="container">
+	<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/why-us-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки']); ?>
+</div>
 
 
 

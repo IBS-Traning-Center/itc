@@ -2,8 +2,8 @@ $(document).ready(function () {
     if($('.tabs').length > 0) {
         $('.tabs__item').on('click', function (e) {
             let tab = $(this).attr('data-tab');
-            $(this).parent().siblings('*[data-code]').hide();
-            $(this).parent().siblings('*[data-code="'+tab+'"]').show();
+            $(this).parent().parent().siblings('*[data-code]').hide();
+            $(this).parent().parent().siblings('*[data-code="'+tab+'"]').show();
             
             $('.tabs__item').removeClass('active');
             $(this).addClass('active');
@@ -21,15 +21,23 @@ $(document).ready(function () {
             clickable: true,
         },
         breakpoints: {
-            576: {
+            768: {
                 slidesPerView: 2,
             },
-            768: {
+            1280: {
                 slidesPerView: 3,
             },
-            1280: {
+            1920: {
                 slidesPerView: 4,
             },
           },
+    });
+
+    const miniGallerySlider = new Swiper('.mini-gallery__slider', {
+        freeMode: true,
+        slidesPerView: 'auto',
+        grabCursor: true,
+        spaceBetween: 64,
+        allowTouchMove: true,
     });
 });

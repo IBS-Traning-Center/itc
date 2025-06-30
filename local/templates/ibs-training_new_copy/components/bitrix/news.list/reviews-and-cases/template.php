@@ -47,8 +47,8 @@ use Local\Util\Functions;
 					<img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['NAME'];?>" class="reviews__item__image">
 				</div>
 			<?endforeach;?>
-			<!-- If we need pagination -->
-			<div class="swiper-pagination"></div>
 		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
 	</div>
 </section>

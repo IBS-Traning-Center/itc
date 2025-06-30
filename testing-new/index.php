@@ -13,6 +13,9 @@ $APPLICATION->SetPageProperty('BACKGROUND_COLOR_BANNER', '#F8F7F7');
 $APPLICATION->SetTitle('Тестирование сотрудников IT-подразделения');
 ?>
 
+<div class="page_testing">
+
+
 <?// Блок - обложка раздела ?>
 <section class="start bg--gray">
     <a href="./start-image.jpg" class="start__image h-100 d-none d-xxl-block" target="_blank" data-fancybox>
@@ -36,13 +39,13 @@ $APPLICATION->SetTitle('Тестирование сотрудников IT-по�
                     ['MODE' => 'html', 'NAME' => 'Заголовок']); ?>
         </h1>
 
-      <p>
+      <p style="font-weight: 400;">
       <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/testing-new/under-h1-text.php', [], 
                     ['MODE' => 'html', 'NAME' => 'Заголовок']); ?>
         </p>
       
-      <div class="row g-1 g-md-3 g-lg-32">
-      <?
+      <div class="row g-1 g-md-3 g-lg-32 start__btns">
+      <?/*
 		$arFilter = Array("IBLOCK_ID"=>193);
 		$arSelect = Array("ID", "NAME", "PREVIEW_PICTURE", "PROPERTY_LINK", "PROPERTY_TARGET");
 		$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
@@ -51,7 +54,7 @@ $APPLICATION->SetTitle('Тестирование сотрудников IT-по�
 			$arFields = $ob->GetFields();
 
 			?>
-			<div class="col-auto">
+			<div class="col-12 col-sm-auto">
 				<a href="<?=$arFields['PROPERTY_LINK_VALUE']?>" <?=($arFields['PROPERTY_TARGET_VALUE'] == 'Да') ? ' target="_blank"' : '' ?> class="btn--white">
 					<img src="<?=CFile::GetPath($arFields['PREVIEW_PICTURE']);?>" alt="<?=$arFields['NAME']?>">
 
@@ -60,7 +63,18 @@ $APPLICATION->SetTitle('Тестирование сотрудников IT-по�
 			</div>
 			<?
 		}
-		?>
+		*/?>
+            <div class="col-12 col-sm-auto">
+                <a class="btn-main btn--dark" data-scroll="mainFeedbackFormBlock">Получить консультацию</a>
+            </div>
+
+            <div class="col-12 col-sm-auto">
+                <a href="https://ibs-training.ru/about/news/Platforma_sertifikatsii_IBS_priznana_luchshim_digital-resheniem_dlya_korporativnogo_obucheniya/" target="_blank" class="btn--white" style="max-width: 465px;">
+                    <img src="/upload/iblock/563/chufevo5kt2lemqoblnrcfut0sr8mq5b/Screenshot 2025-04-06 at 10.57.17 1.png" alt="Лучшее digital-решение годадля корпоративного обучения">
+                    Лучшее digital&#8209;решение года для&nbsp;корпоративного обучения
+                </a>
+            </div>
+
         </div>
    </div>
 </section>
@@ -183,7 +197,7 @@ $APPLICATION->IncludeComponent(
 </section>
 
 
-<section class="bg--gray">
+<section class="mini-gallery bg--gray">
     <div class="our-students-block mt-5">
         <div class="container">
             <h2 class="title--h2"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/testing-new/h2-clients.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?></h2>
@@ -338,7 +352,7 @@ $APPLICATION->IncludeComponent(
             ); ?>
         </div>
 
-        <div class="container testing-content-block pt-0" data-code="expert" style="display: none;">2
+        <div class="container testing-content-block pt-0" data-code="expert" style="display: none;">
             <?php $APPLICATION->IncludeComponent(
                 'addamant:testing.scheme',
                 'steps',
@@ -349,7 +363,7 @@ $APPLICATION->IncludeComponent(
             ); ?>
         </div>
 
-        <div class="container testing-content-block pt-0" data-code="cert" style="display: none;">3
+        <div class="container testing-content-block pt-0" data-code="cert" style="display: none;">
             <?php $APPLICATION->IncludeComponent(
                 'addamant:testing.scheme',
                 'steps',
@@ -363,14 +377,14 @@ $APPLICATION->IncludeComponent(
 </section>
 
 
-<section class="bg--lightblue spaces">
+<section class="banner bg--lightblue">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-9">
+        <div class="row g-3 flex-column flex-md-row align-items-sm-center">
+            <div class="col-12 col-md-9">
                 <h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/testing-new/check-skills-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?></h2>
                 <p class="f-32"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/testing-new/check-skills-text.php', [], ['MODE' => 'html', 'NAME' => 'Текст']); ?></p>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-md-3">
                 <?$APPLICATION->IncludeFile(SITE_DIR . 'include/testing-new/check-skills-btn.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?>
             </div>
         </div>
@@ -511,5 +525,6 @@ $APPLICATION->IncludeComponent(
         "WEB_FORM_ID" => "39"
     )
 );?>
+</div>
 
 <?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

@@ -10,7 +10,7 @@ $APPLICATION->SetTitle("Тренинги, корпоративное обуче�
 <div class="page_about">
    
 <?// Блок - обложка раздела ?>
-<section class="start bg--blue mb-0">
+<section class="start bg--blue mb-0 fullwidth">
    <div class="container">
       <?$APPLICATION->IncludeComponent(
          'bitrix:breadcrumb',
@@ -34,7 +34,7 @@ $APPLICATION->SetTitle("Тренинги, корпоративное обуче�
 </section>
 
 
-<div class="our-students-block bg--gray spaces pb-0">
+<section class="our-students-block bg--gray">
    <div class="container">
       <h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/clients-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?></h2>
    </div>
@@ -97,82 +97,101 @@ $APPLICATION->SetTitle("Тренинги, корпоративное обуче�
          "STRICT_SECTION_CHECK" => "N"
       )
    );?>
-</div>
+</section>
 
 
-<div class="grey-page-block offset-block">
-    <div class="container">
-        <div class="text-page-block full-width">
-            <div class="text-block-left">
-                <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/about/offset_left_text.php', [], ['MODE' => 'html']);?>
+<section class="page_about__desc">
+   <div class="container">
+      <div class="row position-relative g-5 justify-content-lg-between">
+         <div class="col-12 page_about__desc__quote">
+            <div class="page_about__desc__image--mini">
+               <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/page_about__desc__image.php', [], ['MODE' => 'html', 'NAME'=>'Фото']);?>
             </div>
-        </div> 
-    </div>
-</div>
+            <div class="page_about__desc__quote__icon">
+               <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/page_about__desc__quote.php', [], ['MODE' => 'html', 'NAME'=>'Иконка']);?>
+            </div>
+         </div>
+         <div class="col-12 col-lg-9 col-xxl-6 page_about__desc__text">
+            <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/offset_left_text.php', [], ['MODE' => 'html', 'NAME'=>'Текст']);?>
+         </div>
+         <div class="col-12 col-lg-3 col-xxl-6 page_about__desc__image">
+            <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/page_about__desc__image.php', [], ['MODE' => 'html', 'NAME'=>'Фото']);?>
+         </div>
+      </div>
+   </div>
+</section>
 
 
-<section class="talent-section">
-   <div class="talent-get">
-      <div class="container">
-      <?
-      $APPLICATION->IncludeComponent(
-         "bitrix:news.list",
-         "history",
-         Array(
-            "ACTIVE_DATE_FORMAT" => "d.m.Y",
-            "ADD_SECTIONS_CHAIN" => "N",
-            "AJAX_MODE" => "N",
-            "AJAX_OPTION_ADDITIONAL" => "",
-            "AJAX_OPTION_HISTORY" => "N",
-            "AJAX_OPTION_JUMP" => "N",
-            "AJAX_OPTION_STYLE" => "Y",
-            "CACHE_FILTER" => "N",
-            "CACHE_GROUPS" => "Y",
-            "CACHE_TIME" => "36000000",
-            "CACHE_TYPE" => "A",
-            "CHECK_DATES" => "Y",
-            "DETAIL_URL" => "",
-            "DISPLAY_BOTTOM_PAGER" => "N",
-            "DISPLAY_DATE" => "N",
-            "DISPLAY_NAME" => "Y",
-            "DISPLAY_PICTURE" => "N",
-            "DISPLAY_PREVIEW_TEXT" => "Y",
-            "DISPLAY_TOP_PAGER" => "N",
-            "FIELD_CODE" => array("NAME","PREVIEW_TEXT",""),
-            "FILTER_NAME" => "",
-            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-            "IBLOCK_ID" => "204",
-            "IBLOCK_TYPE" => "edu_const",
-            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-            "INCLUDE_SUBSECTIONS" => "N",
-            "MESSAGE_404" => "",
-            "NEWS_COUNT" => "6",
-            "PAGER_BASE_LINK_ENABLE" => "N",
-            "PAGER_DESC_NUMBERING" => "N",
-            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-            "PAGER_SHOW_ALL" => "N",
-            "PAGER_SHOW_ALWAYS" => "N",
-            "PAGER_TEMPLATE" => ".default",
-            "PAGER_TITLE" => "",
-            "PARENT_SECTION" => "",
-            "PARENT_SECTION_CODE" => "",
-            "PREVIEW_TRUNCATE_LEN" => "",
-            "PROPERTY_CODE" => array("LABEL",""),
-            "SET_BROWSER_TITLE" => "N",
-            "SET_LAST_MODIFIED" => "N",
-            "SET_META_DESCRIPTION" => "N",
-            "SET_META_KEYWORDS" => "N",
-            "SET_STATUS_404" => "N",
-            "SET_TITLE" => "N",
-            "SHOW_404" => "N",
-            "SORT_BY1" => "SORT",
-            "SORT_BY2" => "SORT",
-            "SORT_ORDER1" => "ASC",
-            "SORT_ORDER2" => "ASC",
-            "STRICT_SECTION_CHECK" => "N"
-         )
-      );
-      ?>
+<? // Блок "25+ лет на рынке" ?>
+<section class="history bg--blue spaces">
+   <div class="container">
+      <div class="row g-4 g-lg-5">
+         <div class="col-12 col-xxl-4">
+            <?$APPLICATION->IncludeFile(
+               SITE_DIR . 'include/about/history_title.php', 
+               [], ['MODE' => 'html', 'NAME' => 'Заголовок']);
+            ?>
+         </div>
+
+         <div class="col-12 col-xxl-8">
+            <?$APPLICATION->IncludeComponent(
+               "bitrix:news.list",
+               "history",
+               Array(
+                  "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                  "ADD_SECTIONS_CHAIN" => "N",
+                  "AJAX_MODE" => "N",
+                  "AJAX_OPTION_ADDITIONAL" => "",
+                  "AJAX_OPTION_HISTORY" => "N",
+                  "AJAX_OPTION_JUMP" => "N",
+                  "AJAX_OPTION_STYLE" => "Y",
+                  "CACHE_FILTER" => "N",
+                  "CACHE_GROUPS" => "Y",
+                  "CACHE_TIME" => "36000000",
+                  "CACHE_TYPE" => "A",
+                  "CHECK_DATES" => "Y",
+                  "DETAIL_URL" => "",
+                  "DISPLAY_BOTTOM_PAGER" => "N",
+                  "DISPLAY_DATE" => "N",
+                  "DISPLAY_NAME" => "Y",
+                  "DISPLAY_PICTURE" => "N",
+                  "DISPLAY_PREVIEW_TEXT" => "Y",
+                  "DISPLAY_TOP_PAGER" => "N",
+                  "FIELD_CODE" => array("NAME","PREVIEW_TEXT",""),
+                  "FILTER_NAME" => "",
+                  "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                  "IBLOCK_ID" => "204",
+                  "IBLOCK_TYPE" => "edu_const",
+                  "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                  "INCLUDE_SUBSECTIONS" => "N",
+                  "MESSAGE_404" => "",
+                  "NEWS_COUNT" => "6",
+                  "PAGER_BASE_LINK_ENABLE" => "N",
+                  "PAGER_DESC_NUMBERING" => "N",
+                  "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                  "PAGER_SHOW_ALL" => "N",
+                  "PAGER_SHOW_ALWAYS" => "N",
+                  "PAGER_TEMPLATE" => ".default",
+                  "PAGER_TITLE" => "",
+                  "PARENT_SECTION" => "",
+                  "PARENT_SECTION_CODE" => "",
+                  "PREVIEW_TRUNCATE_LEN" => "",
+                  "PROPERTY_CODE" => array("LABEL",""),
+                  "SET_BROWSER_TITLE" => "N",
+                  "SET_LAST_MODIFIED" => "N",
+                  "SET_META_DESCRIPTION" => "N",
+                  "SET_META_KEYWORDS" => "N",
+                  "SET_STATUS_404" => "N",
+                  "SET_TITLE" => "N",
+                  "SHOW_404" => "N",
+                  "SORT_BY1" => "SORT",
+                  "SORT_BY2" => "SORT",
+                  "SORT_ORDER1" => "ASC",
+                  "SORT_ORDER2" => "ASC",
+                  "STRICT_SECTION_CHECK" => "N"
+               )
+            );?>
+         </div>
       </div>
    </div>
 </section>
@@ -240,7 +259,7 @@ $APPLICATION->IncludeComponent(
 );
 ?>
 
-<?
+<? // Блок "Наши услуги"
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"our_services",
@@ -300,278 +319,121 @@ $APPLICATION->IncludeComponent(
 );?>
 
 
-<section class="mini-gallery spaces">
+<section class="mini-gallery">
    <div class="container">
-      <div class="tabs">
-         <div class="tabs__item active" data-tab="standarts">Стандарты качества</div>
-         <div class="tabs__item" data-tab="rewards">Наши награды</div>
-         <div class="tabs__item" data-tab="accreditations">Аккредитации</div>
-         <div class="tabs__item" data-tab="partners">Ассоциации и&nbsp;партнеры</div>
-      </div>
 
-      <div data-code="standarts">
-         <?
-         $GLOBALS['arFilterGalleryTab1'] = array(
-            "SECTION_CODE" => "standarts" // Символьный код раздела
-         );
-         $APPLICATION->IncludeComponent(
-            "bitrix:news.list",
-            "our.clients",
-            Array(
-               "SPECIAL_TITLE"=>" ", // скрывает заголовок блока
-               "ACTIVE_DATE_FORMAT" => "d.m.Y",
-               "ADD_SECTIONS_CHAIN" => "N",
-               "AJAX_MODE" => "N",
-               "AJAX_OPTION_ADDITIONAL" => "",
-               "AJAX_OPTION_HISTORY" => "N",
-               "AJAX_OPTION_JUMP" => "N",
-               "AJAX_OPTION_STYLE" => "Y",
-               "CACHE_FILTER" => "N",
-               "CACHE_GROUPS" => "Y",
-               "CACHE_TIME" => "36000000",
-               "CACHE_TYPE" => "A",
-               "CHECK_DATES" => "Y",
-               "DETAIL_URL" => "",
-               "DISPLAY_BOTTOM_PAGER" => "N",
-               "DISPLAY_DATE" => "N",
-               "DISPLAY_NAME" => "Y",
-               "DISPLAY_PICTURE" => "N",
-               "DISPLAY_PREVIEW_TEXT" => "Y",
-               "DISPLAY_TOP_PAGER" => "N",
-               "FIELD_CODE" => array("NAME","PREVIEW_TEXT",""),
-               "FILTER_NAME" => "arFilterGalleryTab1",
-               "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-               "IBLOCK_ID" => "207",
-               "IBLOCK_TYPE" => "edu_const",
-               "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-               "INCLUDE_SUBSECTIONS" => "N",
-               "MESSAGE_404" => "",
-               "NEWS_COUNT" => "30",
-               "PAGER_BASE_LINK_ENABLE" => "N",
-               "PAGER_DESC_NUMBERING" => "N",
-               "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-               "PAGER_SHOW_ALL" => "N",
-               "PAGER_SHOW_ALWAYS" => "N",
-               "PAGER_TEMPLATE" => ".default",
-               "PAGER_TITLE" => "",
-               "PARENT_SECTION" => "",
-               "PARENT_SECTION_CODE" => "",
-               "PREVIEW_TRUNCATE_LEN" => "",
-               "PROPERTY_CODE" => array("LINK",""),
-               "SET_BROWSER_TITLE" => "N",
-               "SET_LAST_MODIFIED" => "N",
-               "SET_META_DESCRIPTION" => "N",
-               "SET_META_KEYWORDS" => "N",
-               "SET_STATUS_404" => "N",
-               "SET_TITLE" => "N",
-               "SHOW_404" => "N",
-               "SORT_BY1" => "SORT",
-               "SORT_BY2" => "SORT",
-               "SORT_ORDER1" => "ASC",
-               "SORT_ORDER2" => "ASC",
-               "STRICT_SECTION_CHECK" => "N"
-            )
-         );
+      <?$APPLICATION->IncludeComponent(
+         "bitrix:catalog.section.list",
+         "tabs",
+         Array(
+            "ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "CACHE_FILTER" => "N",
+            "CACHE_GROUPS" => "Y",
+            "CACHE_TIME" => "36000000",
+            "CACHE_TYPE" => "A",
+            "COUNT_ELEMENTS" => "N",
+            "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+            "FILTER_NAME" => "",
+            "HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+            "HIDE_SECTION_NAME" => "N",
+            "IBLOCK_ID" => "207",
+            "IBLOCK_TYPE" => "edu_const",
+            "SECTION_CODE" => "",
+            "SECTION_FIELDS" => array("NAME", ""),
+            "SECTION_ID" => "",
+            "SECTION_URL" => "",
+            "SECTION_USER_FIELDS" => array("", ""),
+            "SHOW_PARENT_NAME" => "Y",
+            "TOP_DEPTH" => "1",
+            "VIEW_MODE" => "TEXT"
+         )
+      );
+      
+      $arFilter = Array('IBLOCK_ID'=>207, 'IBLOCK_TYPE'=>'edu_const');
+      $arSelect = Array('ID', 'NAME', 'CODE', 'UF_SHOW_ITEMS_TEXT');
+      $db_list = CIBlockSection::GetList(
+         Array("SORT"=>"ASC"), 
+         $arFilter,
+         false,
+         $arSelect,
+         false
+      );
+      $tabKey = 0;
+      while($ar_result = $db_list->GetNext())
+      {
          ?>
-      </div>
 
-      <div data-code="rewards" style="display: none;">
-         <?
-         $GLOBALS['arFilterGalleryTab2'] = array(
-            "SECTION_CODE" => "rewards" // Символьный код раздела
-         );
-         $APPLICATION->IncludeComponent(
-            "bitrix:news.list",
-            "our.clients",
-            Array(
-               "SPECIAL_TITLE"=>" ", // скрывает заголовок блока
-               "ACTIVE_DATE_FORMAT" => "d.m.Y",
-               "ADD_SECTIONS_CHAIN" => "N",
-               "AJAX_MODE" => "N",
-               "AJAX_OPTION_ADDITIONAL" => "",
-               "AJAX_OPTION_HISTORY" => "N",
-               "AJAX_OPTION_JUMP" => "N",
-               "AJAX_OPTION_STYLE" => "Y",
-               "CACHE_FILTER" => "N",
-               "CACHE_GROUPS" => "Y",
-               "CACHE_TIME" => "36000000",
-               "CACHE_TYPE" => "A",
-               "CHECK_DATES" => "Y",
-               "DETAIL_URL" => "",
-               "DISPLAY_BOTTOM_PAGER" => "N",
-               "DISPLAY_DATE" => "N",
-               "DISPLAY_NAME" => "Y",
-               "DISPLAY_PICTURE" => "N",
-               "DISPLAY_PREVIEW_TEXT" => "Y",
-               "DISPLAY_TOP_PAGER" => "N",
-               "FIELD_CODE" => array("NAME","PREVIEW_TEXT",""),
-               "FILTER_NAME" => "arFilterGalleryTab2",
-               "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-               "IBLOCK_ID" => "207",
-               "IBLOCK_TYPE" => "edu_const",
-               "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-               "INCLUDE_SUBSECTIONS" => "N",
-               "MESSAGE_404" => "",
-               "NEWS_COUNT" => "30",
-               "PAGER_BASE_LINK_ENABLE" => "N",
-               "PAGER_DESC_NUMBERING" => "N",
-               "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-               "PAGER_SHOW_ALL" => "N",
-               "PAGER_SHOW_ALWAYS" => "N",
-               "PAGER_TEMPLATE" => ".default",
-               "PAGER_TITLE" => "",
-               "PARENT_SECTION" => "",
-               "PARENT_SECTION_CODE" => "",
-               "PREVIEW_TRUNCATE_LEN" => "",
-               "PROPERTY_CODE" => array("LINK",""),
-               "SET_BROWSER_TITLE" => "N",
-               "SET_LAST_MODIFIED" => "N",
-               "SET_META_DESCRIPTION" => "N",
-               "SET_META_KEYWORDS" => "N",
-               "SET_STATUS_404" => "N",
-               "SET_TITLE" => "N",
-               "SHOW_404" => "N",
-               "SORT_BY1" => "SORT",
-               "SORT_BY2" => "SORT",
-               "SORT_ORDER1" => "ASC",
-               "SORT_ORDER2" => "ASC",
-               "STRICT_SECTION_CHECK" => "N"
-            )
-         );
-         ?>
-      </div>
-
-      <div data-code="accreditations" style="display: none;">
-         <?
-         $GLOBALS['arFilterGalleryTab3'] = array(
-            "SECTION_CODE" => "accreditations" // Символьный код раздела
-         );
-         $APPLICATION->IncludeComponent(
-            "bitrix:news.list",
-            "our.clients",
-            Array(
-               "SPECIAL_TITLE"=>" ", // скрывает заголовок блока
-               "ACTIVE_DATE_FORMAT" => "d.m.Y",
-               "ADD_SECTIONS_CHAIN" => "N",
-               "AJAX_MODE" => "N",
-               "AJAX_OPTION_ADDITIONAL" => "",
-               "AJAX_OPTION_HISTORY" => "N",
-               "AJAX_OPTION_JUMP" => "N",
-               "AJAX_OPTION_STYLE" => "Y",
-               "CACHE_FILTER" => "N",
-               "CACHE_GROUPS" => "Y",
-               "CACHE_TIME" => "36000000",
-               "CACHE_TYPE" => "A",
-               "CHECK_DATES" => "Y",
-               "DETAIL_URL" => "",
-               "DISPLAY_BOTTOM_PAGER" => "N",
-               "DISPLAY_DATE" => "N",
-               "DISPLAY_NAME" => "Y",
-               "DISPLAY_PICTURE" => "N",
-               "DISPLAY_PREVIEW_TEXT" => "Y",
-               "DISPLAY_TOP_PAGER" => "N",
-               "FIELD_CODE" => array("NAME","PREVIEW_TEXT",""),
-               "FILTER_NAME" => "arFilterGalleryTab3",
-               "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-               "IBLOCK_ID" => "207",
-               "IBLOCK_TYPE" => "edu_const",
-               "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-               "INCLUDE_SUBSECTIONS" => "N",
-               "MESSAGE_404" => "",
-               "NEWS_COUNT" => "30",
-               "PAGER_BASE_LINK_ENABLE" => "N",
-               "PAGER_DESC_NUMBERING" => "N",
-               "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-               "PAGER_SHOW_ALL" => "N",
-               "PAGER_SHOW_ALWAYS" => "N",
-               "PAGER_TEMPLATE" => ".default",
-               "PAGER_TITLE" => "",
-               "PARENT_SECTION" => "",
-               "PARENT_SECTION_CODE" => "",
-               "PREVIEW_TRUNCATE_LEN" => "",
-               "PROPERTY_CODE" => array("LINK",""),
-               "SET_BROWSER_TITLE" => "N",
-               "SET_LAST_MODIFIED" => "N",
-               "SET_META_DESCRIPTION" => "N",
-               "SET_META_KEYWORDS" => "N",
-               "SET_STATUS_404" => "N",
-               "SET_TITLE" => "N",
-               "SHOW_404" => "N",
-               "SORT_BY1" => "SORT",
-               "SORT_BY2" => "SORT",
-               "SORT_ORDER1" => "ASC",
-               "SORT_ORDER2" => "ASC",
-               "STRICT_SECTION_CHECK" => "N"
-            )
-         );
-         ?>
-      </div>
-
-      <div data-code="partners" style="display: none;">
-         <?
-         $GLOBALS['arFilterGalleryTab4'] = array(
-            "SECTION_CODE" => "partners" // Символьный код раздела
-         );
-         $APPLICATION->IncludeComponent(
-            "bitrix:news.list",
-            "our.clients",
-            Array(
-               "SPECIAL_TITLE"=>" ", // скрывает заголовок блока
-               "ACTIVE_DATE_FORMAT" => "d.m.Y",
-               "ADD_SECTIONS_CHAIN" => "N",
-               "AJAX_MODE" => "N",
-               "AJAX_OPTION_ADDITIONAL" => "",
-               "AJAX_OPTION_HISTORY" => "N",
-               "AJAX_OPTION_JUMP" => "N",
-               "AJAX_OPTION_STYLE" => "Y",
-               "CACHE_FILTER" => "N",
-               "CACHE_GROUPS" => "Y",
-               "CACHE_TIME" => "36000000",
-               "CACHE_TYPE" => "A",
-               "CHECK_DATES" => "Y",
-               "DETAIL_URL" => "",
-               "DISPLAY_BOTTOM_PAGER" => "N",
-               "DISPLAY_DATE" => "N",
-               "DISPLAY_NAME" => "Y",
-               "DISPLAY_PICTURE" => "N",
-               "DISPLAY_PREVIEW_TEXT" => "Y",
-               "DISPLAY_TOP_PAGER" => "N",
-               "FIELD_CODE" => array("NAME","PREVIEW_TEXT",""),
-               "FILTER_NAME" => "arFilterGalleryTab4",
-               "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-               "IBLOCK_ID" => "207",
-               "IBLOCK_TYPE" => "edu_const",
-               "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-               "INCLUDE_SUBSECTIONS" => "N",
-               "MESSAGE_404" => "",
-               "NEWS_COUNT" => "30",
-               "PAGER_BASE_LINK_ENABLE" => "N",
-               "PAGER_DESC_NUMBERING" => "N",
-               "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-               "PAGER_SHOW_ALL" => "N",
-               "PAGER_SHOW_ALWAYS" => "N",
-               "PAGER_TEMPLATE" => ".default",
-               "PAGER_TITLE" => "",
-               "PARENT_SECTION" => "",
-               "PARENT_SECTION_CODE" => "",
-               "PREVIEW_TRUNCATE_LEN" => "",
-               "PROPERTY_CODE" => array("LINK",""),
-               "SET_BROWSER_TITLE" => "N",
-               "SET_LAST_MODIFIED" => "N",
-               "SET_META_DESCRIPTION" => "N",
-               "SET_META_KEYWORDS" => "N",
-               "SET_STATUS_404" => "N",
-               "SET_TITLE" => "N",
-               "SHOW_404" => "N",
-               "SORT_BY1" => "SORT",
-               "SORT_BY2" => "SORT",
-               "SORT_ORDER1" => "ASC",
-               "SORT_ORDER2" => "ASC",
-               "STRICT_SECTION_CHECK" => "N"
-            )
-         );
-         ?>
-      </div>
+         <div data-code="<?=$ar_result['CODE'];?>" <?=($tabKey > 0) ? 'style="display: none;"' : '';?>>
+            <?
+            $GLOBALS[ $ar_result['CODE'].'FilterTabCode' ] = array(
+               "SECTION_CODE" => $ar_result['CODE'] // Символьный код раздела
+            );
+            
+            $APPLICATION->IncludeComponent(
+               "bitrix:news.list",
+               "mini-gallery",
+               Array(
+                  "ITEMS_TEXT" => intval($ar_result['UF_SHOW_ITEMS_TEXT']),
+                  "USE_IMAGES_GALLERY"=>"Y",
+                  "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                  "ADD_SECTIONS_CHAIN" => "N",
+                  "AJAX_MODE" => "N",
+                  "AJAX_OPTION_ADDITIONAL" => "",
+                  "AJAX_OPTION_HISTORY" => "N",
+                  "AJAX_OPTION_JUMP" => "N",
+                  "AJAX_OPTION_STYLE" => "Y",
+                  "CACHE_FILTER" => "N",
+                  "CACHE_GROUPS" => "Y",
+                  "CACHE_TIME" => "36000000",
+                  "CACHE_TYPE" => "A",
+                  "CHECK_DATES" => "Y",
+                  "DETAIL_URL" => "",
+                  "DISPLAY_BOTTOM_PAGER" => "N",
+                  "DISPLAY_DATE" => "N",
+                  "DISPLAY_NAME" => "Y",
+                  "DISPLAY_PICTURE" => "N",
+                  "DISPLAY_PREVIEW_TEXT" => "Y",
+                  "DISPLAY_TOP_PAGER" => "N",
+                  "FIELD_CODE" => array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE","DETAIL_PICTURE"),
+                  "FILTER_NAME" => $ar_result['CODE'].'FilterTabCode',
+                  "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                  "IBLOCK_ID" => "207",
+                  "IBLOCK_TYPE" => "edu_const",
+                  "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                  "INCLUDE_SUBSECTIONS" => "N",
+                  "MESSAGE_404" => "",
+                  "NEWS_COUNT" => "30",
+                  "PAGER_BASE_LINK_ENABLE" => "N",
+                  "PAGER_DESC_NUMBERING" => "N",
+                  "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                  "PAGER_SHOW_ALL" => "N",
+                  "PAGER_SHOW_ALWAYS" => "N",
+                  "PAGER_TEMPLATE" => ".default",
+                  "PAGER_TITLE" => "",
+                  "PARENT_SECTION" => "",
+                  "PARENT_SECTION_CODE" => "",
+                  "PREVIEW_TRUNCATE_LEN" => "",
+                  "PROPERTY_CODE" => array("",""),
+                  "SET_BROWSER_TITLE" => "N",
+                  "SET_LAST_MODIFIED" => "N",
+                  "SET_META_DESCRIPTION" => "N",
+                  "SET_META_KEYWORDS" => "N",
+                  "SET_STATUS_404" => "N",
+                  "SET_TITLE" => "N",
+                  "SHOW_404" => "N",
+                  "SORT_BY1" => "SORT",
+                  "SORT_BY2" => "SORT",
+                  "SORT_ORDER1" => "ASC",
+                  "SORT_ORDER2" => "ASC",
+                  "STRICT_SECTION_CHECK" => "N"
+               )
+            );
+            ?>
+         </div>
+      <? $tabKey++;
+      }
+      ?>
    </div>
 </section>
 
@@ -667,6 +529,7 @@ $APPLICATION->IncludeComponent(
       "WEB_FORM_ID" => "39"
    )
 );?>
+
 
 </div>
 

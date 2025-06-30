@@ -1,4 +1,4 @@
-<div class="row start__numbers">
+<div class="row g-3 start__numbers">
     <div class="col-6 col-lg-3 col-xl-2">
         <span>2 000</span>
         Начало работы
