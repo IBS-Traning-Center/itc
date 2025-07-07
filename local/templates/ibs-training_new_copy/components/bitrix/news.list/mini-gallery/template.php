@@ -16,6 +16,11 @@ Loc::loadMessages(__FILE__);
 $this->setFrameMode(false);
 
 $showItemText = false;
+$bottomTitle = false;
+
+if($arParams['BOTTOM_TITLE'] == intval(1)) {
+    $bottomTitle = true;
+}
 
 if (!empty($arResult['ITEMS'])) :?>
     <div class="mini-gallery__slider">
@@ -28,7 +33,7 @@ if (!empty($arResult['ITEMS'])) :?>
                     $showItemText = true;
                 }
             ?>
-                <div class="swiper-slide mini-gallery__item<?=($showItemText) ? ' flex-row w-500' : '';?>">
+                <div class="swiper-slide mini-gallery__item<?=($showItemText) ? ' flex-row w-500' : '';?><?=($bottomTitle) ? ' w-800' : '';?>">
                     <? if($arParams['USE_IMAGES_GALLERY'] === 'Y') {?>
                         <a href="<?=(!empty($item['DETAIL_PICTURE']['SRC'])) ? $item['DETAIL_PICTURE']['SRC'] : $item['PREVIEW_PICTURE']['SRC'] ?>" 
                             data-fancybox
@@ -47,6 +52,12 @@ if (!empty($arResult['ITEMS'])) :?>
                             <div class="mini-gallery__item__desc">
                                 <?=$item['PREVIEW_TEXT'];?>
                             </div>
+                        </div>
+                    <?}?>
+
+                    <?if($bottomTitle && !($showItemText)) {?>
+                        <div>
+                            <p class="mini-gallery__item__title"><?=$item['NAME'];?></p>
                         </div>
                     <?}?>
                 </div>

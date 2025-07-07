@@ -1,17 +1,44 @@
 $(document).ready(function () {
     if($('.tabs').length > 0) {
-        $('.tabs__item').on('click', function (e) {
+        $('.tabs__item').on('click', function(e) {
             let tab = $(this).attr('data-tab');
-            $(this).parent().parent().siblings('*[data-code]').hide();
-            $(this).parent().parent().siblings('*[data-code="'+tab+'"]').show();
+            let parentContainer = $(this).parent().parent();
             
-            $('.tabs__item').removeClass('active');
+            // Скрываем все блоки с data-code
+            parentContainer.siblings('[data-code]').hide();
+            
+            // Показываем только те блоки, у которых в data-code есть искомое слово
+            parentContainer.siblings('[data-code]').each(function() {
+                let codeWords = $(this).attr('data-code').split(/\s+/);
+                if(codeWords.includes(tab)) {
+                    $(this).show();
+
+                    // Показываем subcode внутри этого блока
+                    $(this).find('[data-subcode="'+ tab +'"]').siblings('[data-subcode]').hide();
+                    $(this).find('[data-subcode="'+ tab +'"]').show();
+                }
+            });
+            
+            // Управление классами активного таба
+            $(this).siblings().removeClass('active');
             $(this).addClass('active');
         });
     }
+
+    // if($('.tabs').length > 0) {
+    //     $('.tabs__item').on('click', function (e) {
+    //         let tab = $(this).attr('data-tab');
+
+    //         $(this).parent().parent().siblings('*[data-code]').hide();
+    //         $(this).parent().parent().siblings('*[data-code="'+tab+'"]').show();
+            
+    //         $(this).siblings().removeClass('active');
+    //         $(this).addClass('active');
+    //     });
+    // }
     
     const reviews__slider = new Swiper('.reviews__slider', {
-        slidesPerView: 1,
+        slidesPerView: 1.5,
         spaceBetween: 31,
         freeMode: true,
         autoHeight: false,
@@ -21,14 +48,17 @@ $(document).ready(function () {
             clickable: true,
         },
         breakpoints: {
+            576: {
+                slidesPerView: 1.5,
+            },
             768: {
-                slidesPerView: 2,
+                slidesPerView: 2.5,
             },
             1280: {
-                slidesPerView: 3,
+                slidesPerView: 4.5,
             },
-            1920: {
-                slidesPerView: 4,
+            1480: {
+                slidesPerView: 5,
             },
           },
     });

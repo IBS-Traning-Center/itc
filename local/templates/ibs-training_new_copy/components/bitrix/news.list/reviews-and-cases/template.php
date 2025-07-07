@@ -40,8 +40,13 @@ use Local\Util\Functions;
 					// var_dump($arItem['PREVIEW_PICTURE']['SRC']);
 					// echo '</pre>';
 					?>
-					<div class="reviews__item__text">
-						<?=$arItem['PREVIEW_TEXT'];?>
+					<div class="reviews__item--inner">
+						<div class="reviews__item__text">
+							<?=$arItem['PREVIEW_TEXT'];?>
+							<div class="readmore">
+								<span>...</span>&nbsp;<a href="/reviews/" target="_blank" class="link">Читать&nbsp;всё</a>
+							</div>
+						</div>
 					</div>
 
 					<img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['NAME'];?>" class="reviews__item__image">

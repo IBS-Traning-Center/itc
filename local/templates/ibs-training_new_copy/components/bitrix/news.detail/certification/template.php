@@ -218,7 +218,7 @@ $this->setFrameMode(true);
 		"why-us",
 		Array(
 			"CUSTOM_CLASS" => "with-titles spaces",
-			"CUSTOM_TITLE" => "Бизнес-аналитик на рынке труда",
+			// "CUSTOM_TITLE" => "Бизнес-аналитик на рынке труда",
 			"ACTIVE_DATE_FORMAT" => "d.m.Y",
 			"ADD_SECTIONS_CHAIN" => "N",
 			"AJAX_MODE" => "N",
@@ -378,9 +378,11 @@ $this->setFrameMode(true);
 		<div class="container">
 			<h2 class="title--h2">Для&nbsp;чего нужна сертификация</h2>
 
-			<div class="tabs">
-				<div class="tabs__item active" data-tab="analyse">Бизнес-аналитику</div>
-				<div class="tabs__item" data-tab="company">Компании</div>
+			<div class="tabs--wrapper">
+				<div class="tabs">
+					<div class="tabs__item active" data-tab="analyse">Бизнес-аналитику</div>
+					<div class="tabs__item" data-tab="company">Компании</div>
+				</div>
 			</div>
 
 			<ul class="basically__list" data-code="analyse">

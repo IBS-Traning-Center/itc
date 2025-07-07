@@ -42,17 +42,26 @@
     }
 
     &__item {
-        height: auto !important;
+        // height: auto !important;
         padding-bottom: 35px;
+        height: 312px;
+        
+        @include breakpoint(lg) {
+            height: 319px;
+        }
+        
+        @include breakpoint(xxl) {
+            min-width: 362px;
+            height: 440px;
+        }
 
-        &__text {
+        &--inner {
+            height: 100%;
             background-color: #F8F7F7;
             padding: 24px;
-            @include text;
-            position: relative;
-            height: 100%;
             margin-bottom: 35px;
-    
+            position: relative;
+
             &:before {
                 position: absolute;
                 content: '';
@@ -61,6 +70,40 @@
                 background: url(/local/templates/ibs-training_new_copy/assets/images/icons/review-item-rectangle.svg) no-repeat center center;
                 width: 23px;
                 height: 23px;
+            }
+        }
+
+        &__text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            position: relative;
+            max-height: calc(24px * 8);
+            overflow: hidden;
+
+            @include breakpoint(xxl) {
+                max-height: calc(28px * 11);
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            .readmore {
+                display: none;
+                align-items: center;
+                flex-wrap: nowrap;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: #F8F7F7; /* Чтобы "..." не накладывались на текст */
+                padding-left: 5px;
+            }
+
+            .link {
+                @include notosans;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
             }
         }
 

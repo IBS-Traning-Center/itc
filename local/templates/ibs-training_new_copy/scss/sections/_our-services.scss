@@ -8,10 +8,19 @@
             margin-bottom: 72px;
         }
     }
+
     &__image {
         max-width: 100%;
         width: 100%;
         height: 100%;
+
+        img {
+            object-position: top center;
+        }
+    }
+
+    &__list {
+        height: auto;
     }
 
     &__item {

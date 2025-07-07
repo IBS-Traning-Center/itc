@@ -17,8 +17,18 @@ $this->setFrameMode(true);
 	<div class="container">
 		
 		<h2 class="title--h2">
-		<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/why-us-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?>
-		<?//=($arParams['CUSTOM_TITLE']) ? $arParams['CUSTOM_TITLE'] : $arResult["NAME"];?></h2>
+			<?
+			$iBlockID = $arParams['IBLOCK_ID']; // ваш ID инфоблока
+			$sectionID = $arResult['ITEMS'][0]['IBLOCK_SECTION_ID']; // ваш ID раздела
+			
+			$section = CIBlockSection::GetByID($sectionID)->Fetch();
+			if ($section && $section['IBLOCK_ID'] == $iBlockID) {
+				echo $section['NAME']; // название раздела
+			} else {
+				echo "Раздел не найден или не принадлежит указанному инфоблоку";
+			}
+			?>
+		</h2>
 
 		<div class="row g-4 g-xxl-5 justify-content-between">
 			<?foreach($arResult["ITEMS"] as $key => $arItem):

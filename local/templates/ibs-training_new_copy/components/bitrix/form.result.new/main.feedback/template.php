@@ -21,6 +21,12 @@ Loc::loadMessages(__FILE__);
             <?php if ($arResult['arForm']['NAME']) : ?>
                 <div class="col-12 col-xl 6">
                     <h2 class="title--h2"><?= $arResult['arForm']['NAME'] ?></h2>
+
+                    <?php if ($arResult['FORM_DESCRIPTION']) : ?>
+                        <div class="main-feedback-form-description mt-5">
+                            <?= $arResult['FORM_DESCRIPTION'] ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
             <div class="col-12 col-xl 6">
@@ -41,14 +47,21 @@ Loc::loadMessages(__FILE__);
                                 <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden' 
                                       || $question['STRUCTURE'][0]['FIELD_TYPE'] == 'dropdown') : ?>
                                     <?php echo $question['HTML_CODE']; ?>
+                                    <?
+                                    // echo '<pre>';
+                                    // var_dump($question['CAPTION']);
+                                    // echo '</pre>';
+                                    ?>
+                                    <script>
+                                        $(document).ready(function () {
+                                            const selectText = $('select[id^="form_dropdown_"]').next().find('.jq-selectbox__select-text');
+                                            // console.log(selectText);
+                                            selectText.text('<?=$question['CAPTION'];?>');
+                                        });
+                                    </script>
         
                                 <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'radio') : ?>
         
-                                    <?php
-                                    // echo '<pre>';
-                                    // var_dump($question);
-                                    // echo '</pre>';
-                                    ?>
                                     
                                     <div class="form-radio-btns">
                                         
@@ -101,11 +114,6 @@ Loc::loadMessages(__FILE__);
                                 <?php endif; ?>
                             <?php endforeach; ?>
                             <input class="submit-main-feedback-form" <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> type="submit" name="web_form_submit" value="<?=htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]);?>" />
-                            <?php if ($arResult['FORM_DESCRIPTION']) : ?>
-                                <div class="under-main-feedback-form">
-                                    <span><?= $arResult['FORM_DESCRIPTION'] ?></span>
-                                </div>
-                            <?php endif; ?>
                         </div>
                         <?=$arResult["FORM_FOOTER"]?>
                     <?php endif; ?>

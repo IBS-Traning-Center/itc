@@ -225,6 +225,26 @@ label {
 	font-weight: 400;
 }
 
+.banner.bg--lightblue {
+	* {
+		color: #fff;
+	}
+}
+
+.expertise__images img {
+    width: fit-content;
+    object-fit: contain;
+	user-select: none;
+	pointer-events: none;
+	max-height: unset;
+	min-width: fit-content;
+	height: 44px;
+
+	@include breakpoint(lg) {
+		height: 100px;
+	}
+}
+
 .page_about, .page_testing {
 	.our-students-block {
 		padding: 40px 0;
@@ -239,6 +259,13 @@ label {
 
 		@include breakpoint(lg) {
 			padding: 80px 0;
+		}
+
+		.title--h2 {
+			@include breakpoint(xxl) {
+				font-size: 56px;
+				line-height: 64px;
+			}
 		}
 	}
 }

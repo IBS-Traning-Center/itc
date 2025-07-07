@@ -19,6 +19,19 @@
     width: 100%;
 }
 
+.main-feedback-form-description {
+    font-family: "Stag Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30px;
+    margin-top: 40px;
+}
+
+.main-feedback-form-description p:not(:last-of-type) {
+    margin-bottom: 0;
+}
+
 .main-feedback-form-block .main-feedback-form-container .questions-block {
     width: 100%;
 }

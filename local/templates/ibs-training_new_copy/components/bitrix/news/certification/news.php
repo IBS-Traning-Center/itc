@@ -81,6 +81,7 @@ $arCurSection = $arCurSection[0];
 	</div>
 </section>
 
+
 <? // Блок "Фундаментально. Объективно. Честно."
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
@@ -140,9 +141,11 @@ $APPLICATION->IncludeComponent(
 	)
 );?>
 
+
 <div class="container">
 	<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/fundamental-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки']); ?>
 </div>
+
 
 <?
 // Список элементов - курсов сертификации в текущем разделе
@@ -198,6 +201,7 @@ $APPLICATION->IncludeComponent(
 	],
 	$component
 );
+
 
 // Блок "Что даёт сертификация"
 $APPLICATION->IncludeComponent(
@@ -257,6 +261,7 @@ $APPLICATION->IncludeComponent(
 		"STRICT_SECTION_CHECK" => "N"
 	)
 );
+
 
 // Блок "Почему стоит пройти сертификацию у нас"
 $APPLICATION->IncludeComponent(
@@ -322,7 +327,6 @@ $APPLICATION->IncludeComponent(
 </div>
 
 
-
 <?
 // Блок "Как пройти сертификацию"
 $APPLICATION->IncludeComponent(
@@ -383,8 +387,8 @@ $APPLICATION->IncludeComponent(
 	)
 );
 
-// Итоги работы Центра сертификации IBS
-?>
+
+// Итоги работы Центра сертификации IBS ?>
 <section class="certification-banner">
 	<div class="container">
 		<a href="<?=$arCurSection['UF_BANNER_LINK'];?>" target="_blank">
@@ -398,6 +402,7 @@ $APPLICATION->IncludeComponent(
 		</a>
 	</div>
 </section>
+
 
 <?
 // Блок "Акции и скидки"
@@ -457,8 +462,8 @@ $APPLICATION->IncludeComponent(
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N"
 	)
-);
-?>
+); ?>
+
 
 <?php $APPLICATION->IncludeComponent(
     "bitrix:form.result.new",

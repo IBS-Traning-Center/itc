@@ -192,20 +192,35 @@
                 width: 141px;
                 height: 116px;
                 background-size: contain;
-                bottom: 22px;
 
                 @include breakpoint(lg) {
+                    bottom: 37px;
+                }
 
+                @include breakpoint(xl) {
+                    bottom: 8px;
                 }
             }
 
             &:before {
-                left: -100px;
+                @include breakpoint(lg) {
+                    left: -140px;
+                }
+
+                @include breakpoint(xl) {
+                    left: -100px;
+                }
             }
 
             &:after {
-                right: -100px;
-                transform: scale(-1, 1);
+                @include breakpoint(lg) {
+                    right: -140px;
+                    transform: scale(-1, 1);
+                }
+
+                @include breakpoint(xl) {
+                    right: -100px;
+                }
             }
         }
 

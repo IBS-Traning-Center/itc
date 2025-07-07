@@ -6,24 +6,54 @@ $green: #4C9F69;
 
 .bg--blue {
 	background: #0827C4 !important;
+	color: #fff !important;
+
+	&.start {
+		* {
+			color: #fff;
+		}
+
+		.breadcrumbs svg > path {
+			fill: #fff;
+		}
+	}
 }
 
 .bg--lightblue {
 	background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%) !important;
+	color: #fff !important;
 
-	*, div.breadcrumbs * {
-		color: #fff !important;
+	&.start {
+		* {
+			color: #fff;
+		}
+
+		.breadcrumbs svg > path {
+			fill: #fff;
+		}
 	}
 }
 
 .bg--green {
 	background: linear-gradient(79.51deg, #2A418B 0%, #4DA567 100%) !important;
+	color: #fff !important;
+
+	.breadcrumbs svg > path {
+		fill: #fff;
+	}
 }
 
 .bg--gray {
-	background-color: #F8F7F7 !important;
+	background: #F8F7F7 !important;
+	color: #000 !important;
 
-	*, div.breadcrumbs * {
-		color: #000 !important;
+	&.start {
+		* {
+			color: #000;
+		}
+
+		.breadcrumbs svg > path {
+			fill: #000;
+		}
 	}
 }

@@ -1,8 +1,6 @@
 .assessment_types {
-    * {
-        @include notosans;
-        font-weight: 400;
-    }
+    @include notosans;
+    font-weight: 400;
 
     &__head {
         .row {
@@ -13,9 +11,17 @@
         &__item {
             padding: 16px 32px;
             border-left: 1px solid #4127E0;
-            font-size: 31px;
-            line-height: 44px;
-            white-space: nowrap;
+            font-size: 22px;
+            line-height: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @include breakpoint(xl) {
+                font-size: 31px;
+                line-height: 44px;
+                white-space: nowrap;
+            }
         }
     }
 
@@ -33,39 +39,99 @@
             border-left: 1px solid #4127E0;
 
             img {
-                min-width: 44px;
-                width: 44px;
-                height: 44px;
+                min-width: 36px;
+                width: 36px;
+                height: 36px;
+                
+                @include breakpoint(xl) {
+                    min-width: 44px;
+                    width: 44px;
+                    height: 44px;
+                }
             }
 
             .btn--dark {
-                white-space: nowrap;
                 color: #fff;
+                padding: 16px 32px;
+                font-size: 20px;
+                
+                @include breakpoint(xl) {
+                    white-space: nowrap;
+                    padding: 32px 48px;
+                    font-size: 24px;
+                }
             }
         }
     }
 
     &__item {
         &__cell {
-            padding: 16px 32px;
+            padding-top: 12px;
+            padding-bottom: 12px;
             font-size: 20px;
             line-height: 32px;
+            
+            @include breakpoint(lg) {
+                padding: 16px 32px;
+            }
+
+            [data-subcode] {
+                @include enter-point;
+                font-weight: 500;
+                font-size: inherit;
+                margin-top: 8px;
+                padding-left: 40px;
+
+                &:before {
+                    background: url(/local/templates/ibs-training_new_copy/assets/images/icons/blue_agree.svg) no-repeat center center;
+                    background-size: contain;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .btn--dark {
+                color: white !important;
+            }
         }
 
         &__title {
-            font-size: 32px;
-            line-height: 44px;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 8px;
+
+            @include breakpoint(lg) {
+                font-size: 24px;
+                margin-bottom: 0;
+            }
+
+            @include breakpoint(xl) {
+                font-size: 32px;
+                line-height: 44px;
+            }
         }
 
         &__desc {
             font-size: 16px;
-            line-height: 24px;
+            font-weight: 400;
+            line-height: normal;
+
+            @include breakpoint(lg) {
+                line-height: 24px;
+            }
         }
 
         &.big-text {
             .assessment_types__item__cell {
-                font-size: 32px;
-                line-height: 44px;
+                @include breakpoint(lg) {
+                    font-size: 22px;
+                }
+
+                @include breakpoint(xl) {
+                    font-size: 32px;
+                    line-height: 44px;
+                }
             }
         }
     }
