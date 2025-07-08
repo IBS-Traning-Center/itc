@@ -434,7 +434,7 @@ $this->setFrameMode(true);
 					{
 						$sectionWhyUs[] = $ar_result;
 					}
-					$sectionWhyUs = $sectionWhyUs[0];
+					$sectionWhyUs = $sectionWhyUs[0]; // выводит единственный раздел, для др.страниц надо будет поменять цифру на порядок раздела (0, 1, 2, 3...)
 					?>
 					
 					<h2 class="title--h2"><?=$sectionWhyUs['UF_BLOCK_TITLE']?></h2>
