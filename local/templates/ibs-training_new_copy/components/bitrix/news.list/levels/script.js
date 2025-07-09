@@ -96,4 +96,20 @@ $(document).ready(function () {
             }
         });
     }
+
+    $('.open_level_modal_form').on('click', function (e) {
+        e.preventDefault();
+
+        $(this).parent().next().addClass('show');
+
+        // console.log();
+    });
+
+    $('.levels__item__modal--bg').on('click', function (e) {
+        $(this).parent().removeClass('show');
+    });
+
+    $('.levels__item__modal--window__close').on('click', function (e) {
+        $(this).parent().parent().removeClass('show');
+    });
 });

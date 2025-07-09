@@ -69,10 +69,6 @@ $this->setFrameMode(true);
 								while($ob = $res->GetNextElement())
 								{
 									$prop = $ob->GetFields();
-		
-									// echo '<pre>';
-									// var_dump($prop);
-									// echo '</pre>';
 									?>
 										<li>
 											<img src="<?=CFile::GetPath($prop['PROPERTY_ICON_VALUE'])?>" alt="icon">
@@ -103,7 +99,39 @@ $this->setFrameMode(true);
 									echo $btn['TEXT'];
 								}
 								?>
-		
+							</div>
+
+							<div class="levels__item__modal">
+								<div class="levels__item__modal--bg"></div>
+
+								<div class="levels__item__modal--window">
+									<span class="levels__item__modal--window__close"></span>
+
+									<?=$arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'];?>
+
+									<?
+									$APPLICATION->IncludeComponent(
+										"bitrix:form.result.new",
+										"levels_modal_form",
+										array(
+											"CUSTOM_ID" => 'levelsItemModalForm'.ucfirst($arItem['PROPERTIES']['TYPE']['VALUE_XML_ID']),
+											"CUSTOM_CLASSES" => "",
+											"CACHE_TIME" => "3600",
+											"CACHE_TYPE" => "A",
+											"CHAIN_ITEM_LINK" => "",
+											"CHAIN_ITEM_TEXT" => "",
+											"EDIT_URL" => "",
+											"IGNORE_CUSTOM_TEMPLATE" => "N",
+											"LIST_URL" => "",
+											"SEF_MODE" => "N",
+											"SUCCESS_URL" => "",
+											"AJAX_MODE" => "Y",
+											"USE_EXTENDED_ERRORS" => "N",
+											"VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
+											"WEB_FORM_ID" => "50"
+										));
+									?>
+								</div>
 							</div>
 						</div>
 

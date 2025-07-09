@@ -33,18 +33,19 @@
 
         @include breakpoint(lg) {
             max-width: 860px;
+            margin-bottom: 24px;
         }
 
         @include breakpoint(xl) {
             font-size: 64px;
             line-height: 72px;
+            margin-bottom: 40px;
         }
 
         @include breakpoint(full-hd) {
             max-width: 950px;
             font-size: 72px;
             line-height: 80px;
-            margin-bottom: 40px;
         }
 
         & + p {
@@ -209,6 +210,12 @@
 
 .page_testing {
     .start {
+        .title--h1 {
+            @include breakpoint(xl) {
+                margin-bottom: 56px;
+            }
+        }
+
         &__btns {
             display: flex;
             flex-wrap: wrap;
@@ -266,6 +273,16 @@
                 width: 61px;
                 min-width: 61px;
                 height: 55px;
+            }
+        }
+    }
+}
+
+.page_about {
+    .start {
+        .title--h1 {
+            @include breakpoint(xl) {
+                margin-bottom: 56px;
             }
         }
     }
