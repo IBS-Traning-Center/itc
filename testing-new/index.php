@@ -572,7 +572,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
     </section>
 
 
-    <section class="bg--lightblue">
+    <?/*<section class="bg--lightblue">
         <div class="container">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:form.result.new",
@@ -595,7 +595,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                 )
             );?>
         </div>
-    </section>
+    </section>*/?>
         
 
     <? // Блок "Отзывы и кейсы"
