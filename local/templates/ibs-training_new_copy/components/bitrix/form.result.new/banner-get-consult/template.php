@@ -15,7 +15,7 @@ Loc::loadMessages(__FILE__);
 
 ?>
 
-<div class="main-feedback-form-block <?=$arParams['CUSTOM_CLASSES'];?>" id="mainBannerFormBlock">
+<div class="main-feedback-form-block <?=$arParams['CUSTOM_CLASSES'];?>" id="bannerGetConsultFormBlock">
     <div class="container main-feedback-form-container">
         <!-- <div class="row g-4 g-xxl-5"> -->
             <?php if ($arResult['arForm']['NAME']) : ?>

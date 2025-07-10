@@ -671,7 +671,7 @@ $this->setFrameMode(true);
 	// Форма
 	$APPLICATION->IncludeComponent(
 		"bitrix:form.result.new",
-		"main.feedback",
+		"applications",
 		array(
 			"CUSTOM_CLASSES" => "bg--green",
 			"CACHE_TIME" => "3600",
@@ -686,7 +686,11 @@ $this->setFrameMode(true);
 			"AJAX_MODE" => "Y",
 			"USE_EXTENDED_ERRORS" => "N",
 			"VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-			"WEB_FORM_ID" => "47"
+			"WEB_FORM_ID" => "47",
+			"BASIC_DATES" => $arResult['BASIC_DATES'],
+			"SPEC_DATES" => $arResult['SPEC_DATES'],
+			"PROF_DATES" => $arResult['PROF_DATES'],
+			"COURSE_NAME" => $arResult['NAME']
 		)
 	);
 ?>
