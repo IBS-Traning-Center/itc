@@ -1,7 +1,6 @@
 <?php
 
-use \Bitrix\Iblock\Elements\ElementScheduleTable;
-use \Bitrix\Iblock\Elements\ElementCitiesTable;
+use \Bitrix\Iblock\Elements\ElementScheduleCertificationTable;
 
 /** @var array $arResult */
 /** @var array $arParams */
@@ -16,7 +15,7 @@ if ($arResult) {
             $schedules = getSchedule($elementId);
 
             foreach ($schedules as $schedule) {
-                $basicDates[getCityCode($schedule['CITY_VALUE'])][] = date('d.m.Y', strtotime($schedule['START_DATE_VALUE']));
+                $basicDates[$schedule['CITY_VALUE']][] = date('d.m.Y', strtotime($schedule['START_DATE_VALUE']));
             }
         }
     }
@@ -26,7 +25,7 @@ if ($arResult) {
             $schedules = getSchedule($elementId);
 
             foreach ($schedules as $schedule) {
-                $specDates[getCityCode($schedule['CITY_VALUE'])][] = date('d.m.Y', strtotime($schedule['START_DATE_VALUE']));
+                $specDates[$schedule['CITY_VALUE']][] = date('d.m.Y', strtotime($schedule['START_DATE_VALUE']));
             }
         }
     }
@@ -36,7 +35,7 @@ if ($arResult) {
             $schedules = getSchedule($elementId);
 
             foreach ($schedules as $schedule) {
-                $profDates[getCityCode($schedule['CITY_VALUE'])][] = date('d.m.Y', strtotime($schedule['START_DATE_VALUE']));
+                $profDates[$schedule['CITY_VALUE']][] = date('d.m.Y', strtotime($schedule['START_DATE_VALUE']));
             }
         }
     }
@@ -60,28 +59,20 @@ $arResult['PROF_DATES'] = $profDates;
 
 function getSchedule($elementId) : array
 {
-    return ElementScheduleTable::getList([
+    return ElementScheduleCertificationTable::getList([
         'order' => [
             'ID' => 'DESC'
         ],
         'select' => [
-            'START_DATE_' => 'startdate',
-            'CITY_' => 'city'
+            'START_DATE_' => 'date',
+            'CITY_' => 'location'
         ],
         'filter' => [
-            'schedule_course.VALUE' => $elementId,
-            '>startdate.VALUE' => date('Y-m-d H:i:s'),
+            'certification.VALUE' => $elementId,
+            '>date.VALUE' => date('Y-m-d H:i:s'),
             'ACTIVE' => 'Y'
         ]
     ])?->fetchAll() ?: [];
-}
-
-function getCityCode($cityId) : string
-{
-    return ElementCitiesTable::getList([
-        'select' => ['CODE'],
-        'filter' => ['ID' => $cityId]
-    ])?->fetch()['CODE'] ?: '';
 }
 
 function sortDatesArray($datesArray) : array

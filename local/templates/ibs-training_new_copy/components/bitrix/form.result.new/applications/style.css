@@ -195,6 +195,10 @@
     display: none !important;
 }
 
+#applicationsFormBlock .title--h2 {
+    color: var(--white);
+}
+
 @media (max-width: 1180px) {
     .main-feedback-form-block {
         padding: 40px 0 80px;
