@@ -27,7 +27,7 @@ class ApplicationsFormBlock
         this.certLevel = this.applicationsFormBlock.querySelectorAll(data.certLevelClass);
         this.jqSelectboxDropdown = this.applicationsFormBlock.querySelectorAll(data.jqSelectboxDropdownClass);
         this.selectedLevel = 'basic';
-        this.selectedCity = 'online';
+        this.selectedCity = 'onl';
 
         this.addApplicationsFormEventHandler();
         this.changeStateDate();
