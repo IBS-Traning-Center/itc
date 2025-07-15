@@ -32,7 +32,10 @@ $(document).ready(function () {
         let currentPseudoLi = select.parent().find('.jq-selectbox__dropdown').find('li:contains("'+ certName +'")');
         currentPseudoLi.siblings().removeClass('selected').removeClass('sel');
         currentPseudoLi.addClass('selected').addClass('sel');
-        
+
+        $('html, body').animate({
+            scrollTop: $('#' + formID).offset().top
+        }, 800);
     });
 
     if($(window).width() >= 1280) {
