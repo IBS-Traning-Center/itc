@@ -63,7 +63,7 @@ $certLevels = [];
                                     <script>
                                         $(document).ready(function () {
                                             const selectText = $('select[id^="form_dropdown_"]').next().find('.jq-selectbox__select-text');
-                                            selectText.text('<?=$question['STRUCTURE'][0]['MESSAGE'];?>');
+                                            selectText.text('<?=$question['CAPTION'];?>');
                                         });
                                     </script>
         
