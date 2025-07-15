@@ -87,7 +87,7 @@
 .main-feedback-form-block .main-feedback-form-container .questions-block .submit-main-feedback-form {
     outline: none;
     width: 100%;
-    height: fit-content;
+    height: auto;
     background-color: var(--white);
     padding: 32px 40px;
     color: var(--button-blue);

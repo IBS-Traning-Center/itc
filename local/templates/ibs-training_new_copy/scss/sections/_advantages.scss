@@ -5,18 +5,12 @@
     &__item {
         background-color: #fff;
         padding: 24px;
-
-        &__head {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 12px;
-
-            @include breakpoint(xl) {
-                flex-direction: column;
-                align-items: center;
-                gap: 24px;
-                margin-bottom: 24px;
-            }
+        display: flex;
+        gap: 12px;
+        
+        @include breakpoint(xl) {
+            flex-direction: column;
+            gap: 24px;
         }
 
         &__key {
@@ -29,12 +23,16 @@
             font-size: 24px;
             line-height: 32px;
             text-align: left;
-            margin-bottom: 0;
+            margin-bottom: 12px;
 
             @include breakpoint(lg) {
                 font-size: 32px;
                 line-height: 40px;
+            }
+            
+            @include breakpoint(xl) {
                 text-align: center;
+                margin-bottom: 24px;
             }
         }
 

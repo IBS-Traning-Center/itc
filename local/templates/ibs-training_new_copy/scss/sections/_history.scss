@@ -52,20 +52,18 @@
             }
 
             .infinity {
-                position: absolute;
-                top: 14px;
-                left: 50%;
-                transform: translateX(-50%);
                 min-width: 68px;
                 width: 68px;
                 height: 42.5px;
-                // margin-top: 15px;
-                // margin-top: 5.5px;
-                // margin-bottom: 5.5px;
-
-                // @include breakpoint(xl) {
-                //     margin-top: 22px;
-                // }
+                position: absolute;
+                top: -8px;
+                left: -6px;
+                
+                @include breakpoint(lg) {
+                    top: 14px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
             }
 
             .title--h2 {
@@ -239,7 +237,19 @@
 
         &:last-child, &:only-child {
             .history__list__item:last-child {
-                padding-bottom: 0;
+                padding-bottom: 8px;
+
+                @include breakpoint(lg) {
+                    padding-bottom: 0;
+                }
+
+                p {
+                    margin-top: 8px;
+
+                    @include breakpoint(lg) {
+                        margin-top: 0;
+                    }
+                }
     
                 &:before {
                     display: none;
@@ -268,44 +278,6 @@
                 }
             }
         }
-
-
-
-        // &:first-child:before {
-        //     @include breakpoint(xxl) {
-        //         position: absolute;
-        //         content: '';
-        //         z-index: 5;
-        //         top: calc(50% + 5.5px);
-        //         transform: translateY(-50%);
-        //         width: calc(100% + 700px);
-        //         height: 1.5px;
-        //         background-color: #fff;
-        //         left: 220px;
-        //     }
-
-        //     @include breakpoint(full-hd) {
-        //         top: calc(50% + 6.5px);
-        //     }
-        // }
-
-        // &:last-child:before {
-        //     @include breakpoint(xxl) {
-        //         position: absolute;
-        //         content: '';
-        //         z-index: 5;
-        //         top: calc(50% + 5.5px);
-        //         transform: translateY(-50%);
-        //         width: calc(100% + 1500px);
-        //         height: 1.5px;
-        //         background-color: #fff;
-        //         right: 220px;
-        //     }
-
-        //     @include breakpoint(full-hd) {
-        //         top: calc(50% + 6.5px);
-        //     }
-        // }
     }
 
     &__text {

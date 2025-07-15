@@ -374,7 +374,11 @@
         }
 
         &__desc--mobile {
-            padding: 24px 0 32px;
+            padding: 0 0 32px;
+
+            @include breakpoint(xl) {
+                display: none;
+            }
 
             &__text {
                 padding: 24px 0;
