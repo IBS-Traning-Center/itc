@@ -79,8 +79,24 @@
 
     .btn--white {
         color: #2B418B !important;
-        max-width: 340px;
-        padding: 24px 24px 24px 16px;
+        max-width: 100%;
+        padding: 24px 24px 24px calc(16px + 61px);
+        position: relative;
+
+        @include breakpoint(xs) {
+            max-width: 480px;
+        }
+
+        @include breakpoint(md) {
+            max-width: 340px;
+        }
+
+        > img {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
 
     &__btns {
@@ -103,18 +119,18 @@
     
             &:last-child {
                 .btn--white {
-                    // max-width: 340px;
-                    // padding-left: 94px;
+                    padding: 24px 24px 24px calc(16px + 68px);
 
                     @include breakpoint(lg) {
                         max-width: 365px;
                     }
         
-                    // img {
-                    //     width: 68px;
-                    //     min-width: 68px;
-                    //     height: 73px;
-                    // }
+                    img {
+                        width: 68px;
+                        min-width: 68px;
+                        height: 73px;
+                        left: 8px;
+                    }
                 }
             }
         }
@@ -132,7 +148,6 @@
 
     &__numbers {
         justify-content: space-between;
-        
 
         @include breakpoint(xl) {
             flex-wrap: nowrap;
@@ -143,11 +158,11 @@
             font-weight: 400;
             font-size: 16px;
             line-height: 22px;
-            white-space: nowrap;
-    
+            
             @include breakpoint(xl) {
                 font-size: 20px;
                 line-height: 1;
+                white-space: nowrap;
             }
     
             @include breakpoint(full-hd) {

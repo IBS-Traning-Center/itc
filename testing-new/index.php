@@ -131,7 +131,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
     </section>
 
 
-    <section class="testing-tasks">
+    <section class="testing-tasks bg--gray">
         <div class="container">
             <div class="row g-4 gy-md-0 gx-lg-5 flex-lg-nowrap">
                 <div class="col-12 col-md-6 col-lg-8 col-lg-7 testing-tasks--left">
@@ -572,7 +572,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
     </section>
 
 
-    <?/*<section class="bg--lightblue">
+    <section class="bg--lightblue">
         <div class="container">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:form.result.new",
@@ -595,7 +595,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                 )
             );?>
         </div>
-    </section>*/?>
+    </section>
         
 
     <? // Блок "Отзывы и кейсы"

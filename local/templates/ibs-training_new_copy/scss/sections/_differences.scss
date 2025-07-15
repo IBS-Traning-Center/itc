@@ -27,9 +27,7 @@
             object-fit: contain;
         }
 
-        &__content {
-
-        }
+        // &__content {}
 
         &__title {
             color: #000;
@@ -110,62 +108,94 @@
         }
 
         &__desc {
+            position: fixed;
+            z-index: 10151;
             opacity: 0;
             visibility: hidden;
+            transition: all .3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 125vw;
             height: 125vh;
-            position: fixed;
-            z-index: 9999;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             background-color: rgba(0, 0, 0, .32);
-            top: 0;
-            left: 0;
-            transition: all .3s ease-in-out;
 
             &__modal {
-                position: absolute;
-                width: 85%;
-                height: 576px;
-                max-height: 90%;
                 background-color: #fff;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
+                width: calc(100vw - 32px);
+                height: auto;
+                max-width: calc(100vw - 32px);
+                max-height: calc(100vh - 32px);
                 padding: 32px;
+                position: absolute;
+                // top: 16px;
+                // left: 16px;
+                z-index: 100;
+                overflow-x: hidden;
+                overflow-y: auto;
                 color: #000;
                 font-weight: 300;
                 font-size: 32px;
                 line-height: 44px;
 
-                @include breakpoint(md) {
-                    width: 53%;
+                @include breakpoint(xl) {
+                    width: (1024px * 1.25);
+                    // min-height: 801px;
+                    height: auto;
                     padding: 64px;
                 }
 
                 .modal--close {
                     position: absolute;
-                    right: 24px;
                     top: 24px;
-                    width: 48px;
-                    height: 48px;
-                    background: url(/local/templates/ibs-training_new_copy/assets/images/icons/cross.svg) no-repeat center center;
+                    right: 24px;
+                    min-width: 24px;
+                    width: 24px;
+                    height: 24px;
+                    background: url(/local/templates/ibs-training_new_copy/assets/images/icons/modal-close.svg) no-repeat center center;
+                    background-size: contain;
                     cursor: pointer;
-                    transition: all .4s ease-in-out;
+                    transition: all .2s ease-in-out;
 
                     &:hover {
                         transform: rotate(-180deg);
                     }
+
+                    @include breakpoint(lg) {
+                        min-width: 48px;
+                        width: 48px;
+                        height: 48px;
+                    }
                 }
 
                 .title--h2 {
+                    @include notosans;
+                    font-size: 20px;
+                    line-height: 32px;
+                    font-weight: 400;
                     margin-bottom: 16px;
 
-                    @include breakpoint(lg) {
+                    @include breakpoint(xl) {
+                        @include h2;
                         margin-bottom: 32px;
                     }
                 }
 
                 p {
-                    font: inherit;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+
+                    @include breakpoint(xl) {
+                        font-family: "Stag Sans", sans-serif;
+                        font-size: 32px;
+                        line-height: 44px;
+                        font-weight: 300;
+                    }
                 }
             }
 
@@ -258,10 +288,16 @@
             border: 1px solid $blue !important;
             transition: all .2s ease-in-out;
             cursor: pointer;
+            width: 100%;
+            max-width: 100%;
 
             &:hover {
                 border-color: $green !important;
                 color: $green;
+            }
+
+            @include breakpoint(sm) {
+                width: fit-content;
             }
         }
     }

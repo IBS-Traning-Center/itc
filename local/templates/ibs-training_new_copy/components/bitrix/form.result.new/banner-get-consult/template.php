@@ -20,7 +20,7 @@ Loc::loadMessages(__FILE__);
         <!-- <div class="row g-4 g-xxl-5"> -->
             <?php if ($arResult['arForm']['NAME']) : ?>
                 <!-- <div class="col-12 col-xl 6"> -->
-                    <h2 class="title--h2 mb-4 mb-xxl-5"><?= $arResult['arForm']['NAME'] ?></h2>
+                    <h2 class="title--h1 mb-4 mb-xxl-5"><?= $arResult['arForm']['NAME'] ?></h2>
 
                     <?php if ($arResult['FORM_DESCRIPTION']) : ?>
                         <div class="main-feedback-form-description mt-5">
@@ -44,7 +44,7 @@ Loc::loadMessages(__FILE__);
                                     
                                 else : ?>
                                     <?php if ($questionId == 'phone' || $questionId == 'email') : ?>
-                                        <div class="col-12 col-xl-4">
+                                        <div class="col-12 col-lg-4">
                                     <?php endif; ?>
 
                                         <div class="question-block <?= $questionId ?>">            
@@ -65,7 +65,7 @@ Loc::loadMessages(__FILE__);
 
                             <?php endforeach; ?>
 
-                            <div class="col-12 col-xl-4">
+                            <div class="col-12 col-lg-4">
                                 <input class="btn--white" <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> id="mainBannerFormBtn" type="submit" name="web_form_submit" value="<?=htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]);?>" />
                             </div>
                         </div>
@@ -73,7 +73,7 @@ Loc::loadMessages(__FILE__);
                         <?php foreach ($arResult["QUESTIONS"] as $questionId => $question) : ?>
                             <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'checkbox') : ?>
                                     <?php if ($questionId == 'privacy_policy') : ?>
-                                        <div class="col-12 col-xl-4">
+                                        <div class="col-12">
                                     <?php endif; ?>
 
                                     <div class="question-block <?= $questionId ?>">

@@ -67,7 +67,15 @@ $(document).ready(function () {
         freeMode: true,
         slidesPerView: 'auto',
         grabCursor: true,
-        spaceBetween: 64,
         allowTouchMove: true,
+        breakpoints: {
+            0: {
+                enabled: false
+            },
+            576: {
+                enabled: true,
+                spaceBetween: 64
+            }
+        }
     });
 });

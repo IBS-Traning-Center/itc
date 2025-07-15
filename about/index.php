@@ -104,7 +104,7 @@ $APPLICATION->SetTitle("Тренинги, корпоративное обуче�
 
 <section class="page_about__desc">
    <div class="container">
-      <div class="row position-relative g-5 justify-content-lg-between">
+      <div class="row position-relative g-5 m-0 justify-content-lg-between">
          <div class="col-12 page_about__desc__quote">
             <div class="page_about__desc__image--mini">
                <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/page_about__desc__image.php', [], ['MODE' => 'html', 'NAME'=>'Фото']);?>
@@ -321,7 +321,7 @@ $APPLICATION->IncludeComponent(
 );?>
 
 
-<section class="mini-gallery">
+<section class="mini-gallery spaces">
    <div class="container">
 
       <?$APPLICATION->IncludeComponent(
