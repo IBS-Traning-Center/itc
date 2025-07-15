@@ -1,6 +1,5 @@
 .basically {
     background-color: #F8F7F7;
-    @include sectionSpaces;
 
     .title--h2 {
         margin-bottom: 32px;
@@ -20,6 +19,7 @@
     &__image {
         height: auto;
         display: block;
+        object-fit: cover;
 
         @include breakpoint(sm) {
             max-width: 402px;

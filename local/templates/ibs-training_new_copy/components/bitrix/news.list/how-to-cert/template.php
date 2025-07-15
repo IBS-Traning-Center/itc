@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 <section class="how-to-cert">
 	<div class="container">
 		<h2 class="title--h2 text-center">
-		<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/how-to-cert-title.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки']); ?>
+		<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/how-to-cert-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Как пройти сертификацию']); ?>
 
 		<?//=$arResult["NAME"];?>
 		</h2>

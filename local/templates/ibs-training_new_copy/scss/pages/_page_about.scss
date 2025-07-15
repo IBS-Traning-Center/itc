@@ -36,6 +36,8 @@
             position: relative;
             margin-top: 16px;
             padding-bottom: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
 
             @include breakpoint(lg) {
                 padding-left: 120px;
@@ -51,9 +53,9 @@
             &:after {
                 position: absolute;
                 content: '';
-                left: 0;
+                left: 16px;
                 bottom: 0;
-                width: 100%;
+                width: calc(100% - 32px);
                 height: 1px;
                 background-color: #0827C4;
 

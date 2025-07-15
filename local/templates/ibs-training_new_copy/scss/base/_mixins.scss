@@ -213,12 +213,12 @@
     font-weight: 300;
     font-size: 40px;
     line-height: 1;
-    margin-right: 12px;
+    // margin-right: 12px;
 
-    @include breakpoint(lg) {
+    @include breakpoint(xl) {
         font-size: 160px;
         margin-right: 0;
-        margin-bottom: 24px;
+        // margin-bottom: 24px;
         text-align: center;
     }
 }
@@ -232,9 +232,10 @@
     min-width: fit-content;
 
     &--wrapper {
-        max-width: 100%;
         overflow: auto;
         margin-bottom: 20px;
+        max-width: calc(100% + 32px);
+        margin-right: -32px;
 
         @include breakpoint(lg) {
             margin-bottom: 44px;

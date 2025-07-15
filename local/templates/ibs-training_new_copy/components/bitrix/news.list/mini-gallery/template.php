@@ -33,7 +33,7 @@ if (!empty($arResult['ITEMS'])) :?>
                     $showItemText = true;
                 }
             ?>
-                <div class="swiper-slide mini-gallery__item<?=($showItemText) ? ' flex-row w-500' : '';?><?=($bottomTitle) ? ' w-800' : '';?>">
+                <div class="swiper-slide mini-gallery__item<?=($showItemText) ? ' flex-sm-row w-500' : '';?><?=($bottomTitle) ? ' w-800' : '';?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                     <? if($arParams['USE_IMAGES_GALLERY'] === 'Y') {?>
                         <a href="<?=(!empty($item['DETAIL_PICTURE']['SRC'])) ? $item['DETAIL_PICTURE']['SRC'] : $item['PREVIEW_PICTURE']['SRC'] ?>" 
                             data-fancybox

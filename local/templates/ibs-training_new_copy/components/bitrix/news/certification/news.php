@@ -18,7 +18,9 @@ $this->setFrameMode(true);
 
 $arCurSection = [];
 $arFilter = Array('IBLOCK_ID'=>$arParams['IBLOCK_ID'], 'IBLOCK_TYPE'=>$arParams['IBLOCK_TYPE']);
-$arSelect = Array('ID', 'NAME', 'PICTURE', 'DESCRIPTION', 'UF_*');
+$arSelect = Array('ID', 'NAME', 'PICTURE', 'DESCRIPTION', 
+					'UF_BUTTONS', 'UF_BANNER_LINK', 'UF_BANNER_MOBILE_BG', 
+					'UF_BANNER_IMAGE', 'UF_BANNER_TITLE', 'UF_BANNER_LINK_TEXT', 'UF_WHY_US');
 $db_list = CIBlockSection::GetList(
 	Array("SORT"=>"ASC"), 
 	$arFilter,
@@ -33,12 +35,27 @@ while($ar_result = $db_list->GetNext())
 }
 
 $arCurSection = $arCurSection[0];
+
+    // $sectionId = 191; // ID раздела, который нужно привязать
+    // $targetSectionId = 196; // ID раздела, к которому привязываем
+    
+    // $bs = new CIBlockSection;
+    // $arFields = array(
+    //     "IBLOCK_ID" => $arParams['IBLOCK_ID'],
+    //     "IBLOCK_SECTION_ID" => $targetSectionId
+    // );
+    
+    // if($bs->Update($sectionId, $arFields)) {
+    //     echo "Привязка успешно обновлена";
+    // } else {
+    //     echo "Ошибка: ".$bs->LAST_ERROR;
+    // }
 ?>
 
 
 <section class="start bg--green">
-	<a href="<?=CFile::GetPath($arCurSection["PICTURE"])?>" class="start__image d-none d-xxl-block" target="_blank" data-fancybox>
-		<img src="<?=CFile::GetPath($arCurSection["PICTURE"])?>" alt="Образец сертификата">
+	<a href="<?=CFile::GetPath($arCurSection['PICTURE'])?>" class="start__image d-none d-xxl-block" target="_blank" data-fancybox>
+		<img src="<?=CFile::GetPath($arCurSection['PICTURE'])?>" alt="Образец сертификата">
 	</a>
 
 	<div class="container">
@@ -53,13 +70,13 @@ $arCurSection = $arCurSection[0];
 			false
 		);?>
 
-		<h1 class="title--h1"><?=$arCurSection["NAME"]?></h1>
+		<h1 class="title--h1"><?=$arCurSection['NAME']?></h1>
 
-		<?=$arCurSection["DESCRIPTION"]?>
+		<?=$arCurSection['DESCRIPTION']?>
 
 		<div class="row g-1 g-md-3 g-lg-32 start__btns">
 		<?
-		$arFilter = Array("IBLOCK_ID"=>193, "ID" => $arCurSection["UF_BUTTONS"]);
+		$arFilter = Array("IBLOCK_ID"=>193, "ID" => $arCurSection['UF_BUTTONS']);
 		$arSelect = Array("ID", "NAME", "PREVIEW_PICTURE", "PROPERTY_LINK", "PROPERTY_TARGET");
 		$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
 		while($ob = $res->GetNextElement())
@@ -68,7 +85,7 @@ $arCurSection = $arCurSection[0];
 
 			?>
 			<div class="col-12 col-sm-auto">
-				<a href="<?=$arFields['PROPERTY_LINK_VALUE']?>" <?=($arFields['PROPERTY_TARGET_VALUE'] == 'Да') ? ' target="_blank"' : '' ?> class="btn--white">
+				<a href="<?=$arFields['PROPERTY_LINK_VALUE']?>" <?=($arFields['PROPERTY_TARGET_VALUE'] == 'Да') ? ' target="_blank"' : '' ?> class="btn--white text-start">
 					<img src="<?=CFile::GetPath($arFields['PREVIEW_PICTURE']);?>" alt="<?=$arFields['NAME']?>">
 
 					<?=$arFields['NAME']?>
@@ -143,7 +160,7 @@ $APPLICATION->IncludeComponent(
 
 
 <div class="container">
-	<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/fundamental-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки']); ?>
+	<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/fundamental-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки под Фундаментально..']); ?>
 </div>
 
 
@@ -264,6 +281,12 @@ $APPLICATION->IncludeComponent(
 
 
 // Блок "Почему стоит пройти сертификацию у нас"
+
+
+// echo '<pre>';
+// var_dump(var_dump($arCurSection));
+// echo '</pre>';
+
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"why-us",
@@ -303,7 +326,7 @@ $APPLICATION->IncludeComponent(
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "",
-		"PARENT_SECTION" => "",
+		"PARENT_SECTION" => "1645",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array("ICON",""),

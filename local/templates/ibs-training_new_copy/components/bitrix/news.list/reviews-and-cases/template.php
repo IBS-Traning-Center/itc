@@ -22,8 +22,8 @@ use Local\Util\Functions;
 
 <section class="reviews">
 	<div class="container">
-		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/reviews-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?></h2>
-		<a href="/reviews/" target="_blank" class="reviews__link"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/read-all-reviews.php', [], ['MODE' => 'html', 'NAME' => 'Читать все']); ?></a>
+		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/reviews-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Отзывов']); ?></h2>
+		<a href="/reviews/" target="_blank" class="reviews__link"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/read-all-reviews.php', [], ['MODE' => 'html', 'NAME' => 'Кнопка Читать все отзывы']); ?></a>
 
 		<!-- Slider main container -->
 		<div class="reviews__slider">

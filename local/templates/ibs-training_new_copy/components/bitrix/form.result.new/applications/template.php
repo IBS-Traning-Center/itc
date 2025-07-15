@@ -25,7 +25,7 @@ $certLevels = [];
                     <h2 class="title--h2"><?= $arResult['arForm']['NAME'] ?></h2>
 
                     <?php if ($arResult['FORM_DESCRIPTION']) : ?>
-                        <div class="main-feedback-form-description mt-5">
+                        <div class="main-feedback-form-description">
                             <?= $arResult['FORM_DESCRIPTION'] ?>
                         </div>
                     <?php endif; ?>

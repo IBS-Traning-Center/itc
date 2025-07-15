@@ -1,22 +1,24 @@
 .jq-selectbox {
     margin-bottom: 24px;
     background-color: #fff;
+    font-family: 'Stag Sans', sans-serif;
     font-weight: 300;
     font-size: 16px;
-    line-height: 32px;
+    line-height: 24px;
     color: #000;
 
-    @include breakpoint(md) {
+    @media screen and (min-width: 1181px) {
         font-size: 20px;
+        line-height: 32px;
     }
 
     &__select {
-        height: 56px;
-        padding: 12px 56px 12px 16px;
+        height: 54px;
+        padding: 16px 54px 16px 16px;
         font: inherit;
         border: none;
 
-        @include breakpoint(md) {
+        @media screen and (min-width: 1181px) {
             height: 80px;
             padding: 24px 80px 24px 24px;
         }
@@ -34,7 +36,7 @@
         top: 50%;
         transform: translateY(-50%);
 
-        @include breakpoint(md) {
+        @media screen and (min-width: 1181px) {
             right: 24px;
         }
 
@@ -61,13 +63,13 @@
         }
 
         li {
-            height: 56px;
-            padding: 12px 56px 12px 16px;
+            height: 54px;
+            padding: 16px 56px 16px 16px;
             font: inherit;
             color: #000;
             position: relative;
 
-            @include breakpoint(md) {
+            @media screen and (min-width: 1181px) {
                 height: 80px;
                 padding: 24px 80px 24px 24px;
             }
@@ -86,7 +88,7 @@
                 background: url(/local/templates/ibs-training_new_copy/assets/images/icons/agree.svg) no-repeat center center;
                 transition: all .1s ease-in-out;
 
-                @include breakpoint(md) {
+                @media screen and (min-width: 1181px) {
                     right: 24px;
                 }
             }
@@ -144,10 +146,69 @@
     }
 }
 
-#mainFeedbackFormBlock {
+.main-feedback-form-block {
     .title--h2 {
         color: #fff;
         font-family: 'Stag Sans', sans-serif;
         max-width: 650px;
+    }
+
+    .main-feedback-form-description {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 18px;
+        margin-top: 16px;
+
+        @include breakpoint(xl) {
+            font-size: 24px;
+            line-height: 30px;
+            margin-top: 40px;
+        }
+    }
+}
+
+.certification-detail {
+    .main-feedback-form-block {
+        .title--h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+
+            @include breakpoint(xl) {
+                @include h2;
+            }
+        }
+    }
+
+    .submit-main-feedback-form {
+
+    }
+}
+
+form[name="banner_get_consult"] {
+    position: relative;
+
+    input[type="submit"] {
+        position: absolute;
+        bottom: 0;
+
+        @include breakpoint(lg) {
+            position: static;
+        }
+    }
+
+    .form-table + div {
+        margin-top: -30px;
+        padding-bottom: 70px;
+
+        @include breakpoint(lg) {
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    .question-block:not(.privacy_policy) {
+        @include breakpoint(lg) {
+            margin-bottom: 0 !important;
+        }
     }
 }

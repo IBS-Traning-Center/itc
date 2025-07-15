@@ -19,7 +19,7 @@ $this->setFrameMode(true);
 
 <section class="levels" id="levels">
 	<div class="container">
-		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/h2-levels.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок']); ?></h2>
+		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/h2-levels.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Ур. сертификации']); ?></h2>
 
 		<div class="levels__row">
 			<?foreach($arResult["ITEMS"] as $key => $arItem):

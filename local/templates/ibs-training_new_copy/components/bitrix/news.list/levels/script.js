@@ -112,4 +112,11 @@ $(document).ready(function () {
     $('.levels__item__modal--window__close').on('click', function (e) {
         $(this).parent().parent().removeClass('show');
     });
+
+    $('.scroll-to-levels').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('#levels').offset().top + 40
+        }, 1000);
+    });
 });

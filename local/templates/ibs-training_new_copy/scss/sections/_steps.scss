@@ -163,7 +163,7 @@
                         position: absolute;
                         content: '';
                         z-index: 10;
-                        width: calc(50%);
+                        width: 50%;
                         height: 1.5px;
                         background-color: #0827C4;
                         top: 50%;
@@ -215,14 +215,14 @@
                     }
                 }
             }
-        }
 
-        &:first-child .steps__list__item:last-child {
-            .steps__list__item__point {
-                &:after {
-                    @include breakpoint(lg) {
-                        right: -500px;
-                        width: calc(50% + 500px);
+            .steps__list__item:last-child {
+                .steps__list__item__point {
+                    &:after {
+                        @include breakpoint(lg) {
+                            right: -500px;
+                            width: calc(50% + 500px);
+                        }
                     }
                 }
             }

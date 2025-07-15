@@ -31,9 +31,9 @@
         position: relative;
         transition: all .3s ease-in-out;
         
-        &:not(:last-child) {
+        // &:not(:last-child) {
             border-bottom: 1px solid #000;
-        }
+        // }
 
         &:after {
             position: absolute;
