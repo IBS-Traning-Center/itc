@@ -39,8 +39,8 @@ Loc::loadMessages(__FILE__);
                             <script>
                                 $(document).ready(function () {
                                     const selectText = $('select[id^="form_dropdown_"]').next().find('.jq-selectbox__select-text');
-                                    // console.log(selectText);
                                     selectText.text('<?=$question['CAPTION'];?>');
+                                    $('.jq-selectbox__dropdown li:first').removeClass('sel').removeClass('selected');
                                 });
                             </script>
 

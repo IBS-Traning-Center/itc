@@ -36,23 +36,27 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                 </h1>
 
             <p style="font-weight: 400;">
-            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/testing-new/under-h1-text.php', [], 
+                <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/testing-new/under-h1-text.php', [], 
                             ['MODE' => 'html', 'NAME' => 'Заголовок']); ?>
-                </p>
-            
-                <div class="start__btns">
+            </p>
+        
+            <div class="start__btns">
+                <div>
                     <?
                     $APPLICATION->IncludeFile(
                         SITE_DIR . 'include/testing-new/start__btns-1.php', [], 
                         ['MODE' => 'html', 'NAME' => 'Кнопка 1']);
                     ?>
+                </div>
 
+                <div>
                     <?
                     $APPLICATION->IncludeFile(
                         SITE_DIR . 'include/testing-new/start__btns-2.php', [], 
                         ['MODE' => 'html', 'NAME' => 'Кнопка 2']);
                     ?>
                 </div>
+            </div>
         </div>
     </section>
 

@@ -80,7 +80,7 @@
     .btn--white {
         color: #2B418B !important;
         max-width: 100%;
-        padding: 24px 24px 24px calc(16px + 61px);
+        padding: 16px 16px 16px calc(16px + 61px);
         position: relative;
 
         @include breakpoint(xs) {
@@ -89,6 +89,10 @@
 
         @include breakpoint(md) {
             max-width: 340px;
+        }
+
+        @include breakpoint(lg) {
+            padding: 24px 24px 24px calc(16px + 61px);
         }
 
         > img {
@@ -243,6 +247,35 @@
             @include breakpoint(xxl) {
                 height: 97px;
             }
+
+            > div {
+                width: 100%;
+                max-width: 100%;
+    
+                @include breakpoint(xs) {
+                    max-width: 360px;
+                }
+    
+                @include breakpoint(md) {
+                    width: calc(50% - 12px);
+                }
+
+                @include breakpoint(full-hd) {
+                    max-width: unset;
+                }
+
+                &:first-child {
+                    @include breakpoint(xxl) {
+                        max-width: 372px !important;
+                    }
+                }
+
+                &:last-child {
+                    @include breakpoint(xxl) {
+                        max-width: 469px !important;
+                    }
+                }
+            }
         }
 
         .btn--white, .btn--dark {
@@ -252,17 +285,10 @@
             line-height: 1.4;
             width: 100%;
             max-width: 100%;
+            height: 100%;
             padding: 8px 16px;
 
-            @include breakpoint(xs) {
-                max-width: 360px;
-            }
-
-            @include breakpoint(md) {
-                width: calc(50% - 12px);
-            }
-
-            @include breakpoint(xxl) {
+            @include breakpoint(full-hd) {
                 font-size: 24px;
                 line-height: 30px;
                 height: 100%;
@@ -270,19 +296,18 @@
         }
 
         .btn--dark {
+            height: fit-content;
+            max-width: 100% !important;
+
             @include breakpoint(md) {
                 padding-left: 40px;
                 padding-right: 40px;
-                width: fit-content;
-                max-width: 372px;
+                height: 100%;
             }
         }
 
         .btn--white {
-            @include breakpoint(xxl) {
-                width: fit-content;
-                max-width: 469px;
-            }
+            max-width: 100% !important;
 
             img {
                 width: 61px;

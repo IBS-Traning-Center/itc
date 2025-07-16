@@ -601,6 +601,9 @@ label {
   color: #fff;
   cursor: auto;
 }
+.tabs__item:last-child {
+  margin-right: 30px;
+}
 
 .spaces {
   padding: 40px 0 !important;
@@ -895,6 +898,16 @@ label {
     margin-top: 40px;
   }
 }
+@media screen and (min-width: 768px) {
+  .main-feedback-form-block .submit-main-feedback-form {
+    height: 56px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .main-feedback-form-block .submit-main-feedback-form {
+    height: 70px !important;
+  }
+}
 
 .certification-detail .main-feedback-form-block .title--h2 {
   font-size: 32px;
@@ -925,6 +938,7 @@ label {
     line-height: 1.15;
   }
 }
+
 form[name=banner_get_consult] {
   position: relative;
 }
@@ -1038,7 +1052,7 @@ form[name=banner_get_consult] .form-table + div {
 .start .btn--white {
   color: #2B418B !important;
   max-width: 100%;
-  padding: 24px 24px 24px 77px;
+  padding: 16px 16px 16px 77px;
   position: relative;
 }
 @media screen and (min-width: 480px) {
@@ -1049,6 +1063,11 @@ form[name=banner_get_consult] .form-table + div {
 @media screen and (min-width: 768px) {
   .start .btn--white {
     max-width: 340px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .start .btn--white {
+    padding: 24px 24px 24px 77px;
   }
 }
 .start .btn--white > img {
@@ -1198,6 +1217,35 @@ form[name=banner_get_consult] .form-table + div {
     height: 97px;
   }
 }
+.page_testing .start__btns > div {
+  width: 100%;
+  max-width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .page_testing .start__btns > div {
+    max-width: 360px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .page_testing .start__btns > div {
+    width: calc(50% - 12px);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .page_testing .start__btns > div {
+    max-width: unset;
+  }
+}
+@media screen and (min-width: 1480px) {
+  .page_testing .start__btns > div:first-child {
+    max-width: 372px !important;
+  }
+}
+@media screen and (min-width: 1480px) {
+  .page_testing .start__btns > div:last-child {
+    max-width: 469px !important;
+  }
+}
 .page_testing .start .btn--white, .page_testing .start .btn--dark {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
@@ -1205,42 +1253,31 @@ form[name=banner_get_consult] .form-table + div {
   line-height: 1.4;
   width: 100%;
   max-width: 100%;
+  height: 100%;
   padding: 8px 16px;
 }
-@media screen and (min-width: 480px) {
-  .page_testing .start .btn--white, .page_testing .start .btn--dark {
-    max-width: 360px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .page_testing .start .btn--white, .page_testing .start .btn--dark {
-    width: calc(50% - 12px);
-  }
-}
-@media screen and (min-width: 1480px) {
+@media screen and (min-width: 1920px) {
   .page_testing .start .btn--white, .page_testing .start .btn--dark {
     font-size: 24px;
     line-height: 30px;
     height: 100%;
   }
 }
+.page_testing .start .btn--dark {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 100% !important;
+}
 @media screen and (min-width: 768px) {
   .page_testing .start .btn--dark {
     padding-left: 40px;
     padding-right: 40px;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    max-width: 372px;
+    height: 100%;
   }
 }
-@media screen and (min-width: 1480px) {
-  .page_testing .start .btn--white {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    max-width: 469px;
-  }
+.page_testing .start .btn--white {
+  max-width: 100% !important;
 }
 .page_testing .start .btn--white img {
   width: 61px;
@@ -2846,10 +2883,15 @@ form[name=banner_get_consult] .form-table + div {
     max-width: 75vw;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1160px) {
+  .levels__item__modal--window {
+    max-height: 121vh;
+  }
+}
+@media screen and (min-width: 1480px) {
   .levels__item__modal--window {
     max-width: 1024px;
-    max-height: 95vh;
+    max-height: 100vh;
     padding: 64px;
   }
 }
@@ -2992,8 +3034,6 @@ form[name=banner_get_consult] .form-table + div {
 }
 @media screen and (min-width: 1920px) {
   .levels__item__modal .btn--dark {
-    padding-top: 32px !important;
-    padding-bottom: 32px !important;
     font-size: 24px !important;
     line-height: 32px;
   }
