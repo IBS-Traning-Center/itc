@@ -123,23 +123,23 @@ $this->setFrameMode(true);
 <?endforeach;?>
 
 <div class="row assessment_types__item d-none d-lg-flex <?=$textClass?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<div class="col-4 assessment_types__item__cell">
+	<div class="col-4 assessment_types__item__cell">
 
-		</div>
+	</div>
 
-		<div class="col-8 assessment_types__props">
-			<div class="row">
-				<div class="col-4 assessment_types__item__cell">
-					<a class="btn-main btn--dark bg--blue" data-scroll="mainFeedbackFormBlock" data-type="testing">Оставить заявку</a>
-				</div>
+	<div class="col-8 assessment_types__props">
+		<div class="row">
+			<div class="col-4 assessment_types__item__cell">
+				<a class="btn-main btn--dark bg--blue" data-scroll="mainFeedbackFormBlock" data-type="testing">Оставить заявку</a>
+			</div>
 
-				<div class="col-4 assessment_types__item__cell">
-					<a class="btn-main btn--dark bg--blue" data-scroll="mainFeedbackFormBlock" data-type="expert">Оставить заявку</a>
-				</div>
+			<div class="col-4 assessment_types__item__cell">
+				<a class="btn-main btn--dark bg--blue" data-scroll="mainFeedbackFormBlock" data-type="expert">Оставить заявку</a>
+			</div>
 
-				<div class="col-4 assessment_types__item__cell">
-					<a class="btn-main btn--dark bg--blue" data-scroll="mainFeedbackFormBlock" data-type="cert">Оставить заявку</a>
-				</div>
+			<div class="col-4 assessment_types__item__cell">
+				<a class="btn-main btn--dark bg--blue" data-scroll="mainFeedbackFormBlock" data-type="cert">Оставить заявку</a>
 			</div>
 		</div>
 	</div>
+</div>

@@ -458,12 +458,13 @@
                     max-width: 75vw;
                 }
 
-                @include breakpoint(xl) {
-                    // width: 900px;
-                    // min-height: 800px;
-                    // height: auto;
+                @media screen and (min-width: 1160px) {
+                    max-height: 121vh;
+                }
+
+                @include breakpoint(xxl) {
                     max-width: 1024px;
-                    max-height: 95vh;
+                    max-height: 100vh;
                     padding: 64px;
                 }
 
@@ -604,8 +605,8 @@
                 min-height: unset;
 
                 @include breakpoint(full-hd) {
-                    padding-top: 32px !important;
-                    padding-bottom: 32px !important;
+                    // padding-top: 32px !important;
+                    // padding-bottom: 32px !important;
                     font-size: 24px !important;
                     line-height: 32px;
                 }

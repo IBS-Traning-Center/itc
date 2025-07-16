@@ -165,6 +165,16 @@
             margin-top: 40px;
         }
     }
+
+    .submit-main-feedback-form {
+        @include breakpoint(md) {
+            height: 56px !important;
+        }
+
+        @include breakpoint(full-hd) {
+            height: 70px !important;
+        }
+    }
 }
 
 .certification-detail {
@@ -177,10 +187,6 @@
                 @include h2;
             }
         }
-    }
-
-    .submit-main-feedback-form {
-
     }
 }
 

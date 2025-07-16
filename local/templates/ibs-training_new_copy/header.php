@@ -52,7 +52,7 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/script.js');
 Asset::getInstance()->addJs( '/local/runtime/script.js');
 Asset::getInstance()->addJs( '/local/vendors/script.js');
 
-// Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/jquery-3.7.1.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/jquery-3.7.1.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/swiper/swiper-bundle.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/js/app.js');
 

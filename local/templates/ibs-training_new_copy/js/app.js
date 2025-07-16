@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    $('*[data-scroll]').on('click', function (e) {
+        e.preventDefault();
+        let target = $(this).attr('data-scroll');
+        // console.log(target);
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: $('#' + target).offset().top
+            }, 1000);
+        }
+    });
+
     if($('.tabs').length > 0) {
         $('.tabs__item').on('click', function(e) {
             let tab = $(this).attr('data-tab');

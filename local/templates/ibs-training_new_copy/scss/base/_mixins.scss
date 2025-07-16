@@ -226,7 +226,6 @@
 @mixin tabs {
     display: flex;
     align-items: center;
-    // flex-wrap: wrap;
     gap: 8px;
     padding-bottom: 12px;
     min-width: fit-content;
@@ -261,6 +260,10 @@
             background-color: #000;
             color: #fff;
             cursor: auto;
+        }
+
+        &:last-child {
+            margin-right: 30px;
         }
     }
 }
