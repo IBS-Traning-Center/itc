@@ -1,3 +1,19 @@
 .page_testing {
-    
+    .main-feedback-form-block .main-feedback-form-container .questions-block .submit-main-feedback-form {
+        height: auto !important;
+    }
+
+    .start__btns {
+        > .col-12 {
+            @include breakpoint(full-hd) {
+                margin-top: 0 !important;
+            }
+        }
+
+        .btn--dark, .btn--white {
+            @include breakpoint(full-hd) {
+                height: calc(97px * 1.25) !important;
+            }
+        }
+    }
 }

@@ -26,7 +26,7 @@ $this->setFrameMode(true);
 					<span></span>
 				</div>
 				<p class="f-20"><?=$arItem['PROPERTIES']['LABEL']['VALUE']?></p>
-				<div class="d-none history__list__item__text"><?=$arItem['PREVIEW_TEXT']?></div>
+				<div class="history__list__item__text" style="display: none;"><?=$arItem['PREVIEW_TEXT']?></div>
 			</div>
 			<?
 		}
@@ -60,7 +60,7 @@ $this->setFrameMode(true);
 					<span></span>
 				</div>
 				<p class="f-20"><?=$arItem['PROPERTIES']['LABEL']['VALUE']?></p>
-				<div class="d-none history__list__item__text"><?=$arItem['PREVIEW_TEXT']?></div>
+				<div class="history__list__item__text" style="display: none;"><?=$arItem['PREVIEW_TEXT']?></div>
 			</div>
 			<?
 		}

@@ -228,7 +228,7 @@ body {
     line-height: 1.45;
   }
 }
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1480px) {
   .title--h2 {
     font-size: 56px;
     line-height: 1.15;
@@ -898,16 +898,6 @@ label {
     margin-top: 40px;
   }
 }
-@media screen and (min-width: 768px) {
-  .main-feedback-form-block .submit-main-feedback-form {
-    height: 56px !important;
-  }
-}
-@media screen and (min-width: 1920px) {
-  .main-feedback-form-block .submit-main-feedback-form {
-    height: 70px !important;
-  }
-}
 
 .certification-detail .main-feedback-form-block .title--h2 {
   font-size: 32px;
@@ -932,11 +922,14 @@ label {
     line-height: 1.45;
   }
 }
-@media screen and (min-width: 1280px) and (min-width: 1920px) {
+@media screen and (min-width: 1280px) and (min-width: 1480px) {
   .certification-detail .main-feedback-form-block .title--h2 {
     font-size: 56px;
     line-height: 1.15;
   }
+}
+.certification-detail .main-feedback-form-block .question-block.question {
+  margin-bottom: 24px;
 }
 
 form[name=banner_get_consult] {
@@ -1054,6 +1047,7 @@ form[name=banner_get_consult] .form-table + div {
   max-width: 100%;
   padding: 16px 16px 16px 77px;
   position: relative;
+  min-height: 80px;
 }
 @media screen and (min-width: 480px) {
   .start .btn--white {
@@ -1199,51 +1193,51 @@ form[name=banner_get_consult] .form-table + div {
     margin-bottom: 56px;
   }
 }
-.page_testing .start__btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 24px;
-}
-@media screen and (min-width: 992px) {
-  .page_testing .start__btns {
-    gap: 32px;
-  }
-}
-@media screen and (min-width: 1480px) {
-  .page_testing .start__btns {
-    height: 97px;
-  }
-}
-.page_testing .start__btns > div {
-  width: 100%;
-  max-width: 100%;
-}
-@media screen and (min-width: 480px) {
-  .page_testing .start__btns > div {
-    max-width: 360px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .page_testing .start__btns > div {
-    width: calc(50% - 12px);
+@media screen and (min-width: 1280px) {
+  .page_testing .start__btns > div:first-child {
+    max-width: 400px !important;
   }
 }
 @media screen and (min-width: 1920px) {
-  .page_testing .start__btns > div {
-    max-width: unset;
-  }
-}
-@media screen and (min-width: 1480px) {
   .page_testing .start__btns > div:first-child {
-    max-width: 372px !important;
+    max-width: 500px !important;
   }
 }
-@media screen and (min-width: 1480px) {
+@media screen and (min-width: 1280px) {
   .page_testing .start__btns > div:last-child {
-    max-width: 469px !important;
+    max-width: 400px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .page_testing .start__btns > div:last-child {
+    max-width: 550px !important;
+  }
+}
+.page_testing .start__btns > div:last-child .btn--white {
+  padding: 8px 16px 8px 85px;
+}
+@media screen and (min-width: 1920px) {
+  .page_testing .start__btns > div:last-child .btn--white {
+    padding: 16px 16px 16px 106.25px;
+  }
+  .page_testing .start__btns > div:last-child .btn--white img {
+    left: 24px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .page_testing .start__btns > div.col-md-6 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .page_testing .start__btns > div.col-md-6 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 50%;
   }
 }
 .page_testing .start .btn--white, .page_testing .start .btn--dark {
@@ -1583,7 +1577,7 @@ form[name=banner_get_consult] .form-table + div {
 .why-us {
   padding: 40px 0 0;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1280px) {
   .why-us {
     padding: 120px 0 0;
   }
@@ -1591,7 +1585,7 @@ form[name=banner_get_consult] .form-table + div {
 .why-us .title--h2 {
   margin-bottom: 32px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .why-us .title--h2 {
     margin-bottom: 56px;
   }
@@ -1600,12 +1594,12 @@ form[name=banner_get_consult] .form-table + div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 12px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .why-us__item {
     gap: 16px;
   }
@@ -1618,7 +1612,7 @@ form[name=banner_get_consult] .form-table + div {
   -o-object-fit: contain;
      object-fit: contain;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .why-us__item img {
     width: 72px;
     min-width: 72px;
@@ -1630,7 +1624,7 @@ form[name=banner_get_consult] .form-table + div {
   font-size: 16px;
   line-height: 24px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .why-us__item__title {
     font-size: 24px;
     line-height: 32px;
@@ -1648,7 +1642,7 @@ form[name=banner_get_consult] .form-table + div {
   font-family: "Noto Sans", sans-serif;
   margin-bottom: 8px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .why-us.with-titles .why-us__item__title {
     font-size: 32px;
     line-height: 44px;
@@ -1661,7 +1655,7 @@ form[name=banner_get_consult] .form-table + div {
   line-height: 24px;
   font-family: "Noto Sans", sans-serif;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .why-us.with-titles .why-us__item__desc {
     font-size: 20px;
     line-height: 32px;
@@ -1676,7 +1670,7 @@ form[name=banner_get_consult] .form-table + div {
 .why-us + .fundamental__btns {
   margin-bottom: 40px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .why-us + .fundamental__btns {
     margin-bottom: 120px;
   }
@@ -2141,7 +2135,7 @@ form[name=banner_get_consult] .form-table + div {
     line-height: 1.45;
   }
 }
-@media screen and (min-width: 1280px) and (min-width: 1920px) {
+@media screen and (min-width: 1280px) and (min-width: 1480px) {
   .differences__item__desc__modal .title--h2 {
     font-size: 56px;
     line-height: 1.15;
@@ -2925,6 +2919,16 @@ form[name=banner_get_consult] .form-table + div {
     height: 48px;
   }
 }
+@media screen and (min-width: 768px) {
+  .levels__item__modal--window .submit-main-feedback-form {
+    height: 56px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .levels__item__modal--window .submit-main-feedback-form {
+    height: 70px !important;
+  }
+}
 .levels__item__modal.show {
   opacity: 1;
   visibility: visible;
@@ -3167,22 +3171,32 @@ form[name=banner_get_consult] .form-table + div {
     padding: 120px 0 !important;
   }
 }
+@media screen and (min-width: 1920px) {
+  .reviews .title--h2 {
+    font-size: 80px;
+    line-height: 92px;
+  }
+}
 .reviews__link {
-  text-align: right;
-  width: 100%;
-  max-width: 100%;
   font-family: "Noto Sans", sans-serif;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 22px;
   margin-bottom: 32px;
   color: #000;
-  display: none;
+  display: block;
   padding-right: 42px;
   position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media screen and (min-width: 1280px) {
   .reviews__link {
-    display: block;
+    text-align: right;
+    font-size: 20px;
+    line-height: 32px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 .reviews__link:after {
@@ -3300,6 +3314,8 @@ form[name=banner_get_consult] .form-table + div {
 }
 @media screen and (min-width: 1920px) {
   .our-services .title--h2 {
+    font-size: 80px;
+    line-height: 92px;
     margin-bottom: 72px;
   }
 }
@@ -3448,7 +3464,7 @@ form[name=banner_get_consult] .form-table + div {
     padding: 16px 32px;
   }
 }
-.assessment_types__item__cell [data-subcode] {
+.assessment_types__item__cell [data-subcode]:not(.assessment_types--sm-btn) {
   position: relative;
   padding-left: 44px;
   font-weight: 500;
@@ -3456,7 +3472,7 @@ form[name=banner_get_consult] .form-table + div {
   margin-top: 8px;
   padding-left: 40px;
 }
-.assessment_types__item__cell [data-subcode]:before {
+.assessment_types__item__cell [data-subcode]:not(.assessment_types--sm-btn):before {
   position: absolute;
   content: "";
   left: 0;
@@ -3465,7 +3481,7 @@ form[name=banner_get_consult] .form-table + div {
   height: 32px;
   background: url(/local/templates/ibs-training_new_copy/assets/images/icons/enter.svg) no-repeat center center;
 }
-.assessment_types__item__cell [data-subcode]:before {
+.assessment_types__item__cell [data-subcode]:not(.assessment_types--sm-btn):before {
   background: url(/local/templates/ibs-training_new_copy/assets/images/icons/blue_agree.svg) no-repeat center center;
   background-size: contain;
   top: 50%;
@@ -3514,6 +3530,10 @@ form[name=banner_get_consult] .form-table + div {
     font-size: 32px;
     line-height: 44px;
   }
+}
+.assessment_types--sm-btn {
+  width: 100%;
+  max-width: 100%;
 }
 
 .history {
@@ -3692,6 +3712,9 @@ form[name=banner_get_consult] .form-table + div {
   .history__list__item:before {
     display: none;
   }
+}
+.history__list__item__text {
+  padding-top: 16px;
 }
 @media screen and (min-width: 992px) {
   .history__list__item.active {
@@ -4147,7 +4170,7 @@ form[name=banner_get_consult] .form-table + div {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .steps__list__item__number {
     font-size: 56px;
     line-height: 72px;
@@ -4161,13 +4184,13 @@ form[name=banner_get_consult] .form-table + div {
   line-height: normal;
   color: #000;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1480px) {
   .steps__list__item .steps__list__item__title {
     font-size: 22px;
     margin-top: 26px;
   }
 }
-@media screen and (min-width: 1480px) {
+@media screen and (min-width: 1920px) {
   .steps__list__item .steps__list__item__title {
     font-size: 32px;
     line-height: 44px;
@@ -4458,13 +4481,13 @@ form[name=banner_get_consult] .form-table + div {
   position: relative;
   margin-top: 16px;
   padding-bottom: 16px;
-  padding-left: 16px;
+  padding-left: 0;
   padding-right: 16px;
 }
 @media screen and (min-width: 992px) {
   .page_about__desc__text {
     padding-left: 120px;
-    margin-top: 40px;
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -4548,5 +4571,22 @@ form[name=banner_get_consult] .form-table + div {
 @media screen and (min-width: 1280px) {
   .page_about .offset-block {
     background-position: 98% 120px;
+  }
+}
+.page_about .main-feedback-form-block .main-feedback-form-container .questions-block .submit-main-feedback-form {
+  height: auto !important;
+}
+
+.page_testing .main-feedback-form-block .main-feedback-form-container .questions-block .submit-main-feedback-form {
+  height: auto !important;
+}
+@media screen and (min-width: 1920px) {
+  .page_testing .start__btns > .col-12 {
+    margin-top: 0 !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .page_testing .start__btns .btn--dark, .page_testing .start__btns .btn--white {
+    height: 121.25px !important;
   }
 }/*# sourceMappingURL=app.css.map */

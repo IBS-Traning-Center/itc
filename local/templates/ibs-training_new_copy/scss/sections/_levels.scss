@@ -494,6 +494,16 @@
                         height: 48px;
                     }
                 }
+
+                .submit-main-feedback-form {
+                    @include breakpoint(md) {
+                        height: 56px !important;
+                    }
+            
+                    @include breakpoint(full-hd) {
+                        height: 70px !important;
+                    }
+                }
             }
 
             &.show {

@@ -15,5 +15,13 @@ $(document).ready(function () {
                 $(this).removeClass('active');
             }
         );
+    } else {
+        $('.history__list__item').click(function () {
+            $(this).siblings().find('.history__list__item__text').slideUp();
+            $('.history__list__item').removeClass('active');
+
+            $(this).addClass('active');
+            $(this).find('.history__list__item__text').slideToggle();
+        });
     }
 });

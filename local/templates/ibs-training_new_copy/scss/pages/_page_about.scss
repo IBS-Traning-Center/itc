@@ -37,12 +37,14 @@
             position: relative;
             margin-top: 16px;
             padding-bottom: 16px;
-            padding-left: 16px;
+            // padding-left: 16px;
+            padding-left: 0;
             padding-right: 16px;
 
             @include breakpoint(lg) {
                 padding-left: 120px;
-                margin-top: 40px;
+                // margin-top: 40px;
+                margin-top: 0;
             }
             
             @include breakpoint(xl) {
@@ -132,4 +134,8 @@
     // .our-clients-block {
     //     margin-bottom: 0;
     // }
+
+    .main-feedback-form-block .main-feedback-form-container .questions-block .submit-main-feedback-form {
+        height: auto !important;
+    }
 }

@@ -104,7 +104,7 @@ $APPLICATION->SetTitle("Тренинги, корпоративное обуче�
 
 <section class="page_about__desc">
    <div class="container">
-      <div class="row position-relative g-5 m-0 justify-content-lg-between">
+      <div class="row position-relative gx-5 m-0 justify-content-lg-between">
          <div class="col-12 page_about__desc__quote">
             <div class="page_about__desc__image--mini">
                <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/page_about__desc__image.php', [], ['MODE' => 'html', 'NAME'=>'Фото']);?>
@@ -113,8 +113,10 @@ $APPLICATION->SetTitle("Тренинги, корпоративное обуче�
                <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/page_about__desc__quote.php', [], ['MODE' => 'html', 'NAME'=>'Иконка']);?>
             </div>
          </div>
-         <div class="col-12 col-lg-9 col-xxl-6 page_about__desc__text">
-            <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/offset_left_text.php', [], ['MODE' => 'html', 'NAME'=>'Текст']);?>
+         <div class="col-12 col-lg-9 col-xxl-6">
+            <div class="page_about__desc__text">
+               <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/offset_left_text.php', [], ['MODE' => 'html', 'NAME'=>'Текст']);?>
+            </div>
          </div>
          <div class="col-12 col-lg-3 col-xxl-6 page_about__desc__image">
             <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/page_about__desc__image.php', [], ['MODE' => 'html', 'NAME'=>'Фото']);?>

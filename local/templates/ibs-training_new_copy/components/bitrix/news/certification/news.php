@@ -160,7 +160,7 @@ $APPLICATION->IncludeComponent(
 
 
 <div class="container">
-	<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/fundamental-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки под Фундаментально..']); ?>
+	<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/cert-list-fundamental-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки под Фундаментально..']); ?>
 </div>
 
 

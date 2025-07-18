@@ -163,7 +163,9 @@
                 }
             }
 
-            // &__text {}
+            &__text {
+                padding-top: 16px;
+            }
 
             &.active {
                 @include breakpoint(lg) {

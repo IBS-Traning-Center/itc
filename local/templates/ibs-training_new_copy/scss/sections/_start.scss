@@ -82,6 +82,7 @@
         max-width: 100%;
         padding: 16px 16px 16px calc(16px + 61px);
         position: relative;
+        min-height: 80px;
 
         @include breakpoint(xs) {
             max-width: 480px;
@@ -236,43 +237,48 @@
         }
 
         &__btns {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-
-            @include breakpoint(lg) {
-                gap: 32px;
-            }
-
-            @include breakpoint(xxl) {
-                height: 97px;
-            }
-
             > div {
-                width: 100%;
-                max-width: 100%;
-    
-                @include breakpoint(xs) {
-                    max-width: 360px;
-                }
-    
-                @include breakpoint(md) {
-                    width: calc(50% - 12px);
-                }
-
-                @include breakpoint(full-hd) {
-                    max-width: unset;
-                }
-
                 &:first-child {
-                    @include breakpoint(xxl) {
-                        max-width: 372px !important;
+                    @include breakpoint(xl) {
+                        max-width: 400px !important;
+                    }
+
+                    @include breakpoint(full-hd) {
+                        max-width: 500px !important;
                     }
                 }
 
                 &:last-child {
-                    @include breakpoint(xxl) {
-                        max-width: 469px !important;
+                    @include breakpoint(xl) {
+                        max-width: 400px !important;
+                    }
+
+                    @include breakpoint(full-hd) {
+                        max-width: 550px !important;
+                    }
+
+                    .btn--white {
+                        padding: 8px 16px 8px calc(24px + 61px);
+
+                        @include breakpoint(full-hd) {
+                            padding: 16px 16px 16px calc(85px * 1.25);
+
+                            img {
+                                left: 24px;
+                            }
+                        }
+                    }
+                }
+
+                &.col-md-6 {
+                    @include breakpoint(xs) {
+                        flex: 0 0 auto;
+                        width: 80%;
+                    }
+
+                    @include breakpoint(md) {
+                        flex: 0 0 auto;
+                        width: 50%;
                     }
                 }
             }

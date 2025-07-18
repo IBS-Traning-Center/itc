@@ -14,7 +14,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
 
     <?// Блок - обложка раздела ?>
     <section class="start bg--gray">
-        <a href="./start-image.jpg" class="start__image h-100 d-none d-xxl-block" target="_blank" data-fancybox>
+        <a href="./start-image.jpg" class="start__image h-100 d-none d-xl-block" target="_blank" data-fancybox>
             <img src="./start-image.jpg" alt="Оценка, тестирование и сертификация IT-специалистов">
         </a>
 
@@ -40,8 +40,8 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                             ['MODE' => 'html', 'NAME' => 'Заголовок']); ?>
             </p>
         
-            <div class="start__btns">
-                <div>
+            <div class="row flex-column flex-sm-row g-4 g-lg-32 start__btns">
+                <div class="col-12 col-md-6">
                     <?
                     $APPLICATION->IncludeFile(
                         SITE_DIR . 'include/testing-new/start__btns-1.php', [], 
@@ -49,7 +49,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                     ?>
                 </div>
 
-                <div>
+                <div class="col-12 col-md-6">
                     <?
                     $APPLICATION->IncludeFile(
                         SITE_DIR . 'include/testing-new/start__btns-2.php', [], 
