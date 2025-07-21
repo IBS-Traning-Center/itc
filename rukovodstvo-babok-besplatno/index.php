@@ -7,7 +7,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/babok/babok.css');
 
 global $APPLICATION;
-$APPLICATION->SetTitle('Руководство BABOK бесплатно');
+$APPLICATION->SetTitle('«Руководство BABOK» на русском языке бесплатно');
 ?>
 
 <div class="ruk-babok">
@@ -26,7 +26,7 @@ $APPLICATION->SetTitle('Руководство BABOK бесплатно');
                 ); ?>
                 <h1><?= $APPLICATION->GetTitle() ?></h1>
                 <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/banok/banner_text.php', [], ['MODE' => 'html', 'NAME' => 'Текст на баннере']); ?></p>
-                <a class="btn-main size-l" data-scroll="mainFeedbackFormBlock">
+                <a class="btn-main size-l" data-scroll="callback-contacts">
                     <span class="f-24">Оставить заявку</span>
                 </a>
             </div>
@@ -51,9 +51,13 @@ $APPLICATION->SetTitle('Руководство BABOK бесплатно');
                         <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/banok/what_babok_icon_1.php', [], ['MODE' => 'html', 'NAME' => 'Что такое BABOK Иконка']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/banok/what_babok_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Что такое BABOK Текст']); ?></p>
                     </div>
-                    <div class="flex-babok">
+                    <div class="flex-babok margin-bottom56">
                         <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/banok/what_babok_icon_2.php', [], ['MODE' => 'html', 'NAME' => 'Что такое BABOK Иконка']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/banok/what_babok_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Что такое BABOK Текст']); ?></p>
+                    </div>
+                    <div class="flex-babok">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/banok/what_babok_icon_3.php', [], ['MODE' => 'html', 'NAME' => 'Что такое BABOK Иконка']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/banok/what_babok_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Что такое BABOK Текст']); ?></p>
                     </div>
                 </div>
                 <div class="what-babok-image">
@@ -76,6 +80,69 @@ $APPLICATION->SetTitle('Руководство BABOK бесплатно');
                 ); ?>
             </div>
         </div>
+    </div>
+<section id="banner" class="banner-main-page">
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:advertising.banner",
+        ".default",
+        array(
+            "TYPE" => "ON_MAIN",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "0"
+        ),
+        false
+    );?>
+</section>
+<div id="callback-contacts">
+    <section class="section-box _callback-contacts">
+        <div class="section-box__container container">
+            <div class="section-box__header">
+                <div class="section-box__title">
+                    <b>Зарегистрируйтесь на <a href="/catalog/complex/kp_BA_Middle/" target="_blank">программу</a>, пройдите обучение<br>и получите книгу «Руководство BABOK»</b>
+                </div>
+            </div>
+            <div class="section-box__content">
+                <form class="form callback-mini" name="callback-contacts" data-form-type="webform" data-form-id="38">
+                    <div class="form__success">
+                        <div class="form__success-message">
+                            <b>Спасибо.</b>
+                            <br>
+                            Ваш запрос был получен.
+                        </div>
+                    </div>
+                    <div class="form__content">
+                        <div class="fields">
+                            <?= bitrix_sessid_post() ?>
+                            <input type="hidden" name="addField" value="">
+                            <input type="hidden" name="school" value="Промостраница">
+                            <div class="form-row">
+                                <label class="field-box"> <input class="field" type="text" name="name" placeholder="Имя" value=""></label>
+                                <label class="field-box"> <input class="field" type="text" name="company" placeholder="Компания" value=""></label>
+                            </div>
+                            <div class="form-row">
+                                <label class="field-box"> <input class="field" type="text" name="email" placeholder="E-mail" value=""></label>
+                                <label class="field-box"> <input class="field" type="tel" name="phone" placeholder="Телефон" value=""></label>
+                            </div>
+                            <div class="form-row">
+                                <label class="field-box _wide">
+                                    <textarea class="field" name="message" placeholder="Сообщение"></textarea>
+                                </label>
+                            </div>
+                            <input class="field" type="hidden" name="cid" id="clientID" value="">
+                            <br>
+                            <label class="agree-text" style="color: #003979">
+                                <input name="agree" value="N" type="checkbox">Ознакомлен с <a style="text-decoration: underline;" target="_blank" href="/privacy-policy/">политикой обработки персональных данных</a>
+                            </label>
+                            <label class="agree-text" required style="color: #003979">
+                                <input required name="agree-2" value="N" type="checkbox">Cоглашаюсь с <a style="text-decoration: underline; color: #fb9024" target="_blank" href="/agree_of_subject/">условиями обработки персональных данных</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="button _submit _w-full _size-l">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     </div>
     <div class="babok-block telegram">
         <?php $APPLICATION->IncludeComponent(

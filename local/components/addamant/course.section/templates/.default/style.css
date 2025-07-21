@@ -1,3 +1,10 @@
+.banner-main-page img{
+  max-width: 100% !important;
+  width: 100%;
+  height: auto;
+  padding-bottom: 24px;
+}
+
 .top-page-banner.section-page .container .banner-content {
     max-width: 100%;
 }

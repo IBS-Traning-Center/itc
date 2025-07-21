@@ -51,8 +51,31 @@ $request = $application->getContext()->getRequest();
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<!-- Marquiz script start -->
+<script>
+(function(w, d, s, o){
+  var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {
+    if (document.readyState !== 'loading') Marquiz.init(o);
+    else document.addEventListener("DOMContentLoaded", function() {
+      Marquiz.init(o);
+    });
+  };
+  d.head.insertBefore(j, d.head.firstElementChild);
+})(window, document, 'script', {
+    host: '//quiz.marquiz.ru',
+    region: 'ru',
+    id: '6862451bdb66eb00185dbcc2',
+    autoOpen: false,
+    autoOpenFreq: 'once',
+    openOnExit: false,
+    disableOnMobile: false
+  }
+);
+</script>
+<!-- Marquiz script end -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="yandex-verification" content="e0363bd7fb634c51"/>
+    <meta name="skill2go-school-confirmation-token" content="UIj8-QgobjZZfMTIvkuP_hvLDmJDs7Ta"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <meta name=viewport content="width=device-width">

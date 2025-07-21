@@ -27,6 +27,7 @@ class CourseDetail {
     this.selectDate = document.querySelectorAll(data.selectDateClass);
     this.dateInput = document.querySelector(data.dateInputClass);
     this.selectDatesContent = document.querySelector(data.selectDatesContentClass);
+    this.videoItem = document.querySelectorAll(data.videoItemClass);
 
     this.addCourseDetailEventHandler();
     this.initLinkedCoursesSlider();
@@ -127,6 +128,40 @@ class CourseDetail {
   }
 
   initLinkedCoursesSlider() {
+    let videoBlock = $('.videos-items');
+
+        if (videoBlock) {
+            videoBlock.slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: false,
+                autoplay: false,
+                arrows: false,
+                dots: true,
+                variableWidth: false,
+                responsive: [
+                    {
+                        breakpoint: 1281,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 789,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 551,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        }
+
     let linkedCoursesBlock = $(".linked-courses-block");
 
     if (linkedCoursesBlock) {

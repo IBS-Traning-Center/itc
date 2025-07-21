@@ -3,6 +3,7 @@
 $MESS['NEW_COURSE_TEXT'] = 'Новинка';
 $MESS['DEV_COURSE_TEXT'] = 'В разработке';
 $MESS['FORMAT_BTN_SHOW_TEXT'] = 'Подробнее';
+$MESS['BABOK_BTN_TEXT'] = 'Хочу BABOK';
 $MESS['DIPLOM_TEXT'] = 'Диплом о переподготовке';
 $MESS['DIPLOM_BTN_SHOW_TEXT'] = 'Смотреть пример';
 $MESS['REWARD_BTN_SHOW_TEXT'] = 'Смотреть сертификат';

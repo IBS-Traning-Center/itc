@@ -239,6 +239,7 @@
     /* ]]> */
 </script>
 <?php $APPLICATION->IncludeComponent('luxoft:vue.eventbus', ''); ?>
+<script>(function(t, p) {window.Marquiz ? Marquiz.add([t, p]) : document.addEventListener('marquizLoaded', function() {Marquiz.add([t, p])})})('Pop', {id: '6862451bdb66eb00185dbcc2', title: 'Проверьте свой уровень и получите чек-лист «Как разбить работу на задачи»', text: 'Какой вы бизнес-аналитик?', delay: 5, textColor: '#000', bgColor: '#C4EB57', svgColor: '#000', closeColor: '#ffffff', bonusCount: 0, bonusText: false, type: 'full', position: 'position_bottom', rounded: false, shadow: false, blicked: false, pulse: false, disableOnMobile: false})</script>
 </body>
 
 </html>

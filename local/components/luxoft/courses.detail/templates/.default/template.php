@@ -190,6 +190,17 @@ function plural_form($number, $after) {
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
+            <?php if ($arResult['tools'] && is_array($arResult['tools'])) : ?>
+                <h2><?= Loc::getMessage('TOOLS_TITLE') ?></h2>
+                <div class="for-course-block">
+                    <?php foreach ($arResult['tools'] as $item) : ?>
+                        <div class="for-course-item">
+                            <img src="<?= $item['UF_PICTURE'] ?>" alt="<?= $item['UF_NAME'] ?>">
+                            <span class="f-20"><?= $item['UF_NAME'] ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
             <?php if ($arResult['schedule']) : ?>
                 <h2><?= Loc::getMessage('TIMETABLE_TITLE') ?></h2>
                 <div class="timetable-list quarter">
@@ -368,6 +379,27 @@ function plural_form($number, $after) {
                         </div>
                     <?php endforeach; ?>
                 </div>
+            <?php endif; ?>
+            <?php if (!empty($arResult['videos'])) : ?>
+                    <h2><?= Loc::getMessage('VIDEO_TITLE') ?></h2>
+                    <div class="videos-block">
+                        <div class="videos-items">
+                            <?php foreach ($arResult['videos'] as $key => $video) : ?>
+                                <?php if ($video['PLATFORM'] == 'rutube'): ?>
+                                    <a class="video-item">
+                                        <iframe src="https://rutube.ru/play/embed/<?= $video['ID'] ?>" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                                        <span class="f-24"><?= $video['UF_NAME'] ?></span>
+                                    </a>
+                                <?php endif; ?>
+                                <?php if ($video['PLATFORM'] == 'youtube'): ?>
+                                    <a data-fancybox="video" href="<?= $video['UF_VIDEO_LINK'] ?>" class="video-item">
+                                        <img alt="<?= $video['UF_NAME'] ?>" src="<?= CFile::GetPath($video['UF_PICTURE']) ?>">
+                                        <span class="f-24"><?= $video['UF_NAME'] ?></span>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
             <?php endif; ?>
             <?php if ($arResult['schedule'][0]['trainer']) : ?>
                 <?php $trainer = $arResult['schedule'][0]['trainer']; ?>

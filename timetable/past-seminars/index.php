@@ -58,7 +58,7 @@ use Local\Util\Functions;
         </div>
         <div class="timetable-filter-type-shadow"></div>
         <div class="timetable-filter-type-mobile">
-            <div class="timetable-filter-type-btn btn-main size-l">Фильтр</div>
+            
             <div class="catalog-info-links">
                 <a onclick="$('.send-price-form-area').show(); return;"> <?= Functions::buildSVG('download-catalog', SITE_TEMPLATE_PATH. '/assets/images/icons')?> Скачать прайс</a>
             </div>

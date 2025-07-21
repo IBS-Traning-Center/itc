@@ -143,10 +143,34 @@ if (!empty($arResult)) : ?>
                             </button>
                         </div>
                     <?php endif; ?>
+                    <?php if ($arResult['CODE'] == 'BA-PRG-002') : ?>
+                        <div class="line-buttons" style="width: 100%">
+                            <a href="/rukovodstvo-babok-besplatno/">
+                                <button class="btn-main" style="background-color: #FF7B00; width: 100%">
+                                    <span class="f-16"><?= Loc::getMessage('BABOK_BTN_TEXT') ?></span>
+                                </button>
+                            </a>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
+    <section id="banner" class="banner-main-page" style="padding: 0 20px 0 0">
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:advertising.banner",
+            ".default",
+            array(
+                "COMPONENT_TEMPLATE" => ".default",
+                "TYPE" => "ON_MAIN",
+                "NOINDEX" => "Y",
+                "QUANTITY" => "1",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "0"
+            ),
+            false
+        );?>
+    </section>
     <div class="main-content-complex-course container">
         <div class="left-block">
             <?php if ($arResult['DESCRIPTION']) : ?>
@@ -234,6 +258,15 @@ if (!empty($arResult)) : ?>
                             </button>
                         </div>
                     <?php endif; ?>
+                    <?php if ($arResult['CODE'] == 'BA-PRG-002') : ?>
+                        <div class="line-buttons" style="width: 100%">
+                            <a href="/rukovodstvo-babok-besplatno/">
+                                <button class="btn-main" style="background-color: #FF7B00; width: 100%">
+                                    <span class="f-16"><?= Loc::getMessage('BABOK_BTN_TEXT') ?></span>
+                                </button>
+                            </a>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -258,9 +291,33 @@ if (!empty($arResult)) : ?>
                         </button>
                     </div>
                 <?php endif; ?>
+                <?php if ($arResult['CODE'] == 'BA-PRG-002') : ?>
+                        <div class="line-buttons" style="width: 100%">
+                            <a href="/rukovodstvo-babok-besplatno/">
+                                <button class="btn-main" style="background-color: #FF7B00; width: 100%">
+                                    <span class="f-16"><?= Loc::getMessage('BABOK_BTN_TEXT') ?></span>
+                                </button>
+                            </a>
+                        </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
+    <section id="banner" class="banner-main-page" style="padding: 0 20px 0 0">
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:advertising.banner",
+            ".default",
+            array(
+                "COMPONENT_TEMPLATE" => ".default",
+                "TYPE" => "ON_MAIN",
+                "NOINDEX" => "Y",
+                "QUANTITY" => "1",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "0"
+            ),
+            false
+        );?>
+    </section>
     <?php if (!empty($arResult['TARIFFS'])) : ?>
         <div class="tariffs-block">
             <div class="container">

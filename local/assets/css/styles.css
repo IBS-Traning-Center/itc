@@ -1512,7 +1512,7 @@ span.arrow-left, span.arrow-right {
   line-height: 46px;
   padding: 0 21px;
   color: #fff !important;
-  background: #f17227;
+  background: var(--button-blue);
   border-radius: 4px;
   font-weight: 600;
   font-size: 12px;
@@ -1522,7 +1522,7 @@ span.arrow-left, span.arrow-right {
   white-space: nowrap;
 }
 .sign-in:hover {
-  background: #f2630e;
+  background: var(--button-blue);
 }
 .sign-in:disabled {
   background: #ccc;

@@ -1,1 +1,1 @@
-Пройдя обучение <a href="/training/katalog_kursov/kompleksnye-programmy/babok_dlya_biznes_analitika/?utm_source=blog&utm_medium=referral&utm_campaign=promo_babok">на наших курсах BABOK,</a> вы получите бумажную версию Руководства BABOK на русском языке в подарок!
+Пройдя обучение на программе <a href="/catalog/complex/kp_BA_Middle/" target="_blank">«Бизнес-аналитик. Уровень Middle»</a>, вы получите книгу «Руководство к своду знаний по бизнес-анализу BABOK» на русском языке в подарок!
