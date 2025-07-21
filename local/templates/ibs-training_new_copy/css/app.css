@@ -1103,10 +1103,14 @@ form[name=banner_get_consult] .form-table + div {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 736px;
-  height: calc(100% - 120px);
+  display: block;
+}
+.start__image img {
+  max-width: 736px;
+  max-height: calc(100% - 120px);
   -o-object-fit: contain;
      object-fit: contain;
+  display: block;
 }
 .start__numbers {
   -webkit-box-pack: justify;
@@ -1205,7 +1209,7 @@ form[name=banner_get_consult] .form-table + div {
 }
 @media screen and (min-width: 1280px) {
   .page_testing .start__btns > div:last-child {
-    max-width: 400px !important;
+    max-width: 432px !important;
   }
 }
 @media screen and (min-width: 1920px) {
@@ -1213,13 +1217,7 @@ form[name=banner_get_consult] .form-table + div {
     max-width: 550px !important;
   }
 }
-.page_testing .start__btns > div:last-child .btn--white {
-  padding: 8px 16px 8px 85px;
-}
 @media screen and (min-width: 1920px) {
-  .page_testing .start__btns > div:last-child .btn--white {
-    padding: 16px 16px 16px 106.25px;
-  }
   .page_testing .start__btns > div:last-child .btn--white img {
     left: 24px;
   }
@@ -1249,6 +1247,11 @@ form[name=banner_get_consult] .form-table + div {
   max-width: 100%;
   height: 100%;
   padding: 8px 16px;
+}
+@media screen and (min-width: 992px) {
+  .page_testing .start .btn--white, .page_testing .start .btn--dark {
+    font-size: 20px;
+  }
 }
 @media screen and (min-width: 1920px) {
   .page_testing .start .btn--white, .page_testing .start .btn--dark {
@@ -3707,6 +3710,7 @@ form[name=banner_get_consult] .form-table + div {
   background-color: #fff;
   width: 1.5px;
   height: 100%;
+  z-index: 10;
 }
 @media screen and (min-width: 992px) {
   .history__list__item:before {
@@ -3716,25 +3720,62 @@ form[name=banner_get_consult] .form-table + div {
 .history__list__item__text {
   padding-top: 16px;
 }
+.history__list__item.active .history__list__item__head {
+  padding: 16px;
+  position: relative;
+}
+@media screen and (min-width: 992px) {
+  .history__list__item.active .history__list__item__head {
+    padding: 0;
+    position: static;
+  }
+}
+.history__list__item.active .history__list__item__head:before {
+  position: absolute;
+  content: "";
+  left: -30px;
+  top: 0;
+  width: calc(100% + 30px);
+  height: 100%;
+  background-color: #fff;
+}
+@media screen and (min-width: 992px) {
+  .history__list__item.active .history__list__item__head:before {
+    display: none;
+  }
+}
+.history__list__item.active .history__list__item__point span {
+  left: -25px;
+}
+@media screen and (min-width: 992px) {
+  .history__list__item.active .history__list__item__point span {
+    left: 50%;
+  }
+}
+.history__list__item.active .title--h2, .history__list__item.active .f-20 {
+  color: #0827C4;
+  position: relative;
+  z-index: 10;
+}
+.history__list__item.active .title--h2.infin {
+  color: transparent;
+}
+.history__list__item.active .infinity path {
+  fill: #0827C4;
+}
+.history__list__item.active .history__list__item__point:before, .history__list__item.active .history__list__item__point:after {
+  background-color: #fff;
+  mix-blend-mode: difference;
+}
+.history__list__item.active .history__list__item__point span {
+  border-color: #0827C4;
+}
+.history__list__item.active:before {
+  mix-blend-mode: difference;
+}
 @media screen and (min-width: 992px) {
   .history__list__item.active {
     background-color: #fff;
-  }
-  .history__list__item.active .title--h2, .history__list__item.active .f-20 {
-    color: #0827C4;
-  }
-  .history__list__item.active .title--h2.infin {
-    color: transparent;
-  }
-  .history__list__item.active .infinity path {
-    fill: #0827C4;
-  }
-  .history__list__item.active .history__list__item__point:before, .history__list__item.active .history__list__item__point:after {
-    background-color: #fff;
-    mix-blend-mode: difference;
-  }
-  .history__list__item.active .history__list__item__point span {
-    border-color: #0827C4;
   }
 }
 @media screen and (min-width: 992px) {
@@ -4585,8 +4626,34 @@ form[name=banner_get_consult] .form-table + div {
     margin-top: 0 !important;
   }
 }
+.page_testing .start__btns .btn--dark, .page_testing .start__btns .btn--white {
+  padding: 16px !important;
+}
+@media screen and (min-width: 768px) {
+  .page_testing .start__btns .btn--dark, .page_testing .start__btns .btn--white {
+    min-height: 80px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .page_testing .start__btns .btn--dark, .page_testing .start__btns .btn--white {
+    padding: 24px !important;
+  }
+}
 @media screen and (min-width: 1920px) {
   .page_testing .start__btns .btn--dark, .page_testing .start__btns .btn--white {
     height: 121.25px !important;
+  }
+}
+.page_testing .start__btns .btn--white {
+  padding: 16px 16px 16px 77px !important;
+}
+@media screen and (min-width: 992px) {
+  .page_testing .start__btns .btn--white {
+    padding: 8px 24px 8px 77px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .page_testing .start__btns .btn--white {
+    padding-left: 110px !important;
   }
 }/*# sourceMappingURL=app.css.map */

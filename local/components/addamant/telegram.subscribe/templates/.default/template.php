@@ -17,7 +17,7 @@ $this->setFrameMode(false);
 
 ?>
 
-<div class="subscribe-main-page-block container">
+<div class="subscribe-main-page-block container<?=(!empty($arParams['CUSTOM_CLASSES'])) ? ' '.$arParams['CUSTOM_CLASSES'] : ''?>">
     <div class="main-content-sub">
         <div class="subscribe-block_icon">
             <?= Functions::buildSVG('telegram_icon', $templateFolder . '/images') ?>

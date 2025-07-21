@@ -577,28 +577,26 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
 
 
     <section class="bg--lightblue">
-        <div class="container">
-            <?$APPLICATION->IncludeComponent(
-                "bitrix:form.result.new",
-                "banner-get-consult",
-                array(
-                    "CUSTOM_CLASSES" => "spaces",
-                    "CACHE_TIME" => "3600",
-                    "CACHE_TYPE" => "A",
-                    "CHAIN_ITEM_LINK" => "",
-                    "CHAIN_ITEM_TEXT" => "",
-                    "EDIT_URL" => "",
-                    "IGNORE_CUSTOM_TEMPLATE" => "N",
-                    "LIST_URL" => "",
-                    "SEF_MODE" => "N",
-                    "SUCCESS_URL" => "",
-                    "AJAX_MODE" => "Y",
-                    "USE_EXTENDED_ERRORS" => "N",
-                    "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-                    "WEB_FORM_ID" => "49"
-                )
-            );?>
-        </div>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:form.result.new",
+            "banner-get-consult",
+            array(
+                "CUSTOM_CLASSES" => "spaces",
+                "CACHE_TIME" => "3600",
+                "CACHE_TYPE" => "A",
+                "CHAIN_ITEM_LINK" => "",
+                "CHAIN_ITEM_TEXT" => "",
+                "EDIT_URL" => "",
+                "IGNORE_CUSTOM_TEMPLATE" => "N",
+                "LIST_URL" => "",
+                "SEF_MODE" => "N",
+                "SUCCESS_URL" => "",
+                "AJAX_MODE" => "Y",
+                "USE_EXTENDED_ERRORS" => "N",
+                "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
+                "WEB_FORM_ID" => "49"
+            )
+        );?>
     </section>
         
 
@@ -662,7 +660,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
     );?>
 
 
-    <div class="testing-content-block container telegram">
+    <div class="testing-content-block telegram bg--gray spaces">
         <?php $APPLICATION->IncludeComponent(
             "addamant:telegram.subscribe",
             ".default",
@@ -671,7 +669,8 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                 "CACHE_TYPE" => "A",
                 "SUBSCRIBE_TITLE" => "",
                 "SUBSCRIBE_LINK" => "https://t.me/IBS_Training_Center",
-                "COMPONENT_TEMPLATE" => ".default"
+                "COMPONENT_TEMPLATE" => ".default",
+                "CUSTOM_CLASSES" => "pt-0 pb-0"
             ),
             false
         ); ?>
