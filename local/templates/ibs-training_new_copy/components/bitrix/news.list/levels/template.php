@@ -107,7 +107,9 @@ $this->setFrameMode(true);
 								<div class="levels__item__modal--window">
 									<span class="levels__item__modal--window__close"></span>
 
-									<?=$arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'];?>
+									<?if(!empty($arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'])) {?>
+										<?=$arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'];?>
+									<?}?>
 
 									<?
 									$APPLICATION->IncludeComponent(

@@ -14,7 +14,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
 
     <?// Блок - обложка раздела ?>
     <section class="start bg--gray">
-        <a href="./start-image.jpg" class="start__image h-100 d-none d-xxl-block" target="_blank" data-fancybox>
+        <a href="./start-image.jpg" class="start__image h-100 d-none d-xl-block" target="_blank" data-fancybox>
             <img src="./start-image.jpg" alt="Оценка, тестирование и сертификация IT-специалистов">
         </a>
 
@@ -40,8 +40,8 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                             ['MODE' => 'html', 'NAME' => 'Заголовок']); ?>
             </p>
         
-            <div class="start__btns">
-                <div>
+            <div class="row flex-column flex-sm-row g-4 g-lg-32 start__btns">
+                <div class="col-12 col-md-6">
                     <?
                     $APPLICATION->IncludeFile(
                         SITE_DIR . 'include/testing-new/start__btns-1.php', [], 
@@ -49,7 +49,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                     ?>
                 </div>
 
-                <div>
+                <div class="col-12 col-md-6">
                     <?
                     $APPLICATION->IncludeFile(
                         SITE_DIR . 'include/testing-new/start__btns-2.php', [], 
@@ -577,28 +577,26 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
 
 
     <section class="bg--lightblue">
-        <div class="container">
-            <?$APPLICATION->IncludeComponent(
-                "bitrix:form.result.new",
-                "banner-get-consult",
-                array(
-                    "CUSTOM_CLASSES" => "spaces",
-                    "CACHE_TIME" => "3600",
-                    "CACHE_TYPE" => "A",
-                    "CHAIN_ITEM_LINK" => "",
-                    "CHAIN_ITEM_TEXT" => "",
-                    "EDIT_URL" => "",
-                    "IGNORE_CUSTOM_TEMPLATE" => "N",
-                    "LIST_URL" => "",
-                    "SEF_MODE" => "N",
-                    "SUCCESS_URL" => "",
-                    "AJAX_MODE" => "Y",
-                    "USE_EXTENDED_ERRORS" => "N",
-                    "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-                    "WEB_FORM_ID" => "49"
-                )
-            );?>
-        </div>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:form.result.new",
+            "banner-get-consult",
+            array(
+                "CUSTOM_CLASSES" => "spaces",
+                "CACHE_TIME" => "3600",
+                "CACHE_TYPE" => "A",
+                "CHAIN_ITEM_LINK" => "",
+                "CHAIN_ITEM_TEXT" => "",
+                "EDIT_URL" => "",
+                "IGNORE_CUSTOM_TEMPLATE" => "N",
+                "LIST_URL" => "",
+                "SEF_MODE" => "N",
+                "SUCCESS_URL" => "",
+                "AJAX_MODE" => "Y",
+                "USE_EXTENDED_ERRORS" => "N",
+                "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
+                "WEB_FORM_ID" => "49"
+            )
+        );?>
     </section>
         
 
@@ -662,7 +660,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
     );?>
 
 
-    <div class="testing-content-block container telegram">
+    <div class="testing-content-block telegram bg--gray spaces">
         <?php $APPLICATION->IncludeComponent(
             "addamant:telegram.subscribe",
             ".default",
@@ -671,7 +669,8 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/testing/testing.css');
                 "CACHE_TYPE" => "A",
                 "SUBSCRIBE_TITLE" => "",
                 "SUBSCRIBE_LINK" => "https://t.me/IBS_Training_Center",
-                "COMPONENT_TEMPLATE" => ".default"
+                "COMPONENT_TEMPLATE" => ".default",
+                "CUSTOM_CLASSES" => "pt-0 pb-0"
             ),
             false
         ); ?>

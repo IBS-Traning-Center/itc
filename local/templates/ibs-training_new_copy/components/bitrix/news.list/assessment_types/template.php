@@ -51,10 +51,10 @@ $this->setFrameMode(true);
 	}
 
 	if($arItem['PROPERTIES']['TEXT_UPPER']['VALUE'] === 'Y') {
-		$textClass = 'big-text';
+		$textClass = ' big-text';
 	}
 ?>
-	<div class="row assessment_types__item <?=$textClass?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>" data-code="<?=trim($dataCode);?>">
+	<div class="row assessment_types__item<?=$textClass?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>" data-code="<?=trim($dataCode);?>">
 		<div class="col-12 col-lg-4 assessment_types__item__cell">
 			<p class="assessment_types__item__title"><?=$arItem['NAME']?></p>
 			<div class="assessment_types__item__desc"><?=$arItem['PREVIEW_TEXT']?></div>
@@ -64,10 +64,10 @@ $this->setFrameMode(true);
 				?><div data-subcode="testing" class="d-lg-none"><?=$arItem['PROPERTIES']['TESTING']['VALUE'];?></div><?
 			}
 			if(!empty($arItem['PROPERTIES']['EXPERT']['VALUE']) && $arItem['PROPERTIES']['EXPERT']['VALUE'] !== 'Y') {
-				?><div data-subcode="expert" style="display: none;"><?=$arItem['PROPERTIES']['EXPERT']['VALUE'];?></div><?
+				?><div data-subcode="expert" style="display: none;" class="d-lg-none"><?=$arItem['PROPERTIES']['EXPERT']['VALUE'];?></div><?
 			}
 			if(!empty($arItem['PROPERTIES']['CERT']['VALUE']) && $arItem['PROPERTIES']['CERT']['VALUE'] !== 'Y') {
-				?><div data-subcode="cert" style="display: none;"><?=$arItem['PROPERTIES']['CERT']['VALUE'];?></div><?
+				?><div data-subcode="cert" style="display: none;" class="d-lg-none"><?=$arItem['PROPERTIES']['CERT']['VALUE'];?></div><?
 			}
 			?>
 		</div>
@@ -122,12 +122,20 @@ $this->setFrameMode(true);
 	<? unset($dataCode); ?>
 <?endforeach;?>
 
-<div class="row assessment_types__item d-none d-lg-flex <?=$textClass?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-	<div class="col-4 assessment_types__item__cell">
-
+<div class="row assessment_types__item <?=$textClass?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+	<div class="col-12 col-lg-4 assessment_types__item__cell">
+		<div data-subcode="testing" class="d-lg-none assessment_types--sm-btn">
+			<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="testing">Оставить заявку</a>
+		</div>
+		<div data-subcode="expert" style="display: none;" class="d-lg-none assessment_types--sm-btn">
+			<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="expert">Оставить заявку</a>
+		</div>
+		<div data-subcode="cert" style="display: none;" class="d-lg-none assessment_types--sm-btn">
+			<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="cert">Оставить заявку</a>
+		</div>
 	</div>
 
-	<div class="col-8 assessment_types__props">
+	<div class="col-lg-8 assessment_types__props d-none d-lg-block">
 		<div class="row">
 			<div class="col-4 assessment_types__item__cell">
 				<a class="btn-main btn--dark bg--blue" data-scroll="mainFeedbackFormBlock" data-type="testing">Оставить заявку</a>

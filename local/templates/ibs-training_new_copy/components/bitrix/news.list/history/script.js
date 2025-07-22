@@ -8,12 +8,20 @@ $(document).ready(function () {
         });
     
         $('.history__list__item').hover(function () {
-                $('.history__list__item').removeClass('active');
+                $(this).siblings().removeClass('active');
                 $(this).addClass('active');
                 
             }, function () {
                 $(this).removeClass('active');
             }
         );
+    } else {
+        $('.history__list__item').click(function () {
+            $(this).siblings().find('.history__list__item__text').slideUp();
+            $('.history__list__item').removeClass('active');
+
+            $(this).toggleClass('active');
+            $(this).find('.history__list__item__text').slideToggle();
+        });
     }
 });

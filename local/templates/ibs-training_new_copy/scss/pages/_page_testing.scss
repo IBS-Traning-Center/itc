@@ -1,3 +1,41 @@
 .page_testing {
-    
+    .main-feedback-form-block .main-feedback-form-container .questions-block .submit-main-feedback-form {
+        height: auto !important;
+    }
+
+    .start__btns {
+        > .col-12 {
+            @include breakpoint(full-hd) {
+                margin-top: 0 !important;
+            }
+        }
+
+        .btn--dark, .btn--white {
+            padding: 16px !important;
+            
+            @include breakpoint(md) {
+                min-height: 80px;
+            }
+
+            @include breakpoint(lg) {
+                padding: 24px !important;
+            }
+
+            @include breakpoint(full-hd) {
+                height: calc(97px * 1.25) !important;
+            }
+        }
+
+        .btn--white {
+            padding: 16px 16px 16px calc(16px + 61px) !important;
+
+            @include breakpoint(lg) {
+                padding: 8px 24px 8px calc(16px + 61px) !important;
+            }
+
+            @include breakpoint(full-hd) {
+                padding-left: 110px !important;
+            }
+        }
+    }
 }

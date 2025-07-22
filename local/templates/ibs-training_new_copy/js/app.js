@@ -47,6 +47,26 @@ $(document).ready(function () {
     //         $(this).addClass('active');
     //     });
     // }
+
+    if($('.start').length > 0 && $(window).width() >= 1280) {
+        const imageWidth = $('.start__image').width();
+        const rightPadding = parseFloat($('.start > .container').css('padding-right'));
+        const rightMargin = parseFloat($('.start > .container').css('margin-right'));
+
+        if($(window).width() >= 1920) {
+            $('.start__image').css({
+                'right': rightMargin + rightPadding
+            });
+
+            $('.start > .container').css({
+                'padding-right': rightPadding + imageWidth + rightPadding
+            });
+        } else {
+            $('.start > .container').css({
+                'padding-right': imageWidth + rightPadding - rightMargin
+            });
+        }
+    }
     
     const reviews__slider = new Swiper('.reviews__slider', {
         slidesPerView: 1.5,

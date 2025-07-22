@@ -75,7 +75,7 @@
                 padding: 16px 32px;
             }
 
-            [data-subcode] {
+            [data-subcode]:not(.assessment_types--sm-btn) {
                 @include enter-point;
                 font-weight: 500;
                 font-size: inherit;
@@ -134,5 +134,10 @@
                 }
             }
         }
+    }
+
+    &--sm-btn {
+        width: 100%;
+        max-width: 100%;
     }
 }

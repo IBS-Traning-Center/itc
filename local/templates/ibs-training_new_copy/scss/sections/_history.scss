@@ -157,41 +157,84 @@
                 background-color: #fff;
                 width: 1.5px;
                 height: 100%;
+                z-index: 10;
 
                 @include breakpoint(lg) {
                     display: none;
                 }
             }
 
-            // &__text {}
+            &__text {
+                padding-top: 16px;
+            }
 
             &.active {
+
+                .history__list__item__head {
+                    padding: 16px;
+                    position: relative;
+
+                    @include breakpoint(lg) {
+                        padding: 0;
+                        position: static;
+                    }
+                    
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        left: -30px;
+                        top: 0;
+                        width: calc(100% + 30px);
+                        height: 100%;
+                        background-color: #fff;
+
+                        @include breakpoint(lg) {
+                            display: none;
+                        }
+                    }
+                }
+
+                .history__list__item__point {
+                    span {
+                        left: -25px;
+
+                        @include breakpoint(lg) {
+                            left: 50%;
+                        }
+                    }
+                }
+                
+                .title--h2, .f-20 {
+                    color: #0827C4;
+                    position: relative;
+                    z-index: 10;
+                }
+                
+                .title--h2.infin {
+                    color: transparent;
+                }
+                
+                .infinity path {
+                    fill: #0827C4;
+                }
+                
+                .history__list__item__point {
+                    &:before, &:after {
+                        background-color: #fff;
+                        mix-blend-mode: difference;
+                    }
+                    
+                    span {
+                        border-color: #0827C4;
+                    }
+                }
+                
+                &:before {
+                    mix-blend-mode: difference;
+                }
+                
                 @include breakpoint(lg) {
                     background-color: #fff;
-
-                    .title--h2, .f-20 {
-                        color: #0827C4;
-                    }
-
-                    .title--h2.infin {
-                        color: transparent;
-                    }
-
-                    .infinity path {
-                        fill: #0827C4;
-                    }
-
-                    .history__list__item__point {
-                        &:before, &:after {
-                            // background-color: #0827C4;
-                            background-color: #fff;
-                            mix-blend-mode: difference;
-                        }
-
-                        span {
-                            border-color: #0827C4;
-                        }
-                    }
                 }
             }
         }

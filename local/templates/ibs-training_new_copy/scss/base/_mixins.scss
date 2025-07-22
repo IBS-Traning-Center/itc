@@ -165,7 +165,7 @@
         line-height: 1.45;
     }
 
-    @include breakpoint(full-hd) {
+    @include breakpoint(xxl) {
         font-size: 56px;
         line-height: 1.15;
     }
