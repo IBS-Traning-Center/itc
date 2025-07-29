@@ -30,8 +30,8 @@ if ($arResult) {
         }
     }
 
-    if (is_array($arResult['PROPERTIES']['COURSE_FROF']['VALUE']) && !empty($arResult['PROPERTIES']['COURSE_FROF']['VALUE'])) {
-        foreach ($arResult['PROPERTIES']['COURSE_FROF']['VALUE'] as $elementId) {
+    if (is_array($arResult['PROPERTIES']['COURSE_PROF']['VALUE']) && !empty($arResult['PROPERTIES']['COURSE_PROF']['VALUE'])) {
+        foreach ($arResult['PROPERTIES']['COURSE_PROF']['VALUE'] as $elementId) {
             $schedules = getSchedule($elementId);
 
             foreach ($schedules as $schedule) {
@@ -40,6 +40,7 @@ if ($arResult) {
         }
     }
 }
+
 
 if ($basicDates) {
     $basicDates = sortDatesArray($basicDates);

@@ -121,18 +121,18 @@ $this->setFrameMode(true);
 
 	<? unset($dataCode); ?>
 <?endforeach;?>
-
+<div data-code="testing" class="d-lg-none assessment_types--sm-btn assessment_types__item__cell">
+	<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="testing">Оставить заявку</a>
+</div>
+<div data-code="expert" style="display: none;" class="d-lg-none assessment_types--sm-btn assessment_types__item__cell">
+	<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="expert">Оставить заявку</a>
+</div>
+<div data-code="cert" style="display: none;" class="d-lg-none assessment_types--sm-btn assessment_types__item__cell">
+	<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="cert">Оставить заявку</a>
+</div>
 <div class="row assessment_types__item <?=$textClass?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-	<div class="col-12 col-lg-4 assessment_types__item__cell">
-		<div data-subcode="testing" class="d-lg-none assessment_types--sm-btn">
-			<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="testing">Оставить заявку</a>
-		</div>
-		<div data-subcode="expert" style="display: none;" class="d-lg-none assessment_types--sm-btn">
-			<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="expert">Оставить заявку</a>
-		</div>
-		<div data-subcode="cert" style="display: none;" class="d-lg-none assessment_types--sm-btn">
-			<a class="btn-main btn--dark bg--blue w-100" data-scroll="mainFeedbackFormBlock" data-type="cert">Оставить заявку</a>
-		</div>
+	<div class="col-12 col-lg-4 assessment_types__item__cell d-none d-lg-block">
+		
 	</div>
 
 	<div class="col-lg-8 assessment_types__props d-none d-lg-block">

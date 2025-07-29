@@ -15,6 +15,9 @@ Loader::includeModule('iblock');
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+$formId = [0 => 49, 1 => 50, 2 => 51];
+$formTemplate = [0 => 'levels_modal_form', 1 => 'levels_modal_form2', 2 => 'levels_modal_form3'];
 ?>
 
 <section class="levels" id="levels">
@@ -22,7 +25,7 @@ $this->setFrameMode(true);
 		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/h2-levels.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Ур. сертификации']); ?></h2>
 
 		<div class="levels__row">
-			<?foreach($arResult["ITEMS"] as $key => $arItem):
+			<?foreach($arResult["ITEMS"] as $keyItem => $arItem):
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
@@ -107,15 +110,16 @@ $this->setFrameMode(true);
 								<div class="levels__item__modal--window">
 									<span class="levels__item__modal--window__close"></span>
 
-									<?if(!empty($arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'])) {?>
-										<?=$arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'];?>
-									<?}?>
+									<?if(!empty($arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'])) { 
+										$titleForm = $arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'];
+									}?>
 
 									<?
 									$APPLICATION->IncludeComponent(
 										"bitrix:form.result.new",
-										"levels_modal_form",
+										$formTemplate[$keyItem],
 										array(
+											"CUSTOM_TITLE" => $titleForm,
 											"CUSTOM_ID" => 'levelsItemModalForm'.ucfirst($arItem['PROPERTIES']['TYPE']['VALUE_XML_ID']),
 											"CUSTOM_CLASSES" => "",
 											"CACHE_TIME" => "3600",
@@ -130,8 +134,9 @@ $this->setFrameMode(true);
 											"AJAX_MODE" => "Y",
 											"USE_EXTENDED_ERRORS" => "N",
 											"VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-											"WEB_FORM_ID" => "50"
+											"WEB_FORM_ID" => $formId[$keyItem]
 										));
+										
 									?>
 								</div>
 							</div>

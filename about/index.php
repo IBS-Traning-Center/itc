@@ -512,9 +512,7 @@ $APPLICATION->IncludeComponent(
       </div>
    </div>
 </section>
-
-
-<?$APPLICATION->IncludeComponent(
+<?/*$APPLICATION->IncludeComponent(
    "bitrix:form.result.new",
    "main.feedback",
    array(
@@ -533,12 +531,10 @@ $APPLICATION->IncludeComponent(
       "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
       "WEB_FORM_ID" => "39"
    )
-);?>
-
-
+);*/?>
 </div>
 
-<!-- <table cellspacing="0" class="info_1"> 
+<?/* <table cellspacing="0" class="info_1"> 
   <tbody> 
     <tr><td class="facts" style="border: medium none;"> 
         <h2 align="left">Приветствие Директора 
@@ -590,7 +586,7 @@ $APPLICATION->IncludeComponent(
          <span class="links"><a href="/contacts/" >Подробнее</a></span> </p>
        </td></tr>
    </tbody>
- </table> -->
+  </table> */?>
 
 
  <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

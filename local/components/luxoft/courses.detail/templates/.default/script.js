@@ -13,6 +13,8 @@ class CourseDetail {
       selectDateClass: '.select-date',
       dateInputClass: '.sign-course-form-input.date',
       selectDatesContentClass: '.select-dates-content',
+      signCourseMagnetBlockCLass: '.sign-course-magnet-block',
+      openSignMagnetModalClass: '.open-sign-magnet-modal',
     }
   ) {
     this.themesCourse = document.querySelectorAll(data.themesCourseClass);
@@ -27,6 +29,8 @@ class CourseDetail {
     this.selectDate = document.querySelectorAll(data.selectDateClass);
     this.dateInput = document.querySelector(data.dateInputClass);
     this.selectDatesContent = document.querySelector(data.selectDatesContentClass);
+    this.signCourseMagnetBlock = document.querySelector(data.signCourseMagnetBlockCLass);
+    this.openSignMagnetModal = document.querySelectorAll(data.openSignMagnetModalClass);
 
     this.addCourseDetailEventHandler();
     this.initLinkedCoursesSlider();
@@ -73,6 +77,18 @@ class CourseDetail {
       this.backgroundModal.addEventListener("click", () => {
         this.closeDiplomModal();
         this.closeFormatModal();
+      });
+
+        if (this.signCourseMagnetBlock) {
+          this.signCourseMagnetBlock.style.display = 'none';
+        }
+    }
+
+    if (this.openSignMagnetModal) {
+      this.openSignMagnetModal.forEach(block => {
+        block.addEventListener('click', () => {
+          this.openMagnetModal();
+        });
       });
     }
 
@@ -123,6 +139,14 @@ class CourseDetail {
       this.formatModal.style.display = "none";
       this.backgroundModal.style.display = "none";
       this.formatCloseBtnModal.style.display = "none";
+    }
+  }
+
+  openMagnetModal()
+  {
+    if (this.signCourseMagnetBlock && this.backgroundModal) {
+      this.signCourseMagnetBlock.style.display = 'block';
+      this.backgroundModal.style.display = 'flex';
     }
   }
 

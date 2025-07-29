@@ -12,7 +12,10 @@ class ApplicationsFormBlock
         selectDateInputBlockClass: '.select-date-input',
         radioChangeCityName: '[name="form_radio_cert_location[]"]',
         certLevelClass: '.cert-level',
-        jqSelectboxDropdownClass: '.jq-selectbox__dropdown ul li'
+        jqSelectboxDropdownClass: '.jq-selectbox__dropdown ul li',
+        scrollBtnSelector: '[data-scroll="applicationsFormBlock"]',
+        defaultDateClass: '.date-default-block.question-block',
+        takeDateBlockClass: '.take-date-block'
     }) {
         this.applicationsFormBlock = document.getElementById(data.applicationsFormBlockId);
         this.feedbackFormBtn = this.applicationsFormBlock.querySelectorAll(data.feedbackFormBtnClass);
@@ -26,6 +29,9 @@ class ApplicationsFormBlock
         this.radioChangeCity = this.applicationsFormBlock.querySelectorAll(data.radioChangeCityName);
         this.certLevel = this.applicationsFormBlock.querySelectorAll(data.certLevelClass);
         this.jqSelectboxDropdown = this.applicationsFormBlock.querySelectorAll(data.jqSelectboxDropdownClass);
+        this.scrollBtn = document.querySelectorAll(data.scrollBtnSelector);
+        this.defaultDate = document.querySelector(data.defaultDateClass);
+        this.takeDateBlock = document.querySelector(data.takeDateBlockClass);
         this.selectedLevel = 'basic';
         this.selectedCity = 'onl';
 
@@ -113,6 +119,34 @@ class ApplicationsFormBlock
                             this.changeStateDate();
                         }
                     });
+
+                    this.defaultDate.style.display = 'none';
+                    this.takeDateBlock.style.display = 'block';
+                });
+            });
+        }
+
+        if (this.scrollBtn) {
+            this.scrollBtn.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    let dataCert = btn.dataset.cert;
+                    
+                    switch (dataCert) {
+                        case 'base' :
+                            this.selectedLevel = 'basic';
+                            break;
+                        case 'special' :
+                            this.selectedLevel = 'spec';
+                            break;
+                        case 'pro' :
+                            this.selectedLevel = 'prof';
+                            break;
+                    }
+
+                    this.changeStateDate();
+
+                    this.defaultDate.style.display = 'none';
+                    this.takeDateBlock.style.display = 'block';
                 });
             });
         }

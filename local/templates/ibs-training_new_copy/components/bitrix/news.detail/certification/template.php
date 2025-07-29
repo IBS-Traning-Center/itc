@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 					'PATH' => '',
 					'SITE_ID' => 's1',
 				],
-				false
+				$component
 			);?>
 	
 			<h1 class="title--h1"><?=$arResult["NAME"];?></h1>
@@ -81,7 +81,7 @@ $this->setFrameMode(true);
 				"CACHE_FILTER" => "N",
 				"CACHE_GROUPS" => "Y",
 				"CACHE_TIME" => "36000000",
-				"CACHE_TYPE" => "A",
+				"CACHE_TYPE" => "N",
 				"CHECK_DATES" => "Y",
 				"DETAIL_URL" => "",
 				"DISPLAY_BOTTOM_PAGER" => "N",
@@ -122,7 +122,8 @@ $this->setFrameMode(true);
 				"SORT_ORDER1" => "ASC",
 				"SORT_ORDER2" => "ASC",
 				"STRICT_SECTION_CHECK" => "N"
-			)
+			),
+            $component
 		);
 		?>
 		<div class="container">
@@ -154,7 +155,7 @@ $this->setFrameMode(true);
 					"CACHE_FILTER" => "N",
 					"CACHE_GROUPS" => "Y",
 					"CACHE_TIME" => "36000000",
-					"CACHE_TYPE" => "A",
+					"CACHE_TYPE" => "N",
 					"CHECK_DATES" => "Y",
 					"DETAIL_URL" => "",
 					"DISPLAY_BOTTOM_PAGER" => "N",
@@ -195,7 +196,8 @@ $this->setFrameMode(true);
 					"SORT_ORDER1" => "ASC",
 					"SORT_ORDER2" => "ASC",
 					"STRICT_SECTION_CHECK" => "N"
-				)
+				),
+                $component
 			);?>
 
 			<div class="differences__btn">
@@ -224,7 +226,7 @@ $this->setFrameMode(true);
 			"CACHE_FILTER" => "N",
 			"CACHE_GROUPS" => "Y",
 			"CACHE_TIME" => "36000000",
-			"CACHE_TYPE" => "A",
+			"CACHE_TYPE" => "N",
 			"CHECK_DATES" => "Y",
 			"DETAIL_URL" => "",
 			"DISPLAY_BOTTOM_PAGER" => "N",
@@ -265,7 +267,8 @@ $this->setFrameMode(true);
 			"SORT_ORDER1" => "ASC",
 			"SORT_ORDER2" => "ASC",
 			"STRICT_SECTION_CHECK" => "N"
-		)
+		),
+        $component
 	);
 	endif;?>
 
@@ -305,7 +308,7 @@ $this->setFrameMode(true);
 					"CACHE_FILTER" => "N",
 					"CACHE_GROUPS" => "Y",
 					"CACHE_TIME" => "36000000",
-					"CACHE_TYPE" => "A",
+					"CACHE_TYPE" => "N",
 					"CHECK_DATES" => "Y",
 					"DETAIL_URL" => "",
 					"DISPLAY_BOTTOM_PAGER" => "N",
@@ -346,12 +349,14 @@ $this->setFrameMode(true);
 					"SORT_ORDER1" => "ASC",
 					"SORT_ORDER2" => "ASC",
 					"STRICT_SECTION_CHECK" => "N"
-				)
+				),
+                $component
 			);
 			endif;?>
 		</div>
 	</section>
 	<?endif;?>
+
 
 
 	<? // Блок "Уровни сертификации"
@@ -370,7 +375,7 @@ $this->setFrameMode(true);
 				"CACHE_FILTER" => "N",
 				"CACHE_GROUPS" => "Y",
 				"CACHE_TIME" => "36000000",
-				"CACHE_TYPE" => "A",
+				"CACHE_TYPE" => "N",
 				"CHECK_DATES" => "Y",
 				"DETAIL_URL" => "",
 				"DISPLAY_BOTTOM_PAGER" => "N",
@@ -411,7 +416,8 @@ $this->setFrameMode(true);
 				"SORT_ORDER1" => "ASC",
 				"SORT_ORDER2" => "ASC",
 				"STRICT_SECTION_CHECK" => "N"
-			)
+			),
+            $component
 		);
 	endif;?>
 
@@ -432,7 +438,7 @@ $this->setFrameMode(true);
 				"CACHE_FILTER" => "N",
 				"CACHE_GROUPS" => "Y",
 				"CACHE_TIME" => "36000000",
-				"CACHE_TYPE" => "A",
+				"CACHE_TYPE" => "N",
 				"CHECK_DATES" => "Y",
 				"DETAIL_URL" => "",
 				"DISPLAY_BOTTOM_PAGER" => "N",
@@ -473,7 +479,8 @@ $this->setFrameMode(true);
 				"SORT_ORDER1" => "ASC",
 				"SORT_ORDER2" => "ASC",
 				"STRICT_SECTION_CHECK" => "N"
-			)
+			),
+            $component
 		);
 	endif;?>
 
@@ -494,7 +501,7 @@ $this->setFrameMode(true);
 				"CACHE_FILTER" => "N",
 				"CACHE_GROUPS" => "Y",
 				"CACHE_TIME" => "36000000",
-				"CACHE_TYPE" => "A",
+				"CACHE_TYPE" => "N",
 				"CHECK_DATES" => "Y",
 				"DETAIL_URL" => "",
 				"DISPLAY_BOTTOM_PAGER" => "N",
@@ -535,7 +542,8 @@ $this->setFrameMode(true);
 				"SORT_ORDER1" => "ASC",
 				"SORT_ORDER2" => "ASC",
 				"STRICT_SECTION_CHECK" => "N"
-			)
+			),
+            $component
 		);	
 	endif;?>
 
@@ -574,7 +582,7 @@ $this->setFrameMode(true);
 			"CACHE_FILTER" => "N",
 			"CACHE_GROUPS" => "Y",
 			"CACHE_TIME" => "36000000",
-			"CACHE_TYPE" => "A",
+			"CACHE_TYPE" => "N",
 			"CHECK_DATES" => "Y",
 			"DETAIL_URL" => "",
 			"DISPLAY_BOTTOM_PAGER" => "N",
@@ -615,7 +623,8 @@ $this->setFrameMode(true);
 			"SORT_ORDER1" => "ASC",
 			"SORT_ORDER2" => "ASC",
 			"STRICT_SECTION_CHECK" => "N"
-		)
+		),
+        $component
 	);
 	endif;
 
@@ -635,7 +644,7 @@ $this->setFrameMode(true);
 			"CACHE_FILTER" => "N",
 			"CACHE_GROUPS" => "Y",
 			"CACHE_TIME" => "36000000",
-			"CACHE_TYPE" => "A",
+			"CACHE_TYPE" => "N",
 			"CHECK_DATES" => "Y",
 			"DETAIL_URL" => "",
 			"DISPLAY_BOTTOM_PAGER" => "N",
@@ -676,7 +685,8 @@ $this->setFrameMode(true);
 			"SORT_ORDER1" => "ASC",
 			"SORT_ORDER2" => "ASC",
 			"STRICT_SECTION_CHECK" => "N"
-		)
+		),
+        $component
 	);
 	
 	// Блок "Отзывы и кейсы"
@@ -694,7 +704,7 @@ $this->setFrameMode(true);
 			"CACHE_FILTER" => "N",
 			"CACHE_GROUPS" => "Y",
 			"CACHE_TIME" => "36000000",
-			"CACHE_TYPE" => "A",
+			"CACHE_TYPE" => "N",
 			"CHECK_DATES" => "Y",
 			"DETAIL_URL" => "",
 			"DISPLAY_BOTTOM_PAGER" => "N",
@@ -735,7 +745,8 @@ $this->setFrameMode(true);
 			"SORT_ORDER1" => "ASC",
 			"SORT_ORDER2" => "ASC",
 			"STRICT_SECTION_CHECK" => "N"
-		)
+		),
+        $component
 	);
 			
 
@@ -746,7 +757,7 @@ $this->setFrameMode(true);
 		array(
 			"CUSTOM_CLASSES" => "bg--green",
 			"CACHE_TIME" => "3600",
-			"CACHE_TYPE" => "A",
+			"CACHE_TYPE" => "N",
 			"CHAIN_ITEM_LINK" => "",
 			"CHAIN_ITEM_TEXT" => "",
 			"EDIT_URL" => "",
@@ -757,12 +768,13 @@ $this->setFrameMode(true);
 			"AJAX_MODE" => "Y",
 			"USE_EXTENDED_ERRORS" => "N",
 			"VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-			"WEB_FORM_ID" => "47",
+			"WEB_FORM_ID" => "46",
 			"BASIC_DATES" => $arResult['BASIC_DATES'],
 			"SPEC_DATES" => $arResult['SPEC_DATES'],
 			"PROF_DATES" => $arResult['PROF_DATES'],
 			"COURSE_NAME" => $arResult['NAME']
-		)
+		),
+        $component
 	);
 ?>
 </div>

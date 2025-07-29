@@ -215,3 +215,9 @@ font-weight: bold;
 .digest__message-body * {
 	box-sizing: content-box!important;
 }
+@media (max-width: 992px) {
+	.page_about__desc .page_about__desc__text:after{
+		left: 0;
+		width: 100%;
+	}
+}

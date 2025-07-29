@@ -100,6 +100,9 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'what_learn' => 'WHAT_LEARN',
                 'format' => 'FORMAT',
                 'dev' => 'IS_DEV',
+                'magnet_code' => 'MAGNET_CODE',
+                'magnet_lead_name' => 'MAGNET_LEAD_NAME',
+                'magnet_button' => 'MAGNET_BUTTON_NAME',
 
                 'metaTitle' => 'meta_title',
                 'metaDescription' => 'meta_desc',
@@ -395,7 +398,10 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 $this->mapping('course', 'price_ur'),
                 $this->mapping('course', 'language'),
                 $this->mapping('course', 'format'),
-                $this->mapping('course', 'dev')
+                $this->mapping('course', 'dev'),
+                $this->mapping('course', 'magnet_code'),
+                $this->mapping('course', 'magnet_lead_name'),
+                $this->mapping('course', 'magnet_button')
             ],
             'filter' => [
                 'ACTIVE' => 'Y'
@@ -484,6 +490,14 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
 
                     $this->course['format'] = $format;
                 }
+            }
+
+            if ($courseObject->get($this->mapping('course', 'magnet_code')) && $courseObject->get($this->mapping('course', 'magnet_lead_name')) && $courseObject->get($this->mapping('course', 'magnet_button'))) {
+                $this->course['magnet'] = [
+                    'code' => $courseObject->get($this->mapping('course', 'magnet_code'))->getValue(),
+                    'lead_name' => $courseObject->get($this->mapping('course', 'magnet_lead_name'))->getValue(),
+                    'button' => $courseObject->get($this->mapping('course', 'magnet_button'))->getValue(),
+                ];
             }
 
             $this->course['skills_course'] = $this->getImprovedSkills();

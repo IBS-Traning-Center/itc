@@ -129,7 +129,7 @@ $certLevels = [];
                                     <?php endif; ?>
                                     <?php if ($questionId == 'date') : ?>
                                         <div class="dates-block">
-                                            <div class="take-date-block">
+                                            <div class="take-date-block" style="display: none;">
                                                 <div class="select-dates-block basic">
                                                     <?php if (!empty($arParams['BASIC_DATES'])) { ?>
                                                         <?php foreach ($arParams['BASIC_DATES'] as $cityCode => $dates) : ?>
@@ -196,6 +196,9 @@ $certLevels = [];
                                                         <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="date-default-block question-block">
+                                                <input class="inputtext main-feedback-form-input" placeholder="Дата" type="text">
                                             </div>
                                             <?php if (!empty($certLevels)) : ?>
                                                 <div class="cert-levels">
