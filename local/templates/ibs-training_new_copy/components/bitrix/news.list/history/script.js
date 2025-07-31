@@ -4,7 +4,9 @@ $(document).ready(function () {
     
         $('.history__list__item').mouseenter(function () {
             let currentText = $(this).find('.history__list__item__text').html();
-            textBlock.html(' ').html(currentText);
+            textBlock.fadeOut(300, function() {
+                $(this).html(currentText).fadeIn(300);
+            });
         });
     
         $('.history__list__item').hover(function () {

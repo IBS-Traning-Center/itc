@@ -19,32 +19,13 @@ if($arResult['ITEMS']) :
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-lg-6">
-					<?
-					$sectionWhyUs = [];
-					$arFilter = Array('IBLOCK_ID'=>intval(201), 'IBLOCK_TYPE'=>'edu_const', 'ID'=>intval($arParams['PARENT_SECTION']));
-					$arSelect = Array('ID', 'NAME', 'PICTURE', 'UF_*');
-					$db_list = CIBlockSection::GetList(
-						Array("SORT"=>"ASC"), 
-						$arFilter,
-						false,
-						$arSelect,
-						false
-					);
-					
-					while($ar_result = $db_list->GetNext())
-					{
-						$sectionWhyUs = $ar_result;
-					}
-
-					?>
-					
-					<h2 class="title--h2"><?=$sectionWhyUs['UF_BLOCK_TITLE']?></h2>
+					<h2 class="title--h2"><?=$arResult['SECTION_WHY_US']['UF_BLOCK_TITLE']?></h2>
 					
 					<div class="guarantees__content">
-						<?if(!empty($sectionWhyUs['PICTURE'])) {?>
-							<img src="<?=CFile::GetPath($sectionWhyUs['PICTURE'])?>" alt="<?=$sectionWhyUs['NAME']?>" class="guarantees__image">
+						<?if(!empty($arResult['SECTION_WHY_US']['PICTURE'])) {?>
+							<img src="<?=CFile::GetPath($arResult['SECTION_WHY_US']['PICTURE'])?>" alt="<?=$arResult['SECTION_WHY_US']['NAME']?>" class="guarantees__image">
 							<?}?>
-							<p><?=$sectionWhyUs['NAME']?></p>
+							<p><?=$arResult['SECTION_WHY_US']['NAME']?></p>
 						</div>
 					</div>
 					

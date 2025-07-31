@@ -140,6 +140,11 @@ function plural_form($number, $after) {
                     <a data-scroll="sign" class="btn-main size-l">
                         <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
                     </a>
+                    <?php if ($arResult['magnet']) : ?>
+                            <button class="open-sign-magnet-modal" style="background-color: var(--lime);">
+                                <span class="f-16"><?= $arResult['magnet']['button'] ?></span>
+                            </button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -658,3 +663,29 @@ if (!empty($arResult['sale'])) {
     <?= Functions::buildSVG('close-modal-icon', $templateFolder . '/images') ?>
 </div>
 <div class="background-modal"></div>
+<?php if ($arResult['magnet']) :
+    $APPLICATION->IncludeComponent(
+    "bitrix:form.result.new",
+    "sign.course.magnet",
+    Array(
+        "CACHE_TIME" => "3600",
+        "CACHE_TYPE" => "A",
+        "CHAIN_ITEM_LINK" => "",
+        "CHAIN_ITEM_TEXT" => "",
+        "EDIT_URL" => "",
+        "IGNORE_CUSTOM_TEMPLATE" => "N",
+        "LIST_URL" => "",
+        "SEF_MODE" => "N",
+        "SUCCESS_URL" => "",
+        "AJAX_MODE" => "Y",
+        "USE_EXTENDED_ERRORS" => "N",
+        "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
+        "WEB_FORM_ID" => "44",
+        "COURSE_NAME" => $arResult['NAME'],
+        "MAGNET_LEAD_NAME" => $arResult['magnet']['lead_name'],
+        "MAGNET_CODE" => $arResult['magnet']['code'],
+        "COURSE_SIGN" => $arResult['CODE']
+    )
+);
+endif;
+?>

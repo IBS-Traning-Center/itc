@@ -13,58 +13,27 @@
 $this->setFrameMode(true);
 ?>
 
-<section class="basically spaces">
+<section class="basically spaces 1">
 	<div class="container">
 		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/cert-detail-for-what-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок блока с табами']); ?></h2>
-
-		<?
-		// Получаем текущий раздел
-		$currentSectionId = $arParams['PARENT_SECTION'];
-
-		// Получаем подразделы текущего раздела
-		$subSectionsObj = CIBlockSection::GetList(
-			['SORT' => 'ASC'],
-			[
-				'IBLOCK_ID' => $arParams['IBLOCK_ID'],
-				'SECTION_ID' => $currentSectionId,
-				'ACTIVE' => 'Y',
-				'GLOBAL_ACTIVE' => 'Y',
-			],
-			false,
-			['ID', 'NAME', 'SECTION_PAGE_URL']
-		);
-		
-		$subSections = [];
-		$subSectionKey = 0;
-		?>
 		<div class="tabs--wrapper">	
-			<div class="tabs"><?
-				while ($subSection = $subSectionsObj->GetNext()) {?>
+			<div class="tabs">
+				<?
+				$subSectionKey = 0;
+				foreach($arResult['SUBSECTION_TABS'] as $key => $subSection) {?>
 					<div class="tabs__item<?=($subSectionKey === 0) ? ' active' : '';?>" data-tab="<?=$subSection["CODE"]?>"><?=$subSection['NAME'];?></div>
 					<?
-					$subSections[] = $subSection;
 					$subSectionKey++;
 				}?>
 			</div>
 		</div>
-
-		<?foreach ($subSections as $key => $section) {			
-			// Получаем элементы подраздела
-			$elements = CIBlockElement::GetList(
-				['SORT' => 'ASC'],
-				[
-					'IBLOCK_ID' => $arParams['IBLOCK_ID'],
-					'SECTION_ID' => intval($section['ID']),
-					'ACTIVE' => 'Y',
-				],
-				false,
-				false,
-				['ID', 'NAME']
-			);?>
+ 
+		<?
+		foreach ($arResult['SUBSECTIONS'] as $key => $section) {?>
 			
 			<ul class="basically__list" data-code="<?=$section['CODE']?>"<?=($key > 0) ? ' style="display: none;"' : '';?>>
 				<?
-				while ($element = $elements->GetNext()) {
+				foreach($section['SUBSECTION_LIST'] as $element) {
 
 					$elementEditLink = 
 						"/bitrix/admin/iblock_element_edit.php?" . http_build_query([
@@ -103,7 +72,7 @@ $this->setFrameMode(true);
 				<?}
 			?>
 			</ul>
-		<?}?>
+		<?}?>	
 		
 
 		<div class="basically__btns">

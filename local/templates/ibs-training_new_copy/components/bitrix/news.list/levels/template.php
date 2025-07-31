@@ -1,4 +1,5 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
 use Bitrix\Main\Loader;
 
 Loader::includeModule('iblock');
@@ -15,71 +16,62 @@ Loader::includeModule('iblock');
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+$formId = [0 => 49, 1 => 50, 2 => 51];
+$formTemplate = [0 => 'levels_modal_form', 1 => 'levels_modal_form2', 2 => 'levels_modal_form3'];
 ?>
 
 <section class="levels" id="levels">
 	<div class="container">
-		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/h2-levels.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Ур. сертификации']); ?></h2>
+		<h2 class="title--h2"><? $APPLICATION->IncludeFile(SITE_DIR . 'include/h2-levels.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Ур. сертификации']); ?></h2>
 
 		<div class="levels__row">
-			<?foreach($arResult["ITEMS"] as $key => $arItem):
+			<? foreach ($arResult["ITEMS"] as $keyItem => $arItem):
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
-				<div class="levels__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+				<div class="levels__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 					<div class="levels__item__content">
 						<div>
 							<div class="levels__item__head">
 								<div>
 									<div class="levels__item__title">
-										<span><?=$arItem['PROPERTIES']['UP_TITLE']['VALUE']?></span>
-										<p><?=$arItem['NAME']?></p>
+										<span><?= $arItem['PROPERTIES']['UP_TITLE']['VALUE'] ?></span>
+										<p><?= $arItem['NAME'] ?></p>
 									</div>
-									
+
 									<div class="levels__item__cost">
 										<span>Стоимость:</span>
-										<b><?=$arItem['PROPERTIES']['COST']['VALUE']?></b>
+										<b><?= $arItem['PROPERTIES']['COST']['VALUE'] ?></b>
 									</div>
 								</div>
-			
+
 								<div>
-									<img 
-										src="<?=CFile::GetPath($arItem['PROPERTIES']['ICON']['VALUE'])?>" 
-										alt="<?=$arItem['NAME']?>" 
-										class="levels__item__image"
-									>
-			
+									<img
+										src="<?= CFile::GetPath($arItem['PROPERTIES']['ICON']['VALUE']) ?>"
+										alt="<?= $arItem['NAME'] ?>"
+										class="levels__item__image">
+
 									<div class="levels__item__period">
 										<span>Сертификат действует</span>
-										<b><?=$arItem['PROPERTIES']['PERIOD']['VALUE']?></b>
+										<b><?= $arItem['PROPERTIES']['PERIOD']['VALUE'] ?></b>
 									</div>
 								</div>
 							</div>
-		
+
 							<div class="levels__item__props">
-								<p class="levels__item__props__title"><?=$arItem['PROPERTIES']['PROPS_TITLE']['VALUE']?></p>
-		
+								<p class="levels__item__props__title"><?= $arItem['PROPERTIES']['PROPS_TITLE']['VALUE'] ?></p>
+
 								<ul class="levels__item__props__list">
-								<?
-								$arFilter = Array(
-									"IBLOCK_ID"=>intval($arItem['PROPERTIES']['PROPS']['LINK_IBLOCK_ID']), 
-									"ID" => $arItem['PROPERTIES']['PROPS']['VALUE']);
-								$arSelect = Array("ID", "NAME", "PROPERTY_ICON", "PROPERTY_VAL");
-								$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
-								while($ob = $res->GetNextElement())
-								{
-									$prop = $ob->GetFields();
-									?>
+									<? foreach ($arItem['PROPS_LIST'] as $prop): ?>
 										<li>
-											<img src="<?=CFile::GetPath($prop['PROPERTY_ICON_VALUE'])?>" alt="icon">
+											<img src="<?= $prop['PROPERTY_ICON_VALUE'] ?>" alt="icon">
 											<p>
-												<span><?=$prop['NAME']?></span>
-												<b><?=$prop['PROPERTY_VAL_VALUE']?></b>
+												<span><?= $prop['NAME'] ?></span>
+												<b><?= $prop['PROPERTY_VAL_VALUE'] ?></b>
 											</p>
 										</li>
-									<?
-								}
-								?>
+									<? endforeach; ?>
 								</ul>
 							</div>
 
@@ -89,10 +81,10 @@ $this->setFrameMode(true);
 								</div>
 
 								<div class="levels__item__desc--mobile__text" style="display: none;">
-									<?=$arItem['PREVIEW_TEXT'];?>
+									<?= $arItem['PREVIEW_TEXT']; ?>
 								</div>
 							</div>
-		
+
 							<div class="levels__item__btns">
 								<?
 								foreach ($arItem['PROPERTIES']['BUTTONS_CODE']['~VALUE'] as $key => $btn) {
@@ -107,16 +99,17 @@ $this->setFrameMode(true);
 								<div class="levels__item__modal--window">
 									<span class="levels__item__modal--window__close"></span>
 
-									<?if(!empty($arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'])) {?>
-										<?=$arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'];?>
-									<?}?>
+									<? if (!empty($arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'])) {
+										$titleForm = $arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'];
+									} ?>
 
 									<?
 									$APPLICATION->IncludeComponent(
 										"bitrix:form.result.new",
-										"levels_modal_form",
+										$formTemplate[$keyItem],
 										array(
-											"CUSTOM_ID" => 'levelsItemModalForm'.ucfirst($arItem['PROPERTIES']['TYPE']['VALUE_XML_ID']),
+											"CUSTOM_TITLE" => $titleForm,
+											"CUSTOM_ID" => 'levelsItemModalForm' . ucfirst($arItem['PROPERTIES']['TYPE']['VALUE_XML_ID']),
 											"CUSTOM_CLASSES" => "",
 											"CACHE_TIME" => "3600",
 											"CACHE_TYPE" => "A",
@@ -130,15 +123,17 @@ $this->setFrameMode(true);
 											"AJAX_MODE" => "Y",
 											"USE_EXTENDED_ERRORS" => "N",
 											"VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-											"WEB_FORM_ID" => "50"
-										));
+											"WEB_FORM_ID" => $formId[$keyItem]
+										)
+									);
+
 									?>
 								</div>
 							</div>
 						</div>
 
 						<div class="levels__item__desc" style="display: none;">
-							<?=$arItem['PREVIEW_TEXT'];?>
+							<?= $arItem['PREVIEW_TEXT']; ?>
 						</div>
 					</div>
 
@@ -146,7 +141,7 @@ $this->setFrameMode(true);
 						<p>Показать подробнее</p>
 					</div>
 				</div>
-			<?endforeach;?>
+			<? endforeach; ?>
 		</div>
 	</div>
 </section>

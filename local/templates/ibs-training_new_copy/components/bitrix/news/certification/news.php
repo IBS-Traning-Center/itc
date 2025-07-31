@@ -78,6 +78,7 @@ $arCurSection = $arCurSection[0];
 		<?
 		$arFilter = Array("IBLOCK_ID"=>193, "ID" => $arCurSection['UF_BUTTONS']);
 		$arSelect = Array("ID", "NAME", "PREVIEW_PICTURE", "PROPERTY_LINK", "PROPERTY_TARGET");
+
 		$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
 		while($ob = $res->GetNextElement())
 		{
@@ -326,7 +327,7 @@ $APPLICATION->IncludeComponent(
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "",
-		"PARENT_SECTION" => "1645",
+		"PARENT_SECTION" => "1630",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array("ICON",""),
@@ -469,7 +470,7 @@ $APPLICATION->IncludeComponent(
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "",
 		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
+		"PARENT_SECTION_CODE" => "sertifikatsiya",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array("DISCOUNT",""),
 		"SET_BROWSER_TITLE" => "N",
@@ -505,6 +506,6 @@ $APPLICATION->IncludeComponent(
         "AJAX_MODE" => "Y",
         "USE_EXTENDED_ERRORS" => "N",
         "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-        "WEB_FORM_ID" => "45"
+        "WEB_FORM_ID" => "47"
     )
 ); ?>

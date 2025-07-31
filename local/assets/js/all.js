@@ -73,6 +73,7 @@ $(document).ready(function () {
 
   $('input[type="checkbox"]:not(".no_redraw")').styler();
   $('select:not(".no_redraw")').styler();
+
   $(".scroll").click(function () {
     var body = $("html, body");
     var target = $($(this).attr("href"));

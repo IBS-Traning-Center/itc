@@ -1,0 +1,26 @@
+.certification-detail .levels__item__modal .main-feedback-form-block .title--h2 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    max-width: 100%;
+}
+
+.certification-detail .levels__item__modal .main-feedback-form-block .success-text{
+    color: black!important;
+}
+
+@media screen and (min-width: 992px) {
+    .certification-detail .levels__item__modal .main-feedback-form-block .title--h2 {
+        font-family: "Stag Sans", sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 44px;
+        padding-right: 50px;
+    }
+}
+
+#applicationsFormBlock .jq-selectbox__dropdown li:first-child{
+    display: none;
+}

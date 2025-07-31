@@ -31,38 +31,26 @@ Loc::loadMessages(__FILE__);
             <?php endif; ?>
             <!-- <div class="col-12 col-xl 6"> -->
                 <div class="questions-block">
+                    <?php if ($arResult["FORM_NOTE"]) : ?>
+                        <p class="f-20 success-text"><?= $arResult["FORM_NOTE"] ?></p>
+                    <?php endif; ?>
                     <?php if ($arResult["isFormNote"] != "Y") : ?>
                         <?=$arResult["FORM_HEADER"]?>
                         <div class="form-table data-table row">
-        
                             <?php foreach ($arResult["QUESTIONS"] as $questionId => $question) : ?>
-
-                                <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'checkbox') :
-
-                                    // empty need be
-                                
-                                    
-                                else : ?>
                                     <?php if ($questionId == 'phone' || $questionId == 'email') : ?>
                                         <div class="col-12 col-lg-4">
-                                    <?php endif; ?>
-
-                                        <div class="question-block <?= $questionId ?>">            
-                                            <input
-                                                class="inputtext main-feedback-form-input <?= $questionId ?> <?= isset($arResult['FORM_ERRORS'][$questionId]) ? 'has-error' : '' ?>"
-                                                <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
-                                                <?= ($questionId == 'client_id') ? 'id="clientID"' : '' ?>
-                                                placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '*' : '(не обязательно)' ?>"
-                                                name="form_text_<?= $question['STRUCTURE'][0]['ID'] ?>"
-                                                type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>">
-                                        </div>
-
-                                    <?php if ($questionId == 'phone' || $questionId == 'email') : ?>
+                                            <div class="question-block <?= $questionId ?>">            
+                                                <input
+                                                    class="inputtext main-feedback-form-input <?= $questionId ?> <?= isset($arResult['FORM_ERRORS'][$questionId]) ? 'has-error' : '' ?>"
+                                                    <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
+                                                    <?= ($questionId == 'client_id') ? 'id="clientID"' : '' ?>
+                                                    placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '*' : '(не обязательно)' ?>"
+                                                    name="form_text_<?= $question['STRUCTURE'][0]['ID'] ?>"
+                                                    type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>">
+                                            </div>
                                         </div>
                                     <?php endif; ?>
-
-                                <?php endif; ?>
-
                             <?php endforeach; ?>
 
                             <div class="col-12 col-lg-4">
@@ -91,6 +79,7 @@ Loc::loadMessages(__FILE__);
                                     <?php endif; ?>
                             <?php endif; ?>
                         <?php endforeach; ?>
+                        <?=$arResult["FORM_FOOTER"]?>
                     <?php endif; ?>
                 </div>
             <!-- </div> -->

@@ -1,0 +1,3 @@
+#mainFeedbackFormBlock .jq-selectbox__dropdown li:first-child{
+    display: none;
+}
