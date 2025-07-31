@@ -41,6 +41,18 @@ if ($arResult) {
     }
 }
 
+$arResult['BUTTONS'] = [];
+$arFilter = Array("IBLOCK_ID"=>193, "ID" => $arResult['PROPERTIES']["START_BUTTONS"]['VALUE']);
+$arSelect = Array("ID", "NAME", "PREVIEW_PICTURE", "PROPERTY_LINK", "PROPERTY_TARGET");
+$res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+while($ob = $res->GetNextElement())
+{
+	$arFields = $ob->GetFields();
+    $arResult['BUTTONS'][$arFields['ID']]['PROPERTY_LINK_VALUE'] = $arFields['PROPERTY_LINK_VALUE'];
+    $arResult['BUTTONS'][$arFields['ID']]['PROPERTY_TARGET_VALUE'] = $arFields['PROPERTY_TARGET_VALUE'];
+    $arResult['BUTTONS'][$arFields['ID']]['PREVIEW_PICTURE'] = CFile::GetPath($arFields['PREVIEW_PICTURE']);
+    $arResult['BUTTONS'][$arFields['ID']]['NAME'] = $arFields['NAME'];
+}
 
 if ($basicDates) {
     $basicDates = sortDatesArray($basicDates);

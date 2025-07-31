@@ -19,17 +19,7 @@ if($arResult['ITEMS']) :
 		<div class="container">
 			
 			<h2 class="title--h2">
-				<?
-				$iBlockID = $arParams['IBLOCK_ID']; // ваш ID инфоблока
-				$sectionID = $arParams['PARENT_SECTION']; // ваш ID раздела
-				
-				$section = CIBlockSection::GetByID($sectionID)->Fetch();
-				if ($section && $section['IBLOCK_ID'] == $iBlockID) {
-					echo $section['NAME']; // название раздела
-				} else {
-					echo "Раздел не найден или не принадлежит указанному инфоблоку";
-				}
-				?>
+				<?= $arResult["SECTION_NAME"] ?>
 			</h2>
 
 			<div class="row g-4 g-xxl-5 justify-content-between">

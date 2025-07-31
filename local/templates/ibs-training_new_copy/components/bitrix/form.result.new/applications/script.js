@@ -37,6 +37,20 @@ class ApplicationsFormBlock
 
         this.addApplicationsFormEventHandler();
         this.changeStateDate();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const scrollTo = urlParams.get('scrollTo');
+        
+        if (scrollTo === 'applicationsFormBlock') {
+            const element = document.getElementById('applicationsFormBlock');
+            if (element) {
+                element.scrollIntoView({});
+                
+                const newUrl = new URL(window.location.href);
+                newUrl.searchParams.delete('scrollTo');
+                window.history.replaceState({}, document.title, newUrl.toString());
+            }
+        }
     }
 
     addApplicationsFormEventHandler()

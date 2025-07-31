@@ -35,11 +35,6 @@ use Local\Util\Functions;
 				
 				?>
 				<div class="swiper-slide reviews__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-					<?
-					// echo '<pre>';
-					// var_dump($arItem['PREVIEW_PICTURE']['SRC']);
-					// echo '</pre>';
-					?>
 					<div class="reviews__item--inner">
 						<div class="reviews__item__text">
 							<?=$arItem['PREVIEW_TEXT'];?>
@@ -48,7 +43,6 @@ use Local\Util\Functions;
 							</div>
 						</div>
 					</div>
-
 					<img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['NAME'];?>" class="reviews__item__image">
 				</div>
 			<?endforeach;?>

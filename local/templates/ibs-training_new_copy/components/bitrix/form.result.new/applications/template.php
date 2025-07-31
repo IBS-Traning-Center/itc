@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
-	die();
+    die();
 }
 
 use Bitrix\Main\Localization\Loc;
@@ -12,12 +12,12 @@ Loc::loadMessages(__FILE__);
 /**
  * @var array $arResult
  * @var array $arParams
-*/
+ */
 
 $certLevels = [];
 ?>
 
-<div class="main-feedback-form-block <?=$arParams['CUSTOM_CLASSES'];?>" id="applicationsFormBlock">
+<div class="main-feedback-form-block <?= $arParams['CUSTOM_CLASSES']; ?>" id="applicationsFormBlock">
     <div class="container main-feedback-form-container">
         <div class="row g-4 g-xxl-5">
             <?php if ($arResult['arForm']['NAME']) : ?>
@@ -33,79 +33,73 @@ $certLevels = [];
             <?php endif; ?>
             <div class="col-12 col-xl 6">
                 <div class="questions-block">
-                    <?php if ($arResult["FORM_NOTE"]) : ?>
-                        <p class="f-20 success-text"><?= $arResult["FORM_NOTE"] ?></p>
-                    <?php endif; ?>
-                    <?php if ($arResult["isFormNote"] != "Y") : ?>
-                        <?=$arResult["FORM_HEADER"]?>
-                        <div class="form-table data-table">
-                            <?php
-                            // echo $arResult["QUESTIONS"]["cert_location"]["HTML_CODE"];
-                            // unset($arResult["QUESTIONS"]["cert_location"]);
-                            ?>
-        
-                            <?php foreach ($arResult["QUESTIONS"] as $questionId => $question) : ?>
-        
-                                <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'dropdown') : ?>
-                                    <?php
-                                        echo $question['HTML_CODE'];
+                    <?= $arResult["FORM_HEADER"] ?>
+                    <div class="form-table data-table">
+                        <?php
+                        // echo $arResult["QUESTIONS"]["cert_location"]["HTML_CODE"];
+                        // unset($arResult["QUESTIONS"]["cert_location"]);
+                        ?>
 
-                                        if ($questionId == 'cert_level') {
-                                            foreach ($question['STRUCTURE'] as $value) {
-                                                $certLevels[] = [
-                                                    'ID' => $value['ID'],
-                                                    'VALUE' => $value['VALUE'],
-                                                    'TEXT' => $value['MESSAGE']
-                                                ];
-                                            }
-                                        }
-                                    ?>
-                                    <script>
-                                        $(document).ready(function () {
-                                            const selectText = $('select[id^="form_dropdown_"]').next().find('.jq-selectbox__select-text');
-                                            selectText.text('<?=$question['STRUCTURE'][0]['MESSAGE'];?>');
-                                            $('.jq-selectbox__dropdown li:first').removeClass('sel').removeClass('selected');
-                                        });
-                                    </script>
-        
-                                <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'radio') : ?>
-                                    <div class="form-radio-btns">
+                        <?php foreach ($arResult["QUESTIONS"] as $questionId => $question) : ?>
+
+                            <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'dropdown') : ?>
+                                <?php
+                                echo $question['HTML_CODE'];
+
+                                if ($questionId == 'cert_level') {
+                                    foreach ($question['STRUCTURE'] as $value) {
+                                        $certLevels[] = [
+                                            'ID' => $value['ID'],
+                                            'VALUE' => $value['VALUE'],
+                                            'TEXT' => $value['MESSAGE']
+                                        ];
+                                    }
+                                }
+                                ?>
+                                <script>
+                                    $(document).ready(function() {
+                                        const selectText = $('select[id^="form_dropdown_"]').next().find('.jq-selectbox__select-text');
+                                        selectText.text('<?= $question['STRUCTURE'][0]['MESSAGE']; ?>');
+                                        $('.jq-selectbox__dropdown li:first').removeClass('sel').removeClass('selected');
+                                    });
+                                </script>
+
+                            <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'radio') : ?>
+                                <div class="form-radio-btns">
                                     <?php
-                                        foreach ($question['STRUCTURE'] as $key => $item) { ?>
-        
-                                            <label class="form-radio-btns__item">
-                                                <input
-                                                        <?= ($item['REQUIRED'] == 'Y') ? 'required' : '' ?>
-                                                        <?= (!empty($item['FIELD_PARAM'])) ? ' '.$item['FIELD_PARAM'] : '' ?>
-                                                        name="form_radio_<?= $questionId ?>[]"
-                                                        type="<?= $item['FIELD_TYPE'] ?>"
-                                                        id="<?= $item['ID'] ?>"
-                                                        value="<?= $item['ID'] ?>"
-                                                        data-value="<?= $item['VALUE'] ?>"
-                                                    >
-                                                    <span>
-                                                        <?= $item['MESSAGE'] ?>
-                                                    </span>
-                                            </label>
-                                        <?php } ?>
-                                    </div>
-                                <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>
-                                    <?php if ($questionId == 'course_name') : ?>
+                                    foreach ($question['STRUCTURE'] as $key => $item) { ?>
+
+                                        <label class="form-radio-btns__item">
                                             <input
-                                                class="inputtext main-feedback-form-input <?= $questionId ?>"
-                                                name="form_hidden_<?= $question['STRUCTURE'][0]['ID'] ?>"
-                                                type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
-                                                value="<?= $arParams['COURSE_NAME'] ?>"
-                                                >
-                                    <?php else : ?>
-                                        <?php echo $question['HTML_CODE']; ?>
-                                    <?php endif; ?>
+                                                <?= ($item['REQUIRED'] == 'Y') ? 'required' : '' ?>
+                                                <?= (!empty($item['FIELD_PARAM'])) ? ' ' . $item['FIELD_PARAM'] : '' ?>
+                                                name="form_radio_<?= $questionId ?>[]"
+                                                type="<?= $item['FIELD_TYPE'] ?>"
+                                                id="<?= $item['ID'] ?>"
+                                                value="<?= $item['ID'] ?>"
+                                                data-value="<?= $item['VALUE'] ?>">
+                                            <span>
+                                                <?= $item['MESSAGE'] ?>
+                                            </span>
+                                        </label>
+                                    <?php } ?>
+                                </div>
+                            <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>
+                                <?php if ($questionId == 'course_name') : ?>
+                                    <input
+                                        class="inputtext main-feedback-form-input <?= $questionId ?>"
+                                        name="form_hidden_<?= $question['STRUCTURE'][0]['ID'] ?>"
+                                        type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
+                                        value="<?= $arParams['COURSE_NAME'] ?>">
                                 <?php else : ?>
-                                    <?php if ($questionId == 'email') : ?>
-                                        <div class="flex-question-block">
+                                    <?php echo $question['HTML_CODE']; ?>
+                                <?php endif; ?>
+                            <?php else : ?>
+                                <?php if ($questionId == 'email') : ?>
+                                    <div class="flex-question-block">
                                     <?php endif; ?>
                                     <div class="question-block <?= $questionId ?>">
-        
+
                                         <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'checkbox') : ?>
                                             <input
                                                 <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
@@ -125,100 +119,136 @@ $certLevels = [];
                                         <?php endif; ?>
                                     </div>
                                     <?php if ($questionId == 'phone') : ?>
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if ($questionId == 'date') : ?>
-                                        <div class="dates-block">
-                                            <div class="take-date-block" style="display: none;">
-                                                <div class="select-dates-block basic">
-                                                    <?php if (!empty($arParams['BASIC_DATES'])) { ?>
-                                                        <?php foreach ($arParams['BASIC_DATES'] as $cityCode => $dates) : ?>
-                                                            <div class="select-dates <?= $cityCode?>">
-                                                                <div class="select-dates-content">
-                                                                    <span class="f-24"><?= $dates[0] ?></span>
-                                                                    <?= Functions::buildSVG('down-arrow-icon', $templateFolder . '/images'); ?>
-                                                                </div>
-                                                                <div class="select-dates-dropdown-block">
-                                                                    <?php foreach ($dates as $date) : ?>
-                                                                        <div class="select-date">
-                                                                            <span class="f-24"><?= $date ?></span>
-                                                                        </div>
-                                                                    <?php endforeach; ?>
-                                                                </div>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($questionId == 'date') : ?>
+                                    <div class="dates-block">
+                                        <div class="take-date-block" style="display: none;">
+                                            <div class="select-dates-block basic">
+                                                <?php if (!empty($arParams['BASIC_DATES'])) { ?>
+                                                    <?php foreach ($arParams['BASIC_DATES'] as $cityCode => $dates) : ?>
+                                                        <div class="select-dates <?= $cityCode ?>">
+                                                            <div class="select-dates-content">
+                                                                <span class="f-24"><?= $dates[0] ?></span>
+                                                                <?= Functions::buildSVG('down-arrow-icon', $templateFolder . '/images'); ?>
                                                             </div>
-                                                        <?php endforeach; ?>
-                                                    <? } ?>
-                                                    <div class="select-date-input">
-                                                        <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
-                                                    </div>
-                                                </div>
-                                                <div class="select-dates-block spec">
-                                                    <?php if (!empty($arParams['SPEC_DATES'])) { ?>
-                                                        <?php foreach ($arParams['SPEC_DATES'] as $cityCode => $dates) : ?>
-                                                            <div class="select-dates <?= $cityCode?>">
-                                                                <div class="select-dates-content">
-                                                                    <span class="f-24"><?= $dates[0] ?></span>
-                                                                    <?= Functions::buildSVG('down-arrow-icon', $templateFolder . '/images'); ?>
-                                                                </div>
-                                                                <div class="select-dates-dropdown-block">
-                                                                    <?php foreach ($dates as $date) : ?>
-                                                                        <div class="select-date">
-                                                                            <span class="f-24"><?= $date ?></span>
-                                                                        </div>
-                                                                    <?php endforeach; ?>
-                                                                </div>
+                                                            <div class="select-dates-dropdown-block">
+                                                                <?php foreach ($dates as $date) : ?>
+                                                                    <div class="select-date">
+                                                                        <span class="f-24"><?= $date ?></span>
+                                                                    </div>
+                                                                <?php endforeach; ?>
                                                             </div>
-                                                        <?php endforeach; ?>
-                                                    <? } ?>
-                                                    <div class="select-date-input">
-                                                        <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
-                                                    </div>
-                                                </div>
-                                                <div class="select-dates-block prof">
-                                                    <?php if (!empty($arParams['PROF_DATES'])) { ?>
-                                                        <?php foreach ($arParams['PROF_DATES'] as $cityCode => $dates) : ?>
-                                                            <div class="select-dates <?= $cityCode?>">
-                                                                <div class="select-dates-content">
-                                                                    <span class="f-24"><?= $dates[0] ?></span>
-                                                                    <?= Functions::buildSVG('down-arrow-icon', $templateFolder . '/images'); ?>
-                                                                </div>
-                                                                <div class="select-dates-dropdown-block">
-                                                                    <?php foreach ($dates as $date) : ?>
-                                                                        <div class="select-date">
-                                                                            <span class="f-24"><?= $date ?></span>
-                                                                        </div>
-                                                                    <?php endforeach; ?>
-                                                                </div>
-                                                            </div>
-                                                        <?php endforeach; ?>
-                                                    <? } ?>
-                                                    <div class="select-date-input">
-                                                        <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="date-default-block question-block">
-                                                <input class="inputtext main-feedback-form-input" placeholder="Дата" type="text">
-                                            </div>
-                                            <?php if (!empty($certLevels)) : ?>
-                                                <div class="cert-levels">
-                                                    <?php foreach ($certLevels as $certLevel) : ?>
-                                                        <div class="cert-level" data-id="<?= $certLevel['ID'] ?>" data-value="<?= $certLevel['VALUE'] ?>">
-                                                            <?= $certLevel['TEXT'] ?>
                                                         </div>
                                                     <?php endforeach; ?>
+                                                <? } ?>
+                                                <div class="select-date-input">
+                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
                                                 </div>
-                                            <?php endif; ?>
+                                            </div>
+                                            <div class="select-dates-block spec">
+                                                <?php if (!empty($arParams['SPEC_DATES'])) { ?>
+                                                    <?php foreach ($arParams['SPEC_DATES'] as $cityCode => $dates) : ?>
+                                                        <div class="select-dates <?= $cityCode ?>">
+                                                            <div class="select-dates-content">
+                                                                <span class="f-24"><?= $dates[0] ?></span>
+                                                                <?= Functions::buildSVG('down-arrow-icon', $templateFolder . '/images'); ?>
+                                                            </div>
+                                                            <div class="select-dates-dropdown-block">
+                                                                <?php foreach ($dates as $date) : ?>
+                                                                    <div class="select-date">
+                                                                        <span class="f-24"><?= $date ?></span>
+                                                                    </div>
+                                                                <?php endforeach; ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                <? } ?>
+                                                <div class="select-date-input">
+                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
+                                                </div>
+                                            </div>
+                                            <div class="select-dates-block prof">
+                                                <?php if (!empty($arParams['PROF_DATES'])) { ?>
+                                                    <?php foreach ($arParams['PROF_DATES'] as $cityCode => $dates) : ?>
+                                                        <div class="select-dates <?= $cityCode ?>">
+                                                            <div class="select-dates-content">
+                                                                <span class="f-24"><?= $dates[0] ?></span>
+                                                                <?= Functions::buildSVG('down-arrow-icon', $templateFolder . '/images'); ?>
+                                                            </div>
+                                                            <div class="select-dates-dropdown-block">
+                                                                <?php foreach ($dates as $date) : ?>
+                                                                    <div class="select-date">
+                                                                        <span class="f-24"><?= $date ?></span>
+                                                                    </div>
+                                                                <?php endforeach; ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                <? } ?>
+                                                <div class="select-date-input">
+                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
+                                                </div>
+                                            </div>
                                         </div>
-                                    <?php endif; ?>
+                                        <div class="date-default-block question-block">
+                                            <input class="inputtext main-feedback-form-input" placeholder="Дата" type="text">
+                                        </div>
+                                        <?php if (!empty($certLevels)) : ?>
+                                            <div class="cert-levels">
+                                                <?php foreach ($certLevels as $certLevel) : ?>
+                                                    <div class="cert-level" data-id="<?= $certLevel['ID'] ?>" data-value="<?= $certLevel['VALUE'] ?>">
+                                                        <?= $certLevel['TEXT'] ?>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
                                 <?php endif; ?>
-                            <?php endforeach; ?>
-                            <input class="submit-main-feedback-form" <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> type="submit" name="web_form_submit" value="<?=htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]);?>" />
-                        </div>
-                        <?=$arResult["FORM_FOOTER"]?>
-                    <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        <input class="submit-main-feedback-form" <?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : ""); ?> type="submit" name="web_form_submit" value="<?= htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]); ?>" />
+                    </div>
+                    <?= $arResult["FORM_FOOTER"] ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<?php if ($arResult["FORM_NOTE"]) : ?>
+    <div class="success-modal-form-block">
+        <div class="success-modal-form-content">
+            <span class="close-success-modal"><?= Functions::buildSVG('close-modal', $templateFolder . '/images') ?></span>
+            <span class="modal-success-title"><?= Loc::getMessage('SUCCESS_FORM_TITLE') ?></span>
+            <p class="description-text"><?= Loc::getMessage('SUCCESS_FORM_DESCRIPTION') ?></p>
+            <button class="close-success-modal"><?= Loc::getMessage('SUCCESS_BTN_TEXT') ?></button>
+        </div>
+    </div>
+    <div class="success-modal-form-background"></div>
+
+    <script>
+        let closeModalBtns = document.querySelectorAll('.close-success-modal');
+        let successModal = document.querySelector('.success-modal-form-block');
+        let successBackModal = document.querySelector('.success-modal-form-background');
+
+        if (successBackModal && successModal && closeModalBtns) {
+            closeModalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    reloadPage();
+                });
+            });
+
+            successBackModal.addEventListener('click', () => {
+                reloadPage();
+            });
+        }
+
+        function reloadPage()
+        {
+            const url = new URL(window.location.href);
+            url.searchParams.set('scrollTo', 'applicationsFormBlock');
+            window.location.href = url.toString();
+        }
+    </script>
+<?php endif; ?>
