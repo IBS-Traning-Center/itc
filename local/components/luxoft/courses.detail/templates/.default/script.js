@@ -13,8 +13,6 @@ class CourseDetail {
       selectDateClass: '.select-date',
       dateInputClass: '.sign-course-form-input.date',
       selectDatesContentClass: '.select-dates-content',
-      signCourseMagnetBlockCLass: '.sign-course-magnet-block',
-      openSignMagnetModalClass: '.open-sign-magnet-modal',
     }
   ) {
     this.themesCourse = document.querySelectorAll(data.themesCourseClass);
@@ -29,8 +27,7 @@ class CourseDetail {
     this.selectDate = document.querySelectorAll(data.selectDateClass);
     this.dateInput = document.querySelector(data.dateInputClass);
     this.selectDatesContent = document.querySelector(data.selectDatesContentClass);
-    this.signCourseMagnetBlock = document.querySelector(data.signCourseMagnetBlockCLass);
-    this.openSignMagnetModal = document.querySelectorAll(data.openSignMagnetModalClass);
+    this.videoItem = document.querySelectorAll(data.videoItemClass);
 
     this.addCourseDetailEventHandler();
     this.initLinkedCoursesSlider();
@@ -77,18 +74,6 @@ class CourseDetail {
       this.backgroundModal.addEventListener("click", () => {
         this.closeDiplomModal();
         this.closeFormatModal();
-      });
-
-        if (this.signCourseMagnetBlock) {
-          this.signCourseMagnetBlock.style.display = 'none';
-        }
-    }
-
-    if (this.openSignMagnetModal) {
-      this.openSignMagnetModal.forEach(block => {
-        block.addEventListener('click', () => {
-          this.openMagnetModal();
-        });
       });
     }
 
@@ -142,15 +127,41 @@ class CourseDetail {
     }
   }
 
-  openMagnetModal()
-  {
-    if (this.signCourseMagnetBlock && this.backgroundModal) {
-      this.signCourseMagnetBlock.style.display = 'block';
-      this.backgroundModal.style.display = 'flex';
-    }
-  }
-
   initLinkedCoursesSlider() {
+    let videoBlock = $('.videos-items');
+
+        if (videoBlock) {
+            videoBlock.slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: false,
+                autoplay: false,
+                arrows: false,
+                dots: true,
+                variableWidth: false,
+                responsive: [
+                    {
+                        breakpoint: 1281,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 789,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 551,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        }
+
     let linkedCoursesBlock = $(".linked-courses-block");
 
     if (linkedCoursesBlock) {

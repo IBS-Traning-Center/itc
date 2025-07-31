@@ -1,1 +1,1 @@
-<a href="/training/katalog_kursov/kompleksnye-programmy/babok_dlya_biznes_analitika/?utm_source=blog&utm_medium=referral&utm_campaign=promo_babok">Регистрируйтесь на курсы,</a> в комментарии к заявке или ответным письмом напишите «Хочу Руководство BABOK», пройдите обучение и получите свою книгу! Количество книг ограничено.
+<a href="/catalog/complex/kp_BA_Middle/" target="_blank">Регистрируйтесь на программу</a> или оставляйте заявку ниже, пройдите обучение и получите свою книгу! Количество книг ограничено.

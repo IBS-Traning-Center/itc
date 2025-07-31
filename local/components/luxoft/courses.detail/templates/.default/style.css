@@ -16,6 +16,78 @@
     font-family: 'Noto Sans';
 }
 
+.videos-items .slick-list {
+    overflow: hidden;
+}
+
+.videos-items .trainer-courses-block .slick-list,
+.videos-items .trainer-courses-block .slick-list .slick-track {
+    display: flex;
+    align-items: stretch;
+}
+
+.videos-items .slick-dots {
+    position: unset;
+    margin-top: 32px;
+}
+
+.videos-items .slick-dots li,
+.videos-items .slick-dots li button {
+    width: 8px;
+    height: 8px;
+}
+
+.videos-items .slick-dots li {
+    margin: 0 4px;
+}
+
+.videos-items .slick-dots li button:before {
+    width: 8px;
+    height: 8px;
+    font-size: 10px;
+}
+
+.videos-items .slick-dots li.slick-active button::before {
+    opacity: 1;
+    color: var(--button-blue);
+}
+
+.videos-items .slick-dots li button:hover::before {
+    color: var(--button-blue);
+}
+
+.videos-block h3 {
+    margin-bottom: 56px;
+    color: var(--black);
+    font-size: 56px;
+    line-height: 72px;
+}
+
+.videos-block .videos-items .video-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-right: 24px;
+}
+
+.videos-block .videos-items .video-item:last-child {
+    margin-right: 0;
+}
+
+.videos-block .videos-items .video-item img {
+    padding: 8px;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.videos-block .videos-items .video-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 .btn-timetable {
     display: flex;
     padding-top: 24px;

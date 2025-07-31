@@ -1,3 +1,9 @@
+.banner-main-page img{
+  max-width: 100% !important;
+  width: 100%;
+  height: auto;
+}
+
 .top-page-banner.section-complex-page .container {
     align-items: start;
 }

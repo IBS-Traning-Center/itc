@@ -99,10 +99,9 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'skills' => 'IMPROVED_SKILLS',
                 'what_learn' => 'WHAT_LEARN',
                 'format' => 'FORMAT',
+                'videos' => 'VIDEOS',
+                'tools' => 'course_tools',
                 'dev' => 'IS_DEV',
-                'magnet_code' => 'MAGNET_CODE',
-                'magnet_lead_name' => 'MAGNET_LEAD_NAME',
-                'magnet_button' => 'MAGNET_BUTTON_NAME',
 
                 'metaTitle' => 'meta_title',
                 'metaDescription' => 'meta_desc',
@@ -398,10 +397,9 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 $this->mapping('course', 'price_ur'),
                 $this->mapping('course', 'language'),
                 $this->mapping('course', 'format'),
-                $this->mapping('course', 'dev'),
-                $this->mapping('course', 'magnet_code'),
-                $this->mapping('course', 'magnet_lead_name'),
-                $this->mapping('course', 'magnet_button')
+                $this->mapping('course', 'videos'),
+                $this->mapping('course', 'tools'),
+                $this->mapping('course', 'dev')
             ],
             'filter' => [
                 'ACTIVE' => 'Y'
@@ -473,6 +471,29 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 }
             }
 
+            $toolsCode = [];
+            if ($courseObject->get($this->mapping('course', 'tools'))) {
+                foreach ($courseObject->get($this->mapping('course', 'tools'))->getAll() as $value) {
+                    $toolsCode[] = $value->getValue();
+                }
+            }
+            if (!empty($toolsCode)) {
+                $toolsTable = new HighloadblockManager('CourseTools');
+                $toolsTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE'], [], ['UF_XML_ID' => $toolsCode]);
+
+                $items = $toolsTable->getDataAll();
+
+                if (!empty($items)) {
+                    foreach ($items as &$item) {
+                        if ($item['UF_PICTURE']) {
+                            $item['UF_PICTURE'] = CFile::GetPath($item['UF_PICTURE']);
+                        }
+                    }
+
+                    $this->course['tools'] = $items;
+                }
+            }
+
             $courseFormat = $courseObject->get($this->mapping('course', 'format'))->getValue() ? $courseObject->get($this->mapping('course', 'format'))->getValue() : '';
             if (!empty($courseFormat)) {
                 $hightTable = new HighloadblockManager('CourseFormats');
@@ -492,12 +513,42 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 }
             }
 
-            if ($courseObject->get($this->mapping('course', 'magnet_code')) && $courseObject->get($this->mapping('course', 'magnet_lead_name')) && $courseObject->get($this->mapping('course', 'magnet_button'))) {
-                $this->course['magnet'] = [
-                    'code' => $courseObject->get($this->mapping('course', 'magnet_code'))->getValue(),
-                    'lead_name' => $courseObject->get($this->mapping('course', 'magnet_lead_name'))->getValue(),
-                    'button' => $courseObject->get($this->mapping('course', 'magnet_button'))->getValue(),
-                ];
+            $videosCode = [];
+            if ($courseObject->get($this->mapping('course', 'videos'))) {
+                foreach ($courseObject->get($this->mapping('course', 'videos'))->getAll() as $value) {
+                    $videosCode[] = $value->getValue();
+                }
+            }
+            if (!empty($videosCode)) {
+                $videosTable = new HighloadblockManager('TrainersVideo');
+                $videosTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID', 'UF_PICTURE', 'UF_VIDEO_LINK'], [], ['UF_XML_ID' => $videosCode]);
+
+                $videos = $videosTable->getDataAll();
+
+                foreach ($videos as &$video) {
+                    $value = $video['UF_VIDEO_LINK'];
+                    $isRutube = strpos($value, 'rutube') !== false;
+                    $isYoutube = strpos($value, 'youtube') !== false;
+                    if (!$isRutube && !$isYoutube) continue;
+            
+                    if ($isRutube) {
+                        preg_match("/\/video\/([a-zA-Z0-9_-]+)/", $value, $matches);
+                        if (!empty($matches[1])) {
+                            $video['ID'] = $matches[1];
+                            $video['PLATFORM'] = 'rutube';
+                        } else {
+                            continue;
+                        }
+                    }	
+
+                    if ($isYoutube) {
+                        $video['PLATFORM'] = 'youtube';
+                    } else {
+                        continue;
+                    }
+                }
+                
+                $this->course['videos'] = $videos;
             }
 
             $this->course['skills_course'] = $this->getImprovedSkills();

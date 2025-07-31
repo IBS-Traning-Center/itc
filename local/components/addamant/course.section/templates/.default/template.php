@@ -90,6 +90,21 @@ if (!empty($arResult['COURSES_IDS'])) : ?>
                 ),
                 $component
             );?>
+            <section id="banner" class="banner-main-page">
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:advertising.banner",
+                    ".default",
+                    array(
+                        "COMPONENT_TEMPLATE" => ".default",
+                        "TYPE" => "ON_MAIN",
+                        "NOINDEX" => "Y",
+                        "QUANTITY" => "1",
+                        "CACHE_TYPE" => "A",
+                        "CACHE_TIME" => "0"
+                    ),
+                    false
+                );?>
+            </section>
             <?php
             $APPLICATION->IncludeComponent(
                 "bitrix:catalog.section",

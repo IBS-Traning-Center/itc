@@ -22,6 +22,12 @@
     margin-top: 56px;
 }
 
+.banner-main-page img{
+  max-width: 100% !important;
+  width: 100%;
+  height: auto;
+}
+
 .possibilities-babok {
     background-color: #F4F0FE;
 }
@@ -46,7 +52,6 @@
 }
 
 .possib h2 {
-    max-width: 596px;
     width: 100%;
 }
 
