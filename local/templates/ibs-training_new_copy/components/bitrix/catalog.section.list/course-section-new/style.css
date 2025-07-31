@@ -1,0 +1,31 @@
+#content  .course-section-list ul {
+    margin:0;
+}
+#content .course-section-list li {
+    border-bottom: 1px solid #CCCCCC;
+    color: #22396D;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 10px 5px 10px 5px;
+    font-weight: normal;
+    list-style: none outside none;
+    background: none repeat scroll 0 0 #F9F9F7;
+}
+.course-section-list li a {
+    font-size: 18px;
+    color: #22396D;
+    text-decoration: none;
+    border-bottom: 1px dashed #22396D;
+    font-weight: bold;
+
+}
+.double-arrow {
+    float: left;
+    margin-left: 6px;
+    background: url(/images_new/bgr_arr_1.gif)   0 3px repeat-x;
+    height: 20px;
+    width: 18px;
+}
+.main-course-link {
+    float: left;
+}

@@ -416,6 +416,14 @@ $arUrlRewrite=array (
     'PATH' => '/personal/order/index.php',
     'SORT' => 100,
   ),
+  71 => 
+  array (
+    'CONDITION' => '#^/sertifikatsiya/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/sertifikatsiya/index.php',
+    'SORT' => 100,
+  ),
   19 => 
   array (
     'CONDITION' => '#^/about/experts/#',

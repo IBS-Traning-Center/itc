@@ -1,0 +1,113 @@
+.mini-gallery {
+    .swiper-wrapper {
+        flex-direction: column;
+        gap: 32px;
+
+        @include breakpoint(sm) {
+            flex-direction: row;
+            gap: 0;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex-shrink: unset;
+        width: 100%;
+        max-width: 100%;
+        
+        @include breakpoint(sm) {
+            width: fit-content;
+            max-width: 500px;
+        }
+
+        @include breakpoint(xl) {
+            gap: 24px;
+        }
+
+        > a {
+            height: 100%;
+            display: block;
+        }
+
+        img {
+            object-fit: contain;
+            min-width: 160px;
+            width: auto;
+            height: auto;
+        }
+
+        &__title {
+            @include notosans;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 32px;
+            margin-bottom: 8px;
+
+            @include breakpoint(xl) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__desc {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+
+            * {
+                font: inherit;
+            }
+        }
+
+        &.w-500 {
+            .mini-gallery__item__desc {
+                @include breakpoint(sm) {
+                    max-width: 266px;
+                    width: 266px;
+                }
+            }
+
+            img {
+                height: 230px;
+                min-width: 160px;
+
+                @include breakpoint(md) {
+                    height: 300px;
+                    min-width: 210px;
+                }
+            }
+        }
+
+        &.w-800 {
+            max-width: 800px;
+        }
+    }
+
+    .our-clients-block {
+        margin-bottom: 0;
+
+        // .our-clients-item {
+        //     max-width: 210px;
+
+        //     > a {
+        //         min-width: 210px;
+        //         display: block;
+        //     }
+
+        //     &.w-500 {
+        //         max-width: calc(100vw - 30px);
+
+        //         @include breakpoint(sm) {
+        //             max-width: 500px;
+        //         }
+        //     }
+        // }
+    }
+
+    [data-code="partners"] {
+        .mini-gallery__item:last-child img {
+            min-width: 73px;
+        }
+    }
+}

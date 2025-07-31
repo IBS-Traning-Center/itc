@@ -7,7 +7,7 @@
     overflow-x: scroll;
     padding-bottom: 48px;
     margin-bottom: 48px;
-    border-bottom: 1px solid var(--black);
+    /* border-bottom: 1px solid var(--black); */
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -39,6 +39,7 @@
     height: auto;
     display: flex;
     flex-shrink: 0;
+    object-fit: contain;
 }
 
 .roles-content {
@@ -52,6 +53,7 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 56px;
     row-gap: 24px;
+    align-items: center;
 }
 
 .roles-content ul li {
@@ -81,6 +83,7 @@
 @media (max-width: 1180px) {
     .pictures-block .picture-item img {
         max-height: 40px;
+        max-width: 120px;
     }
 
     .pictures-block {
@@ -108,7 +111,7 @@
     }
 
     .pictures-block .picture-item {
-        max-width: 120px;
+        /**/
         margin-right: 17px;
     }
 }

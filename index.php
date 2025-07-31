@@ -3,10 +3,10 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
 global $USER, $APPLICATION;
-$APPLICATION->SetPageProperty("title", "Обучение по разработке ПО | IBS Training Center");
+$APPLICATION->SetPageProperty("title", "DEV Обучение по разработке ПО | IBS Training Center");
 $APPLICATION->SetPageProperty("keywords", "курсы для программистов,  учебный центр IBS, уц ibs, дистанционное обучение, корпоративное обучение");
 $APPLICATION->SetPageProperty("description", "Обучение в сфере разработки и внедрения ПО для аналитиков, архитекторов, разработчиков, тестировщиков, Big Data и DevOps, а также менеджеров IT-проектов: курсы, вебинары, корпоративное обучение и сертификация");
-$APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги для программистов, аналитиков, менеджеров проектов, тестировщиков. Разработка ПО, обучение, учебный центр");
+$APPLICATION->SetTitle("DEV IBS Training Center: Курсы и тренинги для программистов, аналитиков, менеджеров проектов, тестировщиков. Разработка ПО, обучение, учебный центр");
 
 ?><div class="container top-main-page-block">
 	<h4 class="left-text"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/top_left_text.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Верхний текст.']); ?></h4>

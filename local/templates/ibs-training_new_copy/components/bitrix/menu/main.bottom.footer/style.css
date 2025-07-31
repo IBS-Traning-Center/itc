@@ -1,0 +1,15 @@
+.bottom-footer-menu-block {
+    padding-top: 30px;
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+}
+
+.bottom-footer-menu-block a {
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.bottom-footer-menu-block a:hover {
+    text-decoration: underline;
+}

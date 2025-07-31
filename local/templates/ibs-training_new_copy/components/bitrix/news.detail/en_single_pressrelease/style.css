@@ -1,0 +1,121 @@
+.banner-content{
+    max-width: 100%!important;
+}
+
+.ya-share2__list.ya-share2__list_direction_horizontal > .ya-share2__item{
+    margin-top: 0!important;
+    margin-right: 9px!important;
+}
+
+.detail-text-wrapper{
+    display: flex;
+    padding: 60px 0 120px;
+}
+
+.detail-text-content{
+    max-width: 1294px;
+    margin-right: 24px;
+}
+
+.detail-text-content p{
+    margin: 0;
+}
+
+.detail-text-content,
+.detail-text-content ul li,
+.detail-text-content ol li{
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.detail-text-element h1,
+.detail-text-element h2,
+.detail-text-element h3,
+.detail-text-element h4{
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+}
+
+.detail-images-element img{
+    max-width: 100%;
+}
+
+.detail-images-element img+img{
+    margin-top: 24px;
+}
+
+.detail-text-element a{
+    color: var(--button-blue);
+}
+
+.detail-text-sidebar{
+    min-width: 362px;
+    width: 100%;
+}
+
+.detail-text-content .time-n-comment,
+.preview-text-element,
+.detail-images-element{
+    margin-bottom: 56px;
+}
+
+.detail-text-content .time-n-comment{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.detail-text-content .time-n-comment svg{
+    margin-left: 32px;
+    margin-right: 8px;
+}
+
+.detail-social-title{
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 24px;
+}
+
+.detail-text-content ul li{
+    padding-left: 44px;
+    background-image: url(images/icon-li.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+@media (max-width: 1023px) {
+    .detail-text-content .time-n-comment,
+    .preview-text-element,
+    .detail-images-element{
+        margin-bottom: 24px;
+    }
+
+    .detail-text-element h1,
+    .detail-text-element h2,
+    .detail-text-element h3,
+    .detail-text-element h4,
+    .detail-social-title{
+        font-size: 20px;
+        line-height: 28px;  
+    }
+
+    .detail-text-content,
+    .detail-text-content ul li,
+    .detail-text-content ol li{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .detail-text-content{
+        margin-right: 0;
+        margin-bottom: 32px;
+    }
+
+    .detail-text-wrapper{
+        flex-direction: column;
+        padding: 40px 0;
+    }
+}

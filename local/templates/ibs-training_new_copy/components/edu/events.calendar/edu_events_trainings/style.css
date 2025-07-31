@@ -1,0 +1,95 @@
+div.news-calendar { width: 240px; margin-right: 30px;}
+.NewsCalToday, .NewsCalDefault, .NewsCalOtherMonth , .NewsCalHeader, .NewsCalMonthNav, .NewsCalDay, .NewsCalNews { color: #000000; }
+.NewsCalToday { background-color: #E8ECF5; font-weight: bold; }
+span.info { color: #000000; font-weight: bold; }
+.NewsCalDefault { /*background-color: #FFFFFF;*/ }
+.NewsCalOtherMonth { color: #CCCCCC; }
+.NewsCalTable, .NewsCalTable tr, .NewsCalTable td {
+	border-collapse: collapse;
+	height: 25px;
+	text-align: center;
+	vertical-align: middle;
+}
+.NewsCalWeekend  { color: #CCC; }
+.NewsCalTable td.NewsCalHeader {
+	text-align: center;
+	color: #fff;
+	background-color: #939DB6;
+}
+.inside {
+    margin-bottom: 20px;
+}
+.NewsCalHeader {
+	background-color: #63749C;
+	color: #FFFFFF;
+	border: 0px solid #000000;
+	text-align: center;
+}
+.NewsCalTable tr.weekdays { border-collapse: collapse; border: 0px solid #000000; }
+.NewsCalMonthNav { }
+.NewsCalDay { color: #000000; }
+.NewsCalDayOther { color: #365D91; }
+.NewsCalNews {
+	color: #000000;
+	border-bottom: 1px dotted #CCCCCC;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 6px 0px;
+}
+span.red { font-weight: bold; font-style: italic; color: #CC0000; }
+a.jt {
+	text-decoration: none;
+	border-bottom: 1px dotted #00528D;
+	padding: 3px 0px -3px 0px;
+	color: #00528D;
+}
+a.jt:hover {
+	text-decoration: none;
+	color: #C85711;
+	border-bottom: 1px dotted #C85711;
+}
+div.news-calendar a.jt:hover { text-decoration: none; color: #C85711; }
+table.calend {
+	width: 100%;
+	margin-bottom: 10px;
+	border-collapse: collapse;
+	margin: 0 auto 15px auto;
+}
+table.calend a:visited { color: #FC711B; }
+table.calend .edu_header { background-color: #22396D; }
+table.calend a:active { color: #FC711B; }
+table.calend a:link { color: #FC711B; }
+table.calend h3 { color: #FFFFFF; font-size: 12px; padding: 0px; }
+table.calend th { vertical-align: middle; }
+table.calend p { padding: 0px; }
+table.calend .edu_header p { color: #FFFFFF; }
+table.calend td { padding: 5px; vertical-align: top; }
+table.calend td a { color: #FF0000; }
+table.calend ul { padding: 0; margin: 0 0 0 5px; }
+table.calend li { padding: 0; margin: 0 0 10px 5px; }
+table.calend tr.select { padding: 0; margin: 0 0 10px 5px; }
+.w445 {
+    width: 377px !important;
+}
+
+.on_blue .table_data{
+	padding:3px 0px 3px 0px;
+	border-top:1px solid #D9DBE0;
+}
+.on_blue .onmouseoverdate{
+	background-color:#fff;         /*EDE1D0*/
+}
+.on_blue a.calendardate:hover{
+	background-color:#fff;       /*FFF1DB*/
+	color:#000;
+}
+.on_blue.a_on_hover{
+	background-color:#fff;     /*FFF1DB*/
+}
+.on_blue td.active_day:hover{
+	background-color:#fff;       /*FFF1DB*/
+	color:#000;
+}
+.on_blue td.active_state{
+	background-color:#fff;        /*FFF1DB*/
+	cursor: pointer;
+}

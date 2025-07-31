@@ -1,0 +1,1 @@
+<a href="/timetable/">Открытое расписание</a> <a href="/catalog/">Каталог курсов</a> <a href="/timetable/?type=events">Бесплатные семинары</a> <a href="/about/news/faq/">FAQ по обучению</a>

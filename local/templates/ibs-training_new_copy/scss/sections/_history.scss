@@ -1,0 +1,335 @@
+.history {
+    overflow: hidden;
+
+    .title--h1 {
+        margin-bottom: 24px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 8px;
+        }
+
+        @include breakpoint(xxl) {
+            margin-bottom: 32px;
+        }
+
+        & + p {
+            @include notosans;
+            color: #fff;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1;
+
+            @include breakpoint(lg) {
+                font-size: 20px;
+                line-height: 32px;
+            }
+
+            @include breakpoint(xxl) {
+                font-size: 42px;
+                line-height: 60px;
+            }
+        }
+    }
+
+    &__list {
+        position: relative;
+
+        @include breakpoint(lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        &__item {
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 24px;
+
+            @include breakpoint(lg) {
+                text-align: center;
+                padding: 0;
+                width: calc(100% / 3);
+            }
+
+            .infinity {
+                min-width: 68px;
+                width: 68px;
+                height: 42.5px;
+                position: absolute;
+                top: -8px;
+                left: -6px;
+                
+                @include breakpoint(lg) {
+                    top: 14px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            .title--h2 {
+                color: #fff;
+                white-space: nowrap;
+                display: block;
+                @include notosans;
+
+                @include breakpoint(lg) {
+                    padding: 14px 19px 0;
+                }
+
+                &.infin {
+                    color: transparent;
+                    position: relative;
+                }
+            }
+
+            .f-20 {
+                color: #fff;
+                @include notosans;
+
+                @include breakpoint(lg) {
+                    padding: 0 0 8px;
+                    max-width: 323px;
+                    margin: 0 auto;
+                }
+            }
+
+            &__point {
+                span {
+                    position: absolute;
+                    z-index: 50;
+                    min-width: 11px;
+                    width: 11px;
+                    height: 11px;
+                    border: 1.5px solid #fff;
+                    background-color: #0827C4;
+                    top: 13px;
+                    left: 5px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    display: block;
+
+                    @include breakpoint(lg) {
+                        position: relative;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                @include breakpoint(lg) {
+                    position: relative;
+                    height: 31px;
+                    width: 100%;
+                }
+
+                &:before, &:after {
+                    @include breakpoint(lg) {
+                        position: absolute;
+                        content: '';
+                        z-index: 10;
+                        width: 50%;
+                        height: 1.5px;
+                        background-color: #fff;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        transition: all .3s ease-in-out;
+                    }
+                }
+
+                &:before {
+                    @include breakpoint(lg) {
+                        left: 0;
+                    }
+                }
+
+                &:after {
+                    @include breakpoint(lg) {
+                        right: 0;
+                    }
+                }
+            }
+
+            &:before {
+                position: absolute;
+                content: '';
+                left: 10px;
+                top: 17px;
+                background-color: #fff;
+                width: 1.5px;
+                height: 100%;
+                z-index: 10;
+
+                @include breakpoint(lg) {
+                    display: none;
+                }
+            }
+
+            &__text {
+                padding-top: 16px;
+            }
+
+            &.active {
+
+                .history__list__item__head {
+                    padding: 16px;
+                    position: relative;
+
+                    @include breakpoint(lg) {
+                        padding: 0;
+                        position: static;
+                    }
+                    
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        left: -30px;
+                        top: 0;
+                        width: calc(100% + 30px);
+                        height: 100%;
+                        background-color: #fff;
+
+                        @include breakpoint(lg) {
+                            display: none;
+                        }
+                    }
+                }
+
+                .history__list__item__point {
+                    span {
+                        left: -25px;
+
+                        @include breakpoint(lg) {
+                            left: 50%;
+                        }
+                    }
+                }
+                
+                .title--h2, .f-20 {
+                    color: #0827C4;
+                    position: relative;
+                    z-index: 10;
+                }
+                
+                .title--h2.infin {
+                    color: transparent;
+                }
+                
+                .infinity path {
+                    fill: #0827C4;
+                }
+                
+                .history__list__item__point {
+                    &:before, &:after {
+                        background-color: #fff;
+                        mix-blend-mode: difference;
+                    }
+                    
+                    span {
+                        border-color: #0827C4;
+                    }
+                }
+                
+                &:before {
+                    mix-blend-mode: difference;
+                }
+                
+                @include breakpoint(lg) {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        &:first-child {
+            .history__list__item:first-child {
+                .history__list__item__point {
+                    &:before {
+                        @include breakpoint(lg) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .history__list__item:last-child {
+                .history__list__item__point {
+                    &:after {
+                        @include breakpoint(lg) {
+                            right: -500px;
+                            width: calc(50% + 500px);
+                        }
+                    }
+                }
+            }
+        }
+
+        &:last-child .history__list__item:first-child {
+            .history__list__item__point {
+                &:before {
+                    @include breakpoint(lg) {
+                        left: -500px;
+                        width: calc(50% + 500px);
+                    }
+
+                    @include breakpoint(xxl) {
+                        left: -1000px;
+                        width: calc(50% + 1000px);
+                    }
+                }
+            }
+        }
+
+        &:last-child, &:only-child {
+            .history__list__item:last-child {
+                padding-bottom: 8px;
+
+                @include breakpoint(lg) {
+                    padding-bottom: 0;
+                }
+
+                p {
+                    margin-top: 8px;
+
+                    @include breakpoint(lg) {
+                        margin-top: 0;
+                    }
+                }
+    
+                &:before {
+                    display: none;
+                }
+    
+                .history__list__item__point {
+                    &:after {
+                        @include breakpoint(lg) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .history__list__item:nth-last-child(2) {
+                .history__list__item__point {
+                    &:before {
+                        display: none;
+                    }
+                    
+                    &:after {
+                        width: calc(150%);
+                        right: unset;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__text {
+        color: #fff;
+        padding: 16px 0;
+        margin: 24px 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
