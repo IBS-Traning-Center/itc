@@ -409,6 +409,7 @@
     }
 }
 
+
 #applicationsFormBlock input[type="date"]{
     padding: 0px 16px;
     font-size: 16px;    
@@ -417,6 +418,18 @@
     text-align: left;
     max-width: 100%;
     width: 100%
+}
+
+
+@media (max-width: 630px) {
+    .select-date-input input[type="date"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background: #fff;
+        padding: .6rem .75rem;
+        line-height: 1.2;
+    }
+
 }
 
 .questions-block .dates-block,
