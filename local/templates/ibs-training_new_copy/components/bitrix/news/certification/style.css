@@ -1,3 +1,10 @@
-#mainFeedbackFormBlock .jq-selectbox__dropdown li:first-child{
-    display: none;
+.start .start__btns > div .btn--white:first-child{
+    padding: 16px 16px 16px 84px;
+} 
+ 
+.start .start__btns > div:first-child .btn--white img {
+    width: 68px;
+    min-width: 68px;
+    height: 73px;
+    left: 10px;
 }

@@ -1,4 +1,6 @@
 <?
+$PERM["testing-old"]["*"]="D";
+$PERM["about-old"]["*"]="D";
 $PERM["check_cert"]["*"]="D";
 $PERM["new-year-promoaction-2021"]["33"]="D";
 $PERM["pub"]["101"]="T_8";

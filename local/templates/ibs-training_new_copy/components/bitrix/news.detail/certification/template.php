@@ -782,7 +782,8 @@ $this->setFrameMode(true);
 			"BASIC_DATES" => $arResult['BASIC_DATES'],
 			"SPEC_DATES" => $arResult['SPEC_DATES'],
 			"PROF_DATES" => $arResult['PROF_DATES'],
-			"COURSE_NAME" => $arResult['NAME']
+			"COURSE_NAME" => $arResult['NAME'],
+			"COURSE_TYPE" => $arResult['PROPERTIES']['TYPE']['VALUE']
 		),
 		$component
 	);

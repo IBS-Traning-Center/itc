@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 
-<section class="basically spaces 1">
+<section class="basically spaces">
 	<div class="container">
 		<h2 class="title--h2"><?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/cert-detail-for-what-title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок блока с табами']); ?></h2>
 		<div class="tabs--wrapper">	

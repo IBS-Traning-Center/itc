@@ -30,7 +30,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Сертификация", 
-		"/certification/", 
+		"/sertifikatsiya/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -44,7 +44,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"О нас", 
-		"/contacts/", 
+		"/about/", 
 		Array(), 
 		Array(), 
 		"" 

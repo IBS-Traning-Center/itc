@@ -107,6 +107,17 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
             $APPLICATION->ThrowException('Ошибка');
             return false;
         }
+    } else if ($WEB_FORM_ID == 46) {
+        if ($arrVALUES['form_hidden_1118'] == NULL) {
+            $value = $arrVALUES['form_hidden_1118'];
+            if ($arrVALUES['form_text_1056']) {
+                $value = $value . 'Дата: ' . $arrVALUES['form_text_1056'];
+            }
+            if ($arrVALUES['form_text_1061']) {
+                $value = $value . "\n" . 'Комментарий: ' . $arrVALUES['form_text_1061'];
+            }
+            $arrVALUES['form_hidden_1118'] = $value;
+        }
     }
 }
 

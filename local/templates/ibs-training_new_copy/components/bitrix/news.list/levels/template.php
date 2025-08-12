@@ -101,7 +101,17 @@ $formTemplate = [0 => 'levels_modal_form', 1 => 'levels_modal_form2', 2 => 'leve
 
 									<? if (!empty($arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'])) {
 										$titleForm = $arItem['PROPERTIES']['MODAL_FORM_CODE']['~VALUE']['TEXT'];
-									} ?>
+									}
+									if (!empty($arItem['PROPERTIES']['MAIL_CODE']['VALUE'])) {
+										$certMailCode = $arItem['PROPERTIES']['MAIL_CODE']['VALUE'];
+									}
+									if (!empty($arItem['PROPERTIES']['CERT_NAME']['VALUE'])) {
+										$certName = $arItem['PROPERTIES']['CERT_NAME']['VALUE'];
+									}
+									if (!empty($arItem['NAME'])) {
+										$levelName = $arItem['NAME'];
+									}
+									?>
 
 									<?
 									$APPLICATION->IncludeComponent(
@@ -123,7 +133,10 @@ $formTemplate = [0 => 'levels_modal_form', 1 => 'levels_modal_form2', 2 => 'leve
 											"AJAX_MODE" => "Y",
 											"USE_EXTENDED_ERRORS" => "N",
 											"VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
-											"WEB_FORM_ID" => $formId[$keyItem]
+											"WEB_FORM_ID" => $formId[$keyItem],
+											"CERT_NAME" => $certName,
+											"LEVEL_NAME" => $levelName,
+											"MAIL_CODE" => $certMailCode
 										)
 									);
 

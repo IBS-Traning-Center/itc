@@ -1,5 +1,4 @@
-class ApplicationsFormBlock
-{
+class ApplicationsFormBlock {
     constructor(data = {
         feedbackFormBtnClass: '.btn-main',
         applicationsFormBlockId: 'applicationsFormBlock',
@@ -15,7 +14,8 @@ class ApplicationsFormBlock
         jqSelectboxDropdownClass: '.jq-selectbox__dropdown ul li',
         scrollBtnSelector: '[data-scroll="applicationsFormBlock"]',
         defaultDateClass: '.date-default-block.question-block',
-        takeDateBlockClass: '.take-date-block'
+        takeDateBlockClass: '.take-date-block',
+        formSelectId: '#form_dropdown_cert_level'
     }) {
         this.applicationsFormBlock = document.getElementById(data.applicationsFormBlockId);
         this.feedbackFormBtn = this.applicationsFormBlock.querySelectorAll(data.feedbackFormBtnClass);
@@ -32,6 +32,7 @@ class ApplicationsFormBlock
         this.scrollBtn = document.querySelectorAll(data.scrollBtnSelector);
         this.defaultDate = document.querySelector(data.defaultDateClass);
         this.takeDateBlock = document.querySelector(data.takeDateBlockClass);
+        this.formSelectBlock = document.querySelector(data.formSelectId);
         this.selectedLevel = 'basic';
         this.selectedCity = 'onl';
 
@@ -40,12 +41,12 @@ class ApplicationsFormBlock
 
         const urlParams = new URLSearchParams(window.location.search);
         const scrollTo = urlParams.get('scrollTo');
-        
+
         if (scrollTo === 'applicationsFormBlock') {
             const element = document.getElementById('applicationsFormBlock');
             if (element) {
                 element.scrollIntoView({});
-                
+
                 const newUrl = new URL(window.location.href);
                 newUrl.searchParams.delete('scrollTo');
                 window.history.replaceState({}, document.title, newUrl.toString());
@@ -53,12 +54,11 @@ class ApplicationsFormBlock
         }
     }
 
-    addApplicationsFormEventHandler()
-    {
+    addApplicationsFormEventHandler() {
         if (this.feedbackFormBtn) {
             this.feedbackFormBtn.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    this.applicationsFormBlock.querySelector('#'+btn.getAttribute("data-scroll")).scrollIntoView({ block: "start", behavior: "smooth" });
+                    this.applicationsFormBlock.querySelector('#' + btn.getAttribute("data-scroll")).scrollIntoView({ block: "start", behavior: "smooth" });
                 });
             });
         }
@@ -137,6 +137,24 @@ class ApplicationsFormBlock
                     this.defaultDate.style.display = 'none';
                     this.takeDateBlock.style.display = 'block';
                 });
+
+                if (option.classList.contains('selected')) {
+                    this.defaultDate.style.display = 'none';
+                    this.takeDateBlock.style.display = 'block';
+                }
+            });
+        }
+        if (this.formSelectBlock) {
+            this.formSelectBlock.addEventListener('change', (event) => {
+                const selectedIndex = event.target.selectedIndex;
+                const selectedText = event.target.options[selectedIndex].text;
+
+                this.certLevel.forEach(level => {
+                    if (level.textContent.trim() == selectedText.trim()) {
+                        this.selectedLevel = level.dataset.value;
+                        this.changeStateDate();
+                    }
+                });
             });
         }
 
@@ -144,15 +162,15 @@ class ApplicationsFormBlock
             this.scrollBtn.forEach(btn => {
                 btn.addEventListener('click', () => {
                     let dataCert = btn.dataset.cert;
-                    
+
                     switch (dataCert) {
-                        case 'base' :
+                        case 'base':
                             this.selectedLevel = 'basic';
                             break;
-                        case 'special' :
+                        case 'special':
                             this.selectedLevel = 'spec';
                             break;
-                        case 'pro' :
+                        case 'pro':
                             this.selectedLevel = 'prof';
                             break;
                     }
@@ -166,12 +184,13 @@ class ApplicationsFormBlock
         }
     }
 
-    changeStateDate()
-    {
+    changeStateDate() {
         if (this.selectDatesBlock) {
             this.selectDatesBlock.forEach(mainBlock => {
                 let existMainNeedBlock = mainBlock.classList.contains(this.selectedLevel);
                 mainBlock.style.display = 'none';
+                const date = new Date();
+                const formattedDate = date.toISOString().slice(0, 10);
 
                 if (existMainNeedBlock) {
                     mainBlock.style.display = 'block';
@@ -179,7 +198,11 @@ class ApplicationsFormBlock
                     let dateSelectBlocks = mainBlock.querySelectorAll(this.selectDatesBlockChildrenClass);
                     let dateInputBlock = mainBlock.querySelector(this.selectDateInputBlockClass);
                     let countExistsBlocks = 0;
-
+                    if (dateSelectBlocks.length == 0) {
+                        if (window.innerWidth < 1024) {
+                            dateInputBlock.querySelector('input').value = formattedDate;
+                        }
+                    }
                     dateSelectBlocks.forEach(block => {
                         let existNeedBlock = block.classList.contains(this.selectedCity);
                         block.style.display = 'none';
@@ -204,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new ApplicationsFormBlock();
 });
 
-/* Yandex.Metrika counter */ (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); /* /Yandex.Metrika counter */
-ym(23056159, 'getClientID', function(clientID) {
+/* Yandex.Metrika counter */ (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a) })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); /* /Yandex.Metrika counter */
+ym(23056159, 'getClientID', function (clientID) {
     document.getElementById('clientID').value = clientID;
 });

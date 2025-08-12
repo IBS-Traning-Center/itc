@@ -8,6 +8,20 @@ class mainFeedbackFormBlock
         this.feedbackFormBtn = this.mainFeedbackFormBlock.querySelectorAll(data.feedbackFormBtnClass);
 
         this.addFeedbackFormEventHandler();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const scrollTo = urlParams.get('scrollTo');
+        
+        if (scrollTo === 'mainFeedbackFormBlock') {
+            const element = document.getElementById('mainFeedbackFormBlock');
+            if (element) {
+                element.scrollIntoView({});
+                
+                const newUrl = new URL(window.location.href);
+                newUrl.searchParams.delete('scrollTo');
+                window.history.replaceState({}, document.title, newUrl.toString());
+            }
+        }
     }
     addFeedbackFormEventHandler()
     {

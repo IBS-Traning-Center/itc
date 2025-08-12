@@ -5,11 +5,6 @@ $(document).ready(function () {
         let certText = '';
 
         switch (cert) {
-            case 'no':
-                certName = 'Уровень сертификации';
-                certText = 'Уровень сертификации';
-                break;
-
             case 'base':
                 certName = 'Базовый';
                 certText = 'Уровень «Базовый»';
@@ -19,7 +14,7 @@ $(document).ready(function () {
                 certName = 'Специалист';
                 certText = 'Уровень «Специалист»';
                 break;
-
+ 
             case 'pro':
                 certName = 'Профессионал';
                 certText = 'Уровень «Профессионал»';

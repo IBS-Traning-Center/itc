@@ -8,6 +8,13 @@ $aMenuLinks = array(
         ""
     ),
     array(
+        "Подготовка к сертификации",
+        "/timetable/prep-certification/",
+        array(),
+        array(),
+        ""
+    ),
+    array(
         "Сертификация",
         "/timetable/certification/",
         array(),
@@ -21,6 +28,5 @@ $aMenuLinks = array(
         array(),
         ""
     ),
-
 );
 ?>

@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Правила сертификации");
+$APPLICATION->SetTitle("Правила проведения сертификации от Центра сертификации IBS");
 ?>
 
 <section class="start bg--green mb-0">
@@ -17,7 +17,7 @@ $APPLICATION->SetTitle("Правила сертификации");
 		);
         $APPLICATION->AddChainItem($APPLICATION->GetTitle(), $APPLICATION->GetCurPage());?>
 
-		<h1 class="title--h1">Правила сертификации</h1>
+		<h1 class="title--h1">Правила проведения сертификации от Центра сертификации IBS</h1>
     </div>
 </section>
 
@@ -28,7 +28,7 @@ $APPLICATION->SetTitle("Правила сертификации");
             <h2 class="title--h2 mb-4">Регистрация на сертификацию</h2>
             <ol>
                 <li>Пройти тестирование может любой желающий, оформив предварительную запись.</li>
-                <li>Предварительная запись на тестирование может быть оформлена на <a href="/certification/java/"
+                <li>Предварительная запись на тестирование может быть оформлена на <a href="/sertifikatsiya/"
                         rel="noopener noreferrer" target="_blank">сайте</a>, по звонку на тел. +7(495)-609-69-67, или
                     посредством отправки заявки на электронный адрес <a
                         href="mailto:education@ibs.ru"><b>education@ibs.ru</b></a> (в заявке необходимо указать ФИО
@@ -38,17 +38,17 @@ $APPLICATION->SetTitle("Правила сертификации");
             
             <div class="row mt-4 mb-5">
                 <div class="col-12 col-sm-auto">
-                    <button class="CertificateButton CertificateButton--lg CertificateButton--outline btn--light"
-                        onclick="window.open('https://ibs-training.ru/upload/pravila_online.docx', '_blank')">
-                        <!--[--> Правила онлайн сертификации
+                    <button class="CertificateButton CertificateButton--lg CertificateButton--outline btn--dark"
+                        onclick="window.open('/files/pravila_online_2025.pdf', '_blank')">
+                        <!--[--> Правила онлайн-сертификации
                         <!--]-->
                     </button>
                 </div>
 
                 <div class="col-12 col-sm-auto">
                     <button class="CertificateButton CertificateButton--lg CertificateButton--outline btn--light"
-                        onclick="window.open('https://ibs-training.ru/upload/pravila_offline.docx', '_blank')">
-                        <!--[--> Правила сертификации в Сертификационном Центре
+                        onclick="window.open('/files/pravila_offline_2025.pdf', '_blank')">
+                        <!--[--> Правила офлайн-сертификации
                         <!--]-->
                     </button>
                 </div>
@@ -118,5 +118,26 @@ $APPLICATION->SetTitle("Правила сертификации");
     </div>
     <!---->
 </section>
+
+<?php $APPLICATION->IncludeComponent(
+    "bitrix:form.result.new",
+    "main.feedback",
+    array(
+		"CUSTOM_CLASSES" => "bg--green",
+        "CACHE_TIME" => "3600",
+        "CACHE_TYPE" => "A",
+        "CHAIN_ITEM_LINK" => "",
+        "CHAIN_ITEM_TEXT" => "",
+        "EDIT_URL" => "",
+        "IGNORE_CUSTOM_TEMPLATE" => "N",
+        "LIST_URL" => "",
+        "SEF_MODE" => "N",
+        "SUCCESS_URL" => "",
+        "AJAX_MODE" => "Y",
+        "USE_EXTENDED_ERRORS" => "N",
+        "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
+        "WEB_FORM_ID" => "47"
+    )
+); ?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

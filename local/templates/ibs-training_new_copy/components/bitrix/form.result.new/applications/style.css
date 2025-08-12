@@ -207,9 +207,9 @@
 
 .success-modal-form-block {
     position: fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: var(--white);
     padding: 64px;
     max-width: 1024px;
@@ -394,3 +394,50 @@
         font-size: 16px;
     }
 }
+
+.question-block-caption {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+
+
+@media (max-width: 630px) {
+    .question-block-caption {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+}
+
+#applicationsFormBlock input[type="date"]{
+    padding: 0px 16px;
+    font-size: 16px;    
+    line-height: 56px;
+    box-sizing: border-box;
+    text-align: left;
+    max-width: 100%;
+    width: 100%
+}
+
+.questions-block .dates-block,
+.questions-block .take-date-block,
+.questions-block .select-dates-block, 
+.questions-block .select-date-input{
+    width: 100%
+}
+/*
+@supports (-webkit-touch-callout: none) {
+  #applicationsFormBlock input[type="date"]{
+    width: --webkit-fill-available;
+  }
+}
+@media only screen and (max-device-width: 430px) and (-webkit-min-device-pixel-ratio: 3) {
+   #applicationsFormBlock input[type="date"]{
+    width: --webkit-fill-available;
+  }
+}
+@media only screen and (max-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+   #applicationsFormBlock input[type="date"]{
+    width: --webkit-fill-available;
+  }
+}*/

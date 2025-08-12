@@ -41,9 +41,11 @@ $certLevels = [];
                         ?>
 
                         <?php foreach ($arResult["QUESTIONS"] as $questionId => $question) : ?>
-
                             <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'dropdown') : ?>
                                 <?php
+                                if ($questionId == 'cert_level') {?>
+                                    <div class="question-block-caption"><?= $question['CAPTION'];?> </div>
+                                <?}
                                 echo $question['HTML_CODE'];
 
                                 if ($questionId == 'cert_level') {
@@ -54,14 +56,15 @@ $certLevels = [];
                                             'TEXT' => $value['MESSAGE']
                                         ];
                                     }
+
                                 }
                                 ?>
                                 <script>
-                                    $(document).ready(function() {
+                                    /*$(document).ready(function() {
                                         const selectText = $('select[id^="form_dropdown_"]').next().find('.jq-selectbox__select-text');
-                                        selectText.text('<?= $question['STRUCTURE'][0]['MESSAGE']; ?>');
+                                        selectText.text('<?//= $question['STRUCTURE'][0]['MESSAGE']; ?>');
                                         $('.jq-selectbox__dropdown li:first').removeClass('sel').removeClass('selected');
-                                    });
+                                    });*/
                                 </script>
 
                             <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'radio') : ?>
@@ -85,12 +88,26 @@ $certLevels = [];
                                     <?php } ?>
                                 </div>
                             <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>
-                                <?php if ($questionId == 'course_name') : ?>
+                                <?php $value = false;
+                                switch ($questionId) {
+                                    case 'course_name':
+                                        if (!empty($arParams['COURSE_NAME'])) {
+                                            $value = $arParams['COURSE_NAME'];
+                                        }
+                                        break;
+                                    case 'course_name_crm':
+                                        if ($arParams['COURSE_TYPE']) {
+                                            $value = 'Заявка. Сертификация: ' . $arParams['COURSE_TYPE'];
+                                        }     
+                                        break;
+                                    }
+                                ?>
+                                <?php if ($value) : ?>
                                     <input
                                         class="inputtext main-feedback-form-input <?= $questionId ?>"
                                         name="form_hidden_<?= $question['STRUCTURE'][0]['ID'] ?>"
                                         type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
-                                        value="<?= $arParams['COURSE_NAME'] ?>">
+                                        value="<?= $value ?: '' ?>">
                                 <?php else : ?>
                                     <?php echo $question['HTML_CODE']; ?>
                                 <?php endif; ?>
@@ -143,7 +160,7 @@ $certLevels = [];
                                                     <?php endforeach; ?>
                                                 <? } ?>
                                                 <div class="select-date-input">
-                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
+                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>"  name="<?= $questionId ?>" type="date"/>
                                                 </div>
                                             </div>
                                             <div class="select-dates-block spec">
@@ -165,7 +182,7 @@ $certLevels = [];
                                                     <?php endforeach; ?>
                                                 <? } ?>
                                                 <div class="select-date-input">
-                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
+                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>"  name="<?= $questionId ?>" type="date"/>
                                                 </div>
                                             </div>
                                             <div class="select-dates-block prof">
@@ -187,12 +204,12 @@ $certLevels = [];
                                                     <?php endforeach; ?>
                                                 <? } ?>
                                                 <div class="select-date-input">
-                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>" type="date">
+                                                    <input class="inputtext select-free-date main-feedback-form-input <?= $questionId ?>"  name="<?= $questionId ?>" type="date"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="date-default-block question-block">
-                                            <input class="inputtext main-feedback-form-input" placeholder="Дата" type="text">
+                                            <input class="inputtext main-feedback-form-input" placeholder="Дата" type="text"/>
                                         </div>
                                         <?php if (!empty($certLevels)) : ?>
                                             <div class="cert-levels">

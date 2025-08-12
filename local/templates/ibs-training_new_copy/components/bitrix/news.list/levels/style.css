@@ -20,7 +20,3 @@
         padding-right: 50px;
     }
 }
-
-#applicationsFormBlock .jq-selectbox__dropdown li:first-child{
-    display: none;
-}

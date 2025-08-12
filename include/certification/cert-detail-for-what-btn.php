@@ -1,1 +1,1 @@
-<a class="btn-main btn--dark" data-scroll="applicationsFormBlock" data-cert="no">Записаться на&nbsp;сертификацию</a>
+<a class="btn-main btn--dark" data-scroll="applicationsFormBlock">Записаться на&nbsp;сертификацию</a>

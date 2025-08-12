@@ -282,12 +282,6 @@ $APPLICATION->IncludeComponent(
 
 
 // Блок "Почему стоит пройти сертификацию у нас"
-
-
-// echo '<pre>';
-// var_dump(var_dump($arCurSection));
-// echo '</pre>';
-
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"why-us",
@@ -460,7 +454,7 @@ $APPLICATION->IncludeComponent(
 		"IBLOCK_TYPE" => "edu_const",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "N",
-		"MESSAGE_404" => "",
+		"MESSAGE_404" => "", 
 		"NEWS_COUNT" => "3",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
@@ -469,7 +463,7 @@ $APPLICATION->IncludeComponent(
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "",
-		"PARENT_SECTION" => "",
+		"PARENT_SECTION" => "1631",
 		"PARENT_SECTION_CODE" => "sertifikatsiya",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array("DISCOUNT",""),

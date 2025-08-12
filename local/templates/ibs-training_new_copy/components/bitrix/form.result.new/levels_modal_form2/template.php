@@ -34,18 +34,49 @@ Loc::loadMessages(__FILE__);
 
                         <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden' 
                                 || $question['STRUCTURE'][0]['FIELD_TYPE'] == 'dropdown') : ?>
-                            <?php echo $question['HTML_CODE']; ?>
+                            <?php $value = false;
+                            switch ($questionId) {
+                                case 'code':
+                                    if (!empty($arParams['MAIL_CODE'])) {
+                                        $value = $arParams['MAIL_CODE'];
+                                    }
+                                    break;
+                                case 'certification_name':
+                                    if (!empty($arParams['CERT_NAME'])) {
+                                        $value = $arParams['CERT_NAME'];
+                                    }
+                                    break;
+                                case 'certification_level':
+                                    if (!empty($arParams['LEVEL_NAME'])) {
+                                        $value = $arParams['LEVEL_NAME'];
+                                    }
+                                    break;
+                                case 'course_name_crm':
+                                    if ($arParams['CERT_NAME']) {
+                                        $value = 'Подписка. Сертификация: ' . $arParams['CERT_NAME'];
+                                    }     
+                                    break;
+                                }
+                            if ($value) : ?>
+                                <input
+                                    name="form_hidden_<?= $question['STRUCTURE'][0]['ID'] ?>"
+                                    type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
+                                    id="<?= $question['STRUCTURE'][0]['ID'] ?>"
+                                    value="<?= $value ?: '' ?>">
+                            <?php else : ?>
+                                    <?php echo $question['HTML_CODE']; ?>
+                            <?php endif; ?>
                             <?
                             // echo '<pre>';
                             // var_dump($question['CAPTION']);
                             // echo '</pre>';
                             ?>
                             <script>
-                                $(document).ready(function () {
-                                    const selectText = $('select[id^="form_dropdown_"]').next().find('.jq-selectbox__select-text');
-                                    selectText.text('<?=$question['CAPTION'];?>');
-                                    $('.jq-selectbox__dropdown li:first').removeClass('sel').removeClass('selected');
-                                });
+                                //$(document).ready(function () {
+                                //    const selectText = $('select[id^="form_dropdown_"]').next().find('.jq-selectbox__select-text');
+                                //    selectText.text('<?=$question['CAPTION'];?>');
+                                //    $('.jq-selectbox__dropdown li:first').removeClass('sel').removeClass('selected');
+                                //});
                             </script>
 
                         <?php elseif ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'radio') : ?>

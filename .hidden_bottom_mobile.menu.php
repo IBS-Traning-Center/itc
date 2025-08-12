@@ -16,14 +16,14 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Сертификация", 
-		"/certification/", 
+		"/sertifikatsiya/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"О нас", 
-		"/contacts/", 
+		"/about/", 
 		Array(), 
 		Array(), 
 		"" 

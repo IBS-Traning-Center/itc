@@ -37,7 +37,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Сертификация", 
-		"/certification/", 
+		"/sertifikatsiya/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -51,6 +51,13 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"О нас", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сведения об образовательной организации", 
 		"/contacts/", 
 		Array(), 
 		Array(), 

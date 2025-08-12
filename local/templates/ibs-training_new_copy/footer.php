@@ -4,7 +4,7 @@
 <?php if (strpos($APPLICATION->GetCurDir(), 'testing') == false && strpos($APPLICATION->GetCurDir(), 'sertifikatsiya') == false): ?>
     <?php $APPLICATION->IncludeComponent(
         "bitrix:form.result.new",
-        "main.feedback",
+        "main.feedback.fullsite",
         array(
             "CUSTOM_CLASSES" => "bg--blue",
             "CACHE_TIME" => "3600",
