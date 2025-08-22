@@ -16,7 +16,6 @@ Loc::loadMessages(__FILE__);
  */
 
 ?>
-
 <div class="sign-course-magnet-block">
 	<div class="top-sign-course-magnet">
 		<h4><?= $arParams['MAGNET_BUTTON_NAME'] ?></h4>
@@ -34,28 +33,36 @@ Loc::loadMessages(__FILE__);
 					$value = false;
 
 					switch ($questionId) {
-                        case 'course_name':
-                            if ($arParams['COURSE_SIGN']) {
-                                $value = $arParams['COURSE_SIGN'] . ' ';
-                            }
-                            if ($arParams['COURSE_NAME']) {
-                                $value = $value . $arParams['COURSE_NAME'];
-                            }
-                            break;
-                        case 'course_name_crm':
-                            if ($arParams['MAGNET_LEAD_NAME']) {
-                                $value = $arParams['MAGNET_LEAD_NAME'];
-                            }      
-                            break;
-                        case 'magnet_code':
-                            if ($arParams['MAGNET_CODE']) {
-                                $value = $arParams['MAGNET_CODE'];
-                            }
-                            break;
+						case 'course_name':
+                            			if ($arParams['COURSE_SIGN']) {
+           			                     $value = $arParams['COURSE_SIGN'] . ' ';
+                            			}
+                            			if ($arParams['COURSE_NAME']) {
+              			                  $value = $value . $arParams['COURSE_NAME'];
+                            			}
+               			             break;
+                    			    case 'course_name_crm':
+                       			     if ($arParams['MAGNET_LEAD_NAME']) {
+                       			         $value = $arParams['MAGNET_LEAD_NAME'];
+                     			       }      
+                      			      break;
+                      			  case 'magnet_code':
+          			                  if ($arParams['MAGNET_CODE']) {
+      			                          $value = $arParams['MAGNET_CODE'];
+       			                     }
+         			           break;
 					}
 					?>
 					<?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>
-						<?php echo $question['HTML_CODE']; ?>
+                  			      <?php if ($value) : ?>
+                    			        <input
+                    			            name="form_hidden_<?= $question['STRUCTURE'][0]['ID'] ?>"
+                   			             type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
+                   			             id="<?= $question['STRUCTURE'][0]['ID'] ?>"
+                   			             value="<?= $value ?: '' ?>">
+                  			      <?php else : ?>
+                   			             <?php echo $question['HTML_CODE']; ?>
+                  			      <?php endif; ?>
 					<?php else : ?>
 						<?php if ($questionId == 'email') : ?>
 							<div class="flex-question-block">

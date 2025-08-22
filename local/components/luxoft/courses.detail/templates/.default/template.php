@@ -140,9 +140,9 @@ function plural_form($number, $after) {
                     <a data-scroll="sign" class="btn-main size-l">
                         <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
                     </a>
-                    <?php if ($arResult['magnet']) : ?>
-                            <button class="open-sign-magnet-modal" style="background-color: var(--lime);">
-                                <span class="f-16"><?= $arResult['magnet']['button'] ?></span>
+                    <?php if ($arResult['magnet']['button']) : ?>
+                            <button class="open-sign-magnet-modal btn-main" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
+                                <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
                             </button>
                     <?php endif; ?>
                 </div>
@@ -372,6 +372,11 @@ function plural_form($number, $after) {
                 <a data-scroll="sign" class="btn-main size-l">
                     <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
                 </a>
+                    <?php if ($arResult['magnet']['button']) : ?>
+                            <button class="open-sign-magnet-modal btn-main size-l" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
+                                <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
+                            </button>
+                    <?php endif; ?>
             </div>
             <?php if (!empty($arResult['what_learn'])) : ?>
                 <h2><?= Loc::getMessage('WHAT_LEARN_TITLE') ?></h2>
@@ -513,6 +518,11 @@ function plural_form($number, $after) {
             <a data-scroll="sign" class="btn-main size-l">
                 <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
             </a>
+            <?php if ($arResult['magnet']['button']) : ?>
+                <button class="open-sign-magnet-modal btn-main" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
+                        <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
+                </button>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -712,11 +722,12 @@ if (!empty($arResult['sale'])) {
         "AJAX_MODE" => "Y",
         "USE_EXTENDED_ERRORS" => "N",
         "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
-        "WEB_FORM_ID" => "44",
-        "COURSE_NAME" => $arResult['NAME'],
+        "WEB_FORM_ID" => "52",
+        "COURSE_NAME" => $arResult['name'],
         "MAGNET_LEAD_NAME" => $arResult['magnet']['lead_name'],
         "MAGNET_CODE" => $arResult['magnet']['code'],
-        "COURSE_SIGN" => $arResult['CODE']
+        "MAGNET_BUTTON_NAME" => $arResult['magnet']['button'],
+        "COURSE_SIGN" => $arResult['code']
     )
 );
 endif;
