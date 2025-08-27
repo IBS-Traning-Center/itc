@@ -21,7 +21,7 @@
 		$schedule_enddate = $arItem['PROPERTIES']['enddate']['VALUE'];
 		$schedule_enddate_origin = date("Y-m-d", strtotime($arItem['PROPERTIES']['enddate']['VALUE']));
 		$schedule_time = $arItem['PROPERTIES']['schedule_time']['VALUE'];
-		$schedule_description = $arItem['PROPERTIES']['schedule_description']['VALUE']['TEXT'];
+		$schedule_description = $arItem['PROPERTIES']['schedule_description']['VALUE'];
 		$schedule_price = $arItem['PROPERTIES']['schedule_price']['VALUE'];
 		$schedule_yes_basket = $arItem['PROPERTIES']['CAN_BUY']['VALUE'];
 		$schedule_no_basket = $arItem['PROPERTIES']['no_basket']['VALUE'];
@@ -211,11 +211,11 @@ if ($arItem['PROPERTIES']['IS_CLOSE']['VALUE_ENUM_ID'] === "136") {
 			</div>
 			<div class="actions 111">
 				<?if(false) {?>
-                    <a <?if ($value["type"]=="cat" ||  ($value["schedule_city"]== CITY_ID_MOSCOW && $value["schedule_yes_basket"]!="Да") || ($value["schedule_city"]== CITY_ID_MINSK) || ($value['show_basket']=="N")) {?>href="javascript:void(0)" <?} else {?> title="" href="/ajax/add_course_to_basket.php?action=BUY&id=<?=$value['schedule_id']?>&quantity=1" <?}?> target="_blank" data-type="Personal" data-action="AddToBasket" data-name="<?=$value["course_code"] ?> <?=$value["name"]?> || <?=$value[course_id]?> || <?=$value['schedule_id']?>" class="pay <?if ($value["type"]!="cat" &&  $value["schedule_city"]!= CITY_ID_MOSCOW) {?><?}?> js-tracking">оплатить</a>
-                    <a href="javascript:void(0)" data-type="Personal" data-action="AddToBasket" data-name="<?=$value["course_code"] ?> <?=$value["name"]?> || <?=$value[course_id]?> || <?=$value['schedule_id']?>" class="pay js-tracking">оплатить</a>
+                    <a <?if ($value["type"]=="cat" ||  ($value["schedule_city"]== CITY_ID_MOSCOW && $value["schedule_yes_basket"]!="Да") || ($value["schedule_city"]== CITY_ID_MINSK) || ($value['show_basket']=="N")) {?>href="javascript:void(0)" <?} else {?> title="" href="/ajax/add_course_to_basket.php?action=BUY&id=<?=$value['schedule_id']?>&quantity=1" <?}?> target="_blank" data-type="Personal" data-action="AddToBasket" data-name="<?=$value["course_code"] ?> <?=$value["name"]?> || <?=$value["course_id"]?> || <?=$value['schedule_id']?>" class="pay <?if ($value["type"]!="cat" &&  $value["schedule_city"]!= CITY_ID_MOSCOW) {?><?}?> js-tracking">оплатить</a>
+                    <a href="javascript:void(0)" data-type="Personal" data-action="AddToBasket" data-name="<?=$value["course_code"] ?> <?=$value["name"]?> || <?=$value["course_id"]?> || <?=$value['schedule_id']?>" class="pay js-tracking">оплатить</a>
                 <?} else {?><?}?>
                 <a target="_blank" href="/kurs/<?=$value['XML']?>.html<? if ($value["show_basket"] === "Y"){?>?ID_TIME=<?=$value['schedule_id']?><? } ?>#tab-record-link" class="reg">Регистрация</a>
-				<a <?if ($value["type"]!="cat" &&  (($value["schedule_city"]!= CITY_ID_MOSCOW && $value["schedule_city"]!= CITY_ID_MINSK && $value['show_basket']!="N") || ($value["schedule_city"]== CITY_ID_MOSCOW && $value["schedule_yes_basket"]=="Да") )) {?> class="tobasket js-tracking cart <?if ($value["type"]!="cat" &&  $value["schedule_city"]!= CITY_ID_MOSCOW) {?>tooltip<?}?>"  title="" rel="nofollow" data-type="Personal" data-action="AddToBasket" data-name="<?=$value["course_code"] ?> <?=$value["name"]?> || <?=$value[course_id]?> || <?=$value['schedule_id']?>"  title="Запомнить и положить в корзину услуг" id_basket="<?=$value['schedule_id']?>" <?} else {?>class="cart non-active" <?}?> href="#">В корзину</a>
+				<a <?if ($value["type"]!="cat" &&  (($value["schedule_city"]!= CITY_ID_MOSCOW && $value["schedule_city"]!= CITY_ID_MINSK && $value['show_basket']!="N") || ($value["schedule_city"]== CITY_ID_MOSCOW && $value["schedule_yes_basket"]=="Да") )) {?> class="tobasket js-tracking cart <?if ($value["type"]!="cat" &&  $value["schedule_city"]!= CITY_ID_MOSCOW) {?>tooltip<?}?>"  title="" rel="nofollow" data-type="Personal" data-action="AddToBasket" data-name="<?=$value["course_code"] ?> <?=$value["name"]?> || <?=$value["course_id"]?> || <?=$value['schedule_id']?>"  title="Запомнить и положить в корзину услуг" id_basket="<?=$value['schedule_id']?>" <?} else {?>class="cart non-active" <?}?> href="#">В корзину</a>
 			</div>
 		</li>
 	<?}?>

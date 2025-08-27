@@ -251,7 +251,7 @@ $arFilter = Array("IBLOCK_ID"=>108, "PROPERTY_USER"=>$USERID, "ACTIVE"=>"Y");
 $res = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
 while($ob = $res->GetNextElement()){
 $arFields = $ob->GetFields();
-
+$arRegK = [];
 $arProps = $ob->GetProperties();
 if (intval($arProps["SCH_COURSE"]["VALUE"])>0) {
 	$arRegistered[]=$arProps["SCH_COURSE"]["VALUE"];
@@ -286,10 +286,12 @@ while ($ob = $pes->GetNextElement()) {
 
 $cache = new CPHPCache();
 $cache_time = 3600;
-$cache_id = 'reccat'.implode('_',$arRecommend["category"]);
+if (is_array($arRecommend["category"])) {
+    $cache_id = 'reccat'.implode('_',$arRecommend["category"]);
+}
 
 $cache_path = '/reccomend/';
-if ($cache_time > 0 && $cache->InitCache($cache_time, $cache_id, $cache_path))
+if ($cache_time > 0 && is_array($arRecommend["category"]) && $cache->InitCache($cache_time, $cache_id, $cache_path))
 {
    $res = $cache->GetVars();
 
@@ -304,7 +306,7 @@ if ($cache_time > 0 && $cache->InitCache($cache_time, $cache_id, $cache_path))
 /*if ($USER->IsAdmin()) {
 	print_r($arLinked);
 }*/
-if (!is_array($additLinked))
+if (!is_array($additLinked) && is_array($arRecommend["category"]))
 {
   $arLinked=array_diff($arLinked, array("", 0));
   $arSelect=array("NAME", "ID", "PROPERTY_PP_COURSE");
@@ -321,7 +323,9 @@ if (!is_array($additLinked))
 }
 
 
-$arRegK=array_unique($arRegK);
+if (is_array($arRegK)) {
+    $arRegK=array_unique($arRegK);
+}
 GLOBAL $arReg;
 GLOBAL $arLinked;
 GLOBAL $arRegK;
