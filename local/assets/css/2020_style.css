@@ -568,6 +568,42 @@ slick-prev:hover, .slick-prev:focus,
     font-size: 32px;
 }
 
+.form__active {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    background: #fff;
+    background-color: var(--lime) !important;
+    z-index: 9;
+}
+
+.form__inactive,
+.form__unidentified {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    background: #fff;
+    background-color: var(--red) !important;
+    z-index: 9;
+}
+
+.form__active._show,
+.form__inactive._show,
+.form__unidentified._show {
+    display: flex;
+}
+
+.form__active-message,
+.form__inactive-message,
+.form__unidentified-message {
+    text-align: center;
+    font-size: 16px;
+    color: #fff !important;
+}
 
 .lang-switcher {
     position: relative;

@@ -123,6 +123,33 @@ $(function () {
         min: $.validator.format("Пожалуйста, введите число, большее или равное {0}.")
     });
     var formRules = {
+        'cert': {
+            'SURNAME': {
+                required: true,
+                minlength: 2
+            },
+            'NAME': {
+                required: true,
+                minlength: 2
+            },
+            'PATRONYMIC': {
+                minlength: 2
+            },
+            'NUMBER': {
+                minlength: 10,
+                required: true,
+            },
+            'SNILS': {
+                minlength: 14,
+                required: true,
+            },
+            'agree': {
+                required: true,
+            },
+            "agree-2": {
+                required: true
+            }
+        },
         'frdo-template': {
             'FIO': {
                 required: true,
@@ -336,6 +363,9 @@ $(function () {
                     var url ='/local/ajax/form.php';
 
                     switch (formName) {
+                        case 'cert':
+                            var url ='/local/ajax/cert.php';
+                            break;
                         case 'frdo-template':
                         case 'frdo':
                             var url ='/local/ajax/frdo.php';
@@ -388,6 +418,18 @@ $(function () {
                                             break;
                                     }
                                     form.reset();
+                                } else if (data.type === 'active') {
+                                    $this.find('.form__inactive').removeClass('_show');
+                                    $this.find('.form__unidentified').removeClass('_show');
+                                    $this.find('.form__active').addClass('_show');
+                                } else if (data.type === 'inactive') {
+                                    $this.find('.form__active').removeClass('_show');
+                                    $this.find('.form__unidentified').removeClass('_show');
+                                    $this.find('.form__inactive').addClass('_show');
+                                } else if (data.type === 'unidentified') {
+                                    $this.find('.form__active').removeClass('_show');
+                                    $this.find('.form__inactive').removeClass('_show');
+                                    $this.find('.form__unidentified').addClass('_show');
                                 }
                                 $(form).css('pointer-events', 'all');
                                 $('input, select').trigger('refresh');
