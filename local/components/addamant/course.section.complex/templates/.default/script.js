@@ -16,7 +16,9 @@ class CatalogSectionComplex {
         signTariffBtnClass: '.sign-tariff-btn',
         selectTariffClass: '.select-tariff',
         signCourseComplexBlockDemoCLass: '.sign-course-complex-block.demo',
-        openDemoModalClass: '.open-demo-modal'
+        openDemoModalClass: '.open-demo-modal',
+        signCourseMagnetBlockCLass: '.sign-course-magnet-block',
+        openSignMagnetModalClass: '.open-sign-magnet-modal',
     }) {
         this.linkedCourseItem = document.querySelectorAll(data.linkedCourseItemClass);
         this.showDiplomBtn = document.querySelector(data.showDiplomBtnClass);
@@ -35,6 +37,8 @@ class CatalogSectionComplex {
         this.selectTariff = document.querySelectorAll(data.selectTariffClass);
         this.signCourseComplexBlockDemo = document.querySelector(data.signCourseComplexBlockDemoCLass);
         this.openDemoModal = document.querySelectorAll(data.openDemoModalClass);
+        this.signCourseMagnetBlock = document.querySelector(data.signCourseMagnetBlockCLass);
+        this.openSignMagnetModal = document.querySelectorAll(data.openSignMagnetModalClass);
 
         this.addEventHandlerSectionComplex();
         this.initLinkedCourses();
@@ -101,6 +105,9 @@ class CatalogSectionComplex {
                 if (this.signCourseComplexBlockDemo) {
                     this.signCourseComplexBlockDemo.style.display = 'none';
                 }
+                if (this.signCourseMagnetBlock) {
+                    this.signCourseMagnetBlock.style.display = 'none';
+                }
             });
         }
 
@@ -117,6 +124,14 @@ class CatalogSectionComplex {
                elem.addEventListener('click', () => {
                 this.openSignComplexModalDemo();
                });
+            });
+        }
+
+        if (this.openSignMagnetModal) {
+            this.openSignMagnetModal.forEach(block => {
+                block.addEventListener('click', () => {
+                    this.openMagnetModal();
+                });
             });
         }
 
@@ -234,6 +249,14 @@ class CatalogSectionComplex {
     {
         if (this.signCourseComplexBlockDemo && this.backgroundModal) {
             this.signCourseComplexBlockDemo.style.display = 'block';
+            this.backgroundModal.style.display = 'flex';
+        }
+    }
+
+    openMagnetModal()
+    {
+        if (this.signCourseMagnetBlock && this.backgroundModal) {
+            this.signCourseMagnetBlock.style.display = 'block';
             this.backgroundModal.style.display = 'flex';
         }
     }

@@ -325,6 +325,9 @@ class CourseSectionComplexComponent extends CBitrixComponent
             'select' => [
                 'IS_NEW.ITEM',
                 'IS_DEV',
+                'MAGNET_CODE',
+                'MAGNET_LEAD_NAME',
+                'MAGNET_BUTTON_NAME',
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
@@ -338,6 +341,11 @@ class CourseSectionComplexComponent extends CBitrixComponent
             }
             if ($course->getIsDev() && $course->getIsDev()->getValue()) {
                 $this->courseInfo['IS_DEV'] = $course->getIsDev()->getValue();
+            }
+            if ($course->getMagnetCode() && $course->getMagnetCode()->getValue() && $course->getMagnetLeadName() && $course->getMagnetLeadName()->getValue() && $course->getMagnetButtonName() && $course->getMagnetButtonName()->getValue()) {
+                $this->courseInfo['MAGNET_CODE'] = $course->getMagnetCode()->getValue();
+                $this->courseInfo['MAGNET_LEAD_NAME'] = $course->getMagnetLeadName()->getValue();
+                $this->courseInfo['MAGNET_BUTTON_NAME'] = $course->getMagnetButtonName()->getValue();
             }
         }
     }

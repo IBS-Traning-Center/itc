@@ -143,6 +143,13 @@ if (!empty($arResult)) : ?>
                             </button>
                         </div>
                     <?php endif; ?>
+                    <?php if ($arResult['MAGNET_BUTTON_NAME']) : ?>
+                        <div class="line-buttons">
+                            <button class="btn-main open-sign-magnet-modal">
+                                <span class="f-16"><?= $arResult['MAGNET_BUTTON_NAME'] ?></span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
                     <?php if ($arResult['CODE'] == 'BA-PRG-002') : ?>
                         <div class="line-buttons" style="width: 100%">
                             <a href="/rukovodstvo-babok-besplatno/">
@@ -258,6 +265,13 @@ if (!empty($arResult)) : ?>
                             </button>
                         </div>
                     <?php endif; ?>
+                    <?php if ($arResult['MAGNET_BUTTON_NAME']) : ?>
+                        <div class="line-buttons">
+                            <button class="btn-main open-sign-magnet-modal">
+                                <span class="f-16"><?= $arResult['MAGNET_BUTTON_NAME'] ?></span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
                     <?php if ($arResult['CODE'] == 'BA-PRG-002') : ?>
                         <div class="line-buttons" style="width: 100%">
                             <a href="/rukovodstvo-babok-besplatno/">
@@ -291,6 +305,13 @@ if (!empty($arResult)) : ?>
                         </button>
                     </div>
                 <?php endif; ?>
+                    <?php if ($arResult['MAGNET_BUTTON_NAME']) : ?>
+                        <div class="line-buttons">
+                            <button class="btn-main open-sign-magnet-modal">
+                                <span class="f-16"><?= $arResult['MAGNET_BUTTON_NAME'] ?></span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
                 <?php if ($arResult['CODE'] == 'BA-PRG-002') : ?>
                         <div class="line-buttons" style="width: 100%">
                             <a href="/rukovodstvo-babok-besplatno/">
@@ -513,3 +534,30 @@ if (!empty($arResult)) : ?>
         "COURSE_SIGN" => $arResult['CODE']
     )
 );?>
+
+<?php if ($arResult['MAGNET_LEAD_NAME'] && $arResult['MAGNET_CODE'] && $arResult['MAGNET_BUTTON_NAME']) :
+    $APPLICATION->IncludeComponent(
+    "bitrix:form.result.new",
+    "sign.course.magnet",
+    Array(
+        "CACHE_TIME" => "3600",
+        "CACHE_TYPE" => "A",
+        "CHAIN_ITEM_LINK" => "",
+        "CHAIN_ITEM_TEXT" => "",
+        "EDIT_URL" => "",
+        "IGNORE_CUSTOM_TEMPLATE" => "N",
+        "LIST_URL" => "",
+        "SEF_MODE" => "N",
+        "SUCCESS_URL" => "",
+        "AJAX_MODE" => "Y",
+        "USE_EXTENDED_ERRORS" => "N",
+        "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
+        "WEB_FORM_ID" => "52",
+        "COURSE_NAME" => $arResult['NAME'],
+        "MAGNET_LEAD_NAME" => $arResult['MAGNET_LEAD_NAME'],
+        "MAGNET_CODE" => $arResult['MAGNET_CODE'],
+        "MAGNET_BUTTON_NAME" => $arResult['MAGNET_BUTTON_NAME'],
+        "COURSE_SIGN" => $arResult['CODE']
+    )
+);
+endif; ?>
