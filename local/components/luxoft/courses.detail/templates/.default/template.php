@@ -141,9 +141,9 @@ function plural_form($number, $after) {
                         <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
                     </a>
                     <?php if ($arResult['magnet']['button']) : ?>
-                            <button class="open-sign-magnet-modal btn-main" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
-                                <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
-                            </button>
+                        <button class="open-sign-magnet-modal btn-main" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
+                            <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
+                        </button>
                     <?php endif; ?>
                 </div>
             </div>
@@ -158,32 +158,19 @@ function plural_form($number, $after) {
                     <a class="f-16" target="_blank" href="https://rutube.ru/channel/30034572/videos/"><?= Loc::getMessage('LANG_BLOCK_LINK_TEXT') ?></a>
                 </div>
             <?php endif; ?>
-            <?php if ($arResult['content']['description']) : ?>
-                <h2><?= Loc::getMessage('ABOUT_COURSE_TITLE') ?></h2>
-                <div class="f-20"><?= $arResult['content']['description'] ?></div>
-            <?php endif; ?>
-            <?php if ($arResult['content']['objectives']) : ?>
-                <h2><?= Loc::getMessage('OBJECTIVES_TITLE') ?></h2>
-                <div class="f-20"><?= $arResult['content']['objectives'] ?></div>
-            <?php endif; ?>
-            <?php if ($arResult['content']['audience']) : ?>
-                <h2><?= Loc::getMessage('AUDIENCE_TITLE') ?></h2>
-                <div class="f-20"><?= $arResult['content']['audience'] ?></div>
-            <?php endif; ?>
-            <?php if ($arResult['content']['prerequisites']) : ?>
-                <h2><?= Loc::getMessage('PREREQUISITES_TITLE') ?></h2>
-                <div class="f-20"><?= $arResult['content']['prerequisites'] ?></div>
-            <?php endif; ?>
-            <?php if ($arResult['for_course'] && is_array($arResult['for_course'])) : ?>
-                <h2><?= Loc::getMessage('FOR_COURSE_TITLE') ?></h2>
-                <div class="for-course-block">
-                    <?php foreach ($arResult['for_course'] as $item) : ?>
-                        <div class="for-course-item">
-                            <img src="<?= $item['UF_PICTURE'] ?>" alt="<?= $item['UF_NAME'] ?>">
-                            <span class="f-20"><?= $item['UF_NAME'] ?></span>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+            <?php if ($USER->IsAuthorized()) : ?>
+                <?php if ($arResult['content']['description']) : ?>
+                    <h2><?= Loc::getMessage('ABOUT_COURSE_TITLE') ?></h2>
+                    <div class="f-20"><?= $arResult['content']['description'] ?></div>
+                <?php endif; ?>
+                <?php if ($arResult['content']['objectives']) : ?>
+                    <h2><?= Loc::getMessage('OBJECTIVES_TITLE') ?></h2>
+                    <div class="f-20"><?= $arResult['content']['objectives'] ?></div>
+                <?php endif; ?>
+                <?php if ($arResult['content']['audience']) : ?>
+                    <h2><?= Loc::getMessage('AUDIENCE_TITLE') ?></h2>
+                    <div class="f-20"><?= $arResult['content']['audience'] ?></div>
+                <?php endif; ?>
             <?php endif; ?>
             <?php if ($arResult['skills_course'] && is_array($arResult['skills_course'])) : ?>
                 <h2><?= Loc::getMessage('SKILLS_IMPROVED_TITLE') ?></h2>
@@ -205,6 +192,115 @@ function plural_form($number, $after) {
                         </div>
                     <?php endforeach; ?>
                 </div>
+            <?php endif; ?>
+            <?php if (!empty($arResult['what_learn'])) : ?>
+                <h2><?= Loc::getMessage('WHAT_LEARN_TITLE') ?></h2>
+                <div class="what-learn-block">
+                    <?php foreach ($arResult['what_learn'] as $num => $value) : ?>
+                        <?php $num++; ?>
+                        <div class="what-learn-item">
+                            <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
+                            <span class="f-20"><?= $value ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty($arResult['content']['roadmapBlocks'])) : ?>
+                <h2><?= Loc::getMessage('THEMES_TITLE') ?></h2>
+                <div class="themes-block">
+                    <?php foreach ($arResult['content']['roadmapBlocks'] as $num => $roadItem) : ?>
+                        <?php $num++; ?>
+                        <?php if ($roadItem['description']) : ?>
+                            <div class="theme-item-block">
+                                <div class="theme-item-content">
+                                    <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
+                                    <span class="f-32"><?= $roadItem['title'] ?></span>
+                                    <div class="theme-item-icons-block">
+                                        <div class="arrow">
+                                            <?= Functions::buildSVG('arrow', $templateFolder . '/images') ?>
+                                        </div>
+                                        <div class="minus">
+                                            <?= Functions::buildSVG('minus', $templateFolder . '/images') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="theme-hidden-content">
+                                    <?= $roadItem['description'] ?>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                        <div class="theme-item-block none">
+                            <div class="theme-item-content">
+                                <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
+                                <span class="f-32"><?= $roadItem['title'] ?></span>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <div class="mobile-detail-course-info-block">
+                <div class="price-course-block">
+                    <?php if (!empty($arResult['sale'])) : ?>
+                        <h2 class="course-price">
+                            <?= number_format($arResult['sale']['price'], 0, '', ' ') . ' ₽' ?>
+                        </h2>
+                    <?php endif; ?>
+                </div>
+                <?php if ($arResult['price_ur']) : ?>
+                    <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
+                <?php endif; ?>
+                <?php if ($settings['MONEY_RETURN_LINK']) : ?>
+                    <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
+                <?php endif; ?>
+                <?php if ($settings['MONEY_RETURN_LINK']) : ?>
+                    <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
+                <?php endif; ?>
+                <?php ?>
+                <a data-scroll="sign" class="btn-main size-l">
+                    <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
+                </a>
+                <?php if ($arResult['magnet']['button']) : ?>
+                    <button class="open-sign-magnet-modal btn-main size-l" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
+                        <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
+                    </button>
+                <?php endif; ?>
+            </div>
+            <?php if (!empty($arResult['videos'])) : ?>
+                    <h2><?= Loc::getMessage('VIDEO_TITLE') ?></h2>
+                    <div class="videos-block">
+                        <div class="videos-items">
+                            <?php foreach ($arResult['videos'] as $key => $video) : ?>
+                                <?php if ($video['PLATFORM'] == 'rutube'): ?>
+                                    <a class="video-item">
+                                        <iframe src="https://rutube.ru/play/embed/<?= $video['ID'] ?>" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                                        <span class="f-24"><?= $video['UF_NAME'] ?></span>
+                                    </a>
+                                <?php endif; ?>
+                                <?php if ($video['PLATFORM'] == 'youtube'): ?>
+                                    <a data-fancybox="video" href="<?= $video['UF_VIDEO_LINK'] ?>" class="video-item">
+                                        <img alt="<?= $video['UF_NAME'] ?>" src="<?= CFile::GetPath($video['UF_PICTURE']) ?>">
+                                        <span class="f-24"><?= $video['UF_NAME'] ?></span>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+            <?php endif; ?>
+            <?php if ($arResult['for_course'] && is_array($arResult['for_course'])) : ?>
+                <h2><?= Loc::getMessage('FOR_COURSE_TITLE') ?></h2>
+                <div class="for-course-block">
+                    <?php foreach ($arResult['for_course'] as $item) : ?>
+                        <div class="for-course-item">
+                            <img src="<?= $item['UF_PICTURE'] ?>" alt="<?= $item['UF_NAME'] ?>">
+                            <span class="f-20"><?= $item['UF_NAME'] ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($arResult['content']['prerequisites']) : ?>
+                <h2><?= Loc::getMessage('PREREQUISITES_TITLE') ?></h2>
+                <div class="f-20"><?= $arResult['content']['prerequisites'] ?></div>
             <?php endif; ?>
             <?php if ($arResult['schedule']) : ?>
                 <h2><?= Loc::getMessage('TIMETABLE_TITLE') ?></h2>
@@ -317,100 +413,6 @@ function plural_form($number, $after) {
                 </div>
                 <div class="btn-timetable"><a href="/timetable/"><?= Loc::getMessage('TIMETABLE_ALL_BTN') ?></a></div>
             <?php endif; ?>
-            <?php if (!empty($arResult['content']['roadmapBlocks'])) : ?>
-                <h2><?= Loc::getMessage('THEMES_TITLE') ?></h2>
-                <div class="themes-block">
-                    <?php foreach ($arResult['content']['roadmapBlocks'] as $num => $roadItem) : ?>
-                        <?php $num++; ?>
-                        <?php if ($roadItem['description']) : ?>
-                            <div class="theme-item-block">
-                                <div class="theme-item-content">
-                                    <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
-                                    <span class="f-32"><?= $roadItem['title'] ?></span>
-                                    <div class="theme-item-icons-block">
-                                        <div class="arrow">
-                                            <?= Functions::buildSVG('arrow', $templateFolder . '/images') ?>
-                                        </div>
-                                        <div class="minus">
-                                            <?= Functions::buildSVG('minus', $templateFolder . '/images') ?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="theme-hidden-content">
-                                    <?= $roadItem['description'] ?>
-                                </div>
-                            </div>
-                        <?php else : ?>
-                        <div class="theme-item-block none">
-                            <div class="theme-item-content">
-                                <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
-                                <span class="f-32"><?= $roadItem['title'] ?></span>
-                            </div>
-                        </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
-            <div class="mobile-detail-course-info-block">
-                <div class="price-course-block">
-                    <?php if (!empty($arResult['sale'])) : ?>
-                        <h2 class="course-price">
-                            <?= number_format($arResult['sale']['price'], 0, '', ' ') . ' ₽' ?>
-                        </h2>
-                    <?php endif; ?>
-                </div>
-                <?php if ($arResult['price_ur']) : ?>
-                    <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
-                <?php endif; ?>
-                <?php if ($settings['MONEY_RETURN_LINK']) : ?>
-                    <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
-                <?php endif; ?>
-                <?php if ($settings['MONEY_RETURN_LINK']) : ?>
-                    <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
-                <?php endif; ?>
-                <?php ?>
-                <a data-scroll="sign" class="btn-main size-l">
-                    <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
-                </a>
-                    <?php if ($arResult['magnet']['button']) : ?>
-                            <button class="open-sign-magnet-modal btn-main size-l" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
-                                <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
-                            </button>
-                    <?php endif; ?>
-            </div>
-            <?php if (!empty($arResult['what_learn'])) : ?>
-                <h2><?= Loc::getMessage('WHAT_LEARN_TITLE') ?></h2>
-                <div class="what-learn-block">
-                    <?php foreach ($arResult['what_learn'] as $num => $value) : ?>
-                        <?php $num++; ?>
-                        <div class="what-learn-item">
-                            <span class="f-16 num"><?= ($num < 10) ? '0' . $num : $num ?></span>
-                            <span class="f-20"><?= $value ?></span>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
-            <?php if (!empty($arResult['videos'])) : ?>
-                    <h2><?= Loc::getMessage('VIDEO_TITLE') ?></h2>
-                    <div class="videos-block">
-                        <div class="videos-items">
-                            <?php foreach ($arResult['videos'] as $key => $video) : ?>
-                                <?php if ($video['PLATFORM'] == 'rutube'): ?>
-                                    <a class="video-item">
-                                        <iframe src="https://rutube.ru/play/embed/<?= $video['ID'] ?>" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                                        <span class="f-24"><?= $video['UF_NAME'] ?></span>
-                                    </a>
-                                <?php endif; ?>
-                                <?php if ($video['PLATFORM'] == 'youtube'): ?>
-                                    <a data-fancybox="video" href="<?= $video['UF_VIDEO_LINK'] ?>" class="video-item">
-                                        <img alt="<?= $video['UF_NAME'] ?>" src="<?= CFile::GetPath($video['UF_PICTURE']) ?>">
-                                        <span class="f-24"><?= $video['UF_NAME'] ?></span>
-                                    </a>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-            <?php endif; ?>
             <?php if ($arResult['schedule'][0]['trainer']) : ?>
                 <?php $trainer = $arResult['schedule'][0]['trainer']; ?>
                 <h2><?= Loc::getMessage('COURSE_LEADER_TITLE') ?></h2>
@@ -520,7 +522,7 @@ function plural_form($number, $after) {
             </a>
             <?php if ($arResult['magnet']['button']) : ?>
                 <button class="open-sign-magnet-modal btn-main" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
-                        <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
+                    <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
                 </button>
             <?php endif; ?>
         </div>
@@ -587,41 +589,6 @@ if (!empty($arResult['sale'])) {
         'NEEDLE_COURSE_ID' => $arResult['id']
     )
 );?>
-<?php if ($arResult['courses']) : ?>
-    <div class="container linked-courses-title-block">
-        <h2><?= Loc::getMessage('LINKED_CORSES_TITLE') ?></h2>
-    </div>
-    <div class="linked-courses-block">
-        <?php foreach ($arResult['courses'] as $course) : ?>
-            <a href="<?= $course['link'] ?>" class="linked-course-block">
-                <div class="linked-course-top-block">
-                    <?php if ($course['code']) : ?>
-                        <span class="f-14"><?= $course['code'] ?></span>
-                    <?php endif; ?>
-                    <?php if ($course['duration']) : ?>
-                        <div class="linked-course-duration">
-                            <span class="f-16"><?= Functions::numWord($course['duration'], ['час', 'часа', 'часов']) ?></span>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <p class="f-24 course-name"><?= $course['name'] ?></p>
-                <?php if ($course['description']) : ?>
-                    <p class="f-16 course-description"><?= $course['description'] ?></p>
-                <?php endif; ?>
-                <div class="linked-course-bottom-block">
-                    <?php if ($course['complexity']) : ?>
-                        <div class="linked-course-complexity">
-                            <span class="f-16"><?= 'от ' . $course['complexity'] ?></span>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($course['price']) : ?>
-                        <p class="f-24 course-price"><?= number_format($course['price'], 0, '', ' ') . ' ₽' ?></p>
-                    <?php endif; ?>
-                </div>
-            </a>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
 <div class="our-students-block">
     <div class="container">
         <h2><?= Loc::getMessage('OUT_STUDENTS_TITLE') ?></h2>
@@ -684,6 +651,41 @@ if (!empty($arResult['sale'])) {
         )
     );?>
 </div>
+<?php if ($arResult['courses']) : ?>
+    <div class="container linked-courses-title-block">
+        <h2><?= Loc::getMessage('LINKED_CORSES_TITLE') ?></h2>
+    </div>
+    <div class="linked-courses-block">
+        <?php foreach ($arResult['courses'] as $course) : ?>
+            <a href="<?= $course['link'] ?>" class="linked-course-block">
+                <div class="linked-course-top-block">
+                    <?php if ($course['code']) : ?>
+                        <span class="f-14"><?= $course['code'] ?></span>
+                    <?php endif; ?>
+                    <?php if ($course['duration']) : ?>
+                        <div class="linked-course-duration">
+                            <span class="f-16"><?= Functions::numWord($course['duration'], ['час', 'часа', 'часов']) ?></span>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <p class="f-24 course-name"><?= $course['name'] ?></p>
+                <?php if ($course['description']) : ?>
+                    <p class="f-16 course-description"><?= $course['description'] ?></p>
+                <?php endif; ?>
+                <div class="linked-course-bottom-block">
+                    <?php if ($course['complexity']) : ?>
+                        <div class="linked-course-complexity">
+                            <span class="f-16"><?= 'от ' . $course['complexity'] ?></span>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($course['price']) : ?>
+                        <p class="f-24 course-price"><?= number_format($course['price'], 0, '', ' ') . ' ₽' ?></p>
+                    <?php endif; ?>
+                </div>
+            </a>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
 <div class="diploma-modal">
     <div class="diploma-modal-content">
         <?php if ($arResult['duration'] && $arResult['duration'] >= 16) : ?>
