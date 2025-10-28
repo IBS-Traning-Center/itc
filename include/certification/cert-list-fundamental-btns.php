@@ -5,4 +5,7 @@
 	<div class="col-12 col-sm-auto">
 		<a href="/timetable/certification/" target="_blank" class="btn--light">Посмотреть расписание</a>
 	</div>
+	<div class="col-12 col-sm-auto">
+		<a href="/sertifikatsiya/check/" target="_blank" class="btn--light">Проверить сертификат</a>
+	</div>
 </div>

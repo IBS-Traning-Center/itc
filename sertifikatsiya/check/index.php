@@ -1,42 +1,40 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-
-global $APPLICATION;
-
-$APPLICATION->SetPageProperty('BANNER_TITLE', 'Проверка сертификата');
-$APPLICATION->SetPageProperty('BACKGROUND_COLOR_BANNER', '#F8F7F7');
 $APPLICATION->SetPageProperty('keywords', 'УЦ IBS, Учебный центр IBS, IBS Training, учебный центр ibs, сертификат УЦ IBS, сертификат Учебный центр IBS, сертификат IBS Training, проверка сертификата Учебный центр IBS, проверка сертификата УЦ IBS, проверка сертификата IBS Training');
 $APPLICATION->SetPageProperty('description', 'Проверка сертификата УЦ IBS');
 $APPLICATION->SetTitle('Проверка сертификата');
 ?>
 
-<div class="top-page-banner" style="background-color: <?= $APPLICATION->GetPageProperty('BACKGROUND_COLOR_BANNER') ?>">
-    <div class="container">
-        <div class="banner-content">
-            <?php $APPLICATION->IncludeComponent(
-                    'bitrix:breadcrumb',
-                    'bread',
-                    [
-                        'START_FROM' => '0',
-                        'PATH' => '',
-                        'SITE_ID' => 's1',
-                    ],
-                    false
-            ); ?>
-            <h1><?= $APPLICATION->GetPageProperty('BANNER_TITLE') ?></h1>
-        </div>
+<section class="start bg--green mb-0">
+	<div class="container">
+		<?$APPLICATION->IncludeComponent(
+			'bitrix:breadcrumb',
+			'bread',
+			[
+				'START_FROM' => '0',
+				'PATH' => '',
+				'SITE_ID' => 's1',
+			],
+			false
+		);
+        $APPLICATION->AddChainItem($APPLICATION->GetTitle(), $APPLICATION->GetCurPage());?>
+		<h1 class="title--h1">Проверка сертификата</h1>
+		<p>Здесь можно проверить сертификат ИТ-специалиста Центра сертификации IBS</p>
     </div>
-</div>
+</section>
 
 <div class="section-box" style="background-color: #f2f2f2">
     <div class="section-box__container container">
+        <div class="section-box__header">
+            <div class="section-box__subtitle">Укажите фамилию и номер сертификата</div>
+        </div>
         <div class="section-box__content">
             <form class="form callback-mini" name="cert" data-form-type="webform">
                 <div class="form__active">
                     <div class="form__active-message" style="padding: 15px"><b>Сертификат действителен</b></div>
                 </div>
                 <div class="form__unidentified">
-                    <div class="form__unidentified-message" style="padding: 15px"><b>Сертификат не найден</b></div>
+                    <div class="form__unidentified-message" style="padding: 15px"><b>Сертификат не найден!</b> Проверьте, что в фамилии и номере нет ошибок и опечаток.</div>
                 </div>
                 <div class="form__inactive">
                     <div class="form__inactive-message" style="padding: 15px"><b>Сертификат не действителен</b></div>
@@ -46,16 +44,7 @@ $APPLICATION->SetTitle('Проверка сертификата');
                         <?=bitrix_sessid_post()?>
                         <input type="hidden" name="addField" value="">
                         <label class="field-box">
-                            <input type="text" name="SURNAME" data-inputmask-regex="[а-яА-Я\s]*" placeholder="Фамилия" value="" required/>
-                        </label>
-                        <label class="field-box">
-                            <input type="text" name="NAME" data-inputmask-regex="[а-яА-Я\s]*" placeholder="Имя" value="" required/>
-                        </label>
-                        <label class="field-box">
-                            <input type="text" name="PATRONYMIC" data-inputmask-regex="[а-яА-Я\s]*" placeholder="Отчество (если есть)" value=""/>
-                        </label>
-                        <label class="field-box">
-                            <input type="text" name="SNILS" placeholder="СНИЛС" value="" required/>
+                            <input type="text" name="SURNAME" pattern="[а-яА-Я\s]*" placeholder="Фамилия" value="" required/>
                         </label>
                         <label class="field-box">
                             <input type="text" maxlength="10" name="NUMBER" pattern="[A-Z]{2}[0-9]{2}-[0-9]{5}" placeholder="Номер сертификата" value="" required/>
@@ -65,13 +54,17 @@ $APPLICATION->SetTitle('Проверка сертификата');
                         <label class="agree-text" style="color: #003979;line-height: 1.4">
                             <input id="form-reg-two" name="agree-2" value="Y" type="checkbox">Настоящим  я подтверждаю, что уведомлен и согласен с <a style="text-decoration: underline;" target="_blank" href="/agree_of_subject/">условиями обработки персональных данных</a></label>
                     </div>
-                    <button type="submit" class="button _submit _w-full _size-l"><span>Проверить</span></button>
+                    <button type="submit" class="button _submit _w-full _size-l" style="background: #2A418B;"><span>Проверить</span></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
 <style>
+    .start .title--h1 + p {
+        margin-bottom: 0px;
+    }
     .jq-selectbox.error {
         border: 1px solid #cd0505;
     }
@@ -94,18 +87,49 @@ $APPLICATION->SetTitle('Проверка сертификата');
         margin: 0;
         box-shadow: none;
     }
+    .callback-mini a {
+         color: #003979;
+    }
+    .button._submit,
+    .button._submit:after {
+         background: #2A418B;
+         border-color: #2A418B;
+    }
     .jq-selectbox__dropdown ul {
          background: #ffffff;
     }
+    input[type="text"] {
+         border-radius: 0px;
+    }
 </style>
+
 <script>
     $(function() {
         $('select').styler();
         $('[name="SURNAME"]').inputmask()
-        $('[name="NAME"]').inputmask()
-        $('[name="PATRONYMIC"]').inputmask()
         $('[name="NUMBER"]').inputmask("AA99-99999",{ "placeholder": "FF00-00000" })
-        $('[name="SNILS"]').inputmask("999-999-999 99",{ "placeholder": "XXX-XXX-XXX YY" })
     })
 </script>
+
+<?$APPLICATION->IncludeComponent(
+	"bitrix:form.result.new",
+	"main.feedback",
+	Array(
+		"AJAX_MODE" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CHAIN_ITEM_LINK" => "",
+		"CHAIN_ITEM_TEXT" => "",
+		"CUSTOM_CLASSES" => "bg--green",
+		"EDIT_URL" => "",
+		"IGNORE_CUSTOM_TEMPLATE" => "N",
+		"LIST_URL" => "",
+		"SEF_MODE" => "N",
+		"SUCCESS_URL" => "",
+		"USE_EXTENDED_ERRORS" => "N",
+		"VARIABLE_ALIASES" => array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
+		"WEB_FORM_ID" => "47"
+	)
+);?>
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

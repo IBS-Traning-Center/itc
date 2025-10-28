@@ -561,9 +561,11 @@ $this->setFrameMode(true);
 				<div class="col-12 col-sm-auto">
 					<a href="#" class="btn--dark scroll-to-levels">Пройти бесплатный тест</a>
 				</div>
-
 				<div class="col-12 col-sm-auto">
 					<a href="/timetable/certification/" target="_blank" class="btn--light">Посмотреть расписание</a>
+				</div>
+				<div class="col-12 col-sm-auto">
+					<a href="/sertifikatsiya/check/" target="_blank" class="btn--light">Проверить сертификат</a>
 				</div>
 			</div>
 		</div>

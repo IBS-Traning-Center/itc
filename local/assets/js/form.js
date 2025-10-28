@@ -128,19 +128,8 @@ $(function () {
                 required: true,
                 minlength: 2
             },
-            'NAME': {
-                required: true,
-                minlength: 2
-            },
-            'PATRONYMIC': {
-                minlength: 2
-            },
             'NUMBER': {
                 minlength: 10,
-                required: true,
-            },
-            'SNILS': {
-                minlength: 14,
                 required: true,
             },
             'agree': {
