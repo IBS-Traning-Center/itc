@@ -59,6 +59,10 @@ if (!empty($arResult['ITEMS'])) : ?>
                     </p>
                 <?php endif; ?>
                 <div class="course-bottom-block">
+                    <?php if ($item['PROPERTIES']['PRICE_ON_REQUEST']['VALUE']) : ?>
+                        <span class="f-24 new-course-price"><?= Loc::getMessage('PRICE_ON_REQUEST') ?></span>
+                    <?php endif; ?>
+                    <?php if (!$item['PROPERTIES']['PRICE_ON_REQUEST']['VALUE']) : ?>
                     <?php
                         $oldCoursePrice = round($item['OLD_PRICE']) ?: null;
                         $coursePrice = round($item['PROPERTIES']['course_price']['VALUE']) ?: null;
@@ -76,6 +80,7 @@ if (!empty($arResult['ITEMS'])) : ?>
                             <span class="f-24 new-course-price"><?= Loc::getMessage('FREE_TEXT_COURSE') ?></span>
                         <?php endif;
                     ?>
+                    <?php endif; ?>
                     <?php if ($item['PROPERTIES']['IS_NEW']['VALUE']) : ?>
                         <div class="is_new-course-block">
                             <?= Functions::buildSVG('is_new', $templateFolder . '/images') ?>

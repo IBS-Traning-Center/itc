@@ -438,7 +438,8 @@ class CourseSectionComplexComponent extends CBitrixComponent
                 'NAME',
                 'COMPLEXITY.ITEM',
                 'course_duration',
-                'course_price'
+                'course_price',
+                'PRICE_ON_REQUEST'
             ],
             'filter' => [
                 'ACTIVE' => 'Y',
@@ -473,6 +474,10 @@ class CourseSectionComplexComponent extends CBitrixComponent
 
                 if ($course->getCoursePrice() && $course->getCoursePrice()->getValue()) {
                     $courseInfo['PRICE'] = $course->getCoursePrice()->getValue();
+                }
+
+                if ($course->getPriceOnRequest() && $course->getPriceOnRequest()->getValue()) {
+                    $courseInfo['PRICE_ON_REQUEST'] = $course->getPriceOnRequest()->getValue();
                 }
 
                 if (

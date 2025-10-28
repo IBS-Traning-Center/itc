@@ -37,3 +37,4 @@ $MESS['ACTION_COURSE_TEXT'] = 'Скидка';
 $MESS['DATE_COURSE_TEXT'] = 'Дата и время: ';
 $MESS['TRAINER_COURSE_TEXT'] = 'Тренер: ';
 $MESS['TRAINER_DEFAULT_TEXT'] = 'В процессе согласования';
+$MESS['PRICE_ON_REQUEST'] = 'Цена по запросу';

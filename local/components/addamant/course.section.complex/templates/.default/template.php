@@ -417,8 +417,11 @@ if (!empty($arResult)) : ?>
                             <p class="f-16 course-description"><?= HTMLToTxt($course['DESCRIPTION']) ?></p>
                         <?php endif; ?>
                         <div class="bottom-block-course">
-                            <?php if ($course['PRICE']) : ?>
+                            <?php if ($course['PRICE'] && !$course['PRICE_ON_REQUEST']) : ?>
                                 <p class="course-price f-24"><?= number_format($course['PRICE'], 0, '', ' ') . ' ₽' ?></p>
+                            <?php endif; ?>
+                            <?php if ($course['PRICE_ON_REQUEST']) : ?>
+                                <p class="course-price f-24"><?= Loc::getMessage('PRICE_ON_REQUEST') ?></p>
                             <?php endif; ?>
                             <?php if ($course['COMPLEXITY'] || $course['DURATION']) : ?>
                                 <div class="mobile-tags-course-block">

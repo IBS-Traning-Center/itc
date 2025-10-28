@@ -202,7 +202,8 @@ function plural_form($number, $after) {
             "PROPERTY_course_format",
             "NAME",
             "PROPERTY_COMPLEXITY",
-            "PROPERTY_IS_DEV"
+            "PROPERTY_IS_DEV",
+            "PROPERTY_PRICE_ON_REQUEST"
         );
         $arFilter = array(
             "IBLOCK_ID" => 6,
@@ -223,6 +224,7 @@ function plural_form($number, $after) {
             $courseXML = $ar_fields["XML_ID"];
             $courseComplexity = $ar_fields['PROPERTY_COMPLEXITY_VALUE'];
             $courseDev = $ar_fields['PROPERTY_IS_DEV_VALUE'];
+            $coursePriceOnRequest = $ar_fields['PROPERTY_PRICE_ON_REQUEST'];
         }
         if ($schedule_price == "") {
             $schedule_price = $course_price;
@@ -316,6 +318,7 @@ function plural_form($number, $after) {
         $arValueOfCourses[$ii]["schedule_course_sale"] = $schedule_course_sale;
         $arValueOfCourses[$ii]["courseComplexity"] = $courseComplexity;
         $arValueOfCourses[$ii]["courseDev"] = $courseDev;
+        $arValueOfCourses[$ii]["coursePriceOnRequest"] = $coursePriceOnRequest;
 
         $arValueOfCourses[$ii]["schedule_city"] = $arItem['PROPERTIES']['city']['VALUE'];
         if ($arItem['PROPERTIES']['IS_CLOSE']['VALUE_ENUM_ID'] === "136") {
@@ -436,7 +439,9 @@ function plural_form($number, $after) {
                                 <div class="price-wrapper">
                                     <div class="price">
                             <?}?>
-                            <?if (intval($value["discount"])>0 && $value["discount_type"]=="P") {?>
+                            <?if ($value["coursePriceOnRequest"]) {?>
+                                Цена по запросу
+                            <?} elseif (intval($value["discount"])>0 && $value["discount_type"]=="P") {?>
 						        <?=number_format($value["price"]*(100-$value["discount"])/100, 0, '', ' ');?><br>
 					        <?} elseif (intval($value["discount"])>0 && $value["discount_type"]=="F") {?>
                                 <?=number_format($value["price"]-$value["discount"], 0, '', ' ');?><br>

@@ -105,6 +105,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'magnet_code' => 'MAGNET_CODE',
                 'magnet_lead_name' => 'MAGNET_LEAD_NAME',
                 'magnet_button' => 'MAGNET_BUTTON_NAME',
+                'priceOnRequest' => 'PRICE_ON_REQUEST',
 
                 'metaTitle' => 'meta_title',
                 'metaDescription' => 'meta_desc',
@@ -405,7 +406,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 $this->mapping('course', 'dev'),
                 $this->mapping('course', 'magnet_code'),
                 $this->mapping('course', 'magnet_lead_name'),
-                $this->mapping('course', 'magnet_button')
+                $this->mapping('course', 'magnet_button'),
+                $this->mapping('course', 'priceOnRequest')
             ],
             'filter' => [
                 'ACTIVE' => 'Y'
@@ -446,6 +448,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
             $this->course['complexity'] = ($courseObject->getComplexity() && $courseObject->getComplexity()->getItem() && $courseObject->getComplexity()->getItem()->getValue()) ? $courseObject->getComplexity()->getItem()->getValue() : '';
             $this->course['is_new'] = $courseObject->getIsNew() && $courseObject->getIsNew()->getItem() && $courseObject->getIsNew()->getItem()->getValue();
             $this->course['is_dev'] = $courseObject->getIsDev() && $courseObject->getIsDev()->getValue();
+            $this->course['price_request'] = $courseObject->getPriceOnRequest() && $courseObject->getPriceOnRequest()->getValue();
             $this->course['price_ur'] = ($courseObject->getCoursePriceUr() && $courseObject->getCoursePriceUr()->getValue()) ? $courseObject->getCoursePriceUr()->getValue() : '';
             $this->course['language'] = ($courseObject->getCourseLanguage() && $courseObject->getCourseLanguage()->getItem() && $courseObject->getCourseLanguage()->getItem()->getValue()) ? $courseObject->getCourseLanguage()->getItem()->getValue() : '';
 
@@ -677,7 +680,7 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
         $defaultConfig = [
             'order' => ['CODE' => 'ASC'],
             'filter' => ['ACTIVE' => 'Y'],
-            'select' => $this->mapping('course', ['ID', 'NAME', 'CODE', 'XML_ID', 'duration', 'shortDescription', 'complexity', 'price']),
+            'select' => $this->mapping('course', ['ID', 'NAME', 'CODE', 'XML_ID', 'duration', 'shortDescription', 'complexity', 'price', 'PRICE_ON_REQUEST']),
             'cache' => ['ttl' => 3600],
         ];
         $courseList = $entityClass::getList(array_merge_recursive($defaultConfig, $config));
@@ -692,7 +695,8 @@ class CourseDetailComponent extends CBitrixComponent implements Controllerable, 
                 'duration' => $course->get($this->mapping('course', 'duration')) ? $course->get($this->mapping('course', 'duration'))->getValue() : '',
                 'description' => $course->get($this->mapping('course', 'shortDescription')) ? $course->get($this->mapping('course', 'shortDescription'))->getValue() : '',
                 'complexity' => ($course->getComplexity() && $course->getComplexity()->getItem() && $course->getComplexity()->getItem()->getValue()) ? $course->getComplexity()->getItem()->getValue() : '',
-                'price' => ($course->getCoursePrice() && $course->getCoursePrice()->getValue()) ? $course->getCoursePrice()->getValue() : ''
+                'price' => ($course->getCoursePrice() && $course->getCoursePrice()->getValue()) ? $course->getCoursePrice()->getValue() : '',
+                'price_request' => ($course->getPriceOnRequest() && $course->getPriceOnRequest()->getValue()) ? $course->getPriceOnRequest()->getValue() : ''
             ];
 
             $result[$course->get('ID')]['link'] = $course->get('XML_ID')

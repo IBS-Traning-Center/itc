@@ -23,3 +23,4 @@ $MESS['TARIFF_TIME_PRICE_BLOCK_TEXT'] = 'Рассрочка на 3 месяца'
 $MESS['SIGN_TARIFF_BTN_TEXT'] = 'Записаться';
 $MESS['LINKED_COURSES_BLOCK_TITLE'] = 'Связанные курсы';
 $MESS['ACTION_COURSE_TEXT'] = 'Скидка';
+$MESS['PRICE_ON_REQUEST'] = 'Цена по запросу';

@@ -25,28 +25,29 @@ $settings = Functions::getSiteSettings();
             <?php if ($arResult['arForm']['NAME']) : ?>
                 <h1><?= $arResult['arForm']['NAME'] ?></h1>
             <?php endif; ?>
-            <?php if ($arParams['OLD_PRICE']) : ?>
-                <p class="f-24 old-price"><?= $arParams['OLD_PRICE'] ?></p>
-            <?php endif; ?>
-            <?php if ($arParams['COURSE_PRICE']) : ?>
-                <p class="course-price"><?= $arParams['COURSE_PRICE'] . ' ₽' ?></p>
-            <?php endif; ?>
-            <?php if ($arParams['UR_PRICE'] || $arParams['COURSE_PRICE']) : ?>
-                <?php if ($arParams['UR_PRICE']) : ?>
-                    <p class="f-24 price-for-ur"><?= Loc::getMessage('PRICE_FOR_UR_FACE', ['#PRICE#' => $arParams['UR_PRICE']]) ?></p>
-                <?php elseif ($arParams['COURSE_PRICE']) : ?>
-                    <p class="f-24 price-for-ur"><?= Loc::getMessage('PRICE_FOR_UR_FACE', ['#PRICE#' => $arParams['COURSE_PRICE']]) ?></p>
+            <?php if (!$arParams['PRICE_ON_REQUEST']) : ?>
+                <?php if ($arParams['COURSE_PRICE']) : ?>
+                    <p class="course-price"><?= $arParams['COURSE_PRICE'] . ' ₽' ?></p>
                 <?php endif; ?>
-            <?php endif; ?>
-            <?php if ($settings['MONEY_RETURN_LINK']) : ?>
-                <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 money-return"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
+                <?php if ($arParams['UR_PRICE'] || $arParams['COURSE_PRICE']) : ?>
+                    <?php if ($arParams['UR_PRICE']) : ?>
+                        <p class="f-24 price-for-ur"><?= Loc::getMessage('PRICE_FOR_UR_FACE', ['#PRICE#' => $arParams['UR_PRICE']]) ?></p>
+                    <?php elseif ($arParams['COURSE_PRICE']) : ?>
+                        <p class="f-24 price-for-ur"><?= Loc::getMessage('PRICE_FOR_UR_FACE', ['#PRICE#' => $arParams['COURSE_PRICE']]) ?></p>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <?php if ($settings['MONEY_RETURN_LINK']) : ?>
+                    <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 money-return"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
+                <?php endif; ?>
+            <?php else : ?>
+                <p class="course-price"><?= Loc::getMessage('PRICE_ON_REQUEST') ?></p>
             <?php endif; ?>
         </div>
         <div class="questions-block">
             <?php if ($arResult["FORM_NOTE"]) : ?>
                 <p class="f-20 success-text"><?= $arResult["FORM_NOTE"] ?></p>
             <?php endif; ?>
-            <?php if ($arParams['COURSE_PRICE'] && !$arResult["FORM_NOTE"]) : ?>
+            <?php if ($arParams['COURSE_PRICE'] && !$arResult["FORM_NOTE"] && !$arParams['PRICE_ON_REQUEST']) : ?>
                 <div class="sign-course-tabs-block">
                     <div class="sign-course-tab phys active">
                         <span class="f-16"><?= Loc::getMessage('PHYS_FACE_TAB_TEXT', ['#PRICE#' => $arParams['COURSE_PRICE']]) ?></span>
@@ -100,8 +101,10 @@ $settings = Functions::getSiteSettings();
 
                                     break;
                                 case 'face':
-                                    if ($arParams['COURSE_PRICE']) {
+                                    if ($arParams['COURSE_PRICE'] && !$arParams['PRICE_ON_REQUEST']) {
                                         $value = $arParams['COURSE_PRICE'];
+                                    } elseif ($arParams['PRICE_ON_REQUEST']) {
+                                        $value = 'Цена по запросу';
                                     }
                                     break;
                                  case 'course_name':

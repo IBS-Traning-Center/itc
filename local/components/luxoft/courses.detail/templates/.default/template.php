@@ -124,13 +124,18 @@ function plural_form($number, $after) {
                 </div>
                 <div class="right-banner-block">
                     <div class="price-course-block">
-                        <?php if (!empty($arResult['sale'])) : ?>
+                        <?php if (!empty($arResult['sale']) && !$arResult['price_request']) : ?>
                             <h2 class="course-price">
                                 <?= number_format($arResult['sale']['price'], 0, '', ' ') . ' ₽' ?>
                             </h2>
                         <?php endif; ?>
+                        <?php if ($arResult['price_request']) : ?>
+                            <h2 class="course-price" style="font-size: 32px;">
+                                <?= Loc::getMessage('PRICE_ON_REQUEST') ?>
+                            </h2>
+                        <?php endif; ?>
                     </div>
-                    <?php if ($arResult['price_ur']) : ?>
+                    <?php if ($arResult['price_ur'] && !$arResult['price_request']) : ?>
                         <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
                     <?php endif; ?>
                     <?php if ($settings['MONEY_RETURN_LINK']) : ?>
@@ -241,13 +246,18 @@ function plural_form($number, $after) {
             <?php endif; ?>
             <div class="mobile-detail-course-info-block">
                 <div class="price-course-block">
-                    <?php if (!empty($arResult['sale'])) : ?>
+                    <?php if (!empty($arResult['sale']) && !$arResult['price_request']) : ?>
                         <h2 class="course-price">
                             <?= number_format($arResult['sale']['price'], 0, '', ' ') . ' ₽' ?>
                         </h2>
                     <?php endif; ?>
+                    <?php if ($arResult['price_request']) : ?>
+                        <h2 class="course-price"  style="font-size: 32px;">
+                            <?= Loc::getMessage('PRICE_ON_REQUEST') ?>
+                        </h2>
+                    <?php endif; ?>
                 </div>
-                <?php if ($arResult['price_ur']) : ?>
+                <?php if ($arResult['price_ur'] && !$arResult['price_request']) : ?>
                     <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
                 <?php endif; ?>
                 <?php if ($settings['MONEY_RETURN_LINK']) : ?>
@@ -391,15 +401,19 @@ function plural_form($number, $after) {
                                  </div>
                                  <? } else {?>
                                 <div class="price-info">
-                                    <?php if ($item['sale']['price']) : ?>
+                                    <?php if ($arResult['price_request']) : ?>
+                                        <p class="f-24"><?= Loc::getMessage('PRICE_ON_REQUEST') ?></p>
+                                    <?php elseif ($item['sale']['price']) : ?>
                                         <p class="f-24"><?= number_format($item['sale']['price'], 0, '', ' ') . ' ₽' ?></p>
                                     <?php elseif (!empty($arResult['sale'])) : ?>
                                         <p class="f-24"><?= number_format($arResult['sale'], 0, '', ' ') . ' ₽' ?></p>
                                     <?php endif; ?>
-                                    <?php if ($item['sale']['price_ur']) : ?>
-                                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($item['sale']['price_ur'], 0, '', ' ')]) ?></p>
-                                    <?php elseif (!empty($arResult['price_ur'])) : ?>
-                                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
+                                    <?php if (!$arResult['price_request']) : ?>
+                                        <?php if ($item['sale']['price_ur']) : ?>
+                                            <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($item['sale']['price_ur'], 0, '', ' ')]) ?></p>
+                                        <?php elseif (!empty($arResult['price_ur'])) : ?>
+                                            <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
+                                        <?php endif; ?>
                                     <?php endif; ?>
                                 </div>
                                  <?}?>
@@ -501,13 +515,18 @@ function plural_form($number, $after) {
         </div>
         <div class="right-content-block">
             <div class="price-course-block">
-                <?php if (!empty($arResult['sale'])) : ?>
+                <?php if (!empty($arResult['sale']) && !$arResult['price_request']) : ?>
                     <h2 class="course-price">
                         <?= number_format($arResult['sale']['price'], 0, '', ' ') . ' ₽' ?>
                     </h2>
                 <?php endif; ?>
+                <?php if ($arResult['price_request']) : ?>
+                    <h2 class="course-price" style="font-size: 32px;">
+                        <?= Loc::getMessage('PRICE_ON_REQUEST') ?>
+                    </h2>
+                <?php endif; ?>
             </div>
-            <?php if ($arResult['price_ur']) : ?>
+            <?php if ($arResult['price_ur'] && !$arResult['price_request']) : ?>
                 <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
             <?php endif; ?>
             <?php if ($settings['MONEY_RETURN_LINK']) : ?>
@@ -571,6 +590,7 @@ if (!empty($arResult['sale'])) {
             "COURSE_NAME" => $arResult['name'],
             "COURSE_SIGN" => $arResult['code'],
             "COURSE_LINK" => $arResult['xmlId'],
+            "PRICE_ON_REQUEST" => $arResult['price_request'],
             "COURSE_PRICE" => $coursePrice,
             "OLD_PRICE" => $oldPrice,
             "UR_PRICE" => $urPrice,
@@ -678,8 +698,11 @@ if (!empty($arResult['sale'])) {
                             <span class="f-16"><?= 'от ' . $course['complexity'] ?></span>
                         </div>
                     <?php endif; ?>
-                    <?php if ($course['price']) : ?>
+                    <?php if ($course['price'] && !$course['price_request']) : ?>
                         <p class="f-24 course-price"><?= number_format($course['price'], 0, '', ' ') . ' ₽' ?></p>
+                    <?php endif; ?>
+                    <?php if ($course['price_request']) : ?>
+                        <p class="f-24 course-price"><?= Loc::getMessage('PRICE_ON_REQUEST') ?></p>
                     <?php endif; ?>
                 </div>
             </a>

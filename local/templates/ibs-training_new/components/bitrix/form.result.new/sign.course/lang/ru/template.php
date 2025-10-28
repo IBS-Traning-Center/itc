@@ -13,3 +13,4 @@ $MESS['PHYS_FACE_TAB_TEXT'] = 'Юр. лицо<i> — #PRICE# ₽</i>';
 $MESS['UR_FACE_TAB_TEXT'] = 'Физ. лицо<i> — #PRICE# ₽</i>';
 $MESS['PRICE_FOR_UR_FACE'] = '#PRICE# ₽ — для физ. лиц';
 $MESS['RETURN_MONEY_TEXT'] = 'Как вернуть до 90% стоимости';
+$MESS['PRICE_ON_REQUEST'] = 'Цена по запросу';
