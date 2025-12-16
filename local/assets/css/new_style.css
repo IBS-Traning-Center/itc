@@ -138,7 +138,8 @@ body {
 #header .header-container .search-header-block > form {
     display: flex;
     align-items: center;
-    max-width: 150px;
+    max-width: 100%;
+    border: 1px solid black; /* черная обводка */
 }
 
 #header .header-container .search-header-block > form button {
