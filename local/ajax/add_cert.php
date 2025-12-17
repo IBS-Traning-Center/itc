@@ -56,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $date_from = $_POST['DATE_FROM'] ?? NULL;
                     $date_to = $_POST['DATE_TO'] ?? NULL;
                     $link = $_POST['LINK'] ?? NULL;
+                    $user_id = NULL;
 
                     if ($surname && $name && $mail && $certificate_number && $certificate_type && $certification_level && $date_from) {
                         $surname = $sqlHelper->forSql($surname);
@@ -69,22 +70,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $date_to = $sqlHelper->forSql($date_to);
                         $link = $sqlHelper->forSql($link);
 
-                        $sql = "INSERT certificates (surname, name, patronymic, mail, certificate_number, certificate_type, certification_level, date_from, date_to, link) 
-                        VALUES ('" . $surname . "', '" . $name . "', '" . $patronymic . "', '" . $mail . "', '" . $certificate_number . "', '" . $certificate_type . "', '" . $certification_level . "', '" . $date_from . "', '" . $date_to . "', '" . $link . "')";
+                        $sql = "SELECT ID FROM b_user WHERE (EMAIL = '" . $mail . "') OR (NAME = '" . $name . "' AND LAST_NAME = '" . $surname . "' AND SECOND_NAME = '" . $patronymic . "')";
                         $recordset = $connection->query($sql);
+                        if ($record = $recordset->fetch()) {
+                            $user_id = $sqlHelper->forSql($record['ID']);
+                        }
 
-                        $recordset = $connection->add('certificates', [
-                            'surname' => $surname,
-                            'name' => $name,
-                            'patronymic' => $patronymic,
-                            'mail' => $mail,
-                            'certificate_number' => $certificate_number,
-                            'certificate_type' => $certificate_type,
-                            'certification_level' => $certification_level,
-                            'date_from' => $date_from,
-                            'date_to' => $date_to,
-                            'link' => $link,
-                        ]);
+                        $sql = "INSERT certificates (surname, name, patronymic, mail, certificate_number, certificate_type, certification_level, date_from, date_to, link, user_id) 
+                        VALUES ('" . $surname . "', '" . $name . "', '" . $patronymic . "', '" . $mail . "', '" . $certificate_number . "', '" . $certificate_type . "', '" . $certification_level . "', '" . $date_from . "', '" . $date_to . "', '" . $link . "', '" . $user_id . "')";
+                        $recordset = $connection->query($sql);
                         if ($record = $recordset->fetch()) {
                             $message[] = 'Сертификат ' . $certificate_number . ' успешно сохранен';
                         } else {

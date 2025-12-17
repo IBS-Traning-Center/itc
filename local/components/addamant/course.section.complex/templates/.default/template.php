@@ -82,7 +82,11 @@ if (!empty($arResult)) : ?>
                             <?= Functions::buildSVG('diplom_icon', $templateFolder . '/images') ?>
                         </div>
                         <div class="top-course-info_item-text">
-                            <p class="f-20"><?= Loc::getMessage('DIPLOM_TEXT') ?></p>
+                            <?php if ($arResult['CODE'] == 'BA-PRG-002') : ?>
+                                <p class="f-20"><?= Loc::getMessage('LICENSE_TEXT') ?></p>
+                            <?php else : ?>
+                                <p class="f-20"><?= Loc::getMessage('DIPLOM_TEXT') ?></p>
+                            <?php endif; ?>
                             <p class="f-20 show-diplom-btn"><?= Loc::getMessage('DIPLOM_BTN_SHOW_TEXT') ?></p>
                         </div>
                     </div>
@@ -446,7 +450,11 @@ if (!empty($arResult)) : ?>
 <?php endif; ?>
 <div class="diploma-modal">
     <div class="diploma-modal-content">
-        <img src="<?= $templateFolder . '/images/diplom.png' ?>">
+        <?php if ($arResult['CODE'] == 'BA-PRG-002') : ?>
+            <img src="<?= $templateFolder . '/images/license-preview.jpg' ?>">
+        <?php else :?>
+            <img src="<?= $templateFolder . '/images/diplom_new.png' ?>"> 
+        <?php endif; ?>
     </div>
 </div>
 <div class="diploma-modal-close-btn">

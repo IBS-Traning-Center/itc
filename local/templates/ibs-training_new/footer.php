@@ -1,6 +1,7 @@
 <?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 </main>
 <?php global $APPLICATION; ?>
+<?php if (strpos($APPLICATION->GetCurDir(), 'new-year-promoaction-2026') == false): ?>
 <?php $APPLICATION->IncludeComponent(
     "bitrix:form.result.new",
     "main.feedback",
@@ -20,6 +21,7 @@
         "WEB_FORM_ID" => "39"
     )
 ); ?>
+<?php endif;?>
 <footer class="footer">
     <div class="container">
         <div class="top-menu-block-footer">

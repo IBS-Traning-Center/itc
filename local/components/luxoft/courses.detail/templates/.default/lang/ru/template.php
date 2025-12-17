@@ -1,7 +1,7 @@
 <?php
 
 $MESS['NEW_COURSE_TEXT'] = 'Новинка';
-$MESS['DEV_COURSE_TEXT'] = 'В разработке';
+$MESS['DEV_COURSE_TEXT'] = 'Предзапись';
 $MESS['CERTIFICATE_TEXT'] = 'Сертификат о прохождении';
 $MESS['LICENSE_TEXT'] = 'Удостоверение о прохождении';
 $MESS['DIPLOM_BTN_SHOW_TEXT'] = 'Смотреть пример';

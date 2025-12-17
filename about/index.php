@@ -118,7 +118,7 @@ $APPLICATION->SetTitle("Тренинги, корпоративное обуче�
                <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/offset_left_text.php', [], ['MODE' => 'html', 'NAME'=>'Текст']);?>
             </div>
          </div>
-         <div class="col-12 col-lg-3 col-xxl-6 page_about__desc__image">
+         <div class="col-12 col-lg-3 col-xxl-6 page_about__desc__image" style="width: 40%">
             <?$APPLICATION->IncludeFile(SITE_DIR . 'include/about/page_about__desc__image.php', [], ['MODE' => 'html', 'NAME'=>'Фото']);?>
          </div>
       </div>
@@ -504,7 +504,6 @@ $APPLICATION->IncludeComponent(
 );
 ?>
 
-
 <section class="grey-page-block">
    <div class="text-page-block">
       <div class="container">
@@ -587,6 +586,39 @@ $APPLICATION->IncludeComponent(
        </td></tr>
    </tbody>
   </table> */?>
-
-
+<style>
+.bg--blue {
+  background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%) !important;
+}
+.history__list__item.active .title--h2, .history__list__item.active .f-20 {
+  color: #2F6298 !important;
+}
+.history__list__item.active .title--h2.infin {
+    color: transparent !important;
+}
+.history__list__item.active .history__list__item__point span {
+  border-color: #2F6298 !important;
+}
+.history__list__item__point span {
+  background-color: #2F6298 !important;
+}
+.page_about__desc__text:after {
+  background-color: #2F6298 !important;
+}
+.history__list__item.active .infinity path {
+  fill: #2F6298 !important;
+}
+.main-feedback-form-block {
+  background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%) !important;
+}
+.main-feedback-form-block .main-feedback-form-container .questions-block .submit-main-feedback-form {
+  color: #2F6298 !important;
+}
+.link {
+  color: #2F6298 !important;
+}
+.gradient-title {
+  background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%) !important;
+}
+</style>
  <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

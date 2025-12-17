@@ -52,8 +52,7 @@
     gap: 24px;
 }
 
-.main-feedback-form-block .main-feedback-form-container .questions-block .question-block input,
-.main-feedback-form-block .select-dates-block input {
+.main-feedback-form-block .main-feedback-form-container .questions-block .question-block input {
     outline: none;
     border: none;
     background-color: #F0F0F0;
@@ -65,10 +64,6 @@
     border-radius: 0;
     height: fit-content;
     width: 100%;
-}
-
-.main-feedback-form-block .select-dates-block input {
-    margin-bottom: 32px;
 }
 
 .main-feedback-form-block .main-feedback-form-container .questions-block .question-block input::placeholder {
@@ -87,7 +82,7 @@
 .main-feedback-form-block .main-feedback-form-container .questions-block .submit-main-feedback-form {
     outline: none;
     width: 100%;
-    height: auto;
+    height: fit-content;
     background-color: var(--white);
     padding: 32px 40px;
     color: var(--button-blue);
@@ -126,83 +121,11 @@
 }
 
 .main-feedback-form-block .question-block.client_id,
+.main-feedback-form-block .question-block.course_name,
+.main-feedback-form-block .question-block.course_name_crm,
+.main-feedback-form-block .question-block.magnet_code,
 .main-feedback-form-block .question-block.job {
     display: none !important;
-}
-
-.question-block.date {
-    display: none;
-}
-
-.select-dates-block {
-    position: relative;
-}
-
-.select-dates-block .select-dates-content {
-    margin-bottom: 32px;
-    width: 100%;
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    cursor: pointer;
-    padding: 24px;
-    justify-content: space-between;
-    background-color: var(--gray);
-}
-
-.select-dates-block .select-dates-content svg {
-    width: 32px;
-    height: 32px;
-}
-
-.select-dates-block .select-dates-dropdown-block {
-    display: none;
-    position: absolute;
-    bottom: auto;
-    background: var(--gray);
-    width: 100%;
-    z-index: 1;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-    top: 105%;
-}
-
-.select-dates.active .select-dates-dropdown-block {
-    display: block;
-}
-
-.select-dates.active .select-dates-content svg {
-    transform: rotate(180deg);
-}
-
-.select-dates-block .select-dates-dropdown-block .select-date {
-    background-color: var(--gray);
-    padding: 24px;
-    width: 100%;
-    display: flex;
-    cursor: pointer;
-}
-
-.select-dates-block span {
-    color: var(--black) !important;
-    margin: 0 !important;
-    font-size: 20px !important;
-    font-weight: 300 !important;
-    line-height: 32px !important;
-}
-
-.cert-levels,
-.question-block.date {
-    display: none !important;
-}
-
-#applicationsFormBlock .title--h2 {
-    color: var(--white);
-}
-
-.date-default-block.question-block {
-    pointer-events: none;
-    cursor: default;
-    opacity: 0.7;
 }
 
 .success-modal-form-block {
@@ -271,8 +194,13 @@
 
 @media (max-width: 1180px) {
     .main-feedback-form-block {
-        padding: 40px 0 80px;
+        padding: 40px 0 0 !important;
     }
+
+    /* .main-feedback-form-block .main-feedback-form-container {
+        flex-direction: column;
+        gap: 32px;
+    } */
 
     .main-feedback-form-block .main-feedback-form-container h1 {
         max-width: 100%;
@@ -281,15 +209,13 @@
         margin: 0;
     }
 
-    .main-feedback-form-block .main-feedback-form-container .questions-block .question-block input,
-    .main-feedback-form-block .select-dates-block input {
+    .main-feedback-form-block .main-feedback-form-container .questions-block .question-block input {
         padding: 16px;
         font-size: 16px;
         line-height: 22px;
     }
 
-    .main-feedback-form-block .main-feedback-form-container .questions-block .question-block,
-    .main-feedback-form-block .select-dates-block input {
+    .main-feedback-form-block .main-feedback-form-container .questions-block .question-block {
         margin-bottom: 16px;
     }
 
@@ -303,38 +229,6 @@
         padding: 16px 40px;
         font-size: 16px;
         line-height: 22px;
-    }
-
-    .select-dates-block .select-dates-content {
-        margin-bottom: 16px;
-        padding: 16px;
-    }
-
-    .select-dates-block .select-dates-content span,
-    .select-dates-block .select-dates-dropdown-block .select-date span {
-        font-size: 16px;
-        line-height: 22px;
-    }
-
-    .select-dates-block .select-dates-content svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .select-dates-block .select-dates-dropdown-block .select-date {
-        padding: 16px;
-    }
-
-    .select-dates-block span {
-        color: var(--black) !important;
-        margin: 0 !important;
-        font-size: 16px !important;
-        font-weight: 300 !important;
-        line-height: 22px !important;
-    }
-
-    .jq-selectbox {
-        margin-bottom: 16px;
     }
 
     .success-modal-form-block {
@@ -408,51 +302,3 @@
         margin-bottom: 8px;
     }
 }
-
-#applicationsFormBlock input[type="date"]{
-    padding: 0px 16px;
-    font-size: 16px;    
-    line-height: 56px;
-    box-sizing: border-box;
-    text-align: left;
-    max-width: 100%;
-    width: 100%
-}
-
-#applicationsFormBlock input[type="date"]::-webkit-date-and-time-value {
-    text-align: left;
-}
-
-@media (max-width: 630px) {
-    .select-date-input input[type="date"] {
-        -webkit-appearance: none;
-        appearance: none;
-        background: #fff;
-        padding: .6rem .75rem;
-        line-height: 1.2;
-    }
-
-}
-
-.questions-block .dates-block,
-.questions-block .take-date-block,
-.questions-block .select-dates-block, 
-.questions-block .select-date-input{
-    width: 100%
-}
-/*
-@supports (-webkit-touch-callout: none) {
-  #applicationsFormBlock input[type="date"]{
-    width: --webkit-fill-available;
-  }
-}
-@media only screen and (max-device-width: 430px) and (-webkit-min-device-pixel-ratio: 3) {
-   #applicationsFormBlock input[type="date"]{
-    width: --webkit-fill-available;
-  }
-}
-@media only screen and (max-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
-   #applicationsFormBlock input[type="date"]{
-    width: --webkit-fill-available;
-  }
-}*/

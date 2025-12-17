@@ -11,6 +11,10 @@
     color: black!important;
 }
 
+.levels__item__title p{
+    white-space: normal;
+}
+
 @media screen and (min-width: 992px) {
     .certification-detail .levels__item__modal .main-feedback-form-block .title--h2 {
         font-family: "Stag Sans", sans-serif;
