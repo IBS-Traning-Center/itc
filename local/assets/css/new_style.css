@@ -216,7 +216,54 @@ body {
     width: 100%;
     position: relative;
 }
+.search-header-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 175px;
+    height: 40px;
+    padding: 0 16px;
+    background: #F0F0F0;
+}
 
+.search-header-button {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-header-button svg {
+    width: 22px;
+    height: 22px;
+    fill: #000;
+}
+
+.search-main {
+    flex: 1;
+    height: 24px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
+}
+
+.search-main::placeholder {
+    color: #000;
+    opacity: 1;
+}
 #header .search-hidden-block .search-block form input[type="text"].search-main {
     border-bottom: 1px solid var(--black);
     border-radius: 0;
@@ -1271,7 +1318,7 @@ body {
     }
 
     .stage-block ul li:last-child h2:before{
-       bottom: 19px;
+        bottom: 19px;
     }
 
     .stage-block ul li:last-child{
@@ -2043,7 +2090,7 @@ span.time.time-with-tooltip:hover .tooltip {
     }
 
     .search-item-catalog{
-       max-width: 307px;
+        max-width: 307px;
     }
 }
 
@@ -2144,7 +2191,7 @@ span.time.time-with-tooltip:hover .tooltip {
         padding: 8px 18px;
         margin-top: 12px;
     }
-        
+
     .cookie-notice {
         padding: 24px 0 !important;
     }
@@ -2271,7 +2318,7 @@ span.time.time-with-tooltip:hover .tooltip {
     }
 
     .timetable-item.quarter .time-one-wrapper{
-       padding: 0 0 0 16px;
+        padding: 0 0 0 16px;
     }
 
     .timetable-item.quarter .time-one-wrapper + .time-one-wrapper{
@@ -2526,7 +2573,7 @@ span.time.time-with-tooltip:hover .tooltip {
     .corporate-page .scheme-block .scheme-line:after {
         width: 0%;
     }
-    
+
     .corporate-page .scheme-block .scheme-line{
         width: 110%;
     }
@@ -2600,7 +2647,7 @@ span.time.time-with-tooltip:hover .tooltip {
 @media (max-width: 1023px) {
     .corporate-page .scheme-block .scheme-line::after{
         height: 55%;
-    } 
+    }
 }
 
 .corporate-page .scheme-block .scheme-item:last-child .scheme-line{
