@@ -51,7 +51,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Бесплатные вебинары", 
-		"/timetable/", 
+		"/timetable/?type=events",
 		Array(), 
 		Array(), 
 		"" 

@@ -139,7 +139,7 @@ body {
     display: flex;
     align-items: center;
     max-width: 100%;
-    border: 1px solid black; /* черная обводка */
+    background-color: #F0F0F0;
 }
 
 #header .header-container .search-header-block > form button {
@@ -169,6 +169,8 @@ body {
     font-family: 'Inter', sans-serif;
     opacity: 1;
     outline: none;
+    background-color: #F0F0F0;
+    width: 130px;
 }
 
 #header .header-container .search-header-block > form #search-text-header::placeholder {
