@@ -1,5 +1,5 @@
 <?php
-
+use Local\Util\IblockHelper;
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
 global $USER, $APPLICATION;
@@ -112,7 +112,7 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 		"FIELD_CODE" => array("", ""),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "214",
+		"IBLOCK_ID" => IblockHelper::getIdByCode('stackRole'),
 		"IBLOCK_TYPE" => "edu",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "Y",
