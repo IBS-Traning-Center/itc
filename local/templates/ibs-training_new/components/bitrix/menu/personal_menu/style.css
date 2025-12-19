@@ -4,6 +4,8 @@
 	padding: 0 24px 0 40px;
 	width: 454px;
 	box-sizing: border-box;
+	top: 24px;
+	position: relative;
 }
 
 .lk-menu__item {
