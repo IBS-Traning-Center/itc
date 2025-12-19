@@ -172,6 +172,18 @@ $cntBasketItems = CSaleBasket::GetList(
             ]
         ); ?>
     </div>
+<section id="banner" class="banner-main-page">
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:advertising.banner",
+        ".default",
+        array(
+            "TYPE" => "ON_MAIN",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "0"
+        ),
+        false
+    );?>
+</section>
     <div class="search-hidden-block">
         <div class="search-block">
             <form action="/search/">
@@ -228,18 +240,6 @@ $cntBasketItems = CSaleBasket::GetList(
             ); ?>
         </div>
     </div>
-<section id="banner" class="banner-main-page">
-    <?$APPLICATION->IncludeComponent(
-        "bitrix:advertising.banner",
-        ".default",
-        array(
-            "TYPE" => "ON_MAIN",
-            "CACHE_TYPE" => "A",
-            "CACHE_TIME" => "0"
-        ),
-        false
-    );?>
-</section>
 </header>
 
 <main class="page _content">
