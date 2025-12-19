@@ -79,7 +79,6 @@ $request = $application->getContext()->getRequest();
 </script>
 <!-- Marquiz script end -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="yandex-verification" content="a65ac9e546079151"/>
     <meta name="yandex-verification" content="e0363bd7fb634c51"/>
     <meta name="skill2go-school-confirmation-token" content="UIj8-QgobjZZfMTIvkuP_hvLDmJDs7Ta"/>
     <meta charset="UTF-8">
@@ -175,15 +174,15 @@ $cntBasketItems = CSaleBasket::GetList(
             </form>
         </div>
         <?php $APPLICATION->IncludeComponent(
-            'bitrix:menu',
-            'main.top.menu',
-            [
-                'ROOT_MENU_TYPE' => 'top',
-                'MAX_LEVEL' => '1',
-                'CHILD_MENU_TYPE' => 'top',
-                'USE_EXT' => 'Y'
-            ]
-        ); ?>
+    'bitrix:menu',
+    'main.top.menu',
+    [
+        'ROOT_MENU_TYPE' => 'top',
+        'MAX_LEVEL' => '1',
+        'CHILD_MENU_TYPE' => 'top',
+        'USE_EXT' => 'Y'
+    ]
+); ?>
     </div>
     <div class="search-hidden-block">
         <div class="search-block">
@@ -202,56 +201,45 @@ $cntBasketItems = CSaleBasket::GetList(
         </div>
         <div id="search-dropdown">
             <?php $APPLICATION->IncludeComponent(
-                'luxoft:search.title',
-                'search-right-form',
-                [
-                    'NUM_CATEGORIES' => '3',
-                    'TOP_COUNT' => '5',
-                    'ORDER' => 'rank',
-                    'USE_LANGUAGE_GUESS' => 'N',
-                    'CHECK_DATES' => 'N',
-                    'SHOW_OTHERS' => 'N',
-                    'PAGE' => '/search/',
-                    'CATEGORY_0_TITLE' => 'Курсы',
-                    'CATEGORY_0' => [
-                        0 => 'iblock_edu',
-                    ],
-                    'CATEGORY_0_iblock_edu' => [
-                        0 => '6',
-                    ],
-                    'CATEGORY_1_TITLE' => 'Тренеры',
-                    'CATEGORY_1' => [
-                        0 => 'iblock_edu',
-                    ],
-                    'CATEGORY_1_iblock_edu' => [
-                        0 => '56',
-                    ],
-                    'CATEGORY_2_TITLE' => 'Блоги',
-                    'CATEGORY_2' => [
-                        0 => 'iblock_edu',
-                    ],
-                    'CATEGORY_2_iblock_edu' => [
-                        0 => '23',
-                    ],
-                    'SHOW_INPUT' => 'N',
-                    'INPUT_ID' => 'search-text',
-                    'CONTAINER_ID' => 'search-dropdown'
-                ],
-                false
-            ); ?>
+    'luxoft:search.title',
+    'search-right-form',
+    [
+        'NUM_CATEGORIES' => '3',
+        'TOP_COUNT' => '5',
+        'ORDER' => 'rank',
+        'USE_LANGUAGE_GUESS' => 'N',
+        'CHECK_DATES' => 'N',
+        'SHOW_OTHERS' => 'N',
+        'PAGE' => '/search/',
+        'CATEGORY_0_TITLE' => 'Курсы',
+        'CATEGORY_0' => [
+            0 => 'iblock_edu',
+        ],
+        'CATEGORY_0_iblock_edu' => [
+            0 => '6',
+        ],
+        'CATEGORY_1_TITLE' => 'Тренеры',
+        'CATEGORY_1' => [
+            0 => 'iblock_edu',
+        ],
+        'CATEGORY_1_iblock_edu' => [
+            0 => '56',
+        ],
+        'CATEGORY_2_TITLE' => 'Блоги',
+        'CATEGORY_2' => [
+            0 => 'iblock_edu',
+        ],
+        'CATEGORY_2_iblock_edu' => [
+            0 => '23',
+        ],
+        'SHOW_INPUT' => 'N',
+        'INPUT_ID' => 'search-text',
+        'CONTAINER_ID' => 'search-dropdown'
+    ],
+    false
+); ?>
         </div>
     </div>
-<section id="banner" class="banner-main-page">
-    <?$APPLICATION->IncludeComponent(
-        "bitrix:advertising.banner",
-        ".default",
-        array(
-            "TYPE" => "ON_MAIN",
-            "CACHE_TYPE" => "A",
-            "CACHE_TIME" => "0"
-        ),
-        false
-    );?>
-</section>
 </header>
+
 <main class="page _content">
