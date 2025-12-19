@@ -7,7 +7,7 @@
 .main-top-menu-block .main-top-menu-item {
     display: flex;
     align-items: center;
-    padding: 0 32px;
+    padding: 0 25px;
     border-right: 1px solid var(--black);
 }
 
