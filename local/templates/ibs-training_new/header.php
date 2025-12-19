@@ -10,7 +10,6 @@ global $USER;
 
 // Подключение шрифта Noto Sans
 Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.googleapis.com">');
-Asset::getInstance()->addString(' <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Noto+Sans:wght@400&family=Stag+Sans:wght@300&display=swap" rel="stylesheet">');
 Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
 Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">');
 
@@ -175,15 +174,15 @@ $cntBasketItems = CSaleBasket::GetList(
             </form>
         </div>
         <?php $APPLICATION->IncludeComponent(
-            'bitrix:menu',
-            'main.top.menu',
-            [
-                'ROOT_MENU_TYPE' => 'top',
-                'MAX_LEVEL' => '1',
-                'CHILD_MENU_TYPE' => 'top',
-                'USE_EXT' => 'Y'
-            ]
-        ); ?>
+    'bitrix:menu',
+    'main.top.menu',
+    [
+        'ROOT_MENU_TYPE' => 'top',
+        'MAX_LEVEL' => '1',
+        'CHILD_MENU_TYPE' => 'top',
+        'USE_EXT' => 'Y'
+    ]
+); ?>
     </div>
     <div class="search-hidden-block">
         <div class="search-block">
@@ -202,43 +201,43 @@ $cntBasketItems = CSaleBasket::GetList(
         </div>
         <div id="search-dropdown">
             <?php $APPLICATION->IncludeComponent(
-                'luxoft:search.title',
-                'search-right-form',
-                [
-                    'NUM_CATEGORIES' => '3',
-                    'TOP_COUNT' => '5',
-                    'ORDER' => 'rank',
-                    'USE_LANGUAGE_GUESS' => 'N',
-                    'CHECK_DATES' => 'N',
-                    'SHOW_OTHERS' => 'N',
-                    'PAGE' => '/search/',
-                    'CATEGORY_0_TITLE' => 'Курсы',
-                    'CATEGORY_0' => [
-                        0 => 'iblock_edu',
-                    ],
-                    'CATEGORY_0_iblock_edu' => [
-                        0 => '6',
-                    ],
-                    'CATEGORY_1_TITLE' => 'Тренеры',
-                    'CATEGORY_1' => [
-                        0 => 'iblock_edu',
-                    ],
-                    'CATEGORY_1_iblock_edu' => [
-                        0 => '56',
-                    ],
-                    'CATEGORY_2_TITLE' => 'Блоги',
-                    'CATEGORY_2' => [
-                        0 => 'iblock_edu',
-                    ],
-                    'CATEGORY_2_iblock_edu' => [
-                        0 => '23',
-                    ],
-                    'SHOW_INPUT' => 'N',
-                    'INPUT_ID' => 'search-text',
-                    'CONTAINER_ID' => 'search-dropdown'
-                ],
-                false
-            ); ?>
+    'luxoft:search.title',
+    'search-right-form',
+    [
+        'NUM_CATEGORIES' => '3',
+        'TOP_COUNT' => '5',
+        'ORDER' => 'rank',
+        'USE_LANGUAGE_GUESS' => 'N',
+        'CHECK_DATES' => 'N',
+        'SHOW_OTHERS' => 'N',
+        'PAGE' => '/search/',
+        'CATEGORY_0_TITLE' => 'Курсы',
+        'CATEGORY_0' => [
+            0 => 'iblock_edu',
+        ],
+        'CATEGORY_0_iblock_edu' => [
+            0 => '6',
+        ],
+        'CATEGORY_1_TITLE' => 'Тренеры',
+        'CATEGORY_1' => [
+            0 => 'iblock_edu',
+        ],
+        'CATEGORY_1_iblock_edu' => [
+            0 => '56',
+        ],
+        'CATEGORY_2_TITLE' => 'Блоги',
+        'CATEGORY_2' => [
+            0 => 'iblock_edu',
+        ],
+        'CATEGORY_2_iblock_edu' => [
+            0 => '23',
+        ],
+        'SHOW_INPUT' => 'N',
+        'INPUT_ID' => 'search-text',
+        'CONTAINER_ID' => 'search-dropdown'
+    ],
+    false
+); ?>
         </div>
     </div>
 </header>
