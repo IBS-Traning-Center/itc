@@ -81,7 +81,7 @@ class ReviewsMainPage
             let MAX_COUNT_SYMBOLS;
 
             if (window.innerWidth > 1180) {
-                MAX_COUNT_SYMBOLS = 305;
+                MAX_COUNT_SYMBOLS = 265;
             } else {
                 MAX_COUNT_SYMBOLS = 205;
             }
@@ -111,38 +111,24 @@ class ReviewsMainPage
                 autoplay: false,
                 arrows: false,
                 dots: true,
-                variableWidth: true,
+                variableWidth: false,
                 responsive: [
                     {
-                        breakpoint: 1190,
+                        breakpoint: 1600,
                         settings: {
                             slidesToShow: 3,
                             slidesToScroll: 1
                         }
                     },
                     {
-                        breakpoint: 1180,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 840,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 565,
+                        breakpoint: 1300,
                         settings: {
                             slidesToShow: 2,
                             slidesToScroll: 1
                         }
                     },
                     {
-                        breakpoint: 450,
+                        breakpoint: 768,
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1
@@ -162,12 +148,26 @@ class ReviewsMainPage
                 autoplay: false,
                 arrows: false,
                 dots: true,
-                variableWidth: true,
+                variableWidth: false,
                 responsive: [
                     {
-                        breakpoint: 1190,
+                        breakpoint: 1600,
                         settings: {
                             slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 1300,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
                             slidesToScroll: 1
                         }
                     }
