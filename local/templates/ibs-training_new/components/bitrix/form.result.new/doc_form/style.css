@@ -1,6 +1,5 @@
 
 .contact {
-    min-height: 100vh;
     background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
     display: flex;
     flex-direction: column;
