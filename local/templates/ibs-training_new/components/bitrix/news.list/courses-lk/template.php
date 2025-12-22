@@ -47,7 +47,7 @@ $this->setFrameMode(true);
                 </div>
 
                 <div class="lk-card__subtitle">
-                    Тренер — Иванов Евгений
+                    Тренер — <a href="/">Иванов Евгений</a>
                 </div>
 
                 <div class="lk-card__price">39 900 ₽</div>
@@ -86,7 +86,7 @@ $this->setFrameMode(true);
                 </div>
 
                 <div class="lk-card__subtitle">
-                    Тренер — Иванов Евгений
+                    Тренер — <a href="/">Иванов Евгений</a>
                 </div>
 
                 <div class="lk-card__price">39 900 ₽</div>

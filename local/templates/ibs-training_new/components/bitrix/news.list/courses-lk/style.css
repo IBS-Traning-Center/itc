@@ -20,7 +20,12 @@
 	gap: 16px;
 	width: 100%;
 }
+.lk-card__subtitle a{
 
+		color: #1d427d;
+		text-decoration: underline;
+
+}
 /* Стили для карточки курса */
 .lk-card.course {
 	box-sizing: border-box;

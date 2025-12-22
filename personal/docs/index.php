@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мои документы");
+use Local\Util\Functions;
 ?><div class="lk-layout">
  <aside class="lk-sidebar">
 	<?$APPLICATION->IncludeComponent(
@@ -32,7 +33,10 @@ $APPLICATION->SetTitle("Мои документы");
 					</div>
 					<div class="lk-header__right">
  <span class="lk-update-date">Обновлено 19.09.2025</span> <a href="#" class="lk-update-btn">
-						Обновить информацию </a>
+                            <?= Functions::buildSVG(
+                                'ref',
+                                'personal/docs/img'
+                            ) ?>Обновить информацию </a>
 					</div>
 				</div>
 				 <?$APPLICATION->IncludeComponent(
@@ -293,8 +297,8 @@ Array()
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 24px 0 32px;
-            width: 100%;
+            margin: 24px 19px 32px;
+            width: 1338px;
             flex-wrap: wrap;
             gap: 16px;
         }
