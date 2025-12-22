@@ -1,9 +1,9 @@
-class MainPageBanner
+class MainPageBannerSec
 {
     constructor(data = {
-        menuBlockClass: '.main-page-banner-menu',
-        mainBlockClass: '.main-page-banner-menu-img',
-        mainMenuItemClass: '.main-page-banner-menu_item'
+        menuBlockClass: '.main-page-banner-sec-menu',
+        mainBlockClass: '.main-page-banner-sec-menu-img',
+        mainMenuItemClass: '.main-page-banner-sec-menu_item'
     }) {
 
         this.menuBlock = document.querySelector(data.menuBlockClass);
@@ -14,8 +14,6 @@ class MainPageBanner
             this.mainMenuItem.forEach(element => {
                 element.addEventListener('mouseover', () => {
                     this.changeMainPhoto(element);
-                    console.log(element);
-                    
                 });
             });
         }
@@ -44,5 +42,5 @@ class MainPageBanner
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    new MainPageBanner();
+    new MainPageBannerSec();
 });

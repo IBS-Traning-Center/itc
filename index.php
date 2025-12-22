@@ -25,6 +25,16 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 		"IBLOCKS_IDS_TITLE_MAIN_PAGE_BANNER" => "49, 94"
 	)
 ); ?>
+<? $APPLICATION->IncludeComponent(
+	"addamant:main.page.banner",
+	"second",
+	array(
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CATALOG_LINK_TITLE_MAIN_PAGE_BANNER" => "/catalog/",
+		"IBLOCKS_IDS_TITLE_MAIN_PAGE_BANNER" => "49, 94"
+	)
+); ?>
 <div class="container">
 	<h1 class="main-page-heading"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/heading.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Заголовок.']); ?></h1>
 	<? $APPLICATION->IncludeComponent(
