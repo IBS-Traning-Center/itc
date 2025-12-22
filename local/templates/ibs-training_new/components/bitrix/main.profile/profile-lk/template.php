@@ -8,12 +8,12 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
 </head>
 <body>
 
-<div class="container-lk">
+    <div class="container-lk lk-profile-wrapper">
     <main class="main-content">
         <div class="tabs">
-            <div class="tab active">Профиль</div>
-            <div class="tab">Подписка</div>
-            <div class="tab">Пароль</div>
+            <a class="tab active">Профиль</a>
+            <a class="tab" href="/personal/profile/subscription/">Подписка</a>
+            <a class="tab" href="/personal/profile/password/">Пароль</a>
         </div>
 
         <div class="messages">
