@@ -1,0 +1,146 @@
+.container-lk {
+    display: flex;
+    max-width: 1450px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.main-content {
+    width: 649px;
+}
+
+/* Табы */
+.tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 48px;
+}
+.tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #f0f0f0;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+.tab.active {
+    background: #000;
+    color: #fff;
+}
+
+/* Сообщения */
+.messages { margin-bottom: 32px; }
+.error { color: #FF3333; font-size: 16px; margin-bottom: 16px; }
+.success {
+    padding: 12px 24px;
+    background: #e6ffe6;
+    border-left: 4px solid #009900;
+    color: #009900;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Поля с синей линией */
+.field-blue {
+    border-bottom: 2px solid #2B418B;
+    padding: 0 0 20px 0;
+    margin-bottom: 40px;
+}
+.field-blue label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+.field-blue input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    background: transparent;
+    color: #000;
+}
+.field-blue input:disabled { color: #999; }
+
+/* Поля с серым фоном */
+.field-gray {
+    background: #F8F8F8;
+    padding: 24px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #000;
+}
+.field-gray input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    background: transparent;
+    color: #000;
+}
+.field-gray input::placeholder { color: #aaa; }
+
+/* hh.ru секция */
+.hh-section {
+    margin: 40px 0 48px;
+}
+.hh-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+.hh-logo {
+    width: 40px;
+    height: 40px;
+    background: #FF0000;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hh-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Кнопки */
+.buttons {
+    display: flex;
+    gap: 24px;
+    margin: 48px 0;
+}
+.btn {
+    flex: 1;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+.btn-cancel {
+    background: #fff;
+    border: 1px solid #2B418B;
+    color: #2B418B;
+}
+.btn-save {
+    background: #2B418B;
+    color: #fff;
+}
+
+.delete-account {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #D32F2F;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 32px;
+}
+.delete-icon {
+    width: 32px;
+    height: 32px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D32F2F"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>') center/24px no-repeat;
+}
