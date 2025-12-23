@@ -1,7 +1,7 @@
 <?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 </main>
 <?php global $APPLICATION; ?>
-<?php if (strpos($APPLICATION->GetCurDir(), 'testing') == false && strpos($APPLICATION->GetCurDir(), 'sertifikatsiya') == false): ?>
+<?php if (strpos($APPLICATION->GetCurDir(), 'testing') == false && strpos($APPLICATION->GetCurDir(), 'sertifikatsiya') == false && strpos($APPLICATION->GetCurDir(), 'new-year-promoaction-2026') == false): ?>
     <?php $APPLICATION->IncludeComponent(
         "bitrix:form.result.new",
         "main.feedback.fullsite",

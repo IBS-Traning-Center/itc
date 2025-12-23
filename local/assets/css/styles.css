@@ -215,9 +215,8 @@ body .big-3, .small-3, .medium-3 {
   text-align: center;
 }
 .banner-main-page img{
-  max-width:1170px;
   width: 100%;
-  height:auto;
+  height: auto;
 }
 
 .main-page .row>div.timetable  .inner-wraper{
@@ -2715,7 +2714,7 @@ table.bordered td {
 }
 
 tbody tr td {
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1px solid #B2B2B2;
 }
 .cart-item-quantity {
   max-width: 100px;
@@ -3356,6 +3355,11 @@ div.reviews-collapse a {
 
 }
 @media only screen and (max-width: 970px) {
+  .banner-main-page img{
+    object-fit: cover; /* Масштабирует, обрезая края, сохраняя центр */
+    object-position: center;
+    height: 30px;
+  }
   body .hidden-970 {
     display: none;
   }

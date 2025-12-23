@@ -2,7 +2,7 @@ class MainPageBanner
 {
     constructor(data = {
         menuBlockClass: '.main-page-banner-menu',
-        mainBlockClass: '.main-page-banner-block',
+        mainBlockClass: '.main-page-banner-menu-img',
         mainMenuItemClass: '.main-page-banner-menu_item'
     }) {
 
@@ -14,6 +14,8 @@ class MainPageBanner
             this.mainMenuItem.forEach(element => {
                 element.addEventListener('mouseover', () => {
                     this.changeMainPhoto(element);
+                    console.log(element);
+                    
                 });
             });
         }

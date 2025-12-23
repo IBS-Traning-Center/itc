@@ -4,6 +4,7 @@ use Bitrix\Main\EventManager;
 use Luxoft\Dev\Tools;
 
 define('INIT_DIR', dirname(__FILE__));
+//define("LOG_FILENAME", $_SERVER["DOCUMENT_ROOT"]."/local/logs/log.txt");
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/local/lib/bitrix24.rest/CRest.php");
 
@@ -48,11 +49,22 @@ AddEventHandler("sale", "OnOrderPaySendEmail", "bxModifySaleMail");
 AddEventHandler("main", "OnBeforeUserRegister", array("MyClass", "OnBeforeUserRegisterHandler"));
 AddEventHandler("main", "OnBeforeUserUpdate", array("MyClass", "OnBeforeUserUpdateHandler"));
 AddEventHandler("main", "OnBeforeProlog", "IBlockOnBeforePrologHandler");
+AddEventHandler("main", "OnAfterUserAdd", "OnAfterUserAddHandler");
+AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserAddHandler");
 AddEventHandler("main", "OnAfterUserAdd", "OnAfterUserRegisterHandler");
 AddEventHandler("main", "OnAfterUserRegister", "OnAfterUserRegisterHandler");
 AddEventHandler("sale", "OnBasketUpdate", "BasketUpdate");
 AddEventHandler("sale", "OnSalePayOrder", "OrderPayment");
 AddEventHandler("form", "OnBeforeResultAdd", "CheckResult");
+
+/*$em = \Bitrix\Main\ORM\EventManager::getInstance();
+$em->addEventHandler(
+    ProgramsTable::class, // Класс сущности, для которого регистрируется обработчик
+    \Bitrix\Main\ORM\Data\DataManager::EVENT_ON_AFTER_ADD, // Код события, которое будет обрабатываться
+    function () { // Ваш callback-функция
+        AddMessage2Log("я родился", "my_module_id");
+    }
+);*/
 
 function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
 {
@@ -78,6 +90,9 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
             if ($arrVALUES['form_text_957']) {
                 $value = $value . "\n" . 'Комментарий: ' . $arrVALUES['form_text_957'];
             }
+            if ($arrVALUES['form_text_1145']) {
+                $value = $value . "\n" . 'Промокод: ' . $arrVALUES['form_text_1145'];
+            }
             $arrVALUES['form_textarea_987'] = $value;
         }
     } else if ($WEB_FORM_ID == 41) {
@@ -94,6 +109,9 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
             }
             if ($arrVALUES['form_text_967']) {
                 $value = $value . "\n" . 'Комментарий: ' . $arrVALUES['form_text_967'];
+            }
+            if ($arrVALUES['form_text_1146']) {
+                $value = $value . "\n" . 'Промокод: ' . $arrVALUES['form_text_1146'];
             }
             $arrVALUES['form_textarea_994'] = $value;
         }
@@ -116,7 +134,20 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
             if ($arrVALUES['form_text_1061']) {
                 $value = $value . "\n" . 'Комментарий: ' . $arrVALUES['form_text_1061'];
             }
+            if ($arrVALUES['form_text_1147']) {
+                $value = $value . "\n" . 'Промокод: ' . $arrVALUES['form_text_1147'];
+            }
             $arrVALUES['form_hidden_1118'] = $value;
+        }
+    } else if ($WEB_FORM_ID == 53) {
+        $value = $arrVALUES['form_text_1154'];
+        $string = "подарите себе новый профессиональный уровень";
+        $words = explode(" ", $string);
+        foreach ($words as $word) {
+            if (mb_stripos($value, $word) === false) {
+                $arrVALUES['form_text_1167'] = 702092;
+                break;
+            }
         }
     }
 }
@@ -402,6 +433,28 @@ function OnAfterUserRegisterHandler(&$arFields)
         $toSend["NAME"] = (trim($arFields["NAME"]) == "") ? $toSend["NAME"] = htmlspecialchars('<Не указано>') : $arFields["NAME"];
         $toSend["LAST_NAME"] = (trim($arFields["LAST_NAME"]) == "") ? $toSend["LAST_NAME"] = htmlspecialchars('<Не указано>') : $arFields["LAST_NAME"];
         //CEvent::SendImmediate ("NEW_USER_WITH_PASSWORD", SITE_ID, $toSend);
+    }
+    return $arFields;
+}
+
+function OnAfterUserAddHandler(&$arFields)
+{
+    if (intval($arFields["ID"]) > 0) {
+        $connection = Bitrix\Main\Application::getConnection();
+        $sqlHelper = $connection->getSqlHelper();
+        $email = $sqlHelper->forSql($arFields["EMAIL"]);
+        $name = $sqlHelper->forSql($arFields["NAME"]);
+        $surname = $sqlHelper->forSql($arFields["LAST_NAME"]);
+        $patronymic = $sqlHelper->forSql($arFields["SECOND_NAME"]);
+
+        $sql = "SELECT id FROM certificates WHERE (IFNULL(user_id, '') = '') AND ((mail = '" . $email . "') OR (name = '" . $name . "' AND surname = '" . $surname . "' AND patronymic = '" . $patronymic . "'))";
+        $recordset = $connection->query($sql);
+        while ($record = $recordset->fetch()) {
+            $userId = intval($arFields["ID"]);
+            $id = $record['id'];
+            $sql= "UPDATE certificates SET user_id = '" . $userId . "' WHERE id = '" . $id . "'";
+            $set = $connection->query($sql);
+        }
     }
     return $arFields;
 }

@@ -294,7 +294,7 @@ class HabrFeedService
             ];
 
             if ($scheduleItem['nextDate']) {
-                //$scheduleItem['nextDate'] = ($scheduleItem['nextDate'])->format('Y-m-d H:i:s');
+                $scheduleItem['nextDate'] = (new DateTime($scheduleItem['nextDate'], 'Y-m-d H:i:s'))->format('Y-m-d');
             }
             // todo: переделать
             if (empty($schedule[$scheduleItem['courseId']])) {
@@ -448,9 +448,11 @@ class HabrFeedService
 
             if ($course['nextDate']) {
                 $nextDateNode = $dom->createElement('param', $course['nextDate']);
-                $nextDateNode ->setAttribute('name', 'Дата начала');
-                $offerNode->appendChild($nextDateNode);
+            } else {
+                $nextDateNode = $dom->createElement('param', 'По факту набора потока');
             }
+            $nextDateNode->setAttribute('name', 'Дата начала');
+            $offerNode->appendChild($nextDateNode);
 
             if ($course['kval_min']) {
                 $kvalMin = $dom->createElement('param', $course['kval_min']);
@@ -469,7 +471,7 @@ class HabrFeedService
 //
 //            $offerNode->appendChild($complexity);
 
-            $duration = round($course['duration'] / 168, 3);
+            $duration = ceil($course['duration'] / 20);
             $durationNode = $dom->createElement('duration', $duration);
             $durationNode ->setAttribute('unit', 'week');
 

@@ -62,7 +62,8 @@ class MainPageReviewsComponent extends CBitrixComponent
                 'PREVIEW_TEXT',
                 'REVIEW_USER_NAME',
                 'VIDEO_MESS.FILE',
-                'SHOW_ON_MAIN_PAGE.ITEM'
+                'SHOW_ON_MAIN_PAGE.ITEM',
+                'COURSE_' => 'COURSE'
             ],
             'filter' => [
                 'ACTIVE' => 'Y'
@@ -81,7 +82,8 @@ class MainPageReviewsComponent extends CBitrixComponent
             'USER_SURNAME',
             'USER_REVIEW',
             'VIDEO_MESS.FILE',
-            'SHOW_ON_MAIN_PAGE.ITEM'
+            'SHOW_ON_MAIN_PAGE.ITEM',
+            'COURSE_' => 'COURSE'
         ])
         ->setFilter([
             '=ACTIVE' => 'Y'
@@ -133,6 +135,18 @@ class MainPageReviewsComponent extends CBitrixComponent
                 $newReview['SHOW_ON_MAIN_PAGE'] = $review->getShowOnMainPage()->getItem()->getXmlId();
             }
 
+            if ($review->getCourse()) {
+                $courseID = $review->getCourse()->getValue();
+
+                if(!CModule::IncludeModule("iblock"));
+                $resCourse = CIBlockElement::GetByID($courseID);
+                if($arElement = $resCourse->GetNext()){
+                    $newReview['COURSE_LINK'] = $arElement['DETAIL_PAGE_URL'];
+                    $newReview['COURSE_NAME'] = $arElement['NAME'];
+                }
+                
+            }
+
             if ($newReview['SHOW_ON_MAIN_PAGE'] === 'Y') {
                 $reviews[$key] = $newReview;
             }
@@ -181,6 +195,17 @@ class MainPageReviewsComponent extends CBitrixComponent
 
             if ($review->getShowOnMainPage() && $review->getShowOnMainPage()->getItem() && $review->getShowOnMainPage()->getItem()->getXmlId()) {
                 $newReview['SHOW_ON_MAIN_PAGE'] = $review->getShowOnMainPage()->getItem()->getXmlId();
+            }
+            if ($review->getCourse()) {
+                $courseID = $review->getCourse()->getValue();
+
+                if(!CModule::IncludeModule("iblock"));
+                $resCourse = CIBlockElement::GetByID($courseID);
+                if($arElement = $resCourse->GetNext()){
+                    $newReview['COURSE_LINK'] = $arElement['DETAIL_PAGE_URL'];
+                    $newReview['COURSE_NAME'] = $arElement['NAME'];
+                }
+                
             }
 
             if ($this->needleCourseId) {

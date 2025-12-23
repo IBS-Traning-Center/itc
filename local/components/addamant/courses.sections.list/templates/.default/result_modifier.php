@@ -137,7 +137,7 @@ if (!empty($arResult['SECTIONS'])) {
     if (!empty($tags)) {
         $tagTable = new HighloadblockManager('ItcCatalogCourseCategory');
 
-        $tagTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID'], [], ['UF_XML_ID' => $tags]);
+        $tagTable->prepareParamsQuery(['UF_NAME', 'UF_XML_ID'], ['UF_SORT'], ['UF_XML_ID' => $tags]);
         $itemsTags = $tagTable->getDataAll();
 
         $filterTabs = $itemsTags;

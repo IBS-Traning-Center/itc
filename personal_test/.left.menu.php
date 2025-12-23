@@ -8,6 +8,13 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Мои документы", 
+		"/personal_test/documents/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"Рекомендуемые курсы", 
 		"/personal_test/recommend/", 
 		Array(), 

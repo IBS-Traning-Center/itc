@@ -8,6 +8,7 @@ Asset::getInstance()->addCss(SITE_DIR . 'local/assets/css/babok/babok.css');
 
 global $APPLICATION;
 $APPLICATION->SetTitle('«Руководство BABOK» на русском языке бесплатно');
+$APPLICATION->SetPageProperty("description", "Получите бумажный вариант BABOK Guide на русском языке бесплатно. Пройдите обучение на курсах BABOK, получите необходимые часы профессионального развития (PD hours) для сертификации IIBA, а также бумажную версию «Руководства BABOK» на русском языке в подарок!");
 ?>
 
 <div class="ruk-babok">

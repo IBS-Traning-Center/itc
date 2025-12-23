@@ -87,6 +87,32 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
     	false
     ); ?>
 </div>
+<?php if ($_REQUEST["ID"] == 'Obratnaya_storona_Event_Driven_Pochemu_Martin_Fauler_prizyvaet_k_ostorozhnosti') :
+    $APPLICATION->IncludeComponent(
+        "bitrix:form.result.new",
+        "news.magnet",
+        array(
+            "CACHE_TIME" => "3600",
+            "CACHE_TYPE" => "A",
+            "CHAIN_ITEM_LINK" => "",
+            "CHAIN_ITEM_TEXT" => "",
+            "EDIT_URL" => "",
+            "IGNORE_CUSTOM_TEMPLATE" => "N",
+            "LIST_URL" => "",
+            "SEF_MODE" => "N",
+            "SUCCESS_URL" => "",
+            "AJAX_MODE" => "Y",
+            "USE_EXTENDED_ERRORS" => "N",
+            "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
+                "WEB_FORM_ID" => "52",
+                "COURSE_NAME" => '',
+                "MAGNET_LEAD_NAME" => 'Лид-магнит. Event-Driven Architecture. 4 паттерна для системного аналитика',
+                "MAGNET_CODE" => '697065',
+                "MAGNET_BUTTON_NAME" => 'Получить саммари выступления Мартина Фаулера',
+                "COURSE_SIGN" => ''
+        )
+    ); 
+endif; ?>
 <div class="grey-page-block">
 <?php $GLOBALS['arMainPageNewsFilter'] = ['!PROPERTY_NOT_SHOW_HOME_PAGE_VALUE' => 'Да']; ?>
 <?php $APPLICATION->IncludeComponent(

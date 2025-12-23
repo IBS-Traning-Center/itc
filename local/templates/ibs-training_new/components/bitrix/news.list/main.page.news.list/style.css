@@ -31,9 +31,8 @@
 
 .main-page-news-list-block .main-page-news-list-item {
     background-color: var(--light-gray);
-    width: 1308px;
-    min-width: 1308px;
-    max-width: 1308px;
+    min-width: 670px;
+    max-width: 670px;
     padding: 56px 56px 40px 56px;
     border-bottom: 1px solid var(--black);
     display: flex !important;
@@ -49,10 +48,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    font-size: 56px;
-    line-height: 72px;
+    font-size: 42px;
+    line-height: 60px;
     font-weight: 400;
     color: var(--black);
     margin-bottom: 32px;
@@ -63,7 +62,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
 
@@ -95,7 +94,7 @@
     display: flex;
     position: unset;
     justify-content: center;
-    margin-top: 34px;
+    margin-top: 38px;
 }
 
 .main-page-news-list-block .slick-dots li {
@@ -152,6 +151,10 @@
     cursor: default;
 }
 
+.main-page-news-list-block .slick-list{
+    overflow: visible;
+}
+
 @media (max-width: 1520px) {
     .main-page-news-list-block .slick-arrow {
         right: 41%;
@@ -203,6 +206,12 @@
     .main-page-news-list-block .main-page-news-list-item .description-news {
         font-size: 16px;
         line-height: 22px;
+    }
+}
+
+@media (max-width: 1024px){
+    .main-page-news-list-block .slick-list{
+        overflow: hidden;
     }
 }
 
