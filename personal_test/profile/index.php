@@ -20,12 +20,4 @@ $APPLICATION->SetTitle("Профиль");
 	),
 	false
 );?>
-
-<?
-$client_id = 'VLEAK7BKIEFJ9FAEU9M3QQ5BTN2JUH4PT3CQM86VU2NOIHDHH5LAQ6UNJKI375IM';
-$address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&client_id=&client_id=' . $client_id;
-?>
-
-<a href="<?=$address?>">Привязать профиль в hh.ru</a>
-
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
