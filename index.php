@@ -223,5 +223,5 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 		"SUBSCRIBE_TITLE" => "",
 		"COMPONENT_TEMPLATE" => ".default"
 	),
-	false 
+	false
 ); ?><?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
