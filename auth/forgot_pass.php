@@ -4,12 +4,9 @@ $APPLICATION->SetTitle("Восстановление пароля");
 ?>
 
 <?$APPLICATION->IncludeComponent(
-	"artions:system.auth.forgotpasswd", 
-	"", 
-	array(
-		"COMPONENT_TEMPLATE" => ""
-	),
-	false
+	"bitrix:system.auth.forgotpasswd",
+	"forgot",
+	[]
 );?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

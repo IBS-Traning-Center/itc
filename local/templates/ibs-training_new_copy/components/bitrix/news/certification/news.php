@@ -344,6 +344,126 @@ $APPLICATION->IncludeComponent(
 	<?$APPLICATION->IncludeFile(SITE_DIR . 'include/certification/why-us-btns.php', [], ['MODE' => 'html', 'NAME' => 'Кнопки']); ?>
 </div>
 
+<? /*
+<section class="mini-gallery spaces">
+   <div class="container">
+      <? // Мини-галерея с табами
+	  $APPLICATION->IncludeComponent(
+         "bitrix:catalog.section.list",
+         "tabs",
+         Array(
+            "ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "CACHE_FILTER" => "N",
+            "CACHE_GROUPS" => "Y",
+            "CACHE_TIME" => "36000000",
+            "CACHE_TYPE" => "A",
+            "COUNT_ELEMENTS" => "N",
+            "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+            "FILTER_NAME" => "",
+            "HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+            "HIDE_SECTION_NAME" => "N",
+            "IBLOCK_ID" => "207",
+            "IBLOCK_TYPE" => "edu_const",
+            "SECTION_CODE" => "",
+            "SECTION_FIELDS" => array("NAME", ""),
+            "SECTION_ID" => "",
+            "SECTION_URL" => "",
+            "SECTION_USER_FIELDS" => array("", ""),
+            "SHOW_PARENT_NAME" => "Y",
+            "TOP_DEPTH" => "1",
+            "VIEW_MODE" => "TEXT"
+         )
+      );
+      
+      $arFilter = Array('IBLOCK_ID'=>207, 'IBLOCK_TYPE'=>'edu_const');
+      $arSelect = Array('ID', 'NAME', 'CODE', 'UF_SHOW_ITEMS_TEXT', 'UF_SHOW_BOTTOM_TITLE');
+      $db_list = CIBlockSection::GetList(
+         Array("SORT"=>"ASC"), 
+         $arFilter,
+         false,
+         $arSelect,
+         false
+      );
+      $tabKey = 0;
+      while($ar_result = $db_list->GetNext())
+      {
+         ?>
+
+         <div data-code="<?=$ar_result['CODE'];?>" <?=($tabKey > 0) ? 'style="display: none;"' : '';?>>
+            <?
+            $GLOBALS[ $ar_result['CODE'].'FilterTabCode' ] = array(
+               "SECTION_CODE" => $ar_result['CODE'] // Символьный код раздела
+            );
+            
+            $APPLICATION->IncludeComponent(
+               "bitrix:news.list",
+               "mini-gallery",
+               Array(
+                  "ITEMS_TEXT" => intval($ar_result['UF_SHOW_ITEMS_TEXT']),
+                  "BOTTOM_TITLE" => intval($ar_result['UF_SHOW_BOTTOM_TITLE']),
+                  "USE_IMAGES_GALLERY"=>"Y",
+                  "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                  "ADD_SECTIONS_CHAIN" => "N",
+                  "AJAX_MODE" => "N",
+                  "AJAX_OPTION_ADDITIONAL" => "",
+                  "AJAX_OPTION_HISTORY" => "N",
+                  "AJAX_OPTION_JUMP" => "N",
+                  "AJAX_OPTION_STYLE" => "Y",
+                  "CACHE_FILTER" => "N",
+                  "CACHE_GROUPS" => "Y",
+                  "CACHE_TIME" => "36000000",
+                  "CACHE_TYPE" => "A",
+                  "CHECK_DATES" => "Y",
+                  "DETAIL_URL" => "",
+                  "DISPLAY_BOTTOM_PAGER" => "N",
+                  "DISPLAY_DATE" => "N",
+                  "DISPLAY_NAME" => "Y",
+                  "DISPLAY_PICTURE" => "N",
+                  "DISPLAY_PREVIEW_TEXT" => "Y",
+                  "DISPLAY_TOP_PAGER" => "N",
+                  "FIELD_CODE" => array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE","DETAIL_PICTURE"),
+                  "FILTER_NAME" => $ar_result['CODE'].'FilterTabCode',
+                  "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                  "IBLOCK_ID" => "207",
+                  "IBLOCK_TYPE" => "edu_const",
+                  "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                  "INCLUDE_SUBSECTIONS" => "N",
+                  "MESSAGE_404" => "",
+                  "NEWS_COUNT" => "30",
+                  "PAGER_BASE_LINK_ENABLE" => "N",
+                  "PAGER_DESC_NUMBERING" => "N",
+                  "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                  "PAGER_SHOW_ALL" => "N",
+                  "PAGER_SHOW_ALWAYS" => "N",
+                  "PAGER_TEMPLATE" => ".default",
+                  "PAGER_TITLE" => "",
+                  "PARENT_SECTION" => "",
+                  "PARENT_SECTION_CODE" => "",
+                  "PREVIEW_TRUNCATE_LEN" => "",
+                  "PROPERTY_CODE" => array("",""),
+                  "SET_BROWSER_TITLE" => "N",
+                  "SET_LAST_MODIFIED" => "N",
+                  "SET_META_DESCRIPTION" => "N",
+                  "SET_META_KEYWORDS" => "N",
+                  "SET_STATUS_404" => "N",
+                  "SET_TITLE" => "N",
+                  "SHOW_404" => "N",
+                  "SORT_BY1" => "SORT",
+                  "SORT_BY2" => "SORT",
+                  "SORT_ORDER1" => "ASC",
+                  "SORT_ORDER2" => "ASC",
+                  "STRICT_SECTION_CHECK" => "N"
+               )
+            );
+            ?>
+         </div>
+      <? $tabKey++;
+      }
+      ?>
+   </div>
+</section>
+*/?>
 
 <?
 // Блок "Как пройти сертификацию"

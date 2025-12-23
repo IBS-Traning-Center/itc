@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Настройки");
+$APPLICATION->SetTitle("Пароль");
 ?><div class="lk-layout">
     <aside class="lk-sidebar">
         <?$APPLICATION->IncludeComponent(
@@ -28,7 +28,7 @@ $APPLICATION->SetTitle("Настройки");
             <div class="lk-content">
                 <?$APPLICATION->IncludeComponent(
                     "bitrix:main.profile",
-                    "profile-lk",
+                    "",
                     array(
                         "SET_TITLE" => "Y",
                         "USER_PROPERTY" => array(

@@ -1,0 +1,160 @@
+/* Общий контейнер */
+.lk-profile-wrapper .container-lk {
+    display: flex;
+    max-width: 1450px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.lk-profile-wrapper .main-content {
+    width: 649px;
+}
+
+/* Табы */
+.lk-profile-wrapper .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 48px;
+}
+
+.lk-profile-wrapper .tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #f0f0f0;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.lk-profile-wrapper .tab.active {
+    background: #000;
+    color: #fff;
+}
+
+/* Сообщения */
+.lk-profile-wrapper .messages { margin-bottom: 32px; }
+.lk-profile-wrapper .error { color: #FF3333; font-size: 16px; margin-bottom: 16px; }
+.lk-profile-wrapper .success {
+    padding: 12px 24px;
+    background: #e6ffe6;
+    border-left: 4px solid #009900;
+    color: #009900;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Поля с синей линией */
+.lk-profile-wrapper .field-blue {
+    border-bottom: 2px solid #2B418B;
+    padding: 0 0 20px 0;
+    margin-bottom: 40px;
+}
+
+.lk-profile-wrapper .field-blue label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.lk-profile-wrapper .field-blue input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    background: transparent;
+    color: #000;
+}
+
+.lk-profile-wrapper .field-blue input:disabled { color: #999; }
+
+/* Поля с серым фоном */
+.lk-profile-wrapper .field-gray {
+    background: #F8F8F8;
+    padding: 24px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #000;
+}
+
+.lk-profile-wrapper .field-gray input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    background: transparent;
+    color: #000;
+}
+
+.lk-profile-wrapper .field-gray input::placeholder { color: #aaa; }
+
+/* hh.ru секция */
+.lk-profile-wrapper .hh-section {
+    margin: 40px 0 48px;
+}
+
+.lk-profile-wrapper .hh-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.lk-profile-wrapper .hh-logo {
+    width: 40px;
+    height: 40px;
+    background: #FF0000;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lk-profile-wrapper .hh-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Кнопки */
+.lk-profile-wrapper .buttons {
+    display: flex;
+    gap: 24px;
+    margin: 48px 0;
+}
+
+.lk-profile-wrapper .btn {
+    flex: 1;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.lk-profile-wrapper .btn-cancel {
+    background: #fff;
+    border: 1px solid #2B418B;
+    color: #2B418B;
+}
+
+.lk-profile-wrapper .btn-save {
+    background: #2B418B;
+    color: #fff;
+}
+
+.lk-profile-wrapper .delete-account {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #D32F2F;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 32px;
+}
+
+.lk-profile-wrapper .delete-icon {
+    width: 32px;
+    height: 32px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D32F2F"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>') center/24px no-repeat;
+}
