@@ -19,7 +19,10 @@ $this->setFrameMode(true);
 
         <div class="lk-card program">
             <div class="lk-card__icon big">
-
+                <?= Functions::buildSVG(
+                    'programm-logo',
+                    'local/templates/ibs-training_new/components/bitrix/news.list/programms-lk/ico'
+                ) ?>
                 <div class="certificate-number">AA00-00000</div>
             </div>
 

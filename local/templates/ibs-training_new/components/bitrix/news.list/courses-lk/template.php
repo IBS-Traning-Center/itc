@@ -45,7 +45,9 @@ $this->setFrameMode(true);
                 <div class="lk-card__title">
                     Шаблоны проектирования GoF. Редакция для .NET
                 </div>
-
+                <div class="lk-card__text">
+                    При разработке программных систем разработчики принимают множество решений...
+                </div>
                 <div class="lk-card__subtitle">
                     Тренер — <a href="/">Иванов Евгений</a>
                 </div>
@@ -84,7 +86,9 @@ $this->setFrameMode(true);
                 <div class="lk-card__title">
                     Шаблоны проектирования GoF. Редакция для .NET
                 </div>
-
+                <div class="lk-card__text">
+                    При разработке программных систем разработчики принимают множество решений...
+                </div>
                 <div class="lk-card__subtitle">
                     Тренер — <a href="/">Иванов Евгений</a>
                 </div>
