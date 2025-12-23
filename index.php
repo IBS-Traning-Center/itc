@@ -207,10 +207,8 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 	"addamant:main.page.reviews", 
 	".default", 
 	array(
-		"BLOCK_TITLE" => "Чувствуете, что застряли в своей зарплате или роли?",
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
-		"KVAL_LINK" => "/catalog/complex/",
 		"COMPONENT_TEMPLATE" => ".default"
 	),
 	false
