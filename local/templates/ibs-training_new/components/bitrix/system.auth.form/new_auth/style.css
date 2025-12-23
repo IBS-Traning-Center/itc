@@ -1,4 +1,19 @@
-.auth-modal__button--submit {
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.bx-custom-auth .auth-modal__button--submit {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -22,15 +37,16 @@
 	transition: background-color 0.3s ease;
 }
 
-.auth-modal__button--submit:hover {
+.bx-custom-auth .auth-modal__button--submit:hover {
 	background: #1A2F6B;
 }
 
-.auth-modal__button--submit:disabled {
+.bx-custom-auth .auth-modal__button--submit:disabled {
 	opacity: 0.6;
 	cursor: not-allowed;
 }
-.auth-container {
+
+.bx-custom-auth .auth-container {
 	display: flex;
 	flex-direction: column;
 	align-items: normal;
@@ -45,7 +61,7 @@
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.auth-container__title {
+.bx-custom-auth .auth-container__title {
 	width: 100%;
 	height: 72px;
 	font-family: 'Noto Sans', sans-serif;
@@ -57,8 +73,7 @@
 	margin-bottom: 32px;
 }
 
-/* Оверлей для модальных окон */
-.auth-modal-overlay {
+.bx-custom-auth .auth-modal-overlay {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -72,8 +87,7 @@
 	animation: fadeIn 0.3s ease;
 }
 
-/* Модальное окно - общие стили */
-.auth-modal {
+.bx-custom-auth .auth-modal {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -86,7 +100,7 @@
 	animation: slideIn 0.3s ease;
 }
 
-.auth-modal__content {
+.bx-custom-auth .auth-modal__content {
 	display: flex;
 	flex-direction: column;
 	align-items: normal;
@@ -100,7 +114,7 @@
 	z-index: 0;
 }
 
-.auth-modal__title {
+.bx-custom-auth .auth-modal__title {
 	width: 100%;
 	height: 72px;
 	font-family: 'Noto Sans', sans-serif;
@@ -116,8 +130,7 @@
 	flex-grow: 0;
 }
 
-/* Сообщение во второй модалке */
-.auth-modal__message {
+.bx-custom-auth .auth-modal__message {
 	width: 100%;
 	height: 88px;
 	font-family: 'Stag Sans', sans-serif;
@@ -132,13 +145,12 @@
 	flex-grow: 0;
 }
 
-.auth-modal__email {
+.bx-custom-auth .auth-modal__email {
 	font-weight: 400;
 	color: #0827C4;
 }
 
-/* Поля ввода в первой модалке */
-.field--auth-modal {
+.bx-custom-auth .field--auth-modal {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -153,7 +165,7 @@
 	flex-grow: 0;
 }
 
-.field__input-wrapper {
+.bx-custom-auth .field__input-wrapper {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
@@ -170,7 +182,7 @@
 	flex-grow: 0;
 }
 
-.field__input {
+.bx-custom-auth .field__input {
 	width: 100%;
 	height: 32px;
 	font-family: 'Stag Sans', sans-serif;
@@ -187,13 +199,12 @@
 	flex-grow: 1;
 }
 
-.field__input::placeholder {
+.bx-custom-auth .field__input::placeholder {
 	color: #000000;
 	opacity: 0.5;
 }
 
-/* Кнопки в модалках */
-.auth-modal__buttons {
+.bx-custom-auth .auth-modal__buttons {
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
@@ -207,13 +218,13 @@
 	flex-grow: 0;
 }
 
-.auth-modal__buttons--single {
+.bx-custom-auth .auth-modal__buttons--single {
 	flex-direction: column;
 	gap: 10px;
 	height: auto;
 }
 
-.auth-modal__button {
+.bx-custom-auth .auth-modal__button {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
@@ -235,11 +246,11 @@
 	transition: background-color 0.3s ease;
 }
 
-.auth-modal__button:hover {
+.bx-custom-auth .auth-modal__button:hover {
 	background: #1A2F6B;
 }
 
-.auth-modal__button--outline {
+.bx-custom-auth .auth-modal__button--outline {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
@@ -263,18 +274,18 @@
 	transition: all 0.3s ease;
 }
 
-.auth-modal__button--outline:hover {
+.bx-custom-auth .auth-modal__button--outline:hover {
 	background: #F8F7F7;
 }
 
-.auth-modal__button--full {
+.bx-custom-auth .auth-modal__button--full {
 	width: 100%;
 	flex: none;
 	order: 0;
 	flex-grow: 0;
 }
 
-.auth-modal__result {
+.bx-custom-auth .auth-modal__result {
 	display: none;
 	width: 612px;
 	height: 22px;
@@ -292,15 +303,15 @@
 	flex-grow: 0;
 }
 
-.auth-modal__result--success {
+.bx-custom-auth .auth-modal__result--success {
 	color: #28a745;
 }
 
-.auth-modal__result--error {
+.bx-custom-auth .auth-modal__result--error {
 	color: #dc3545;
 }
 
-.auth-modal__close {
+.bx-custom-auth .auth-modal__close {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -320,8 +331,8 @@
 	z-index: 1;
 }
 
-.auth-modal__close::before,
-.auth-modal__close::after {
+.bx-custom-auth .auth-modal__close::before,
+.bx-custom-auth .auth-modal__close::after {
 	content: '';
 	position: absolute;
 	width: 48px;
@@ -332,33 +343,15 @@
 	transform-origin: center;
 }
 
-.auth-modal__close::before {
+.bx-custom-auth .auth-modal__close::before {
 	transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.auth-modal__close::after {
+.bx-custom-auth .auth-modal__close::after {
 	transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* Анимации */
-@keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-
-@keyframes slideIn {
-	from {
-		opacity: 0;
-		transform: translateY(-20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-/* Остальные стили (табы, форма авторизации и т.д.) */
-.tabs {
+.bx-custom-auth .tabs {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -369,7 +362,7 @@
 	margin-bottom: 32px;
 }
 
-.tabs__item {
+.bx-custom-auth .tabs__item {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -388,21 +381,22 @@
 	text-decoration: none;
 }
 
-.tabs__item:hover {
+.bx-custom-auth .tabs__item:hover {
 	opacity: 0.9;
 }
 
-.tabs__item--active {
+.bx-custom-auth .tabs__item--active {
 	background: #000000;
 	color: #FFFFFF;
 }
 
-.tabs__item--inactive {
+.bx-custom-auth .tabs__item--inactive {
 	opacity: 0.6;
 	cursor: not-allowed;
 }
 
-.auth-form {
+/* Форма авторизации */
+.bx-custom-auth .auth-form {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -411,7 +405,7 @@
 	width: 100%;
 }
 
-.field {
+.bx-custom-auth .field {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -422,11 +416,11 @@
 	height: 80px;
 }
 
-.field--password {
+.bx-custom-auth .field--password {
 	position: relative;
 }
 
-.field input {
+.bx-custom-auth .field input {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
@@ -445,21 +439,21 @@
 	line-height: 32px;
 	color: #000000;
 	outline: none;
-	transition: border-color 0.3s ease;
+	transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.field input:focus {
+.bx-custom-auth .field input:focus {
 	border-bottom: 1px solid #2B418B;
 	background: #FFFFFF;
 }
 
-.field input::placeholder {
+.bx-custom-auth .field input::placeholder {
 	color: #999;
 	font-family: 'Stag Sans', sans-serif;
 	font-weight: 300;
 }
 
-.field__icon {
+.bx-custom-auth .field__icon {
 	position: absolute;
 	right: 24px;
 	top: 50%;
@@ -471,11 +465,11 @@
 	transition: opacity 0.3s ease;
 }
 
-.field__icon:hover {
+.bx-custom-auth .field__icon:hover {
 	opacity: 1;
 }
 
-.auth-form__link {
+.bx-custom-auth .auth-form__link {
 	width: 100%;
 	height: 24px;
 	font-family: 'Inter', sans-serif;
@@ -489,41 +483,50 @@
 	transition: color 0.3s ease;
 }
 
-.auth-form__link:hover {
+.bx-custom-auth .auth-form__link:hover {
 	color: #2B418B;
 }
 
-.checkbox {
+.bx-custom-auth .checkbox {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	padding: 0;
 	gap: 16px;
-	width: 100%;
+	width: 280px;
 	height: 24px;
 	cursor: pointer;
+	user-select: none;
 }
 
-.checkbox input[type="checkbox"] {
-	display: none;
+.bx-custom-auth .checkbox input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
 }
 
-.checkbox span:first-child {
+.bx-custom-auth .checkbox__box {
 	position: relative;
-	display: inline-block;
 	width: 24px;
 	height: 24px;
-	flex-shrink: 0;
 	background: #FFFFFF;
 	border: 1px solid #000000;
+	box-sizing: border-box;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
 	transition: all 0.3s ease;
 }
 
-.checkbox input[type="checkbox"]:checked + span {
-	background: #000000;
+
+.bx-custom-auth .checkbox input[type="checkbox"]:checked + .checkbox__box {
+	background: #1A2F6B;
 }
 
-.checkbox input[type="checkbox"]:checked + span::after {
+.bx-custom-auth .checkbox input[type="checkbox"]:checked + .checkbox__box::after {
 	content: '✓';
 	position: absolute;
 	top: 50%;
@@ -531,18 +534,23 @@
 	transform: translate(-50%, -50%);
 	color: #FFFFFF;
 	font-size: 16px;
+	line-height: 1;
 }
 
-.checkbox span:last-child {
+
+.bx-custom-auth .checkbox__label {
 	font-family: 'Stag Sans', sans-serif;
 	font-style: normal;
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 24px;
 	color: #000000;
+	flex: none;
+	order: 1;
+	flex-grow: 1;
+	align-self: stretch;
 }
-
-.auth-form__submit {
+.bx-custom-auth .auth-form__submit {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -565,32 +573,31 @@
 	text-decoration: none;
 }
 
-.auth-form__submit:hover {
+.bx-custom-auth .auth-form__submit:hover {
 	background: #1A2F6B;
 	color: #FFFFFF;
 }
 
-/* Адаптивность */
 @media (max-width: 1200px) {
-	.auth-container,
-	.auth-modal {
+	.bx-custom-auth .auth-container,
+	.bx-custom-auth .auth-modal {
 		padding: 40px;
 		max-width: 90%;
 		width: auto;
 	}
 
-	.auth-container__title,
-	.auth-modal__title {
+	.bx-custom-auth .auth-container__title,
+	.bx-custom-auth .auth-modal__title {
 		font-size: 40px;
 		line-height: 48px;
 		height: auto;
 	}
 
-	.auth-modal__content {
+	.bx-custom-auth .auth-modal__content {
 		width: 100%;
 	}
 
-	.auth-modal__message {
+	.bx-custom-auth .auth-modal__message {
 		font-size: 24px;
 		line-height: 32px;
 		height: auto;
@@ -598,105 +605,101 @@
 }
 
 @media (max-width: 768px) {
-	.auth-container,
-	.auth-modal {
+	.bx-custom-auth .auth-container,
+	.bx-custom-auth .auth-modal {
 		padding: 24px;
 	}
 
-	.auth-container__title,
-	.auth-modal__title {
+	.bx-custom-auth .auth-container__title,
+	.bx-custom-auth .auth-modal__title {
 		font-size: 32px;
 		line-height: 40px;
 		margin-bottom: 24px;
 	}
 
-	.auth-modal__buttons {
+	.bx-custom-auth .auth-modal__buttons {
 		flex-direction: column;
 		height: auto;
 		gap: 16px;
 	}
 
-	.auth-modal__buttons--single {
+	.bx-custom-auth .auth-modal__buttons--single {
 		gap: 10px;
 	}
 
-	.auth-modal__button,
-	.auth-modal__button--outline,
-	.auth-modal__button--full {
+	.bx-custom-auth .auth-modal__button,
+	.bx-custom-auth .auth-modal__button--outline,
+	.bx-custom-auth .auth-modal__button--full {
 		width: 100% !important;
 		height: 80px;
 		padding: 24px 32px;
 		font-size: 20px;
 	}
 
-	.tabs {
+	.bx-custom-auth .tabs {
 		width: 100%;
 	}
 
-	.tabs__item:first-child {
+	.bx-custom-auth .tabs__item:first-child,
+	.bx-custom-auth .tabs__item:last-child {
 		flex: 1;
 		width: auto;
 	}
 
-	.tabs__item:last-child {
-		flex: 1;
-		width: auto;
-	}
-
-	.field input,
-	.field__input {
+	.bx-custom-auth .field input,
+	.bx-custom-auth .field__input {
 		font-size: 18px;
 		padding: 16px;
 		height: 60px;
 	}
 
-	.auth-form__submit {
+	.bx-custom-auth .auth-form__submit {
 		padding: 24px 32px;
 		height: 80px;
 		font-size: 20px;
 	}
 
-	.auth-modal__close {
+	.bx-custom-auth .auth-modal__close {
 		width: 64px;
 		height: 64px;
 		padding: 16px;
 	}
 
-	.auth-modal__close::before,
-	.auth-modal__close::after {
+	.bx-custom-auth .auth-modal__close::before,
+	.bx-custom-auth .auth-modal__close::after {
 		width: 32px;
 	}
 
-	.auth-modal__message {
+	.bx-custom-auth .auth-modal__message {
 		font-size: 20px;
 		line-height: 28px;
 	}
 }
 
 @media (max-width: 480px) {
-	.auth-container,
-	.auth-modal {
+	.bx-custom-auth .auth-container,
+	.bx-custom-auth .auth-modal {
 		padding: 16px;
 	}
 
-	.auth-container__title,
-	.auth-modal__title {
+	.bx-custom-auth .auth-container__title,
+	.bx-custom-auth .auth-modal__title {
 		font-size: 28px;
 		line-height: 36px;
 	}
 
-	.field input,
-	.field__input {
+	.bx-custom-auth .field input,
+	.bx-custom-auth .field__input {
 		font-size: 16px;
 	}
 
-	.auth-form__submit {
+	.bx-custom-auth .auth-form__submit {
 		padding: 20px 24px;
 		height: 70px;
 		font-size: 18px;
 	}
 
-	.auth-modal__message {
+	.bx-custom-auth .auth-modal__message {
 		font-size: 18px;
 		line-height: 24px;
 	}
