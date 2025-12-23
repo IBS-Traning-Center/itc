@@ -1,14 +1,12 @@
 class MainPageNewsList
 {
     constructor(data = {
-        mainPageNewsListBlockClass: '.main-page-news-list-block',
-        titleBlogClass: '.main-page-news-list-item h2',
+        mainPageNewsListBlockClass: '.main-page-news-list-block'
     }) {
 
         this.companyReviewsTab = $(data.mainPageNewsListBlockClass);
-        this.titleBlog = document.querySelectorAll(data.titleBlogClass);
+
         this.initMainPageSlider();
-        this.getLineCount();
     }
 
     initMainPageSlider()
@@ -46,30 +44,6 @@ class MainPageNewsList
                         }
                     },
                 ]
-            });
-        }
-    }
-
-    getLineCount() {
-        if (window.innerWidth > 1024) {
-            this.titleBlog.forEach((item) => {
-                const computedStyle = window.getComputedStyle(item);
-                const lineHeight = parseFloat(computedStyle.lineHeight);
-                const height = item.getBoundingClientRect().height;
-                const number = Math.round(height / lineHeight);
-                if(number == 4){
-                    item.nextElementSibling.style.webkitLineClamp = '1';
-                    item.nextElementSibling.style.lineClamp = '1';
-                }else if(number == 3){
-                    item.nextElementSibling.style.webkitLineClamp = '3';
-                    item.nextElementSibling.style.lineClamp = '3';
-                }else if(number == 2){
-                    item.nextElementSibling.style.webkitLineClamp = '4';
-                    item.nextElementSibling.style.lineClamp = '4';
-                }else if(number == 1){
-                    item.nextElementSibling.style.webkitLineClamp = '6';
-                    item.nextElementSibling.style.lineClamp = '6';
-                }
             });
         }
     }

@@ -47,4 +47,3 @@ bitrix/php_interface/include/catalog_export
 /local/.yarn
 /local/.yarnrc.yml
 /.php-cs-fixer.cache
-/logs/

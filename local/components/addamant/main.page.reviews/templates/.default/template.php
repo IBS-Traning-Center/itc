@@ -18,7 +18,15 @@ $this->setFrameMode(false);
 if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS'])) : ?>
     <div class="reviews-main-block">
         <div class="container">
-            <div class="reviews-tabs-title main-page-heading"><?= Loc::getMessage('BLOCK_TITLE') ?></div>
+            <div class="reviews-top-block">
+                <h2><?= $arResult['BLOCK_TITLE'] ?: Loc::getMessage('BLOCK_TITLE') ?></h2>
+                <div class="reviews-top-block_buttons">
+                    <a href="<?= $arResult['KVAL_LINK'] ?: '' ?>" class="btn-main size-l">
+                        <span class="f-24"><?= Loc::getMessage('BTN_KVAL_TEXT') ?></span>
+                    </a>
+                    <span class="f-24"><?= Loc::getMessage('UNDER_BTN_TEXT') ?></span>
+                </div>
+            </div>
             <div class="reviews-tabs-block">
                 <div class="tabs">
                     <?php if (!empty($arResult['COMPANY_REVIEWS'])) : ?>
@@ -61,22 +69,17 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                                 </div>
                                                 <div class="current-video-time" data-review-id="<?= $key ?>">
                                                     <div class="current-video-time_back"></div>
-                                                    <span><?= $review['REVIEW_USER_NAME'] ?><?= $review['USER_NAME'] . ' ' . $review['USER_SURNAME'] ?></span>
+                                                    <span class="f-20"><?= $review['REVIEW_USER_NAME'] ?><?= $review['USER_NAME'] . ' ' . $review['USER_SURNAME'] ?></span>
                                                 </div>
                                             </div>
                                         </div>
                                     <?php elseif ($review['PREVIEW_TEXT']) : ?>
                                         <div class="review-text-block">
-                                            <?php if($review['COURSE_NAME']):?>
-                                                <div class="review-course-info">
-                                                    <?= Loc::getMessage('COURSE')?> <a href="<?= $review['COURSE_LINK']?>"><?= $review['COURSE_NAME']?></a>
-                                                </div>
-                                            <?php endif; ?>
                                             <div class="main-text">
-                                                <span data-id="<?= $review['ID'] ?>"><?= $review['PREVIEW_TEXT'] ?></span>
-                                            </div>
-                                            <div class="micro-elem">
-                                                <?= Functions::buildSVG('arrow-element', $templateFolder . '/images') ?>
+                                                <span class="f-20" data-id="<?= $review['ID'] ?>"><?= $review['PREVIEW_TEXT'] ?></span>
+                                                <div class="micro-elem">
+                                                    <?= Functions::buildSVG('micro_elem', $templateFolder . '/images') ?>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="user-info-block">
@@ -86,8 +89,8 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                                 </div>
                                             <?php endif; ?>
                                             <div class="user-text-info">
-                                                <span class="company-name"><?= $review['NAME'] ?></span>
-                                                <span class="full-name"><?= $review['REVIEW_USER_NAME'] ?></span>
+                                                <span class="full-name f-20"><?= $review['REVIEW_USER_NAME'] ?></span>
+                                                <span class="company-name f-20"><?= $review['NAME'] ?></span>
                                             </div>
                                         </div>
                                     <?php endif; ?>
@@ -117,22 +120,17 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                                 </div>
                                                 <div class="current-video-time" data-review-id="<?= $key ?>">
                                                     <div class="current-video-time_back"></div>
-                                                    <span><?= $review['REVIEW_USER_NAME'] ?><?= $review['USER_NAME'] . ' ' . $review['USER_SURNAME'] ?></span>
+                                                    <span class="f-20"><?= $review['REVIEW_USER_NAME'] ?><?= $review['USER_NAME'] . ' ' . $review['USER_SURNAME'] ?></span>
                                                 </div>
                                             </div>
                                         </div>
                                     <?php elseif ($review['USER_REVIEW']) : ?>
                                         <div class="review-text-block">
-                                            <?php if($review['COURSE_NAME']):?>
-                                                <div class="review-course-info">
-                                                    <?= Loc::getMessage('COURSE')?> <a href="<?= $review['COURSE_LINK']?>"><?= $review['COURSE_NAME']?></a>
-                                                </div>
-                                            <?php endif; ?>
                                             <div class="main-text">
-                                                <span data-id="<?= $review['ID'] ?>"><?= $review['USER_REVIEW'] ?></span>
-                                            </div>
-                                            <div class="micro-elem">
-                                                <?= Functions::buildSVG('arrow-element', $templateFolder . '/images') ?>
+                                                <span class="f-20" data-id="<?= $review['ID'] ?>"><?= $review['USER_REVIEW'] ?></span>
+                                                <div class="micro-elem">
+                                                    <?= Functions::buildSVG('micro_elem', $templateFolder . '/images') ?>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="user-info-block">
@@ -142,7 +140,7 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                                 </div>
                                             <?php endif; ?>
                                             <div class="user-text-info">
-                                                <span class="full-name"><?= $review['USER_NAME'] . ' ' . $review['USER_SURNAME'] ?></span>
+                                                <span class="full-name f-20"><?= $review['USER_NAME'] . ' ' . $review['USER_SURNAME'] ?></span>
                                             </div>
                                         </div>
                                     <?php endif; ?>

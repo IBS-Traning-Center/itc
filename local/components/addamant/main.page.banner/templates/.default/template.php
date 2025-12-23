@@ -21,16 +21,14 @@ $defaultImage = $templateFolder . '/images/new_banner.png';
 
 ?>
 
-<div class="main-page-banner-block"> 
-    <div class="main-page-heading"><?= Loc::getMessage('TITLE_COURSES_TEXT')?></div>
+<div class="main-page-banner-block" style="background-image: url(<?= (!empty($arResult['ITEMS']) && $arResult['ITEMS'][0]['IMAGE']) ? $arResult['ITEMS'][0]['IMAGE'] : $defaultImage ?>)">
     <div class="container">
-        <div class="main-page-banner-menu-img" style="background-image: url(<?= (!empty($arResult['ITEMS']) && $arResult['ITEMS'][0]['IMAGE']) ? $arResult['ITEMS'][0]['IMAGE'] : $defaultImage ?>)">
-        </div>
         <div class="main-page-banner-menu">
             <?php if (!empty($arResult['ITEMS'])) : ?>
                 <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
                     <a href="<?= $item['URL'] ?>" class="main-page-banner-menu_item <?= ($key == 0) ? 'active' : '' ?>" data-image="<?= $item['IMAGE'] ?: $defaultImage ?>">
                         <span class="main-page-banner-menu_item-text">
+                            <span class="mobile-number f-16"><?= ($key + 1 < 10) ? '0' . $key + 1 : $key + 1 ?></span>
                             <span class="main-name"><?= $item['NAME'] ?></span>
                         </span>
                         <span class="main-page-banner-menu_item-icon"><?= Functions::buildSVG('menu_icon', $templateFolder . '/images') ?></span>
@@ -39,11 +37,15 @@ $defaultImage = $templateFolder . '/images/new_banner.png';
             <?php endif; ?>
             <a href="<?= ($arResult['CATALOG_LINK']) ?: '/training/katalog_kursov/' ?>" class="main-page-banner-menu_item <?= (empty($arResult['ITEMS'])) ? 'active' : '' ?>" data-image="<?= $defaultImage ?>">
                 <span class="main-page-banner-menu_item-text">
+                    <span class="mobile-number f-16"><?= (count($arResult['ITEMS']) + 1 < 10) ? '0' . count($arResult['ITEMS']) + 1 : count($arResult['ITEMS']) + 1 ?></span>
                     <span class="main-name"><?= Loc::getMessage('ALL_COURSES_TEXT') ?></span>
                 </span>
                 <span class="main-page-banner-menu_item-icon"><?= Functions::buildSVG('menu_icon', $templateFolder . '/images') ?></span>
             </a>
         </div>
+    </div>
+    <div class="mobile-middle-btn container">
+        <a href="/training/katalog_kursov/" class="btn-main"> <span class="f-16">Начать учиться бесплатно</span> </a>
     </div>
     <?php  $GLOBALS['arMainPageNewsFilter'] = ['PROPERTY_SHOW_ON_MAIN_PAGE_VALUE' => 'Да']; ?>
     <?php $APPLICATION->IncludeComponent(

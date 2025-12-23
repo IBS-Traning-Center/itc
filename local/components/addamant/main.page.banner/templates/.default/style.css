@@ -1,26 +1,16 @@
 .main-page-banner-block {
+    min-height: 832px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     position: relative;
-    padding: 170px 0 0px;
-    background-color: #F8F7F7;
-}
-
-.main-page-banner-block .container{
-    max-width: 1920px;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.main-page-banner-block .main-page-heading{
-    max-width: 1712px;
-    margin: 0 auto 72px;
-    padding: 0 16px;
+    margin-bottom: 225px;
 }
 
 .main-page-banner-menu {
-    max-width: 876px;
+    max-width: 812px;
     width: 100%;
-    margin-left: 56px;
+    padding-top: 120px;
 }
 
 .main-page-banner-menu .main-page-banner-menu_item {
@@ -53,41 +43,22 @@
     display: none
 }
 
-.main-page-banner-menu-img{
-    width: 100%;
-    max-width: 908px;
-    height: auto;
+.mobile-middle-btn {
+    display: none;
 }
 
 @media (max-width: 1180px) {
     .main-page-banner-block {
         min-height: fit-content;
         background-image: none !important;
-        padding-top: 40px;
-    }
-
-    .main-page-banner-block .main-page-heading{
-        margin: 0;
-        font-size: 22px;
-        line-height: 100%;
-    }
-
-    .main-page-banner-menu-img{
-        display: none;
-    }
-
-    .main-page-banner-block .container{
-        padding: 0 16px;
+        margin-bottom: 40px;
+        background-color: var(--light-gray);
     }
 
     .main-page-banner-block .main-page-banner-menu {
         padding: 16px 0;
         max-width: 100%;
-        margin-left: 0;
-    }
-
-    .main-page-banner-block .main-page-banner-menu{
-        margin-bottom: 56px;
+        margin-bottom: 24px;
     }
 
     .main-page-banner-menu .main-page-banner-menu_item:hover, .main-page-banner-menu .main-page-banner-menu_item.active {
@@ -99,8 +70,8 @@
     }
 
     .main-page-banner-menu .main-page-banner-menu_item .main-page-banner-menu_item-text {
-        font-size: 20px;
-        line-height: 100%;
+        font-size: 24px;
+        line-height: 36px;
         display: flex;
         align-items: start;
         gap: 12px;
@@ -109,5 +80,15 @@
 
     .main-page-banner-menu .main-page-banner-menu_item .main-page-banner-menu_item-text .mobile-number {
         display: block;
+    }
+
+    .mobile-middle-btn {
+        display: block;
+        margin-bottom: 40px !important;
+    }
+
+    .mobile-middle-btn a {
+        text-align: center;
+        width: 100%;
     }
 }
