@@ -212,7 +212,7 @@
 	display: flex;
 	gap: 5px;
 }
-/* ========== КНОПКА И СРОК ДЕЙСТВИЯ ========== */
+
 .lk-card__actions {
 	display: flex;
 	flex-direction: column;
