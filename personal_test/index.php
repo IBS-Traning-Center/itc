@@ -1,8 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Личный кабинет");
-
-use Bitrix\Main\Type\DateTime;
 ?>
 <?if (!$USER->IsAuthorized()) {?>
 <?$APPLICATION->IncludeComponent("bitrix:system.auth.form","",Array(
@@ -13,76 +11,6 @@ use Bitrix\Main\Type\DateTime;
      )
 );?>
 <?} else {?>
-
-<?
-$application = \Bitrix\Main\Application::getInstance();
-$request = $application->getContext()->getRequest();
-$aurhorization_code = $request->getQuery('code');
-if ($aurhorization_code) {
-	$httpClient = new \Bitrix\Main\Web\HttpClient();
-	$url = 'https://api.hh.ru/openapi/redoc#section/Avtorizaciya/Poluchenie-access-i-refresh-tokenov';
-	$postData = [
-		'aurhorization_code' => $aurhorization_code
-	];
-	$response = $httpClient->post($url, $postData);
-	$access_token = $response->getPost("access_token");
-
-	if ($access_token) {
-		$name = 'Authorization';
-		$value = 'Bearer ' . $access_token;
-		$httpClient->setHeader($name, $value, true);
-
-		$url = 'https://api.hh.ru/external_certificates/user';
-		$hh_user_id = $httpClient->get($url);
-
-		if ($hh_user_id) {
-			$user_id = $USER->GetID();
-			$sql = "INSERT hh_users (user_id, hh_user_id) VALUES ('" . $user_id . "', '" . $hh_user_id . "')";
-			$recordset = $connection->query($sql);
-			if ($record = $recordset->fetch()) {
-				$sql = "SELECT * FROM certificates WHERE user_id = '" . $user_id . "'";
-				$recordset = $connection->query($sql);
-				
-				//передача сертификатов hh
-				$access_token_app = '1';
-				$name = 'Authorization';
-				$value = 'Bearer ' . $access_token_app;
-
-				$httpClient->setHeader($name, $value, true);
-
-				while ($record = $recordset->fetch()) {
-					$provider_id = '';
-					$program_id = '';
-					$link = "https://ibs-training.ru/cert/" . $record['link'];
-					$date_from = new DateTime($record['date_from'], 'd.m.Y');
-
-					$postData = [
-						'certification_provider_id' => $provider_id,
-						'ceritification_program_id' => $program_id,
-						'ceritificate_link' => $link,
-						'certificate_id' => $record['certificate_number'],
-						'issued_at' => $date_from->format('Y-m-d\TH:i:sP'),
-						'user_id' => $hh_user_id,
-					];
-
-					if ('' != $record['date_to']) {
-						$date_to = new DateTime($record['date_to'], 'd.m.Y');
-						$postData['expires_at'] = $date_to->format('Y-m-d\TH:i:sP');
-					}
-
-					$url = 'https://api.hh.ru/external_certificates';
-					$result = $httpClient->post($url, $postData);
-					if ($result) {
-						$sql= "UPDATE certificates SET sent_to_hh = TRUE WHERE id = '" . $record['id'] . "'";
-						$set = $connection->query($sql);
-					}
-				}
-			}
-		}
-	}
-}
-?>
-
 <div class="offclass">
 <?GLOBAL $arRegK?>
 <?$APPLICATION->IncludeComponent("bitrix:news.list", "notification", array(
