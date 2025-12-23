@@ -8,6 +8,12 @@
     padding: 24px 24px 24px 56px;
 }
 
+.main-page-banner-block .container.absolute-main-page-container{
+    max-width: 1680px;
+    padding: 0;
+    margin-top: 100px;
+}
+
 .absolute-main-page-block span {
     color: var(--white);
     font-weight: 400;
@@ -26,14 +32,10 @@
     max-width: 250px;
 }
 
-.absolute-main-page-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -75px;
-}
-
 @media (max-width: 1180px) {
+    .main-page-banner-block .container.absolute-main-page-container{
+        margin: 0;
+    }
     .container.absolute-main-page-container {
         position: unset;
         padding: 0;
