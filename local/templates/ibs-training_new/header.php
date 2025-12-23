@@ -8,6 +8,11 @@ use Local\Util\Functions;
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 global $USER;
 
+// Подключение шрифта Noto Sans
+Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.googleapis.com">');
+Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
+Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">');
+
 Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -157,11 +162,16 @@ $cntBasketItems = CSaleBasket::GetList(
             <?= Functions::buildSVG('main_logo', SITE_TEMPLATE_PATH. '/assets/images') ?>
         </a>
         <div class="search-header-block">
-            <form action="/search/">
-                <button type="submit">
-                    <?= Functions::buildSVG('search_button', SITE_TEMPLATE_PATH. '/assets/images') ?>
+            <form action="/search/" class="search-header-form">
+                <button type="submit" class="search-header-button">
+                    <?= Functions::buildSVG('search_button', SITE_TEMPLATE_PATH . '/assets/images') ?>
                 </button>
-                <input id="search-text-header" placeholder="Искать курсы" class="search-main">
+                <input
+                        id="search-text-header"
+                        class="search-main"
+                        type="text"
+                        placeholder="Найти курсы"
+                >
             </form>
         </div>
         <?php $APPLICATION->IncludeComponent(
