@@ -297,8 +297,8 @@ Array()
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 24px 19px 32px;
-            width: 1338px;
+            margin: 24px 0px 32px;
+            width: 100%;
             flex-wrap: wrap;
             gap: 16px;
         }

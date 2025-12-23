@@ -204,8 +204,15 @@
 	line-height: 19px;
 	color: #000000;
 }
+.lk-card__date-text{
+	display: flex;
+	gap: 5px;
+}
+.lk-card__duration-text{
+	display: flex;
+	gap: 5px;
+}
 
-/* ========== КНОПКА И СРОК ДЕЙСТВИЯ ========== */
 .lk-card__actions {
 	display: flex;
 	flex-direction: column;
