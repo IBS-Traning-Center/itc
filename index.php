@@ -8,13 +8,14 @@ $APPLICATION->SetPageProperty("keywords", "курсы для программи�
 $APPLICATION->SetPageProperty("description", "Обучение в сфере разработки и внедрения ПО для аналитиков, архитекторов, разработчиков, тестировщиков, Big Data и DevOps, а также менеджеров IT-проектов: курсы, вебинары, корпоративное обучение и сертификация");
 $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги для программистов, аналитиков, менеджеров проектов, тестировщиков. Разработка ПО, обучение, учебный центр");
 
-?><div class="container top-main-page-block">
-	<h4 class="left-text"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/top_left_text.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Верхний текст.']); ?></h4>
-	<div class="right-text-block">
-		<h4 class="right-text"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/top_right_text.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Верхний текст.']); ?></h4>
-		<?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/right_btn.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Правая кнопка.']); ?>
-	</div>
-</div>
+?>
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "banner_index",
+    Array(),
+    false
+);?>
+
 <? $APPLICATION->IncludeComponent(
 	"addamant:main.page.banner",
 	".default",
