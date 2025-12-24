@@ -432,7 +432,7 @@ function plural_form($number, $after) {
                                 <div class="price-wrapper" style="justify-content:space-between;">
                                 <span class="sale-percent" style="background-color: #FF7B00; color:black">
                                     <?= Functions::buildSVG('icon-dev', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                                    В разработке
+                                    Предзапись
                                 </span>
                                 <div class="price">
                             <?} else {?>

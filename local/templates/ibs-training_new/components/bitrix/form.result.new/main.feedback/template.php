@@ -28,6 +28,13 @@ Loc::loadMessages(__FILE__);
                 <?=$arResult["FORM_HEADER"]?>
                 <div class="form-table data-table">
                     <?php foreach ($arResult["QUESTIONS"] as $questionId => $question) : ?>
+                        <?php
+                            if  ($questionId == 'course_name_crm' && $arParams['MAGNET_LEAD_NAME']) {
+                                $value = $arParams['MAGNET_LEAD_NAME'];
+                            } else if ($questionId == 'magnet_code' && $arParams['MAGNET_CODE']) {
+                                $value = $arParams['MAGNET_CODE'];
+                            }
+                        ?>
                         <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>
                             <?php echo $question['HTML_CODE']; ?>
                         <?php else : ?>
@@ -50,7 +57,8 @@ Loc::loadMessages(__FILE__);
                                         <?= ($questionId == 'client_id') ? 'id="clientID"' : '' ?>
                                         placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '*' : '(не обязательно)' ?>"
                                         name="form_text_<?= $question['STRUCTURE'][0]['ID'] ?>"
-                                        type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>">
+                                        type="<?= $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
+                                        value="<?= $value ?: '' ?>">
                                 <?php endif; ?>
                             </div>
                             <?php if ($questionId == 'phone') : ?>

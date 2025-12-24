@@ -1,5 +1,5 @@
 <?php
-
+use Local\Util\IblockHelper;
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
 global $USER, $APPLICATION;
@@ -87,6 +87,16 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 		"IBLOCKS_IDS_TITLE_MAIN_PAGE_BANNER" => "49, 94"
 	)
 ); ?>
+<? $APPLICATION->IncludeComponent(
+	"addamant:main.page.banner",
+	"second",
+	array(
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CATALOG_LINK_TITLE_MAIN_PAGE_BANNER" => "/catalog/",
+		"IBLOCKS_IDS_TITLE_MAIN_PAGE_BANNER" => "49, 94"
+	)
+); ?>
 <div class="container">
 	<h1 class="main-page-heading"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/main_page/heading.php', [], ['MODE' => 'html', 'NAME' => 'Главная страница. Заголовок.']); ?></h1>
 	<? $APPLICATION->IncludeComponent(
@@ -150,6 +160,66 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 </div>
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
+	"stack-role",
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array("", ""),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => IblockHelper::getIdByCode('stackRole'),
+		"IBLOCK_TYPE" => "edu",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "500",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array("BTN_NAME", "BTN_LINK"),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "SORT",
+		"SORT_BY2" => "ID",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"SPECIAL_TITLE" => "Чувствуете, что застряли в своей зарплате или роли?<br>Откройте новые возможности для карьерного роста!",
+		"SPECIAL_DESCRIPTON_1" => "В отличие от многих провайдеров обучения мы знаем требования рынка к квалификации ИТ-специалистов",
+		"SPECIAL_DESCRIPTON_2" => "Получите новую профессию за 3-6 месяцев или пройдите повышение квалификации за 16-40 часов, подтвердите свой грейд с помощью сертификации и растите в карьере!"
+	)
+); ?>
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list",
 	"our.clients",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
@@ -209,10 +279,8 @@ $APPLICATION->SetTitle("IBS Training Center: Курсы и тренинги дл
 	"addamant:main.page.reviews", 
 	".default", 
 	array(
-		"BLOCK_TITLE" => "Чувствуете, что застряли в своей зарплате или роли?",
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
-		"KVAL_LINK" => "/catalog/complex/",
 		"COMPONENT_TEMPLATE" => ".default"
 	),
 	false

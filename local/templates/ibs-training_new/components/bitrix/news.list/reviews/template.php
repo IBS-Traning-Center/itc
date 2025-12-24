@@ -53,25 +53,32 @@ use Local\Util\Functions;
 		            </div>
 		        <?php elseif ($arItem['PREVIEW_TEXT'] || $arItem['USER_REVIEW_VALUE']) : ?>
 		            <div class="review-text-block">
+						<?php if($arItem['COURSE_NAME']):?>
+                            <div class="review-course-info">
+                                <?= Loc::getMessage('COURSE')?> <a href="<?= $arItem['COURSE_LINK']?>"><?= $arItem['COURSE_NAME']?></a>
+                            </div>
+                        <?php endif; ?>
 		                <div class="main-text">
-		                    <span class="f-20"><?= ($arItem['PREVIEW_TEXT'])? $arItem['PREVIEW_TEXT'] : $arItem['USER_REVIEW_VALUE']?></span>
+		                    <span><?= ($arItem['PREVIEW_TEXT'])? $arItem['PREVIEW_TEXT'] : $arItem['USER_REVIEW_VALUE']?></span>
+		                </div>
+						<div class="micro-elem">
+		                    <?= Functions::buildSVG('arrow-element', $templateFolder . '/images') ?>
 		                </div>
 		            </div>
 		            <div class="user-info-block">
-						<div class="micro-elem">
-		                    <?= Functions::buildSVG('micro_elem', $templateFolder . '/images') ?>
-		                </div>
 		                <?php if ($arItem['PREVIEW_PICTURE']) : ?>
-		                    <div class="user-image" style="background-image: url('<?= CFile::GetPath($arItem["PREVIEW_PICTURE"]); ?>')"></div>
+		                    <div class="user-image" >
+								<img src="<?= CFile::GetPath($arItem["PREVIEW_PICTURE"]); ?>" alt="">
+							</div>
 		                <?php endif; ?>
 						<?php if($arItem['USER_REVIEW_VALUE']):?>
 							<div class="user-text-info">
-		                	    <span class="full-name f-20"><?= $arItem['USER_NAME_VALUE'] . ' ' . $arItem['USER_SURNAME_VALUE'] ?></span>
+		                	    <span class="full-name"><?= $arItem['USER_NAME_VALUE'] . ' ' . $arItem['USER_SURNAME_VALUE'] ?></span>
 		                	</div>
 						<?php else : ?>
 							<div class="user-text-info">
-		                	    <span class="full-name f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
-		                	    <span class="company-name f-20"><?= $arItem['NAME'] ?></span>
+								<span class="company-name"><?= $arItem['NAME'] ?></span>
+		                	    <span class="full-name"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
 		                	</div>
 						<?php endif; ?>
 		            </div>
@@ -98,14 +105,19 @@ use Local\Util\Functions;
 		                    </div>
 		                    <div class="current-video-time">
 		                        <div class="current-video-time_back"></div>
-		                        <span class="f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
+		                        <span><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
 		                    </div>
 		                </div>
 		            </div>
 		        <?php elseif ($arItem['PREVIEW_TEXT'] || $arItem['USER_REVIEW_VALUE']) : ?>
 		            <div class="review-text-block">
+						<?php if($arItem['COURSE_NAME']):?>
+                            <div class="review-course-info">
+                                <?= Loc::getMessage('COURSE')?> <a href="<?= $arItem['COURSE_LINK']?>"><?= $arItem['COURSE_NAME']?></a>
+                            </div>
+                        <?php endif; ?>
 		                <div class="main-text">
-		                    <span class="f-20">
+		                    <span>
 								<?php if($arItem['DETAIL_TEXT']) : ?>
 									<?= ($arItem['DETAIL_TEXT'])?>
 								<?php elseif ($arItem['PREVIEW_TEXT'] || $arItem['USER_REVIEW_VALUE']) : ?>
@@ -115,20 +127,19 @@ use Local\Util\Functions;
 		                </div>
 		            </div>
 		            <div class="user-info-block">
-						<div class="micro-elem">
-		                    <?= Functions::buildSVG('micro_elem', $templateFolder . '/images') ?>
-		                </div>
 		                <?php if ($arItem['PREVIEW_PICTURE']) : ?>
-		                    <div class="user-image" style="background-image: url('<?= CFile::GetPath($arItem["PREVIEW_PICTURE"]); ?>')"></div>
+		                    <div class="user-image" >
+								<img src="<?= CFile::GetPath($arItem["PREVIEW_PICTURE"]); ?>" alt="">
+							</div>
 		                <?php endif; ?>
 						<?php if($arItem['USER_REVIEW_VALUE']):?>
 							<div class="user-text-info">
-		                	    <span class="full-name f-20"><?= $arItem['USER_NAME_VALUE'] . ' ' . $arItem['USER_SURNAME_VALUE'] ?></span>
+		                	    <span class="full-name"><?= $arItem['USER_NAME_VALUE'] . ' ' . $arItem['USER_SURNAME_VALUE'] ?></span>
 		                	</div>
 						<?php else : ?>
 							<div class="user-text-info">
-		                	    <span class="full-name f-20"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
-		                	    <span class="company-name f-20"><?= $arItem['NAME'] ?></span>
+								<span class="company-name"><?= $arItem['NAME'] ?></span>
+		                	    <span class="full-name"><?= $arItem['REVIEW_USER_NAME_VALUE'] ?></span>
 		                	</div>
 						<?php endif; ?>
 		            </div>

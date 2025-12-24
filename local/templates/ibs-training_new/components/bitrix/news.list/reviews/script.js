@@ -67,9 +67,9 @@ class ReviewsPage
     {    
         let MAX_COUNT_SYMBOLS;
         if (window.innerWidth > 1180) {
-            MAX_COUNT_SYMBOLS = 300;
+            MAX_COUNT_SYMBOLS = 285;
         } else {
-            MAX_COUNT_SYMBOLS = 340;
+            MAX_COUNT_SYMBOLS = 225;
         }
 
         this.reviewsItems.forEach(item => {

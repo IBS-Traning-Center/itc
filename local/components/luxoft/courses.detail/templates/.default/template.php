@@ -71,7 +71,7 @@ function plural_form($number, $after) {
                                     <a href="<?= $arResult['schedule'][0]['sale']['link'] ?>" target="_blank">
                                 <?php endif; ?>
                                     <div class="banner-tag" style="background-color: var(--red);">
-                                        <?= Functions::buildSVG('discount', $templateFolder . '/images') ?>
+                                        <?= Functions::buildSVG('tree_icon', $templateFolder . '/images') ?>
                                         <span class="f-16" style="color: var(--white);"><?= $arResult['schedule'][0]['sale']['name'] ?></span>
                                     </div>
                                 <?php if ($arResult['schedule'][0]['sale']['link']) : ?>
@@ -370,7 +370,7 @@ function plural_form($number, $after) {
                                             <a href="<?=$item['sale']['link']?>" target="_blank">
                                         <?}?>
                                             <span class="sale-percent" style="justify-content: center;">
-                                                <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+                                                <?= Functions::buildSVG('icon-tree', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
                                                 <?= $item['sale']['name'] ?>
                                             </span>
                                         <? if ($item['sale']['link']) {?>

@@ -1,9 +1,9 @@
 <?
+$PERM["new-year-promoaction-2026"]["33"]="D";
 $PERM["check_cert"]["2"]="R";
 $PERM["check_cert"]["*"]="R";
 $PERM["testing-old"]["*"]="D";
 $PERM["about-old"]["*"]="D";
-$PERM["new-year-promoaction-2021"]["33"]="D";
 $PERM["pub"]["101"]="T_8";
 $PERM["upload"]["101"]="T_8";
 $PERM["upload"]["77"]="X";

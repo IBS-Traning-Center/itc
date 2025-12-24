@@ -16,7 +16,7 @@
         Экспертов-практиков
     </li>
     <li class="col-6 col-lg-4 col-xl-auto">
-        <span>50 000+</span>
+        <span>60 000+</span>
         Обученных специалистов
     </li>
     <li class="col-6 col-lg-4 col-xl-auto">

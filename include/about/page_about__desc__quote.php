@@ -1,1 +1,1 @@
-<img src="<?=SITE_TEMPLATE_PATH?>/assets/images/icons/quote.svg" alt="icon">
+<img src="<?=SITE_TEMPLATE_PATH?>/assets/images/icons/quote_new.svg" alt="icon">

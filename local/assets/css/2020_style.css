@@ -575,7 +575,7 @@ slick-prev:hover, .slick-prev:focus,
     width: 100%;
     margin-bottom: 30px;
     background: #fff;
-    background-color: var(--lime) !important;
+    background-color: #4DA567 !important;
     z-index: 9;
 }
 

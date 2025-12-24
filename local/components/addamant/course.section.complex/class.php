@@ -358,6 +358,7 @@ class CourseSectionComplexComponent extends CBitrixComponent
 
         $courses = ElementCoursesTable::getList([
             'select' => [
+                'ID',
                 'XML_ID',
                 'course_code',
                 'short_descr',
@@ -376,6 +377,10 @@ class CourseSectionComplexComponent extends CBitrixComponent
             $coursesInfo = [];
             foreach ($courses as $course) {
                 $courseInfo = [];
+
+                if ($course->getId()) {
+                    $courseInfo['ID'] = $course->getId();
+                }
 
                 if ($course->getName()) {
                     $courseInfo['NAME'] = $course->getName();
@@ -416,11 +421,16 @@ class CourseSectionComplexComponent extends CBitrixComponent
                 $coursesInfo[] = $courseInfo;
             }
 
-            usort($coursesInfo, function ($a, $b) {
-                return $a['CODE'] <=> $b['CODE'];
-            });
-
-            $this->courseInfo['COURSES'] = $coursesInfo;
+            $coursesSort = [];
+            $items = $this->courseInfo['COURSES'];
+            foreach ($items as $item) {
+                foreach ($coursesInfo as $course) {
+                    if ($item == $course['ID']) {
+                        $coursesSort[] = $course;
+                    }
+                }
+            }
+            $this->courseInfo['COURSES'] = $coursesSort;
         }
     }
 

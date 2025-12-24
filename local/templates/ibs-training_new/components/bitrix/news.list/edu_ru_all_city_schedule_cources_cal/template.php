@@ -417,7 +417,7 @@ function plural_form($number, $after) {
                                         <a href="<?=$value["sale-link"]?>">
                                 <?}?>
                                 <span class="sale-percent">
-                                    <?= Functions::buildSVG('icon-sale', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
+                                    <?= Functions::buildSVG('icon-tree', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
                                     <?=$value["sale-name"]?>
                                 </span>
                                 <?if ($value["sale-link"]) {?>
@@ -429,7 +429,7 @@ function plural_form($number, $after) {
                                 <div class="price-wrapper" style="justify-content:space-between;">
                                 <span class="sale-percent" style="background-color: #FF7B00; color:black">
                                     <?= Functions::buildSVG('icon-dev', SITE_TEMPLATE_PATH. '/assets/images/icons')?>
-                                    В разработке
+                                    Предзапись
                                 </span>
                                 <div class="price">
                             <?} else {?>
