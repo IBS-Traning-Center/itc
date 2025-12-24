@@ -1,153 +1,364 @@
-.best-workers-block {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 72px 0;
+#ibs-services-component .ibs-services-block {
+    padding: 100px 0;
+    background: #fff;
 }
 
-.best-workers-block .best-workers-default {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+#ibs-services-component .ibs-services-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+#ibs-services-component .ibs-services-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    flex-wrap: nowrap;
+}
+
+#ibs-services-component .ibs-services-card {
+    width: 402px;
+    height: 554px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    isolation: isolate;
+}
+
+#ibs-services-component .ibs-services-card:hover {
+    transform: translateY(-10px);
+}
+
+#ibs-services-component .ibs-services-card__title {
+    height: 152px;
+    padding: 32px 24px;
+    background: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: background 0.4s ease;
+}
+
+#ibs-services-component .ibs-services-card__title-text {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 32px;
+    line-height: 44px;
+    text-align: center;
+    color: #000;
+    margin: 0;
+    transition: color 0.4s ease;
+    position: relative;
+    z-index: 3;
+}
+
+#ibs-services-component .ibs-services-card__image-wrapper {
+    height: 402px;
+    overflow: hidden;
+    transition: opacity 0.4s ease;
+}
+
+#ibs-services-component .ibs-services-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#ibs-services-component .ibs-services-card:hover .ibs-services-card__image {
+    transform: scale(1.08);
+}
+
+#ibs-services-component .ibs-services-card__bg-blur {
+    position: absolute;
+    width: 438px;
+    height: 603px;
+    left: -18px;
+    bottom: -25px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(7.5px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+#ibs-services-component .ibs-services-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(37, 70, 133, 0.85), rgba(37, 70, 133, 0.85));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+#ibs-services-component .ibs-services-card__hover-content {
+    position: absolute;
+    inset: 0;
+    padding: 0 24px 32px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#ibs-services-component .ibs-services-card__hover-inner {
+    width: 100%;
+    max-width: 354px;
+    margin: 0 auto;
+}
+
+#ibs-services-component .ibs-services-card__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+}
+
+#ibs-services-component .ibs-services-card__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 40px;
+    background: #FFFFFF;
+    color: #2B418B;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 354px;
+    margin: 0 auto;
+}
+
+#ibs-services-component .ibs-services-card__btn:hover {
+    background: #f0f0f0;
+}
+
+#ibs-services-component .ibs-services-card:hover .ibs-services-card__bg-blur {
+    opacity: 1;
+}
+
+#ibs-services-component .ibs-services-card:hover .ibs-services-card__overlay {
+    opacity: 1;
+}
+
+#ibs-services-component .ibs-services-card:hover .ibs-services-card__title {
+    background: transparent;
+}
+
+#ibs-services-component .ibs-services-card:hover .ibs-services-card__title-text {
+    color: #FFFFFF;
+}
+
+#ibs-services-component .ibs-services-card:hover .ibs-services-card__image-wrapper {
+    opacity: 0;
+}
+
+#ibs-services-component .ibs-services-card:hover .ibs-services-card__hover-content {
+    opacity: 1;
+}
+
+/* Слайдер */
+#ibs-services-component .ibs-services-slider-wrapper {
+    display: none;
+}
+
+#ibs-services-component .ibs-services-slider {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+#ibs-services-component .ibs-services-slider .swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#ibs-services-component .ibs-services-card--slider {
+    width: 360px;
+    height: 530px;
+}
+
+#ibs-services-component .ibs-services-card--slider .ibs-services-card__title {
+    height: 97px;
+    padding: 32px 24px;
+}
+
+#ibs-services-component .ibs-services-card--slider .ibs-services-card__title-text {
+    font-size: 24px;
+    line-height: 33px;
+}
+
+#ibs-services-component .ibs-services-card--slider .ibs-services-card__image-wrapper {
+    height: 360px;
+}
+
+#ibs-services-component .ibs-services-card--slider .ibs-services-card__bg-blur {
+    width: 396px;
+    height: 543px;
+}
+
+#ibs-services-component .ibs-services-slider__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 16px 0;
+    gap: 9px;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+#ibs-services-component .ibs-services-slider__arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 0;
+    color: #000;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 33px;
+}
+
+#ibs-services-component .ibs-services-slider__arrow:hover {
+    color: #0827C4;
+}
+
+#ibs-services-component .ibs-services-slider__arrow--prev svg {
+    transform: rotate(180deg);
+}
+
+#ibs-services-component .ibs-services-slider__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin: 0 auto;
+}
+
+#ibs-services-component .ibs-services-slider__bullet {
+    width: 14px;
+    height: 14px;
+    background: #B2B2B2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    transform: rotate(-90deg);
+}
+
+#ibs-services-component .ibs-services-slider__bullet--active {
+    background: #0827C4;
+}
+
+/* Медиа-запросы */
+@media (max-width: 1720px) {
+    #ibs-services-component .ibs-services-grid {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #ibs-services-component .ibs-services-card {
+        width: 360px;
+        height: 498px;
+    }
+    #ibs-services-component .ibs-services-card__title {
+        height: 130px;
+    }
+    #ibs-services-component .ibs-services-card__image-wrapper {
+        height: 368px;
+    }
+    #ibs-services-component .ibs-services-card__bg-blur {
+        width: 396px;
+        height: 543px;
+        left: -18px;
+        bottom: -22px;
+    }
+}
+
+@media (max-width: 1440px) {
+    #ibs-services-component .ibs-services-slider-wrapper {
+        display: block;
+    }
+    #ibs-services-component .ibs-services-grid--desktop {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    #ibs-services-component .ibs-services-card--slider {
+        width: 318px;
+        height: 523px;
+    }
+    #ibs-services-component .ibs-services-card--slider .ibs-services-card__image-wrapper {
+        height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    #ibs-services-component .ibs-services-block {
+        padding: 60px 0;
+    }
+
+    #ibs-services-component .ibs-services-slider__navigation {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    #ibs-services-component .ibs-services-container {
+        padding: 0 16px;
+    }
+
+    #ibs-services-component .ibs-services-card--slider {
+        width: 100%;
+        max-width: 320px;
+        height: 480px;
+    }
+
+    #ibs-services-component .ibs-services-card--slider .ibs-services-card__title {
+        height: 90px;
+        padding: 24px 16px;
+    }
+
+    #ibs-services-component .ibs-services-card--slider .ibs-services-card__image-wrapper {
+        height: 320px;
+    }
+
+    #ibs-services-component .ibs-services-slider__navigation {
+        padding: 16px 0 0;
+    }
+}
+
+#ibs-services-component .swiper-wrapper {
+    display: flex;
     align-items: stretch;
 }
 
-.best-workers-block .best-workers-default .best-workers-default_item {
-    border: 1px solid var(--button-blue);
-    background-color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 154px;
-    min-width: 421px;
-    max-width: 421px;
-    transition: all 0.3s;
+#ibs-services-component .swiper-slide {
+    height: auto;
 }
 
-.best-workers-block .best-workers-default .best-workers-default_item span {
-    color: var(--button-blue);
-    text-align: center;
-    max-width: 230px;
+#ibs-services-component .swiper-pagination-bullet {
+    display: none;
 }
 
-.best-workers-block .best-workers-default .best-workers-default_item:hover {
-    background-color: var(--button-blue);
-}
-
-.best-workers-block .best-workers-default .best-workers-default_item:hover span {
-    color: var(--white);
-}
-
-.best-workers-block .best-workers-default .best-workers-default_item:nth-child(2),
-.best-workers-block .best-workers-default .best-workers-default_item:nth-child(3) {
-    border-left: none;
-}
-
-.best-workers-return-elem {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    padding: 0 73px;
-    transition: all 0.3s;
-}
-
-.best-workers-return-elem .best-workers-return-elem_icon {
-    min-width: 56px;
-    max-width: 56px;
-    min-height: 56px;
-    max-height: 56px;
-    border: 1px solid var(--button-blue);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.best-workers-return-elem .best-workers-return-elem_icon span {
-    color: var(--button-blue);
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
-}
-
-.best-workers-return-elem > span {
-    max-width: 230px;
-    color: var(--button-blue);
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
-    text-align: center;
-}
-
-.best-workers-return-elem:hover .best-workers-return-elem_icon {
-    background-color: var(--button-blue);
-}
-
-.best-workers-return-elem:hover .best-workers-return-elem_icon span {
-    color: var(--white);
-}
-
-@media (max-width: 1550px) {
-    .best-workers-block .best-workers-default .best-workers-default_item {
-        min-width: 350px;
-        max-width: 350px;
-    }
-
-    .best-workers-return-elem {
-        padding: 0 40px;
-    }
-}
-
-@media (max-width: 1350px) {
-    .best-workers-block {
-        flex-direction: column;
-        gap: 24px;
-    }
-}
-
-@media (max-width: 1180px) {
-    .best-workers-block {
-        padding: 24px 0 40px;
-    }
-}
-
-@media (max-width: 1070px) {
-    .best-workers-block .best-workers-default {
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-    }
-
-    .best-workers-block .best-workers-default .best-workers-default_item {
-        max-width: 100%;
-        min-width: 100%;
-    }
-
-    .best-workers-block .best-workers-default .best-workers-default_item:nth-child(2), .best-workers-block .best-workers-default .best-workers-default_item:nth-child(3) {
-        border-left: 1px solid var(--button-blue);
-        border-top: none;
-    }
-
-    .best-workers-block .best-workers-default .best-workers-default_item span {
-        max-width: 500px;
-    }
-
-    .best-workers-return-elem {
-        padding: 0;
-        flex-direction: row;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .best-workers-return-elem > span {
-        max-width: 100%;
-        font-size: 16px;
-        line-height: 22px;
-    }
-
-    .best-workers-return-elem .best-workers-return-elem_icon {
-        min-width: 32px;
-        max-width: 32px;
-        min-height: 32px;
-        max-height: 32px;
-    }
+#ibs-services-component .swiper-pagination-bullet-active {
+    display: none;
 }
