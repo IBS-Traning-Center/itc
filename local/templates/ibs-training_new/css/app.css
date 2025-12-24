@@ -3309,10 +3309,17 @@ form[name=banner_get_consult] .form-table + div {
 .reviews .swiper-pagination-bullet-active {
   background: #0827C4;
 }
-
-@media screen and (min-width: 992px) {
+.our-services.spaces{
+  padding: 40px 0;
+}
+@media screen and (min-width: 1180px) {
   .our-services .title--h2 {
-    margin-bottom: 40px;
+    margin-bottom: 72px;
+    font-size: 80px;
+    line-height: 92px;
+  }
+  .our-services.spaces{
+    padding: 100px 0;
   }
 }
 @media screen and (min-width: 1920px) {
@@ -3345,12 +3352,14 @@ form[name=banner_get_consult] .form-table + div {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border-bottom: 1px solid #000;
+  align-items: center;
 }
 .our-services__item:after {
   position: absolute;
   content: "";
   right: 0;
-  top: 16px;
+  top: 50%;
+  transform: translate(0, -50%);
   min-width: 32px;
   width: 32px;
   height: 32px;
@@ -3367,14 +3376,14 @@ form[name=banner_get_consult] .form-table + div {
 .our-services__item__title {
   font-family: "Noto Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1;
   color: #000;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1180px) {
   .our-services__item__title {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 32px;
+    line-height: 48px;
   }
 }
 @media screen and (min-width: 1920px) {
