@@ -1,0 +1,30 @@
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+// .montserrat-<uniquifier> {
+//     font-family: "Montserrat", serif;
+//     font-optical-sizing: auto;
+//     font-weight: <weight>;
+//     font-style: normal;
+// }
+
+@font-face {
+	font-family: 'Stag Sans';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Stag Sans'),
+		url('../assets/fonts/StagSans/StagSansLight.woff2') format('woff2'), 
+		url('../assets/fonts/StagSans/StagSansLight.woff') format('woff'),
+		url('../assets/fonts/StagSans/StagSansLight.ttf') format('ttf'),
+		url('../assets/fonts/StagSans/StagSansLight.eot?#iefix') format('eot');
+}
+
+@font-face {
+	font-family: 'Stag Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Stag Sans'),
+		url('../assets/fonts/StagSans/StagSansRegular.woff2') format('woff2'), 
+		url('../assets/fonts/StagSans/StagSansRegular.woff') format('woff'),
+		url('../assets/fonts/StagSans/StagSansRegular.ttf') format('ttf'),
+		url('../assets/fonts/StagSans/StagSansRegular.woff?#iefix') format('eot');
+}

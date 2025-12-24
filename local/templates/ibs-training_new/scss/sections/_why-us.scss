@@ -1,0 +1,102 @@
+.why-us {
+    padding: 40px 0 0;
+
+    @include breakpoint(xl) {
+        padding: 120px 0 0;
+    }
+
+    .title--h2 {
+        margin-bottom: 32px;
+
+        @include breakpoint(xxl) {
+            margin-bottom: 56px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        @include breakpoint(xxl) {
+            gap: 16px;
+        }
+
+        img {
+            display: block;
+            width: 32px;
+            min-width: 32px;
+            height: 32px;
+            object-fit: contain;
+
+            @include breakpoint(xxl) {
+                width: 72px;
+                min-width: 72px;
+                height: 72px;
+            }
+        }
+
+        &__title {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+
+            @include breakpoint(xxl) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+    }
+
+    &.with-titles {
+        .why-us__item {
+            align-items: flex-start;
+        }
+        
+        .why-us__item__title {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.35;
+            @include notosans;
+            margin-bottom: 8px;
+
+            @include breakpoint(xxl) {
+                font-size: 32px;
+                line-height: 44px;
+                margin-bottom: 16px;
+            }
+
+            // @include breakpoint(full-hd) {
+            //     font-size: 40px;
+            // }
+        }
+
+        .why-us__item__desc {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            @include notosans;
+
+            @include breakpoint(xxl) {
+                font-size: 20px;
+                line-height: 32px;
+            }
+
+            b {
+                font-weight: 400;
+            }
+
+            p {
+                font: inherit;
+            }
+        }
+    }
+
+    & + .fundamental__btns {
+        margin-bottom: 40px;
+
+        @include breakpoint(xxl) {
+            margin-bottom: 120px;
+        }
+    }
+}
