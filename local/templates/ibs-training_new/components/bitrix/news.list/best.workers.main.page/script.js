@@ -1,61 +1,51 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let swiperInstance = null;
+class StackRole
+{
+    constructor(data = {
+        ourClientsBlockClass: '.stack_role-block'
+    }) {
 
-    // Находим элементы внутри компонента
-    const component = document.getElementById('ibs-services-component');
-    if (!component) return;
+        this.ourClientsBlock = $('.stack_role-block');
 
-    const desktopGrid = component.querySelector('.ibs-services-grid--desktop');
-    const sliderWrapper = component.querySelector('.ibs-services-slider-wrapper');
+        this.initSlider();
+    }
 
-    function initSwiper() {
-        if (window.innerWidth < 1440) {
-            if (desktopGrid) desktopGrid.style.display = 'none';
-            if (sliderWrapper) sliderWrapper.style.display = 'block';
+    initSlider()
+    {
+        let sliderBlock = this.ourClientsBlock;
+        const windowWidth = window.innerWidth;
 
-            const sliderElement = component.querySelector('.ibs-services-slider');
-            if (!swiperInstance && sliderElement) {
-                swiperInstance = new Swiper(sliderElement, {
-                    slidesPerView: 1,
-                    spaceBetween: 24,
-                    centeredSlides: true,
-                    loop: false,
-
-                    pagination: {
-                        el: component.querySelector('.ibs-services-slider__pagination'),
-                        clickable: true,
-                        bulletClass: 'ibs-services-slider__bullet',
-                        bulletActiveClass: 'ibs-services-slider__bullet--active',
-                    },
-
-                    navigation: {
-                        nextEl: component.querySelector('.ibs-services-slider__arrow--next'),
-                        prevEl: component.querySelector('.ibs-services-slider__arrow--prev'),
-                    },
-
-                    breakpoints: {
-                        768: {
-                            slidesPerView: 2,
-                            centeredSlides: false,
+        if (windowWidth < 1180) {
+            if (sliderBlock) {
+                sliderBlock.slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: false,
+                    autoplay: false,
+                    dots: true,
+                    variableWidth: false,
+                    swipeToSlide: true,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
                         },
-                        1024: {
-                            slidesPerView: 3,
-                            centeredSlides: false,
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
                         }
-                    }
+                    ]
                 });
-            }
-        } else {
-            if (desktopGrid) desktopGrid.style.display = 'flex';
-            if (sliderWrapper) sliderWrapper.style.display = 'none';
-
-            if (swiperInstance) {
-                swiperInstance.destroy(true, true);
-                swiperInstance = null;
             }
         }
     }
+}
 
-    initSwiper();
-    window.addEventListener('resize', initSwiper);
+document.addEventListener("DOMContentLoaded", () => {
+    new StackRole();
 });
