@@ -30,6 +30,7 @@
     color: var(--white);
     min-width: 250px;
     max-width: 250px;
+    white-space: nowrap;
 }
 
 @media (max-width: 1180px) {
