@@ -85,6 +85,7 @@ $request = $application->getContext()->getRequest();
 </script>
 <!-- Marquiz script end -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="yandex-verification" content="a65ac9e546079151"/>
     <meta name="yandex-verification" content="e0363bd7fb634c51"/>
     <meta name="skill2go-school-confirmation-token" content="UIj8-QgobjZZfMTIvkuP_hvLDmJDs7Ta"/>
     <meta charset="UTF-8">
@@ -246,18 +247,19 @@ $cntBasketItems = CSaleBasket::GetList(
 ); ?>
         </div>
     </div>
-    <section id="banner" class="banner-main-page">
-        <?$APPLICATION->IncludeComponent(
-            "bitrix:advertising.banner",
-            ".default",
-            array(
-                "TYPE" => "ON_MAIN",
-                "CACHE_TYPE" => "A",
-                "CACHE_TIME" => "0"
-            ),
-            false
-        );?>
-    </section>
-</header>
 
+<section id="banner" class="banner-main-page">
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:advertising.banner",
+        ".default",
+        array(
+            "TYPE" => "ON_MAIN",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "0"
+        ),
+        false
+    );?>
+</section>
+</header>
 <main class="page _content">
+
