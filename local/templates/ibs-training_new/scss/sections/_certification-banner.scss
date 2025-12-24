@@ -1,0 +1,39 @@
+.certification-banner {
+    position: relative;
+    @include sectionSpaces;
+
+    img {
+        position: relative;
+        z-index: 10;
+    }
+
+    &--inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        padding: 0 15px;
+
+        @include breakpoint(md) {
+            max-width: 100%;
+            padding: 0 30px;
+        }
+    }
+
+    .title--h2 {
+        color: #fff;
+        
+        @include breakpoint(md) {
+            white-space: nowrap;
+        }
+    }
+
+    .link {
+        color: #fff;
+    }
+}

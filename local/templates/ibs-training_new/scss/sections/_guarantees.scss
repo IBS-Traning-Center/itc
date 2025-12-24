@@ -1,0 +1,82 @@
+.guarantees {
+    background: linear-gradient(79.51deg, #2A418B 0%, #4DA567 100%);
+    color: #fff;
+    @include sectionSpaces;
+
+    .title--h2 {
+        color: #fff;
+        margin-bottom: 32px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 56px;
+        }
+    }
+
+    &__image {
+        @include breakpoint(xs) {
+            max-width: 304px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include breakpoint(xl) {
+            border: 1px solid #fff;
+            padding: 56px;
+            flex-direction: row;
+            align-items: center;
+            gap: 32px;
+        }
+
+        p {
+            @include text;
+        }
+    }
+
+    &__list {
+        margin-top: 32px;
+
+        @include breakpoint(lg) {
+            margin-top: 0;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            @include text;
+            max-width: 100%;
+            width: auto;
+
+            @include breakpoint(lg) {
+                flex-direction: row;
+                gap: 16px;
+            }
+
+            &:not(:last-of-type) {
+                margin-bottom: 32px;
+
+                @include breakpoint(lg) {
+                    margin-bottom: 40px;
+                }
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 40px;
+                line-height: 1;
+                display: block;
+                
+                @include breakpoint(lg) {
+                    font-size: 56px;
+                    line-height: 64px;
+                    min-width: 215px;
+                    white-space: nowrap;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

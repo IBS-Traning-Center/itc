@@ -1,0 +1,304 @@
+.differences {
+    background-color: #F8F7F7;
+    @include sectionSpaces;
+
+    .title--h2 {
+        margin-bottom: 40px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 64px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include breakpoint(sm) {
+            flex-direction: row;
+        }
+
+        &__icon {
+            display: block;
+            min-width: 72px;
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+        }
+
+        // &__content {}
+
+        &__title {
+            color: #000;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 8px;
+            
+            @include breakpoint(xl) {
+                margin-bottom: 16px;
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 16px;
+                margin-bottom: 16px;
+            }
+
+            @include breakpoint(full-hd) {
+                font-size: 40px;
+            }
+        }
+
+        &__label {
+            color: #0827C4;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1;
+            @include notosans;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+
+            @include breakpoint(full-hd) {
+                font-size: 20px;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &__sticker {
+            background: linear-gradient(90.16deg, #2A418B 0.29%, #4DA467 99.71%);
+            padding: 4px 8px;
+            color: #fff;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 8px;
+            width: 100%;
+            max-width: 100%;
+
+            @include breakpoint(xs) {
+                width: fit-content;
+            }
+
+            @include breakpoint(lg) {
+                margin-bottom: 16px;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 32px;
+                padding: 4px 16px;
+            }
+        }
+
+        &__text {
+            color: #000;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+
+            @include breakpoint(lg) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+
+        &__desc {
+            position: fixed;
+            z-index: 10151;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 125vw;
+            height: 125vh;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, .32);
+
+            &__modal {
+                background-color: #fff;
+                width: calc(100vw - 32px);
+                height: auto;
+                max-width: calc(100vw - 32px);
+                max-height: calc(100vh - 32px);
+                padding: 32px;
+                position: absolute;
+                // top: 16px;
+                // left: 16px;
+                z-index: 100;
+                overflow-x: hidden;
+                overflow-y: auto;
+                color: #000;
+                font-weight: 300;
+                font-size: 32px;
+                line-height: 44px;
+
+                @include breakpoint(xl) {
+                    width: (1024px * 1.25);
+                    // min-height: 801px;
+                    height: auto;
+                    padding: 64px;
+                }
+
+                .modal--close {
+                    position: absolute;
+                    top: 24px;
+                    right: 24px;
+                    min-width: 24px;
+                    width: 24px;
+                    height: 24px;
+                    background: url(/local/templates/ibs-training_new_copy/assets/images/icons/modal-close.svg) no-repeat center center;
+                    background-size: contain;
+                    cursor: pointer;
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
+                        transform: rotate(-180deg);
+                    }
+
+                    @include breakpoint(lg) {
+                        min-width: 48px;
+                        width: 48px;
+                        height: 48px;
+                    }
+                }
+
+                .title--h2 {
+                    @include notosans;
+                    font-size: 20px;
+                    line-height: 32px;
+                    font-weight: 400;
+                    margin-bottom: 16px;
+
+                    @include breakpoint(xl) {
+                        @include h2;
+                        margin-bottom: 32px;
+                    }
+                }
+
+                p {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+
+                    @include breakpoint(xl) {
+                        font-family: "Stag Sans", sans-serif;
+                        font-size: 32px;
+                        line-height: 44px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            &.show {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .lastitem {
+        @include breakpoint(sm) {
+            margin-left: 88px;
+        }
+
+        @include breakpoint(lg) {
+            margin: 64px auto 0;
+            position: relative;
+
+            &:before, &:after {
+                position: absolute;
+                content: '';
+                background: url(/local/templates/ibs-training_new_copy/assets/images/gradient_arrow.svg) no-repeat center center;
+                width: 141px;
+                height: 116px;
+                background-size: contain;
+
+                @include breakpoint(lg) {
+                    bottom: 37px;
+                }
+
+                @include breakpoint(xl) {
+                    bottom: 8px;
+                }
+            }
+
+            &:before {
+                @include breakpoint(lg) {
+                    left: -140px;
+                }
+
+                @include breakpoint(xl) {
+                    left: -100px;
+                }
+            }
+
+            &:after {
+                @include breakpoint(lg) {
+                    right: -140px;
+                    transform: scale(-1, 1);
+                }
+
+                @include breakpoint(xl) {
+                    right: -100px;
+                }
+            }
+        }
+
+        // @include breakpoint(xl) {
+        //     margin: 64px auto 0;
+        // }
+
+        .differences__item {
+            @include breakpoint(lg) {
+                justify-content: center;
+                text-align: center;
+            }
+
+            &__content {
+                @include breakpoint(lg) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        
+        @include breakpoint(xl) {
+            margin-top: 64px;
+        }
+        
+        a {
+            border: 1px solid $blue !important;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+            width: 100%;
+            max-width: 100%;
+
+            &:hover {
+                border-color: $green !important;
+                color: $green;
+            }
+
+            @include breakpoint(sm) {
+                width: fit-content;
+            }
+        }
+    }
+}
