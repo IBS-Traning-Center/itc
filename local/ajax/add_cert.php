@@ -1,6 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 global $formAnswer;
+use Bitrix\Main\Type\DateTime;
+
 $formAnswer = ['message' => ''];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -70,10 +72,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $date_to = $sqlHelper->forSql($date_to);
                         $link = $sqlHelper->forSql($link);
 
+                        $hh_user_id = NULL;
+
                         $sql = "SELECT ID FROM b_user WHERE (EMAIL = '" . $mail . "') OR (NAME = '" . $name . "' AND LAST_NAME = '" . $surname . "' AND SECOND_NAME = '" . $patronymic . "')";
                         $recordset = $connection->query($sql);
                         if ($record = $recordset->fetch()) {
                             $user_id = $sqlHelper->forSql($record['ID']);
+        
+                            $sql = "SELECT hh_user_id FROM hh_users WHERE user_id = '" . $user_id . "'";
+                            $recordset = $connection->query($sql);
+                            if ($record = $recordset->fetch()) {
+                                $hh_user_id = $sqlHelper->forSql($record['hh_user_id']);
+                            }
                         }
 
                         $sql = "INSERT certificates (surname, name, patronymic, mail, certificate_number, certificate_type, certification_level, date_from, date_to, link, user_id) 
@@ -81,6 +91,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $recordset = $connection->query($sql);
                         if ($record = $recordset->fetch()) {
                             $message[] = 'Сертификат ' . $certificate_number . ' успешно сохранен';
+
+                            if ($hh_user_id) {
+                                $access_token_app = '1';
+                                $name = 'Authorization';
+                                $value = 'Bearer ' . $access_token_app;
+
+                                $httpClient->setHeader($name, $value, true);
+
+                                $provider_id = '';
+                                $program_id = '';
+                                $link = "https://ibs-training.ru/cert/" . $link;
+                                $date_from = new DateTime($date_from, 'd.m.Y');
+
+                                $postData = [
+                                    'certification_provider_id' => $provider_id,
+                                    'ceritification_program_id' => $program_id,
+                                    'ceritificate_link' => $link,
+                                    'certificate_id' => $certificate_number,
+                                    'issued_at' => $date_from->format('Y-m-d\TH:i:sP'),
+                                    'user_id' => $hh_user_id,
+                                ];
+
+                                if ('' != $date_to) {
+                                    $date_to = new DateTime($date_to, 'd.m.Y');
+                                    $postData['expires_at'] = $date_to->format('Y-m-d\TH:i:sP');
+                                }
+
+                                $url = 'https://api.hh.ru/external_certificates';
+                                $result = $httpClient->post($url, $postData);
+                                if ($result) {
+                                    $sql= "UPDATE certificates SET sent_to_hh = TRUE WHERE certificate_number = '" . $certificate_number . "'";
+                                    $set = $connection->query($sql);
+                                }
+                            }
                         } else {
                             $message[] = 'Ошибка при добавлении сертификата ' . $certificate_number . ' в таблицу';
                         }

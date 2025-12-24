@@ -1,0 +1,65 @@
+.experience {
+    @include notosans;
+
+    .title--h2 {
+        color: #fff;
+        margin-bottom: 32px;
+
+        @include breakpoint(xl) {
+            margin-bottom: 0;
+        }
+    }
+
+    $xGapMobile: 24px;
+    $xGapDesktop: 40px;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 32px $xGapMobile;
+        
+        @include breakpoint(xl) {
+            gap: 32px $xGapDesktop;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: calc(50% - ($xGapMobile / 2));
+
+        @include breakpoint(xl) {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            width: calc(50% - ($xGapDesktop / 2));
+        }
+
+        &__number {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: normal;
+            white-space: nowrap;
+
+            @include breakpoint(xl) {
+                font-size: 56px;
+                line-height: 72px;
+                text-align: right;
+                width: 222px;
+            }
+        }
+
+        &__title {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+
+            @include breakpoint(xl) {
+                font-size: 20px;
+                line-height: 32px;
+            }
+        }
+    }
+}

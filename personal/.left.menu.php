@@ -1,23 +1,23 @@
 <?php
 $aMenuLinks = Array(
-//    Array(
-//        "Главная",
-//        "/personal/",
-//        Array(),
-//        Array(
-//            "ICON" => "home"
-//        ),
-//        ""
-//    ),
-//    Array(
-//        "Бонусные баллы",
-//        "/personal/bonus/",
-//        Array(),
-//        Array(
-//            "ICON" => "bonus"
-//        ),
-//        ""
-//    ),
+    /*Array(
+        "Главная",
+        "/personal/",
+        Array(),
+        Array(
+            "ICON" => "home"
+        ),
+        ""
+    ),
+    Array(
+        "Бонусные баллы",
+        "/personal/bonus/",
+        Array(),
+        Array(
+            "ICON" => "bonus"
+        ),
+        ""
+    ),*/
     Array(
         "Мои документы",
         "/personal/docs/",
@@ -27,24 +27,24 @@ $aMenuLinks = Array(
         ),
         ""
     ),
-//    Array(
-//        "Мои заказы",
-//        "/personal/order/",
-//        Array(),
-//        Array(
-//            "ICON" => "orders"
-//        ),
-//        ""
-//    ),
-//    Array(
-//        "Уведомления",
-//        "/personal/notifications/",
-//        Array(),
-//        Array(
-//            "ICON" => "notifications"
-//        ),
-//        ""
-//    ),
+    /*Array(
+        "Мои заказы",
+        "/personal/order/",
+        Array(),
+        Array(
+            "ICON" => "orders"
+        ),
+        ""
+    ),
+    Array(
+        "Уведомления",
+        "/personal/notifications/",
+        Array(),
+        Array(
+            "ICON" => "notifications"
+        ),
+        ""
+    ),*/
     Array(
         "Настройки",
         "/personal/profile/",
