@@ -14,7 +14,6 @@ Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.gsta
 Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">');
 
 Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
-Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 Asset::getInstance()->addCss('/local/assets/css/base.css');
 Asset::getInstance()->addCss('/local/assets/css/styles.css');
@@ -27,6 +26,10 @@ Asset::getInstance()->addCss('/local/assets/libs/slick/slick-theme.css');
 Asset::getInstance()->addCss('/local/assets/libs/fancybox/jquery.fancybox.min.css');
 Asset::getInstance()->addCss('/local/assets/libs/highlight.js/efault.min.css');
 Asset::getInstance()->addCss('/local/assets/css/2020_style.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/bootstrap/bootstrap-grid.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/bootstrap/bootstrap-utilities.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/swiper/swiper-bundle.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/css/app.css');
 Asset::getInstance()->addCss('/local/assets/css/new_style.css');
 
 Asset::getInstance()->addJs('/local/assets/js/targetEvents.js');
@@ -49,6 +52,9 @@ Asset::getInstance()->addJs('/local/assets/js/form.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/script.js');
 Asset::getInstance()->addJs( '/local/runtime/script.js');
 Asset::getInstance()->addJs( '/local/vendors/script.js');
+
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/swiper/swiper-bundle.min.js');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/js/app.js');
 
 $application = Application::getInstance();
 $request = $application->getContext()->getRequest();
@@ -79,6 +85,7 @@ $request = $application->getContext()->getRequest();
 </script>
 <!-- Marquiz script end -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="yandex-verification" content="a65ac9e546079151"/>
     <meta name="yandex-verification" content="e0363bd7fb634c51"/>
     <meta name="skill2go-school-confirmation-token" content="UIj8-QgobjZZfMTIvkuP_hvLDmJDs7Ta"/>
     <meta charset="UTF-8">
@@ -240,18 +247,19 @@ $cntBasketItems = CSaleBasket::GetList(
 ); ?>
         </div>
     </div>
-    <section id="banner" class="banner-main-page">
-        <?$APPLICATION->IncludeComponent(
-            "bitrix:advertising.banner",
-            ".default",
-            array(
-                "TYPE" => "ON_MAIN",
-                "CACHE_TYPE" => "A",
-                "CACHE_TIME" => "0"
-            ),
-            false
-        );?>
-    </section>
-</header>
 
+<section id="banner" class="banner-main-page">
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:advertising.banner",
+        ".default",
+        array(
+            "TYPE" => "ON_MAIN",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "0"
+        ),
+        false
+    );?>
+</section>
+</header>
 <main class="page _content">
+

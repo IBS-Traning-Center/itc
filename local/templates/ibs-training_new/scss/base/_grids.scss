@@ -1,0 +1,133 @@
+.container {
+	max-width: 100%;
+	padding: 0 15px;
+
+	@include breakpoint(sm) {
+		max-width: calc(540px + 30px);
+	}
+
+	@include breakpoint(md) {
+		max-width: calc(720px + 30px);
+	}
+
+	@include breakpoint(lg) {
+		max-width: calc(960px + 30px);
+	}
+
+	@include breakpoint(xl) {
+		max-width: calc((1216px * 1.25) + 64px + 20px);
+		padding: 0 32px;
+	}
+
+	@include breakpoint(full-hd) {
+		max-width: calc((1680px * 1.2) + 120px);
+		padding: 0 60px;
+	}
+}
+
+// .container {
+// 	max-width: 125%;
+// 	padding: 0 15px;
+
+// 	@include breakpoint(sm) {
+// 		max-width: calc((540px * 1.25) + 30px);
+// 	}
+
+// 	@include breakpoint(md) {
+// 		max-width: calc((720px * 1.25) + 30px);
+// 	}
+
+// 	@include breakpoint(lg) {
+// 		max-width: calc((960px * 1.25) + 30px);
+// 	}
+
+// 	@include breakpoint(xl) {
+// 		max-width: calc((1216px * 1.25) + 64px);
+// 		padding: 0 32px;
+// 	}
+
+// 	@include breakpoint(full-hd) {
+// 		max-width: calc((1680px * 1.25) + 120px);
+// 		padding: 0 60px;
+// 	}
+// }
+
+// $fluid-gutter: 56px;
+
+// .container-fluid {
+// 	padding: 0 $fluid-gutter;
+// 	width: 100%;
+// 	margin: 0 auto;
+
+// 	&:before, &:after {
+// 		display: none;
+// 	}
+
+// 	@include breakpoint(xl) {
+// 		max-width: calc(1280px + ($fluid-gutter * 2));
+// 	}
+
+// 	@include breakpoint(xxl) {
+// 		max-width: calc(1480px + ($fluid-gutter * 2));
+// 	}
+// }
+
+.col-hd-2 {
+	@include breakpoint(full-hd) {
+		width: 50%;
+	}
+}
+
+.col-hd-3 {
+	@include breakpoint(full-hd) {
+		width: 25%;
+	}
+}
+
+.col-hd-4 {
+	@include breakpoint(full-hd) {
+		width: calc(100% / 3);
+	}
+}
+
+// gap 20px
+.g-20, .gy-20 {
+    --bs-gutter-y: 20px;
+}
+.g-20, .gx-20 {
+    --bs-gutter-x: 20px;
+}
+
+// gap 32px
+.g-32, .gy-32 {
+	--bs-gutter-y: 32px;
+}
+.g-32, .gx-32 {
+	--bs-gutter-x: 32px;
+}
+.g-lg-32, .gy-lg-32 {
+	@include breakpoint(lg) {
+		--bs-gutter-y: 32px;
+	}
+}
+.g-lg-32, .gx-lg-32 {
+	@include breakpoint(lg) {
+		--bs-gutter-x: 32px;
+	}
+}
+
+// gap 40px
+.g-40, .gy-40 {
+    --bs-gutter-y: 40px;
+}
+.g-40, .gx-40 {
+    --bs-gutter-x: 40px;
+}
+
+// gap 80px
+.g-80, .gy-80 {
+    --bs-gutter-y: 80px;
+}
+.g-80, .gx-80 {
+    --bs-gutter-x: 80px;
+}

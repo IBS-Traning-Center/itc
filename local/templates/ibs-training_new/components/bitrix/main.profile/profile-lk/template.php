@@ -42,7 +42,6 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
                 <label>Телефон (не обязательно)</label>
                 <input type="text" name="PERSONAL_PHONE" value="<?=htmlspecialcharsbx($arResult["arUser"]["PERSONAL_PHONE"])?>" />
             </div>
-
             <div class="field-blue">
                 <label>Эл. почта</label>
                 <input type="text" value="<?=htmlspecialcharsbx($arResult["arUser"]["EMAIL"])?>" disabled />
@@ -60,23 +59,10 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
             <div class="field-gray">
                 <input type="text" name="WORK_POSITION" placeholder="Должность" value="<?=htmlspecialcharsbx($arResult["arUser"]["WORK_POSITION"])?>" />
             </div>
+            <div class="field-gray">
+                <input type="text" name="UF_TELEGRAM" placeholder="@TelegramNickName" value="<?=htmlspecialcharsbx($arResult["arUser"]["UF_TELEGRAM"])?>" />
+            </div>
 
-            <?foreach($arResult["USER_PROPERTIES"]["DATA"] as $FIELD_NAME => $arUserField):?>
-                <div class="field-gray">
-                    <?$APPLICATION->IncludeComponent(
-                        "bitrix:system.field.edit",
-                        $arUserField["USER_TYPE"]["USER_TYPE_ID"],
-                        array(
-                            "bVarsFromForm" => $arResult["bVarsFromForm"],
-                            "arUserField" => $arUserField,
-                            "form_name" => "form1",
-                            "VALUE" => $arUserField["VALUE"]
-                        ),
-                        null,
-                        array("HIDE_ICONS" => "Y")
-                    );?>
-                </div>
-            <?endforeach;?>
 
             <!-- Привязка hh.ru -->
             <div class="hh-section">
