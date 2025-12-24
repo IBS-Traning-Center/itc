@@ -393,7 +393,6 @@ $APPLICATION->IncludeComponent(
 ); ?>
 <section class="mini-gallery spaces">
    <div class="container">
-
       <?$APPLICATION->IncludeComponent(
          "bitrix:catalog.section.list",
          "tabs",
@@ -433,12 +432,9 @@ $APPLICATION->IncludeComponent(
       );
       $tabKey = 0;
       while($ar_result = $db_list->GetNext())
-      {
-         ?>
-
+      { ?>
          <div data-code="<?=$ar_result['CODE'];?>" <?=($tabKey > 0) ? 'style="display: none;"' : '';?>>
-            <?
-            $GLOBALS[ $ar_result['CODE'].'FilterTabCode' ] = array(
+            <? $GLOBALS[ $ar_result['CODE'].'FilterTabCode' ] = array(
                "SECTION_CODE" => $ar_result['CODE'] // Символьный код раздела
             );
             

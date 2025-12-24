@@ -24,7 +24,7 @@
 
 .stack_role-block-wrap{
     padding: 100px 0 120px;
-    background-color: var(--light-gray);
+    border-top: 1px solid #B2B2B2;
 }
 
 .stack_role-item{
