@@ -3895,7 +3895,7 @@ form[name=banner_get_consult] .form-table + div {
     margin-right: 0px;
   }
 
-  .mini-gallery__item__title{
+  .mini-gallery__item__title{ 
     margin-top: 24px;
     margin-bottom: 16px;
   }
