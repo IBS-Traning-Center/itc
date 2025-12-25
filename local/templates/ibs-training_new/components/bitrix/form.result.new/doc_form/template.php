@@ -39,6 +39,26 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
             return re.test(String(phone).replace(/\s+/g, ''));
         }
 
+        function getRequiredFields() {
+            const requiredFields = [];
+
+            document.querySelectorAll('[required]').forEach(field => {
+                requiredFields.push(field);
+            });
+
+            document.querySelectorAll('.required').forEach(requiredSpan => {
+                const field = requiredSpan.closest('label')?.querySelector('input, textarea, select') ||
+                    requiredSpan.parentElement?.previousElementSibling ||
+                    requiredSpan.parentElement?.parentElement?.querySelector('input, textarea, select');
+                if (field && !field.hasAttribute('required')) {
+                    field.setAttribute('data-required-by-asterisk', 'true');
+                    requiredFields.push(field);
+                }
+            });
+
+            return requiredFields;
+        }
+
         const emailFields = document.querySelectorAll('input[type="email"]');
         emailFields.forEach(function(field) {
             field.addEventListener('blur', function() {
@@ -103,33 +123,82 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
                 e.preventDefault();
 
                 let isValid = true;
+                const errorMessages = [];
+
+                const requiredFields = getRequiredFields();
+                requiredFields.forEach(function(field) {
+                    let fieldValue = field.value;
+
+                    if (field.type === 'checkbox') {
+                        if (!field.checked) {
+                            isValid = false;
+
+                            const label = field.closest('label');
+                            if (label) {
+                                const spanText = label.querySelector('span:not(.required)');
+                                const fieldName = spanText ? spanText.textContent.replace('*', '').trim() : 'Это поле';
+                                errorMessages.push(`Поле "${fieldName}" обязательно для заполнения`);
+                            }
+                        }
+                    }
+                    else {
+                        fieldValue = fieldValue ? fieldValue.trim() : '';
+
+                        if (!fieldValue) {
+                            isValid = false;
+
+                            const placeholder = field.getAttribute('placeholder') ||
+                                field.getAttribute('name') ||
+                                field.previousElementSibling?.textContent ||
+                                'Это поле';
+                            const fieldName = placeholder.replace('*', '').trim();
+                            errorMessages.push(`Поле "${fieldName}" обязательно для заполнения`);
+                        }
+                    }
+                });
 
                 emailFields.forEach(function(field) {
                     if (field.value && !validateEmail(field.value)) {
                         isValid = false;
-                        field.setCustomValidity('Введите корректный email адрес');
-                        field.style.outline = '2px solid #ff6b6b';
+                        errorMessages.push('Введите корректный email адрес');
                     }
                 });
 
                 telFields.forEach(function(field) {
                     if (field.value && !validatePhone(field.value)) {
                         isValid = false;
-                        field.setCustomValidity('Введите корректный номер телефона');
-                        field.style.outline = '2px solid #ff6b6b';
+                        errorMessages.push('Введите корректный номер телефона');
                     }
                 });
+
+                const captchaField = form.querySelector('input[name="captcha_word"]');
+                if (captchaField && captchaField.hasAttribute('required')) {
+                    if (!captchaField.value.trim()) {
+                        isValid = false;
+                        errorMessages.push('Пожалуйста, введите код с картинки');
+                    }
+                }
 
                 if (!isValid) {
                     const errorDiv = document.createElement('div');
                     errorDiv.className = 'form-error-message';
-                    errorDiv.style.cssText = 'color: #FF6B6B; font-family: Stag Sans; font-size: 14px; margin-bottom: 15px; padding: 10px; background: rgba(255,107,107,0.1);';
-                    errorDiv.innerHTML = 'Пожалуйста, проверьте корректность заполнения полей Email и Телефона';
+                    errorDiv.style.cssText = 'color: #FF6B6B; font-family: Stag Sans; font-size: 14px; margin-bottom: 15px; padding: 10px; background: rgba(255,107,107,0.1); border-radius: 4px;';
+
+                    let errorHtml = '<strong>Пожалуйста, исправьте следующие ошибки:</strong><ul style="margin: 10px 0 0 0; padding-left: 20px;">';
+                    errorMessages.forEach(msg => {
+                        errorHtml += `<li>${msg}</li>`;
+                    });
+                    errorHtml += '</ul>';
+
+                    errorDiv.innerHTML = errorHtml;
 
                     const oldErrors = form.querySelectorAll('.form-error-message');
                     oldErrors.forEach(error => error.remove());
 
                     form.insertBefore(errorDiv, form.firstChild);
+
+                    // Прокрутка к ошибке
+                    errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     return;
                 }
 
@@ -157,19 +226,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
                         form.reset();
 
-                        emailFields.forEach(field => {
-                            field.style.outline = 'none';
-                            field.setCustomValidity('');
-                        });
-
-                        telFields.forEach(field => {
-                            field.style.outline = 'none';
-                            field.setCustomValidity('');
-                        });
+                        const oldErrors = form.querySelectorAll('.form-error-message');
+                        oldErrors.forEach(error => error.remove());
                     })
                     .catch(error => {
                         console.error('Ошибка отправки формы:', error);
-                        alert('Произошла ошибка при отправке формы. Попробуйте еще раз.');
+
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'form-error-message';
+                        errorDiv.style.cssText = 'color: #FF6B6B; font-family: Stag Sans; font-size: 14px; margin-bottom: 15px; padding: 10px; background: rgba(255,107,107,0.1); border-radius: 4px;';
+                        errorDiv.innerHTML = 'Произошла ошибка при отправке формы. Попробуйте еще раз.';
+
+                        const oldErrors = form.querySelectorAll('.form-error-message');
+                        oldErrors.forEach(error => error.remove());
+
+                        form.insertBefore(errorDiv, form.firstChild);
                     })
                     .finally(() => {
                         submitBtn.value = originalText;
@@ -177,8 +248,19 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
                     });
             });
         }
+        setTimeout(() => {
+            const requiredFields = getRequiredFields();
+            requiredFields.forEach(field => {
+                if (field.type !== 'hidden' && field.type !== 'checkbox') {
+                    const placeholder = field.getAttribute('placeholder');
+                    if (placeholder && !placeholder.includes('*')) {
+                        field.setAttribute('placeholder', placeholder + ' *');
+                    }
+                }
+            });
+        }, 100);
 
-        if (window.location.search.indexOf('formresult=addok') !== -1) {
+        if (window.location.search.indexOf('formresult=adddoc') !== -1) {
             setTimeout(showCustomPopup, 500);
         }
     });
@@ -253,6 +335,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
                     $fieldClass = $isError ? 'error' : '';
                     $placeholder = htmlspecialcharsbx($arQuestion["CAPTION"]);
 
+                    if ($arQuestion["REQUIRED"] == "Y" && !strpos($placeholder, '*')) {
+                        $placeholder .= ' *';
+                    }
+
                     $fieldName = strtolower($arQuestion["CAPTION"]);
 
                     $inputType = 'text';
@@ -272,14 +358,26 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
                     <div class="form-field">
                         <?php if ($fieldType == 'textarea'): ?>
 
-                            <?= $arQuestion["HTML_CODE"] ?>
+                            <?php
+                            $textareaHtml = $arQuestion["HTML_CODE"];
+                            if ($arQuestion["REQUIRED"] == "Y" && strpos($textareaHtml, 'required') === false) {
+                                $textareaHtml = str_replace('<textarea', '<textarea required', $textareaHtml);
+                            }
+                            echo $textareaHtml;
+                            ?>
                             <?php if ($isError): ?>
                                 <span class="form-error"><?= $arResult["FORM_ERRORS"][$FIELD_SID] ?></span>
                             <?php endif; ?>
 
                         <?php elseif ($fieldType == 'checkbox'): ?>
                             <label class="checkbox <?= $fieldClass ?>">
-                                <?= $arQuestion["HTML_CODE"] ?>
+                                <?php
+                                $checkboxHtml = $arQuestion["HTML_CODE"];
+                                if ($arQuestion["REQUIRED"] == "Y" && strpos($checkboxHtml, 'required') === false) {
+                                    $checkboxHtml = str_replace('<input', '<input required', $checkboxHtml);
+                                }
+                                echo $checkboxHtml;
+                                ?>
                                 <span><?= $arQuestion["CAPTION"] ?>
                                     <?php if ($arQuestion["REQUIRED"] == "Y"): ?>
                                         <span class="required">*</span>
@@ -292,7 +390,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
                         <?php elseif ($fieldType == 'dropdown'): ?>
 
-                            <?= $arQuestion["HTML_CODE"] ?>
+                            <?php
+                            $selectHtml = $arQuestion["HTML_CODE"];
+                            if ($arQuestion["REQUIRED"] == "Y" && strpos($selectHtml, 'required') === false) {
+                                $selectHtml = str_replace('<select', '<select required', $selectHtml);
+                            }
+                            echo $selectHtml;
+                            ?>
                             <?php if ($isError): ?>
                                 <span class="form-error"><?= $arResult["FORM_ERRORS"][$FIELD_SID] ?></span>
                             <?php endif; ?>
@@ -303,6 +407,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
                             if ($inputType !== 'text') {
                                 $fieldHtml = preg_replace('/type="text"/', 'type="' . $inputType . '"', $fieldHtml);
+                            }
+                            if ($arQuestion["REQUIRED"] == "Y" && strpos($fieldHtml, 'required') === false) {
+                                $fieldHtml = str_replace('<input', '<input required', $fieldHtml);
                             }
 
                             if ($isError) {
@@ -346,7 +453,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
                     <input
                             type="text"
                             name="captcha_word"
-                            placeholder="<?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?>"
+                            placeholder="<?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?> *"
                             class="inputtext"
                             required
                     >
