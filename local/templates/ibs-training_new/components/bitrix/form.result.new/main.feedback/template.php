@@ -12,7 +12,7 @@ Loc::loadMessages(__FILE__);
  * @var array $arResult
  * @var array $arParams
  */
-
+CJSCore::Init(['phone_number']);
 ?>
 
 <div class="main-feedback-form-block" id="mainFeedbackFormBlock">
@@ -52,7 +52,7 @@ Loc::loadMessages(__FILE__);
                                     <span><?= $question['CAPTION'] ?></span>
                                 <?php else : ?>
                                     <input
-                                        class="inputtext main-feedback-form-input <?= $questionId ?> <?= isset($arResult['FORM_ERRORS'][$questionId]) ? 'has-error' : '' ?>"
+                                            class="inputtext main-feedback-form-input <?= $questionId ?> <?= ($questionId == 'phone' ? 'phone' : '') ?> <?= isset($arResult['FORM_ERRORS'][$questionId]) ? 'has-error' : '' ?>"
                                         <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
                                         <?= ($questionId == 'client_id') ? 'id="clientID"' : '' ?>
                                         placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '*' : '(не обязательно)' ?>"
@@ -78,3 +78,54 @@ Loc::loadMessages(__FILE__);
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var phoneInputs = document.querySelectorAll('input.phone');
+
+        phoneInputs.forEach(function(input) {
+            if (input.dataset.maskInitialized) return;
+            input.dataset.maskInitialized = 'true';
+
+            input.addEventListener('input', function(e) {
+                let cursor = e.target.selectionStart;
+                let oldLength = e.target.value.length;
+
+                let value = e.target.value.replace(/\D/g, '');
+
+                if (value.startsWith('8') && value.length > 1) {
+                    value = '7' + value.substring(1);
+                }
+
+                if (value.length > 0 && !value.startsWith('7')) {
+                    value = '7' + value;
+                }
+
+                if (value.length > 11) {
+                    value = value.substring(0, 11);
+                }
+
+                let formatted = '';
+                if (value.length >= 1) formatted = '+7';
+                if (value.length > 1) formatted += ' (' + value.substr(1, 3);
+                if (value.length >= 5) formatted += ') ' + value.substr(4, 3);
+                if (value.length >= 8) formatted += '-' + value.substr(7, 2);
+                if (value.length >= 10) formatted += '-' + value.substr(9, 2);
+
+                e.target.value = formatted;
+
+                // Корректировка курсора
+                let newLength = formatted.length;
+                let newCursor = cursor + (newLength - oldLength);
+                if (newCursor > newLength) newCursor = newLength;
+
+                setTimeout(() => {
+                    e.target.setSelectionRange(newCursor, newCursor);
+                }, 0);
+            });
+
+            if (input.value) {
+                input.dispatchEvent(new Event('input'));
+            }
+        });
+    });
+</script>
