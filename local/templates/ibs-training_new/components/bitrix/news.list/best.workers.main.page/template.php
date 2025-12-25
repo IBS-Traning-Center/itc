@@ -16,20 +16,6 @@ Loc::loadMessages(__FILE__);
 $this->setFrameMode(false);
 
 if (!empty($arResult['ITEMS'])) : ?>
-    <div class="stack_role-title-block">
-        <div class="container">
-            <?php if($arParams['SPECIAL_TITLE'] !== NULL):?>
-                <h2 class="stack_role-h2"><?= htmlspecialcharsBack($arParams['SPECIAL_TITLE']);?></h2>
-            <?php endif; ?>
-            <?php if($arParams['SPECIAL_DESCRIPTON_1'] !== NULL):?>
-                <p class="stack_role-desc"><?= $arParams['SPECIAL_DESCRIPTON_1'];?></p>
-            <?php endif; ?>
-            <?php if($arParams['SPECIAL_DESCRIPTON_2'] !== NULL):?>
-                <p class="stack_role-desc"><?= $arParams['SPECIAL_DESCRIPTON_2'];?></p>
-            <?php endif; ?>
-        </div>
-    </div>
-    <div class="stack_role-block-wrap">
         <div class="container stack_role-block">
             <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
                 <?php if ($item['PREVIEW_PICTURE']['SRC']) : ?>
@@ -57,5 +43,5 @@ if (!empty($arResult['ITEMS'])) : ?>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
-    </div>
+
 <?php endif; ?>

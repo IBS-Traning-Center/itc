@@ -22,10 +22,7 @@
     display: flex;
 }
 
-.stack_role-block-wrap{
-    padding: 100px 0 120px;
-    background-color: var(--light-gray);
-}
+
 
 .stack_role-item{
     width: 25%;
