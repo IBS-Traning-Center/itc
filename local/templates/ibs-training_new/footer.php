@@ -25,6 +25,7 @@
 <footer class="footer">
     <div class="container">
         <div class="top-menu-block-footer">
+            <div class>
             <?php $APPLICATION->IncludeComponent(
                 'bitrix:menu',
                 'main.footer',
@@ -35,6 +36,7 @@
                     'USE_EXT' => 'Y'
                 ]
             ); ?>
+            </div>
             <?php $APPLICATION->IncludeComponent(
                 'bitrix:menu',
                 'social.footer',
