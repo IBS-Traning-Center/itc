@@ -60,19 +60,18 @@
     color: #FFFFFF;
 }
 
-/* Мобильная версия — соответствует новому макету на ~490px */
 @media screen and (max-width: 1280px) {
     .subscribe-main-page-block {
         flex-direction: column;
         align-items: flex-start;
-        gap: 24px; /* как в Frame 851212740 → gap: 24px между текстом и кнопкой */
+        gap: 24px;
         padding-bottom: 40px !important;
     }
 
     .subscribe-main-page-block .main-content-sub {
         flex-direction: row;
-        align-items: flex-start; /* текст начинается сверху */
-        gap: 16px; /* как в новом макете */
+        align-items: flex-start;
+        gap: 16px;
         width: 100%;
         margin-right: 0;
     }
@@ -96,13 +95,13 @@
     }
 
     .subscribe-main-page-block .subscribe-btn {
-        align-self: stretch; /* растягиваем на всю доступную ширину */
+        align-self: stretch;
         width: 100%;
         max-width: none;
         min-width: unset;
         height: 54px;
         padding: 16px 40px;
-        margin-left: 0; /* убираем смещение влево */
+        margin-left: 0;
     }
 
     .subscribe-main-page-block .subscribe-btn span {
@@ -111,7 +110,6 @@
     }
 }
 
-/* Опционально: на очень узких экранах можно чуть уменьшить padding кнопки */
 @media screen and (max-width: 480px) {
     .subscribe-main-page-block .subscribe-btn {
         padding: 16px 20px;
