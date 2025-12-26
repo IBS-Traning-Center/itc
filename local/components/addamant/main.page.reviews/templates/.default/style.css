@@ -94,10 +94,12 @@
     padding: 24px;
     position: relative;
     min-height: 440px;
+    font-weight: 400;
 }
 
 .reviews-content > div .review-item .review-text-block .main-text span a {
     text-decoration: underline;
+    color: #2B418B;
 }
 
 .reviews-content > div .review-item .review-text-block .micro-elem {
@@ -121,16 +123,17 @@
 
 .reviews-content > div .review-item .user-info-block .user-text-info {
     margin-left: 24px;
+    font-weight: 400;
 }
 
 .reviews-content > div .review-item .user-info-block .user-image + .user-text-info {
-    margin-left: 0px;
+    margin-left: 16px;
 }
 
 .reviews-content > div .review-item .user-info-block .user-image {
     min-width: 102px;
     max-width: 102px;
-    padding: 25px 16px;
+    padding: 25px 0px;
 }
 
 .reviews-content > div .review-item .user-info-block .user-image img {
