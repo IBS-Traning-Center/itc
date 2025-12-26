@@ -26,10 +26,24 @@
 
 .our-services__wrap .our-services__item{
     padding: 32px 56px 32px 0;
+    position: relative;
+}
+
+.our-services__wrap .our-services__item p{
+    position: relative;
+    display: block;
+    width: calc(100% - 35px);
+    transform: translate(0, 0);
+    transition: transform 0.3s ease; 
+}
+
+.our-services__wrap .our-services__item:hover p{
+    transform: translate(32px, 0px);
+
 }
 
 .our-services__wrap .our-services__item:hover{
-    padding: 32px 56px 32px 32px;
+    padding: 32px 56px 32px 0;
 }
 
 @media (max-width: 1180px) {
