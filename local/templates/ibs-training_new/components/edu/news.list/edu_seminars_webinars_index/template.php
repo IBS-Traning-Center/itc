@@ -18,7 +18,6 @@ if (!function_exists('plural_form')) {
                 ?>
                 <div class="timetable-item timetable-item_seminar">
                     <div class="timetable-item-wrap">
-                        <!-- весь ваш текущий контент внутри -->
                         <div class="timetable-name-wrap">
                             <div class="name-n-code-wrap <?=$icon?>">
                                 <div class="code-icon-wrap">

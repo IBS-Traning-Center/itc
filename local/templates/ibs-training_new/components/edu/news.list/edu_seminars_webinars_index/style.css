@@ -7,7 +7,8 @@
     gap: 48px;
     width: 100%;
     max-width: 1920px;
-    height: 718px;
+    height: auto;
+    min-height: 718px;
     margin: 0 auto;
     background: #FFFFFF;
     border-bottom: 1px solid #B2B2B2;
@@ -35,25 +36,16 @@
 }
 
 .timetable-list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr)!important;
+    grid-auto-columns: 1fr 1fr 1fr;
     gap: 24px;
     width: 100%;
     max-width: 1680px;
     margin: 0 auto;
-    position: relative;
     flex: none;
     order: 1;
     flex-grow: 0;
-    overflow: hidden;
-}
-.timetable-list.no-slider {
-    width: 908px;
-    justify-content: flex-start;
-    margin: 0;
-    overflow: visible;
 }
 
 .timetable-item {
@@ -63,14 +55,11 @@
     align-items: flex-start;
     padding: 24px;
     gap: 32px;
-    width: 442px;
-    min-width: 442px;
+    width: 100%;
     height: 358px;
     background: #F0F0F0;
     border-bottom: 1px solid #000000;
-    flex-shrink: 0;
     flex: none;
-    order: 0;
     flex-grow: 0;
 }
 
@@ -88,7 +77,7 @@
     align-items: center;
     padding: 32px 40px;
     gap: 10px;
-    width: 394px;
+    width: 100%;
     height: 54px;
     background: #2B418B;
     flex: none;
@@ -115,144 +104,6 @@
     flex-grow: 0;
 }
 
-.timetable-list.slick-initialized {
-    display: block;
-    padding-bottom: 40px;
-}
-
-.timetable-list.slick-initialized .timetable-item {
-    margin-right: 24px;
-}
-
-.timetable-list .slick-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 58px;
-    height: 56px;
-    background: #000000;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 0;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-
-.timetable-list .slick-arrow:before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-top: 2px solid #FFFFFF;
-    border-right: 2px solid #FFFFFF;
-    transition: border-color 0.3s;
-}
-
-.timetable-list .slick-prev {
-    left: -80px;
-}
-
-.timetable-list .slick-prev:before {
-    transform: rotate(-135deg);
-    margin-right: -4px;
-}
-
-.timetable-list .slick-next {
-    right: -80px;
-}
-
-.timetable-list .slick-next:before {
-    transform: rotate(45deg);
-    margin-left: -4px;
-}
-
-.timetable-list .slick-arrow:hover {
-    background: #2B418B;
-}
-
-.timetable-list .slick-arrow:hover:before {
-    border-color: #FFFFFF;
-}
-
-.timetable-list .slick-arrow.slick-disabled {
-    opacity: 0.5;
-    cursor: default;
-}
-
-.timetable-list .slick-arrow.slick-disabled:hover {
-    background: #000000;
-}
-
-.timetable-list .slick-dots {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 60px 0 0 !important;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-
-.timetable-list .slick-dots li,
-.timetable-list .slick-dots li button {
-    width: 14px;
-    height: 14px;
-}
-
-.timetable-list .slick-dots li {
-    margin: 0 4px;
-}
-
-.timetable-list .slick-dots li button::before {
-    display: none;
-}
-
-.timetable-list .slick-dots li button {
-    width: 14px;
-    height: 14px;
-    border-radius: 14px;
-    background-color: #B2B2B2;
-    border: none;
-    font-size: 0;
-    cursor: pointer;
-    padding: 0;
-    transition: background-color 0.3s;
-}
-
-.timetable-list .slick-dots li.slick-active button {
-    opacity: 1;
-    background-color: #2B418B;
-}
-
-.timetable-list .slick-dots li button:hover {
-    background-color: #2B418B;
-}
-
-/* Выравнивание высоты слайдов */
-.timetable-list .slick-track {
-    display: flex;
-    align-items: stretch;
-}
-
-.timetable-list .slick-slide {
-    height: auto;
-}
-
-.timetable-list .slick-slide > div {
-    height: 100%;
-}
-
-.timetable-list .slick-list {
-    overflow: visible !important;
-    margin: 0 -12px;
-    padding: 0 12px 20px;
-}
-
 @media (max-width: 1440px) {
     .timetable-section {
         padding: 100px 60px 120px;
@@ -264,16 +115,9 @@
         line-height: 80px;
     }
 
-    .timetable-list .slick-prev {
-        left: -60px;
-    }
-
-    .timetable-list .slick-next {
-        right: -60px;
-    }
-
-    .timetable-list.no-slider {
-        width: 800px;
+    .timetable-list {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1320px;
     }
 }
 
@@ -290,47 +134,15 @@
         line-height: 56px;
     }
 
+    .timetable-list {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 880px;
+    }
+
     .timetable-item {
-        width: 420px;
-        min-width: 420px;
         height: auto;
         min-height: 380px;
         gap: 24px;
-    }
-
-    .timetable-list .slick-list {
-        margin: 0 -8px;
-        padding: 0 8px 20px;
-    }
-
-    .timetable-list .slick-prev {
-        left: -60px;
-    }
-
-    .timetable-list .slick-next {
-        right: -60px;
-    }
-
-    .timetable-list .slick-dots {
-        margin: 40px 0 0 !important;
-    }
-
-    .timetable-list.no-slider {
-        width: 864px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .timetable-list .slick-prev {
-        left: -40px;
-    }
-
-    .timetable-list .slick-next {
-        right: -40px;
-    }
-
-    .timetable-list.no-slider {
-        width: 700px;
     }
 }
 
@@ -338,6 +150,7 @@
     .timetable-section {
         padding: 60px 16px 80px;
         gap: 32px;
+        height: auto;
     }
 
     .timetable-title {
@@ -345,29 +158,13 @@
         line-height: 48px;
     }
 
-    .timetable-list .slick-arrow {
-        display: none !important;
-    }
-
-    .timetable-list .slick-dots {
-        margin: 32px 0 0 !important;
-    }
-
-    .timetable-item {
-        width: 100%;
+    .timetable-list {
+        grid-template-columns: 1fr;
         max-width: 420px;
-        min-width: auto;
-    }
-
-    .timetable-list.no-slider {
         width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        height: auto;
     }
 
-    .timetable-list.no-slider .timetable-item {
+    .timetable-list .timetable-item {
         width: 100%;
         max-width: 420px;
         height: auto;
@@ -377,46 +174,62 @@
 
 @media (max-width: 480px) {
     .timetable-section {
-        padding: 40px 16px 60px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 16px;
+        gap: 24px;
+        width: 100%;
+        height: auto;
+        min-height: 1093px;
+        background: #FFFFFF;
+        border-bottom: 1px solid #B2B2B2;
+        flex: none;
+        order: 11;
+        align-self: stretch;
+        flex-grow: 0;
     }
 
     .timetable-title {
-        font-size: 36px;
-        line-height: 44px;
+        width: 100%;
+        height: auto;
+        font-size: 24px;
+        line-height: 100%;
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
     }
 
-    .timetable-list .slick-dots {
-        margin: 24px 0 0 !important;
+    .timetable-list {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 0px !important;
+        gap: 24px !important;
+        width: 100% !important;
+        height: auto !important;
+        flex: none !important;
+        order: 1 !important;
+        flex-grow: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        grid-template-columns: 1fr !important;
     }
 
-    .timetable-list.no-slider {
-        gap: 16px;
+    .timetable-list .timetable-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 358px !important;
+        padding: 24px !important;
+        gap: 32px !important;
     }
 
     .timetable-item .button,
     .timetable-item a.button {
-        width: 100%;
-        padding: 24px 20px;
+        width: 100% !important;
+        padding: 24px 20px !important;
     }
-}
-
-.timetable-list .slick-dotted.slick-slider {
-    margin-bottom: 0;
-}
-
-.timetable-list .slick-slide {
-    transition: transform 0.3s ease;
-}
-
-.timetable-list .slick-arrow:focus {
-    outline: 2px solid #2B418B;
-    outline-offset: 2px;
-}
-
-.timetable-list.slick-initialized .timetable-item {
-    outline: none;
-}
-
-.timetable-list .slick-slide:focus {
-    outline: none;
 }

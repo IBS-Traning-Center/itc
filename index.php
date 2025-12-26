@@ -399,7 +399,7 @@ $APPLICATION->IncludeComponent(
 		"IBLOCK_ID" => "7",
 		"PROPERTY_CITYCHECK" => "0",
 		"PROPERTY_DATECHECK" => "0",
-		"NEWS_COUNT" => "20",
+		"NEWS_COUNT" => "4",
 		"SORT_BY1" => "PROPERTY_startdate",
 		"SORT_ORDER1" => "ASC",
 		"SORT_BY2" => "SORT",
