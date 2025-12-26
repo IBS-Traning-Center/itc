@@ -22,22 +22,35 @@ if (typeof TimetableSlider === 'undefined') {
                 this.timetableBlock.slick('unslick');
                 this.timetableBlock.removeClass('no-slider');
             }
-            const needSlider = (windowWidth >= 1180 && itemsCount >= 4) ||
-                (windowWidth < 1180 && itemsCount > 1);
+
+            let needSlider = false;
+
+            if (windowWidth >= 1180) {
+                needSlider = itemsCount > 3;
+            }
+            else if (windowWidth >= 768) {
+                needSlider = itemsCount > 2;
+            }
+            else {
+                needSlider = itemsCount > 1;
+            }
 
             if (needSlider) {
                 console.log(`Включаем слайдер для ${itemsCount} элементов`);
 
-                let slidesToShow = 4;
+                let slidesToShow = 3;
                 let arrows = true;
+                let infinite = false;
 
-                if (windowWidth < 1180) {
+                if (windowWidth >= 1180) {
                     slidesToShow = Math.min(3, itemsCount);
+                    arrows = true;
                 }
-                if (windowWidth < 1024) {
+                else if (windowWidth >= 768) {
                     slidesToShow = Math.min(2, itemsCount);
+                    arrows = true;
                 }
-                if (windowWidth < 768) {
+                else {
                     slidesToShow = 1;
                     arrows = false;
                 }
@@ -45,7 +58,7 @@ if (typeof TimetableSlider === 'undefined') {
                 this.timetableBlock.slick({
                     slidesToShow: slidesToShow,
                     slidesToScroll: 1,
-                    infinite: false,
+                    infinite: infinite,
                     dots: true,
                     arrows: arrows,
                     prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"></button>',
@@ -57,29 +70,46 @@ if (typeof TimetableSlider === 'undefined') {
                             breakpoint: 1180,
                             settings: {
                                 slidesToShow: Math.min(3, itemsCount),
-                                arrows: true
+                                slidesToScroll: 1,
+                                arrows: false,
+                                infinite: false
                             }
                         },
                         {
                             breakpoint: 1024,
                             settings: {
                                 slidesToShow: Math.min(2, itemsCount),
-                                arrows: true
+                                slidesToScroll: 1,
+                                arrows: true,
+                                infinite: false
                             }
                         },
                         {
                             breakpoint: 768,
                             settings: {
                                 slidesToShow: 1,
+                                slidesToScroll: 1,
                                 arrows: false,
-                                dots: true
+                                dots: true,
+                                infinite: false
                             }
                         }
                     ]
                 });
+                setTimeout(() => {
+                    this.adjustDotsPosition();
+                }, 100);
+
             } else {
                 console.log('Выключаем слайдер, все помещается');
                 this.timetableBlock.addClass('no-slider');
+            }
+        }
+
+        adjustDotsPosition() {
+            const dotsContainer = this.timetableBlock.find('.slick-dots');
+            if (dotsContainer.length) {
+                dotsContainer.css('margin-top', '60px'); // Увеличиваем отступ сверху для дотов
             }
         }
     }
