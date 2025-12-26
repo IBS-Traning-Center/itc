@@ -516,3 +516,105 @@ function stickyNavInit() {
     });
   }
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const tabsContainer = document.querySelector('.lk-tabs');
+  if (!tabsContainer) return;
+
+  const tabs = tabsContainer.querySelectorAll('.lk-tab');
+
+  const components = [];
+
+  const allComponents = document.querySelectorAll('.lk-content > *');
+
+  let isAfterHeader = false;
+  let foundNotification = false;
+
+  allComponents.forEach(element => {
+    if (element.classList.contains('lk-header-row')) {
+      isAfterHeader = true;
+      return;
+    }
+
+    if (element.classList.contains('lk-notification')) {
+      foundNotification = true;
+      return;
+    }
+
+    if (isAfterHeader && !foundNotification &&
+        !element.classList.contains('lk-tabs') &&
+        !element.classList.contains('lk-header__right')) {
+      components.push(element);
+
+      if (element.innerHTML.includes('sert-lk') || element.querySelector('[class*="sert"]')) {
+        element.setAttribute('data-tab-type', 'sert');
+      } else if (element.innerHTML.includes('courses-lk') || element.querySelector('[class*="course"]')) {
+        element.setAttribute('data-tab-type', 'courses');
+      } else if (element.innerHTML.includes('programms-lk') || element.querySelector('[class*="program"]')) {
+        element.setAttribute('data-tab-type', 'programs');
+      } else {
+        element.setAttribute('data-tab-type', 'all');
+      }
+    }
+  });
+
+  if (components.length >= 3) {
+    components[0].setAttribute('data-tab-type', 'sert');
+    components[1].setAttribute('data-tab-type', 'courses');
+    components[2].setAttribute('data-tab-type', 'programs');
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('is-active'));
+
+      this.classList.add('is-active');
+
+      const tabText = this.textContent.trim();
+
+      switch(tabText) {
+        case 'Все':
+          components.forEach(comp => {
+            comp.style.display = 'block';
+          });
+          break;
+
+        case 'Сертификация':
+          components.forEach(comp => {
+            if (comp.getAttribute('data-tab-type') === 'sert') {
+              comp.style.display = 'block';
+            } else {
+              comp.style.display = 'none';
+            }
+          });
+          break;
+
+        case 'Курсы':
+          components.forEach(comp => {
+            if (comp.getAttribute('data-tab-type') === 'courses') {
+              comp.style.display = 'block';
+            } else {
+              comp.style.display = 'none';
+            }
+          });
+          break;
+
+        case 'Программы':
+          components.forEach(comp => {
+            if (comp.getAttribute('data-tab-type') === 'programs') {
+              comp.style.display = 'block';
+            } else {
+              comp.style.display = 'none';
+            }
+          });
+          break;
+      }
+    });
+  });
+
+  const allTab = Array.from(tabs).find(tab => tab.textContent.trim() === 'Все');
+  if (allTab && allTab.classList.contains('is-active')) {
+    allTab.click();
+  } else if (tabs[0]) {
+    tabs[0].click();
+  }
+});
