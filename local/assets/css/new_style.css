@@ -191,6 +191,7 @@ body {
     height: fit-content;
     background-color: var(--white);
     padding: 60px 120px;
+    z-index: 2;
 }
 
 #header .search-hidden-block .search-block {

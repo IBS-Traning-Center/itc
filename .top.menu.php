@@ -14,6 +14,13 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
+    Array(
+        "Бесплатные вебинары",
+        "/timetable/?type=events",
+        Array(),
+        Array(),
+        ""
+    ),
 	Array(
 		"Корпоративное обучение", 
 		"/corporate/", 
@@ -35,27 +42,13 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
-	Array(
-		"Блог", 
-		"/about/news/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"О нас", 
-		"/about/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Бесплатные вебинары", 
-		"/timetable/?type=events",
-		Array(), 
-		Array(), 
-		"" 
-	),
+    Array(
+        "О нас",
+        "/about/",
+        Array(),
+        Array(),
+        ""
+    ),
 	Array(
 		"Личный кабинет", 
 		"/personal/", 
