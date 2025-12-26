@@ -74,7 +74,7 @@ body {
     max-width: 24px;
     min-height: 24px;
     max-height: 24px;
-    border: 1px solid var(--black);
+    /*border: 1px solid var(--black);*/
     margin-right: 16px;
     border-radius: 0;
 }
@@ -2792,53 +2792,39 @@ span.time.time-with-tooltip:hover .tooltip {
     outline: none;
 }
 
-.subscription-form-container .checkbox-item {
+.checkbox-item {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
     position: relative;
 }
 
-.subscription-form-container .real-checkbox {
+.subscription-form-container .jq-checkbox.real-checkbox {
     position: absolute;
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    cursor: pointer;
+    z-index: -1;
+    width: 16px;
+    height: 16px;
+}
+
+.subscription-form-container .real-checkbox input{
     opacity: 0;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    z-index: 1;
 }
 
-.subscription-form-container .custom-checkbox {
-    width: 20px;
-    height: 20px;
-    background-color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    margin-right: 16px;
-    flex-shrink: 0;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border-radius: 0;
+.custom-checkbox {
+    display: none;
 }
 
-.subscription-form-container .real-checkbox:checked + .custom-checkbox {
-    background-color: #272751;
-    border-color: #4F72B1;
-}
-
-.subscription-form-container .real-checkbox:checked + .custom-checkbox::after {
-    content: "✓";
-    position: absolute;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.subscription-form-container .real-checkbox:focus + .custom-checkbox {
-    outline: 1px solid #4F72B1;
+.subscription-form-container  .jq-checkbox.checked .jq-checkbox__div{
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    margin: 0;
 }
 
 .subscription-form-container .checkbox-label {
@@ -2847,9 +2833,13 @@ span.time.time-with-tooltip:hover .tooltip {
     line-height: 14px;
     user-select: none;
     flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    padding-left: 32px;
+    cursor: pointer;
 }
 
-.subscription-form-container .checkbox-label a {xs
+.subscription-form-container .checkbox-label a {
     transition: color 0.2s;
     cursor: pointer;
     text-decoration: underline;

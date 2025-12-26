@@ -527,14 +527,16 @@ document.addEventListener('DOMContentLoaded', function() {
   const emailError = document.getElementById('email-error');
   const policyError = document.getElementById('policy-error');
   const termsError = document.getElementById('terms-error');
-
+  
   // Обновление скрытых селектов при изменении чекбоксов
   policyCheckbox.addEventListener('change', function() {
+    console.log(1);
       policySelect.value = this.checked ? 'true' : 'false';
       policyError.style.display = this.checked ? 'none' : 'block';
   });
 
   termsCheckbox.addEventListener('change', function() {
+    console.log(2);
       termsSelect.value = this.checked ? 'true' : 'false';
       termsError.style.display = this.checked ? 'none' : 'block';
   });

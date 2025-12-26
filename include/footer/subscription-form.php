@@ -15,7 +15,7 @@
         <!-- Скрытые поля для параметров -->
         <input type="hidden" name="recipient[recipient_values_attributes][576784][recipient_parameter_id]" id="recipient_recipient_values_attributes_576784_recipient_parameter_id" value="576784" />
         <input type="hidden" name="recipient[recipient_values_attributes][576785][recipient_parameter_id]" id="recipient_recipient_values_attributes_576785_recipient_parameter_id" value="576785" />
-        <button type='submit' class="submit-btn">Подписаться</button>
+        
         <!-- Чекбоксы для согласия (заменяют селекты) -->
         <div class="checkbox-group">
             <!-- Согласие с политикой -->
@@ -23,7 +23,7 @@
                 <input type="checkbox" id="policy_checkbox" class="real-checkbox" required>
                 <span class="custom-checkbox"></span>
                 <label for="policy_checkbox" class="checkbox-label required">
-                    Ознакомлен с <a href="#">Политикой обработки персональных данных</a>
+                    Ознакомлен с <a href="/privacy-policy/">Политикой обработки персональных данных</a>
                 </label>
                 <!-- Скрытый селект для отправки данных -->
                 <select name="recipient[recipient_values_attributes][576784][value]" id="recipient_recipient_values_attributes_576784_value" class="hidden-select" required="required">
@@ -38,7 +38,7 @@
                 <input type="checkbox" id="terms_checkbox" class="real-checkbox" required>
                 <span class="custom-checkbox"></span>
                 <label for="terms_checkbox" class="checkbox-label required">
-                    Соглашаюсь с <a href="#">Условиями обработки персональных данных</a>
+                    Соглашаюсь с <a href="/agree_of_subject/">Условиями обработки персональных данных</a>
                 </label>
                 <!-- Скрытый селект для отправки данных -->
                 <select name="recipient[recipient_values_attributes][576785][value]" id="recipient_recipient_values_attributes_576785_value" class="hidden-select" required="required">
@@ -48,7 +48,8 @@
                 <div class="error-message" id="terms-error">Необходимо принять условия обработки данных</div>
             </div>
         </div>
-    
+        
+        <button type='submit' class="submit-btn">Подписаться</button>
         
     </form>
 </div>
