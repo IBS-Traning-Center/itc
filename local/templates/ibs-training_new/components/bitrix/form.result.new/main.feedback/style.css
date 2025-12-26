@@ -1,5 +1,5 @@
 .main-feedback-form-block {
-    background-color: var(--button-blue);
+    background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
     padding: 140px 0 180px;
 }
 
@@ -71,7 +71,7 @@
     height: fit-content;
     background-color: var(--white);
     padding: 32px 40px;
-    color: var(--button-blue);
+    color: #2B418B;
     border: none;
     border-radius: 0;
     font-size: 24px;

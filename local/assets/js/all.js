@@ -516,7 +516,96 @@ function stickyNavInit() {
     });
   }
 }
+
 document.addEventListener('DOMContentLoaded', function() {
+  /** форма подсписки из футера */
+  const form = document.getElementById('subscriptionForm');
+  const policyCheckbox = document.getElementById('policy_checkbox');
+  const termsCheckbox = document.getElementById('terms_checkbox');
+  const policySelect = document.getElementById('recipient_recipient_values_attributes_576784_value');
+  const termsSelect = document.getElementById('recipient_recipient_values_attributes_576785_value');
+  const emailInput = document.getElementById('recipient_email');
+  const emailError = document.getElementById('email-error');
+  const policyError = document.getElementById('policy-error');
+  const termsError = document.getElementById('terms-error');
+  
+  // Обновление скрытых селектов при изменении чекбоксов
+  policyCheckbox.addEventListener('change', function() {
+    console.log(1);
+      policySelect.value = this.checked ? 'true' : 'false';
+      policyError.style.display = this.checked ? 'none' : 'block';
+  });
+
+  termsCheckbox.addEventListener('change', function() {
+    console.log(2);
+      termsSelect.value = this.checked ? 'true' : 'false';
+      termsError.style.display = this.checked ? 'none' : 'block';
+  });
+
+  // Валидация email
+  emailInput.addEventListener('input', function() {
+      const email = this.value;
+      const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      
+      if (email && !isValid) {
+          emailError.style.display = 'block';
+          this.style.borderColor = '#ff3366';
+      } else {
+          emailError.style.display = 'none';
+          this.style.borderColor = '#333333';
+      }
+  });
+
+  // Валидация формы перед отправкой
+  form.addEventListener('submit', function(e) {
+      let isValid = true;
+      
+      // Проверка email
+      const email = emailInput.value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+          emailError.style.display = 'block';
+          emailInput.style.borderColor = '#ff3366';
+          isValid = false;
+      } else {
+          emailError.style.display = 'none';
+          emailInput.style.borderColor = '#333333';
+      }
+      
+      // Проверка чекбоксов
+      if (!policyCheckbox.checked) {
+          policyError.style.display = 'block';
+          policyCheckbox.nextElementSibling.style.borderColor = '#ff3366';
+          isValid = false;
+      } else {
+          policyError.style.display = 'none';
+          policyCheckbox.nextElementSibling.style.borderColor = '#4F72B1';
+      }
+      
+      if (!termsCheckbox.checked) {
+          termsError.style.display = 'block';
+          termsCheckbox.nextElementSibling.style.borderColor = '#ff3366';
+          isValid = false;
+      } else {
+          termsError.style.display = 'none';
+          termsCheckbox.nextElementSibling.style.borderColor = '#4F72B1';
+      }
+      
+      if (!isValid) {
+          e.preventDefault();
+          // Прокрутка к первой ошибке
+          const firstError = document.querySelector('.error-message[style*="display: block"]');
+          if (firstError) {
+              firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+      } else {
+          // Показать сообщение об успехе перед отправкой
+          alert('Спасибо за подписку! Проверьте вашу почту для подтверждения.');
+      }
+  });
+
+  /** табы ЛК*/
+  
   const tabsContainer = document.querySelector('.lk-tabs');
   if (!tabsContainer) return;
 
