@@ -38,7 +38,7 @@ Loc::loadMessages(__FILE__);
                         <?php if ($question['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') : ?>
                             <?php echo $question['HTML_CODE']; ?>
                         <?php else : ?>
-                            <?php if ($questionId == 'email') : ?>
+                            <?php if ($questionId == 'phone') : ?>
                                 <div class="flex-question-block">
                             <?php endif; ?>
                             <div class="question-block <?= $questionId ?>">
@@ -61,7 +61,7 @@ Loc::loadMessages(__FILE__);
                                         value="<?= $value ?: '' ?>">
                                 <?php endif; ?>
                             </div>
-                            <?php if ($questionId == 'phone') : ?>
+                            <?php if ($questionId == 'email') : ?>
                                 </div>
                             <?php endif; ?>
                         <?php endif; ?>
