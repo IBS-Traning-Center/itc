@@ -34,7 +34,7 @@ $APPLICATION->SetTitle("Персональный раздел");
                         <div class="stat-title">Курса пройдено</div>
                     </div>
                     <button class="btn-outline">
-                        <span class="btn-text">Перейти</span>
+                        <span class="btn-text">Мои документы</span>
                     </button>
                 </div>
 
@@ -44,7 +44,7 @@ $APPLICATION->SetTitle("Персональный раздел");
                         <div class="stat-title">Программ пройдено</div>
                     </div>
                     <button class="btn-outline">
-                        <span class="btn-text">Перейти</span>
+                        <span class="btn-text">Программы обучения</span>
                     </button>
                 </div>
 
@@ -54,7 +54,7 @@ $APPLICATION->SetTitle("Персональный раздел");
                         <div class="stat-title">Сертификация пройдена</div>
                     </div>
                     <button class="btn-outline">
-                        <span class="btn-text">Перейти</span>
+                        <span class="btn-text">Мои сертификаты</span>
                     </button>
                 </div>
 
@@ -66,7 +66,7 @@ $APPLICATION->SetTitle("Персональный раздел");
                     <div class="frame-851213202">
                     </div>
                     <button class="btn-outline">
-                        <span class="btn-text">Перейти</span>
+                        <span class="btn-text">Мои баллы</span>
                     </button>
                 </div>
             </div>
@@ -202,7 +202,7 @@ $APPLICATION->SetTitle("Персональный раздел");
             flex-grow: 0;
             cursor: pointer;
             border: none;
-            transition: all 0.3s ease; /* плавность ховера */
+            transition: all 0.3s ease;
         }
 
         .btn-outline {
@@ -224,7 +224,6 @@ $APPLICATION->SetTitle("Персональный раздел");
         }
 
 
-        /* === ХОВЕР-ЭФФЕКТЫ ТОЛЬКО ДЛЯ КНОПОК === */
         .btn-outline:hover {
             background: #2B418B;
             border-color: #2B418B;
@@ -234,16 +233,12 @@ $APPLICATION->SetTitle("Персональный раздел");
             color: #FFFFFF;
         }
 
-
-
-        /* Остальные стили без изменений */
         .course-card.featured .course-code {
             color: #FFFFFF;
         }
         .course-card:not(.featured) .course-code {
             color: #000000;
         }
-        /* ... остальные ваши стили ... */
 
         @media (max-width: 1919px) {
             .frame-851212741 {
