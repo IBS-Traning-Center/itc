@@ -41,10 +41,10 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
                 <input
                         type="text"
                         name="PERSONAL_PHONE"
-                        id="phone-input"
-                        placeholder="+7 (___) ___-__-__"
-                        value="<?=htmlspecialcharsbx($arResult["arUser"]["PERSONAL_PHONE"])?>"
-                        autocomplete="off"
+                        id="phone_input"
+                placeholder="+7 (___) ___-__-__"
+                value="<?=htmlspecialcharsbx($arResult["arUser"]["PERSONAL_PHONE"])?>"
+                autocomplete="off"
                 />
             </div>
 
@@ -90,46 +90,20 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
                 <div>Удалить аккаунт</div>
             </div>
         </form>
+        <?php CJSCore::Init(['masked_input']); ?>
+
+        <script>
+            BX.ready(function() {
+                var phoneInput = BX('phone_input');
+                if (phoneInput) {
+                    new BX.MaskedInput({
+                        mask: '+7 (999) 999-99-99',
+                        input: phoneInput,
+                        placeholder: '_'
+                    });
+                }
+            });
+        </script>
     </main>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.9/inputmask.min.js"
-        integrity="sha512-1h6rN0X4o5yC365tF4v5n14nM6UgR2p+1eNSKAfI7wzJ6cN8oV1x4uWnz+Hg9zC6MxtW+KmO2b2GLEP9wtXg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const phoneInput = document.getElementById('phone-input');
-
-        const mask = new Inputmask({
-            mask: "+7 (999) 999-99-99",
-            placeholder: "_",
-            showMaskOnHover: false,
-            clearIncomplete: false,
-            onBeforePaste: function (pastedValue) {
-                return pastedValue.replace(/[^\d]/g, '').substr(0, 11);
-            }
-        });
-
-        mask.mask(phoneInput);
-        if (phoneInput.value && phoneInput.value.trim() !== '') {
-            let cleaned = phoneInput.value.replace(/[^\d]/g, '');
-            if (cleaned.length === 11 && cleaned.startsWith('8')) {
-                cleaned = '7' + cleaned.substr(1);
-            } else if (cleaned.length === 10) {
-                cleaned = '7' + cleaned;
-            } else if (cleaned.length === 11 && cleaned.startsWith('7')) {
-            } else {
-                cleaned = cleaned.substr(0, 11);
-            }
-            phoneInput.value = '';
-            phoneInput.inputmask.setValue('7' + cleaned.substr(1, 10).padEnd(10, '_'));
-        }
-
-
-        phoneInput.addEventListener('blur', function () {
-            if (this.inputmask && this.inputmask.isComplete() === false) {
-            }
-        });
-    });
-</script>
