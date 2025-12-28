@@ -34,6 +34,7 @@
     line-height: 72px;
     color: #FFFFFF;
     margin: 0 0 20px 0;
+    width: 600px;
 }
 
 .contact__text p {
@@ -376,9 +377,7 @@ input[name="web_form_apply"] {
     text-align: center;
 }
 
-.custom-popup__button:hover {
-    background: #1a2d6b;
-}
+
 
 .contact__form p[style*="font-size: 12px"] {
     font-family: 'Stag Sans' !important;

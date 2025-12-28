@@ -124,7 +124,9 @@
         }
     });
 </script>
-<div <?php if ($_REQUEST["formresult"] == "addok") { ?>style="display: block;" <?php } ?> class="mask">
+<div <?php if ($_REQUEST["formresult"] == "addok" && (!empty($_REQUEST['WEB_FORM_ID']) && $_REQUEST['WEB_FORM_ID'] == 54 ? false : true)) { ?>
+    style="display: block;"
+<?php } ?> class="mask">
     <div class="success-message">
         <a href="#" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
         Спасибо! <br />Форма отправлена успешно.

@@ -8,7 +8,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
  * @var array $arResult
  */
 ?>
-
 <div class="custom-popup-overlay" id="customSuccessPopup">
     <div class="custom-popup">
         <button class="custom-popup__close" onclick="closeCustomPopup()">
@@ -32,7 +31,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
         <div class="contact__text">
             <h2>
-                <?= $arResult["isFormTitle"] ? $arResult["FORM_TITLE"] : 'Нужна помощь? Оставьте заявку, и мы свяжемся с вами в ближайшее время' ?>
+                <?= $arResult["FORM_TITLE"] ?>
             </h2>
             <?php if ($arResult["isFormDescription"] == "Y"): ?>
                 <p><?= $arResult["FORM_DESCRIPTION"] ?></p>
@@ -40,145 +39,137 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
         </div>
 
         <?= $arResult["FORM_HEADER"] ?>
+
         <div class="contact__form">
-            <?php
-            foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion):
-                if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden'):
-                    echo $arQuestion["HTML_CODE"];
-                endif;
-            endforeach;
-            ?>
-
-            <?php
-            foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion):
-                if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] != 'hidden'):
-                    $fieldType = $arQuestion['STRUCTURE'][0]['FIELD_TYPE'];
-                    $isError = isset($arResult["FORM_ERRORS"][$FIELD_SID]);
-                    $fieldClass = $isError ? 'error' : '';
-                    $placeholder = htmlspecialcharsbx($arQuestion["CAPTION"]);
-
-                    if ($arQuestion["REQUIRED"] == "Y" && !strpos($placeholder, '*')) {
-                        $placeholder .= ' *';
-                    }
-
-                    $fieldName = strtolower($arQuestion["CAPTION"]);
-
-                    $inputType = 'text';
-                    $fieldTypeClass = '';
-
-                    if (strpos($fieldName, 'телефон') !== false || strpos($fieldName, 'phone') !== false || strpos($fieldName, 'тел') !== false) {
-                        $inputType = 'tel';
-                        $fieldTypeClass = 'phone';
-                    } elseif (strpos($fieldName, 'email') !== false || strpos($fieldName, 'почт') !== false || strpos($fieldName, 'e-mail') !== false) {
-                        $inputType = 'email';
-                        $fieldTypeClass = 'email';
-                    } elseif (strpos($fieldName, 'имя') !== false || strpos($fieldName, 'name') !== false || strpos($fieldName, 'фио') !== false) {
-                        $fieldTypeClass = 'name';
-                    }
-                    ?>
-
-                    <div class="form-field">
-                        <?php if ($fieldType == 'textarea'): ?>
-
-                            <?php
-                            $textareaHtml = $arQuestion["HTML_CODE"];
-                            if ($arQuestion["REQUIRED"] == "Y" && strpos($textareaHtml, 'required') === false) {
-                                $textareaHtml = str_replace('<textarea', '<textarea required', $textareaHtml);
-                            }
-                            echo $textareaHtml;
-                            ?>
-                            <?php if ($isError): ?>
-                                <span class="form-error"><?= $arResult["FORM_ERRORS"][$FIELD_SID] ?></span>
-                            <?php endif; ?>
-
-                        <?php elseif ($fieldType == 'checkbox'): ?>
-                            <label class="checkbox <?= $fieldClass ?>">
-                                <?php
-                                $checkboxHtml = $arQuestion["HTML_CODE"];
-                                if ($arQuestion["REQUIRED"] == "Y" && strpos($checkboxHtml, 'required') === false) {
-                                    $checkboxHtml = str_replace('<input', '<input required', $checkboxHtml);
-                                }
-                                echo $checkboxHtml;
-                                ?>
-                                <span><?= $arQuestion["CAPTION"] ?>
-                                    <?php if ($arQuestion["REQUIRED"] == "Y"): ?>
-                                        <span class="required">*</span>
-                                    <?php endif; ?>
-                                </span>
-                                <?php if ($isError): ?>
-                                    <span class="form-error"><?= $arResult["FORM_ERRORS"][$FIELD_SID] ?></span>
-                                <?php endif; ?>
-                            </label>
-
-                        <?php elseif ($fieldType == 'dropdown'): ?>
-
-                            <?php
-                            $selectHtml = $arQuestion["HTML_CODE"];
-                            if ($arQuestion["REQUIRED"] == "Y" && strpos($selectHtml, 'required') === false) {
-                                $selectHtml = str_replace('<select', '<select required', $selectHtml);
-                            }
-                            echo $selectHtml;
-                            ?>
-                            <?php if ($isError): ?>
-                                <span class="form-error"><?= $arResult["FORM_ERRORS"][$FIELD_SID] ?></span>
-                            <?php endif; ?>
-
-                        <?php else: ?>
-                            <?php
-                            $fieldHtml = $arQuestion["HTML_CODE"];
-
-                            if ($inputType !== 'text') {
-                                $fieldHtml = preg_replace('/type="text"/', 'type="' . $inputType . '"', $fieldHtml);
-                            }
-                            if ($arQuestion["REQUIRED"] == "Y" && strpos($fieldHtml, 'required') === false) {
-                                $fieldHtml = str_replace('<input', '<input required', $fieldHtml);
-                            }
-
-                            if ($isError) {
-                                $fieldHtml = preg_replace('/class="([^"]*)"/', 'class="$1 ' . $fieldClass . '"', $fieldHtml);
-                                if (strpos($fieldHtml, 'class="') === false) {
-                                    $fieldHtml = str_replace('<input ', '<input class="' . $fieldClass . '" ', $fieldHtml);
-                                }
-                            }
-
-                            if (strpos($fieldHtml, 'placeholder=') === false) {
-                                $fieldHtml = preg_replace('/<input/', '<input placeholder="' . $placeholder . '"', $fieldHtml);
-                            }
-                            ?>
-
-                            <div class="question-block <?= $fieldTypeClass ?>">
-                                <?= $fieldHtml ?>
-                            </div>
-
-                            <?php if ($isError): ?>
-                                <span class="form-error"><?= $arResult["FORM_ERRORS"][$FIELD_SID] ?></span>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                    </div>
-
+            
+            <?php foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
+                <?php if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden'): ?>
+                    <?= $arQuestion["HTML_CODE"] ?>
                 <?php endif; ?>
             <?php endforeach; ?>
 
-            <?php if($arResult["isUseCaptcha"] == "Y"): ?>
+            <?php foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
+                <?php if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') continue; ?>
+
+                <?php
+                $fieldType = $arQuestion['STRUCTURE'][0]['FIELD_TYPE'];
+                $isRequired = $arQuestion["REQUIRED"] === "Y";
+                $isError = !empty($arResult["FORM_ERRORS"][$FIELD_SID]);
+                $errorClass = $isError ? 'error' : '';
+                $placeholder = htmlspecialcharsbx($arQuestion["CAPTION"]);
+                if ($isRequired && strpos($placeholder, '*') === false) {
+                    $placeholder .= ' *';
+                }
+                $fieldNameLower = mb_strtolower($arQuestion["CAPTION"]);
+                $inputType = 'text';
+                $fieldWrapperClass = '';
+
+                if (strpos($fieldNameLower, 'телефон') !== false || strpos($fieldNameLower, 'phone') !== false || strpos($fieldNameLower, 'тел') !== false) {
+                    $inputType = 'tel';
+                    $fieldWrapperClass = 'phone';
+                } elseif (strpos($fieldNameLower, 'email') !== false || strpos($fieldNameLower, 'почт') !== false || strpos($fieldNameLower, 'e-mail') !== false) {
+                    $inputType = 'email';
+                    $fieldWrapperClass = 'email';
+                } elseif (strpos($fieldNameLower, 'имя') !== false || strpos($fieldNameLower, 'name') !== false || strpos($fieldNameLower, 'фио') !== false) {
+                    $fieldWrapperClass = 'name';
+                }
+                ?>
+
+                <div class="form-field <?= $errorClass ?>">
+
+                    <?php if ($fieldType == 'textarea'): ?>
+                        <?php
+                        $html = $arQuestion["HTML_CODE"];
+                        if (strpos($html, 'placeholder=') === false) {
+                            $html = preg_replace('/<textarea/', '<textarea placeholder="' . $placeholder . '"', $html);
+                        }
+                        // Добавляем required, если нужно
+                        if ($isRequired && strpos($html, 'required') === false) {
+                            $html = str_replace('<textarea', '<textarea required', $html);
+                        }
+                        echo $html;
+                        ?>
+
+                    <?php elseif ($fieldType == 'checkbox'): ?>
+                        <label class="checkbox <?= $errorClass ?>">
+                            <?php
+                            $html = $arQuestion["HTML_CODE"];
+                            if ($isRequired && strpos($html, 'required') === false) {
+                                $html = str_replace('<input', '<input required', $html);
+                            }
+                            echo $html;
+                            ?>
+                            <span><?= $arQuestion["CAPTION"] ?>
+                                <?php if ($isRequired): ?><span class="required">*</span><?php endif; ?>
+                            </span>
+                        </label>
+
+                    <?php elseif ($fieldType == 'dropdown'): ?>
+                        <?php
+                        $html = $arQuestion["HTML_CODE"];
+                        if ($isRequired && strpos($html, 'required') === false) {
+                            $html = str_replace('<select', '<select required', $html);
+                        }
+                        if ($isRequired && strpos($html, '<option value="">') === false && strpos($html, "<option value=''") === false) {
+                            $html = str_replace('<select', '<select><option value="">— Выберите —</option>', $html);
+                        }
+                        echo $html;
+                        ?>
+
+                    <?php else:?>
+                        <?php
+                        $html = $arQuestion["HTML_CODE"];
+                        if ($inputType !== 'text') {
+                            $html = preg_replace('/type="text"/i', 'type="' . $inputType . '"', $html);
+                        }
+
+                        if ($isRequired && strpos($html, 'required') === false) {
+                            $html = str_replace('<input', '<input required', $html);
+                        }
+
+                        if ($isError) {
+                            if (strpos($html, 'class="') !== false) {
+                                $html = preg_replace('/class="([^"]*)"/', 'class="$1 error"', $html);
+                            } else {
+                                $html = str_replace('<input ', '<input class="error" ', $html);
+                            }
+                        }
+
+                        if (strpos($html, 'placeholder=') === false) {
+                            $html = preg_replace('/<input/', '<input placeholder="' . $placeholder . '"', $html);
+                        }
+
+                        echo '<div class="question-block ' . $fieldWrapperClass . '">' . $html . '</div>';
+                        ?>
+
+                    <?php endif; ?>
+
+                    <?php if ($isError): ?>
+                        <span class="form-error"><?= htmlspecialcharsbx($arResult["FORM_ERRORS"][$FIELD_SID]) ?></span>
+                    <?php endif; ?>
+
+                </div>
+            <?php endforeach; ?>
+            <?php if ($arResult["isUseCaptcha"] == "Y"): ?>
                 <div class="captcha-container">
-                    <label class="field-label">
-                        <?= GetMessage("FORM_CAPTCHA_TABLE_TITLE") ?>
-                    </label>
+                    <label class="field-label"><?= GetMessage("FORM_CAPTCHA_TABLE_TITLE") ?></label>
                     <input type="hidden" name="captcha_sid" value="<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" />
                     <div style="margin-bottom: 10px;">
                         <img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" width="180" height="40" alt="CAPTCHA"/>
                     </div>
                     <label class="field-label">
-                        <?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?>
-                        <span class="required">*</span>
+                        <?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?> <span class="required">*</span>
                     </label>
                     <input
                             type="text"
                             name="captcha_word"
                             placeholder="<?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?> *"
-                            class="inputtext"
+                            class="inputtext <?= !empty($arResult['FORM_ERRORS']['captcha_word']) ? 'error' : '' ?>"
                             required
                     >
+                    <?php if (!empty($arResult['FORM_ERRORS']['captcha_word'])): ?>
+                        <span class="form-error"><?= htmlspecialcharsbx($arResult['FORM_ERRORS']['captcha_word']) ?></span>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
 
@@ -187,7 +178,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
                         type="submit"
                         name="web_form_submit"
                         value="<?= htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]); ?>"
-                    <?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled" : ""); ?>
+                    <?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled" : "") ?>
                 />
             </div>
 
@@ -196,6 +187,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
                     <?= $arResult["REQUIRED_SIGN"] ?> - <?= GetMessage("FORM_REQUIRED_FIELDS") ?>
                 </p>
             <?php endif; ?>
+
         </div>
 
         <?= $arResult["FORM_FOOTER"] ?>
