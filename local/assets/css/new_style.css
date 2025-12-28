@@ -74,7 +74,7 @@ body {
     max-width: 24px;
     min-height: 24px;
     max-height: 24px;
-    border: 1px solid var(--black);
+    /*border: 1px solid var(--black);*/
     margin-right: 16px;
     border-radius: 0;
 }
@@ -191,6 +191,7 @@ body {
     height: fit-content;
     background-color: var(--white);
     padding: 60px 120px;
+    z-index: 2;
 }
 
 #header .search-hidden-block .search-block {
@@ -2749,4 +2750,160 @@ span.time.time-with-tooltip:hover .tooltip {
         font-size: 16px;
         line-height: 24px;
     }
+}
+
+.subscription-form-container {
+    position: relative;
+    margin-top: 16px;
+    max-width: 216px;
+}
+
+.subscription-form-container .form-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.subscription-form-container .form-group {
+    margin-bottom: 16px
+}
+
+.subscription-form-container input[type="text"],
+.subscription-form-container input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    background-color: #F0F0F0;
+    border: 1px solid #000000;
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 0;
+}
+
+.subscription-form-container input[type="text"]::placeholder,
+.subscription-form-container input[type="email"]::placeholder {
+    color: #666666;
+}
+
+.subscription-form-container input[type="text"]:focus,
+.subscription-form-container input[type="email"]:focus {
+    outline: none;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.subscription-form-container .jq-checkbox.real-checkbox {
+    position: absolute;
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    cursor: pointer;
+    z-index: -1;
+    width: 16px;
+    height: 16px;
+}
+
+.subscription-form-container .real-checkbox input{
+    opacity: 0;
+}
+
+.custom-checkbox {
+    display: none;
+}
+
+.subscription-form-container  .jq-checkbox.checked .jq-checkbox__div{
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    margin: 0;
+}
+
+.subscription-form-container .checkbox-label {
+    color: #ffffff;
+    font-size: 10px;
+    line-height: 14px;
+    user-select: none;
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    padding-left: 32px;
+    cursor: pointer;
+}
+
+.subscription-form-container .checkbox-label a {
+    transition: color 0.2s;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.subscription-form-container .checkbox-label a:hover {
+    text-decoration: none;
+}
+
+.subscription-form-container .submit-btn {
+    width: 100%;
+    padding: 4px;
+    background: linear-gradient(to right, #272751 0%, #4F72B1 100%);
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    margin-bottom: 16px;
+}
+
+.subscription-form-container .submit-btn:hover {
+    background: linear-gradient(to right, #1d1d41 0%, #3a5a94 100%);
+}
+.subscription-form-container .hidden-fields {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.subscription-form-container .hidden-select {
+    display: none;
+}
+
+.subscription-form-container .error-message {
+    color: #ff3366;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    font-weight: 500;
+}
+
+.subscription-form-container .form-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #666666;
+    font-size: 12px;
+    border-top: 1px solid #333333;
+    padding-top: 20px;
+}
+
+.top-menu-block-footer-social{
+    display: flex;
+    flex-direction: column;
 }

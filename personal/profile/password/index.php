@@ -27,23 +27,24 @@ $APPLICATION->SetTitle("Пароль");
         <div class="frame-851213393">
             <div class="lk-content">
                 <?$APPLICATION->IncludeComponent(
-                    "bitrix:main.profile",
-                    "",
-                    array(
-                        "SET_TITLE" => "Y",
-                        "USER_PROPERTY" => array(
-                            0 => "UF_TELEGRAM",
-                        ),
-                        "SEND_INFO" => "N",
-                        "CHECK_RIGHTS" => "N",
-                        "USER_PROPERTY_NAME" => "",
-                        "AJAX_MODE" => "N",
-                        "AJAX_OPTION_JUMP" => "N",
-                        "AJAX_OPTION_STYLE" => "Y",
-                        "AJAX_OPTION_HISTORY" => "N"
-                    ),
-                    false
-                );?>
+	"bitrix:main.profile", 
+	"passwod-lk", 
+	[
+		"SET_TITLE" => "Y",
+		"USER_PROPERTY" => [
+			0 => "UF_TELEGRAM",
+		],
+		"SEND_INFO" => "N",
+		"CHECK_RIGHTS" => "N",
+		"USER_PROPERTY_NAME" => "",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"COMPONENT_TEMPLATE" => "passwod-lk"
+	],
+	false
+);?>
 
             </div>
 

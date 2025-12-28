@@ -135,6 +135,7 @@
         max-width: none;
         margin: 0;
         padding: 0 12px;
+        min-height: auto;
     }
 
     .stack_role-block-wrap .slick-list{
