@@ -57,10 +57,11 @@ class MainPageNewsList
                 const lineHeight = parseFloat(computedStyle.lineHeight);
                 const height = item.getBoundingClientRect().height;
                 const number = Math.round(height / lineHeight);
-                if(number == 4){
-                    item.nextElementSibling.style.webkitLineClamp = '1';
-                    item.nextElementSibling.style.lineClamp = '1';
-                }else if(number == 3){
+
+                console.log(number);
+                
+
+                if(number == 3){
                     item.nextElementSibling.style.webkitLineClamp = '3';
                     item.nextElementSibling.style.lineClamp = '3';
                 }else if(number == 2){
