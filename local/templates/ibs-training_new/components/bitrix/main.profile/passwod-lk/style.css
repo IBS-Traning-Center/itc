@@ -42,7 +42,6 @@
     padding: 0;
     gap: 24px;
     width: 649px;
-    height: 205px;
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -56,7 +55,6 @@
     padding: 0;
     gap: 4px;
     width: 649px;
-    height: 103px;
     flex: none;
     align-self: stretch;
     flex-grow: 0;

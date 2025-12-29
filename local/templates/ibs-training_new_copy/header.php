@@ -154,11 +154,16 @@ $cntBasketItems = CSaleBasket::GetList(
             ?>
         </a>
         <div class="search-header-block">
-            <form action="/search/">
-                <button type="submit">
-                    <?= Functions::buildSVG('search_button', SITE_TEMPLATE_PATH. '/assets/images') ?>
+            <form action="/search/" class="search-header-form">
+                <button type="submit" class="search-header-button">
+                    <?= Functions::buildSVG('search_button', SITE_TEMPLATE_PATH . '/assets/images') ?>
                 </button>
-                <input id="search-text-header" placeholder="Искать курсы" class="search-main">
+                <input
+                        id="search-text-header"
+                        class="search-main"
+                        type="text"
+                        placeholder="Найти курсы"
+                >
             </form>
         </div>
         <?php $APPLICATION->IncludeComponent(
