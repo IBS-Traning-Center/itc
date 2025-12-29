@@ -1,4 +1,3 @@
-/* Основные стили меню */
 .main-top-menu-block {
     display: flex;
     align-items: center;
@@ -49,70 +48,71 @@
     display: none;
 }
 
-
 .profile-dropdown {
     display: none;
     position: absolute;
-    top: calc(100% + 5px);
+    top: 132%;
     right: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    min-width: 160px;
-    z-index: 1000;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    min-width: 227px;
+    width: 227px;
     padding: 8px 0;
+    z-index: 1000;
+    flex-direction: column;
 }
 
-/* Ключевое изменение: показываем выпадашку при наведении на контейнер */
 .main-top-menu-item-container.personal-container:hover .profile-dropdown,
 .profile-dropdown:hover {
-    display: block;
+    display: flex;
 }
 
-/* Создаем "мостик" между пунктом меню и выпадашкой */
 .main-top-menu-item-container.personal-container::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     top: 100%;
-    height: 35px; /* Высота "мостика" - дает время на перемещение */
+    height: 35px;
     background: transparent;
     pointer-events: none;
 }
 
-/* Альтернатива: делаем сам dropdown с "захватывающей" зоной */
 .profile-dropdown::before {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    top: -20px; /* Захватываем область над дропдауном */
+    top: -20px;
     height: 20px;
     background: transparent;
 }
 
-/* Стили пунктов выпадающего меню */
 .profile-dropdown .dropdown-item {
-    display: block;
-    padding: 10px 16px;
-    color: #333;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 24px;
+    width: 100%;
+    height: 64px;
+    box-sizing: border-box;
     text-decoration: none;
-    font-size: 16px;
-    white-space: nowrap;
-    transition: background 0.2s;
+    transition: background 0.2s ease;
 }
 
-.profile-dropdown .dropdown-item:hover {
-    background: #f8f8f8;
+.profile-dropdown .dropdown-item span {
+    width: 179px;
+    height: 32px;
+    font-family: 'Stag Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
 }
-
-.profile-dropdown .dropdown-item.logout {
-    background: #f8f8f8;
-}
-
-/* Твои медиа-запросы */
 @media (max-width: 1553px) {
     .main-top-menu-item-container {
         padding: 0 16px;
