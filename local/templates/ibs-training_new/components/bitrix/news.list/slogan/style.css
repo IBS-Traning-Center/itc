@@ -2,9 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 100px 120px;
+	padding: 100px 20px;
 	gap: 48px;
-	max-width: 1920px;
 	width: 100%;
 	background: #F8F7F7;
 	margin: 0 auto;
@@ -29,6 +28,5 @@
 @media screen and (max-width: 1080px) {
 	.ibs-block {
 		display: none;
-
 	}
 }
