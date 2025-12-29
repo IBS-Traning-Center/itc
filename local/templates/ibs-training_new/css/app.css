@@ -2956,6 +2956,10 @@ form[name=banner_get_consult] .form-table + div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+          
+}
+.levels__item__modal .question-block.privacy_policy, .levels__item__modal .question-block.agree_of_subject .jq-checkbox{
+  border: 1px solid #000000;
 }
 .levels__item__modal .question-block.privacy_policy > span, .levels__item__modal .question-block.agree_of_subject > span {
   margin-top: 0;
