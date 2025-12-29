@@ -31,7 +31,7 @@ $APPLICATION->SetTitle("Персональный раздел");
                 <div class="stat-card">
                     <div class="frame-851213208">
                         <div class="stat-number green">3</div>
-                        <div class="stat-title">Курса пройдено</div>
+                        <div class="stat-title">Курса<br>пройдено</div>
                     </div>
                     <button class="btn-outline">
                         <span class="btn-text">Мои документы</span>
@@ -41,7 +41,7 @@ $APPLICATION->SetTitle("Персональный раздел");
                 <div class="stat-card">
                     <div class="frame-851213207">
                         <div class="stat-number grey">0</div>
-                        <div class="stat-title">Программ пройдено</div>
+                        <div class="stat-title">Программ<br>пройдено</div>
                     </div>
                     <button class="btn-outline">
                         <span class="btn-text">Программы обучения</span>
@@ -51,7 +51,7 @@ $APPLICATION->SetTitle("Персональный раздел");
                 <div class="stat-card">
                     <div class="frame-851213207">
                         <div class="stat-number green">1</div>
-                        <div class="stat-title">Сертификация пройдена</div>
+                        <div class="stat-title">Сертификация<br>пройдена</div>
                     </div>
                     <button class="btn-outline">
                         <span class="btn-text">Мои сертификаты</span>

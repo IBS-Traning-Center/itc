@@ -11,8 +11,8 @@ global $USER;
 // Подключение шрифта Noto Sans
 Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.googleapis.com">');
 Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
-Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">');
 
+Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
 Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 Asset::getInstance()->addCss('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 Asset::getInstance()->addCss('/local/assets/css/base.css');
