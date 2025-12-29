@@ -18,7 +18,7 @@ Loc::loadMessages(__FILE__);
 <div class="main-feedback-form-block" id="mainFeedbackFormBlock">
     <div class="container main-feedback-form-container">
         <?php if ($arResult['arForm']['NAME']) : ?>
-            <h1><?= $arResult['arForm']['NAME'] ?></h1>
+            <h2><?= $arResult['arForm']['NAME'] ?></h2>
         <?php endif; ?>
 
         <div class="questions-block">
