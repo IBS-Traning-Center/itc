@@ -12,13 +12,13 @@
 /** @var CBitrixComponent $component */
 use Local\Util\Functions;
 $this->setFrameMode(true);
-?><section class="lk-section">
+?>
     <h2 class="lk-section__title">Программы</h2>
 
     <div class="lk-cards-prog">
 
         <div class="lk-card program">
-            <div class="lk-card__icon big">
+            <div class="lk-card__icon-big">
                 <?= Functions::buildSVG(
                     'programm-logo',
                     'local/templates/ibs-training_new/components/bitrix/news.list/programms-lk/ico'
@@ -60,4 +60,4 @@ $this->setFrameMode(true);
             </div>
         </div>
     </div>
-</section>
+

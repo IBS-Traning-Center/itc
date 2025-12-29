@@ -7,15 +7,19 @@
 .main-top-menu-block .main-top-menu-item {
     display: flex;
     align-items: center;
-    padding: 0 25px;
+    padding: 0 15px;
     border-right: 1px solid var(--black);
 }
-
+.profile-icon-right{
+    padding-left: 5px;
+    align-items: center;
+    display: flex;
+}
 .main-top-menu-block .main-top-menu-item.last-menu {
     border-right: none;
 }
 
-.main-top-menu-block .main-top-menu-item svg {
+.main-top-menu-block .main-top-menu-item:not(.last-menu) svg {
     min-width: 24px;
     max-width: 24px;
     min-height: 24px;
