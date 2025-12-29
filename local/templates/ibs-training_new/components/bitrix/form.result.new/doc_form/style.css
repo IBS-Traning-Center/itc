@@ -114,18 +114,7 @@
     line-height: 28px !important;
 }
 
-.contact__form input:invalid,
-.contact__form textarea:invalid {
-    outline: 2px solid #ff6b6b !important;
-}
 
-.contact__form input[type="email"]:invalid {
-    outline: 2px solid #ff6b6b !important;
-}
-
-.contact__form input[type="tel"]:invalid {
-    outline: 2px solid #ff6b6b !important;
-}
 
 .contact__form input[type="text"]:focus,
 .contact__form input[type="email"]:focus,
@@ -389,9 +378,7 @@ input[name="web_form_apply"] {
     text-align: center;
 }
 
-.custom-popup__button:hover {
-    background: #1a2d6b;
-}
+
 
 .contact__form p[style*="font-size: 12px"] {
     font-family: 'Stag Sans' !important;
