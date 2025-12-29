@@ -53,6 +53,10 @@
     font-family: 'Noto Sans';
 }
 
+.main-feedback-form-block .main-feedback-form-container .questions-block .question-block .jq-checkbox{
+    border: none;
+}
+
 .main-feedback-form-block .main-feedback-form-container .questions-block .question-block input::placeholder {
     opacity: 1;
     color: var(--black);

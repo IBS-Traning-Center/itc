@@ -38,6 +38,10 @@
     gap: 24px;
 }
 
+.main-feedback-form-block .main-feedback-form-container .questions-block .question-block .jq-checkbox{
+    border:none;
+}
+
 .main-feedback-form-block .main-feedback-form-container .questions-block .question-block input {
     outline: none;
     border: none;

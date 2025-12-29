@@ -178,11 +178,14 @@
 .bx-custom-register .checkbox-group {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
     width: 100%;
     min-height: 24px;
     cursor: pointer;
     user-select: none;
+}
+
+.bx-custom-register .checkbox-group .jq-checkbox{
+    border: 1px solid #000000;
 }
 
 .bx-custom-register .checkbox-group input[type="checkbox"] {
