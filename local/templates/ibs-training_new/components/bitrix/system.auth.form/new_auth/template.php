@@ -81,7 +81,6 @@
                 <? if ($arResult["STORE_PASSWORD"] == "Y"): ?>
                     <label class="checkbox">
                         <input type="checkbox" id="USER_REMEMBER_frm" name="USER_REMEMBER" value="Y" />
-                        <span class="checkbox__box"></span>
                         <span class="checkbox__label">Запомнить меня</span>
                     </label>
                 <? endif; ?>
