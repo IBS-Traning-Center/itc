@@ -2,9 +2,9 @@
 $APPLICATION->SetTitle("Регистрация");
 ?>
 <?$APPLICATION->IncludeComponent(
-	"luxoft:register",
-	"lux-training_new",
-	[
+    "bitrix:main.register",
+    "lux-training",
+    [
         "USER_PROPERTY_NAME" => "",
         "SEF_MODE" => "N",
         "SHOW_FIELDS" => [
@@ -30,8 +30,8 @@ $APPLICATION->SetTitle("Регистрация");
         "SUCCESS_PAGE" => "/auth/registration_success.html",
         "SET_TITLE" => "Y",
         "USER_PROPERTY" => []
-	],
-	false
+    ],
+    false
 );?>
     <script>
         $(document).ready(function(){
