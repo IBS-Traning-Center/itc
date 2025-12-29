@@ -7,7 +7,7 @@ if (!function_exists('plural_form')) {
 }
 ?>
 <div class="timetable-section">
-    <?php if (count($arResult["ITEMS"]) > 0) { ?>
+    <?php if (is_array($arResult["ITEMS"]) && count($arResult["ITEMS"]) > 0) { ?>
 
         <h3 class="timetable-title">Начните учиться бесплатно</h3>
 
@@ -29,7 +29,7 @@ if (!function_exists('plural_form')) {
                             </div>
                         </div>
                         <div class="time-price-wrapper clearfix">
-                            <? if (count($arResult['TRENER_INFO'][$arItem['ID']])) { ?>
+                            <? if (is_array($arResult['TRENER_INFO'][$arItem['ID']]) && count($arResult['TRENER_INFO'][$arItem['ID']])) { ?>
                                 <div class="trener-info">Тренер: <a title="Перейти на страницу-карточку преподавателя"
                                                                     href="/about/experts/<?= $arResult['TRENER_INFO'][$arItem['ID']]['CODE'] ?>.html"><?= $arResult['TRENER_INFO'][$arItem['ID']]['NAME'] ?> <?= $arResult['TRENER_INFO'][$arItem['ID']]['~PROPERTY_EXPERT_NAME_VALUE'] ?></a>
                                 </div>
