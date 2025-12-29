@@ -1,5 +1,4 @@
 // Оборачиваем объявление в условие
-if (typeof StackRole === 'undefined') {
     class StackRole {
         constructor(data = {
             ourClientsBlockClass: '.stack_role-block'
@@ -43,11 +42,8 @@ if (typeof StackRole === 'undefined') {
             }
         }
     }
-}
 
 // Инициализация
 document.addEventListener("DOMContentLoaded", () => {
-    if (typeof StackRole !== 'undefined') {
         new StackRole();
-    }
 });
