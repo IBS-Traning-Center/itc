@@ -7,13 +7,13 @@
   font-family: "Stag Sans";
   font-style: normal;
   font-weight: 300;
-  src: local("Stag Sans"), url("../../../assets/fonts/StagSans/StagSansLight.woff2") format("woff2"), url("../../../assets/fonts/StagSans/StagSansLight.woff") format("woff"), url("../../../assets/fonts/StagSans/StagSansLight.ttf") format("ttf"), url("../../../assets/fonts/StagSans/StagSansLight.eot?#iefix") format("eot");
+  src: local("Stag Sans"), url("../../ibs-training_new_copy/assets/fonts/StagSans/StagSansLight.woff2") format("woff2"), url("../../ibs-training_new_copy/assets/fonts/StagSans/StagSansLight.woff") format("woff"), url("../../ibs-training_new_copy/assets/fonts/StagSans/StagSansLight.ttf") format("ttf"), url("../../ibs-training_new_copy/assets/fonts/StagSans/StagSansLight.eot?#iefix") format("eot");
 }
 @font-face {
   font-family: "Stag Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("Stag Sans"), url("../../../assets/fonts/StagSans/StagSansRegular.woff2") format("woff2"), url("../../../assets/fonts/StagSans/StagSansRegular.woff") format("woff"), url("../../../assets/fonts/StagSans/StagSansRegular.ttf") format("ttf"), url("../../../assets/fonts/StagSans/StagSansRegular.woff?#iefix") format("eot");
+  src: local("Stag Sans"), url("../../ibs-training_new_copy/assets/fonts/StagSans/StagSansRegular.woff2") format("woff2"), url("../../ibs-training_new_copy/assets/fonts/StagSans/StagSansRegular.woff") format("woff"), url("../../ibs-training_new_copy/assets/fonts/StagSans/StagSansRegular.ttf") format("ttf"), url("../../ibs-training_new_copy/assets/fonts/StagSans/StagSansRegular.woff?#iefix") format("eot");
 }
 .container {
   max-width: 100%;
