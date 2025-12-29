@@ -4,7 +4,7 @@ function plural_form($number, $after) {
     echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
 
-if (count($arResult["ITEMS"]) > 0) { ?>
+if (is_array($arResult["ITEMS"]) && count($arResult["ITEMS"]) > 0) { ?>
 
     <div class="timetable-list">
         <? foreach ($arResult["ITEMS"] as $arItem) {
@@ -24,7 +24,7 @@ if (count($arResult["ITEMS"]) > 0) { ?>
                         </div>
                     </div>
                     <div class="time-price-wrapper clearfix">
-                        <? if (count($arResult['TRENER_INFO'][$arItem['ID']])) { ?>
+                        <? if (is_array($arResult['TRENER_INFO'][$arItem['ID']]) && count($arResult['TRENER_INFO'][$arItem['ID']])) { ?>
                             <div class="trener-info">Тренер: <a title="Перейти на страницу-карточку преподавателя"
                                                                  href="/about/experts/<?= $arResult['TRENER_INFO'][$arItem['ID']]['CODE'] ?>.html"><?= $arResult['TRENER_INFO'][$arItem['ID']]['NAME'] ?> <?= $arResult['TRENER_INFO'][$arItem['ID']]['~PROPERTY_EXPERT_NAME_VALUE'] ?></a>
                             </div>
