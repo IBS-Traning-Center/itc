@@ -1,16 +1,18 @@
 // Оборачиваем объявление в условие
-    class StackRole {
+
+    class BestWorker {
         constructor(data = {
-            ourClientsBlockClass: '.stack_role-block'
+            ourClientsBlockClass: '.best_worker-block'
         }) {
-            this.ourClientsBlock = $('.stack_role-block');
+            this.ourClientsBlock = $('.best_worker-block');
             this.initSlider();
         }
 
         initSlider() {
             let sliderBlock = this.ourClientsBlock;
             const windowWidth = window.innerWidth;
-
+           
+            
             if (windowWidth < 1180) {
                 if (sliderBlock.length && !sliderBlock.hasClass('slick-initialized')) {
                     sliderBlock.slick({
@@ -45,5 +47,5 @@
 
 // Инициализация
 document.addEventListener("DOMContentLoaded", () => {
-        new StackRole();
+        new BestWorker();
 });

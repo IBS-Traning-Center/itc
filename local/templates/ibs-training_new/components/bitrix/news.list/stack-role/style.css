@@ -16,6 +16,7 @@
 
 .stack_role-title-block{
     padding: 100px 0;
+    border-top: 1px solid #B2B2B2;
 }
 
 .stack_role-block{
@@ -130,12 +131,13 @@
 }
 
 @media (max-width: 1180px) {
-    .stack_role-item{
+    .slick-slide.stack_role-item{
         width: auto;
         max-width: none;
         margin: 0;
         padding: 0 12px;
         min-height: auto;
+        min-height: 472px;
     }
 
     .stack_role-block-wrap .slick-list{
@@ -179,6 +181,10 @@
         min-height: unset;
         font-size: 24px;
         line-height: 100%;
+        min-height: 112px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .stack_role-block-wrap .slick-dots{
