@@ -647,4 +647,14 @@ $APPLICATION->IncludeComponent(
 		"COMPONENT_TEMPLATE" => ".default"
 	),
 	false
-); ?><?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+); ?>
+
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"slogan", 
+	[
+		
+	],
+	false
+); ?>
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
