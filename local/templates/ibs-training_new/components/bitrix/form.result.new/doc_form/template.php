@@ -224,7 +224,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
 
 <section class="contact">
-    <div class="contact__content">
+    <div class="contact__content container">
 
         <div class="contact__text">
             <h2>
