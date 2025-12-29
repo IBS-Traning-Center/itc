@@ -208,7 +208,7 @@
 <?else:?>
 
     <div class="auth-container">
-        <h2 class="auth-container__title">Вы авторизованы</h2>
+        <h2 class="auth-container__title" style="text-align: center; adding: 40px 0 0;">Вы авторизованы</h2>
         <div style="text-align: center; padding: 40px 0;">
             <p style="margin-bottom: 24px; font-size: 18px;">Вы зарегистрированы и успешно авторизовались.</p>
             <a href="/" class="auth-form__submit" style="display: inline-block; width: auto; padding: 16px 32px;">
