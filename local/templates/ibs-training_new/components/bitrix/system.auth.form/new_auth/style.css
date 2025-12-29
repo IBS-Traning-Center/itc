@@ -492,11 +492,14 @@
 	flex-direction: row;
 	align-items: flex-start;
 	padding: 0;
-	gap: 16px;
 	width: 280px;
 	height: 24px;
 	cursor: pointer;
 	user-select: none;
+}
+
+.bx-custom-auth .checkbox .jq-checkbox{
+	border: 1px solid #000000;
 }
 
 .bx-custom-auth .checkbox input[type="checkbox"] {

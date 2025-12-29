@@ -1,14 +1,12 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 ?>
-<?
+<?php
 $client_id = 'VLEAK7BKIEFJ9FAEU9M3QQ5BTN2JUH4PT3CQM86VU2NOIHDHH5LAQ6UNJKI375IM';
-$address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&client_id=&client_id=' . $client_id;
+$address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&client_id=' . $client_id;
 ?>
-</head>
-<body>
 
-    <div class="container-lk lk-profile-wrapper">
+<div class="container-lk lk-profile-wrapper">
     <main class="main-content">
         <div class="tabs">
             <a class="tab active">Профиль</a>
@@ -40,8 +38,16 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
 
             <div class="field-blue">
                 <label>Телефон (не обязательно)</label>
-                <input type="text" name="PERSONAL_PHONE" value="<?=htmlspecialcharsbx($arResult["arUser"]["PERSONAL_PHONE"])?>" />
+                <input
+                        type="text"
+                        name="PERSONAL_PHONE"
+                        id="phone_input"
+                placeholder="+7 (___) ___-__-__"
+                value="<?=htmlspecialcharsbx($arResult["arUser"]["PERSONAL_PHONE"])?>"
+                autocomplete="off"
+                />
             </div>
+
             <div class="field-blue">
                 <label>Эл. почта</label>
                 <input type="text" value="<?=htmlspecialcharsbx($arResult["arUser"]["EMAIL"])?>" disabled />
@@ -59,12 +65,11 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
             <div class="field-gray">
                 <input type="text" name="WORK_POSITION" placeholder="Должность" value="<?=htmlspecialcharsbx($arResult["arUser"]["WORK_POSITION"])?>" />
             </div>
+
             <div class="field-gray">
                 <input type="text" name="UF_TELEGRAM" placeholder="@TelegramNickName" value="<?=htmlspecialcharsbx($arResult["arUser"]["UF_TELEGRAM"])?>" />
             </div>
 
-
-            <!-- Привязка hh.ru -->
             <div class="hh-section">
                 <div class="hh-link">
                     <div class="hh-logo">hh</div>
@@ -84,11 +89,21 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
                 <div class="delete-icon"></div>
                 <div>Удалить аккаунт</div>
             </div>
-
         </form>
+        <?php CJSCore::Init(['masked_input']); ?>
 
+        <script>
+            BX.ready(function() {
+                var phoneInput = BX('phone_input');
+                if (phoneInput) {
+                    new BX.MaskedInput({
+                        mask: '+7 (999) 999-99-99',
+                        input: phoneInput,
+                        placeholder: '_'
+                    });
+                }
+            });
+        </script>
     </main>
 </div>
 
-</body>
-</html>

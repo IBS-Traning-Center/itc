@@ -19,7 +19,7 @@
     border-right: none;
 }
 
-.main-top-menu-block .main-top-menu-item svg {
+.main-top-menu-block .main-top-menu-item:not(.last-menu) svg {
     min-width: 24px;
     max-width: 24px;
     min-height: 24px;

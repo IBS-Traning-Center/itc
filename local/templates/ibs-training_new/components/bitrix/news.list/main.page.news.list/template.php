@@ -18,7 +18,7 @@ $this->setFrameMode(false);
 if (!empty($arResult['ITEMS'])) : ?>
     <div class="container">
         <div class="top-news-list-block">
-            <h1><?= Loc::getMessage('MAIN_PAGE_NEWS_LIST_TITLE') ?></h1>
+            <h2><?= Loc::getMessage('MAIN_PAGE_NEWS_LIST_TITLE') ?></h2>
             <a href="/about/news/">
                 <span class="f-20"><?= Loc::getMessage('GO_TO_BLOG_TITLE') ?></span>
                 <?= Functions::buildSVG('arrow-blog', $templateFolder . '/images') ?>

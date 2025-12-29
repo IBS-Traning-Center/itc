@@ -29,12 +29,23 @@
 }
 
 .main-footer-menu-block .main-footer-menu-item.certificate-block {
-    max-width: 31%;
+    max-width: 360px;
 }
 
 .main-footer-menu-block .main-footer-menu-item.certificate-block .image{
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
+}
+
+.main-footer-menu-block .main-footer-menu-item.certificate-block .image a{
+    margin-top: 12px;
+    display: block;
+    max-width: 64px;
+}
+
+.main-footer-menu-block .main-footer-menu-item.certificate-block .image a img{
+    width: 100%;
 }
 
 .main-footer-menu-block .main-footer-menu-item span,

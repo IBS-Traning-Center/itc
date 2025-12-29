@@ -25,37 +25,42 @@
 <footer class="footer">
     <div class="container">
         <div class="top-menu-block-footer">
-            <?php $APPLICATION->IncludeComponent(
-                'bitrix:menu',
-                'main.footer',
-                [
-                    'ROOT_MENU_TYPE' => 'footer',
-                    'MAX_LEVEL' => '1',
-                    'CHILD_MENU_TYPE' => 'footer',
-                    'USE_EXT' => 'Y'
-                ]
-            ); ?>
-            <?php $APPLICATION->IncludeComponent(
-                'bitrix:menu',
-                'social.footer',
-                [
-                    'ROOT_MENU_TYPE' => 'social_footer',
-                    'MAX_LEVEL' => '1',
-                    'CHILD_MENU_TYPE' => 'social_footer',
-                    'USE_EXT' => 'Y'
-                ]
-            ); ?>
+            <div class="top-menu-block-footer-wrap">
+                <?php $APPLICATION->IncludeComponent(
+                    'bitrix:menu',
+                    'main.footer',
+                    [
+                        'ROOT_MENU_TYPE' => 'footer',
+                        'MAX_LEVEL' => '1',
+                        'CHILD_MENU_TYPE' => 'footer',
+                        'USE_EXT' => 'Y'
+                    ]
+                ); ?>
+                <?php $APPLICATION->IncludeComponent(
+                    'bitrix:menu',
+                    'main.bottom.footer',
+                    [
+                        'ROOT_MENU_TYPE' => 'bottom_footer',
+                        'MAX_LEVEL' => '1',
+                        'CHILD_MENU_TYPE' => 'bottom_footer',
+                        'USE_EXT' => 'Y'
+                    ]
+                ); ?>
+            </div>
+            <div class="top-menu-block-footer-social">
+                <?php $APPLICATION->IncludeComponent(
+                    'bitrix:menu',
+                    'social.footer',
+                    [
+                        'ROOT_MENU_TYPE' => 'social_footer',
+                        'MAX_LEVEL' => '1',
+                        'CHILD_MENU_TYPE' => 'social_footer',
+                        'USE_EXT' => 'Y'
+                    ]
+                ); ?>
+                <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/subscription-form.php', [], ['MODE' => 'html']);?>
+            </div>
         </div>
-        <?php $APPLICATION->IncludeComponent(
-            'bitrix:menu',
-            'main.bottom.footer',
-            [
-                'ROOT_MENU_TYPE' => 'bottom_footer',
-                'MAX_LEVEL' => '1',
-                'CHILD_MENU_TYPE' => 'bottom_footer',
-                'USE_EXT' => 'Y'
-            ]
-        ); ?>
     </div>
 </footer>
 <?php $APPLICATION->IncludeComponent(
@@ -124,7 +129,9 @@
         }
     });
 </script>
-<div <?php if ($_REQUEST["formresult"] == "addok") { ?>style="display: block;" <?php } ?> class="mask">
+<div <?php if ($_REQUEST["formresult"] == "addok" && (!empty($_REQUEST['WEB_FORM_ID']) && $_REQUEST['WEB_FORM_ID'] == 54 ? false : true)) { ?>
+    style="display: block;"
+<?php } ?> class="mask">
     <div class="success-message">
         <a href="#" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
         Спасибо! <br />Форма отправлена успешно.
