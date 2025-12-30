@@ -9,7 +9,6 @@
 	align-items: flex-start;
 	padding: 56px 56px 100px;
 	gap: 48px;
-	width: 1450px;
 	min-height: 1117px;
 	background: #FFFFFF;
 	margin: 0 auto;
@@ -147,10 +146,6 @@
 	padding-left: 40px;
 	height: 24px;
 }
-
-
-
-
 .subscr-wrapper .subscr-check-mark {
 	position: absolute;
 	top: 50%;
@@ -165,8 +160,6 @@
 	opacity: 0;
 	transition: opacity 0.2s ease;
 }
-
-
 
 .subscr-wrapper .subscr-topic-text-cont {
 	display: flex;
@@ -299,4 +292,10 @@
     left: 9px;
     top: 11px;
     transform: rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+	.subscr-wrapper .subscr-container{
+		padding: 0;
+	}
 }

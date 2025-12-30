@@ -2944,7 +2944,6 @@ span.time.time-with-tooltip:hover .tooltip {
 
 .lk-content {
     flex: 1;
-    padding: 24px 32px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -2988,7 +2987,7 @@ span.time.time-with-tooltip:hover .tooltip {
     }
 
     .lk-content {
-        padding: 20px 24px;
+        padding: 24px 16px;
     }
 }
 
@@ -3029,10 +3028,6 @@ span.time.time-with-tooltip:hover .tooltip {
     .frame-851213393 {
         gap: 24px;
     }
-
-    .lk-content {
-        padding: 16px;
-    }
     .lk-update-btn svg {
         width: 20px;
         height: 20px;
@@ -3044,9 +3039,6 @@ span.time.time-with-tooltip:hover .tooltip {
     .lk-header__title {
         font-size: 18px;
         line-height: 28px;
-    }
-    .lk-content {
-        padding: 12px;
     }
 
     .lk-update-btn span {
