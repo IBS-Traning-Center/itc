@@ -41,6 +41,20 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Личный кабинет", 
+		"/personal/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Выйти", 
+		"?logout=yes&" . bitrix_sessid_get(), 
+		Array(), 
+		Array('HIDE_AUTH'=>'Y'), 
+		"" 
 	)
 );
 ?>

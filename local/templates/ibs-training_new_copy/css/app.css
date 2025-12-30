@@ -634,8 +634,6 @@ label {
 }
 @media screen and (min-width: 1180px) {
   .logo-block svg {
-    min-width: 155px;
-    width: 155px;
     height: 50px;
   }
 }

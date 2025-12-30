@@ -81,7 +81,6 @@
                 <? if ($arResult["STORE_PASSWORD"] == "Y"): ?>
                     <label class="checkbox">
                         <input type="checkbox" id="USER_REMEMBER_frm" name="USER_REMEMBER" value="Y" />
-                        <span class="checkbox__box"></span>
                         <span class="checkbox__label">Запомнить меня</span>
                     </label>
                 <? endif; ?>
@@ -209,7 +208,6 @@
 <?else:?>
 
     <div class="auth-container">
-        <h2 class="auth-container__title">Вы авторизованы</h2>
         <div style="text-align: center; padding: 40px 0;">
             <p style="margin-bottom: 24px; font-size: 18px;">Вы зарегистрированы и успешно авторизовались.</p>
             <a href="/" class="auth-form__submit" style="display: inline-block; width: auto; padding: 16px 32px;">
