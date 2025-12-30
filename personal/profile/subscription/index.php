@@ -30,18 +30,19 @@ $APPLICATION->SetTitle("Настройки");
 	"bitrix:subscribe.edit", 
 	"subscription-lk", 
 	[
-		"SHOW_HIDDEN" => "Y",
-		"ALLOW_ANONYMOUS" => "N",
+		"AJAX_MODE" => "N",
+		"SHOW_HIDDEN" => "N",
+		"ALLOW_ANONYMOUS" => "Y",
+		"SHOW_AUTH_LINKS" => "Y",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "3600",
+		"SET_TITLE" => "Y",
+		"USE_PERSONALIZATION" => "Y",
 		"COMPONENT_TEMPLATE" => "subscription-lk",
-		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
 		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"SHOW_AUTH_LINKS" => "N",
-		"SET_TITLE" => "Y"
+		"AJAX_OPTION_ADDITIONAL" => ""
 	],
 	false
 );?>
