@@ -234,3 +234,9 @@
     order: 0;
     flex-grow: 0;
 }
+
+@media (max-width: 1024px) {
+	.password-wrapper{
+		padding: 0;
+	}
+}
