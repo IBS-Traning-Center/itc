@@ -6,17 +6,13 @@ if ($arResult['DATA_SAVED'] == 'Y') {
     echo ShowNote(GetMessage('PROFILE_DATA_SAVED'));
 }
 ?>
-
-
 <div class="password-wrapper">
-    <!-- Табы -->
     <div class="tabs">
         <a class="tab" href="/personal/profile/">Профиль</a>
         <a class="tab" href="/personal/profile/subscription/">Подписка</a>
         <a class="tab active">Пароль</a>
     </div>
 
-    <!-- Форма -->
     <form method="post" name="form1" action="<?=$arResult["FORM_TARGET"]?>?" enctype="multipart/form-data" class="form-content">
         <?=$arResult["BX_SESSION_CHECK"]?>
         <input type="hidden" name="lang" value="<?=LANG?>" />
@@ -24,7 +20,6 @@ if ($arResult['DATA_SAVED'] == 'Y') {
         <input type="hidden" name="LOGIN" value="<?=$arResult["arUser"]["LOGIN"]?>" />
         <input type="hidden" name="EMAIL" value="<?=$arResult["arUser"]["EMAIL"]?>" />
 
-        <!-- Поле "Новый пароль" -->
         <div class="password-field">
             <div class="input-wrapper">
                 <div class="label-text">Пароль</div>
@@ -37,10 +32,9 @@ if ($arResult['DATA_SAVED'] == 'Y') {
                     </div>
                 </div>
             </div>
-            <div class="requirements-text">Мин 8 символов, включая спецсимволы, цифры и разные регистры</div>
+            <div class="requirements-text">Мин 6 символов, включая спецсимволы, цифры и разные регистры</div>
         </div>
 
-        <!-- Поле "Подтверждение" -->
         <div class="password-field">
             <div class="input-wrapper">
                 <div class="label-text">Подтверждение пароля</div>
@@ -57,21 +51,9 @@ if ($arResult['DATA_SAVED'] == 'Y') {
             <?php echo ShowError($arResult["strProfileError"]);?>
         </div>
 
-        <!-- Кнопки -->
         <div class="buttons-row">
             <button type="button" class="btn-cancel" onclick="history.back()">Отменить</button>
             <button type="submit" name="save" value="Y" class="btn-save">Сохранить</button>
         </div>
     </form>
 </div>
-
-<script>
-    function togglePassword(icon) {
-        const input = icon.previousElementSibling;
-        if (input.type === 'password') {
-            input.type = 'text';
-        } else {
-            input.type = 'password';
-        }
-    }
-</script>
