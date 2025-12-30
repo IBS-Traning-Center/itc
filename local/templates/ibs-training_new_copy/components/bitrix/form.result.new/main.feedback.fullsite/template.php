@@ -64,7 +64,7 @@ Loc::loadMessages(__FILE__);
                                         <?= ($question['REQUIRED'] == 'Y') ? 'required' : '' ?>
                                         <?= ($questionId == 'client_id') ? 'id="clientID"' : '' ?>
                                         <?= ($questionId == 'phone') ? 'id="phone_input" type="tel"' : '' ?>
-                                            placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '*' : '(не обязательно)' ?>"
+                                            placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '' : '(не обязательно)' ?>"
                                             name="form_text_<?= $question['STRUCTURE'][0]['ID'] ?>"
                                             type="<?= ($questionId == 'phone') ? 'tel' : $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
                                             value="<?= $value ?: '' ?>">
