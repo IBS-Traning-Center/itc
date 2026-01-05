@@ -68,7 +68,7 @@ $(document).ready(function () {
         }
     }
     
-    /*/const reviews__slider = new Swiper('.reviews__slider', {
+    const reviews__slider = new Swiper('.reviews__slider', {
         slidesPerView: 1.5,
         spaceBetween: 31,
         freeMode: true,
@@ -92,7 +92,7 @@ $(document).ready(function () {
                 slidesPerView: 5,
             },
           },
-    });*/
+    });
 
     const miniGallerySlider = new Swiper('.mini-gallery__slider', {
         slidesPerView: 'auto',
