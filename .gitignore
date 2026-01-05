@@ -8,6 +8,7 @@
 *.ics
 *.pdf
 *.log.old
+*.old
 
 .DS_Store
 ._.DS_Store
