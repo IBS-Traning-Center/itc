@@ -35,12 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['REGISTER']['FULL_NAM
 <div class="bx-custom-register">
     <div class="registration-container">
         <div class="form-frame">
-            <h1 class="form-header">Регистрация и вход</h1>
-
-            <div class="form-tabs">
-                <a href="#" class="tab active">Регистрация</a>
-                <a href="<?= $arResult['AUTH_AUTH_URL'] ?? '/auth/' ?>" class="tab inactive">Вход</a>
-            </div>
 
             <?php if ($hasGeneralErrors): ?>
                 <div class="general-errors">
