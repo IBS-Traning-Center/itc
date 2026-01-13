@@ -14,7 +14,7 @@ use Local\Util\Functions;
 $this->setFrameMode(true);
 ?>
 <section class="lk-section">
-    <h2 class="lk-section__title">Курсы</h2>
+    <h2 class="lk-section__title">Программы</h2>
 
     <div class="lk-cards">
         <div class="lk-card course">
