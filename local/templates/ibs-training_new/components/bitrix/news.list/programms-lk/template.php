@@ -13,51 +13,58 @@
 use Local\Util\Functions;
 $this->setFrameMode(true);
 ?>
+<section class="lk-section">
     <h2 class="lk-section__title">Программы</h2>
 
-    <div class="lk-cards-prog">
-
-        <div class="lk-card program">
-            <div class="lk-card__icon-big">
-                <?= Functions::buildSVG(
-                    'programm-logo',
-                    'local/templates/ibs-training_new/components/bitrix/news.list/programms-lk/ico'
-                ) ?>
-                <div class="certificate-number">AA00-00000</div>
-            </div>
-
+    <div class="lk-cards">
+        <div class="lk-card course">
             <div class="lk-card__body">
-                <!-- МЕТА-ИНФОРМАЦИЯ -->
                 <div class="lk-card__meta">
-                    <div class="lk-card__meta-info">
-                        <div class="lk-card__date">
-                            <span class="lk-card__date-text">  <?= Functions::buildSVG(
-                                    'date',
-                                    'local/templates/ibs-training_new/components/bitrix/news.list/programms-lk/ico'
-                                ) ?>Выдано 10.02.2025</span>
-                        </div>
-                        <div class="lk-card__duration">
-                            <span class="lk-card__duration-text"><?= Functions::buildSVG(
-                                    'time',
-                                    'local/templates/ibs-training_new/components/bitrix/news.list/programms-lk/ico'
-                                ) ?>Длительность: 284 ч</span>
-                        </div>
+                    <span class="lk-card__code">DEV-001_NET</span>
+                    <span class="lk-badge">24 часа</span>
+                </div>
+
+                <div class="lk-card__meta-secondary">
+                    <div class="lk-card__date-secondary">
+                        <?= Functions::buildSVG(
+                            'date',
+                            'local/templates/ibs-training_new/components/bitrix/news.list/courses-lk/ico'
+                        ) ?>
+                        <span class="lk-card__date-text-secondary"> 14 декабря 2025 — 14 января 2026</span>
                     </div>
-                    <span class="lk-badge">Team Lead</span>
+
                 </div>
 
-                <!-- ИНФОРМАЦИЯ О КУРСЕ -->
-                <div class="lk-card__info">
-                    <div class="lk-card__abbr">JVA-PRG-002</div>
-                    <div class="lk-card__title">Java-разработчик. Middle Developer</div>
-                    <div class="lk-card__subtitle">Уровень «Профессионал»</div>
+                <div class="lk-card__title">
+                    Системный аналитик
+                </div>
+                <a href="#" class="lk-card__btn">Скачать документ</a>
+            </div>
+        </div>
+
+        <div class="lk-card course">
+            <div class="lk-card__body">
+                <div class="lk-card__meta">
+                    <span class="lk-card__code">DEV-001_NET</span>
+                    <span class="lk-badge">24 часа</span>
                 </div>
 
-                <!-- КНОПКА И СРОК ДЕЙСТВИЯ -->
-                <div class="lk-card__actions">
-                    <a href="#" class="lk-card__btn">Скачать диплом</a>
+                <div class="lk-card__meta-secondary">
+                    <div class="lk-card__date-secondary">
+                        <?= Functions::buildSVG(
+                            'date',
+                            'local/templates/ibs-training_new/components/bitrix/news.list/courses-lk/ico'
+                        ) ?>
+                        <span class="lk-card__date-text-secondary"> 14 декабря 2025 — 14 января 2026</span>
+                    </div>
+
                 </div>
+
+                <div class="lk-card__title">
+                    Бизнес-аналитик
+                </div>
+                <a href="#" class="lk-card__btn">Скачать диплом</a>
             </div>
         </div>
     </div>
-
+</section>
