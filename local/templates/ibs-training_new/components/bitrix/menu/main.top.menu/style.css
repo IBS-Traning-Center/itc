@@ -18,6 +18,8 @@
 
 .main-top-menu-block .main-top-menu-item-container:last-child {
     border-right: none;
+    padding-right: 0;
+    padding-left: 16px;
 }
 
 .main-top-menu-block .main-top-menu-item {
@@ -28,7 +30,7 @@
 }
 
 .profile-icon-right {
-    padding-left: 5px;
+    padding-left: 16px;
     align-items: center;
     display: flex;
 }
@@ -302,6 +304,12 @@
 
 .auth-modal-wrapper .bx-custom-auth .tabs__item {
     display: none;
+}
+
+@media (max-width:1180px) {
+    #header .header-container .logo-block svg{
+        min-width: 105px;
+    }
 }
 
 @media (max-width: 1100px) {
