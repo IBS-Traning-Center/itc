@@ -39,7 +39,6 @@
 
 .our-services__wrap .our-services__item:hover p{
     transform: translate(32px, 0px);
-
 }
 
 .our-services__wrap .our-services__item:hover{
@@ -48,11 +47,11 @@
 
 @media (max-width: 1180px) {
     .our-services__wrap .our-services__item{
-        padding: 16px 42px 21px 0;
+        padding: 22px 42px 21px 0;
     }
 
     .our-services__wrap .our-services__item:hover{
-        padding: 16px 42px 21px 0;
+        padding: 22px 42px 21px 0;
     }
     .our-services .main-page-heading {
         margin: 0;
