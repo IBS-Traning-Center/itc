@@ -72,8 +72,8 @@ $authModalId = 'auth-modal-' . $this->randString();
     <div class="auth-modal-content">
         <div class="auth-modal-close-btn">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.1302 12.1302L35.8698 35.8698" stroke="black" stroke-width="4"/>
-                <path d="M12.1302 35.8698L35.8698 12.1302" stroke="black" stroke-width="4"/>
+                <path d="M12.1302 12.1302L35.8698 35.8698" stroke="black" stroke-width="2"/>
+                <path d="M12.1302 35.8698L35.8698 12.1302" stroke="black" stroke-width="2"/>
             </svg>
         </div>
 
