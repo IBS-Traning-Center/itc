@@ -29,8 +29,11 @@
     color: inherit;
 }
 
-.profile-icon-right {
+.personal-container span+.profile-icon-right{
     padding-left: 16px;
+}
+
+.personal-container span+.profile-icon-right {
     align-items: center;
     display: flex;
 }
