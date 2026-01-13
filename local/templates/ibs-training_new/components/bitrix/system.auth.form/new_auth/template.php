@@ -1,5 +1,36 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?php
+if ($_POST['AUTH_FORM'] === 'Y' && $_POST['TYPE'] === 'SEND_PWD' && $_REQUEST['ajax'] === 'Y')
+{
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+    $APPLICATION->RestartBuffer();
 
+    $email = trim($_POST['USER_LOGIN']);
+    $result = array('STATUS' => 'ERROR', 'MESSAGE' => 'Неизвестная ошибка');
+
+    if (check_email($email))
+    {
+        $arResult = CUser::SendPassword($email, $email, SITE_ID);
+
+        if ($arResult["TYPE"] === "OK")
+        {
+            $result = array('STATUS' => 'OK', 'MESSAGE' => 'Письмо отправлено');
+        }
+        else
+        {
+            $result['MESSAGE'] = $arResult["MESSAGE"];
+        }
+    }
+    else
+    {
+        $result['MESSAGE'] = 'Некорректный email';
+    }
+
+    header('Content-Type: application/json');
+    echo \Bitrix\Main\Web\Json::encode($result);
+    die();
+}
+?>
 <?if ($arResult["FORM_TYPE"] == "login"):?>
     <?
     if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
@@ -59,8 +90,12 @@
                     </div>
                 <? endif; ?>
 
-                <a href="<?=$arResult["AUTH_FORGOT_PASSWORD_URL"]?>" class="auth-form__link" id="forgotPasswordBtn">
-                    <?=GetMessage("AUTH_FORGOT_PASSWORD_2")?>
+                <a href="#"
+                   class="auth-form__link forgot-password-trigger"
+                   data-url="/auth/change-password.php"
+                   id="forgotPasswordBtn"
+                >
+                    Забыли пароль?
                 </a>
 
                 <? if ($arResult["STORE_PASSWORD"] == "Y"): ?>
@@ -75,7 +110,6 @@
                 </button>
             </form>
 
-            <? // Социальные сервисы ?>
             <? if(!empty($arResult["AUTH_SERVICES"])): ?>
                 <div class="social-auth" style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #eee;">
                     <div style="text-align: center; margin-bottom: 16px; color: #666;">
@@ -117,7 +151,6 @@
         <? endif; ?>
     </div>
 
-    <!-- Модальное окно "Забыли пароль" (Шаг 1) -->
     <div class="auth-modal-overlay" id="authModalOverlay" style="display:none;">
         <div class="auth-modal auth-modal--forgot" id="forgotAuthModal">
             <button class="auth-modal__close" id="closeForgotAuth"></button>

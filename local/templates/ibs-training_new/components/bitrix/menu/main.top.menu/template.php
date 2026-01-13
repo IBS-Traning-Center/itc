@@ -105,7 +105,7 @@ $authModalId = 'auth-modal-' . $this->randString();
                         "new_auth",
                         array(
                             "REGISTER_URL" => "",
-                            "FORGOT_PASSWORD_URL" => "",
+                            "AUTH_FORGOT_PASSWORD_URL" => "/auth/forgot_pass.php",
                             "PROFILE_URL" => "/personal/",
                             "SHOW_ERRORS" => "Y"
                         ),
