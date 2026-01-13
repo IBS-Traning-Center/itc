@@ -18,6 +18,8 @@
 
 .main-top-menu-block .main-top-menu-item-container:last-child {
     border-right: none;
+    padding-right: 0;
+    padding-left: 16px;
 }
 
 .main-top-menu-block .main-top-menu-item {
@@ -28,7 +30,7 @@
 }
 
 .profile-icon-right {
-    padding-left: 5px;
+    padding-left: 16px;
     align-items: center;
     display: flex;
 }

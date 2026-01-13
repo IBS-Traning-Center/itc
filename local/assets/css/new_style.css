@@ -918,6 +918,19 @@ body {
         font-size: 32px;
         line-height: 40px;
     }
+
+    .search-header-form,
+    #header .header-container .search-header-block{
+        width: 100%;
+    }
+
+    #header .header-container{
+        align-items: unset;
+    }  
+
+    #header .header-container .search-header-block{
+        margin-left: 32px;
+    }
 }
 
 /* ФУТЕР */
