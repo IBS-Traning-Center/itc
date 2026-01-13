@@ -21,21 +21,6 @@
 
 <div class="bx-custom-auth">
     <div class="auth-container">
-
-        <h2 class="auth-container__title">Регистрация и вход</h2>
-
-        <div class="tabs">
-
-            <? if($arResult['NEW_USER_REGISTRATION'] == 'Y'): ?>
-                <button class="tabs__item" onclick="window.location.href='<?=$arResult["AUTH_REGISTER_URL"]?>'">
-                    Регистрация
-                </button>
-            <? else: ?>
-                <button class="tabs__item tabs__item--inactive">Регистрация</button>
-            <? endif; ?>
-            <button class="tabs__item tabs__item--active">Вход</button>
-        </div>
-
         <div id="at_frm_bitrix">
             <form class="auth-form" method="post" target="_top" action="<?=$arResult["AUTH_URL"]?>">
                 <? if (strlen($arResult["BACKURL"]) > 0): ?>
