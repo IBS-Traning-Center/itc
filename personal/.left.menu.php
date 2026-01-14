@@ -8,7 +8,7 @@ $aMenuLinks = Array(
             "ICON" => "home"
         ),
         ""
-    ),
+    ),*/
     Array(
         "Бонусные баллы",
         "/personal/bonus/",
@@ -17,7 +17,7 @@ $aMenuLinks = Array(
             "ICON" => "bonus"
         ),
         ""
-    ),*/
+    ),
     Array(
         "Мои документы",
         "/personal/docs/",
