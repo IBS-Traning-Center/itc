@@ -58,9 +58,6 @@ class MainPageNewsList
                 const height = item.getBoundingClientRect().height;
                 const number = Math.round(height / lineHeight);
 
-                console.log(number);
-                
-
                 if(number == 3){
                     item.nextElementSibling.style.webkitLineClamp = '3';
                     item.nextElementSibling.style.lineClamp = '3';
