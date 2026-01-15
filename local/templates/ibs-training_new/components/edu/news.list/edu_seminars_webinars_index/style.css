@@ -17,10 +17,6 @@
     flex-grow: 0;
 }
 
-.stack_role-block-wrap + .timetable-section{
-    border-bottom: none;
-}
-
 .timetable-title {
     width: 1680px;
     font-family: 'Noto Sans';

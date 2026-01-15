@@ -6,9 +6,9 @@ if (!function_exists('plural_form')) {
     }
 }
 ?>
-<div class="timetable-section">
-    <?php if (is_array($arResult["ITEMS"]) && count($arResult["ITEMS"]) > 0) { ?>
 
+<?php if (is_array($arResult["ITEMS"]) && count($arResult["ITEMS"]) > 0) { ?>
+    <div class="timetable-section">
         <h3 class="timetable-title">Начните учиться бесплатно</h3>
 
         <div class="timetable-list">
@@ -61,10 +61,5 @@ if (!function_exists('plural_form')) {
                 </div>
             <?}?>
         </div>
-
-    <? } ?>
-
-    <? if (count($arResult["ITEMS"]) == 0) { ?>
-        <h3 style="padding: 25px 0; text-align: center">В ближайшее время семинары не запланированы</h3>
-    <? } ?>
-</div>
+    </div>
+<? } ?>
