@@ -29,7 +29,12 @@
     margin: auto;
 
 }
-
+.bx-custom-register .registration-container .inputs-container .input-field .input-wrapper input[type="password"],
+.bx-custom-register .registration-container .inputs-container .input-field .input-wrapper input[type="text"] {
+    border: none;
+    border-radius: 0;
+    padding: 25px;
+}
 .registration-container .form-frame {
     display: flex;
     flex-direction: column;

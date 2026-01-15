@@ -7,6 +7,12 @@ define("NO_KEEP_STATISTIC", true);
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 ?>
+<?php
+if (!empty($APPLICATION->arAuthResult)) {
+    echo '<pre style="background:#fff;color:#000;padding:15px;">';
+    print_r($APPLICATION->arAuthResult["MESSAGE"]);
+    echo '</pre>';
+}?>
     <div class="change-password-container">
         <?$APPLICATION->IncludeComponent(
             "bitrix:system.auth.changepasswd",
@@ -17,7 +23,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     </div>
 
     <script>
-        // Сообщаем родительской странице, что смена прошла успешно
         window.addEventListener('message', function(e) {
             if (e.data === 'password_changed_success') {
                 parent.postMessage('close_and_show_success', '*');

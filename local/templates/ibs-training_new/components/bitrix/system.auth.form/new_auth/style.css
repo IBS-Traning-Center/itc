@@ -155,7 +155,7 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	padding: 24px;
+
 	width: 100%;
 	height: 80px;
 	background: #F8F7F7;
@@ -166,7 +166,32 @@
 	align-self: stretch;
 	flex-grow: 0;
 }
-
+.field-error {
+	color: #e74c3c;
+	font-size: 12px;
+	margin-top: 4px;
+	min-height: 16px;
+}
+.auth-result {
+	margin: 12px 0;
+	min-height: 20px;
+}
+.auth-result--error {
+	color: #e74c3c;
+	font-size: 14px;
+}
+.auth-result--loading {
+	color: #666;
+	font-style: italic;
+}
+.field__input.error,
+#authEmailInput.error,
+#authPasswordInput.error {
+	border-color: #e74c3c;
+}
+.field__input:focus.error {
+	border-color: #e74c3c;
+}
 .bx-custom-auth .field__input {
 	width: 100%;
 	height: 32px;
@@ -427,10 +452,7 @@
 	transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.bx-custom-auth .field input:focus {
-	border-bottom: 1px solid #2B418B;
-	background: #FFFFFF;
-}
+
 
 .bx-custom-auth .field input::placeholder {
 	color: #999;
