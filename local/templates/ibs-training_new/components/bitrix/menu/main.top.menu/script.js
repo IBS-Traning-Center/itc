@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modal) {
                 modal.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
-                switchAuthTab('login');
                 setTimeout(function() {
                     var loginField = modal.querySelector('#tab-login input[name="USER_LOGIN"]');
                     if (loginField) {
@@ -17,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
     document.querySelectorAll('.auth-modal-close-btn').forEach(function(closeBtn) {
         closeBtn.addEventListener('click', function() {
             var modal = this.closest('.auth-modal-wrapper');
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
     document.querySelectorAll('.auth-modal-wrapper').forEach(function(modal) {
         modal.addEventListener('click', function(e) {
             if (e.target === this) {
@@ -45,8 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    initAuthModalHandlers();
+
+    if (typeof initAuthModalHandlers === 'function') {
+        initAuthModalHandlers();
+    }
 });
+
 function switchAuthTab(tabName) {
     document.querySelectorAll('.auth-tab').forEach(function(tab) {
         tab.classList.remove('active');
@@ -56,9 +61,19 @@ function switchAuthTab(tabName) {
         content.classList.remove('active');
     });
 
+    const modalContent = document.querySelector('.auth-modal-content');
+    
     if (tabName === 'login') {
-        document.querySelector('.auth-tab--login').classList.add('active');
-        document.querySelector('#tab-login').classList.add('active');
+        const loginTab = document.querySelector('.auth-tab--login');
+        const loginContent = document.querySelector('#tab-login');
+        
+        if (loginTab) loginTab.classList.add('active');
+        if (loginContent) loginContent.classList.add('active');
+
+        if (modalContent && window.innerWidth <= 1100) {
+            modalContent.style.maxHeight = '478px';
+        }
+
         setTimeout(function() {
             var loginField = document.querySelector('#tab-login input[name="USER_LOGIN"]');
             if (loginField) {
@@ -66,8 +81,16 @@ function switchAuthTab(tabName) {
             }
         }, 50);
     } else {
-        document.querySelector('.auth-tab--register').classList.add('active');
-        document.querySelector('#tab-register').classList.add('active');
+        const registerTab = document.querySelector('.auth-tab--register');
+        const registerContent = document.querySelector('#tab-register');
+        
+        if (registerTab) registerTab.classList.add('active');
+        if (registerContent) registerContent.classList.add('active');
+
+        if (modalContent && window.innerWidth <= 1100) {
+            modalContent.style.maxHeight = '782px';
+        }
+
         setTimeout(function() {
             var regField = document.querySelector('#tab-register input[type="text"], #tab-register input[type="email"]');
             if (regField) {
@@ -88,6 +111,7 @@ function initAuthModalHandlers() {
             window.location.reload();
         }, 500);
     });
+
     document.addEventListener('registerSuccess', function() {
         switchAuthTab('login');
 

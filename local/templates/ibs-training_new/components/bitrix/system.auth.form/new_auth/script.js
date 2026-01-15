@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const successEmail = document.getElementById('successEmail');
 	const resultBoxAuth = document.getElementById('forgotAuthResult');
 	const submitForgotForm = document.getElementById('submitForgotForm');
+
 	function clearAuthErrors() {
 		authResult.className = '';
 		authResult.innerHTML = '';
@@ -51,73 +52,82 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	// Открытие первой модалки
-	if(forgotBtn){
-		forgotBtn.addEventListener('click', function(e){
+	function showAuthResult(message, type) {
+		authResult.style.display = 'block';
+		authResult.textContent = message;
+		authResult.className = 'auth-result auth-result--' + type;
+	}
+	if (authFormMain) {
+		authFormMain.addEventListener('submit', function (e) {
+			e.preventDefault();
+			clearAuthErrors();
+
+			const email = authEmailInput.value.trim();
+			const password = authPasswordInput.value;
+
+			if (!email) {
+				showFieldError(authEmailInput, authEmailError, 'Введите email');
+				return;
+			}
+
+			if (!password) {
+				showFieldError(authPasswordInput, authPasswordError, 'Введите пароль');
+				return;
+			}
+
+			if (captchaInput && !captchaInput.value.trim()) {
+				showFieldError(captchaInput, captchaError, 'Введите код с картинки');
+				return;
+			}
+
+			const originalText = authSubmitBtn.textContent;
+			authSubmitBtn.textContent = 'Вход...';
+			authSubmitBtn.disabled = true;
+			showAuthResult('Проверка данных...', 'loading');
+
+			const formData = new FormData(authFormMain);
+			formData.append('ajax', 'Y');
+
+			fetch(location.href, {
+				method: 'POST',
+				body: formData
+			})
+				.then(res => res.json())
+				.then(data => {
+					if (data.STATUS === 'OK') {
+						showAuthResult(data.MESSAGE, 'success');
+						setTimeout(() => {
+							window.location.href = data.REDIRECT || '/';
+						}, 1500);
+					} else {
+						showAuthResult(data.MESSAGE || 'Ошибка авторизации', 'error');
+						if (captchaImg) {
+							const imgSrc = captchaImg.src;
+							const separator = imgSrc.indexOf('?') > -1 ? '&' : '?';
+							captchaImg.src = imgSrc + separator + 'rand=' + Math.random();
+						}
+						authFormMain.reset();
+						authEmailInput.value = email;
+					}
+				})
+				.catch(error => {
+					console.error('Auth error:', error);
+					showAuthResult('Ошибка соединения. Попробуйте еще раз.', 'error');
+				})
+				.finally(() => {
+					authSubmitBtn.textContent = originalText;
+					authSubmitBtn.disabled = false;
+				});
+		});
+	}
+	if (forgotBtn) {
+		forgotBtn.addEventListener('click', function (e) {
 			e.preventDefault();
 			authModalOverlay.style.display = 'flex';
 			document.body.style.overflow = 'hidden';
 		});
 	}
 
-		const email = authEmailInput.value.trim();
-		const password = authPasswordInput.value;
-
-		if (!email) {
-			showFieldError(authEmailInput, authEmailError, 'Введите email');
-			return;
-		}
-
-		if (!password) {
-			showFieldError(authPasswordInput, authPasswordError, 'Введите пароль');
-			return;
-		}
-
-		if (captchaInput && !captchaInput.value.trim()) {
-			showFieldError(captchaInput, captchaError, 'Введите код с картинки');
-			return;
-		}
-
-		const originalText = authSubmitBtn.textContent;
-		authSubmitBtn.textContent = 'Вход...';
-		authSubmitBtn.disabled = true;
-		showAuthResult('Проверка данных...', 'loading');
-
-		const formData = new FormData(authFormMain);
-		formData.append('ajax', 'Y');
-
-		fetch(location.href, {
-			method: 'POST',
-			body: formData
-		})
-			.then(res => res.json())
-			.then(data => {
-				if (data.STATUS === 'OK') {
-					showAuthResult(data.MESSAGE, 'success');
-					// Успешная авторизация - редирект через 1.5 сек
-					setTimeout(() => {
-						window.location.href = data.REDIRECT || '/';
-					}, 1500);
-				} else {
-					showAuthResult(data.MESSAGE || 'Ошибка авторизации', 'error');
-					if (captchaImg) {
-						const imgSrc = captchaImg.src;
-						const separator = imgSrc.indexOf('?') > -1 ? '&' : '?';
-						captchaImg.src = imgSrc + separator + 'rand=' + Math.random();
-					}
-					authFormMain.reset();
-					authEmailInput.value = email;
-				}
-			})
-			.catch(error => {
-				console.error('Auth error:', error);
-				showAuthResult('Ошибка соединения. Попробуйте еще раз.', 'error');
-			})
-			.finally(() => {
-				authSubmitBtn.textContent = originalText;
-				authSubmitBtn.disabled = false;
-			});
-	}
 	function closeAuthModal() {
 		authModalOverlay.style.display = 'none';
 		document.body.style.overflow = '';
@@ -128,12 +138,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		clearAuthErrors();
 	}
 
-	if(closeForgotAuth){
+	if (closeForgotAuth) {
 		closeForgotAuth.addEventListener('click', closeAuthModal);
-		backBtnAuth.addEventListener('click', closeAuthModal);}
-	
+		if (backBtnAuth) backBtnAuth.addEventListener('click', closeAuthModal);
+	}
 
-	// Открытие второй модалки
 	function openSuccessModal(email) {
 		successEmail.textContent = email;
 		authModalOverlay.style.display = 'none';
@@ -145,35 +154,33 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.body.style.overflow = '';
 		formAuth.reset();
 	}
-	if(closeSuccessAuth){
+
+	if (closeSuccessAuth) {
 		closeSuccessAuth.addEventListener('click', closeSuccessModal);
 	}
 
-	// Кнопка "Вернуться на вход" - редирект на /auth/
-	if(backToAuthBtn){
-		backToAuthBtn.addEventListener('click', function() {
+	if (backToAuthBtn) {
+		backToAuthBtn.addEventListener('click', function () {
 			window.location.href = '/auth/';
 		});
 	}
-
-	// Закрытие по клику на оверлей
-	if(authModalOverlay){
-		authModalOverlay.addEventListener('click', function(e) {
+	if (authModalOverlay) {
+		authModalOverlay.addEventListener('click', function (e) {
 			if (e.target === authModalOverlay) {
 				closeAuthModal();
 			}
 		});
 	}
 
-	if(successModalOverlay){
-		successModalOverlay.addEventListener('click', function(e) {
+	if (successModalOverlay) {
+		successModalOverlay.addEventListener('click', function (e) {
 			if (e.target === successModalOverlay) {
 				closeSuccessModal();
 			}
 		});
 	}
 
-	document.addEventListener('keydown', function(e) {
+	document.addEventListener('keydown', function (e) {
 		if (e.key === 'Escape') {
 			if (authModalOverlay.style.display === 'flex') {
 				closeAuthModal();
@@ -184,11 +191,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 
-	// Отправка формы восстановления пароля
-	if(formAuth){
-		formAuth.addEventListener('submit', function(e){
+	if (formAuth) {
+		formAuth.addEventListener('submit', function (e) {
 			e.preventDefault();
-	
+
 			const email = forgotEmailInput.value.trim();
 			if (!email) {
 				resultBoxAuth.style.display = 'block';
@@ -196,24 +202,21 @@ document.addEventListener('DOMContentLoaded', function () {
 				resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
 				return;
 			}
-	
-			// Показываем индикатор загрузки
 			const originalText = submitForgotForm.textContent;
 			submitForgotForm.textContent = 'Отправка...';
 			submitForgotForm.disabled = true;
-	
+
 			const formData = new FormData();
 			formData.append('AUTH_FORM', 'Y');
 			formData.append('TYPE', 'SEND_PWD');
 			formData.append('USER_LOGIN', email);
-	
+
 			fetch(location.href, {
 				method: 'POST',
 				body: formData
 			})
 				.then(res => {
 					if (res.ok) {
-						// Показываем вторую модалку с email пользователя
 						openSuccessModal(email);
 					} else {
 						throw new Error('Ошибка сервера');
@@ -225,13 +228,13 @@ document.addEventListener('DOMContentLoaded', function () {
 					resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
 				})
 				.finally(() => {
-					// Восстанавливаем кнопку
 					submitForgotForm.textContent = originalText;
 					submitForgotForm.disabled = false;
 				});
 		});
 	}
 });
+
 function togglePassword(icon) {
 	const input = icon.previousElementSibling;
 	if (input.type === 'password') {

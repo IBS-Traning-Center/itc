@@ -1,20 +1,17 @@
 <?php
 
-use Local\Util\Functions;
-
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
 global $USER;
-$authModalId = 'auth-modal-' . $this->randString();
-
+$authModalId = 'auth-modal';
+use Local\Util\Functions;
 ?>
 <div class="main-top-menu-block">
     <?php if (!empty($arResult)) : ?>
         <?php foreach ($arResult as $key => $value) : ?>
-            <?php
-            $isCatalog = false;
+           <?php $isCatalog = false;
             $isPersonal = false;
 
             if (isset($value['PARAMS']['CATALOG']) && $value['PARAMS']['CATALOG'] === 'Y') {
