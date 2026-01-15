@@ -19,7 +19,7 @@ $this->setFrameMode(true);
 			$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 			$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 		?>
-			<div class="tabs__item<?=($key==0) ? ' active' : '';?>" data-tab="<?=$arSection['CODE'];?>"><?=$arSection['NAME'];?></div>
+			<div class="tabs__item<?=($key==0) ? ' active' : '';?>" id="<?=$arSection['CODE'];?>" data-tab="<?=$arSection['CODE'];?>"><?=$arSection['NAME'];?></div>
 
 		<? }
 		unset($arSection);
