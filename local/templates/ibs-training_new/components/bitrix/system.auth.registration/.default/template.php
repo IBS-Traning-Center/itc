@@ -1,14 +1,8 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-function splitFIO($fullName) {
-    $parts = preg_split('/\s+/', trim($fullName));
-    $result = ['last_name' => '', 'name' => '', 'second_name' => ''];
-    if (count($parts) >= 1) $result['last_name'] = $parts[0];
-    if (count($parts) >= 2) $result['name'] = $parts[1];
-    if (count($parts) >= 3) $result['second_name'] = $parts[2];
-    return $result;
-}
+
+
 
 $hasGeneralErrors = !empty($arResult['ERRORS']) && is_array($arResult['ERRORS']);
 
@@ -20,7 +14,7 @@ $fullNameValue = $nameValue = $lastNameValue = $secondNameValue = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['REGISTER']['FULL_NAME'])) {
     $fullNameValue = trim($_POST['REGISTER']['FULL_NAME']);
-    $nameParts = splitFIO($fullNameValue);
+    $nameParts = splitFIOauthauth($fullNameValue);
     $lastNameValue = $nameParts['last_name'];
     $nameValue = $nameParts['name'];
     $secondNameValue = $nameParts['second_name'];
@@ -177,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['REGISTER']['FULL_NAM
         const hiddenLogin = document.getElementById('hiddenLogin');
         const emailInput = form.querySelector('input[name="REGISTER[EMAIL]"]');
 
-        function splitFIO(fullName) {
+        function splitFIOauth(fullName) {
             const parts = fullName.trim().split(/\s+/);
             return {
                 lastName: parts[0] || '',      // Фамилия
@@ -187,13 +181,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['REGISTER']['FULL_NAM
         }
         if (fullNameInput) {
             fullNameInput.addEventListener('input', function() {
-                const fioParts = splitFIO(this.value);
+                const fioParts = splitFIOauth(this.value);
                 hiddenLastName.value = fioParts.lastName;
                 hiddenName.value = fioParts.name;
                 hiddenSecondName.value = fioParts.secondName;
             });
 
-            const fioParts = splitFIO(fullNameInput.value);
+            const fioParts = splitFIOauth(fullNameInput.value);
             hiddenLastName.value = fioParts.lastName;
             hiddenName.value = fioParts.name;
             hiddenSecondName.value = fioParts.secondName;
@@ -213,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['REGISTER']['FULL_NAM
 
                 // Заполняем скрытые поля из ФИО
                 if (fullNameInput && fullNameInput.value.trim()) {
-                    const fioParts = splitFIO(fullNameInput.value);
+                    const fioParts = splitFIOauth(fullNameInput.value);
 
                     if (!hiddenLastName.value && fioParts.lastName) {
                         hiddenLastName.value = fioParts.lastName;
@@ -361,5 +355,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['REGISTER']['FULL_NAM
 
         <?php endif; ?>
     });
-
+    function splitFIOauthauth($fullName) {
+        $parts = preg_split('/\s+/', trim($fullName));
+        $result = ['last_name' => '', 'name' => '', 'second_name' => ''];
+        if (count($parts) >= 1) $result['last_name'] = $parts[0];
+        if (count($parts) >= 2) $result['name'] = $parts[1];
+        if (count($parts) >= 3) $result['second_name'] = $parts[2];
+        return $result;
+    }
 </script>

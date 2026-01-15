@@ -1,6 +1,6 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-function splitFIO($fullName) {
+function splitFIOmain($fullName) {
     $parts = preg_split('/\s+/', trim($fullName));
     $result = [
         'last_name' => '',
@@ -31,7 +31,7 @@ $secondNameValue = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['REGISTER']['FULL_NAME'])) {
         $fullNameValue = trim($_POST['REGISTER']['FULL_NAME']);
-        $nameParts = splitFIO($fullNameValue);
+        $nameParts = splitFIOmain($fullNameValue);
 
         $lastNameValue = $nameParts['last_name'];
         $nameValue = $nameParts['name'];
