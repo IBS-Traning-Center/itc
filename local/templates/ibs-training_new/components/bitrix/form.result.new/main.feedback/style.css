@@ -12,14 +12,15 @@
 .main-feedback-form-block .main-feedback-form-container h2 {
     color: var(--white);
     font-weight: 400;
-    font-size: 80px;
-    line-height: 92px;
+    font-size: 56px;
+    line-height: 72px;
     max-width: 833px;
     width: 100%;
 }
 
 .main-feedback-form-block .main-feedback-form-container .questions-block {
     width: 100%;
+    max-width: 799px;
 }
 
 .main-feedback-form-block .main-feedback-form-container .questions-block .success-text {

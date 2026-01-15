@@ -67,6 +67,9 @@ class MainPageReviewsComponent extends CBitrixComponent
             ],
             'filter' => [
                 'ACTIVE' => 'Y'
+            ],
+            "order" => [
+                "SORT" => "ASC",
             ]
         ])->fetchCollection();
     }
@@ -84,6 +87,9 @@ class MainPageReviewsComponent extends CBitrixComponent
             'VIDEO_MESS.FILE',
             'SHOW_ON_MAIN_PAGE.ITEM',
             'COURSE_' => 'COURSE'
+        ])
+        ->setOrder([
+            "ID" => "DESC"
         ])
         ->setFilter([
             '=ACTIVE' => 'Y'

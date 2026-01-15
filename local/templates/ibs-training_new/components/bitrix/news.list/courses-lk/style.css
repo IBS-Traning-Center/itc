@@ -1,4 +1,4 @@
-/* Базовые стили для секции */
+
 .lk-section {
 	margin-bottom: 48px;
 	padding: 0 16px;
@@ -13,7 +13,6 @@
 	margin-bottom: 24px;
 }
 
-/* Контейнер для карточек */
 .lk-cards {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -26,7 +25,6 @@
 		text-decoration: underline;
 
 }
-/* Стили для карточки курса */
 .lk-card.course {
 	box-sizing: border-box;
 	display: flex;
@@ -42,11 +40,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 16px;
+	gap: 24px;
 	width: 100%;
 }
-
-/* Мета-информация (верхняя строка) */
 .lk-card.course .lk-card__meta {
 	display: flex;
 	flex-direction: row;
@@ -61,14 +57,13 @@
 	font-family: 'Noto Sans', sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 16px;
 	color: #000000;
 	flex: 1;
 	min-width: 120px;
 }
 
-/* Бейдж и длительность */
 .lk-badge {
 	display: inline-flex;
 	align-items: center;
@@ -101,7 +96,6 @@
 	min-width: 44px;
 }
 
-/* Вторичная мета-информация (дата и время) */
 .lk-card__meta-secondary {
 	display: flex;
 	flex-direction: column;
@@ -129,7 +123,6 @@
 	align-items: center;
 }
 
-/* Заголовок курса */
 .lk-card.course .lk-card__title {
 	width: 100%;
 	font-family: 'Noto Sans', sans-serif;
@@ -140,8 +133,6 @@
 	color: #2B418B;
 	margin: 0;
 }
-
-/* Подзаголовок с аватаром */
 .lk-card.course .lk-card__subtitle {
 	display: flex;
 	flex-direction: row;
@@ -185,7 +176,6 @@
 	color: #FFFFFF;
 }
 
-/* Цена */
 .lk-card.course .lk-card__price {
 	width: 100%;
 	font-family: 'Noto Sans', sans-serif;
@@ -197,7 +187,6 @@
 	margin: 0;
 }
 
-/* Кнопка */
 .lk-card.course .lk-card__btn {
 	box-sizing: border-box;
 	display: flex;
@@ -205,7 +194,6 @@
 	justify-content: center;
 	align-items: center;
 	padding: 8px 16px;
-	width: 100%;
 	background: #FFFFFF;
 	border: 1px solid #2B418B;
 	text-decoration: none;
@@ -223,10 +211,6 @@
 	background: #2B418B;
 	color: #FFFFFF;
 }
-
-/* Медиа-запросы для адаптивности */
-
-/* Планшеты (от 768px) */
 @media (min-width: 768px) {
 	.lk-section {
 		padding: 0 24px;
@@ -264,12 +248,11 @@
 
 	.lk-card__meta-secondary {
 		flex-direction: row;
-		align-items: center;
 		gap: 16px;
 	}
 
 	.lk-badge {
-		padding: 8px 16px;
+		padding: 20px 16px;
 		font-size: 16px;
 		line-height: 24px;
 		min-width: 114px;
@@ -282,8 +265,6 @@
 		min-width: 64px;
 	}
 }
-
-/* Десктоп (от 1024px) */
 @media (min-width: 1024px) {
 	.lk-section {
 		padding: 0 32px;
@@ -298,7 +279,7 @@
 
 	.lk-card.course {
 		height: auto;
-		min-height: 413px;
+		min-height: 247px;
 	}
 
 	.lk-card.course .lk-card__body {
@@ -327,18 +308,13 @@
 	}
 }
 
-/* Большие десктопы (от 1440px) */
 @media (min-width: 1440px) {
-	.lk-section {
-		padding: 0;
-	}
+
 
 	.lk-cards {
 		gap: 32px;
 	}
 }
-
-/* Мобильные устройства (до 767px) - дополнительные оптимизации */
 @media (max-width: 767px) {
 	.lk-card.course .lk-card__meta {
 		flex-direction: column;
@@ -370,13 +346,13 @@
 
 
 .lk-header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 24px 0px 32px;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 24px 35px 32px;
+	width: 100%;
+	flex-wrap: wrap;
+	gap: 16px;
 }
 
 .lk-tabs {

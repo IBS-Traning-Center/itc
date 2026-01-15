@@ -1,4 +1,4 @@
-/* ========== ОСНОВНЫЕ СТИЛИ КОНТЕЙНЕРА ========== */
+
 .lk-section {
 	margin-bottom: 48px;
 	padding: 0 16px;
@@ -12,117 +12,132 @@
 	color: #000000;
 	margin-bottom: 16px;
 }
-
-/* ========== АДАПТИВНАЯ СЕТКА ========== */
 .lk-cards {
-	display: grid;
-	grid-template-columns: 1fr;
+	display: flex;
+	flex-direction: column;
 	gap: 24px;
 	width: 100%;
 }
 
-/* Десктоп: 2 колонки */
-@media (min-width: 768px) {
-	.lk-cards {
-		grid-template-columns: repeat(2, 1fr);
-		gap: 16px;
-	}
-}
-
-/* ========== АДАПТИВНАЯ КАРТОЧКА ========== */
 .lk-card.cert {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
+	padding: 24px;
+	gap: 24px;
+	width: 100%;
+	height: auto;
 	background: #F0F0F0;
 	border-bottom: 1px solid #000000;
-	padding: 16px;
-	width: 100%;
-	box-sizing: border-box;
 }
 
-/* Десктоп: горизонтальная раскладка */
 @media (min-width: 768px) {
 	.lk-card.cert {
+		flex-direction: row-reverse;
+		height: 234px;
+	}
+	.lk-cards {
 		flex-direction: row;
-		padding: 24px;
-		gap: 24px;
-		max-width: 100%;
+		flex-wrap: wrap;
 	}
 }
-
-/* ========== ИКОНКА СЕРТИФИКАТА ========== */
 .lk-card__icon {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 0px;
 	gap: 8px;
-	margin-bottom: 16px;
 	width: 100%;
+	height: auto;
 }
 
-@media (min-width: 768px) {
-	.lk-card__icon {
-		width: 139px;
-		height: 167px;
-		margin-bottom: 0;
-		flex-shrink: 0;
+@media (max-width: 768px) {
+	.cert-number{
+		display: contents;
+	}
+	.lk-card__icon{
+		display: none;
+	}
+	.lk-card__body {
+		bottom: 24px;
+		position: relative;
+	}
+	.lk-card__abbr{
+		align-items: center;
+		display: flex;
 	}
 }
 
 .certificate-number {
-	font-family: 'Noto Sans', sans-serif;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 16px;
-	color: #000000;
-	text-align: center;
 	width: 100%;
+	height: 19px;
+	font-family: 'Noto Sans', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	display: flex;
+
+	color: #000000;
+	justify-content: flex-end;
 }
 
 @media (min-width: 768px) {
 	.certificate-number {
-		font-size: 14px;
-		line-height: 19px;
-		width: auto;
+		width: 139px;
+		text-align: right;
+		align-self: stretch;
 	}
 }
-
-/* ========== ТЕЛО КАРТОЧКИ ========== */
 .lk-card__body {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
 	gap: 16px;
 	width: 100%;
+	height: auto;
 }
 
 @media (min-width: 768px) {
 	.lk-card__body {
-		flex: 1;
+		width: 450px;
+		height: 186px;
+		flex: none;
+		order: 0;
+		flex-grow: 1;
 	}
 }
-
-/* ========== МЕТА-ИНФОРМАЦИЯ ========== */
 .lk-card__meta {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 16px;
 	width: 100%;
+	height: auto;
 }
 
 @media (min-width: 768px) {
 	.lk-card__meta {
 		flex-direction: row;
+		justify-content: flex-end;
 		align-items: center;
-		justify-content: space-between;
 		gap: 2px;
-		height: 31px;
+		width: 450px;
+		height: 19px;
 	}
 }
 
 .lk-card__meta-info {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 16px;
+	width: 100%;
+	height: auto;
 }
 
 @media (min-width: 768px) {
@@ -130,66 +145,99 @@
 		flex-direction: row;
 		align-items: center;
 		gap: 16px;
-		width: 361px;
-		height: 24px;
+		width: 450px;
+		height: 19px;
+		flex: none;
+		order: 0;
 		flex-grow: 1;
 	}
 }
-
-/* Дата и длительность */
 .lk-card__date,
 .lk-card__duration {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
-	gap: 4px;
+	padding: 0px;
+	gap: 8px;
+	width: auto;
+	height: 0px;
+}
+
+.lk-card__date-text,
+.lk-card__duration-text {
 	font-family: 'Noto Sans', sans-serif;
+	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 19px;
+	display: flex;
+	align-items: center;
 	color: #000000;
+}
+
+.lk-badge {
+	display: none;
 }
 
 @media (min-width: 768px) {
-	.lk-card__date {
-		width: 157px;
+	.lk-badge {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 6px 8px;
+		width: auto;
+		height: 31px;
+		background: #FFFFFF;
+		font-family: 'Noto Sans', sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 19px;
+		color: #000000;
 	}
-
-
 }
-
-/* Бейдж */
-.lk-badge {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 6px 8px;
-	background: #FFFFFF;
-	font-family: 'Noto Sans', sans-serif;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 19px;
-	color: #000000;
-	width: fit-content;
-	height: 31px;
-}
-
-/* ========== ИНФОРМАЦИЯ О КУРСЕ ========== */
 .lk-card__info {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
 	gap: 4px;
+	width: 100%;
+	height: auto;
+}
+
+@media (min-width: 768px) {
+	.lk-card__info {
+		width: 450px;
+		height: 81px;
+	}
 }
 
 .lk-card__abbr {
+	width: 100%;
+	height: 19px;
 	font-family: 'Noto Sans', sans-serif;
+	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 19px;
 	color: #000000;
+	gap: 5px;
+}
+
+@media (min-width: 768px) {
+	.lk-card__abbr {
+		width: 450px;
+		display: flex;
+		align-items: center;
+	}
 }
 
 .lk-card__title {
+	width: 100%;
+	height: 30px;
 	font-family: 'Noto Sans', sans-serif;
+	font-style: normal;
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 30px;
@@ -197,55 +245,62 @@
 	margin: 0;
 }
 
+@media (min-width: 768px) {
+	.lk-card__title {
+		width: 450px;
+	}
+}
+
 .lk-card__subtitle {
+	width: 100%;
+	height: 19px;
 	font-family: 'Noto Sans', sans-serif;
+	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 19px;
+	display: flex;
+	align-items: center;
 	color: #000000;
 }
-.lk-card__date-text{
-	display: flex;
-	gap: 5px;
-}
-.lk-card__duration-text{
-	display: flex;
-	gap: 5px;
-}
-
 .lk-card__actions {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 16px;
 	width: 100%;
-	margin-top: auto;
+	height: auto;
 }
 
 @media (min-width: 768px) {
 	.lk-card__actions {
 		flex-direction: row;
 		align-items: center;
-		gap: 16px;
+		width: 450px;
 		height: 54px;
 	}
 }
-
 .lk-card__btn {
 	box-sizing: border-box;
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 8px 16px;
+	padding: 24px 25px;
+	gap: 10px;
+	width: 100%;
+	height: 54px;
 	background: #FFFFFF;
 	border: 1px solid #2B418B;
+	border-radius: 0px;
 	text-decoration: none;
 	font-family: 'Noto Sans', sans-serif;
+	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 24px;
 	color: #2B418B;
-	width: 100%;
-	height: 40px;
 	transition: all 0.2s;
 }
 
@@ -257,62 +312,58 @@
 @media (min-width: 768px) {
 	.lk-card__btn {
 		width: 236px;
-		height: 54px;
-		padding: 26px 37px;
+		flex: none;
+		order: 0;
+		flex-grow: 0;
 	}
 }
-
 .lk-card__expiry {
-	font-family: 'Noto Sans', sans-serif;
+	width: 100%;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
 	font-weight: 400;
-	font-size: 14px;
-	line-height: 19px;
+	font-size: 15px;
+	line-height: 24px;
+	display: flex;
+	align-items: center;
 	color: #000000;
-	text-align: center;
 }
 
 @media (min-width: 768px) {
 	.lk-card__expiry {
-		text-align: left;
 		width: 198px;
-		font-size: 16px;
-		line-height: 24px;
 		height: 48px;
-		display: flex;
-		align-items: center;
+		flex: none;
+		order: 1;
+		flex-grow: 1;
 	}
 }
-
-/* ========== ИКОНКИ (SVG) ========== */
 .lk-card__date svg,
 .lk-card__duration svg {
-	width: 20px;
-	height: 20px;
-	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
 }
 
-/* ========== МЕДИА-ЗАПРОСЫ ДЛЯ РАЗНЫХ УСТРОЙСТВ ========== */
-@media (max-width: 320px) {
+@media (max-width: 767px) {
 	.lk-section {
 		padding: 0 12px;
+	}
+
+	.lk-card.cert {
+		padding: 16px;
+		gap: 16px;
 	}
 
 	.lk-card__title {
 		font-size: 20px;
 		line-height: 28px;
 	}
-}
 
-@media (min-width: 1024px) {
-
-
-	.lk-cards {
-		gap: 24px;
+	.lk-card__btn {
+		padding: 16px 24px;
+		height: 48px;
 	}
-}
-
-/* Убираем горизонтальный скролл на маленьких экранах */
-html, body {
-	overflow-x: hidden;
-	max-width: 100%;
 }

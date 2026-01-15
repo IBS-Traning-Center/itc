@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	const submitForgotForm = document.getElementById('submitForgotForm');
 
 	// Открытие первой модалки
-	forgotBtn.addEventListener('click', function(e){
-		e.preventDefault();
-		authModalOverlay.style.display = 'flex';
-		document.body.style.overflow = 'hidden';
-	});
+	if(forgotBtn){
+		forgotBtn.addEventListener('click', function(e){
+			e.preventDefault();
+			authModalOverlay.style.display = 'flex';
+			document.body.style.overflow = 'hidden';
+		});
+	}
 
 	// Закрытие первой модалки
 	function closeAuthModal() {
@@ -31,8 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		formAuth.reset();
 	}
 
-	closeForgotAuth.addEventListener('click', closeAuthModal);
-	backBtnAuth.addEventListener('click', closeAuthModal);
+	if(closeForgotAuth){
+		closeForgotAuth.addEventListener('click', closeAuthModal);
+		backBtnAuth.addEventListener('click', closeAuthModal);}
+	
 
 	// Открытие второй модалки
 	function openSuccessModal(email) {
@@ -48,26 +52,33 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.body.style.overflow = '';
 		formAuth.reset();
 	}
-
-	closeSuccessAuth.addEventListener('click', closeSuccessModal);
+	if(closeSuccessAuth){
+		closeSuccessAuth.addEventListener('click', closeSuccessModal);
+	}
 
 	// Кнопка "Вернуться на вход" - редирект на /auth/
-	backToAuthBtn.addEventListener('click', function() {
-		window.location.href = '/auth/';
-	});
+	if(backToAuthBtn){
+		backToAuthBtn.addEventListener('click', function() {
+			window.location.href = '/auth/';
+		});
+	}
 
 	// Закрытие по клику на оверлей
-	authModalOverlay.addEventListener('click', function(e) {
-		if (e.target === authModalOverlay) {
-			closeAuthModal();
-		}
-	});
+	if(authModalOverlay){
+		authModalOverlay.addEventListener('click', function(e) {
+			if (e.target === authModalOverlay) {
+				closeAuthModal();
+			}
+		});
+	}
 
-	successModalOverlay.addEventListener('click', function(e) {
-		if (e.target === successModalOverlay) {
-			closeSuccessModal();
-		}
-	});
+	if(successModalOverlay){
+		successModalOverlay.addEventListener('click', function(e) {
+			if (e.target === successModalOverlay) {
+				closeSuccessModal();
+			}
+		});
+	}
 
 	// Закрытие по ESC
 	document.addEventListener('keydown', function(e) {
@@ -82,50 +93,52 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 
 	// Отправка формы восстановления пароля
-	formAuth.addEventListener('submit', function(e){
-		e.preventDefault();
-
-		const email = forgotEmailInput.value.trim();
-		if (!email) {
-			resultBoxAuth.style.display = 'block';
-			resultBoxAuth.textContent = 'Пожалуйста, введите email';
-			resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
-			return;
-		}
-
-		// Показываем индикатор загрузки
-		const originalText = submitForgotForm.textContent;
-		submitForgotForm.textContent = 'Отправка...';
-		submitForgotForm.disabled = true;
-
-		const formData = new FormData();
-		formData.append('AUTH_FORM', 'Y');
-		formData.append('TYPE', 'SEND_PWD');
-		formData.append('USER_LOGIN', email);
-
-		fetch(location.href, {
-			method: 'POST',
-			body: formData
-		})
-			.then(res => {
-				if (res.ok) {
-					// Показываем вторую модалку с email пользователя
-					openSuccessModal(email);
-				} else {
-					throw new Error('Ошибка сервера');
-				}
-			})
-			.catch(() => {
+	if(formAuth){
+		formAuth.addEventListener('submit', function(e){
+			e.preventDefault();
+	
+			const email = forgotEmailInput.value.trim();
+			if (!email) {
 				resultBoxAuth.style.display = 'block';
-				resultBoxAuth.textContent = 'Ошибка отправки. Попробуйте позже.';
+				resultBoxAuth.textContent = 'Пожалуйста, введите email';
 				resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
+				return;
+			}
+	
+			// Показываем индикатор загрузки
+			const originalText = submitForgotForm.textContent;
+			submitForgotForm.textContent = 'Отправка...';
+			submitForgotForm.disabled = true;
+	
+			const formData = new FormData();
+			formData.append('AUTH_FORM', 'Y');
+			formData.append('TYPE', 'SEND_PWD');
+			formData.append('USER_LOGIN', email);
+	
+			fetch(location.href, {
+				method: 'POST',
+				body: formData
 			})
-			.finally(() => {
-				// Восстанавливаем кнопку
-				submitForgotForm.textContent = originalText;
-				submitForgotForm.disabled = false;
-			});
-	});
+				.then(res => {
+					if (res.ok) {
+						// Показываем вторую модалку с email пользователя
+						openSuccessModal(email);
+					} else {
+						throw new Error('Ошибка сервера');
+					}
+				})
+				.catch(() => {
+					resultBoxAuth.style.display = 'block';
+					resultBoxAuth.textContent = 'Ошибка отправки. Попробуйте позже.';
+					resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
+				})
+				.finally(() => {
+					// Восстанавливаем кнопку
+					submitForgotForm.textContent = originalText;
+					submitForgotForm.disabled = false;
+				});
+		});
+	}
 });
 
 // Функция показа/скрытия пароля

@@ -100,6 +100,10 @@ $(document).ready(function () {
         allowTouchMove: true,
         freeMode: true,
         spaceBetween: 64,
+        pagination: {
+            el: ".mini-gallery__slider .swiper-pagination",
+            clickable: true,
+        },
         breakpoints: {
             0: {
                 freeMode: false,

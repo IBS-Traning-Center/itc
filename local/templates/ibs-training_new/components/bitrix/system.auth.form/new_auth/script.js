@@ -51,14 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	function showAuthResult(message, type = 'error') {
-		authResult.innerHTML = message;
-		authResult.className = `auth-result auth-result--${type}`;
-		authResult.style.display = 'block';
+	// Открытие первой модалки
+	if(forgotBtn){
+		forgotBtn.addEventListener('click', function(e){
+			e.preventDefault();
+			authModalOverlay.style.display = 'flex';
+			document.body.style.overflow = 'hidden';
+		});
 	}
-	function handleAuthSubmit(e) {
-		e.preventDefault();
-		clearAuthErrors();
 
 		const email = authEmailInput.value.trim();
 		const password = authPasswordInput.value;
@@ -128,6 +128,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		clearAuthErrors();
 	}
 
+	if(closeForgotAuth){
+		closeForgotAuth.addEventListener('click', closeAuthModal);
+		backBtnAuth.addEventListener('click', closeAuthModal);}
+	
+
+	// Открытие второй модалки
 	function openSuccessModal(email) {
 		successEmail.textContent = email;
 		authModalOverlay.style.display = 'none';
@@ -139,41 +145,33 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.body.style.overflow = '';
 		formAuth.reset();
 	}
-
-	// СОБЫТИЯ
-	if (authFormMain) {
-		authFormMain.addEventListener('submit', handleAuthSubmit);
+	if(closeSuccessAuth){
+		closeSuccessAuth.addEventListener('click', closeSuccessModal);
 	}
 
-	if (forgotBtn) {
-		forgotBtn.addEventListener('click', function(e) {
-			e.preventDefault();
-			clearAuthErrors(); // очищаем ошибки при открытии модалки
-			authModalOverlay.style.display = 'flex';
-			document.body.style.overflow = 'hidden';
+	// Кнопка "Вернуться на вход" - редирект на /auth/
+	if(backToAuthBtn){
+		backToAuthBtn.addEventListener('click', function() {
+			window.location.href = '/auth/';
 		});
 	}
 
-	closeForgotAuth.addEventListener('click', closeAuthModal);
-	backBtnAuth.addEventListener('click', closeAuthModal);
-	closeSuccessAuth.addEventListener('click', closeSuccessModal);
+	// Закрытие по клику на оверлей
+	if(authModalOverlay){
+		authModalOverlay.addEventListener('click', function(e) {
+			if (e.target === authModalOverlay) {
+				closeAuthModal();
+			}
+		});
+	}
 
-	backToAuthBtn.addEventListener('click', function() {
-		closeSuccessModal();
-		clearAuthErrors();
-	});
-
-	authModalOverlay.addEventListener('click', function(e) {
-		if (e.target === authModalOverlay) {
-			closeAuthModal();
-		}
-	});
-
-	successModalOverlay.addEventListener('click', function(e) {
-		if (e.target === successModalOverlay) {
-			closeSuccessModal();
-		}
-	});
+	if(successModalOverlay){
+		successModalOverlay.addEventListener('click', function(e) {
+			if (e.target === successModalOverlay) {
+				closeSuccessModal();
+			}
+		});
+	}
 
 	document.addEventListener('keydown', function(e) {
 		if (e.key === 'Escape') {
@@ -186,51 +184,53 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 
-	formAuth.addEventListener('submit', function(e) {
-		e.preventDefault();
-		const email = forgotEmailInput.value.trim();
-
-		if (!email) {
-			resultBoxAuth.style.display = 'block';
-			resultBoxAuth.textContent = 'Пожалуйста, введите email';
-			resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
-			return;
-		}
-
-		const originalText = submitForgotForm.textContent;
-		submitForgotForm.textContent = 'Отправка...';
-		submitForgotForm.disabled = true;
-
-		const formData = new FormData();
-		formData.append('AUTH_FORM', 'Y');
-		formData.append('TYPE', 'SEND_PWD');
-		formData.append('USER_LOGIN', email);
-		formData.append('ajax', 'Y');
-
-		fetch(location.href, {
-			method: 'POST',
-			body: formData
-		})
-			.then(res => res.json())
-			.then(data => {
-				if (data.STATUS === 'OK') {
-					openSuccessModal(email);
-				} else {
-					resultBoxAuth.style.display = 'block';
-					resultBoxAuth.textContent = data.MESSAGE || 'Ошибка отправки';
-					resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
-				}
-			})
-			.catch(() => {
+	// Отправка формы восстановления пароля
+	if(formAuth){
+		formAuth.addEventListener('submit', function(e){
+			e.preventDefault();
+	
+			const email = forgotEmailInput.value.trim();
+			if (!email) {
 				resultBoxAuth.style.display = 'block';
-				resultBoxAuth.textContent = 'Ошибка соединения';
+				resultBoxAuth.textContent = 'Пожалуйста, введите email';
 				resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
+				return;
+			}
+	
+			// Показываем индикатор загрузки
+			const originalText = submitForgotForm.textContent;
+			submitForgotForm.textContent = 'Отправка...';
+			submitForgotForm.disabled = true;
+	
+			const formData = new FormData();
+			formData.append('AUTH_FORM', 'Y');
+			formData.append('TYPE', 'SEND_PWD');
+			formData.append('USER_LOGIN', email);
+	
+			fetch(location.href, {
+				method: 'POST',
+				body: formData
 			})
-			.finally(() => {
-				submitForgotForm.textContent = originalText;
-				submitForgotForm.disabled = false;
-			});
-	});
+				.then(res => {
+					if (res.ok) {
+						// Показываем вторую модалку с email пользователя
+						openSuccessModal(email);
+					} else {
+						throw new Error('Ошибка сервера');
+					}
+				})
+				.catch(() => {
+					resultBoxAuth.style.display = 'block';
+					resultBoxAuth.textContent = 'Ошибка отправки. Попробуйте позже.';
+					resultBoxAuth.className = 'auth-modal__result auth-modal__result--error';
+				})
+				.finally(() => {
+					// Восстанавливаем кнопку
+					submitForgotForm.textContent = originalText;
+					submitForgotForm.disabled = false;
+				});
+		});
+	}
 });
 function togglePassword(icon) {
 	const input = icon.previousElementSibling;

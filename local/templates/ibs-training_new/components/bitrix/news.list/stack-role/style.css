@@ -84,6 +84,7 @@
     background-color: #254685D9;
     backdrop-filter: blur(15px);
     padding-bottom: 32px;
+    top: 0;
 }
 
 .stack_role-item:hover .stack_role-item-img{
@@ -148,14 +149,6 @@
 
     .stack_role-item:last-child{
         padding-right: 0;
-    }
-
-    .stack_role-item:hover .stack_role-item-img{
-        position: static;
-    }
-
-    .stack_role-item:hover .stack_role-item-hover{
-        display: none;
     }
 
     .stack_role-item-img{

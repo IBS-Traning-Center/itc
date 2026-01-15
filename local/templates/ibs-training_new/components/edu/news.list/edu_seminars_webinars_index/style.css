@@ -8,7 +8,6 @@
     width: 100%;
     max-width: 1680px;
     height: auto;
-    min-height: 718px;
     margin: 0 auto;
     background: #FFFFFF;
     border-bottom: 1px solid #B2B2B2;
@@ -162,7 +161,6 @@
         gap: 24px;
         width: 100%;
         height: auto;
-        min-height: 1093px;
         background: #FFFFFF;
         border-bottom: 1px solid #B2B2B2;
         flex: none;
