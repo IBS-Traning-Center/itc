@@ -1,0 +1,21 @@
+.mini-gallery__slider .swiper-pagination{
+    position: static;
+    margin-top: 20px;
+}
+
+.mini-gallery__slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background-color: var(--button-blue);
+}
+
+.mini-gallery__slider .swiper-pagination .swiper-pagination-bullet{
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    background-color: #B2B2B2;
+}
+
+@media (min-width: 1181px) {
+    .mini-gallery__slider .swiper-pagination{
+        display: none;
+    }
+}
