@@ -83,6 +83,7 @@
     background-color: #254685D9;
     backdrop-filter: blur(15px);
     padding-bottom: 32px;
+    top: 0;
 }
 
 .best_worker-item:hover .best_worker-item-img{
@@ -151,14 +152,6 @@
 
     .best_worker-item:last-child{
         padding-right: 0;
-    }
-
-    .best_worker-item:hover .best_worker-item-img{
-        position: static;
-    }
-
-    .best_worker-item:hover .best_worker-item-hover{
-        display: none;
     }
 
     .best_worker-item-img{
