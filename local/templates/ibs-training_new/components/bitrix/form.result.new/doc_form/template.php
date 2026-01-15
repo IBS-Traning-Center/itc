@@ -71,23 +71,18 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                     }
                     ?>
 
-                    <div class="form-group <?= $error ? 'error' : '' ?>">
-                        <label>
-                            <?= $caption ?>
-                            <?php if ($required): ?> <span class="required">*</span><?php endif; ?>
-                        </label>
-
+                    <div class="form-group <?= $error ? 'error' : 'is-empty' ?>">
                         <?php if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] === "textarea"): ?>
                             <?= str_replace(
                                 '<textarea',
-                                '<textarea class="form-control textarea" placeholder="' . $caption . '"',
+                                '<textarea class="form-control textarea" placeholder="' . $caption . ($required ? ' *' : '') . '"',
                                 $arQuestion["HTML_CODE"]
                             ) ?>
 
                         <?php elseif ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] === "dropdown"): ?>
                             <?= str_replace(
                                 '<select',
-                                '<select class="form-control select"',
+                                '<select class="form-control select" data-placeholder="' . $caption . '"',
                                 $arQuestion["HTML_CODE"]
                             ) ?>
 
@@ -95,7 +90,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                             <?php
                             $html = $arQuestion["HTML_CODE"];
                             $html = preg_replace('/type="[^"]*"/', 'type="' . $type . '"', $html);
-                            $html = preg_replace('/<input/', '<input class="form-control" placeholder="' . $caption . '"', $html);
+                            $html = preg_replace('/<input/', '<input class="form-control" placeholder="' . $caption . ($required ? ' *' : '') . '"', $html);
                             if ($required) $html = str_replace('<input', '<input required', $html);
                             echo $html;
                             ?>
@@ -107,7 +102,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                     </div>
 
                 <?php endforeach; ?>
-
+                <div class="form-hint">
+                    Можно ввести название курса или программы и дату получения или обучения
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">
+                    <?= htmlspecialcharsbx($arResult["arForm"]["BUTTON"] ?: 'Отправить запрос') ?>
+                </button>
                 <?php if ($arResult["isUseCaptcha"] == "Y"): ?>
                     <div class="form-group captcha">
                         <label>Защитный код <span class="required">*</span></label>
@@ -122,14 +122,58 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                     </div>
                 <?php endif; ?>
 
-                <button type="submit" class="btn btn-primary btn-large">
-                    <?= htmlspecialcharsbx($arResult["arForm"]["BUTTON"] ?: 'Отправить запрос') ?>
-                </button>
+
 
             </div>
         </form>
 
         <?= $arResult["FORM_FOOTER"] ?>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form[name^="form_"]');
+            if (form) {
+                // Add validation on form submit
+                form.addEventListener('submit', function(e) {
+                    const inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
+                    let hasEmptyFields = false;
+
+                    inputs.forEach(input => {
+                        if (input.value.trim() === '') {
+                            input.closest('.form-group').classList.add('is-empty');
+                            hasEmptyFields = true;
+                        } else {
+                            input.closest('.form-group').classList.remove('is-empty');
+                        }
+                    });
+
+                    if (hasEmptyFields) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+
+                // Add real-time validation on input change
+                form.addEventListener('input', function(e) {
+                    if (e.target.matches('input[type="text"], input[type="email"], input[type="tel"], textarea')) {
+                        if (e.target.value.trim() === '') {
+                            e.target.closest('.form-group').classList.add('is-empty');
+                        } else {
+                            e.target.closest('.form-group').classList.remove('is-empty');
+                        }
+                    }
+                });
+
+                // Initial check for pre-filled values
+                const inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
+                inputs.forEach(input => {
+                    if (input.value.trim() !== '') {
+                        input.closest('.form-group').classList.remove('is-empty');
+                    }
+                });
+            }
+        });
+        </script>
         <?php if (isset($_GET['formresult']) && $_GET['formresult'] === 'addok'): ?>
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
