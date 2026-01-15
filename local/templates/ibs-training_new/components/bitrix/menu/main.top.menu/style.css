@@ -313,12 +313,17 @@
     #header .header-container .logo-block svg{
         min-width: 105px;
     }
+    .auth-modal-wrapper .auth-container{
+        padding-top: 25px
+    ;
+    }
 }
 
 @media (max-width: 1100px) {
     .auth-modal-content {
-        padding: 40px;
+        padding: 20px 24px;
         max-width: 95%;
+
     }
 
     .auth-modal-title {
@@ -330,8 +335,17 @@
 @media (max-width: 768px) {
     .auth-modal-content {
         padding: 30px 20px;
+        max-width: 328px;
+        max-height: 478px;
     }
+    .auth-modal-body{
 
+        padding: 0px;
+         gap: 0px;
+        width: 280px;
+        height: 430px;
+
+    }
     .auth-modal-close-btn {
         width: 64px;
         height: 64px;
@@ -362,9 +376,7 @@
 }
 
 @media (max-width: 480px) {
-    .auth-modal-content {
-        padding: 20px 16px;
-    }
+
 
     .auth-modal-title {
         font-size: 24px;

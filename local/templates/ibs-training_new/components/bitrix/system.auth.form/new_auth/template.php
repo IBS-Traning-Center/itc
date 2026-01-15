@@ -237,7 +237,7 @@ if ($_POST['AUTH_FORM'] === 'Y' && $_POST['TYPE'] === 'AUTH' && $_REQUEST['ajax'
         <div class="auth-modal-overlay" id="successModalOverlay" style="display:none;">
             <div class="auth-modal auth-modal--success" id="successAuthModal">
                 <button class="auth-modal__close" id="closeSuccessAuth"></button>
-                <div class="auth-modal__content">
+                <div class="auth-modal__content--success">
                     <h2 class="auth-modal__title">Новый пароль отправлен</h2>
                     <div class="auth-modal__message" id="successMessage">
                         На почту <span class="auth-modal__email" id="successEmail"></span> выслан новый пароль<br>
