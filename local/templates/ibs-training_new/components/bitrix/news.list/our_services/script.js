@@ -8,4 +8,34 @@ $(document).ready(function () {
 
         $('.our-services__image img').attr('src', image);
     });
+
+    $('.our-services__item').on('click', function(e) {
+        e.preventDefault();
+        let targetId = $(this).attr('href');
+        
+        if (targetId && targetId.startsWith('#')) {
+            if ($(targetId).length) {
+                $('html, body').animate({
+                    scrollTop: $(targetId).offset().top - 80
+                }, 800); 
+                
+                $('.mini-gallery [data-code]').hide();
+                $('.mini-gallery [data-tab]').removeClass('active');
+
+                $('.mini-gallery [data-code]').each(function() {
+                    let codeWords = $(this).attr('data-code').split(/\s+/);
+                    if(codeWords == targetId.slice(1)) {
+                        $(this).show();
+                    }
+                });
+
+                $('.mini-gallery [data-tab]').each(function() {
+                    let codeWords = $(this).attr('data-tab').split(/\s+/);
+                    if(codeWords == targetId.slice(1)) {
+                        $(this).addClass('active');
+                    }
+                });
+            }
+        }
+    });
 });
