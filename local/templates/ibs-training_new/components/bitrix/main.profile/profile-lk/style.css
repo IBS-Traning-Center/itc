@@ -22,7 +22,7 @@
 }
 
 .lk-profile-wrapper .tab {
-    padding: 10px 20px;
+    padding: 10px 16px;
     font-size: 16px;
     background: #f0f0f0;
     color: #000;
@@ -51,32 +51,37 @@
 .lk-profile-wrapper .field-blue {
     border-bottom: 2px solid #2B418B;
     padding: 0 0 20px 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .lk-profile-wrapper .field-blue label {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
     margin-bottom: 8px;
+    padding-left: 25px;
 }
-
+.lk-content{
+    padding: 56px;
+}
+.subscr-wrapper{
+    padding: 56px;
+}
 .lk-profile-wrapper .field-blue input {
     width: 100%;
     border: none;
     outline: none;
-    font-size: 28px;
+    font-size: 24px;
     background: transparent;
     color: #000;
 }
 
-.lk-profile-wrapper .field-blue input:disabled { color: #999; }
 
 /* Поля с серым фоном */
 .lk-profile-wrapper .field-gray {
     background: #F8F8F8;
-    padding: 24px;
-    margin-bottom: 16px;
+    padding: 0 0 20px 0;
+    margin-bottom: 20px;
     border-bottom: 1px solid #000;
 }
 
@@ -84,7 +89,7 @@
     width: 100%;
     border: none;
     outline: none;
-    font-size: 28px;
+    font-size: 24px;
     background: transparent;
     color: #000;
 }
@@ -120,7 +125,10 @@
     font-size: 14px;
     color: #666;
 }
-
+.hh-section .hh-link .hh-profile-link {
+    color: #1d427d !important;
+    text-decoration: underline !important;
+}
 /* Кнопки */
 .lk-profile-wrapper .buttons {
     display: flex;
