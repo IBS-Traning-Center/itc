@@ -295,9 +295,6 @@ $APPLICATION->SetTitle("Персональный раздел");
             }
         }
         @media (max-width: 480px) {
-            .stats-container {
-                padding: 24px 12px;
-            }
 
 
             .stat-number {
