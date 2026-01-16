@@ -299,10 +299,6 @@ $APPLICATION->SetTitle("Персональный раздел");
                 padding: 24px 12px;
             }
 
-            .stat-card {
-                flex: 0 0 260px;
-                width: 260px;
-            }
 
             .stat-number {
                 font-size: 32px;
@@ -312,7 +308,7 @@ $APPLICATION->SetTitle("Персональный раздел");
         }
         @media (max-width: 480px) {
             .stat-card {
-                flex: 0 0 86vw;
+                flex: 0 0 72vw;
                 width: 86vw;
             }
 
