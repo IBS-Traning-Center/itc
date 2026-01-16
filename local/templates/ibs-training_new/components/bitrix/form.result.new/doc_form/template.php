@@ -32,6 +32,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
         </button>
 
         <h1 class="form-title"><?= htmlspecialcharsbx($arResult["FORM_TITLE"]) ?></h1>
+        <h1 class="form-title-mob">Запросить удостоверение</h1>
 
         <?php if ($arResult["isFormDescription"] == "Y"): ?>
             <div class="form-description"><?= $arResult["FORM_DESCRIPTION"] ?></div>
