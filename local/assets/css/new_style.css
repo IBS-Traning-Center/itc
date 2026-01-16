@@ -889,8 +889,8 @@ body {
 
 .main-page-heading {
     color: var(--black);
-    font-size: 80px;
-    line-height: 92px;
+    font-size: 64px;
+    line-height: 78px;
     font-weight: 400;
     margin-bottom: 8px;
 }
@@ -2684,8 +2684,8 @@ span.time.time-with-tooltip:hover .tooltip {
 }
 
 .corporate-program .text-block-title{
-    font-size: 42px;
-    line-height: 60px;
+    font-size: 64px;
+    line-height: 78px;
     margin-bottom: 56px;
     padding-right: 20px;
     font-weight: 400;

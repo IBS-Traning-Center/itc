@@ -1,7 +1,8 @@
 .stack_role-h2{
-    font-size: 56px;
-    line-height: 72px;
+    font-size: 64px;
+    line-height: 78px;
     margin-bottom: 56px;
+    letter-spacing: -0.8px;
 }
 
 .stack_role-desc{
@@ -179,6 +180,7 @@
         font-size: 22px;
         line-height: 1.4;
         margin-bottom: 24px;
+        letter-spacing: 0px;
     }
 
     .stack_role-title-block{
