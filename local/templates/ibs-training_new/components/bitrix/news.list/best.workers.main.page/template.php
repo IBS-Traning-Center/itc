@@ -25,7 +25,7 @@ if (!empty($arResult['ITEMS'])) : ?>
                             <?= $item['NAME'] ?>
                         </div>
                         <div class="best_worker-item-img" style="background-image: url('<?= $item['PREVIEW_PICTURE']['SRC'] ?>')"></div>
-                        <div class="best_worker-item-hover">
+                        <div class="best_worker-item-hover" style="background-image: url('<?= $item['PREVIEW_PICTURE']['SRC'] ?>')">
                             <div class="best_worker-item-name">
                                 <?= $item['NAME'] ?>
                             </div>
@@ -33,7 +33,7 @@ if (!empty($arResult['ITEMS'])) : ?>
                                 <?= $item['PREVIEW_TEXT'] ?>
                             </div>
                             <? if($item['PROPERTIES']['BTN_NAME']['VALUE']): ?>
-                                <div class="best_worker-item-link">
+                                <div class="best_worker-item-link" >
                                     <a href="<?= $item['PROPERTIES']['BTN_LINK']['VALUE'] ?>">
                                         <?= $item['PROPERTIES']['BTN_NAME']['VALUE'] ?>
                                     </a>

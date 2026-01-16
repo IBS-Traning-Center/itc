@@ -72,25 +72,35 @@
     position: absolute;
     z-index: 1;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.best_worker-item-hover:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #254685D9;
+    z-index: 1;
+    backdrop-filter: blur(15px);
+}
+
+.best_worker-item-hover div{
+    position: relative;
+    z-index: 2;
 }
 
 .best_worker-item:hover .best_worker-item-hover{
     opacity: 1;
     position: absolute;
     z-index: 1;
-    background-color: #254685D9;
-    backdrop-filter: blur(15px);
     padding-bottom: 32px;
     top: 0;
-}
-
-.best_worker-item:hover .best_worker-item-img{
-    max-height: 100%;
-    position: absolute;
-    top: 0;
-    background-size: cover;
 }
 
 .best_worker-item-hover .best_worker-item-name{
@@ -112,7 +122,9 @@
     -webkit-box-orient: vertical;
     line-clamp: 11;
     box-orient: vertical;
+    font-weight: 400;
     margin-bottom: 16px;
+    font-family: 'Stag Sans', sans-serif;
 }
 
 .best_worker-item-link{
@@ -135,7 +147,7 @@
         width: auto;
         max-width: none;
         margin: 0;
-        padding: 0 12px;
+        margin: 0 12px;
         min-height: auto;
         min-height: 472px;
     }
@@ -173,10 +185,11 @@
         background-color: transparent;
     }
 
-    .best_worker-item-name{
+    .best_worker-item-name,
+    .best_worker-item-hover .best_worker-item-name{
         min-height: unset;
         font-size: 24px;
-        line-height: 100%;
+        line-height: 32px;
         min-height: 112px;
         display: flex;
         align-items: center;
@@ -200,7 +213,7 @@
         margin: 0 4.5px;
     }
 
-    .best_worker-block-wrap  .slick-dots li button{
+    .best_worker-block-wrap .slick-dots li button{
         width: 14px;
         height: 14px;
         padding: 0;
@@ -237,5 +250,16 @@
     .best_worker-block-wrap .slick-arrow.slick-next{
         right: 16px;
         transform: rotate(360deg);
+    }
+
+    .best_worker-item-text{
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 600px) {
+    .best_worker-block-wrap .container{
+        padding-left: 0;
+        padding-right: 0;
     }
 }
