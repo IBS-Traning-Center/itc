@@ -153,7 +153,7 @@ $APPLICATION->SetTitle("Персональный раздел");
         }
         @media (max-width: 1200px) {
             .stats-container {
-                padding: 32px 16px;
+                padding: 32px 16px 32px 16px;
                 background: #2B418B;
             }
 
