@@ -72,7 +72,7 @@
 }
 
 .images-icons-block {
-    padding: 60px 0;
+    padding: 100px 0 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 56px;
@@ -81,25 +81,25 @@
 
 .images-icons-block .item {
     display: flex;
-    align-items: center;
-    gap: 24px;
+    flex-direction: column;
 }
 
 .images-icons-block .item .icon-block {
-    background-color: var(--light-gray);
-    border-radius: 50%;
-    padding: 18px;
-}
-
-.images-icons-block .item .icon-block svg {
-    max-width: 48px;
-    min-width: 48px;
-    max-height: 48px;
-    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 72px;
+    height: 72px;
+    margin-bottom: 16px;
 }
 
 .images-icons-block .item p {
     margin: 0;
+}
+
+.images-icons-block .item p + p{
+    margin-top: 16px;
 }
 
 .talent-section .grid-talent-3 > div h2 {
@@ -364,21 +364,33 @@
         line-height: 24px;
     }
 
+    .images-icons-block .item{
+        padding-left: 44px;
+        position: relative;
+    }
+
     .images-icons-block {
-        padding: 32px 0;
+        padding: 40px 0;
         grid-template-columns: repeat(1, 1fr);
         gap: 24px;
     }
 
-    .images-icons-block .item .icon-block svg {
-        max-width: 28px;
-        min-width: 28px;
-        max-height: 28px;
-        min-height: 28px;
+    .images-icons-block .item .icon-block {
+        max-width: 32px;
+        position: absolute;
+        align-items: flex-start;
+        left: 0;
+        top: 0;
+        margin-bottom: 0;
     }
 
-    .images-icons-block .item .icon-block {
-        padding: 11px;
+    .images-icons-block .item .icon-block svg{
+        height: 32px;
+        width: 100%;
+    }
+
+    .images-icons-block .item p + p{
+        margin-top: 8px;
     }
 
     .talent-section h2 {

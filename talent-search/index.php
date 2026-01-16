@@ -45,18 +45,21 @@ $APPLICATION->SetTitle('Стань тренером');
                 <div class="icon-block">
                     <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_1.php', [], ['MODE' => 'html', 'NAME' => 'Иконка 1']); ?>
                 </div>
+                <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_title_1.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок иконки 1']); ?></p>
                 <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст иконки 1']); ?></p>
             </div>
             <div class="item">
                 <div class="icon-block">
                     <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_2.php', [], ['MODE' => 'html', 'NAME' => 'Иконка 2']); ?>
                 </div>
+                <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_title_2.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок иконки 2']); ?></p>
                 <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст иконки 2']); ?></p>
             </div>
             <div class="item">
                 <div class="icon-block">
                     <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_3.php', [], ['MODE' => 'html', 'NAME' => 'Иконка 3']); ?>
                 </div>
+                <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_title_3.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок иконки 3']); ?></p>
                 <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/icon_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст иконки 3']); ?></p>
             </div>
         </div>
