@@ -345,15 +345,7 @@
 
 
 
-.lk-header-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 24px 35px 32px;
-	width: 100%;
-	flex-wrap: wrap;
-	gap: 16px;
-}
+
 
 .lk-tabs {
     display: flex;
@@ -418,13 +410,14 @@
 }
 
 .lk-update-btn {
+	all: unset;
     font-family: 'Noto Sans', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     color: #2B418B;
-    text-decoration: none;
+	text-decoration: underline;
     transition: opacity 0.2s;
     display: flex;
     align-items: center;
@@ -447,11 +440,6 @@
         overflow-x: auto;
     }
 
-    .lk-header-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
 
     .lk-header__right {
         width: 100%;
@@ -460,9 +448,7 @@
 }
 
 @media (max-width: 768px) {
-	.lk-header-row {
-        margin: 16px 0 24px;
-    }
+
 
     .lk-tabs {
         width: 100%;
@@ -492,8 +478,8 @@
     }
 
     .lk-update-btn {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 15px;
+        line-height: 24px;
     }
 
     .lk-update-btn svg {
