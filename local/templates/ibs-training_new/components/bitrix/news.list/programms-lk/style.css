@@ -1,14 +1,8 @@
-
-.lk-section {
-	margin-bottom: 48px;
-	padding: 0 16px;
-}
-
 .lk-section__title {
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 400;
-	font-size: 24px;
-	line-height: 32px;
+	font-size: 34px;
+	line-height: 52px;
 	color: #000000;
 	margin-bottom: 24px;
 }
@@ -208,15 +202,7 @@
 	color: #FFFFFF;
 }
 @media (min-width: 768px) {
-	.lk-section {
-		padding: 0 24px;
-	}
 
-	.lk-section__title {
-		font-size: 32px;
-		line-height: 44px;
-		margin-bottom: 32px;
-	}
 
 	.lk-cards {
 		grid-template-columns: repeat(2, 1fr);
@@ -262,16 +248,6 @@
 	}
 }
 @media (min-width: 1024px) {
-	.lk-section {
-		padding: 0 32px;
-		margin-right: auto;
-	}
-
-	.lk-section__title {
-		font-size: 34px;
-		line-height: 52px;
-		margin-bottom: 35px;
-	}
 
 	.lk-card.course {
 		height: auto;
@@ -491,7 +467,7 @@ height: 32px;
 
 .lk-notification {
 
-padding: 0 59px 25px 33px;
+	padding: 0 55px 25px 56px;
 
 font-family: 'Inter', system-ui, sans-serif;
 font-size: 16px;
@@ -522,7 +498,7 @@ color: #2B418B;
 transition: all 0.2s;
 }
 .lk-modal{
-padding: 0 29px 38px;
+	padding: 0 56px 38px;
 }
 .btn-outline:hover {
 background: #2B418B;

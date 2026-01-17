@@ -1,16 +1,10 @@
-
-.lk-section {
-	margin-bottom: 48px;
-	padding: 0 16px;
-}
-
 .lk-section__title {
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 400;
-	font-size: 24px;
-	line-height: 32px;
+	font-size: 34px;
+	line-height: 52px;
 	color: #000000;
-	margin-bottom: 16px;
+	margin-bottom: 24px;
 }
 .lk-cards {
 	display: flex;
@@ -348,9 +342,6 @@
 }
 
 @media (max-width: 767px) {
-	.lk-section {
-		padding: 0 12px;
-	}
 
 	.lk-card.cert {
 		padding: 16px;
