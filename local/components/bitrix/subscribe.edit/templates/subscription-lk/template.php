@@ -212,9 +212,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['PostAction'] === 'Update') 
                                     required
                                 <?= ($createNewSubscription && !empty($userEmail)) ? 'readonly' : '' ?>
                             >
-                            <?php if ($createNewSubscription): ?>
-                                <div class="subscr-new-notice">Создание новой подписки</div>
-                            <?php endif; ?>
+
                         </div>
                     </div>
 
