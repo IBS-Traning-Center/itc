@@ -52,6 +52,21 @@
     padding: 50px 0 100px;
 }
 
+.talent-grid-block:not(.talent-content) {
+    display: grid;
+    grid-template-columns: 596px 1fr;
+    gap: 56px;
+}
+
+.talent-section .grid-talent-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+}
+
+.talent-team .talent-grid-block > div:first-child .btn-main {
+    margin-top: auto;
+}
 .top-page-banner h2 {
     font-size: 56px;
     line-height: 72px;
@@ -151,6 +166,7 @@
 .talent-come .talent-content {
     padding: 120px 0;
 }
+
 
 .talent-get {
     background-color: var(--button-blue);
@@ -294,6 +310,21 @@
     padding-bottom: 0 !important;
 }
 
+.talent-section .talent-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px;
+}
+
+.talent-team .talent-grid-block {
+    align-items: stretch;
+}
+
+.talent-team .talent-grid-block > div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 1430px) {
     .talent-get .get-grid-block .item .line-block .second-line {
         width: 500%;
@@ -305,6 +336,14 @@
         display: block;
         margin-top: 56px;
     }
+
+    .talent-team .talent-grid-block {
+        grid-template-columns: 1fr;
+    }
+
+    .talent-team .talent-grid-block .trainer-modal {
+        display: none;
+    }
 }
 
 @media (max-width: 1280px) {
@@ -312,6 +351,10 @@
         font-size: 24px;
         line-height: 33px;
         margin-bottom: 0;
+    }
+
+    .talent-grid-block:not(.talent-content) {
+        gap: 24px;
     }
 
     .top-page-banner .container .banner-content p {
