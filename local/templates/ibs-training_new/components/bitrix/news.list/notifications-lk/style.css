@@ -1,0 +1,171 @@
+.lk-content {
+	padding: 24px 16px;
+	max-width: 1450px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.notification-card {
+	background: #f8f7f7;
+	border-bottom: 1px solid #000;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	margin-top: 24px;
+}
+
+.notification-title-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.dot {
+	width: 12px;
+	height: 12px;
+	background: #2B418B;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.title {
+	font-size: 32px;
+	line-height: 44px;
+	font-weight: 400;
+	color: #000;
+}
+
+.description {
+	font-size: 20px;
+	line-height: 32px;
+	color: #000;
+	font-family: Noto Sans;
+	font-weight: 400;
+	font-style: Regular;
+	font-size: 20px;
+	line-height: 32px;
+	letter-spacing: 0%;
+
+}
+.lk-header-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 200px;
+	height: 54px;
+	padding: 0 40px;
+	background: #2B418B;
+	color: white;
+	font-size: 16px;
+	line-height: 24px;
+	border: none;
+	cursor: pointer;
+	transition: background 0.2s;
+	font-weight: 400;
+	width: fit-content;
+}
+
+.btn:hover {
+	background: #1e3169;
+}
+
+.notification-card.read .dot {
+	display: none;
+}
+
+.notification-card.read .title {
+	font-size: 28px;
+}
+
+.notification-card.read .btn {
+	min-width: 180px;
+
+}
+.lk-tab.is-active {
+	background: #000000;
+	color: #FFFFFF;
+}
+.lk-tab {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 16px;
+	height: 40px;
+	font-family: 'Noto Sans', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	flex: none;
+	white-space: nowrap;
+	min-width: fit-content;
+	box-sizing: border-box;
+}
+
+.lk-tab.is-active {
+	background: #000000;
+	color: #FFFFFF;
+}
+
+.lk-tab:not(.is-active) {
+	background: #F0F0F0;
+	color: #000000;
+}
+.lk-tabs {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: auto;
+	height: 40px;
+	flex: none;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+@media (max-width: 1200px) {
+	.notification-title-wrapper{
+		align-items: flex-start;
+	}
+	.title {
+		font-family: Noto Sans;
+		font-weight: 600;
+		font-style: SemiBold;
+		font-size: 20px;
+		leading-trim: NONE;
+		line-height: 28px;
+		letter-spacing: 0%;
+	}
+
+	.description {
+
+		font-family: Noto Sans;
+		font-weight: 400;
+		font-style: Regular;
+		font-size: 16px;
+		leading-trim: NONE;
+		line-height: 22px;
+		letter-spacing: 0%;
+		text-transform: capitalize;
+
+	}
+
+	.btn {
+		min-width: 260px;
+		height: 54px;
+		width: auto;
+	}
+}
