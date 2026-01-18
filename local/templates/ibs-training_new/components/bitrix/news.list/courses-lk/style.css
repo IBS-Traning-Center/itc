@@ -1,8 +1,4 @@
 
-.lk-section {
-	margin-bottom: 48px;
-	padding: 0 16px;
-}
 
 .lk-section__title {
 	font-family: 'Noto Sans', sans-serif;
@@ -413,7 +409,7 @@
 	all: unset;
     font-family: 'Noto Sans', sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #2B418B;
