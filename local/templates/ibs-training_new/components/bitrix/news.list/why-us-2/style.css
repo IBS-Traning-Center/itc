@@ -162,7 +162,7 @@
         white-space: normal;
     }
     .why-us__container {
-        gap: 40px;
+        gap: 24px;
     }
 
     .why-us__main-title {
@@ -172,7 +172,7 @@
     }
 
     .why-us__grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 40px;
         width: 100%;
     }
@@ -187,13 +187,14 @@
     }
 
     .why-us__container {
-        gap: 40px;
+        gap: 0px;
     }
 
     .why-us__main-title {
         font-size: 22px;
         line-height: 30px;
         width: 100%;
+        margin-bottom: 16px;
     }
 
     .why-us__accent {
@@ -205,6 +206,7 @@
         box-sizing: border-box;
         background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
         border-radius: 0;
+        margin-bottom: 24px;
     }
 
     .why-us__accent-title {
