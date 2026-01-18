@@ -46,8 +46,9 @@
 
 .reviews-main-block .reviews-tabs-block .tabs .tab-item {
     background-color: #F0F0F0;
-    padding: 8px 18px;
+    padding: 9px 18px;
     cursor: pointer;
+    line-height: 30px;
 }
 
 .reviews-main-block .reviews-tabs-block .tabs .tab-item span {
