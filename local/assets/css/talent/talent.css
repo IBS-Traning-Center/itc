@@ -362,11 +362,6 @@
         margin-bottom: 24px;
     }
 
-    .talent-section .grid-talent-4{
-        grid-template-columns: repeat(1, 1fr);
-        gap: 24px;
-    }
-
     .talent-section .grid-talent-4 p br{
         display: none;
     }
@@ -519,11 +514,23 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .talent-section .grid-talent-4{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
 @media (max-width: 480px) {
     .start-work .talent-flex-2 {
         flex-direction: column;
         gap: 24px;
         align-items: start;
+    }
+
+    .talent-section .grid-talent-4{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
     }
 
     .talent-section .talent-grid-2 {
