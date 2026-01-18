@@ -64,31 +64,23 @@ $APPLICATION->SetTitle('Стань тренером');
             </div>
         </div>
         <div class="talent-grid-block talent-content">
-            <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Учебный центр']); ?></h2>
-            <div class="grid-talent-3">
+            <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Цифра экспертов']); ?></h2>
+            <div class="grid-talent-4">
                 <div>
-                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></h2>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></p>
+                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></h2>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></p>
                 </div>
                 <div>
-                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></h2>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></p>
+                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></h2>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></p>
                 </div>
                 <div>
-                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></h2>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></p>
+                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></h2>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></p>
                 </div>
                 <div>
-                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></h2>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></p>
-                </div>
-                <div>
-                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_5.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></h2>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_5.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></p>
-                </div>
-                <div>
-                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_6.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></h2>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_6.php', [], ['MODE' => 'html', 'NAME' => 'Текст Учебынй центр']); ?></p>
+                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></h2>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_p_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></p>
                 </div>
             </div>
         </div>

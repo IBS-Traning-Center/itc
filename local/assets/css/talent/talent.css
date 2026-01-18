@@ -42,26 +42,14 @@
     margin-bottom: 32px;
 }
 
-.talent-section .talent-grid-2 {
+.talent-section .grid-talent-4 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 56px;
-}
-
-.talent-section .grid-talent-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 56px;
-}
-
-.talent-grid-block {
-    display: grid;
-    grid-template-columns: 596px 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 56px;
 }
 
 .talent-content {
-    padding: 60px 0 120px;
+    padding: 50px 0 100px;
 }
 
 .top-page-banner h2 {
@@ -102,12 +90,16 @@
     margin-top: 16px;
 }
 
-.talent-section .grid-talent-3 > div h2 {
-    margin-bottom: 16px;
+.talent-section .grid-talent-4 > div h2 {
+    margin-bottom: 6px;
 }
 
 .talent-team > .trainer-modal {
     display: none;
+}
+
+.talent-grid-block h2{
+    margin-bottom: 56px;
 }
 
 .talent-team > h2 {
@@ -128,19 +120,6 @@
     line-height: 32px;
     font-weight: 400;
     color: var(--black);
-}
-
-.talent-team .talent-grid-block {
-    align-items: stretch;
-}
-
-.talent-team .talent-grid-block > div:first-child {
-    display: flex;
-    flex-direction: column;
-}
-
-.talent-team .talent-grid-block > div:first-child .btn-main {
-    margin-top: auto;
 }
 
 .talent-team .talent-grid-2 .item {
@@ -326,20 +305,6 @@
         display: block;
         margin-top: 56px;
     }
-
-    .talent-team .talent-grid-block .trainer-modal {
-        display: none;
-    }
-
-    .talent-team .talent-grid-block {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 1280px) {
-    .talent-grid-block {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 1280px) {
@@ -393,13 +358,22 @@
         margin-top: 8px;
     }
 
+    .talent-grid-block h2{
+        margin-bottom: 24px;
+    }
+
+    .talent-section .grid-talent-4{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+    }
+
+    .talent-section .grid-talent-4 p br{
+        display: none;
+    }
+
     .talent-section h2 {
         font-size: 24px;
         line-height: 33px;
-    }
-
-    .talent-grid-block {
-        gap: 24px;
     }
 
     .talent-section .grid-talent-3 > div h2 {
