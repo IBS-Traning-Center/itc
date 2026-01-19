@@ -67,11 +67,60 @@
 .talent-team .talent-grid-block > div:first-child .btn-main {
     margin-top: auto;
 }
+
+.top-page-banner{
+    padding: 0!important;
+}
+
+.top-page-banner .container{
+    align-items: flex-end!important;
+    gap: 0!important;
+}
+
+.top-page-banner .container .banner-content{
+    padding: 60px 0 100px;
+}
+
+.top-page-banner .container .banner-content .breadcrumbs,
+.top-page-banner .container .banner-content h1{
+    margin-bottom: 54px!important;
+}
+
+.top-page-banner .container .banner-content h1{
+    letter-spacing: 0.9px;
+    white-space: nowrap;
+}
+
 .top-page-banner h2 {
     font-size: 56px;
     line-height: 72px;
     font-weight: 400;
     margin-top: 16px;
+}
+
+.top-page-banner .container .banner-content p{
+    font-family: "Noto Sans";
+}
+
+.top-page-banner .container .trainer-modal{
+    line-height: 97px;
+    max-width: 268px;
+    width: 100%;
+    text-align: center;
+    margin-top: 56px;
+    background-color: #2B418B;
+}
+
+.top-page-banner .container .trainer-modal span{
+    font-size: 24px;
+    line-height: 0.8;
+    color: #FFFFFF;
+    font-family: "Noto Sans";
+    font-weight: 300;
+}
+
+.banner-image{
+    margin-right: -120px;
 }
 
 .images-icons-block {
@@ -347,10 +396,17 @@
 }
 
 @media (max-width: 1280px) {
-    .top-page-banner h2 {
-        font-size: 24px;
-        line-height: 33px;
-        margin-bottom: 0;
+    .banner-image{
+        display: none;
+    }
+
+    .top-page-banner .container .banner-content{
+        padding: 16px 16px 40px;
+    }
+
+    .top-page-banner .container .banner-content .breadcrumbs, 
+    .top-page-banner .container .banner-content h1{
+        margin-bottom: 16px!important;
     }
 
     .talent-grid-block:not(.talent-content) {
@@ -362,15 +418,17 @@
         font-size: 20px !important;
         line-height: 27px !important;
     }
-
-    .top-page-banner .container .buttons-block-banner .btn-main.size-l {
-        padding: 15px 32px;
+    
+    .top-page-banner .container .trainer-modal{
+        line-height: 54px;
+        max-width: 100%;
+        margin-top: 24px;
     }
 
-    .top-page-banner .container .buttons-block-banner .btn-main.size-l span {
+    .top-page-banner .container .trainer-modal span{
         font-size: 16px;
-        line-height: 24px;
-    }
+        line-height: 0.8;
+    } 
 
     .images-icons-block .item{
         padding-left: 44px;

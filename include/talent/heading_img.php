@@ -1,0 +1,1 @@
+<img src="/include/talent/banner-img.png">

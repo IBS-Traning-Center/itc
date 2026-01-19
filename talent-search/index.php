@@ -28,13 +28,13 @@ $APPLICATION->SetTitle('Стань тренером');
                 false
             ); ?>
             <h1><?= $APPLICATION->GetTitle() ?></h1>
-            <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/heading_h2_text.php', [], ['MODE' => 'html', 'NAME' => 'H2 текст под заголовком']); ?></h2>
             <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/heading_text.php', [], ['MODE' => 'html', 'NAME' => 'Текст под заголовком']); ?></p>
-        </div>
-        <div class="buttons-block-banner">
-            <div class="btn-main size-l trainer-modal">
+            <div class="trainer-modal">
                 <span class="f-24">Стать тренером</span>
             </div>
+        </div>
+        <div class="banner-image">
+            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/heading_img.php', [], ['MODE' => 'html', 'NAME' => 'Картинка под заголовком']); ?>
         </div>
     </div>
 </div>
