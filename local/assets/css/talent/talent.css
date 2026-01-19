@@ -64,9 +64,6 @@
     gap: 56px;
 }
 
-.talent-team .talent-grid-block > div:first-child .btn-main {
-    margin-top: auto;
-}
 .top-page-banner h2 {
     font-size: 56px;
     line-height: 72px;
@@ -107,47 +104,6 @@
 
 .talent-section .grid-talent-4 > div h2 {
     margin-bottom: 6px;
-}
-
-.talent-team > .trainer-modal {
-    display: none;
-}
-
-.talent-grid-block h2{
-    margin-bottom: 56px;
-}
-
-.talent-team > h2 {
-    max-width: 958px;
-    width: 100%;
-}
-
-.talent-team .team-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.talent-team .team-tags li {
-    padding: 8px 16px;
-    background-color: var(--gray);
-    font-size: 20px;
-    line-height: 32px;
-    font-weight: 400;
-    color: var(--black);
-}
-
-.talent-team .talent-grid-2 .item {
-    display: flex;
-    align-items: start;
-    gap: 24px;
-}
-
-.talent-team .talent-grid-2 .item svg {
-    min-width: 44px;
-    max-width: 44px;
-    min-height: 44px;
-    max-height: 44px;
 }
 
 .talent-come svg {
@@ -316,33 +272,106 @@
     gap: 56px;
 }
 
-.talent-team .talent-grid-block {
-    align-items: stretch;
+.talent-team.talent-content{
+    background-color: #F0F0F0;
+    padding: 0;
 }
 
-.talent-team .talent-grid-block > div:first-child {
+.talent-team.talent-content .container{
+    max-width: 1920px;
     display: flex;
-    flex-direction: column;
+}
+
+.talent-team-left{
+    padding: 100px 120px 120px 0 ;
+    margin-left: auto;
+    max-width: 941px;
+    min-width: 760px;
+    width: 100%;
+    box-sizing: content-box;
+}
+
+.talent-team-left h2,
+.talent-team-right h3{
+    margin-bottom: 56px;
+}
+
+.talent-team-left p{
+    margin-bottom: 48px;
+}
+
+.talent-team-right{
+    background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
+    padding: 100px 80px 120px;
+    max-width: 739px;
+    width: 100%;
+    margin-right: -20px;
+}
+
+.talent-team-right h3,
+.talent-team-right p{
+    color: #FFFFFF;
+}
+
+.talent-team-right .trainer-modal{
+    width: 100%;
+    background-color: #FFFFFF;
+    line-height: 97px;
+    font-size: 24px;
+    margin-top: 56px;
+    text-align: center;
+}
+
+.talent-team-right .trainer-modal span{
+    color: #2B418B;
+}
+
+.talent-team-right .item{
+    display: flex;
+}
+
+.talent-team-right .item svg{
+    margin-right: 24px;
+    min-width: 44px;
+    max-width: 44px;
+}
+
+.talent-team-right .item p{
+    font-weight: 300;
+    letter-spacing: 0.8px;
+}
+
+.talent-team-right .item + .item{
+    margin-top: 32px;
+}
+
+@media (max-width: 1600px) {
+    .talent-team.talent-content .container{
+        display: block;
+    }
+
+    .talent-team-left{
+        max-width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .talent-team-left{
+        padding-right: 0;
+    }
+
+    .talent-team-right{
+        max-width: none;
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -20px;
+    }
 }
 
 @media (max-width: 1430px) {
     .talent-get .get-grid-block .item .line-block .second-line {
         width: 500%;
-    }
-}
-
-@media (max-width: 1360px) {
-    .talent-team > .trainer-modal {
-        display: block;
-        margin-top: 56px;
-    }
-
-    .talent-team .talent-grid-block {
-        grid-template-columns: 1fr;
-    }
-
-    .talent-team .talent-grid-block .trainer-modal {
-        display: none;
     }
 }
 
@@ -430,11 +459,6 @@
         margin-bottom: 24px;
     }
 
-    .talent-team .team-tags li {
-        font-size: 16px;
-        line-height: 22px;
-    }
-
     .talent-section h3 {
         font-size: 20px;
         line-height: 28px;
@@ -448,17 +472,6 @@
         font-size: 16px;
         line-height: 24px;
         white-space: nowrap;
-    }
-
-    .talent-team .talent-grid-2 .item svg {
-        min-width: 27px;
-        max-width: 27px;
-        min-height: 27px;
-        max-height: 27px;
-    }
-
-    .talent-team > .trainer-modal {
-        margin-top: 24px;
     }
 
     .talent-come .talent-content {
@@ -554,6 +567,46 @@
 
     .talent-content.telegram {
         padding: 40px 0;
+    }
+
+    .talent-team-left{
+        padding: 40px 0;
+    }
+
+    .talent-team-right{
+        padding: 40px 16px;
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    .talent-team-left h2,
+    .talent-team-left p{
+        margin-bottom: 24px;
+    }
+
+    .talent-team-right .item + .item{
+        margin-top: 16px;
+    }
+
+    .talent-team-right .item svg{
+        margin-right: 12px;
+        min-width: 20px;
+        max-width: 20px;
+        height: 20px;
+    }
+
+    .talent-team-right h3{
+        margin-bottom: 24px;
+    }
+
+    .talent-team-right .trainer-modal{
+        margin-top: 40px;
+        line-height: 54px;
+    }
+
+    .talent-team-right .trainer-modal span{
+        font-size: 16px;
+        line-height: 54px;
     }
 }
 
