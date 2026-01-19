@@ -12,13 +12,14 @@ if ($USER->IsAuthorized())
 
 
 <?$APPLICATION->IncludeComponent(
-    "bitrix:system.auth.form",
-    "new_auth",
+    "bitrix:system.auth.authorize",
+    "",
     [
         "REGISTER_URL" => "/auth/registration.php",
-        "PROFILE_URL" => "/personal/personal.html",
+        "PROFILE_URL" => "/personal/",
         "AUTH_FORGOT_PASSWORD_URL" => "/auth/forgot_pass.php",
-        "SHOW_ERRORS" => "Y"
+        "SHOW_ERRORS" => "Y",
+        "SUCCESS_URL" => "/personal/"
     ],
     false
 );?>
