@@ -6,7 +6,93 @@
     place-items: center;
     z-index: 1200;
 }
+.form-group.floating-label {
+    position: relative;
+    width: 100%;
+    background: #F8F7F7;
+    transition: background-color 0.25s ease;
+}
 
+.form-group.floating-label:has(input:not(:placeholder-shown)),
+.form-group.floating-label:has(textarea:not(:placeholder-shown)),
+.form-group.floating-label:focus-within {
+    background: white;
+}
+
+.form-control {
+    width: 100%;
+    height: 80px;
+    padding: 28px 24px 8px 24px;
+    font-size: 24px;
+    line-height: 32px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #2B418B;
+    transition: border-color 0.2s;
+}
+
+.floating-label-text {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    line-height: 32px;
+    color: #777;
+    pointer-events: none;
+    transition:
+            all 0.25s ease;
+    opacity: 0.7;
+}
+
+
+.form-group.floating-label:focus-within .floating-label-text,
+.form-group.floating-label.has-value .floating-label-text {
+    top: 12px;
+    transform: none;
+    font-size: 14px;
+    line-height: 18px;
+    color: #2B418B;
+    opacity: 1;
+}
+.form-group.floating-label textarea.form-control {
+    padding-top: 32px;
+    min-height: 140px;
+    height: auto;
+}
+
+.floating-label-text {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #777;
+    opacity: 0.7;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+.form-group.floating-label input:not(:placeholder-shown) + .floating-label-text,
+.form-group.floating-label textarea:not(:placeholder-shown) + .floating-label-text,
+.form-group.floating-label:focus-within .floating-label-text {
+    top: 0px;
+    transform: none;
+    color: #000000;
+    opacity: 1;
+    font-family: Stag Sans;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+
+}
+/* Ошибка */
+.form-group.error .form-control {
+    border-bottom-color: #ff4444;
+}
+
+.form-group.error .floating-label-text {
+    color: #ff4444;
+}
 .doc-modal.active {
     display: grid;
 }
@@ -102,8 +188,6 @@
     background: #F8F7F7;
     transition: background-color 0.25s ease;
 }
-
-/* Заполненное поле или фокус внутри → белый фон */
 .doc-modal .form-group:has(input:not(:placeholder-shown)),
 .doc-modal .form-group:has(textarea:not(:placeholder-shown)),
 .doc-modal .form-group:has(select:not(:placeholder-shown)),
@@ -139,9 +223,9 @@
     font-size: 24px;
     line-height: 32px;
     color: #000000;
-    background: transparent;          /* важно — прозрачный фон инпута */
+    background: transparent;
     border: none;
-    border-bottom: 2px solid #2B418B;
+    border-bottom: 1px solid #000000;
     transition: border-color 0.2s;
     border-radius: 0;
 }
@@ -151,7 +235,7 @@
 .doc-modal textarea:focus,
 .doc-modal select:focus {
     outline: none;
-    border-bottom-color: #1a2f6b;
+    border-bottom: 1px solid #2B418B;
 }
 
 .doc-modal textarea.form-control {
@@ -167,8 +251,6 @@
     background-position: right 24px center;
     background-size: 12px;
 }
-
-/* Ошибки */
 .doc-modal .form-group.error .form-control,
 .doc-modal .form-group.error input,
 .doc-modal .form-group.error textarea,
@@ -269,9 +351,7 @@
     .form-hint{
         display: none;
     }
-    .doc-modal .form-title{
-        display: none;
-    }
+
     .doc-modal .form-title-mob{
         display: block;
             font-size: 20px;
@@ -290,16 +370,16 @@
     .doc-modal select {
         box-sizing: border-box;
         width: 100%;
-        height: 56px;
-        padding: 20px;
+        height: 80px;
+        padding: 24px;
         font-family: 'Stag Sans', system-ui, sans-serif;
         font-weight: 300;
-        font-size: 16px;
+        font-size: 24px;
         line-height: 32px;
         color: #000000;
         background: transparent;
         border: none;
-        border-bottom: 2px solid #2B418B;
+        border-bottom: 1px solid #000000;
         transition: border-color 0.2s;
         border-radius: 0;
     }

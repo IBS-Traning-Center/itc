@@ -32,7 +32,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
         </button>
 
         <h1 class="form-title"><?= htmlspecialcharsbx($arResult["FORM_TITLE"]) ?></h1>
-        <h1 class="form-title-mob">Запросить удостоверение</h1>
 
         <?php if ($arResult["isFormDescription"] == "Y"): ?>
             <div class="form-description"><?= $arResult["FORM_DESCRIPTION"] ?></div>
@@ -62,44 +61,34 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                     $required = $arQuestion["REQUIRED"] === "Y";
                     $error = !empty($arResult["FORM_ERRORS"][$FIELD_SID]);
                     $caption = htmlspecialcharsbx($arQuestion["CAPTION"]);
-                    $nameLow = mb_strtolower($caption);
-                    $type = 'text';
-
-                    if (strpos($nameLow, 'телефон') !== false || strpos($nameLow, 'phone') !== false) {
-                        $type = 'tel';
-                    } elseif (strpos($nameLow, 'email') !== false || strpos($nameLow, 'почт') !== false) {
-                        $type = 'email';
-                    }
                     ?>
 
-                    <div class="form-group <?= $error ? 'error' : 'is-empty' ?>">
-                        <?php if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] === "textarea"): ?>
-                            <?= str_replace(
-                                '<textarea',
-                                '<textarea class="form-control textarea" placeholder="' . $caption . ($required ? ' *' : '') . '"',
-                                $arQuestion["HTML_CODE"]
-                            ) ?>
+                    <div class="form-group floating-label <?= $error ? 'error' : '' ?>">
 
-                        <?php elseif ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] === "dropdown"): ?>
-                            <?= str_replace(
-                                '<select',
-                                '<select class="form-control select" data-placeholder="' . $caption . '"',
-                                $arQuestion["HTML_CODE"]
-                            ) ?>
+                        <?php
+                        $html = $arQuestion["HTML_CODE"];
 
-                        <?php else: ?>
-                            <?php
-                            $html = $arQuestion["HTML_CODE"];
-                            $html = preg_replace('/type="[^"]*"/', 'type="' . $type . '"', $html);
-                            $html = preg_replace('/<input/', '<input class="form-control" placeholder="' . $caption . ($required ? ' *' : '') . '"', $html);
-                            if ($required) $html = str_replace('<input', '<input required', $html);
-                            echo $html;
-                            ?>
-                        <?php endif; ?>
+                        $html = preg_replace(
+                            '/<input([^>]+)>/i',
+                            '<input$1 id="field-' . $FIELD_SID . '" class="form-control" placeholder=" ">',
+                            $html
+                        );
+                        if ($required && strpos($html, 'required') === false) {
+                            $html = str_replace('<input', '<input required', $html);
+                        }
+
+                        echo $html;
+                        ?>
+
+                        <label for="field-<?= $FIELD_SID ?>" class="floating-label-text">
+                            <?= $caption ?>
+                            <?php if ($required): ?><span class="required">*</span><?php endif; ?>
+                        </label>
 
                         <?php if ($error): ?>
                             <div class="field-error"><?= $arResult["FORM_ERRORS"][$FIELD_SID] ?></div>
                         <?php endif; ?>
+
                     </div>
 
                 <?php endforeach; ?>
@@ -130,51 +119,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
         <?= $arResult["FORM_FOOTER"] ?>
         
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form[name^="form_"]');
-            if (form) {
-                // Add validation on form submit
-                form.addEventListener('submit', function(e) {
-                    const inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
-                    let hasEmptyFields = false;
 
-                    inputs.forEach(input => {
-                        if (input.value.trim() === '') {
-                            input.closest('.form-group').classList.add('is-empty');
-                            hasEmptyFields = true;
-                        } else {
-                            input.closest('.form-group').classList.remove('is-empty');
-                        }
-                    });
-
-                    if (hasEmptyFields) {
-                        e.preventDefault();
-                        return false;
-                    }
-                });
-
-                // Add real-time validation on input change
-                form.addEventListener('input', function(e) {
-                    if (e.target.matches('input[type="text"], input[type="email"], input[type="tel"], textarea')) {
-                        if (e.target.value.trim() === '') {
-                            e.target.closest('.form-group').classList.add('is-empty');
-                        } else {
-                            e.target.closest('.form-group').classList.remove('is-empty');
-                        }
-                    }
-                });
-
-                // Initial check for pre-filled values
-                const inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
-                inputs.forEach(input => {
-                    if (input.value.trim() !== '') {
-                        input.closest('.form-group').classList.remove('is-empty');
-                    }
-                });
-            }
-        });
-        </script>
         <?php if (isset($_GET['formresult']) && $_GET['formresult'] === 'addok'): ?>
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
