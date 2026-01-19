@@ -159,47 +159,35 @@ $APPLICATION->SetTitle('Стань тренером');
                 <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Ты получаешь']); ?></h2>
                 <div class="get-grid-block">
                     <div class="item">
-                        <h2>01</h2>
-                        <div class="line-block"></div>
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
                     </div>
                     <div class="item">
-                        <h2>02</h2>
-                        <div class="line-block"></div>
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
                     </div>
                     <div class="item">
-                        <h2>03</h2>
-                        <div class="line-block"></div>
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
                     </div>
                     <div class="item">
-                        <h2>04</h2>
-                        <div class="line-block">
-                            <div class="second-line"></div>
-                        </div>
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
                     </div>
                     <div class="item">
-                        <h2>05</h2>
-                        <div class="line-block"></div>
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_5.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
                     </div>
                     <div class="item">
-                        <h2>06</h2>
-                        <div class="line-block"></div>
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_6.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
                     </div>
                     <div class="item">
-                        <h2>07</h2>
-                        <div class="line-block">
-                            <div class="second-line"></div>
-                        </div>
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_7.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
                     </div>
                     <div class="item">
-                        <h2>08</h2>
-                        <div class="line-block"></div>
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
                         <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_8.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
                     </div>
                 </div>

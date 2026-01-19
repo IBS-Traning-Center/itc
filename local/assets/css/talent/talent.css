@@ -12,7 +12,7 @@
 
 .talent-section h2 {
     color: var(--black);
-    font-weight: 400;
+    font-weight: 400!important;
     font-size: 56px;
     line-height: 72px;
     margin: 0;
@@ -169,68 +169,44 @@
 
 
 .talent-get {
-    background-color: var(--button-blue);
+    background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
     overflow: hidden;
 }
 
-.talent-get h2,
-.talent-get p,
-.talent-get div {
+.talent-get p{
+    font-weight: 300!important;
+    line-height: 32px;
     color: var(--white);
+    letter-spacing: 0.3px;
+}
+
+.talent-get h2 {
+    margin-right: 56px;
+    max-width: 595px;
+    width: 100%;
+    color: var(--white);
+    font-weight: 300!important;
+    letter-spacing: 1.7px;
+}
+
+.talent-get .talent-grid-block{
+    display: flex;
+    padding: 100px 0 120px;
 }
 
 .talent-get .get-grid-block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 56px;
+    row-gap: 88px;
     column-gap: 32px;
+    max-width: 1029px;
 }
 
-.talent-get .get-grid-block .item .line-block {
-    position: relative;
+.talent-get .get-grid-block svg{
+    margin-bottom: 19px;
+    max-width: 44px;
     width: 100%;
-    height: 1.5px;
-    background-color: var(--white);
-    margin: 23px 0 32px;
-}
-
-.talent-get .get-grid-block .item .line-block:before {
-    content: '';
-    display: block;
-    min-width: 11px;
-    max-width: 11px;
-    min-height: 11px;
-    max-height: 11px;
-    border: 1.5px solid var(--white);
-    border-radius: 50%;
-    background-color: var(--button-blue);
-    position: absolute;
-    left: 0;
-    top: -5px;
-}
-
-.talent-get .get-grid-block .item .line-block:after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 1.5px;
-    background-color: var(--white);
-    position: absolute;
-    left: 100%;
-}
-
-.talent-get .get-grid-block .item:last-child .line-block,
-.talent-get .get-grid-block .item:last-child .line-block:after {
-    background-color: var(--button-blue);
-}
-
-.talent-get .get-grid-block .item .line-block .second-line {
-    background-color: var(--white);
-    width: 300%;
-    position: absolute;
-    height: 1.5px;
-    display: block;
-    right: 100%;
+    height: 44px;
 }
 
 .our-client-slider h3 {
@@ -323,12 +299,6 @@
 .talent-team .talent-grid-block > div:first-child {
     display: flex;
     flex-direction: column;
-}
-
-@media (max-width: 1430px) {
-    .talent-get .get-grid-block .item .line-block .second-line {
-        width: 500%;
-    }
 }
 
 @media (max-width: 1360px) {
@@ -484,54 +454,29 @@
         margin-bottom: 0;
     }
 
-    .talent-get .get-grid-block {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 16px;
+    .talent-get .talent-grid-block{
+        padding: 40px 0;
+        display: block;
+    }
+
+    .talent-get .get-grid-block{
+        gap: 24px;
     }
 
     .talent-get .get-grid-block .item {
         display: flex;
-        gap: 8px;
         align-items: start;
     }
 
-    .talent-get .get-grid-block .item .line-block {
-        margin: 0;
-        height: 100%;
-        width: 1.5px;
-    }
-
-    .talent-get .get-grid-block .item .line-block::before {
-        min-width: 7px;
-        max-width: 7px;
-        min-height: 7px;
-        max-height: 7px;
-        left: -2px;
-        top: -2px;
-    }
-
-    .talent-get .get-grid-block .item .line-block::after {
-        height: 50%;
-        width: 1.5px;
-        left: 0;
-        top: 100%;
-    }
-
-    .talent-get .get-grid-block .item .line-block .second-line {
-        display: none;
-    }
-
-    .talent-get .get-grid-block .item:last-child .line-block,
-    .talent-get .get-grid-block .item:last-child .line-block:after {
-        width: 2px;
-    }
-
-    .talent-get .get-grid-block .item:last-child .line-block:after {
-        top: 6px;
-    }
-
     .talent-get .get-grid-block .item p {
-        margin-left: 8px;
+        margin-left: 16px;
+        line-height: 20px;
+    }
+
+    .talent-get .get-grid-block svg{
+        max-width: 20px;
+        height: 20px;
+        margin-bottom: 0;
     }
 
     .start-work .container > ul,
@@ -560,6 +505,11 @@
 @media (max-width: 1024px) {
     .talent-section .grid-talent-4{
         grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .talent-get .get-grid-block {
+        grid-template-columns: repeat(1, 1fr);
         gap: 24px;
     }
 }
