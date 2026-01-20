@@ -8,7 +8,7 @@
 }
 .lk-cards {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 16px;
 	width: 100%;
 }
@@ -201,11 +201,11 @@
 	background: #2B418B;
 	color: #FFFFFF;
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 
 
 	.lk-cards {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 		gap: 24px;
 	}
 
@@ -234,10 +234,9 @@
 	}
 
 	.lk-badge {
-		padding: 20px 16px;
-		font-size: 16px;
-		line-height: 24px;
-		min-width: 114px;
+		padding: 4px 7px;
+		font-size: 14px;
+		min-width: 67px;
 	}
 
 	.lk-card.course .lk-card__meta > span:last-child:not(.lk-badge) {
@@ -247,7 +246,7 @@
 		min-width: 64px;
 	}
 }
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
 
 	.lk-card.course {
 		height: auto;
@@ -280,21 +279,27 @@
 	}
 }
 
-@media (min-width: 1440px) {
-
+@media (max-width: 1440px) {
+	.lk-section__title {
+		font-family: 'Noto Sans', sans-serif;
+		font-weight: 400;
+		font-size: 34px;
+		line-height: 52px;
+		color: #000000;
+		margin-bottom: 16px;
+	}
 
 	.lk-cards {
-		gap: 32px;
+		gap: 16px;
 	}
 }
 @media (max-width: 767px) {
 	.lk-card.course .lk-card__meta {
 		flex-direction: row;
 		align-items: center;
-		gap: 12px;
 		display: flex;
 		position: relative;
-		top: 30px;
+		padding-top: 16px;
 	}
 
 	.lk-card.course .lk-card__meta > span:first-child {
@@ -308,26 +313,14 @@
 	}
 
 	.lk-card.course .lk-card__title {
-		font-size: 18px;
-		line-height: 24px;
+		font-size: 20px;
+		line-height: 28px;
 	}
 
 	.lk-card.course .lk-card__price {
 		font-size: 18px;
 		line-height: 24px;
 	}
-}
-
-
-
-.lk-header-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 56px;
-	width: 100%;
-	flex-wrap: wrap;
-	gap: 16px;
 }
 
 .lk-tabs {
@@ -448,12 +441,19 @@ line-height: 24px;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
-gap: 40px;
+gap: 16px;
 width: 100%;
 }
 }
 
 @media (max-width:480px) {
+	.lk-card__actions {
+		flex-direction: column;
+		align-items: flex-start;
+		width: 296px;
+		gap: 8px;
+	}
+
 .lk-tabs {
 gap: 4px;
 }

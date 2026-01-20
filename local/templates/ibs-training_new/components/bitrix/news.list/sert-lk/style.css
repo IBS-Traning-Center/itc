@@ -6,11 +6,15 @@
 	color: #000000;
 	margin-bottom: 24px;
 }
+.lk-section {
+	padding: 0 56px;
+}
 .lk-cards {
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
 	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 .lk-card.cert {
@@ -25,7 +29,49 @@
 	background: #F0F0F0;
 	border-bottom: 1px solid #000000;
 }
-
+/* Основные стили */
+.lk-card__actions {
+	flex-direction: row;
+	align-items: center;
+	width: 450px;
+	height: 54px;
+	display: flex;
+	gap: 16px;
+}
+.lk-header-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 56px 56px 32px;
+	width: 100%;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+@media (max-width: 1280px) {
+	.lk-header-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 16px 24px;
+		width: 100%;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+	.lk-section {
+		padding: 0 24px;
+	}
+	.lk-header-row {
+		padding: 16px 24px;
+	}
+}
+@media (max-width: 1400px) {
+	.lk-card__actions {
+		flex-direction: column;
+		align-items: flex-start;
+		width: 450px;
+		gap: 0px;
+	}
+}
 @media (min-width: 768px) {
 	.lk-card.cert {
 		flex-direction: row-reverse;
@@ -96,12 +142,13 @@
 
 @media (min-width: 768px) {
 	.lk-card__body {
-		width: 450px;
+		width: 235px;
 		height: 186px;
 		flex: none;
 		order: 0;
 		flex-grow: 1;
 	}
+
 }
 .lk-card__meta {
 	display: flex;
@@ -119,7 +166,7 @@
 		justify-content: flex-end;
 		align-items: center;
 		gap: 2px;
-		width: 450px;
+		width: 235px;
 		height: 19px;
 	}
 }
@@ -139,7 +186,7 @@
 		flex-direction: row;
 		align-items: center;
 		gap: 16px;
-		width: 450px;
+		width: 235px;
 		height: 19px;
 		flex: none;
 		order: 0;
@@ -257,24 +304,9 @@
 	align-items: center;
 	color: #000000;
 }
-.lk-card__actions {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 0px;
-	gap: 16px;
-	width: 100%;
-	height: auto;
-}
 
-@media (min-width: 768px) {
-	.lk-card__actions {
-		flex-direction: row;
-		align-items: center;
-		width: 450px;
-		height: 54px;
-	}
-}
+
+
 .lk-card__btn {
 	box-sizing: border-box;
 	display: flex;
@@ -323,15 +355,6 @@
 	color: #000000;
 }
 
-@media (min-width: 768px) {
-	.lk-card__expiry {
-		width: 198px;
-		height: 48px;
-		flex: none;
-		order: 1;
-		flex-grow: 1;
-	}
-}
 .lk-card__date svg,
 .lk-card__duration svg {
 	width: 24px;
