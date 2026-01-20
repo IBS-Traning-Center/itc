@@ -167,70 +167,121 @@
     padding: 120px 0;
 }
 
-
-.talent-get {
-    background-color: var(--button-blue);
+.talent-get-start {
     overflow: hidden;
 }
 
-.talent-get h2,
-.talent-get p,
-.talent-get div {
-    color: var(--white);
+.talent-get-start.talent-content{
+    padding-top: 100px;
 }
 
-.talent-get .get-grid-block {
+.talent-get-start .talent-grid-block{
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.get-start-heading{
+    margin-right: 56px;
+    max-width: 596px;
+    width: 100%;
+}
+
+.get-start-heading h2{
+   margin-bottom: 32px;
+}
+
+.get-start-heading .trainer-modal,
+.get-start-grid-wrapper .trainer-modal{
+    line-height: 97px;
+    background-color: #2B418B;
+    max-width: 268px;
+    width: 100%;
+    margin-top: 48px;
+    text-align: center;
+    display: block;
+}
+
+.get-start-heading .trainer-modal span,
+.get-start-grid-wrapper .trainer-modal span{
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.get-start-grid-wrapper{
+    max-width: 1028px;
+}
+
+.get-start-grid-wrapper>p{
+    margin-top: 80px;
+}
+
+.talent-get-start .get-start-grid-block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 56px;
+    row-gap: 84px;
     column-gap: 32px;
+    max-width: 100%;
 }
 
-.talent-get .get-grid-block .item .line-block {
+.talent-get-start .get-start-grid-block .item h2{
+    color: #2B418B;
+    margin-bottom: 15px;
+}
+
+.talent-get-start .get-start-grid-block .item p{
+    line-height: 31px;
+}
+
+.talent-get-start .get-start-grid-block .item .line-block {
     position: relative;
     width: 100%;
-    height: 1.5px;
-    background-color: var(--white);
-    margin: 23px 0 32px;
+    height: 1px;
+    background-color: #2B418B;
+    margin: 16px 0 40px;
 }
 
-.talent-get .get-grid-block .item .line-block:before {
+.talent-get-start .get-start-grid-block .item .line-block:before {
     content: '';
     display: block;
     min-width: 11px;
     max-width: 11px;
     min-height: 11px;
     max-height: 11px;
-    border: 1.5px solid var(--white);
+    border: 1.5px solid #2B418B;
     border-radius: 50%;
-    background-color: var(--button-blue);
+    background-color: #FFFFFF;
     position: absolute;
     left: 0;
     top: -5px;
 }
 
-.talent-get .get-grid-block .item .line-block:after {
+.talent-get-start .get-start-grid-block .item .line-block:after {
     content: '';
     display: block;
     width: 50%;
-    height: 1.5px;
-    background-color: var(--white);
+    height: 1px;
+    background-color: #2B418B;
     position: absolute;
     left: 100%;
 }
 
-.talent-get .get-grid-block .item:last-child .line-block,
-.talent-get .get-grid-block .item:last-child .line-block:after {
-    background-color: var(--button-blue);
+.talent-get-start .get-start-grid-block .item:last-child .line-block,
+.talent-get-start .get-start-grid-block .item:last-child .line-block:after {
+    background-color: #FFFFFF;
 }
 
-.talent-get .get-grid-block .item .line-block .second-line {
-    background-color: var(--white);
+.talent-get-start .get-start-grid-block .item .line-block .second-line {
+    background-color: #2B418B;
     width: 300%;
     position: absolute;
-    height: 1.5px;
+    height: 1px;
     display: block;
     right: 100%;
+}
+
+.get-start-grid-wrapper .trainer-modal{
+    display: none;
 }
 
 .our-client-slider h3 {
@@ -326,7 +377,7 @@
 }
 
 @media (max-width: 1430px) {
-    .talent-get .get-grid-block .item .line-block .second-line {
+    .talent-get-start .get-start-grid-block .item .line-block .second-line {
         width: 500%;
     }
 }
@@ -484,54 +535,104 @@
         margin-bottom: 0;
     }
 
-    .talent-get .get-grid-block {
+    .talent-get-start .get-start-grid-block {
         grid-template-columns: repeat(1, 1fr);
-        gap: 16px;
+        gap: 37px;
     }
 
-    .talent-get .get-grid-block .item {
+    .talent-get-start .get-start-grid-block .item {
         display: flex;
-        gap: 8px;
         align-items: start;
+        position: relative;
     }
 
-    .talent-get .get-grid-block .item .line-block {
+    .talent-get-start .get-start-grid-block .item .line-block {
         margin: 0;
         height: 100%;
-        width: 1.5px;
+        width: 1px;
+        margin-left: 5px;
     }
 
-    .talent-get .get-grid-block .item .line-block::before {
-        min-width: 7px;
-        max-width: 7px;
-        min-height: 7px;
-        max-height: 7px;
-        left: -2px;
+    .talent-get-start .get-start-grid-block .item .line-block::before {
+        min-width:11px;
+        max-width:11px;
+        min-height:11px;
+        max-height:11px;
+        left: -4px;
         top: -2px;
     }
 
-    .talent-get .get-grid-block .item .line-block::after {
-        height: 50%;
-        width: 1.5px;
-        left: 0;
+    .talent-get-start .get-start-grid-block .item .line-block::after {
+        height: 100%;
+        width: 1px;
+        left: 0px;
         top: 100%;
     }
 
-    .talent-get .get-grid-block .item .line-block .second-line {
+    .talent-get-start .get-start-grid-block .item .line-block .second-line {
         display: none;
     }
 
-    .talent-get .get-grid-block .item:last-child .line-block,
-    .talent-get .get-grid-block .item:last-child .line-block:after {
-        width: 2px;
+    .talent-get-start .get-start-grid-block .item:last-child .line-block,
+    .talent-get-start .get-start-grid-block .item:last-child .line-block:after {
+        width: 1px;
     }
 
-    .talent-get .get-grid-block .item:last-child .line-block:after {
+    .talent-get-start .get-start-grid-block .item:last-child .line-block:after {
         top: 6px;
     }
 
-    .talent-get .get-grid-block .item p {
-        margin-left: 8px;
+    .talent-get-start .get-start-grid-block .item p {
+        margin-left: 24px;
+        line-height: 22px;
+        padding-top: 20px;
+    }
+
+    .talent-get-start .get-start-grid-block .item h2{
+        position: absolute;
+        margin-bottom: 0;
+        top: -14px;
+        left: 31px;
+    }
+
+    .talent-get-start .talent-grid-block,
+    .get-start-grid-wrapper .trainer-modal{
+        display: block;
+    }
+
+    .get-start-grid-wrapper .trainer-modal{
+        line-height: 54px;
+        max-width: 100%;
+        margin-top: 24px;
+    }
+
+    .get-start-grid-wrapper .trainer-modal span{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .get-start-heading h2 br,
+    .get-start-heading .trainer-modal{
+        display: none;
+    }
+
+    .get-start-heading{
+        margin-right: 0;
+        margin-bottom: 24px;
+        max-width: 100%;
+    }
+
+    .get-start-grid-wrapper{
+        max-width: 100%;
+        margin-top: 35px;
+    }
+
+    .get-start-grid-wrapper>p{
+        margin-top: 24px;
+    }
+
+    .talent-get-start.talent-content{
+        padding-top: 40px;
     }
 
     .start-work .container > ul,
