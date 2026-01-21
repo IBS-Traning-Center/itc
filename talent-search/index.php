@@ -1,6 +1,7 @@
 <?php
 
 use Bitrix\Main\Page\Asset;
+use Local\Util\FormHelper;
 
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
@@ -316,23 +317,26 @@ $APPLICATION->SetTitle('Стань тренером');
 </div>
 
 <?php $APPLICATION->IncludeComponent(
-    "bitrix:form.result.new",
-    "become.coach",
-    Array(
-        "CACHE_TIME" => "3600",
-        "CACHE_TYPE" => "A",
-        "CHAIN_ITEM_LINK" => "",
-        "CHAIN_ITEM_TEXT" => "",
-        "EDIT_URL" => "",
-        "IGNORE_CUSTOM_TEMPLATE" => "N",
-        "LIST_URL" => "",
-        "SEF_MODE" => "N",
-        "SUCCESS_URL" => "",
-        "AJAX_MODE" => "Y",
-        "USE_EXTENDED_ERRORS" => "N",
-        "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
-        "WEB_FORM_ID" => "42"
-    )
-);?>
+    'bitrix:form.result.new',
+    'become.coach.new',
+    [
+        'CACHE_TIME' => '3600',
+        'CACHE_TYPE' => 'A',
+        'CHAIN_ITEM_LINK' => '',
+        'CHAIN_ITEM_TEXT' => '',
+        'EDIT_URL' => '',
+        'IGNORE_CUSTOM_TEMPLATE' => 'N',
+        'LIST_URL' => '',
+        'SEF_MODE' => 'N',
+        'SUCCESS_URL' => '',
+        'AJAX_MODE' => 'Y',
+        'USE_EXTENDED_ERRORS' => 'N',
+        'VARIABLE_ALIASES' => [
+            'RESULT_ID' => 'RESULT_ID',
+            'WEB_FORM_ID' => 'WEB_FORM_ID'
+        ],
+        'WEB_FORM_ID' => FormHelper::getFormIdBySid('become_coach_new')
+    ]
+); ?>
 
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>

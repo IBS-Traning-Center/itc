@@ -1,0 +1,742 @@
+.sign-course-form-block {
+    background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
+    padding: 100px 0 120px;
+}
+
+.sign-course-form-block .sign-course-form-container {
+    display: flex;
+    align-items: start;
+    gap: 48px;
+}
+
+.sign-course-form-block .sign-course-form-container .left-sign-course-block {
+    max-width: 833px;
+    width: 100%;
+}
+
+.sign-course-form-block .sign-course-form-container .left-sign-course-block h2 {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 72px;
+    letter-spacing: 0px;
+}
+
+.sign-course-form-block .sign-course-form-container .left-sign-course-block .old-price {
+    position: relative;
+    color: rgba(255, 255, 255, 0.5);
+    max-width: fit-content;
+    margin: 0;
+}
+
+.sign-course-form-block .sign-course-form-container .left-sign-course-block .old-price:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: 15px;
+    transform: rotate(-12deg);
+}
+
+.sign-course-form-block .sign-course-form-container .left-sign-course-block .course-price {
+    margin-bottom: 8px;
+    color: var(--white);
+    font-size: 56px;
+    line-height: 72px;
+    font-weight: 400;
+}
+
+.sign-course-form-block .sign-course-form-container .left-sign-course-block .price-for-ur,
+.sign-course-form-block .sign-course-form-container .left-sign-course-block .money-return {
+    color: var(--white);
+    margin: 0;
+}
+
+.sign-course-form-block .sign-course-form-container .left-sign-course-block .money-return {
+    text-decoration: underline;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block {
+    width: 100%;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .success-text {
+    color: var(--white);
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .question-block {
+    margin-bottom: 32px;
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .question-block .error-message {
+    color: #CC0000;
+    font-size: 14px;
+    line-height: 130%;
+    position: absolute;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .flex-question-block {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .question-block input {
+    outline: none;
+    border: none;
+    background-color: #F0F0F0;
+    padding: 24px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    color: var(--black);
+    border-radius: 0;
+    height: fit-content;
+    width: 100%;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .question-block input::placeholder {
+    color: var(--black);
+    opacity: 1;
+    font-weight: 300;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .question-block input:focus::placeholder {
+    opacity: 0.5;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .question-block input.has-error {
+    border: 1px solid var(--red);
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .submit-main-feedback-form {
+    outline: none;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--white);
+    padding: 32px 40px;
+    color: #2B418B;
+    border: none;
+    border-radius: 0;
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .under-main-feedback-form,
+.sign-course-form-block .sign-course-form-container .questions-block .question-block span {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 32px;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .under-main-feedback-form a,
+.sign-course-form-block .sign-course-form-container .questions-block .question-block span a {
+    text-decoration: underline;
+    transition: all 0.3s;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.sign-course-form-block .sign-course-form-container .questions-block .under-main-feedback-form a:hover,
+.sign-course-form-block .sign-course-form-container .questions-block .question-block span a:hover{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.sign-course-form-block .question-block.course_id,
+.sign-course-form-block .question-block.date,
+.sign-course-form-block .question-block.face,
+.sign-course-form-block .question-block.course_name,
+.sign-course-form-block .question-block.course_link,
+.sign-course-form-block .question-block.course_name_crm,
+.sign-course-form-block .question-block.course_comment_crm,
+.sign-course-form-block .question-block.stage,
+.sign-course-form-block .question-block.client_id,
+.sign-course-form-block .question-block.training {
+    display: none !important;
+}
+
+.sign-course-form-block .sign-course-form-container .select-dates-block {
+    position: relative;
+}
+
+.sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-content {
+    margin-bottom: 24px;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    padding: 24px;
+    justify-content: space-between;
+    background-color: var(--gray);
+}
+
+.sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-content svg {
+    width: 32px;
+    height: 32px;
+}
+
+.sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-dropdown-block {
+    display: none;
+    position: absolute;
+    bottom: auto;
+    background: var(--gray);
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+}
+
+.sign-course-form-block .sign-course-form-container .select-dates-block.active .select-dates-dropdown-block {
+    display: block;
+}
+
+.sign-course-form-block .sign-course-form-container .select-dates-block.active .select-dates-content svg {
+    transform: rotate(180deg);
+}
+
+.sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-dropdown-block .select-date {
+    background-color: var(--gray);
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+}
+
+.sign-course-form-block .sign-course-form-container .sign-course-tabs-block {
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.sign-course-form-block .sign-course-form-container .sign-course-tabs-block .sign-course-tab {
+    padding: 8px 18px;
+    background-color: var(--white);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.sign-course-form-block .sign-course-form-container .sign-course-tabs-block .sign-course-tab.active {
+    background-color: var(--black);
+}
+
+.sign-course-form-block .sign-course-form-container .sign-course-tabs-block .sign-course-tab.active span {
+    color: var(--white);
+}
+
+.custom-file-upload .file-upload-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.custom-file-upload input[type="file"] {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-file-upload .custom-file-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    background-color: #2B418B;
+    cursor: pointer;
+    text-align: center;
+}
+
+.custom-file-upload .btn-icon {
+    font-size: 18px;
+}
+
+.custom-file-upload .file-name-display {
+    min-height: 24px;
+    padding: 4px 0;
+}
+
+.custom-file-upload .file-name-display .no-file {
+    color: #999;
+    font-style: italic;
+}
+
+.custom-file-upload .file-name-display .selected-file {
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.custom-file-upload .file-name {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+    padding-right: 10px;
+    margin: 0 !important;
+
+}
+
+.custom-file-upload .clear-file-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.custom-file-upload .clear-file-btn:hover {
+    transform: scale(1.1);
+}
+
+.custom-file-upload .clear-file-btn:active {
+    transform: scale(0.95);
+}
+
+.custom-file-upload .file-info {
+    border: 1px solid var(--white);
+    width: 100%;
+    padding: 15px;
+    align-items: center;
+}
+
+.custom-multiselect-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.custom-multiselect-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-height: 80px;
+    padding: 19px 54px 19px 24px;
+    background: #fff;
+    border-bottom: 2px solid #0827C4;
+    cursor: pointer;
+}
+
+.custom-multiselect-placeholder {
+    margin: 0 !important;
+    color: var(--black) !important;
+    font-weight: 300 !important;
+    font-size: 24px !important;
+    line-height: 32px !important;
+    letter-spacing: 0px !important;
+}
+
+.custom-multiselect-box.has-values
+.custom-multiselect-placeholder {
+    display: none;
+}
+
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.selected-tags .selected-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px 8px 8px;
+    background-color: #F0F0F0;
+}
+
+.selected-tags .selected-tag span:first-child {
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: 0px !important;
+    color: var(--black) !important;
+}
+
+.selected-tags .selected-tag span.remove-tag {
+    height: 24px;
+}
+
+.selected-tags .selected-tag span {
+    margin: 0 !important;
+}
+
+.custom-multiselect-arrow {
+    position: absolute;
+    right: 31px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.custom-multiselect-box.active .custom-multiselect-arrow {
+    transform: rotate(180deg);
+}
+
+.custom-multiselect span {
+    color: var(--black) !important;
+}
+
+.custom-multiselect-dropdown {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 24px);
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.custom-multiselect-box.has-selected
+.custom-multiselect-placeholder {
+    display: none;
+}
+
+.custom-multiselect-dropdown.active {
+    display: block;
+}
+
+.dropdown-option {
+    background-color: var(--white);
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    gap: 6px;
+    align-items: center;
+}
+
+.dropdown-option span {
+    margin: 0 !important;
+}
+
+.dropdown-option:hover {
+    background: #f5f5f5;
+}
+
+.dropdown-option.selected .checkmark {
+    visibility: visible;
+}
+
+.checkmark {
+    visibility: hidden;
+}
+
+.question-block .jq-checkbox {
+    border-color: var(--white);
+}
+
+.question-block .jq-checkbox.checked {
+    padding-top: 2px;
+}
+
+.question-block.agree_of_subject span,
+.question-block.privacy_policy span,
+.question-block.agree_of_subject span a,
+.question-block.privacy_policy span a {
+    font-weight: 300 !important;
+}
+
+.success-coach-background {
+    z-index: 99991;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000052;
+}
+
+.success-coach-modal {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index: 99992;
+    background: var(--white);
+    max-width: 1024px;
+    width: 100%;
+}
+
+.success-coach-modal .success-coach-modal-container {
+    padding: 64px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.success-coach-modal .success-coach-modal-container .close-coach-modal.btn-icon {
+    position: fixed;
+    padding: 24px;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+}
+
+.success-coach-modal .success-coach-modal-container .success-coach-title {
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 72px;
+    letter-spacing: 0px;
+    color: var(--black);
+}
+
+.success-coach-modal .success-coach-modal-container .success-coach-description {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: 0px;
+    color: var(--black);
+    font-family: Stag Sans;
+}
+
+.success-coach-modal .success-coach-modal-container .close-coach-modal.big-btn {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 32px;
+    background-color: #2B418B;
+    color: var(--white);
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    margin-top: 32px;
+}
+
+@media (max-width: 1180px) {
+    .sign-course-form-block {
+        padding: 40px 0;
+    }
+
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block .error-message {
+        font-size: 11px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .left-sign-course-block h2 {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        margin: 0;
+    }
+
+    .sign-course-form-block .sign-course-form-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .left-sign-course-block h1 {
+        max-width: 100%;
+        font-size: 32px;
+        line-height: 40px;
+        margin: 0 0 24px 0;
+    }
+
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block input {
+        padding: 16px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block {
+        margin-bottom: 16px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .questions-block .flex-question-block {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .sign-course-form-block .sign-course-form-container .questions-block .submit-main-feedback-form {
+        margin-top: 16px;
+        padding: 16px 40px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .left-sign-course-block .course-price {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-content {
+        margin-bottom: 16px;
+        padding: 16px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-content span,
+    .sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-dropdown-block .select-date span {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-content svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .select-dates-block .select-dates-dropdown-block .select-date {
+        padding: 16px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .sign-course-tabs-block {
+        flex-wrap: nowrap;
+    }
+
+    .custom-file-upload .custom-file-btn {
+        padding: 16px;
+    }
+
+    .custom-file-upload .custom-file-btn span {
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 24px !important;
+        letter-spacing: 0px !important;
+    }
+
+    .custom-multiselect span {
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 100% !important;
+        letter-spacing: 0px !important;
+    }
+
+    .custom-multiselect-box {
+        min-height: 56px;
+        padding: 17px 45px 17px 16px;
+        border-bottom: none;
+    }
+
+    .custom-multiselect-arrow {
+        right: 24px;
+    }
+
+    .custom-multiselect-dropdown {
+        top: calc(100% + 16px);
+    }
+
+    .dropdown-option {
+        padding: 16px;
+    }
+
+    .selected-tags .selected-tag {
+        padding: 4px;
+    }
+
+    .selected-tags .selected-tag span.remove-tag {
+        height: 16px;
+        max-width: 16px;
+    }
+
+    .selected-tags .selected-tag span.remove-tag svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .selected-tags .selected-tag span:first-child {
+        font-size: 14px !important;
+        line-height: 22px !important;
+    }
+
+    .success-coach-modal {
+        max-width: 328px;
+    }
+
+    .success-coach-modal .success-coach-modal-container {
+        gap: 16px;
+        padding: 24px;
+    }
+
+    .success-coach-modal .success-coach-modal-container .close-coach-modal.btn-icon {
+        padding: 4px;
+    }
+
+    .success-coach-modal .success-coach-modal-container .close-coach-modal.btn-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .success-coach-modal .success-coach-modal-container .success-coach-title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: 0px;
+    }
+
+    .success-coach-modal .success-coach-modal-container .success-coach-description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+    }
+
+    .success-coach-modal .success-coach-modal-container .close-coach-modal.big-btn {
+        margin-top: 16px;
+        padding: 11px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 500px) {
+    .sign-course-form-block .sign-course-form-container .sign-course-tabs-block {
+        align-items: stretch;
+    }
+
+    .sign-course-form-block .sign-course-form-container .sign-course-tabs-block > div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sign-course-form-block .sign-course-form-container .sign-course-tabs-block .sign-course-tab i {
+        display: none;
+    }
+}
