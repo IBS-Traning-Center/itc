@@ -10,10 +10,10 @@ $(document).ready(function () {
     });
 
     $('.our-services__item').on('click', function(e) {
-        e.preventDefault();
         let targetId = $(this).attr('href');
         
         if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
             if ($(targetId).length) {
                 $('html, body').animate({
                     scrollTop: $(targetId).offset().top - 80
