@@ -16,7 +16,7 @@ $(document).ready(function () {
         if (targetId && targetId.startsWith('#')) {
             if ($(targetId).length) {
                 $('html, body').animate({
-                    scrollTop: $(targetId).offset().top - 80
+                    scrollTop: $(targetId).offset().top - 360
                 }, 800); 
                 
                 $('.mini-gallery [data-code]').hide();
@@ -33,8 +33,13 @@ $(document).ready(function () {
                     let codeWords = $(this).attr('data-tab').split(/\s+/);
                     if(codeWords == targetId.slice(1)) {
                         $(this).addClass('active');
+
+                        let scrollContainer = $('.tabs--wrapper');
+                        let elementPosition = $('#accreditations').position().left - 16;
+                        scrollContainer.scrollLeft(elementPosition);
                     }
                 });
+
             }
         }
     });
