@@ -9,6 +9,13 @@
 .lk-section {
 	padding: 0 56px;
 }
+.lk-section + .lk-section .lk-section__title{
+	margin-top: 40px;
+}
+
+.lk-notification{
+	padding-top: 48px;
+}
 .lk-cards {
 	display: flex;
 	flex-direction: column;
@@ -62,6 +69,20 @@
 	}
 	.lk-header-row {
 		padding: 16px 24px;
+	}
+
+	.lk-section__title{
+		font-size: 24px;
+		line-height: 32px;
+		margin: 32px 0 16px;
+	}
+
+	.lk-notification{
+		padding: 32px 0 24px;
+	}
+
+	.lk-modal{
+		padding: 0 0 24px;
 	}
 }
 @media (max-width: 1400px) {
