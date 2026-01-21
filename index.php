@@ -131,7 +131,8 @@ $APPLICATION->IncludeComponent(
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N"
+		"STRICT_SECTION_CHECK" => "N",
+		"ON_MAIN" => "Y"
 	)
 );?>
 <div class="bg--gray">

@@ -18,6 +18,13 @@
 
 .main-top-menu-block .main-top-menu-item-container:last-child {
     border-right: none;
+    padding-right: 0;
+    padding-left: 16px;
+    display: none;
+}
+
+.main-top-menu-block .main-top-menu-item-container:nth-last-child(2){
+    border-right: none;
 }
 
 .main-top-menu-block .main-top-menu-item {
@@ -27,8 +34,11 @@
     color: inherit;
 }
 
-.profile-icon-right {
-    padding-left: 5px;
+.personal-container span+.profile-icon-right{
+    padding-left: 16px;
+}
+
+.personal-container span+.profile-icon-right {
     align-items: center;
     display: flex;
 }

@@ -889,8 +889,8 @@ body {
 
 .main-page-heading {
     color: var(--black);
-    font-size: 80px;
-    line-height: 92px;
+    font-size: 64px;
+    line-height: 78px;
     font-weight: 400;
     margin-bottom: 8px;
 }
@@ -917,6 +917,19 @@ body {
     .main-page-heading {
         font-size: 32px;
         line-height: 40px;
+    }
+
+    .search-header-form,
+    #header .header-container .search-header-block{
+        width: 100%;
+    }
+
+    #header .header-container{
+        align-items: unset;
+    }  
+
+    #header .header-container .search-header-block{
+        margin-left: 32px;
     }
 }
 
@@ -2671,8 +2684,8 @@ span.time.time-with-tooltip:hover .tooltip {
 }
 
 .corporate-program .text-block-title{
-    font-size: 42px;
-    line-height: 60px;
+    font-size: 64px;
+    line-height: 78px;
     margin-bottom: 56px;
     padding-right: 20px;
     font-weight: 400;
@@ -2917,7 +2930,7 @@ span.time.time-with-tooltip:hover .tooltip {
 }
 
 .lk-sidebar {
-    width: 454px;
+    max-width: 454px;
     flex-shrink: 0;
     background: #fff;
 }

@@ -38,8 +38,8 @@ $this->setFrameMode(true);
                 <div class="lk-card__title">
                     Системный аналитик
                 </div>
-                <a href="#" class="lk-card__btn">Скачать документ</a>
             </div>
+            <a href="#" class="lk-card__btn">Скачать документ</a>
         </div>
 
         <div class="lk-card course">
@@ -63,8 +63,10 @@ $this->setFrameMode(true);
                 <div class="lk-card__title">
                     Бизнес-аналитик
                 </div>
-                <a href="#" class="lk-card__btn">Скачать диплом</a>
+
             </div>
+            <div class="lk-card__title">
+            <a href="#" class="lk-card__btn">Скачать диплом</a>
         </div>
     </div>
 </section>

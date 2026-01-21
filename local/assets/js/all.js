@@ -528,18 +528,32 @@ document.addEventListener('DOMContentLoaded', function() {
   const emailError = document.getElementById('email-error');
   const policyError = document.getElementById('policy-error');
   const termsError = document.getElementById('terms-error');
-  
+  const policyLabel = document.querySelector('label[for="policy_checkbox"]');
+  const termsLabel = document.querySelector('label[for="terms_checkbox"]');
+
   // Обновление скрытых селектов при изменении чекбоксов
-  policyCheckbox.addEventListener('change', function() {
-    console.log(1);
+  policyCheckbox.addEventListener('input', function() {
       policySelect.value = this.checked ? 'true' : 'false';
       policyError.style.display = this.checked ? 'none' : 'block';
   });
 
-  termsCheckbox.addEventListener('change', function() {
-    console.log(2);
+  termsCheckbox.addEventListener('input', function() {
       termsSelect.value = this.checked ? 'true' : 'false';
       termsError.style.display = this.checked ? 'none' : 'block';
+  });
+
+  policyLabel.addEventListener('click', function() {
+    if(policyCheckbox.checked){
+      policySelect.value = policyCheckbox.checked ? 'true' : 'false';
+      policyError.style.display = policyCheckbox.checked ? 'none' : 'block';
+    }
+  });
+
+  termsLabel.addEventListener('click', function() {
+    if(termsCheckbox.checked){
+      termsSelect.value = termsCheckbox.checked ? 'true' : 'false';
+      termsError.style.display = termsCheckbox.checked ? 'none' : 'block';
+    }
   });
 
   // Валидация email

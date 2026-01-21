@@ -73,7 +73,7 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
             <div class="hh-section">
                 <div class="hh-link">
                     <div class="hh-logo">hh</div>
-                    <a href="<?=$address?>">Привязать профиль в hh.ru</a>
+                    <a href="<?=$address?>" class="hh-profile-link">Привязать профиль в hh.ru</a>
                 </div>
                 <div class="hh-desc">
                     После привязки профиля, данные о пройденных сертификациях будут передаваться на сайт hh.ru
@@ -86,7 +86,10 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
             </div>
 
             <div class="delete-account" onclick="if(confirm('Вы уверены, что хотите удалить аккаунт? Это действие нельзя отменить.')) location.href='/personal/delete/'">
-                <div class="delete-icon"></div>
+                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.4346 6.40918L16.082 21.5762L16.0166 22H3.68945L3.62305 21.5762L1.27051 6.40918L2.25879 6.25684L4.5459 21H15.1592L17.4463 6.25684L18.4346 6.40918ZM13.1172 0.330078L14.291 3.58301H20V4.58301H0V3.58301H5.77832L5.71777 3.55566L7.19141 0.293945L7.32422 0H12.998L13.1172 0.330078ZM6.80371 3.58301H13.2275L12.2959 1H7.96973L6.80371 3.58301Z" fill="#BF031B"/>
+                </svg>
+
                 <div>Удалить аккаунт</div>
             </div>
         </form>

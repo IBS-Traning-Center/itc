@@ -22,21 +22,27 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
             <div class="reviews-tabs-block">
                 <div class="tabs">
                     <?php if (!empty($arResult['COMPANY_REVIEWS'])) : ?>
-                        <div id="companyReviewsTab" class="active">
+                        <div id="companyReviewsTab" class="tab-item active">
                             <span class="f-16"><?= Loc::getMessage('COMPANY_REVIEWS_TAB_TEXT') ?></span>
+                        </div>
+                        <div class="link-block">
+                            <a href="/reviews/">
+                                <span><?= Loc::getMessage('LINK_ALL_REVIEWS_TEXT') ?></span>
+                                <?= Functions::buildSVG('review-arrow', $templateFolder . '/images') ?>
+                            </a>
                         </div>
                     <?php endif; ?>
                     <?php if (!empty($arResult['STUDENTS_REVIEWS'])) : ?>
-                        <div id="studentsReviewsTab" class="<?= (empty($arResult['COMPANY_REVIEWS'])) ? 'active' : '' ?>">
+                        <div id="studentsReviewsTab" class="tab-item<?= (empty($arResult['COMPANY_REVIEWS'])) ? ' active' : '' ?>">
                             <span class="f-16"><?= Loc::getMessage('STUDENTS_REVIEWS_TAB_TEXT') ?></span>
                         </div>
+                        <div class="link-block">
+                            <a href="/reviews/">
+                                <span><?= Loc::getMessage('LINK_ALL_REVIEWS_TEXT') ?></span>
+                                <?= Functions::buildSVG('review-arrow', $templateFolder . '/images') ?>
+                            </a>
+                        </div>
                     <?php endif; ?>
-                </div>
-                <div class="link-block">
-                    <a href="/reviews/">
-                        <span><?= Loc::getMessage('LINK_ALL_REVIEWS_TEXT') ?></span>
-                        <?= Functions::buildSVG('review-arrow', $templateFolder . '/images') ?>
-                    </a>
                 </div>
             </div>
             <div class="reviews-content">
@@ -73,7 +79,7 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                                 </div>
                                             <?php endif; ?>
                                             <div class="main-text">
-                                                <span data-id="<?= $review['ID'] ?>"><?= $review['PREVIEW_TEXT'] ?></span>
+                                                <span class="company-text" data-id="<?= $review['ID'] ?>"><?= $review['PREVIEW_TEXT'] ?></span>
                                             </div>
                                             <div class="micro-elem">
                                                 <?= Functions::buildSVG('arrow-element', $templateFolder . '/images') ?>
@@ -129,7 +135,7 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                                 </div>
                                             <?php endif; ?>
                                             <div class="main-text">
-                                                <span data-id="<?= $review['ID'] ?>"><?= $review['USER_REVIEW'] ?></span>
+                                                <span class="student-text" data-id="<?= $review['ID'] ?>"><?= $review['USER_REVIEW'] ?></span>
                                             </div>
                                             <div class="micro-elem">
                                                 <?= Functions::buildSVG('arrow-element', $templateFolder . '/images') ?>

@@ -109,36 +109,31 @@
 @media (max-width: 768px) {
 	.ibs-banner .banner-background {
 		height: auto;
-		min-height: 400px;
-		aspect-ratio: 360 / 400;
-		padding: 40px 16px;
+		min-height: auto;
+		padding: 32px 16px;
 		justify-content: center;
 	}
 
 	.ibs-banner .banner-content {
 		gap: 24px;
-		align-items: center;
+		align-items: left;
 	}
 
 	.ibs-banner .main-text {
 		width: 100%;
-		max-width: 328px;
 		font-family: 'Noto Sans', sans-serif;
 		font-style: normal;
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 22px;
-		text-align: center;
 		order: 1;
 	}
 
 	.ibs-banner .cta-button {
-		flex-direction: column;
-		align-items: center;
 		padding: 8px 16px;
 		gap: 24px;
 		width: 100%;
-		max-width: 328px;
+		max-width: 400px;
 		height: 64px;
 		order: 2;
 	}
@@ -149,13 +144,12 @@
 
 	.ibs-banner .cta-text {
 		width: 100%;
-		max-width: 296px;
+		max-width: 245px;
 		font-family: 'Inter', sans-serif;
 		font-style: normal;
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 24px;
-		text-align: center;
 		white-space: normal;
 	}
 }
