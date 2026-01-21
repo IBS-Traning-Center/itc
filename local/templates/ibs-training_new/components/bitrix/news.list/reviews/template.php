@@ -64,6 +64,11 @@ use Local\Util\Functions;
 						<div class="micro-elem">
 		                    <?= Functions::buildSVG('arrow-element', $templateFolder . '/images') ?>
 		                </div>
+						<?php if($arItem['PDF_FILE']):?>
+                            <div class="review-pdf-link">
+                                <a href="<?= $arItem['PDF_FILE']?>" target="_blank"><?= Loc::getMessage('PDF_TEXT_LINK')?></a>
+                            </div>
+                        <?php endif;?>
 		            </div>
 		            <div class="user-info-block">
 		                <?php if ($arItem['PREVIEW_PICTURE']) : ?>
@@ -116,6 +121,11 @@ use Local\Util\Functions;
                                 <?= Loc::getMessage('COURSE')?> <a href="<?= $arItem['COURSE_LINK']?>"><?= $arItem['COURSE_NAME']?></a>
                             </div>
                         <?php endif; ?>
+						<?php if($arItem['PDF_FILE']):?>
+                            <div class="review-pdf-link">
+                                <a href="<?= $arItem['PDF_FILE']?>" target="_blank"><?= Loc::getMessage('PDF_TEXT_LINK')?></a>
+                            </div>
+                        <?php endif;?>
 		                <div class="main-text">
 		                    <span>
 								<?php if($arItem['DETAIL_TEXT']) : ?>

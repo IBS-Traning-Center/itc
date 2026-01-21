@@ -55,7 +55,7 @@ $arCurSection = $arCurSection[0];
 
 <section class="start bg--green">
 	<a href="<?=CFile::GetPath($arCurSection['PICTURE'])?>" class="start__image d-none d-xxl-block" target="_blank" data-fancybox>
-		<img src="<?=CFile::GetPath($arCurSection['PICTURE'])?>" alt="Образец сертификата">
+		<img src="<?=CFile::GetPath($arCurSection['PICTURE'])?>" alt="">
 	</a>
 
 	<div class="container">

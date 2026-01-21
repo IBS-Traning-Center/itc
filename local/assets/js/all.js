@@ -516,3 +516,208 @@ function stickyNavInit() {
     });
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  /** форма подсписки из футера */
+  const form = document.getElementById('subscriptionForm');
+  const policyCheckbox = document.getElementById('policy_checkbox');
+  const termsCheckbox = document.getElementById('terms_checkbox');
+  const policySelect = document.getElementById('recipient_recipient_values_attributes_576784_value');
+  const termsSelect = document.getElementById('recipient_recipient_values_attributes_576785_value');
+  const emailInput = document.getElementById('recipient_email');
+  const emailError = document.getElementById('email-error');
+  const policyError = document.getElementById('policy-error');
+  const termsError = document.getElementById('terms-error');
+  const policyLabel = document.querySelector('label[for="policy_checkbox"]');
+  const termsLabel = document.querySelector('label[for="terms_checkbox"]');
+
+  // Обновление скрытых селектов при изменении чекбоксов
+  policyCheckbox.addEventListener('input', function() {
+      policySelect.value = this.checked ? 'true' : 'false';
+      policyError.style.display = this.checked ? 'none' : 'block';
+  });
+
+  termsCheckbox.addEventListener('input', function() {
+      termsSelect.value = this.checked ? 'true' : 'false';
+      termsError.style.display = this.checked ? 'none' : 'block';
+  });
+
+  policyLabel.addEventListener('click', function() {
+    if(policyCheckbox.checked){
+      policySelect.value = policyCheckbox.checked ? 'true' : 'false';
+      policyError.style.display = policyCheckbox.checked ? 'none' : 'block';
+    }
+  });
+
+  termsLabel.addEventListener('click', function() {
+    if(termsCheckbox.checked){
+      termsSelect.value = termsCheckbox.checked ? 'true' : 'false';
+      termsError.style.display = termsCheckbox.checked ? 'none' : 'block';
+    }
+  });
+
+  // Валидация email
+  emailInput.addEventListener('input', function() {
+      const email = this.value;
+      const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      
+      if (email && !isValid) {
+          emailError.style.display = 'block';
+          this.style.borderColor = '#ff3366';
+      } else {
+          emailError.style.display = 'none';
+          this.style.borderColor = '#333333';
+      }
+  });
+
+  // Валидация формы перед отправкой
+  form.addEventListener('submit', function(e) {
+      let isValid = true;
+      
+      // Проверка email
+      const email = emailInput.value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+          emailError.style.display = 'block';
+          emailInput.style.borderColor = '#ff3366';
+          isValid = false;
+      } else {
+          emailError.style.display = 'none';
+          emailInput.style.borderColor = '#333333';
+      }
+      
+      // Проверка чекбоксов
+      if (!policyCheckbox.checked) {
+          policyError.style.display = 'block';
+          policyCheckbox.nextElementSibling.style.borderColor = '#ff3366';
+          isValid = false;
+      } else {
+          policyError.style.display = 'none';
+          policyCheckbox.nextElementSibling.style.borderColor = '#4F72B1';
+      }
+      
+      if (!termsCheckbox.checked) {
+          termsError.style.display = 'block';
+          termsCheckbox.nextElementSibling.style.borderColor = '#ff3366';
+          isValid = false;
+      } else {
+          termsError.style.display = 'none';
+          termsCheckbox.nextElementSibling.style.borderColor = '#4F72B1';
+      }
+      
+      if (!isValid) {
+          e.preventDefault();
+          // Прокрутка к первой ошибке
+          const firstError = document.querySelector('.error-message[style*="display: block"]');
+          if (firstError) {
+              firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+      } else {
+          // Показать сообщение об успехе перед отправкой
+          alert('Спасибо за подписку! Проверьте вашу почту для подтверждения.');
+      }
+  });
+
+  /** табы ЛК*/
+  
+  const tabsContainer = document.querySelector('.lk-tabs');
+  if (!tabsContainer) return;
+
+  const tabs = tabsContainer.querySelectorAll('.lk-tab');
+
+  const components = [];
+
+  const allComponents = document.querySelectorAll('.lk-content > *');
+
+  let isAfterHeader = false;
+  let foundNotification = false;
+
+  allComponents.forEach(element => {
+    if (element.classList.contains('lk-header-row')) {
+      isAfterHeader = true;
+      return;
+    }
+
+    if (element.classList.contains('lk-notification')) {
+      foundNotification = true;
+      return;
+    }
+
+    if (isAfterHeader && !foundNotification &&
+        !element.classList.contains('lk-tabs') &&
+        !element.classList.contains('lk-header__right')) {
+      components.push(element);
+
+      if (element.innerHTML.includes('sert-lk') || element.querySelector('[class*="sert"]')) {
+        element.setAttribute('data-tab-type', 'sert');
+      } else if (element.innerHTML.includes('courses-lk') || element.querySelector('[class*="course"]')) {
+        element.setAttribute('data-tab-type', 'courses');
+      } else if (element.innerHTML.includes('programms-lk') || element.querySelector('[class*="program"]')) {
+        element.setAttribute('data-tab-type', 'programs');
+      } else {
+        element.setAttribute('data-tab-type', 'all');
+      }
+    }
+  });
+
+  if (components.length >= 3) {
+    components[0].setAttribute('data-tab-type', 'sert');
+    components[1].setAttribute('data-tab-type', 'courses');
+    components[2].setAttribute('data-tab-type', 'programs');
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('is-active'));
+
+      this.classList.add('is-active');
+
+      const tabText = this.textContent.trim();
+
+      switch(tabText) {
+        case 'Все':
+          components.forEach(comp => {
+            comp.style.display = 'block';
+          });
+          break;
+
+        case 'Сертификация':
+          components.forEach(comp => {
+            if (comp.getAttribute('data-tab-type') === 'sert') {
+              comp.style.display = 'block';
+            } else {
+              comp.style.display = 'none';
+            }
+          });
+          break;
+
+        case 'Курсы':
+          components.forEach(comp => {
+            if (comp.getAttribute('data-tab-type') === 'courses') {
+              comp.style.display = 'block';
+            } else {
+              comp.style.display = 'none';
+            }
+          });
+          break;
+
+        case 'Программы':
+          components.forEach(comp => {
+            if (comp.getAttribute('data-tab-type') === 'programs') {
+              comp.style.display = 'block';
+            } else {
+              comp.style.display = 'none';
+            }
+          });
+          break;
+      }
+    });
+  });
+
+  const allTab = Array.from(tabs).find(tab => tab.textContent.trim() === 'Все');
+  if (allTab && allTab.classList.contains('is-active')) {
+    allTab.click();
+  } else if (tabs[0]) {
+    tabs[0].click();
+  }
+});

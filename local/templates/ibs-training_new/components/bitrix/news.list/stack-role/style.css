@@ -1,7 +1,9 @@
 .stack_role-h2{
-    font-size: 56px;
-    line-height: 72px;
+    font-size: 64px;
+    line-height: 78px;
     margin-bottom: 56px;
+    letter-spacing: -0.8px;
+    font-weight: 400;
 }
 
 .stack_role-desc{
@@ -16,6 +18,7 @@
 
 .stack_role-title-block{
     padding: 100px 0;
+    border-top: 1px solid #B2B2B2;
 }
 
 .stack_role-block{
@@ -56,6 +59,7 @@
 .stack_role-item-hover .stack_role-item-name{
     font-size: 32px;
     line-height: 44px;
+    font-weight: 400;
 }
 
 .stack_role-item-img{
@@ -72,8 +76,27 @@
     position: absolute;
     z-index: 1;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.stack_role-item-hover div{
+    position: relative;
+    z-index: 2;
+}
+
+.stack_role-item-hover:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #254685D9;
+    z-index: 1;
+    backdrop-filter: blur(15px);
 }
 
 .stack_role-item:hover .stack_role-item-hover{
@@ -83,6 +106,7 @@
     background-color: #254685D9;
     backdrop-filter: blur(15px);
     padding-bottom: 32px;
+    top: 0;
 }
 
 .stack_role-item:hover .stack_role-item-img{
@@ -112,6 +136,7 @@
     line-clamp: 11;
     box-orient: vertical;
     margin-bottom: 16px;
+    font-family: 'Stag Sans', sans-serif;
 }
 
 .stack_role-item-link{
@@ -130,11 +155,13 @@
 }
 
 @media (max-width: 1180px) {
-    .stack_role-item{
+    .slick-slide.stack_role-item{
         width: auto;
         max-width: none;
         margin: 0;
-        padding: 0 12px;
+        margin: 0 12px;
+        min-height: auto;
+        min-height: 472px;
     }
 
     .stack_role-block-wrap .slick-list{
@@ -147,14 +174,6 @@
         padding-right: 0;
     }
 
-    .stack_role-item:hover .stack_role-item-img{
-        position: static;
-    }
-
-    .stack_role-item:hover .stack_role-item-hover{
-        display: none;
-    }
-
     .stack_role-item-img{
         height: 360px;
     }
@@ -163,6 +182,7 @@
         font-size: 22px;
         line-height: 1.4;
         margin-bottom: 24px;
+        letter-spacing: 0px;
     }
 
     .stack_role-title-block{
@@ -174,10 +194,15 @@
         background-color: transparent;
     }
 
-    .stack_role-item-name{
+    .stack_role-item-name,
+    .stack_role-item-hover .stack_role-item-name{
         min-height: unset;
         font-size: 24px;
-        line-height: 100%;
+        line-height: 32px;
+        min-height: 112px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .stack_role-block-wrap .slick-dots{
@@ -234,5 +259,15 @@
     .stack_role-block-wrap .slick-arrow.slick-next{
         right: 16px;
         transform: rotate(360deg);
+    }
+
+    .stack_role-item-text{
+        font-weight: 300;
+    }
+}
+@media (max-width: 600px) {
+    .stack_role-block-wrap .container{
+        padding-left: 0;
+        padding-right: 0;
     }
 }

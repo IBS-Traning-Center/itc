@@ -1,0 +1,242 @@
+/* Уникальный wrapper для полной изоляции */
+.password-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 56px 56px 100px;
+    gap: 48px;
+    width: 1450px;
+    height: 624px;
+    background: #FFFFFF;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.tabs {
+    display: flex;
+    gap: 4px;
+
+}
+
+.tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #f0f0f0;
+    color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #000;
+    color: #fff;
+}
+
+.password-wrapper .form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 24px;
+    width: 649px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    box-sizing: border-box;
+}
+
+.password-wrapper .password-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 4px;
+    width: 649px;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    box-sizing: border-box;
+}
+
+.password-wrapper .input-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 0 24px;
+    width: 649px;
+    height: 80px;
+    background: #FFFFFF;
+    border-bottom: 2px solid #2B418B;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 1;
+    position: relative;
+}
+
+.password-wrapper .input-wrapper-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    gap: 2px;
+    width: 649px;
+    height: 56px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.password-wrapper .label-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+    gap: 10px;
+    width: 649px;
+    height: 22px;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.password-wrapper .label-text {
+    font-family: 'Stag Sans', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    width: 601px;
+    height: 22px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.password-wrapper .input-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+    width: 649px;
+    height: 32px;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.password-wrapper .input-field input {
+    font-family: 'Stag Sans', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    width: 561px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.password-wrapper .eye-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.password-wrapper .requirements-text {
+    width: 649px;
+    height: 19px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.password-wrapper .buttons-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px 0 0;
+    gap: 24px;
+    width: 649px;
+    height: 78px;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    box-sizing: border-box;
+}
+
+.password-wrapper .btn-cancel,
+.password-wrapper .btn-save {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 40px;
+    gap: 10px;
+    width: 312.5px;
+    height: 54px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    flex: none;
+    flex-grow: 1;
+}
+
+.password-wrapper .btn-cancel {
+    background: #FFFFFF;
+    border: 1px solid #2B418B;
+    color: #2B418B;
+}
+
+.password-wrapper .btn-save {
+    background: #2B418B;
+    color: #FFFFFF;
+    border: none;
+}
+
+.password-wrapper .btn-cancel .btn-text {
+    width: 77px;
+    height: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.password-wrapper .btn-save .btn-text {
+    width: 83px;
+    height: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+@media (max-width: 1024px) {
+	.password-wrapper{
+		padding: 0;
+	}
+}

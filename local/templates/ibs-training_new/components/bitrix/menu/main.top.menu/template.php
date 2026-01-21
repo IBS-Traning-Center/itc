@@ -1,34 +1,116 @@
 <?php
 
-use Local\Util\Functions;
-
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
 global $USER;
-
-/**
- * @var $arResult
- * @var $arParams
- * @var string $templateFolder
-*/
-
+$authModalId = 'auth-modal';
+use Local\Util\Functions;
 ?>
 <div class="main-top-menu-block">
     <?php if (!empty($arResult)) : ?>
         <?php foreach ($arResult as $key => $value) : ?>
-            <a href="<?=$value['LINK']?>" class="main-top-menu-item <?= (count($arResult) == $key + 1) ? 'last-menu' : '' ?>">
-                <?php
-                $isCatalog = false;
+           <?php $isCatalog = false;
+            $isPersonal = false;
 
-                if ($value['PARAMS']['CATALOG'] === 'Y') {
-                    $isCatalog = true;
-                }
-                ?>
-                <?= ($isCatalog) ? Functions::buildSVG('catalog_icon', $templateFolder . '/images') : ''?>
-                <span class="f-16 <?=($isCatalog) ? 'catalog-link' : ''?>"><?=$value['TEXT']?></span>
-            </a>
+            if (isset($value['PARAMS']['CATALOG']) && $value['PARAMS']['CATALOG'] === 'Y') {
+                $isCatalog = true;
+            }
+
+            if (strpos($value['LINK'], '/personal/') !== false ||
+                (isset($value['PARAMS']['PERSONAL']) && $value['PARAMS']['PERSONAL'] === 'Y')) {
+                $isPersonal = true;
+            }
+
+            $isLast = (count($arResult) == $key + 1);
+            ?>
+            <div class="main-top-menu-item-container <?= $isPersonal ? 'personal-container' : '' ?>">
+                <?php if ($isPersonal && !$USER->IsAuthorized()) : ?>
+                    <a href="javascript:void(0);"
+                       class="main-top-menu-item <?= $isLast ? 'last-menu' : '' ?> open-auth-modal"
+                       data-modal-id="<?= $authModalId ?>">
+
+                        <span class="f-16"><?=$value['TEXT']?></span>
+                        <span class="profile-icon-right">
+                            <?= Functions::buildSVG('profile_icon', $templateFolder . '/images') ?>
+                        </span>
+                    </a>
+                <?php else : ?>
+                    <a href="<?=$value['LINK']?>"
+                       class="main-top-menu-item <?= $isLast ? 'last-menu' : '' ?>">
+
+                        <?= ($isCatalog) ? Functions::buildSVG('catalog_icon', $templateFolder . '/images') : '' ?>
+
+                        <?php if (!$isPersonal || !$USER->IsAuthorized()) : ?>
+                            <span class="f-16 <?= $isCatalog ? 'catalog-link' : '' ?>"><?=$value['TEXT']?></span>
+                        <?php endif; ?>
+
+                        <?php if ($isPersonal) : ?>
+                            <span class="profile-icon-right">
+                                <?= Functions::buildSVG('profile_icon', $templateFolder . '/images') ?>
+                            </span>
+                        <?php endif; ?>
+                    </a>
+                <?php endif; ?>
+
+                <?php if ($isPersonal && $USER->IsAuthorized()) : ?>
+                    <div class="profile-dropdown">
+                        <a href="<?=$value['LINK']?>" class="dropdown-item">Личный кабинет</a>
+                        <a href="?logout=yes&<?=bitrix_sessid_get()?>" class="dropdown-item logout">Выйти</a>
+                    </div>
+                <?php endif; ?>
+            </div>
+
         <?php endforeach; ?>
     <?php endif; ?>
+</div>
+<div id="<?= $authModalId ?>" class="auth-modal-wrapper" style="display: none;">
+    <div class="auth-modal-content">
+        <div class="auth-modal-close-btn">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.1302 12.1302L35.8698 35.8698" stroke="black" stroke-width="2"/>
+                <path d="M12.1302 35.8698L35.8698 12.1302" stroke="black" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <div class="auth-modal-body">
+            <h2 class="auth-modal-title">Регистрация и вход</h2>
+            <div class="auth-tabs">
+                <button class="auth-tab auth-tab--register" onclick="switchAuthTab('register')">
+                    <span class="auth-tab-text">Регистрация</span>
+                </button>
+                <button class="auth-tab auth-tab--login active" onclick="switchAuthTab('login')">
+                    <span class="auth-tab-text">Вход</span>
+                </button>
+            </div>
+            <div class="tabs-content">
+                <div id="tab-register" class="tab-content">
+                    <?php
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:system.auth.registration",
+                        "",
+                        array(),
+                        false
+                    );
+                    ?>
+                </div>
+                <div id="tab-login" class="tab-content active">
+                    <?php
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:system.auth.form",
+                        "new_auth",
+                        array(
+                            "REGISTER_URL" => "",
+                            "AUTH_FORGOT_PASSWORD_URL" => "/auth/forgot_pass.php",
+                            "PROFILE_URL" => "/personal/",
+                            "SHOW_ERRORS" => "Y"
+                        ),
+                        false
+                    );
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

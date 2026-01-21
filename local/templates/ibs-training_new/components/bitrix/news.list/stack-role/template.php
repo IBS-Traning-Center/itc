@@ -38,7 +38,7 @@ if (!empty($arResult['ITEMS'])) : ?>
                             <?= $item['NAME'] ?>
                         </div>
                         <div class="stack_role-item-img" style="background-image: url('<?= $item['PREVIEW_PICTURE']['SRC'] ?>')"></div>
-                        <div class="stack_role-item-hover">
+                        <div class="stack_role-item-hover" style="background-image: url('<?= $item['PREVIEW_PICTURE']['SRC'] ?>')">
                             <div class="stack_role-item-name">
                                 <?= $item['NAME'] ?>
                             </div>

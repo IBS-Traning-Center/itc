@@ -1,0 +1,58 @@
+.how-to-cert {
+    background: linear-gradient(70.08deg, #2C4689 0%, #4CA069 100%);
+    @include sectionSpaces;
+
+    .title--h2 {
+        color: #fff;
+        margin-bottom: 32px;
+
+        @include breakpoint(lg) {
+            margin-bottom: 64px;
+        }
+    }
+
+    &__item {
+        background-color: #fff;
+        padding: 24px;
+        display: flex;
+        gap: 12px;
+
+        @include breakpoint(md) {
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: space-between;
+        }
+        
+        @include breakpoint(xl) {
+            gap: 24px;
+            height: auto;
+            // display: block;
+        }
+
+        &__title {
+            @include key;
+        }
+
+        &__desc {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            color: #000;
+
+            @include breakpoint(xl) {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            a {
+                @include link;
+            }
+
+            * {
+                font-size: inherit !important;
+                line-height: inherit !important;
+            }
+        }
+    }
+}

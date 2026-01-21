@@ -1,0 +1,211 @@
+.timetable-section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 20px 120px;
+    gap: 48px;
+    width: 100%;
+    max-width: 1680px;
+    height: auto;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-bottom: 1px solid #B2B2B2;
+    flex: none;
+    order: 11;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.timetable-title {
+    width: 1680px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 78px;
+    color: #000000;
+    margin: 0;
+    box-sizing: border-box;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.timetable-section .timetable-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0 auto;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.timetable-item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 32px;
+    width: 100%;
+    height: 358px;
+    background: #F0F0F0;
+    border-bottom: 1px solid #000000;
+    flex: none;
+    flex-grow: 0;
+}
+
+.timetable-item > div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.timetable-item .button,
+.timetable-item a.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 40px;
+    gap: 10px;
+    width: 100%;
+    height: 54px;
+    background: #2B418B;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-top: auto;
+}
+
+.timetable-item .button .text,
+.timetable-item a.button .text {
+    box-sizing: border-box;
+    width: 146px;
+    height: 32px;
+    font-family: 'Stag Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 32px;
+    color: #F0F0F0;
+    border: 1px solid #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+@media (max-width: 1300px) {
+    .timetable-title {
+        width: auto;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .timetable-section  .timetable-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1180px) {
+    .timetable-section {
+        padding: 40px 16px 40px;
+        gap: 40px;
+        min-height: auto;
+        height: auto;
+    }
+
+    .timetable-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .timetable-item {
+        height: auto;
+        min-height: 380px;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timetable-section {
+        padding: 60px 16px 80px;
+        gap: 32px;
+        height: auto;
+    }
+
+    .timetable-section  .timetable-list {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .timetable-list .timetable-item {
+        width: 100%;
+        height: auto;
+        min-height: 358px;
+    }
+
+    .timetable-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 16px;
+        gap: 24px;
+        width: 100%;
+        height: auto;
+        background: #FFFFFF;
+        border-bottom: 1px solid #B2B2B2;
+        flex: none;
+        order: 11;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+    .timetable-title {
+        width: 100%;
+        height: auto;
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+    .timetable-list {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 0px !important;
+        gap: 24px !important;
+        width: 100% !important;
+        height: auto !important;
+        flex: none !important;
+        order: 1 !important;
+        flex-grow: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .timetable-list .timetable-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 358px !important;
+        padding: 24px !important;
+        gap: 32px !important;
+    }
+
+    .timetable-item .button,
+    .timetable-item a.button {
+        width: 100% !important;
+        padding: 24px 20px !important;
+    }
+}

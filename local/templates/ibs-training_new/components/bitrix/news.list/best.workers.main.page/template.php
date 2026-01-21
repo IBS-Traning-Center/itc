@@ -5,30 +5,44 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 
 use \Bitrix\Main\Localization\Loc;
+use Local\Util\Functions;
 
 Loc::loadMessages(__FILE__);
 
+/** @var $arParams */
 /** @var $arResult */
 /** @var $templateFolder */
 
 $this->setFrameMode(false);
 
 if (!empty($arResult['ITEMS'])) : ?>
-    <div class="best-workers-block">
-        <div class="best-workers-default">
+    <div class="best_worker-block-wrap">
+        <div class="container best_worker-block">
             <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
-                <a href="<?= $item['PROPERTIES']['LINK']['VALUE'] ?>" class="best-workers-default_item">
-                    <span class="f-24"><?= $item['NAME'] ?></span>
-                </a>
+                <?php if ($item['PREVIEW_PICTURE']['SRC']) : ?>
+                    <div class="best_worker-item">
+                        <div class="best_worker-item-name">
+                            <?= $item['NAME'] ?>
+                        </div>
+                        <div class="best_worker-item-img" style="background-image: url('<?= $item['PREVIEW_PICTURE']['SRC'] ?>')"></div>
+                        <div class="best_worker-item-hover" style="background-image: url('<?= $item['PREVIEW_PICTURE']['SRC'] ?>')">
+                            <div class="best_worker-item-name">
+                                <?= $item['NAME'] ?>
+                            </div>
+                            <div class="best_worker-item-text">
+                                <?= $item['PREVIEW_TEXT'] ?>
+                            </div>
+                            <? if($item['PROPERTIES']['BTN_NAME']['VALUE']): ?>
+                                <div class="best_worker-item-link" >
+                                    <a href="<?= $item['PROPERTIES']['BTN_LINK']['VALUE'] ?>">
+                                        <?= $item['PROPERTIES']['BTN_NAME']['VALUE'] ?>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
-        <?php if (!empty($arResult['RETURN_ELEM'])) : ?>
-            <a href="<?= $arResult['RETURN_ELEM']['PROPERTIES']['LINK']['VALUE'] ?>" class="best-workers-return-elem">
-                <div class="best-workers-return-elem_icon">
-                    <span>&#8381;</span>
-                </div>
-                <span class="best-workers-return-elem_name"><?= $arResult['RETURN_ELEM']['NAME'] ?></span>
-            </a>
-        <?php endif; ?>
     </div>
-<?php endif;
+<?php endif; ?>
