@@ -25,7 +25,7 @@
 }
 
 .review-pdf-link{
-    padding: 24px;
+    padding: 0 24px 24px;
     margin-top: auto;
 }
 
@@ -402,7 +402,7 @@
 
 	.reviews-content > div .review-item {
 		min-height: 530px;
-		max-height: 530px;
+		max-height: none;
 	}
 
 	.reviews-content > div .review-item.review-modal{
