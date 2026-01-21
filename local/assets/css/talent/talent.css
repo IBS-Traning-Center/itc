@@ -376,6 +376,11 @@
     flex-direction: column;
 }
 
+.talent-experience{
+    text-align: center;
+    padding: 0 0 120px;
+}
+
 @media (max-width: 1430px) {
     .talent-get-start .get-start-grid-block .item .line-block .second-line {
         width: 500%;
@@ -655,6 +660,19 @@
 
     .talent-content.telegram {
         padding: 40px 0;
+    }
+
+    .talent-experience{
+        text-align: left;
+        padding: 0 0 40px; 
+    }
+
+    .talent-experience p{
+        line-height: 26px;
+    }
+
+    .talent-experience br:nth-child(2){
+        display: none;
     }
 }
 
