@@ -38,8 +38,8 @@ $this->setFrameMode(true);
                 <div class="lk-card__title">
                     Шаблоны проектирования GoF. Редакция для .NET
                 </div>
-                <a href="#" class="lk-card__btn">Скачать свидетельство</a>
             </div>
+            <a href="#" class="lk-card__btn">Скачать свидетельство</a>
         </div>
 
         <div class="lk-card course">
@@ -63,8 +63,8 @@ $this->setFrameMode(true);
                 <div class="lk-card__title">
                     Шаблоны проектирования GoF. Редакция для .NET
                 </div>
-                <a href="#" class="lk-card__btn">Скачать свидетельство</a>
             </div>
+            <a href="#" class="lk-card__btn">Скачать свидетельство</a>
         </div>
     </div>
 </section>
