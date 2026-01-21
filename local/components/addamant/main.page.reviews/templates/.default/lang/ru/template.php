@@ -7,3 +7,4 @@ $MESS['COMPANY_REVIEWS_TAB_TEXT'] = 'Отзывы компаний';
 $MESS['STUDENTS_REVIEWS_TAB_TEXT'] = 'Отзывы учеников';
 $MESS['LINK_ALL_REVIEWS_TEXT'] = 'Читать все отзывы';
 $MESS['COURSE'] = 'Курс:';
+$MESS['PDF_TEXT_LINK'] = 'Отзыв о сотрудничестве';

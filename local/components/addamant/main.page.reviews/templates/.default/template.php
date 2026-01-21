@@ -84,6 +84,11 @@ if (!empty($arResult['STUDENTS_REVIEWS']) || !empty($arResult['COMPANY_REVIEWS']
                                             <div class="micro-elem">
                                                 <?= Functions::buildSVG('arrow-element', $templateFolder . '/images') ?>
                                             </div>
+                                            <?php if($review['PDF_FILE']):?>
+                                                <div class="review-pdf-link">
+                                                    <a href="<?= $review['PDF_FILE']?>" target="_blank"><?= Loc::getMessage('PDF_TEXT_LINK')?></a>
+                                                </div>
+                                            <?php endif;?>
                                         </div>
                                         <div class="user-info-block">
                                             <?php if ($review['PREVIEW_PICTURE']) : ?>
