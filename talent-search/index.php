@@ -212,8 +212,8 @@ $APPLICATION->SetTitle('Стань тренером');
             </div>
         </div>
     </div>
-    <div class="talent-content">
-        <div class="out-client container">
+    <div class="out-client talent-content">
+        <div class="container">
             <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/our_client_heading.php', [], ['MODE' => 'html', 'NAME' => 'Наши клиенты заголовок']); ?></h2>
             <p class="f-32 margin-bottom48"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/our_client_description.php', [], ['MODE' => 'html', 'NAME' => 'Наши клиенты описание']); ?></p>
         </div>

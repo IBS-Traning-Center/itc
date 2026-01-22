@@ -223,6 +223,10 @@
     height: 44px;
 }
 
+.out-client.talent-content{
+    padding: 100px 0 120px;
+}
+
 .our-client-slider h3 {
     display: none;
 }
@@ -406,7 +410,10 @@
         gap: 16px;
     }
 
-    .talent-content {
+    .talent-content,
+    .out-client.talent-content,
+    .talent-come .talent-content,
+    .talent-content.telegram {
         padding: 40px 0;
     }
 
@@ -443,10 +450,6 @@
 
     .talent-team > .trainer-modal {
         margin-top: 24px;
-    }
-
-    .talent-come .talent-content {
-        padding: 40px 0;
     }
 
     .talent-section .talent-come .grid-talent-3 {
@@ -511,8 +514,9 @@
         min-height: 36px;
     }
 
-    .talent-content.telegram {
-        padding: 40px 0;
+    .out-client.talent-content h2,
+    .out-client.talent-content p{
+        margin-bottom: 16px;
     }
 
     .talent-come h2{
