@@ -551,6 +551,7 @@
     .talent-get .get-grid-block .item p {
         margin-left: 16px;
         line-height: 20px;
+        font-size: 16px;
     }
 
     .talent-get .get-grid-block svg{
@@ -652,6 +653,10 @@
     .talent-section .grid-talent-4{
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+
+    .talent-get .get-grid-block{
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .talent-come .talent-content .grid-talent{
