@@ -19,8 +19,23 @@
     padding: 24px 24px 16px; 
 }
 
-.reviews-content > div .review-item .review-course-info a{
+.reviews-content > div .review-item .review-course-info a,
+.review-pdf-link a{
     color: #2B418B;
+}
+
+.review-pdf-link{
+    padding: 0 24px 24px;
+    margin-top: auto;
+}
+
+.review-item.review-modal .review-pdf-link{
+    margin: 0 0 24px 0;
+    padding: 0;
+}
+
+.review-pdf-link a{
+    text-decoration: underline;
 }
 
 .reviews-content > div .review-item.review-modal .review-course-info{
@@ -78,6 +93,8 @@
     background-color: var(--light-gray);
     position: relative;
     min-height: 440px;
+    display: flex;
+    flex-direction: column;
 }
 
 .reviews-content > div .review-item.review-modal{
@@ -267,6 +284,8 @@
 	overflow: auto;
 	padding-right: 8px;
 	margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
 }
 
 .reviews-content > div .review-item.review-modal .review-text-block::-webkit-scrollbar {
@@ -383,7 +402,7 @@
 
 	.reviews-content > div .review-item {
 		min-height: 530px;
-		max-height: 530px;
+		max-height: none;
 	}
 
 	.reviews-content > div .review-item.review-modal{

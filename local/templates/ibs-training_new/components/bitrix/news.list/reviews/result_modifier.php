@@ -10,12 +10,17 @@ $studentReviewsIblock = IblockHelper::getIdByCode('reviews');
 foreach($arResult["ITEMS"] as $key => &$arItem){
 	if($arItem['IBLOCK_ID'] == $companyReviewsIblock){
 		$element = ElementCompanyReviewsTable::getByPrimary($arItem['ID'], [
-			'select' => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'REVIEW_USER_NAME_' => 'REVIEW_USER_NAME', 'VIDEO_MESS_' => 'VIDEO_MESS.FILE', 'COURSE_' => 'COURSE'],
+			'select' => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'REVIEW_USER_NAME_' => 'REVIEW_USER_NAME', 'PDF_FILE_' => 'PDF_FILE.FILE', 'VIDEO_MESS_' => 'VIDEO_MESS.FILE', 'COURSE_' => 'COURSE'],
 		])->fetch();
 		
 		$elementVideo = '';
 		if($element['VIDEO_MESS_ID'] !== NULL){
 			$elementVideo = '/upload/' . $element['VIDEO_MESS_SUBDIR'] .'/'. $element['VIDEO_MESS_FILE_NAME'];
+		}
+
+		$elementPdf = '';
+		if($element['PDF_FILE_ID'] !== NULL){
+			$elementPdf = '/upload/' . $element['PDF_FILE_SUBDIR'] .'/'. $element['PDF_FILE_FILE_NAME'];
 		}
 
 		if ($element['COURSE_VALUE']) {
@@ -25,7 +30,7 @@ foreach($arResult["ITEMS"] as $key => &$arItem){
 				$element['COURSE_NAME'] = $arElement['NAME'];
 			}
 		}
-		
+		$element['PDF_FILE'] = $elementPdf;
 		$element['VIDEO'] = $elementVideo;
 		$arItem = $element;
 		

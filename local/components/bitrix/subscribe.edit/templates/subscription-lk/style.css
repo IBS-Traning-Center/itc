@@ -10,13 +10,16 @@
 	align-items: flex-start;
 
 	gap: 48px;
-	min-height: 1117px;
+	max-height: 1117px;
 	background: #FFFFFF;
 	margin: 0 auto;
 	box-sizing: border-box;
-	padding: 56px;
-}
 
+}
+.jq-checkbox.checked, .jq-radio.checked {
+	background: #2B418B!important;
+	border-color: #2B418B!important;
+}
 .subscr-wrapper .tabs {
 	display: flex;
 	flex-direction: row;
@@ -243,11 +246,6 @@
 	color: #000000;
 }
 
-
-
-/* =========================
-   CHECKBOX
-========================= */
 .subscr-checkbox {
     position: relative;
     width: 24px;
@@ -299,5 +297,76 @@
 @media (max-width: 1024px) {
 	.subscr-wrapper .subscr-container{
 		padding: 0;
+	}
+}
+@media (max-width: 1180px) {
+	.subscr-wrapper {
+		padding: 0px;
+	}
+	.subscr-wrapper .subscr-content-wrapper {
+
+		gap: 24px;
+		max-width: 649px;
+		width: 100%;
+
+	}
+	.subscr-wrapper .subscr-email-section{
+gap:3px;
+		max-width: 649px;
+		height: 56px;
+		width: 100%;
+		padding: 0 0 8px;
+		border-bottom: 1px solid #2B418B;
+
+	}
+	.subscr-wrapper .subscr-topics-section {
+
+		max-width: 649px;
+		width: 100%;
+	}
+	.subscr-wrapper .subscr-buttons {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 24px 0 0;
+		gap: 24px;
+		max-width: 649px;
+		width: 100%;
+	}
+	.subscr-wrapper .subscr-topic-item, .subscr-wrapper .subscr-sub-topic {
+		max-width: 649px;
+		width: 100%;
+	}
+	.subscr-wrapper .subscr-email-label {
+		padding: 0 24px;
+		height: 22px;
+		font-family: 'Stag Sans', sans-serif;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 22px;
+		color: #000000;
+		box-sizing: border-box;
+	}
+	.subscr-wrapper .subscr-email-input {
+		font-family: 'Stag Sans', sans-serif;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 22px;
+		color: #000000;
+		background: transparent;
+		border: none;
+		outline: none;
+		padding: 0;
+	}
+	.subscr-wrapper .subscr-btn {
+		width: 100%;
+	}
+	.subscr-wrapper .subscr-buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 24px 0 0;
+		gap: 8px;
+		width: 100%;
 	}
 }

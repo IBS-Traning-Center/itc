@@ -2930,7 +2930,7 @@ span.time.time-with-tooltip:hover .tooltip {
 }
 
 .lk-sidebar {
-    width: 454px;
+    max-width: 454px;
     flex-shrink: 0;
     background: #fff;
 }
