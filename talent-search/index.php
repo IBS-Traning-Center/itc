@@ -14,7 +14,7 @@ $APPLICATION->SetPageProperty('description', 'Присоединяйтесь к 
 $APPLICATION->SetTitle('Стань тренером');
 ?>
 
-<div class="top-page-banner">
+<div class="top-page-banner talent-page">
     <div class="container">
         <div class="banner-content">
             <?php $APPLICATION->IncludeComponent(
@@ -64,7 +64,7 @@ $APPLICATION->SetTitle('Стань тренером');
             </div>
         </div>
         <div class="talent-grid-block talent-content">
-            <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Цифра экспертов']); ?></h2>
+            <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Цифра экспертов']); ?></h2>
             <div class="grid-talent-4">
                 <div>
                     <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></h2>
