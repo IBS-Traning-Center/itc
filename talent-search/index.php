@@ -242,6 +242,24 @@ $APPLICATION->SetTitle('Стань тренером');
             </div>
         </div>
     </div>
+    <div class="trainer-expert talent-content">
+        <div class="container">
+            <? $APPLICATION->IncludeComponent(
+            	"addamant:main.page.reviews", 
+            	"expert", 
+            	array(
+            		"CACHE_TIME" => "3600",
+            		"CACHE_TYPE" => "A",
+            		"COMPONENT_TEMPLATE" => ".default"
+            	),
+            	false
+            ); ?>    
+            <div class="trainer-expert-form">
+                <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/expert_img.php', [], ['MODE' => 'html', 'NAME' => 'Картинка Эксперты, которые уже с нами']); ?>
+                <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/expert_description.php', [], ['MODE' => 'html', 'NAME' => 'Описание Эксперты, которые уже с нами']); ?>
+            </div>
+        </div>
+    </div>
     <? $APPLICATION->IncludeComponent(
     	"addamant:main.page.reviews", 
     	"talent", 
@@ -254,7 +272,20 @@ $APPLICATION->SetTitle('Стань тренером');
     ); ?>
     <div class="talent-experience">
         <div class="container">
-            <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/experience.php', [], ['MODE' => 'html', 'NAME' => 'Преподавательский опыт ']); ?></p>
+            <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/experience.php', [], ['MODE' => 'html', 'NAME' => 'Преподавательский опыт']); ?></p>
+        </div>
+    </div>
+    <div class="talent-school talent-content">
+        <div class="container">
+            <div class="talent-school-wrap">
+                <div class="talent-school-img">
+                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/school_img.php', [], ['MODE' => 'html', 'NAME' => 'Картинка Школа тренеров']); ?>
+                </div>
+                <div class="talent-school-text">
+                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/school_title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Школа тренеров']); ?></h2>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/school_decription.php', [], ['MODE' => 'html', 'NAME' => 'Описание Школа тренеров']); ?></p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="talent-get-start talent-content">

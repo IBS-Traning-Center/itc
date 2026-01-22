@@ -1,12 +1,10 @@
 class ReviewsTalentPage
 {
     constructor(data = {
-        studentsReviewsTabId: 'studentsReviewsTab',
         studentsReviewsContentId: 'studentReviewContent',
         reviewsItemsTextClass: '.review-text-block .main-text > span',
         videoReviewsBlockClass: '.reviews-video'
     }) {
-        this.studentsReviewsTab = document.getElementById(data.studentsReviewsTabId);
         this.studentsReviewsContent = document.getElementById(data.studentsReviewsContentId);
         this.reviewsItemsText = document.querySelectorAll(data.reviewsItemsTextClass);
         this.videoReviewsBlock = document.querySelectorAll(data.videoReviewsBlockClass);
@@ -70,11 +68,12 @@ class ReviewsTalentPage
                         }
                     },
                     {
-                        breakpoint: 768,
+                        breakpoint: 1024,
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
                             dots: true,
+                            arrows: true,
                         }
                     }
                 ]

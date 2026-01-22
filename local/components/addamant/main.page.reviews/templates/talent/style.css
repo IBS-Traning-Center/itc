@@ -264,7 +264,7 @@
     }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1280px) {
     .reviews-talent-block {
         padding: 40px 0 10px;
     }
@@ -290,7 +290,10 @@
 
     .reviews-talent-block .main-page-heading{
         margin-bottom: 24px;
+        font-size: 32px;
+        line-height: 40px;
     }
+
     .reviews-content > div .slick-dots{
         margin-top: 24px;
         padding-top: 16px;
@@ -310,5 +313,33 @@
 
     .reviews-content > div .review-item .user-info-block .user-image + .user-text-info{
         margin-left: 24px;
+    }
+
+    .trainer-item .user-image{
+        max-width: 80px;
+        min-width: 80px;
+    }
+
+    .trainer-content #trainerContent{
+        padding-bottom: 44px;
+    }
+
+    #studentReviewContent .slick-arrow.slick-prev {
+        left: 16px;
+    }
+
+    #studentReviewContent .slick-arrow {
+        background: url(images/arrow.png) no-repeat center center;
+        bottom: 0;
+        top: auto;
+        transform: rotate(180deg);
+        margin-top: 0;
+        width: 45px;
+        height: 19px;
+    }
+
+    #studentReviewContent .slick-arrow.slick-next {
+        right: 16px;
+        transform: rotate(360deg);
     }
 }

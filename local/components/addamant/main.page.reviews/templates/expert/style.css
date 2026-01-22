@@ -1,0 +1,218 @@
+.trainer-expert.talent-content{
+    background-color: #F0F0F0;
+}
+
+.trainer-expert.talent-content{
+    padding: 100px 0 120px;
+}
+
+.trainer-expert.talent-content .container{
+    display: flex;
+}
+
+.trainer-talent-block{
+    margin-right: 32px;
+    max-width: 1104px;
+    width: 100%;
+}
+
+.trainer-talent-block .main-page-heading{
+    margin-bottom: 48px;
+    white-space: nowrap;
+}
+
+.trainer-expert-form{
+    border: 1px solid #2B418B;
+    margin-top: 126px;
+    max-width: 539px;
+    min-width: 539px;
+    min-height: 320px;
+    max-height: 320px;
+    padding: 32px 32px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.trainer-expert-form p{
+    margin: 40px 0;
+}
+
+.trainer-expert-form a{
+    line-height: 54px;
+    background-color: #2B418B;
+    max-width: 206px;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.trainer-expert-form a span{
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+.trainer-content .trainer-item {
+    margin: 0 12px;
+}
+
+.trainer-content .slick-list{
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.trainer-content #trainerContent{
+    padding-bottom: 94px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.trainer-text-block{
+    min-height: 320px;
+    max-height: 320px;
+    background-color: #FFFFFF;
+    position: relative;
+    padding: 32px;
+}
+
+.trainer-text-block span{
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.trainer-text-block .micro-elem{
+    position: absolute;
+    border: 12px solid transparent; 
+    border-top: 12px solid #FFFFFF; 
+    border-right: 12px solid #FFFFFF;
+    bottom: -22px;
+    left: 0;
+}
+
+.trainer-item .user-info-block{
+    display: flex;
+}
+
+.trainer-item .user-image{
+    max-width: 120px;
+    min-width: 120px;
+    margin-right: 24px;
+}
+
+.trainer-item .user-image img{
+    width: 100%;
+}
+
+.trainer-item .full-name,
+.trainer-item .full-short{
+    display: block;
+}
+
+.trainer-item .full-name{
+    margin: 16px 0 10px;
+}
+
+.trainer-item .full-short{
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 2;
+}
+
+#trainerContent .slick-dots{
+    width: 1680px;
+    bottom: 0;
+}
+
+#trainerContent .slick-dots li{
+    height: 14px;
+    width: 14px;
+    border-radius: 14px;
+    margin: 0 4px;
+    background-color: #B2B2B2;
+}
+
+#trainerContent .slick-dots li.slick-active button:before,
+#trainerContent .slick-dots li button:before{
+    color: transparent;
+    opacity: 1;
+}
+
+#trainerContent .slick-dots li.slick-active{
+    background-color: #0827C4;
+}
+
+@media (max-width: 1720px) {
+    .trainer-talent-block{
+        max-width: 1004px;
+    }
+
+    #trainerContent .slick-dots{
+        width: 100%;
+        bottom: 0;
+    }
+
+    .trainer-expert-form{
+        max-width: 100%;
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1540px) {
+    .trainer-talent-block{
+        max-width: 804px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .trainer-talent-block{
+        max-width: 704px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .trainer-expert.talent-content{
+        padding: 40px 0;
+    }
+
+    .trainer-expert-form{
+        display: none;
+    }
+
+    .trainer-talent-block .main-page-heading{
+        margin-bottom: 24px;
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .trainer-talent-block{
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    #trainerContent .slick-arrow.slick-prev {
+        left: 16px;
+    }
+
+    #trainerContent .slick-arrow {
+        background: url(images/arrow.png) no-repeat center center;
+        bottom: 0;
+        top: auto;
+        transform: rotate(180deg);
+        margin-top: 0;
+        width: 45px;
+        height: 19px;
+    }
+
+    #trainerContent .slick-arrow.slick-next {
+        right: 16px;
+        transform: rotate(360deg);
+    }
+}

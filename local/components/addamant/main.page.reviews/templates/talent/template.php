@@ -22,7 +22,9 @@ if (!empty($arResult['STUDENTS_REVIEWS'])) : ?>
             <div class="reviews-content">
                 <?php if (!empty($arResult['STUDENTS_REVIEWS'])) : ?>
                     <div id="studentReviewContent">
-                        <?php foreach ($arResult['STUDENTS_REVIEWS'] as $key => $review) : ?>
+                        <?php foreach ($arResult['STUDENTS_REVIEWS'] as $key => $review) : 
+                            if($review['SHOW_ON_TALENT'] !== 'Y')
+                                continue;?>
                             <?php if ($review['VIDEO'] || $review['USER_REVIEW']) : ?>
                                 <div class="review-item">
                                     <?php if ($review['VIDEO']) : ?>
