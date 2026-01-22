@@ -26,6 +26,10 @@
     margin: 0;
 }
 
+.top-page-banner.talent-page{
+    padding: 0;
+}
+
 .talent-section p {
     margin: 0;
 }
@@ -94,6 +98,8 @@
 
 .banner-image{
     margin-right: -120px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .images-icons-block {
