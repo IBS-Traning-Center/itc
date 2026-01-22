@@ -135,19 +135,37 @@ $APPLICATION->SetTitle('Стань тренером');
     <div class="talent-come">
         <div class="container">
             <div class="talent-content">
-                <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Тебе предстоит']); ?></h2>
-                <div class="grid-talent-3">
+                <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Тебе предстоит']); ?></h2>
+                <div class="grid-talent">
                     <div class="item">
-                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_1.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_1.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
                         <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
                     </div>
                     <div class="item">
-                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_2.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_2.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
                         <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
                     </div>
                     <div class="item">
-                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_3.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_3.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
                         <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
+                    </div>
+                    <div class="item">
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_4.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
+                        <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
+                    </div>
+                    <div class="item">
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_5.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
+                        <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_5.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
                     </div>
                 </div>
             </div>

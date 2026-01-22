@@ -1,20 +1,17 @@
-
-.lk-section {
-	margin-bottom: 48px;
-	padding: 0 16px;
-}
-
 .lk-section__title {
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 400;
-	font-size: 24px;
-	line-height: 32px;
+	font-size: 34px;
+	line-height: 52px;
 	color: #000000;
 	margin-bottom: 24px;
 }
+.lk-section + .lk-section .lk-section__title{
+	margin-top: 40px;
+}
 .lk-cards {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 16px;
 	width: 100%;
 }
@@ -207,19 +204,11 @@
 	background: #2B418B;
 	color: #FFFFFF;
 }
-@media (min-width: 768px) {
-	.lk-section {
-		padding: 0 24px;
-	}
+@media (max-width: 768px) {
 
-	.lk-section__title {
-		font-size: 32px;
-		line-height: 44px;
-		margin-bottom: 32px;
-	}
 
 	.lk-cards {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 		gap: 24px;
 	}
 
@@ -248,10 +237,9 @@
 	}
 
 	.lk-badge {
-		padding: 20px 16px;
-		font-size: 16px;
-		line-height: 24px;
-		min-width: 114px;
+		padding: 4px 7px;
+		font-size: 14px;
+		min-width: 67px;
 	}
 
 	.lk-card.course .lk-card__meta > span:last-child:not(.lk-badge) {
@@ -261,17 +249,7 @@
 		min-width: 64px;
 	}
 }
-@media (min-width: 1024px) {
-	.lk-section {
-		padding: 0 32px;
-		margin-right: auto;
-	}
-
-	.lk-section__title {
-		font-size: 34px;
-		line-height: 52px;
-		margin-bottom: 35px;
-	}
+@media (max-width: 1024px) {
 
 	.lk-card.course {
 		height: auto;
@@ -304,21 +282,27 @@
 	}
 }
 
-@media (min-width: 1440px) {
-
+@media (max-width: 1440px) {
+	.lk-section__title {
+		font-family: 'Noto Sans', sans-serif;
+		font-weight: 400;
+		font-size: 34px;
+		line-height: 52px;
+		color: #000000;
+		margin-bottom: 16px;
+	}
 
 	.lk-cards {
-		gap: 32px;
+		gap: 16px;
 	}
 }
 @media (max-width: 767px) {
 	.lk-card.course .lk-card__meta {
 		flex-direction: row;
 		align-items: center;
-		gap: 12px;
 		display: flex;
 		position: relative;
-		top: 30px;
+		padding-top: 16px;
 	}
 
 	.lk-card.course .lk-card__meta > span:first-child {
@@ -332,26 +316,14 @@
 	}
 
 	.lk-card.course .lk-card__title {
-		font-size: 18px;
-		line-height: 24px;
+		font-size: 20px;
+		line-height: 28px;
 	}
 
 	.lk-card.course .lk-card__price {
 		font-size: 18px;
 		line-height: 24px;
 	}
-}
-
-
-
-.lk-header-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 24px 35px 32px;
-	width: 100%;
-	flex-wrap: wrap;
-	gap: 16px;
 }
 
 .lk-tabs {
@@ -412,33 +384,11 @@
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 20px;
-	color: #666666;
+	color: #000000;
 	white-space: nowrap;
 }
 
-.lk-update-btn {
-	font-family: 'Noto Sans', sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 24px;
-	color: #2B418B;
-	text-decoration: none;
-	transition: opacity 0.2s;
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	white-space: nowrap;
-}
 
-.lk-update-btn:hover {
-	opacity: 0.8;
-	text-decoration: underline;
-}
-
-.lk-update-btn svg {
-	flex-shrink: 0;
-}
 
 @media (max-width:1024px) {
 	.lk-tabs {
@@ -450,120 +400,128 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 20px;
-	}
+	padding: 0px;
+}
 
-	.lk-header__right {
-		width: 100%;
-		justify-content: space-between;
-	}
+.lk-header__right {
+width: 100%;
+justify-content: space-between;
+}
 }
 
 @media (max-width: 768px) {
-	.lk-header-row {
-		margin: 16px 0 24px;
-	}
+.lk-header-row {
+	padding: 24px 0 0;
+}
 
-	.lk-tabs {
-		width: 100%;
-		height: auto;
-		flex-wrap: nowrap;
-		overflow-x: auto;
-		padding-bottom: 4px;
-	}
+.lk-tabs {
+width: 100%;
+height: auto;
+flex-wrap: nowrap;
+overflow-x: auto;
+padding-bottom: 4px;
+}
 
-	.lk-tab {
-		padding: 6px 12px;
-		height: 36px;
-		font-size: 14px;
-		line-height: 20px;
-	}
+.lk-tab {
+padding: 6px 12px;
+height: 36px;
+font-size: 14px;
+line-height: 20px;
+}
 
-	.lk-header__right {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 12px;
-		width: 100%;
-	}
+.lk-header__right {
+flex-direction: column;
+align-items: flex-start;
+gap: 12px;
+width: 100%;
+}
 
-	.lk-update-date {
-		font-size: 12px;
-		line-height: 18px;
-	}
-
-	.lk-update-btn {
-		font-size: 14px;
-		line-height: 20px;
-	}
-
-	.lk-update-btn svg {
-		width: 20px;
-		height: 20px;
-	}
-	.lk-card.course .lk-card__body {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 40px;
-		width: 100%;
-	}
+.lk-update-date {
+font-size: 16px;
+line-height: 24px;
+}
+.lk-card.course .lk-card__body {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+width: 100%;
+}
 }
 
 @media (max-width:480px) {
-	.lk-tabs {
-		gap: 2px;
+	.lk-card__actions {
+		flex-direction: column;
+		align-items: flex-start;
+		width: 296px;
+		gap: 8px;
 	}
 
-	.lk-tab {
-		padding: 4px 8px;
-		font-size: 12px;
-		height: 32px;
-	}
+.lk-tabs {
+gap: 4px;
+}
 
-	.lk-update-btn span {
-		display: none;
-	}
-
-	.lk-update-btn svg {
-		margin-right: 0;
-	}
+.lk-tab {
+	padding: 7px 16px;
+	font-size: 16px;
+	height: 40px;
+}
 }
 
 .lk-notification {
 
-	padding: 0 59px 25px 33px;
+	padding: 0 55px 25px 56px;
 
-	font-family: 'Inter', system-ui, sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #0f0f0f;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	text-align: unset;
+font-family: 'Inter', system-ui, sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 1.5;
+color: #0f0f0f;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+text-align: unset;
+}
+
+.lk-notification{
+	padding-top: 48px;
 }
 .btn-outline {
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: 14px 40px;
-	background: #FFFFFF;
-	border: 1px solid #2B418B;
-	text-decoration: none;
-	font-family: 'Noto Sans', sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
-	color: #2B418B;
-	transition: all 0.2s;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 14px 40px;
+background: #FFFFFF;
+border: 1px solid #2B418B;
+text-decoration: none;
+font-family: 'Noto Sans', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #2B418B;
+transition: all 0.2s;
 }
 .lk-modal{
-	padding: 0 29px 38px;
+	padding: 0 56px 38px;
 }
 .btn-outline:hover {
-	background: #2B418B;
-	color: #FFFFFF;
+background: #2B418B;
+color: #FFFFFF;
+}
+
+@media (max-width: 1280px) {
+	.lk-section__title{
+		font-size: 24px;
+		line-height: 32px;
+		margin: 32px 0 16px;
+	}
+	.lk-notification{
+		padding: 32px 0 24px;
+	}
+	.lk-modal{
+		padding: 0 0 24px;
+	}
 }

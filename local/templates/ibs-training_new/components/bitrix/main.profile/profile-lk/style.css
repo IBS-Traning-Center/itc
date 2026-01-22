@@ -6,9 +6,7 @@
     min-height: 100vh;
 }
 
-.lk-profile-wrapper {
-    padding: 56px;
-}
+
 
 .lk-profile-wrapper .main-content {
     width: 649px;
@@ -120,10 +118,18 @@
     align-items: center;
     justify-content: center;
 }
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+textarea.field {
 
+    padding: 24px!important;
+
+}
 .lk-profile-wrapper .hh-desc {
     font-size: 14px;
-    color: #666;
+    color: #000000;
 }
 .hh-section .hh-link .hh-profile-link {
     color: #1d427d !important;
