@@ -150,23 +150,37 @@
     max-height: 44px;
 }
 
-.talent-come svg {
+.talent-come .talent-come-icon {
     max-width: 72px;
     min-width: 72px;
     min-height: 72px;
     max-height: 72px;
-    display: block;
-    margin-bottom: 24px;
-}
-
-.talent-come {
-    background-color: var(--light-gray);
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: center;
+    align-items: center;
 }
 
 .talent-come .talent-content {
-    padding: 120px 0;
+    padding: 100px 0;
+    display: flex;
 }
 
+.talent-come .talent-content h2{
+    max-width: 595px;
+    width: 100%;
+    margin-right: 56px; 
+}
+
+.talent-come .talent-content .grid-talent{
+    display: grid;
+    gap: 56px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.talent-come .talent-content .item:nth-child(1){
+    grid-column: 1/-1;
+}
 
 .talent-get {
     background-color: var(--button-blue);
@@ -555,12 +569,59 @@
     .talent-content.telegram {
         padding: 40px 0;
     }
+
+    .talent-come h2{
+        margin-bottom: 24px;
+    }
+
+    .talent-come h2 br{
+        display: none;
+    }
+
+    .talent-come .talent-content{
+        display: block;
+    }
+
+    .talent-come .talent-come-icon{
+        max-width: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        max-height: 32px;
+        align-items: flex-start;
+        margin-right: 12px;
+    }
+
+    .talent-come .talent-come-icon svg{
+        width: 100%;
+    }
 }
 
 @media (max-width: 1024px) {
     .talent-section .grid-talent-4{
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+
+    .talent-come .talent-content .grid-talent{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+    }
+
+    .talent-come .talent-content .item:nth-child(1) {
+        grid-column: 1;
+    }
+
+    .talent-come .talent-come-icon{
+        margin-bottom: 0;
+    }
+
+    .talent-come .talent-content .item{
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .talent-come .talent-content h2 br{
+        display: block;
     }
 }
 
