@@ -50,3 +50,4 @@ bitrix/php_interface/include/catalog_export
 /local/.yarnrc.yml
 /.php-cs-fixer.cache
 /logs/
+/files/ibs-training-price.xls
