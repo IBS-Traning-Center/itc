@@ -90,6 +90,16 @@ $APPLICATION->SetTitle('Стань тренером');
             <div class="talent-team-left">
                 <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_h2.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Наша команда']); ?></h2>
                 <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_tags.php', [], ['MODE' => 'html', 'NAME' => 'Теги команды']); ?></p>
+                <? $APPLICATION->IncludeComponent(
+                	"addamant:slider.section.trener",
+                	"slider",
+                	array(
+                		"CACHE_TIME" => "3600",
+                		"CACHE_TYPE" => "A",
+                		"CATALOG_LINK_TITLE_TRENER_PAGE" => "/catalog/",
+                		"IBLOCKS_IDS_TITLE_TRENER_PAGE" => "94"
+                	)
+                ); ?>
             </div>
             <div class="talent-team-right">
                 <h3><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_h3.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Стань тренером']); ?></h3>
