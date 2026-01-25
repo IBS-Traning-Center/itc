@@ -20,11 +20,6 @@
     border-right: none;
     padding-right: 0;
     padding-left: 16px;
-    display: none;
-}
-
-.main-top-menu-block .main-top-menu-item-container:nth-last-child(2){
-    border-right: none;
 }
 
 .main-top-menu-block .main-top-menu-item {
