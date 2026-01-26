@@ -271,20 +271,16 @@ $APPLICATION->SetTitle('Стань тренером');
             );?>
         </div>
     </div>
-    <div class="trainer-expert talent-content">
-        <div class="container">
-            <? $APPLICATION->IncludeComponent(
-            	"addamant:main.page.reviews", 
-            	"expert", 
-            	array(
-            		"CACHE_TIME" => "3600",
-            		"CACHE_TYPE" => "A",
-            		"COMPONENT_TEMPLATE" => ".default"
-            	),
-            	false
-            ); ?> 
-        </div>
-    </div>
+    <? $APPLICATION->IncludeComponent(
+    	"addamant:main.page.reviews", 
+    	"expert", 
+    	array(
+    		"CACHE_TIME" => "3600",
+    		"CACHE_TYPE" => "A",
+    		"COMPONENT_TEMPLATE" => ".default"
+    	),
+    	false
+    ); ?> 
     <? $APPLICATION->IncludeComponent(
     	"addamant:main.page.reviews", 
     	"talent", 
