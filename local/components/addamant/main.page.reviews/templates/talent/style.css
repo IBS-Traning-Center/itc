@@ -75,6 +75,10 @@
     font-weight: 400;
 }
 
+.reviews-content > div .review-item .review-text-block .review-course-info{
+    display: none;
+}
+
 .reviews-content > div .review-item .review-text-block .main-text span a {
     text-decoration: underline;
     color: #2B418B;
@@ -285,7 +289,7 @@
     }
 
     .reviews-content > div .review-item .review-text-block{
-        min-height: 456px;
+        min-height: 320px;
     }
 
     .reviews-talent-block .main-page-heading{
@@ -341,5 +345,20 @@
     #studentReviewContent .slick-arrow.slick-next {
         right: 16px;
         transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 460px) {
+    .trainer-item.form-item {
+        min-height: 400px;
+    }
+
+    .trainer-expert-form{
+        max-height: 400px;
+        min-height: 400px;
+    }
+
+    .trainer-expert-form .trainer-modal{
+        margin-top: auto;
     }
 }

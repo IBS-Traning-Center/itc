@@ -2,13 +2,14 @@ class TrainerTalentPage
 {
     constructor(data = {
         trainerContentId: 'trainerContent',
-        trainerItemsTextClass: '.trainer-text-block > span',
+        tnainerBtnClasstrainerItemsTextClass: '.trainer-text-block > span',
     }) {
         this.trainerContent = document.getElementById(data.trainerContentId);
         this.trainerItemsText = document.querySelectorAll(data.trainerItemsTextClass);
 
         this.hideOverflowText();
-        this.inittrainerSlider();
+        this.initTrainerSlider();
+        this.scrollToForm();
     }
 
     hideOverflowText()
@@ -35,7 +36,26 @@ class TrainerTalentPage
         }
     }
 
-    inittrainerSlider()
+    scrollToForm(){
+        const buttons = document.querySelectorAll('.trainer-modal');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetElement = document.querySelector('.sign-course-form-block');
+                
+                if (targetElement) {
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset;
+                    const scrollToPosition = offsetPosition - 100;
+                    window.scrollTo({
+                      top: scrollToPosition,
+                      behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    initTrainerSlider()
     {
         if (this.trainerContent) {
             let trainerContentId = $('#trainerContent');

@@ -1,6 +1,7 @@
 <?php
 
 use Bitrix\Main\Page\Asset;
+use Local\Util\FormHelper;
 
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
@@ -14,7 +15,7 @@ $APPLICATION->SetPageProperty('description', 'Присоединяйтесь к 
 $APPLICATION->SetTitle('Стань тренером');
 ?>
 
-<div class="top-page-banner">
+<div class="top-page-banner talent-page">
     <div class="container">
         <div class="banner-content">
             <?php $APPLICATION->IncludeComponent(
@@ -28,13 +29,13 @@ $APPLICATION->SetTitle('Стань тренером');
                 false
             ); ?>
             <h1><?= $APPLICATION->GetTitle() ?></h1>
-            <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/heading_h2_text.php', [], ['MODE' => 'html', 'NAME' => 'H2 текст под заголовком']); ?></h2>
             <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/heading_text.php', [], ['MODE' => 'html', 'NAME' => 'Текст под заголовком']); ?></p>
-        </div>
-        <div class="buttons-block-banner">
-            <div class="btn-main size-l trainer-modal">
+            <div class="trainer-modal">
                 <span class="f-24">Стать тренером</span>
             </div>
+        </div>
+        <div class="banner-image">
+            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/heading_img.php', [], ['MODE' => 'html', 'NAME' => 'Картинка под заголовком']); ?>
         </div>
     </div>
 </div>
@@ -64,7 +65,7 @@ $APPLICATION->SetTitle('Стань тренером');
             </div>
         </div>
         <div class="talent-grid-block talent-content">
-            <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Цифра экспертов']); ?></h2>
+            <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Цифра экспертов']); ?></h2>
             <div class="grid-talent-4">
                 <div>
                     <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/center_h2_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Цифра экспертов']); ?></h2>
@@ -84,78 +85,129 @@ $APPLICATION->SetTitle('Стань тренером');
                 </div>
             </div>
         </div>
-        <div class="talent-content talent-team">
-            <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_h2.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Наша команда']); ?></h2>
-            <ul class="team-tags margin-bottom56">
-                <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_tags.php', [], ['MODE' => 'html', 'NAME' => 'Теги команды']); ?>
-            </ul>
-            <div class="talent-grid-block">
-                <div>
-                    <h3><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_h3.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Стань тренером']); ?></h3>
-                    <div class="btn-main size-l trainer-modal">
-                        <span class="f-24">Стать тренером</span>
-                    </div>
-                </div>
-                <div class="talent-grid-2">
-                    <div class="item">
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 41.25C32.6315 41.25 41.25 32.6315 41.25 22C41.25 11.3685 32.6315 2.75 22 2.75C11.3685 2.75 2.75 11.3685 2.75 22C2.75 32.6315 11.3685 41.25 22 41.25Z" fill="#0827C4"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M41.6602 12.2831L21.4233 32L8.66016 19.5648L11.7656 16.2817L21.4233 25.6914L38.5547 9L41.6602 12.2831Z" fill="white"/>
-                        </svg>
-                        <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Стань тренером']); ?></p>
-                    </div>
-                    <div class="item">
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 41.25C32.6315 41.25 41.25 32.6315 41.25 22C41.25 11.3685 32.6315 2.75 22 2.75C11.3685 2.75 2.75 11.3685 2.75 22C2.75 32.6315 11.3685 41.25 22 41.25Z" fill="#0827C4"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M41.6602 12.2831L21.4233 32L8.66016 19.5648L11.7656 16.2817L21.4233 25.6914L38.5547 9L41.6602 12.2831Z" fill="white"/>
-                        </svg>
-                        <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Стань тренером']); ?></p>
-                    </div>
-                    <div class="item">
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 41.25C32.6315 41.25 41.25 32.6315 41.25 22C41.25 11.3685 32.6315 2.75 22 2.75C11.3685 2.75 2.75 11.3685 2.75 22C2.75 32.6315 11.3685 41.25 22 41.25Z" fill="#0827C4"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M41.6602 12.2831L21.4233 32L8.66016 19.5648L11.7656 16.2817L21.4233 25.6914L38.5547 9L41.6602 12.2831Z" fill="white"/>
-                        </svg>
-                        <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Стань тренером']); ?></p>
-                    </div>
-                    <div class="item">
-                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 41.25C32.6315 41.25 41.25 32.6315 41.25 22C41.25 11.3685 32.6315 2.75 22 2.75C11.3685 2.75 2.75 11.3685 2.75 22C2.75 32.6315 11.3685 41.25 22 41.25Z" fill="#0827C4"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M41.6602 12.2831L21.4233 32L8.66016 19.5648L11.7656 16.2817L21.4233 25.6914L38.5547 9L41.6602 12.2831Z" fill="white"/>
-                        </svg>
-                        <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Стань тренером']); ?></p>
-                    </div>
-                </div>
+    </div>
+    <div class="talent-team talent-content">
+        <div class="container">
+            <div class="talent-team-left">
+                <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_h2.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Наша команда']); ?></h2>
+                <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_tags.php', [], ['MODE' => 'html', 'NAME' => 'Теги команды']); ?></p>
+                <? $APPLICATION->IncludeComponent(
+                	"addamant:slider.section.trener",
+                	"slider",
+                	array(
+                		"CACHE_TIME" => "3600",
+                		"CACHE_TYPE" => "A",
+                		"CATALOG_LINK_TITLE_TRENER_PAGE" => "/catalog/",
+                		"IBLOCKS_IDS_TITLE_TRENER_PAGE" => "94"
+                	)
+                ); ?>
             </div>
-            <div class="btn-main size-l trainer-modal">
-                <span class="f-24">Стать тренером</span>
+            <div class="talent-team-right">
+                <h3><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_h3.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Стань тренером']); ?></h3>
+                <div class="item">
+                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Стань тренером']); ?>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Стань тренером']); ?></p>
+                </div>
+                <div class="item">
+                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Стань тренером']); ?>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Стань тренером']); ?></p>
+                </div>
+                <div class="item">
+                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Стань тренером']); ?>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Стань тренером']); ?></p>
+                </div>
+                <div class="item">
+                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Стань тренером']); ?>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/team_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Стань тренером']); ?></p>
+                </div>
+                <div class="trainer-modal">
+                    <span class="f-24">Стать тренером</span>
+                </div>
             </div>
         </div>
     </div>
     <div class="talent-come">
         <div class="container">
             <div class="talent-content">
-                <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Тебе предстоит']); ?></h2>
-                <div class="grid-talent-3">
+                <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Тебе предстоит']); ?></h2>
+                <div class="grid-talent">
                     <div class="item">
-                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_1.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_1.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
                         <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
                     </div>
                     <div class="item">
-                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_2.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_2.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
                         <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
                     </div>
                     <div class="item">
-                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_3.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_3.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
                         <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
+                    </div>
+                    <div class="item">
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_4.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
+                        <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
+                    </div>
+                    <div class="item">
+                        <div class="talent-come-icon">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_icon_5.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Тебе предстоит']); ?>
+                        </div>
+                        <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/come_text_5.php', [], ['MODE' => 'html', 'NAME' => 'Текст Тебе предстоит']); ?></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="talent-content">
-        <div class="out-client container">
+    <div class="talent-get">
+        <div class="container">
+            <div class="talent-content talent-grid-block">
+                <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Ты получаешь']); ?></h2>
+                <div class="get-grid-block">
+                    <div class="item">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
+                    </div>
+                    <div class="item">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
+                    </div>
+                    <div class="item">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
+                    </div>
+                    <div class="item">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
+                    </div>
+                    <div class="item">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_5.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
+                    </div>
+                    <div class="item">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_6.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
+                    </div>
+                    <div class="item">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_7.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
+                    </div>
+                    <div class="item">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_icon.php', [], ['MODE' => 'html', 'NAME' => 'Иконка Ты получаешь']); ?>
+                        <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/get_text_8.php', [], ['MODE' => 'html', 'NAME' => 'Текст Ты получаешь']); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="out-client talent-content">
+        <div class="container">
             <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/our_client_heading.php', [], ['MODE' => 'html', 'NAME' => 'Наши клиенты заголовок']); ?></h2>
             <p class="f-32 margin-bottom48"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/our_client_description.php', [], ['MODE' => 'html', 'NAME' => 'Наши клиенты описание']); ?></p>
         </div>
@@ -217,29 +269,6 @@ $APPLICATION->SetTitle('Стань тренером');
                     "STRICT_SECTION_CHECK" => "N"
                 )
             );?>
-        </div>
-    </div>
-    <div class="start-work talent-content">
-        <div class="container">
-            <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Начало сотрудничества']); ?></h2>
-            <ul class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_ul.php', [], ['MODE' => 'html', 'NAME' => 'Текст Начало сотрудничества']); ?></ul>
-            <p class="f-32 margin-bottom32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_heading_learn.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Начало сотрудничества, Обучение']); ?></p>
-            <div class="talent-grid-2 margin-bottom56">
-                <div>
-                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_icon_1.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Иконка']); ?>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Текст']); ?></p>
-                </div>
-                <div>
-                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_icon_2.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Иконка']); ?>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Текст']); ?></p>
-                </div>
-            </div>
-            <div class="talent-flex-2">
-                <div class="btn-main size-l trainer-modal">
-                    <span class="f-24">Стать тренером</span>
-                </div>
-                <p class="f-16"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_form_text.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Форма текст']); ?></p>
-            </div>
         </div>
     </div>
     <div class="trainer-expert talent-content">
@@ -349,23 +378,26 @@ $APPLICATION->SetTitle('Стань тренером');
 </div>
 
 <?php $APPLICATION->IncludeComponent(
-    "bitrix:form.result.new",
-    "become.coach",
-    Array(
-        "CACHE_TIME" => "3600",
-        "CACHE_TYPE" => "A",
-        "CHAIN_ITEM_LINK" => "",
-        "CHAIN_ITEM_TEXT" => "",
-        "EDIT_URL" => "",
-        "IGNORE_CUSTOM_TEMPLATE" => "N",
-        "LIST_URL" => "",
-        "SEF_MODE" => "N",
-        "SUCCESS_URL" => "",
-        "AJAX_MODE" => "Y",
-        "USE_EXTENDED_ERRORS" => "N",
-        "VARIABLE_ALIASES" => Array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID"),
-        "WEB_FORM_ID" => "42"
-    )
-);?>
+    'bitrix:form.result.new',
+    'become.coach.new',
+    [
+        'CACHE_TIME' => '3600',
+        'CACHE_TYPE' => 'A',
+        'CHAIN_ITEM_LINK' => '',
+        'CHAIN_ITEM_TEXT' => '',
+        'EDIT_URL' => '',
+        'IGNORE_CUSTOM_TEMPLATE' => 'N',
+        'LIST_URL' => '',
+        'SEF_MODE' => 'N',
+        'SUCCESS_URL' => '',
+        'AJAX_MODE' => 'Y',
+        'USE_EXTENDED_ERRORS' => 'N',
+        'VARIABLE_ALIASES' => [
+            'RESULT_ID' => 'RESULT_ID',
+            'WEB_FORM_ID' => 'WEB_FORM_ID'
+        ],
+        'WEB_FORM_ID' => FormHelper::getFormIdBySid('become_coach_new')
+    ]
+); ?>
 
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>

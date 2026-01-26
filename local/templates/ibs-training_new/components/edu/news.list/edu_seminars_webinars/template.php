@@ -60,5 +60,5 @@ if (is_array($arResult["ITEMS"]) && count($arResult["ITEMS"]) > 0) { ?>
 <? } ?>
 
 <? if (count($arResult["ITEMS"]) == 0) { ?>
-    <h3 style="padding: 25px 0; text-align: center">В ближайшее время семинары не запланированы</h3>
+    <h3 style="padding: 25px 0; text-align: center">В ближайшее время семинары не запланированы. Вы можете <a href = "/timetable/past-seminars">посмотреть записи прошедших семинаров</a></h3>
 <? } ?>

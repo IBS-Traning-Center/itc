@@ -12,7 +12,7 @@
 
 .talent-section h2 {
     color: var(--black);
-    font-weight: 400;
+    font-weight: 400!important;
     font-size: 56px;
     line-height: 72px;
     margin: 0;
@@ -24,6 +24,10 @@
     font-size: 42px;
     line-height: 60px;
     margin: 0;
+}
+
+.top-page-banner.talent-page{
+    padding: 0;
 }
 
 .talent-section p {
@@ -64,14 +68,38 @@
     gap: 56px;
 }
 
-.talent-team .talent-grid-block > div:first-child .btn-main {
-    margin-top: auto;
-}
 .top-page-banner h2 {
     font-size: 56px;
     line-height: 72px;
     font-weight: 400;
     margin-top: 16px;
+}
+
+.top-page-banner .container .banner-content p{
+    font-family: "Noto Sans";
+}
+
+.top-page-banner .container .trainer-modal{
+    line-height: 97px;
+    max-width: 268px;
+    width: 100%;
+    text-align: center;
+    margin-top: 56px;
+    background-color: #2B418B;
+}
+
+.top-page-banner .container .trainer-modal span{
+    font-size: 24px;
+    line-height: 0.8;
+    color: #FFFFFF;
+    font-family: "Noto Sans";
+    font-weight: 300;
+}
+
+.banner-image{
+    margin-right: -120px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .images-icons-block {
@@ -109,62 +137,24 @@
     margin-bottom: 6px;
 }
 
-.talent-team > .trainer-modal {
-    display: none;
-}
-
-.talent-grid-block h2{
-    margin-bottom: 56px;
-}
-
-.talent-team > h2 {
-    max-width: 958px;
-    width: 100%;
-}
-
-.talent-team .team-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.talent-team .team-tags li {
-    padding: 8px 16px;
-    background-color: var(--gray);
-    font-size: 20px;
-    line-height: 32px;
-    font-weight: 400;
-    color: var(--black);
-}
-
-.talent-team .talent-grid-2 .item {
-    display: flex;
-    align-items: start;
-    gap: 24px;
-}
-
-.talent-team .talent-grid-2 .item svg {
-    min-width: 44px;
-    max-width: 44px;
-    min-height: 44px;
-    max-height: 44px;
-}
-
 .talent-come svg {
     max-width: 72px;
     min-width: 72px;
     min-height: 72px;
     max-height: 72px;
-    display: block;
-    margin-bottom: 24px;
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: center;
+    align-items: center;
 }
 
-.talent-come {
-    background-color: var(--light-gray);
+.talent-come-icon{
+    margin-bottom: 18px;
 }
 
 .talent-come .talent-content {
-    padding: 120px 0;
+    padding: 100px 0;
+    display: flex;
 }
 
 .talent-get-start {
@@ -173,6 +163,48 @@
 
 .talent-get-start.talent-content{
     padding-top: 100px;
+}
+
+.talent-come .talent-content h2{
+    max-width: 595px;
+    width: 100%;
+    margin-right: 56px; 
+}
+
+.talent-come .talent-content .grid-talent{
+    display: grid;
+    gap: 56px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.talent-come .talent-content .item:nth-child(1){
+    grid-column: 1/-1;
+}
+
+.talent-get {
+    background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
+    overflow: hidden;
+}
+
+.talent-get p{
+    font-weight: 300!important;
+    line-height: 32px;
+    color: var(--white);
+    letter-spacing: 0.3px;
+}
+
+.talent-get h2 {
+    margin-right: 56px;
+    max-width: 595px;
+    width: 100%;
+    color: var(--white);
+    font-weight: 300!important;
+    letter-spacing: 1.7px;
+}
+
+.talent-get .talent-grid-block{
+    display: flex;
+    padding: 100px 0 120px;
 }
 
 .talent-get-start .talent-grid-block{
@@ -216,7 +248,8 @@
     margin-top: 80px;
 }
 
-.talent-get-start .get-start-grid-block {
+.talent-get-start .get-start-grid-block,
+.talent-get .get-grid-block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 84px;
@@ -278,6 +311,20 @@
     height: 1px;
     display: block;
     right: 100%;
+    row-gap: 88px;
+    column-gap: 32px;
+    max-width: 1029px;
+}
+
+.talent-get .get-grid-block svg{
+    margin-bottom: 19px;
+    max-width: 44px;
+    width: 100%;
+    height: 44px;
+}
+
+.out-client.talent-content{
+    padding: 100px 0 120px;
 }
 
 .get-start-grid-wrapper .trainer-modal{
@@ -367,13 +414,105 @@
     gap: 56px;
 }
 
-.talent-team .talent-grid-block {
-    align-items: stretch;
+.talent-team.talent-content{
+    background-color: #F0F0F0;
+    padding: 0;
 }
 
-.talent-team .talent-grid-block > div:first-child {
+.talent-team.talent-content .container{
+    max-width: 1920px;
     display: flex;
-    flex-direction: column;
+}
+
+.talent-team-left{
+    padding: 100px 120px 120px 0 ;
+    margin-left: auto;
+    max-width: 941px;
+    min-width: 760px;
+    width: 100%;
+    box-sizing: content-box;
+}
+
+.talent-team-left h2,
+.talent-team-right h3{
+    margin-bottom: 56px;
+}
+
+.talent-team-left p{
+    margin-bottom: 48px;
+}
+
+.talent-team-right{
+    background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
+    padding: 100px 80px 120px;
+    max-width: 739px;
+    width: 100%;
+    margin-right: -20px;
+}
+
+.talent-team-right h3,
+.talent-team-right p{
+    color: #FFFFFF;
+}
+
+.talent-team-right .trainer-modal{
+    width: 100%;
+    background-color: #FFFFFF;
+    line-height: 97px;
+    font-size: 24px;
+    margin-top: 56px;
+    text-align: center;
+}
+
+.talent-team-right .trainer-modal span{
+    color: #2B418B;
+}
+
+.talent-team-right .item{
+    display: flex;
+}
+
+.talent-team-right .item svg{
+    margin-right: 24px;
+    min-width: 44px;
+    max-width: 44px;
+}
+
+.talent-team-right .item p{
+    font-weight: 300;
+    letter-spacing: 0.8px;
+}
+
+.talent-team-right .item + .item{
+    margin-top: 32px;
+}
+
+.trainer-modal{
+    cursor: pointer;
+}
+
+@media (max-width: 1600px) {
+    .talent-team.talent-content .container{
+        display: block;
+    }
+
+    .talent-team-left{
+        max-width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .talent-team-left{
+        padding-right: 0;
+    }
+
+    .talent-team-right{
+        max-width: none;
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -20px;
+    }
 }
 
 .talent-experience{
@@ -420,26 +559,18 @@
     }
 }
 
-@media (max-width: 1360px) {
-    .talent-team > .trainer-modal {
-        display: block;
-        margin-top: 56px;
-    }
-
-    .talent-team .talent-grid-block {
-        grid-template-columns: 1fr;
-    }
-
-    .talent-team .talent-grid-block .trainer-modal {
+@media (max-width: 1280px) {
+    .banner-image{
         display: none;
     }
-}
 
-@media (max-width: 1280px) {
-    .top-page-banner h2 {
-        font-size: 24px;
-        line-height: 33px;
-        margin-bottom: 0;
+    .top-page-banner .container .banner-content{
+        padding: 16px 16px 40px;
+    }
+
+    .top-page-banner .container .banner-content .breadcrumbs, 
+    .top-page-banner .container .banner-content h1{
+        margin-bottom: 16px!important;
     }
 
     .talent-grid-block:not(.talent-content) {
@@ -451,15 +582,17 @@
         font-size: 20px !important;
         line-height: 27px !important;
     }
-
-    .top-page-banner .container .buttons-block-banner .btn-main.size-l {
-        padding: 15px 32px;
+    
+    .top-page-banner .container .trainer-modal{
+        line-height: 54px;
+        max-width: 100%;
+        margin-top: 24px;
     }
 
-    .top-page-banner .container .buttons-block-banner .btn-main.size-l span {
+    .top-page-banner .container .trainer-modal span{
         font-size: 16px;
-        line-height: 24px;
-    }
+        line-height: 0.8;
+    } 
 
     .images-icons-block .item{
         padding-left: 44px;
@@ -511,17 +644,15 @@
         gap: 16px;
     }
 
-    .talent-content {
+    .talent-content,
+    .out-client.talent-content,
+    .talent-come .talent-content,
+    .talent-content.telegram {
         padding: 40px 0;
     }
 
     .talent-section .margin-bottom56 {
         margin-bottom: 24px;
-    }
-
-    .talent-team .team-tags li {
-        font-size: 16px;
-        line-height: 22px;
     }
 
     .talent-section h3 {
@@ -537,17 +668,6 @@
         font-size: 16px;
         line-height: 24px;
         white-space: nowrap;
-    }
-
-    .talent-team .talent-grid-2 .item svg {
-        min-width: 27px;
-        max-width: 27px;
-        min-height: 27px;
-        max-height: 27px;
-    }
-
-    .talent-team > .trainer-modal {
-        margin-top: 24px;
     }
 
     .talent-come .talent-content {
@@ -576,6 +696,11 @@
     .talent-get-start .get-start-grid-block {
         grid-template-columns: repeat(1, 1fr);
         gap: 37px;
+    }
+
+    .talent-get .get-grid-block{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
     }
 
     .talent-get-start .get-start-grid-block .item {
@@ -634,8 +759,13 @@
     }
 
     .talent-get-start .talent-grid-block,
-    .get-start-grid-wrapper .trainer-modal{
+    .get-start-grid-wrapper .trainer-modal,
+    .talent-get .talent-grid-block{
         display: block;
+    }
+
+    .talent-get .talent-grid-block{
+      padding: 40px 0;  
     }
 
     .get-start-grid-wrapper .trainer-modal{
@@ -673,6 +803,22 @@
         padding-top: 40px;
     }
 
+    .talent-get .get-grid-block .item{
+        display: flex;
+    }
+
+    .talent-get .get-grid-block .item p {
+        margin-left: 16px;
+        line-height: 20px;
+        font-size: 16px;
+    }
+
+    .talent-get .get-grid-block svg{
+        max-width: 20px;
+        height: 20px;
+        margin-bottom: 0;
+    }
+
     .start-work .container > ul,
     .start-work .talent-grid-2 {
         grid-template-columns: repeat(1, 1fr);
@@ -691,7 +837,37 @@
         min-height: 36px;
     }
 
-    .talent-content.telegram {
+    .out-client.talent-content h2,
+    .out-client.talent-content p{
+        margin-bottom: 16px;
+    }
+
+    .talent-come h2{
+        margin-bottom: 24px;
+    }
+
+    .talent-come h2 br{
+        display: none;
+    }
+
+    .talent-come .talent-content{
+        display: block;
+    }
+
+    .talent-come .talent-come-icon{
+        max-width: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        max-height: 32px;
+        align-items: flex-start;
+        margin-right: 12px;
+    }
+
+    .talent-come .talent-come-icon svg{
+        width: 100%;
+    }
+
+    .talent-team-left{
         padding: 40px 0;
     }
 
@@ -733,12 +909,74 @@
         font-size: 32px;
         line-height: 40px;
     }
+
+    .talent-team-right{
+        padding: 40px 16px;
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    .talent-team-left h2,
+    .talent-team-left p{
+        margin-bottom: 24px;
+    }
+
+    .talent-team-right .item + .item{
+        margin-top: 16px;
+    }
+
+    .talent-team-right .item svg{
+        margin-right: 12px;
+        min-width: 20px;
+        max-width: 20px;
+        height: 20px;
+    }
+
+    .talent-team-right h3{
+        margin-bottom: 24px;
+    }
+
+    .talent-team-right .trainer-modal{
+        margin-top: 40px;
+        line-height: 54px;
+    }
+
+    .talent-team-right .trainer-modal span{
+        font-size: 16px;
+        line-height: 54px;
+    }
 }
 
 @media (max-width: 1024px) {
     .talent-section .grid-talent-4{
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+
+    .talent-get .get-grid-block{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .talent-come .talent-content .grid-talent{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px;
+    }
+
+    .talent-come .talent-content .item:nth-child(1) {
+        grid-column: 1;
+    }
+
+    .talent-come .talent-come-icon{
+        margin-bottom: 0;
+    }
+
+    .talent-come .talent-content .item{
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .talent-come .talent-content h2 br{
+        display: block;
     }
 }
 

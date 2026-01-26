@@ -44,7 +44,7 @@ if (!empty($arResult['TRAINERS'])) : ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
-                    <div class="trainer-item">
+                    <div class="trainer-item form-item">
                         <div class="trainer-expert-form">
                             <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/expert_img.php', [], ['MODE' => 'html', 'NAME' => 'Картинка Эксперты, которые уже с нами']); ?>
                             <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/expert_description.php', [], ['MODE' => 'html', 'NAME' => 'Описание Эксперты, которые уже с нами']); ?>

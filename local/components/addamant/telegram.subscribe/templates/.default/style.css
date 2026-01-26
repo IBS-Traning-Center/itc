@@ -39,7 +39,7 @@
     color: #000000;
 }
 
-.subscribe-main-page-block .subscribe-btn {
+.subscribe-main-page-block .btn-main.subscribe-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,14 +94,15 @@
         align-self: stretch;
     }
 
-    .subscribe-main-page-block .subscribe-btn {
+    .subscribe-main-page-block .btn-main.subscribe-btn {
         align-self: stretch;
-        width: 100%;
+        width: auto;
         max-width: none;
         min-width: unset;
         height: 54px;
         padding: 16px 40px;
         margin-left: 0;
+        margin-left: 56px;
     }
 
     .subscribe-main-page-block .subscribe-btn span {
@@ -111,7 +112,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    .subscribe-main-page-block .subscribe-btn {
+    .subscribe-main-page-block .btn-main.subscribe-btn {
         padding: 16px 20px;
     }
 }

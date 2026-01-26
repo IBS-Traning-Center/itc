@@ -64,6 +64,7 @@ class MainPageReviewsComponent extends CBitrixComponent
                 'PREVIEW_TEXT',
                 'REVIEW_USER_NAME',
                 'VIDEO_MESS.FILE',
+                'PDF_FILE.FILE',
                 'SHOW_ON_MAIN_PAGE.ITEM',
                 'COURSE_' => 'COURSE'
             ],
@@ -158,6 +159,10 @@ class MainPageReviewsComponent extends CBitrixComponent
 
             if ($review->getVideoMess() && $review->getVideoMess()->getFile()) {
                 $newReview['VIDEO'] = '/upload/' . $review->getVideoMess()->getFile()->getSubdir() . '/' . $review->getVideoMess()->getFile()->getFileName();
+            }
+
+            if ($review->getPdfFile() && $review->getPdfFile()->getFile()) {
+                $newReview['PDF_FILE'] = '/upload/' . $review->getPdfFile()->getFile()->getSubdir() . '/' . $review->getPdfFile()->getFile()->getFileName();
             }
 
             if ($review->getShowOnMainPage() && $review->getShowOnMainPage()->getItem() && $review->getShowOnMainPage()->getItem()->getXmlId()) {
