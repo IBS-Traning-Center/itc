@@ -253,11 +253,7 @@ $APPLICATION->SetTitle('Стань тренером');
             		"COMPONENT_TEMPLATE" => ".default"
             	),
             	false
-            ); ?>    
-            <div class="trainer-expert-form">
-                <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/expert_img.php', [], ['MODE' => 'html', 'NAME' => 'Картинка Эксперты, которые уже с нами']); ?>
-                <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/expert_description.php', [], ['MODE' => 'html', 'NAME' => 'Описание Эксперты, которые уже с нами']); ?>
-            </div>
+            ); ?> 
         </div>
     </div>
     <? $APPLICATION->IncludeComponent(

@@ -41,7 +41,7 @@ class TrainerTalentPage
             let trainerContentId = $('#trainerContent');
 
             trainerContentId.slick({
-                slidesToShow: 2,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 infinite: false,
                 autoplay: false,
@@ -52,16 +52,8 @@ class TrainerTalentPage
                     {
                         breakpoint: 1320,
                         settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 1280,
-                        settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 1,
-                            dots: true,
+                            slidesToScroll: 1
                         }
                     },
                     {
