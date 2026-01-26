@@ -75,10 +75,6 @@
     font-weight: 400;
 }
 
-.reviews-content > div .review-item .review-text-block .review-course-info{
-    display: none;
-}
-
 .reviews-content > div .review-item .review-text-block .main-text span a {
     text-decoration: underline;
     color: #2B418B;

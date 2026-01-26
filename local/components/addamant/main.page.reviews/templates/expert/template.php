@@ -16,6 +16,8 @@ Loc::loadMessages(__FILE__);
 $this->setFrameMode(false);
 
 if (!empty($arResult['TRAINERS'])) : ?>
+<div class="trainer-expert talent-content">
+<div class="container">
     <div class="trainer-talent-block">
         <div class="main-page-heading"><?= Loc::getMessage('BLOCK_TITLE_TRAINER') ?></div>
         <div class="trainer-content">
@@ -76,5 +78,7 @@ if (!empty($arResult['TRAINERS'])) : ?>
                 </div>
             <?php endif; ?>
         </div>
+    </div>
+    </div>
     </div>
 <?php endif; ?>

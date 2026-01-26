@@ -16,11 +16,11 @@ Loc::loadMessages(__FILE__);
 $this->setFrameMode(false);
 
 if (!empty($arResult['STUDENTS_REVIEWS'])) : ?>
+    <?php if (!empty($arResult['STUDENTS_REVIEWS'])) : ?>
     <div class="reviews-talent-block">
         <div class="container">
             <div class="main-page-heading"><?= Loc::getMessage('BLOCK_TITLE') ?></div>
-            <div class="reviews-content">
-                <?php if (!empty($arResult['STUDENTS_REVIEWS'])) : ?>
+                <div class="reviews-content">
                     <div id="studentReviewContent">
                         <?php foreach ($arResult['STUDENTS_REVIEWS'] as $key => $review) : 
                             if($review['SHOW_ON_TALENT'] !== 'Y')
@@ -76,8 +76,9 @@ if (!empty($arResult['STUDENTS_REVIEWS'])) : ?>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
-                <?php endif; ?>
+                </div>
             </div>
         </div>
-    </div>
+    </div>   
+    <?php endif; ?>
 <?php endif; ?>
