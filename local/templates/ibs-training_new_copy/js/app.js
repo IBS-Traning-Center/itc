@@ -99,6 +99,10 @@ $(document).ready(function () {
         slidesPerView: 'auto',
         grabCursor: true,
         allowTouchMove: true,
+        pagination: {
+            el: ".mini-gallery__slider .swiper-pagination",
+            clickable: true,
+        },
         breakpoints: {
             0: {
                 enabled: false

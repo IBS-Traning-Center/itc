@@ -1,0 +1,41 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+    <? $APPLICATION->SetTitle("$arResult[NAME]"); ?>
+    <?
+    	  $seminar_name = $arResult["NAME"];
+	      $seminar_id = $arResult["ID"];
+	      $location = $arResult['PROPERTIES']['location']['VALUE'];
+	      $lecturer = $arResult['PROPERTIES']['lecturer']['VALUE'];
+	      $startdate = $arResult['PROPERTIES']['startdate']['VALUE'];
+	      $description = nl2br($arResult['PROPERTIES']['description']['VALUE']);
+	      $content = nl2br($arResult['PROPERTIES']['content']['VALUE']);
+	      $time = $arResult['PROPERTIES']['time']['VALUE'];
+	      $titlefile = $arResult['PROPERTIES']['titlefile']['VALUE'];
+	      $city_id = $arResult['PROPERTIES']['cities']['VALUE'];
+    ?>
+<h2><?=$seminar_name?></h2>
+<? if(!$startdate=="")  {  ?><span class="st">Дата проведения:</span>
+<p class="indent" id="from_event_date"><?=$startdate?></p><? } ?>
+<? if(!$time=="")  {  ?><span class="st">Время:</strong></span>
+<p class="indent"><?=$time?></p><? } ?>
+<? if(!$location=="")  {  ?><span class="st">Место проведения:</span>
+<p class="indent"><?=$location?></p><? } ?>
+
+
+<? if(!$lecturer=="")  {  ?><span class="st">Докладчик</span>
+<p class="indent"><?=$lecturer?></p><? } ?>
+
+<? if(!$description=="")  {  ?><span class="st">Краткое описание</span>
+<p class="indent"><?=$description?></p><? } ?>
+
+<? if(!$content=="")  {  ?><span class="st">Содержание семинара</span>
+<p class="indent"><?=$content?></p><? } ?>
+
+<? if(!$titlefile=="")  {  ?>
+<span class="st">Дополнительные файлы</span>
+<p class="indent"><a  href=""><?php echo $titlefile; ?></p><? } ?>
+
+
+
+
+
+    <? $APPLICATION->SetTitle("Семинары"); ?>

@@ -29,7 +29,12 @@
     margin: auto;
 
 }
-
+.bx-custom-register .registration-container .inputs-container .input-field .input-wrapper input[type="password"],
+.bx-custom-register .registration-container .inputs-container .input-field .input-wrapper input[type="text"] {
+    border: none;
+    border-radius: 0;
+    padding: 25px;
+}
 .registration-container .form-frame {
     display: flex;
     flex-direction: column;
@@ -163,7 +168,6 @@
     opacity: 0.7;
 }
 
-/* Защита от автозаполнения в Chrome */
 .registration-container .input-field input:-webkit-autofill,
 .registration-container .input-field input:-webkit-autofill:hover,
 .registration-container .input-field input:-webkit-autofill:focus,
@@ -404,11 +408,9 @@
     color: #2B418B;
 }
 
-/* Медиа-запросы */
 @media (max-width: 1100px) {
     .registration-container {
         width: 100%;
-        padding: 40px;
     }
 
     .registration-container .form-frame {
@@ -423,9 +425,8 @@
 
 @media (max-width: 768px) {
     .registration-container {
-        padding: 20px;
+        padding-top: 20px;
     }
-
     .registration-container .form-header {
         font-size: 36px;
         line-height: 48px;

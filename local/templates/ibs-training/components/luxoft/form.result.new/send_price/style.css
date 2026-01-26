@@ -1,0 +1,136 @@
+table.form-table
+{
+	width:100%;
+	background-color:white;
+	border-collapse:collapse;
+	font-size:100%;
+	font-weight:normal;
+	line-height:160%;
+}
+
+table.form-table th, table.form-table td
+{
+	border:1px solid #ADC3D5;
+	padding: 5px 5px;
+	vertical-align:top;
+}
+
+table.form-table th
+{
+	background-image:url(images/table_head.gif);
+	background-repeat:repeat-x;
+	text-align: left;
+	color:#25639A;
+}
+
+
+table.form-table td
+{
+	padding: 15px 5px;
+}
+
+.form-required 
+{
+	color: red;
+}
+
+.error-fld {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-image: url(images/icon_warn.gif);
+}
+
+/********************************** CUSTOM *********************************************/
+.form-wrapper {
+    width: auto;
+    outline: none;
+    border: 1.5px solid #939393;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+.form-wrapper i {
+    font-size: 20px;
+    color: #225267;
+    cursor: pointer;
+    position: static;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    transition: all 0.3s;
+}
+.form-wrapper .fa {
+    /* display: inline-block; */
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.form-wrapper input[type="text"], input[type="password"], textarea {
+    outline: none;
+    border: 1.5px solid #939393;
+    border-radius: 10px;
+    background-color: transparent;
+    width: 100%;
+    padding: 5.5px 10px;
+}
+.form-wrapper input[type="submit" i], input[type="reset" i]{
+
+    display: inline-block;
+    margin: 15px auto 0 auto;
+    outline: none;
+    background-color: #225267;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    -webkit-appearance: button;
+    cursor: pointer;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.form-wrapper .data-table{
+    margin-bottom: 10px;
+}
+
+.form-wrapper .data-table tr td{
+
+    border:none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #393939;
+}
+
+.form-wrapper table.form-table th{
+    background: none;
+    border: none;
+    text-align: center;
+}
+
+.form-wrapper .jq-checkbox {
+	background-color: #225267;
+}
+
+.policy{
+    margin-top:30px;
+}
+
+.policy_row{
+    margin-top:10px;
+}
+
+.policy .policy_row p {
+    display: initial;
+
+}

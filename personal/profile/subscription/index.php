@@ -27,25 +27,25 @@ $APPLICATION->SetTitle("Настройки");
         <div class="frame-851213393">
             <div class="lk-content">
                 <?$APPLICATION->IncludeComponent(
-	"bitrix:subscribe.edit", 
-	"subscription-lk", 
-	[
-		"AJAX_MODE" => "N",
-		"SHOW_HIDDEN" => "N",
-		"ALLOW_ANONYMOUS" => "Y",
-		"SHOW_AUTH_LINKS" => "Y",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
-		"SET_TITLE" => "Y",
-		"USE_PERSONALIZATION" => "Y",
-		"COMPONENT_TEMPLATE" => "subscription-lk",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_ADDITIONAL" => ""
-	],
-	false
-);?>
+                    "bitrix:subscribe.edit",
+                    "subscription-lk",
+                    [
+                        "AJAX_MODE" => "N",
+                        "SHOW_HIDDEN" => "N",
+                        "ALLOW_ANONYMOUS" => "Y",
+                        "SHOW_AUTH_LINKS" => "Y",
+                        "CACHE_TYPE" => "A",
+                        "CACHE_TIME" => "3600",
+                        "SET_TITLE" => "Y",
+                        "USE_PERSONALIZATION" => "Y",
+                        "COMPONENT_TEMPLATE" => "subscription-lk",
+                        "AJAX_OPTION_JUMP" => "N",
+                        "AJAX_OPTION_STYLE" => "Y",
+                        "AJAX_OPTION_HISTORY" => "N",
+                        "AJAX_OPTION_ADDITIONAL" => ""
+                    ],
+                    false
+                );?>
 
 
             </div>
@@ -53,6 +53,7 @@ $APPLICATION->SetTitle("Настройки");
         </div>
     </div>
     </div>
-    
+
+
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

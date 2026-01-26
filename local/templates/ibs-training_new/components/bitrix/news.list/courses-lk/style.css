@@ -1,16 +1,16 @@
 
-.lk-section {
-	margin-bottom: 48px;
-	padding: 0 16px;
-}
 
 .lk-section__title {
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 400;
-	font-size: 24px;
-	line-height: 32px;
+	font-size: 34px;
+	line-height: 52px;
 	color: #000000;
 	margin-bottom: 24px;
+}
+
+.lk-section + .lk-section .lk-section__title{
+	margin-top: 40px;
 }
 
 .lk-cards {
@@ -211,15 +211,31 @@
 	background: #2B418B;
 	color: #FFFFFF;
 }
-@media (min-width: 768px) {
+.lk-notification{
+	padding-top: 48px;
+}
+@media (max-width: 1280px) {
+	.lk-section__title{
+		font-size: 24px;
+		line-height: 32px;
+		margin: 32px 0 16px;
+	}
+	.lk-notification{
+		padding: 32px 0 24px;
+	}
+	.lk-modal{
+		padding: 0 0 24px;
+	}
+}
+@media (max-width: 768px) {
 	.lk-section {
-		padding: 0 24px;
+		padding: 0 56px;
 	}
 
 	.lk-section__title {
 		font-size: 32px;
 		line-height: 44px;
-		margin-bottom: 32px;
+		margin-bottom: 24px;
 	}
 
 	.lk-cards {
@@ -234,6 +250,7 @@
 	.lk-card.course .lk-card__title {
 		font-size: 22px;
 		line-height: 30px;
+		padding-bottom: 45px;
 	}
 
 	.lk-card.course .lk-card__price {
@@ -265,16 +282,16 @@
 		min-width: 64px;
 	}
 }
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
 	.lk-section {
-		padding: 0 32px;
+		padding: 0 0px;
 		margin-right: auto;
 	}
 
 	.lk-section__title {
 		font-size: 34px;
 		line-height: 52px;
-		margin-bottom: 40px;
+		margin-bottom: 24px;
 	}
 
 	.lk-card.course {
@@ -308,7 +325,7 @@
 	}
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
 
 
 	.lk-cards {
@@ -321,7 +338,12 @@
 		align-items: flex-start;
 		gap: 12px;
 	}
-
+	.lk-card__actions {
+		flex-direction: column;
+		align-items: flex-start;
+		width: 296px;
+		gap: 0px;
+	}
 	.lk-card.course .lk-card__meta > span:first-child {
 		width: 100%;
 		min-width: auto;
@@ -333,8 +355,8 @@
 	}
 
 	.lk-card.course .lk-card__title {
-		font-size: 18px;
-		line-height: 24px;
+		font-size: 20px;
+		line-height: 28px;
 	}
 
 	.lk-card.course .lk-card__price {
@@ -345,15 +367,7 @@
 
 
 
-.lk-header-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 24px 35px 32px;
-	width: 100%;
-	flex-wrap: wrap;
-	gap: 16px;
-}
+
 
 .lk-tabs {
     display: flex;
@@ -418,13 +432,14 @@
 }
 
 .lk-update-btn {
+	all: unset;
     font-family: 'Noto Sans', sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #2B418B;
-    text-decoration: none;
+	text-decoration: underline;
     transition: opacity 0.2s;
     display: flex;
     align-items: center;
@@ -447,11 +462,6 @@
         overflow-x: auto;
     }
 
-    .lk-header-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
 
     .lk-header__right {
         width: 100%;
@@ -460,9 +470,7 @@
 }
 
 @media (max-width: 768px) {
-	.lk-header-row {
-        margin: 16px 0 24px;
-    }
+
 
     .lk-tabs {
         width: 100%;
@@ -492,8 +500,8 @@
     }
 
     .lk-update-btn {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 24px;
     }
 
     .lk-update-btn svg {

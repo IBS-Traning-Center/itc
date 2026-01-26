@@ -4,7 +4,7 @@
     right: 0;
     left: 0;
     background: var(--white);
-    z-index: 1001;
+    z-index: 998;
     padding-top: 16px;
     padding-bottom: 16px;
     display: none;
@@ -33,7 +33,7 @@
     bottom: 0;
     background: var(--black);
     opacity: 0.4;
-    z-index: 1000;
+    z-index: 997;
     display: none;
 }
 

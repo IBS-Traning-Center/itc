@@ -1,0 +1,121 @@
+
+.slider-trener-block{
+    margin-left: -6px;
+    margin-right: -6px;
+}
+
+.slider-trener-block .slick-track{
+    display: flex;
+}
+
+.slider-trener-block .slick-dotted.slick-slider{
+    margin-bottom: 0;
+}
+
+.slider-trener-block .slider-trener-menu_item{
+    background-color: #0827C4;
+    margin: 0 6px;
+    box-sizing: border-box;
+}
+
+.slider-trener-block .slider-trener-menu_item.all{
+    background-color: #FFFFFF;
+    height: auto;
+    border: 1px solid #041675;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.slider-trener-block .slider-trener-menu_item.all .slider-trener-menu_item-text{
+    font-size: 16px;
+    line-height: 24px;
+    color: #041675;
+    font-weight: 300;
+    padding: 0 20px;
+}
+
+.slider-trener-block .slider-trener-menu_item img{
+    width: 100%;
+}
+
+.slider-trener-block .slick-dots{
+    margin-top: 40px;
+    position: unset;
+}
+
+.slider-trener-block .slick-dots li.slick-active button {
+    opacity: 1;
+    background-color: var(--button-blue);
+}
+
+.slider-trener-block .slick-dots li button {
+    border-radius: 14px;
+    background-color: #B2B2B2;
+    font-size: 0;
+}
+
+.slider-trener-block .slick-dots li, 
+.slider-trener-block .slick-dots li button {
+    width: 14px;
+    height: 14px;
+}
+
+.slider-trener-block .slick-dots li {
+    margin: 0 4px;
+}
+
+.slider-trener-block .slick-dots li button:before{
+    font-size: 0;
+}
+
+.slider-trener-block .slick-arrow {
+    background: url(images/arrow.png) no-repeat center center;
+    bottom: 0;
+    top: auto;
+    transform: rotate(180deg);
+    margin-top: 0;
+    width: 45px;
+    height: 20px;
+}
+
+.slider-trener-block .slick-arrow.slick-prev {
+    left: 6px;
+}
+
+.slider-trener-block .slick-arrow.slick-next {
+    right: 6px;
+    transform: rotate(360deg);
+}
+
+@media (max-width: 768px) {
+    .slider-trener-block .slick-dots{
+        margin-top: 25px;
+    }
+
+    .slider-trener-block .slider-trener-menu_item.all .slider-trener-menu_item-text{
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .slider-trener-block{
+        margin-left: -6px;
+        margin-right: -16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .slider-trener-block .slider-trener-menu_item{
+        max-width: 160px;
+        width: 100%!important;
+    }
+}
+
+@media (max-width: 400px) {
+    .slider-trener-block .slider-trener-menu_item{
+        max-width: 150px;
+        width: 100%!important;
+    }
+}

@@ -90,10 +90,14 @@ class ReviewsMainPage
                 let sliced = elem.textContent.slice(0, MAX_COUNT_SYMBOLS);
 
                 if (sliced.length < elem.textContent.length) {
-                    let dataId = elem.dataset.id;
-
-                    sliced += '... <a href="/reviews/">Читать все</a>';
-                    elem.innerHTML = sliced;
+                    if(elem.classList.contains('student-text')){
+                        sliced += '... <a href="/reviews/?reviews=student">Читать все</a>';
+                        elem.innerHTML = sliced;
+                    }
+                    if(elem.classList.contains('company-text')){
+                        sliced += '... <a href="/reviews/?reviews=company">Читать все</a>';
+                        elem.innerHTML = sliced;
+                    }
                 }
             });
         }
