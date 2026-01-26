@@ -271,42 +271,109 @@ $APPLICATION->SetTitle('Стань тренером');
             );?>
         </div>
     </div>
-    <div class="start-work talent-content">
+    <div class="trainer-expert talent-content">
         <div class="container">
-            <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Начало сотрудничества']); ?></h2>
-            <ul class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_ul.php', [], ['MODE' => 'html', 'NAME' => 'Текст Начало сотрудничества']); ?></ul>
-            <p class="f-32 margin-bottom32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_heading_learn.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Начало сотрудничества, Обучение']); ?></p>
-            <div class="talent-grid-2 margin-bottom56">
-                <div>
-                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_icon_1.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Иконка']); ?>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Текст']); ?></p>
+            <? $APPLICATION->IncludeComponent(
+            	"addamant:main.page.reviews", 
+            	"expert", 
+            	array(
+            		"CACHE_TIME" => "3600",
+            		"CACHE_TYPE" => "A",
+            		"COMPONENT_TEMPLATE" => ".default"
+            	),
+            	false
+            ); ?> 
+        </div>
+    </div>
+    <? $APPLICATION->IncludeComponent(
+    	"addamant:main.page.reviews", 
+    	"talent", 
+    	array(
+    		"CACHE_TIME" => "3600",
+    		"CACHE_TYPE" => "A",
+    		"COMPONENT_TEMPLATE" => ".default"
+    	),
+    	false
+    ); ?>
+    <div class="talent-experience">
+        <div class="container">
+            <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/experience.php', [], ['MODE' => 'html', 'NAME' => 'Преподавательский опыт']); ?></p>
+        </div>
+    </div>
+    <div class="talent-school talent-content">
+        <div class="container">
+            <div class="talent-school-wrap">
+                <div class="talent-school-img">
+                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/school_img.php', [], ['MODE' => 'html', 'NAME' => 'Картинка Школа тренеров']); ?>
                 </div>
-                <div>
-                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_icon_2.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Иконка']); ?>
-                    <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Текст']); ?></p>
+                <div class="talent-school-text">
+                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/school_title.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Школа тренеров']); ?></h2>
+                    <p class="f-32"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/school_decription.php', [], ['MODE' => 'html', 'NAME' => 'Описание Школа тренеров']); ?></p>
                 </div>
             </div>
-            <div class="talent-flex-2">
-                <div class="btn-main size-l trainer-modal">
-                    <span class="f-24">Стать тренером</span>
+        </div>
+    </div>
+    <div class="talent-get-start talent-content">
+        <div class="container">
+            <div class="talent-grid-block">
+                <div class="get-start-heading">
+                    <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Как начать сотрудничество ']); ?></h2>
+                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_heading_text.php', [], ['MODE' => 'html', 'NAME' => 'Описание Как начать сотрудничество ']); ?>
                 </div>
-                <p class="f-16"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/start_form_text.php', [], ['MODE' => 'html', 'NAME' => 'Обучение Форма текст']); ?></p>
+                <div class="get-start-grid-wrapper">
+                    <div class="get-start-grid-block">
+                        <div class="item">
+                            <h2>01</h2>
+                            <div class="line-block"></div>
+                            <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_text_1.php', [], ['MODE' => 'html', 'NAME' => 'Текст Как начать сотрудничество ']); ?></p>
+                        </div>
+                        <div class="item">
+                            <h2>02</h2>
+                            <div class="line-block"></div>
+                            <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_text_2.php', [], ['MODE' => 'html', 'NAME' => 'Текст Как начать сотрудничество ']); ?></p>
+                        </div>
+                        <div class="item">
+                            <h2>03</h2>
+                            <div class="line-block"></div>
+                            <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_text_3.php', [], ['MODE' => 'html', 'NAME' => 'Текст Как начать сотрудничество ']); ?></p>
+                        </div>
+                        <div class="item">
+                            <h2>04</h2>
+                            <div class="line-block">
+                                <div class="second-line"></div>
+                            </div>
+                            <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_text_4.php', [], ['MODE' => 'html', 'NAME' => 'Текст Как начать сотрудничество ']); ?></p>
+                        </div>
+                        <div class="item">
+                            <h2>05</h2>
+                            <div class="line-block"></div>
+                            <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_text_5.php', [], ['MODE' => 'html', 'NAME' => 'Текст Как начать сотрудничество ']); ?></p>
+                        </div>
+                        <div class="item">
+                            <h2>06</h2>
+                            <div class="line-block"></div>
+                            <p class="f-20"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_text_6.php', [], ['MODE' => 'html', 'NAME' => 'Текст Как начать сотрудничество ']); ?></p>
+                        </div>
+                    </div>
+
+                    <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_text_description.php', [], ['MODE' => 'html', 'NAME' => 'Текст Как начать сотрудничество ']); ?>
+                </div>
             </div>
         </div>
     </div>
     <div class="talent-content telegram">
         <?php $APPLICATION->IncludeComponent(
-	"addamant:telegram.subscribe", 
-	".default", 
-	array(
-		"CACHE_TIME" => "3600",
-		"CACHE_TYPE" => "A",
-		"SUBSCRIBE_TITLE" => "",
-		"SUBSCRIBE_LINK" => "https://t.me/IBS_Training_Center",
-		"COMPONENT_TEMPLATE" => ".default"
-	),
-	false
-);?>
+        	"addamant:telegram.subscribe", 
+        	".default", 
+        	array(
+        		"CACHE_TIME" => "3600",
+        		"CACHE_TYPE" => "A",
+        		"SUBSCRIBE_TITLE" => "",
+        		"SUBSCRIBE_LINK" => "https://t.me/IBS_Training_Center",
+        		"COMPONENT_TEMPLATE" => ".default"
+        	),
+        	false
+        );?>
     </div>
 </div>
 
