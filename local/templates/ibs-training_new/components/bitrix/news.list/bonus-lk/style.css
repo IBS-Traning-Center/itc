@@ -111,7 +111,7 @@
 	}
 
 	.bonus-points-header .bp-warning {
-		flex-direction: column;
+		flex-direction: row;
 		align-items: flex-start;
 		gap: 12px;
 		padding: 16px;
@@ -155,7 +155,7 @@
 	padding: 56px 56px 100px;
 	gap: 64px;
 	width: 100%;
-	max-width: 1450px;
+
 	margin: 0 auto;
 	background: var(--bp-white);
 	box-sizing: border-box;
@@ -312,7 +312,7 @@
 
 
 .bonus-points-section .bp-history-date {
-	width: 97px;
+	width: 200px;
 	height: 24px;
 	font-family: var(--bp-font-inter);
 	font-style: normal;
@@ -431,7 +431,7 @@
 		gap: 8px;
 		width: 100%;
 		height: 48px;
-		min-height: 72px;
+
 	}
 
 	.bonus-points-header .bp-icon-warning {
@@ -455,7 +455,6 @@
 
 	.bonus-points-section .bp-section-container {
 		width: 100%;
-		max-width: 328px;
 		gap: 24px;
 	}
 
@@ -618,11 +617,11 @@
 	}
 
 	.bonus-points-section .bp-history-item:nth-child(3) {
-		height: 104px;
+		height: 128px;
 	}
 
 	.bonus-points-section .bp-history-date {
-		width: 97px;
+		width: 150px;
 		height: 24px;
 		font-family: 'Inter', sans-serif;
 		font-weight: 400;
@@ -636,7 +635,7 @@
 	}
 
 	.bonus-points-section .bp-history-text {
-		width: 296px;
+		width: 305px;
 		height: auto;
 		font-family: 'Noto Sans', sans-serif;
 		font-weight: 400;
@@ -651,6 +650,6 @@
 	}
 
 	.bonus-points-section .bp-history-item:nth-child(3) .bp-history-text {
-		height: 44px;
+		height: 128px;
 	}
 }

@@ -1,4 +1,5 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<?php
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -11,7 +12,13 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+$currentBalance = $arResult['CURRENT_BALANCE'];
+$burnInfo = $arResult['BURN_INFO'];
+$history = $arResult['HISTORY'];
+$userId = $arResult['USER_ID'];
 ?>
+
 <div class="lk-layout">
     <div class="lk-layout">
         <aside class="lk-sidebar">
@@ -40,17 +47,19 @@ $this->setFrameMode(true);
 
                 <div class="bonus-points-header">
                     <div class="bp-points-info">
-                        <div class="bp-current-points">У вас 3000 баллов</div>
-                        <div class="bp-warning">
-                            <div class="bp-icon-warning">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.5015 7C17.0015 10 16.0015 12 14.4415 12.51C14.9166 8.61202 13.9683 3.66937 9.91149 2C10.6215 3.5 11.0015 5.5 7.24149 7.8C1.17412 11.5114 2.86426 20.5214 10.6215 22C7.91716 20.1536 9.55562 16.1317 11.0015 14C11.0015 16.4839 16.5015 18.5 13.4215 22C21.0015 20 22.0015 10.5 15.5015 7Z" fill="#BF031B"></path>
-                                </svg>
+                        <div class="bp-current-points">У вас <?= number_format($currentBalance, 0, '', ' ') ?> баллов</div>
+                        <?php if ($burnInfo && $burnInfo['amount'] > 0 && $currentBalance > 0): ?>
+                            <div class="bp-warning">
+                                <div class="bp-icon-warning">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.5015 7C17.0015 10 16.0015 12 14.4415 12.51C14.9166 8.61202 13.9683 3.66937 9.91149 2C10.6215 3.5 11.0015 5.5 7.24149 7.8C1.17412 11.5114 2.86426 20.5214 10.6215 22C7.91716 20.1536 9.55562 16.1317 11.0015 14C11.0015 16.4839 16.5015 18.5 13.4215 22C21.0015 20 22.0015 10.5 15.5015 7Z" fill="#BF031B"></path>
+                                    </svg>
+                                </div>
+                                <div class="bp-warning-text">
+                                    <div><?= number_format($burnInfo['amount'], 0, '', ' ') ?> баллов сгорят <?= FormatDate("j F", $burnInfo['timestamp']) ?></div>
+                                </div>
                             </div>
-                            <div class="bp-warning-text">
-                                <div>3 000 баллов сгорят 1 августа в 12:00</div>
-                            </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -130,22 +139,48 @@ $this->setFrameMode(true);
                         </div>
 
                         <div class="bp-history-container">
-                            <div class="bp-history-item">
-                                <div class="bp-history-date">1 июля 2024</div>
-                                <div class="bp-history-text">Начислено 30 баллов за покупку курса <a href="https://irrecommed.yandex.ru/" target="_blank">«Шаблоны проектирования GoF. Редакция для .NET»</a></div>
-                            </div>
+                            <?php foreach ($history as $arTransact): ?>
+                                <?php
+                                $date = FormatDate("j F Y", MakeTimeStamp($arTransact['TRANSACT_DATE']));
+                                $amount = number_format($arTransact['AMOUNT'], 0, '', '');
+                                $isDebit = $arTransact['DEBIT'] == 'Y';
+                                $description = $arTransact['DESCRIPTION'];
+                                $orderId = $arTransact['ORDER_ID'];
+                                $notes = $arTransact['NOTES'];
 
-                            <div class="bp-history-item">
-                                <div class="bp-history-date">1 июля 2024</div>
-                                <div class="bp-history-text">Списанно 30 баллов на оплату курса <a href="https://irrecommed.yandex.ru/" target="_blank">«Шаблоны проектирования GoF. Редакция для .NET»</a></div>
-                            </div>
+                                $productInfo = getOrderProductInfo($orderId);
 
-                            <div class="bp-history-item">
-                                <div class="bp-history-date">1 июля 2024</div>
-                                <div class="bp-history-text">Списанно 30 баллов по истечению срока действия</div>
-                            </div>
+                                $operationText = formatOperationDescription($description, $isDebit);
+                                ?>
+
+                                <div class="bp-history-item">
+                                    <div class="bp-history-date"><?= $date ?></div>
+                                    <div class="bp-history-text">
+                                        <?php if ($isDebit): ?>
+                                            Начислено
+                                        <?php else: ?>
+                                            Списано
+                                        <?php endif; ?>
+
+                                        <?= $amount ?> баллов
+
+                                        <?php if ($productInfo['name'] && $productInfo['link']): ?>
+                                            <?= $productInfo['description'] ?>
+                                            <a href="<?= $productInfo['link'] ?>" target="_blank">«<?= htmlspecialcharsbx($productInfo['name']) ?>»</a>
+                                        <?php elseif ($productInfo['name']): ?>
+                                            <?= $productInfo['description'] ?> «<?= htmlspecialcharsbx($productInfo['name']) ?>»
+                                        <?php elseif ($notes): ?>
+                                            <?= htmlspecialcharsbx($notes) ?>
+                                        <?php else: ?>
+                                            <?= $operationText ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+
+                            <?php endforeach; ?>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

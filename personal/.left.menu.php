@@ -27,7 +27,7 @@ $aMenuLinks = Array(
         ),
         ""
     ),
-    /*Array(
+    Array(
         "Мои заказы",
         "/personal/order/",
         Array(),
@@ -44,7 +44,7 @@ $aMenuLinks = Array(
             "ICON" => "notifications"
         ),
         ""
-    ),*/
+    ),
     Array(
         "Настройки",
         "/personal/profile/",
