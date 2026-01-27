@@ -1,0 +1,655 @@
+.bonus-points-header {
+	--bp-white: #FFFFFF;
+	--bp-black: #000000;
+	--bp-red: #BF031B;
+	--bp-font-noto: 'Noto Sans', sans-serif;
+	--bp-font-inter: 'Inter', sans-serif;
+}
+.bonus-points-header .bp-points-info {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0px;
+	gap: 32px;
+	width: 100%;
+	max-width: 1338px;
+	height: 72px;
+	box-sizing: border-box;
+}
+
+.bonus-points-header .bp-current-points {
+	width: 492px;
+	height: 72px;
+	font-family: var(--bp-font-noto);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 56px;
+	line-height: 72px;
+	color: var(--bp-white);
+	margin: 0;
+	flex-shrink: 0;
+}
+
+.bonus-points-header .bp-warning {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 12px 16px;
+	gap: 8px;
+	width: 362px;
+	height: 48px;
+	background: var(--bp-white);
+	box-sizing: border-box;
+	flex-shrink: 0;
+}
+
+.bonus-points-header .bp-icon-warning {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	flex-shrink: 0;
+}
+
+.bonus-points-header .bp-icon-warning svg {
+	width: 100%;
+	height: 100%;
+}
+
+.bonus-points-header .bp-icon-warning svg path {
+	fill: var(--bp-red);
+}
+
+.bonus-points-header .bp-warning-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 2px;
+
+	width: 298px;
+	height: 24px;
+}
+
+.bonus-points-header .bp-warning-text div {
+	width: 298px;
+	height: 24px;
+	font-family: var(--bp-font-inter);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--bp-black);
+	margin: 0;
+}
+@media (max-width: 1200px) {
+	.bonus-points-header .bp-points-info {
+		flex-direction: column;
+		align-items: flex-start;
+		height: auto;
+		gap: 16px;
+	}
+
+	.bonus-points-header .bp-current-points {
+		width: 100%;
+		height: auto;
+		font-size: 48px;
+		line-height: 60px;
+	}
+
+	.bonus-points-header .bp-warning {
+		width: 100%;
+		height: auto;
+		min-height: 48px;
+	}
+}
+
+@media (max-width: 768px) {
+	.bonus-points-header .bp-current-points {
+		font-size: 36px;
+		line-height: 44px;
+	}
+
+	.bonus-points-header .bp-warning {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 12px;
+		padding: 16px;
+	}
+
+	.bonus-points-header .bp-icon-warning {
+		width: 20px;
+		height: 20px;
+	}
+
+	.bonus-points-header .bp-warning-text,
+	.bonus-points-header .bp-warning-text div {
+		width: 100%;
+		height: auto;
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+.bonus-points-section {
+	--bp-white: #FFFFFF;
+	--bp-black: #000000;
+	--bp-green: #4C9F69;
+	--bp-grey-light: #F8F7F7;
+	--bp-font-noto: 'Noto Sans', sans-serif;
+	--bp-font-stag: 'Stag Sans', sans-serif;
+	--bp-font-inter: 'Inter', sans-serif;
+	--bp-padding-x: 56px;
+	--bp-padding-y: 100px;
+	--bp-gap-section: 64px;
+	--bp-gap-container: 32px;
+	--bp-gap-title: 16px;
+	--bp-gap-card: 24px;
+	--bp-gap-card-content: 8px;
+	--bp-border-radius: 0px;
+	--bp-border-bottom: 1px solid #000000;
+}
+.bonus-points-section .bp-main-content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 56px 56px 100px;
+	gap: 64px;
+	width: 100%;
+
+	margin: 0 auto;
+	background: var(--bp-white);
+	box-sizing: border-box;
+}
+
+.bonus-points-section .bp-section-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 32px;
+	width: 100%;
+	max-width: 1338px;
+}
+
+.bonus-points-section .bp-section-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 16px;
+	width: 100%;
+}
+.bonus-points-section .bp-section-title {
+	width: 100%;
+	height: 52px;
+	font-family: var(--bp-font-noto);
+	font-style: normal;
+	font-weight: 500;
+	font-size: 34px;
+	line-height: 52px;
+	color: var(--bp-black);
+	margin: 0;
+}
+
+.bonus-points-section .bp-section-text {
+	width: 100%;
+	font-family: var(--bp-font-noto);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 32px;
+	color: var(--bp-black);
+	margin: 0;
+}
+
+.bonus-points-section .bp-cards-grid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: flex-start;
+	padding: 0px;
+	gap: 24px;
+	width: 100%;
+}
+
+.bonus-points-section .bp-card {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 32px;
+	gap: 24px;
+	width: calc(50% - 12px);
+	min-width: 657px;
+	min-height: 169px;
+	background: var(--bp-grey-light);
+	border-radius: var(--bp-border-radius);
+	box-sizing: border-box;
+}
+.bonus-points-section .bp-card-number {
+	width: 61px;
+	height: 105px;
+	font-family: var(--bp-font-stag);
+	font-style: normal;
+	font-weight: 300;
+	font-size: 100px;
+	line-height: 105px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: var(--bp-green);
+	flex-shrink: 0;
+}
+.bonus-points-section .bp-card-content {
+	/* Auto layout */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 8px;
+	flex: 1;
+	min-width: 0;
+}
+
+.bonus-points-section .bp-card-title {
+	width: 100%;
+	height: 27px;
+	font-family: var(--bp-font-noto);
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 27px;
+	color: var(--bp-black);
+	margin: 0;
+}
+.bonus-points-section .bp-card-text {
+	width: 100%;
+	font-family: var(--bp-font-inter);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--bp-black);
+	margin: 0;
+}
+
+.bonus-points-section .bp-card-text strong {
+	font-weight: 700;
+}
+
+.bonus-points-section .bp-card-text a,
+.bonus-points-section .bp-history-text a {
+	color: #2B418B;
+	text-decoration: underline;
+}
+
+.bonus-points-section .bp-card-text a:hover,
+.bonus-points-section .bp-history-text a:hover {
+	text-decoration: none;
+}
+
+.bonus-points-section .bp-history-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	width: 100%;
+	max-width: 1338px;
+}
+.bonus-points-section .bp-history-item {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 16px;
+	width: 100%;
+	min-height: 88px;
+	background: var(--bp-grey-light);
+	border-bottom: var(--bp-border-bottom);
+	border-radius: var(--bp-border-radius);
+}
+
+
+.bonus-points-section .bp-history-date {
+	width: 200px;
+	height: 24px;
+	font-family: var(--bp-font-inter);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+
+	display: flex;
+	align-items: center;
+	text-align: right;
+
+	color: var(--bp-black);
+
+	margin: 0 0 8px 0;
+}
+
+.bonus-points-section .bp-history-text {
+	width: 100%;
+	min-height: 32px;
+	font-family: var(--bp-font-noto);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 32px;
+	color: var(--bp-black);
+
+	margin: 0;
+}
+
+@media (max-width: 1400px) {
+	.bonus-points-section .bp-main-content {
+		padding: 40px 40px 80px;
+		gap: 48px;
+	}
+
+	.bonus-points-section .bp-card {
+		min-width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.bonus-points-section .bp-main-content {
+		padding: 24px 16px 48px;
+		gap: 32px;
+	}
+
+	.bonus-points-section .bp-section-title {
+		font-size: 24px;
+		line-height: 32px;
+		height: auto;
+	}
+
+	.bonus-points-section .bp-section-text {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	.bonus-points-section .bp-card {
+		flex-direction: column;
+		padding: 24px;
+		gap: 16px;
+		min-height: auto;
+	}
+
+	.bonus-points-section .bp-card-number {
+		font-size: 60px;
+		line-height: 65px;
+		height: auto;
+		width: auto;
+	}
+
+	.bonus-points-section .bp-card-title {
+		font-size: 18px;
+		line-height: 24px;
+		height: auto;
+	}
+
+	.bonus-points-section .bp-card-text {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.bonus-points-section .bp-history-text {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+@media (max-width: 640px) {
+	.lk-header{
+		padding: 16px;
+		gap: 0px;
+		border-radius: 0;
+		margin-top: 0;
+		height: 184px;
+	}
+	.bonus-points-header .bp-points-info {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+		height: auto;
+		width: 100%;
+	}
+
+	.bonus-points-header .bp-current-points {
+		font-family: 'Stag Sans';
+		font-style: normal;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	.bonus-points-header .bp-warning {
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 12px 16px;
+		gap: 8px;
+		width: 100%;
+		height: 48px;
+
+	}
+
+	.bonus-points-header .bp-icon-warning {
+		width: 24px;
+		height: 24px;
+	}
+
+	.bonus-points-header .bp-warning-text,
+	.bonus-points-header .bp-warning-text div {
+		width: 100%;
+		height: auto;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	.bonus-points-section .bp-main-content {
+		padding: 24px 16px 40px;
+		gap: 32px;
+		width: 100%;
+	}
+
+	.bonus-points-section .bp-section-container {
+		width: 100%;
+		gap: 24px;
+	}
+
+	.bonus-points-section .bp-section-header {
+		gap: 16px;
+	}
+
+	.bonus-points-section .bp-section-title {
+		width: 100%;
+		height: auto;
+		min-height: 64px;
+		font-family: 'Stag Sans', sans-serif;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 32px;
+		color: #000000;
+	}
+
+	.bonus-points-section .bp-section-text {
+		width: 100%;
+		font-family: 'Noto Sans', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 22px;
+		color: #000000;
+	}
+
+	.bonus-points-section .bp-cards-grid {
+		flex-direction: column;
+		gap: 8px;
+		width: 100%;
+	}
+
+	.bonus-points-section .bp-card {
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 24px;
+		gap: 12px;
+		width: 100%;
+		min-width: 100%;
+		min-height: auto;
+		height: auto;
+		background: #F8F7F7;
+		border-radius: 0;
+	}
+
+	.bonus-points-section .bp-card-number {
+		width: 25px;
+		height: 42px;
+		font-family: 'Stag Sans', sans-serif;
+		font-weight: 300;
+		font-size: 40px;
+		line-height: 42px;
+		color: #4C9F69;
+		display: flex;
+		align-items: center;
+	}
+
+	.bonus-points-section .bp-card-content {
+		width: calc(100% - 37px);
+		height: auto;
+		gap: 12px;
+	}
+
+	.bonus-points-section .bp-card-title {
+		width: 100%;
+		height: auto;
+		min-height: 64px;
+		font-family: 'Stag Sans', sans-serif;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 32px;
+		color: #000000;
+	}
+
+	.bonus-points-section .bp-card-text {
+		width: 100%;
+		font-family: 'Stag Sans', sans-serif;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 24px;
+		color: #000000;
+	}
+
+	.bonus-points-section .bp-card:nth-child(1) {
+		height: 388px;
+	}
+
+	.bonus-points-section .bp-card:nth-child(1) .bp-card-content {
+		height: 340px;
+	}
+
+	.bonus-points-section .bp-card:nth-child(1) .bp-card-text {
+		height: 264px;
+	}
+
+	.bonus-points-section .bp-card:nth-child(2),
+	.bonus-points-section .bp-card:nth-child(3) {
+		height: 268px;
+	}
+
+	.bonus-points-section .bp-card:nth-child(2) .bp-card-content,
+	.bonus-points-section .bp-card:nth-child(3) .bp-card-content {
+		height: 220px;
+	}
+
+	.bonus-points-section .bp-card:nth-child(4) {
+		height: 196px;
+	}
+
+	.bonus-points-section .bp-card:nth-child(4) .bp-card-content {
+		height: 148px;
+	}
+
+	.bonus-points-section .bp-history-container {
+		width: 100%;
+		max-width: 328px;
+		gap: 16px;
+	}
+
+	.bonus-points-section .bp-history-container .bp-section-title {
+		width: 328px;
+		height: 32px;
+		min-height: auto;
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	.bonus-points-section .bp-history-container .bp-section-text {
+		width: 328px;
+		height: 528px;
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	.bonus-points-section .bp-history-container:last-child {
+		gap: 16px;
+	}
+
+	.bonus-points-section .bp-history-container:last-child .bp-section-title {
+		width: 328px;
+		height: 64px;
+		min-height: 64px;
+	}
+
+	.bonus-points-section .bp-history-item {
+		padding: 16px;
+		gap: 4px;
+		width: 328px;
+		height: auto;
+		min-height: auto;
+		background: #F8F7F7;
+		border-bottom: 1px solid #000000;
+		border-radius: 0;
+	}
+
+	.bonus-points-section .bp-history-item:nth-child(1),
+	.bonus-points-section .bp-history-item:nth-child(2) {
+		height: 126px;
+	}
+
+	.bonus-points-section .bp-history-item:nth-child(3) {
+		height: 128px;
+	}
+
+	.bonus-points-section .bp-history-date {
+		width: 150px;
+		height: 24px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		color: #000000;
+		display: flex;
+		align-items: center;
+		text-align: right;
+		margin: 0;
+	}
+
+	.bonus-points-section .bp-history-text {
+		width: 305px;
+		height: auto;
+		font-family: 'Noto Sans', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 22px;
+		color: #000000;
+	}
+
+	.bonus-points-section .bp-history-item:nth-child(1) .bp-history-text,
+	.bonus-points-section .bp-history-item:nth-child(2) .bp-history-text {
+		height: 66px;
+	}
+
+	.bonus-points-section .bp-history-item:nth-child(3) .bp-history-text {
+		height: 128px;
+	}
+}
