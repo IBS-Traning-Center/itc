@@ -29,8 +29,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Стань тренером", 
-		"/talent_search/", 
+		"Стать тренером", 
+		"/talent-search/", 
 		Array(), 
 		Array(), 
 		"" 
