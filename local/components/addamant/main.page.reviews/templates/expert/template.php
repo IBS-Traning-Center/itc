@@ -19,7 +19,7 @@ if (!empty($arResult['TRAINERS'])) : ?>
 <div class="trainer-expert talent-content">
 <div class="container">
     <div class="trainer-talent-block">
-        <div class="main-page-heading"><?= Loc::getMessage('BLOCK_TITLE_TRAINER') ?></div>
+        <h2><?= Loc::getMessage('BLOCK_TITLE_TRAINER') ?></h2>
         <div class="trainer-content">
             <?php if (!empty($arResult['TRAINERS'])) : ?>
                 <div id="trainerContent">

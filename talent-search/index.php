@@ -208,7 +208,7 @@ $APPLICATION->SetTitle('Стань тренером');
     </div>
     <div class="out-client talent-content">
         <div class="container">
-            <h2 class="margin-bottom56"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/our_client_heading.php', [], ['MODE' => 'html', 'NAME' => 'Наши клиенты заголовок']); ?></h2>
+            <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/our_client_heading.php', [], ['MODE' => 'html', 'NAME' => 'Наши клиенты заголовок']); ?></h2>
             <p class="f-32 margin-bottom48"><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/our_client_description.php', [], ['MODE' => 'html', 'NAME' => 'Наши клиенты описание']); ?></p>
         </div>
         <div class="our-client-slider">
@@ -298,7 +298,7 @@ $APPLICATION->SetTitle('Стань тренером');
     </div>
     <div class="talent-school talent-content">
         <div class="container">
-            <div class="talent-school-wrap">
+            <div class="talent-school-wrap talent-section">
                 <div class="talent-school-img">
                     <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/school_img.php', [], ['MODE' => 'html', 'NAME' => 'Картинка Школа тренеров']); ?>
                 </div>
@@ -311,7 +311,7 @@ $APPLICATION->SetTitle('Стань тренером');
     </div>
     <div class="talent-get-start talent-content">
         <div class="container">
-            <div class="talent-grid-block">
+            <div class="talent-grid-block talent-section">
                 <div class="get-start-heading">
                     <h2><?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_heading.php', [], ['MODE' => 'html', 'NAME' => 'Заголовок Как начать сотрудничество ']); ?></h2>
                     <?php $APPLICATION->IncludeFile(SITE_DIR . 'include/talent/getstart_heading_text.php', [], ['MODE' => 'html', 'NAME' => 'Описание Как начать сотрудничество ']); ?>

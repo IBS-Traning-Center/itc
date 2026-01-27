@@ -14,9 +14,8 @@
     width: 100%;
 }
 
-.trainer-talent-block .main-page-heading{
+.trainer-talent-block h2{
     margin-bottom: 48px;
-    white-space: nowrap;
 }
 
 .trainer-expert-form{
@@ -69,7 +68,7 @@
 }
 
 .trainer-content #trainerContent{
-    padding-bottom: 94px;
+    padding-bottom: 80px;
     margin-bottom: 0;
     position: relative;
 }
@@ -229,5 +228,11 @@
     .trainer-expert-form p{
         padding: 0 32px;
         text-align: center;
+    }
+}
+
+@media (max-width:390px) {
+    .trainer-expert-form p{
+        padding: 0px;
     }
 }
