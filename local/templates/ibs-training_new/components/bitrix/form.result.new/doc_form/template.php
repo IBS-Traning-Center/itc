@@ -1,195 +1,137 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
-{
-    die();
-}
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-/**
- * @var array $arResult
- */
+/** @var array $arResult */
 ?>
-<div class="custom-popup-overlay" id="customSuccessPopup">
-    <div class="custom-popup">
-        <button class="custom-popup__close" onclick="closeCustomPopup()">
-            <div class="custom-popup__close-icon"></div>
+
+<div class="doc-modal education-doc-modal success-modal" id="successDocModal" style="display:none;">
+    <div class="modal-content">
+        <button class="modal-close" type="button"
+                onclick="document.getElementById('successDocModal').style.display='none'; document.body.style.overflow=''; location.href='/personal/docs/';">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="34.5626" y1="13.7896" x2="12.2887" y2="36.0635" stroke="black" stroke-width="2"/>
+                <line x1="34.2109" y1="36.0636" x2="11.937" y2="13.7897" stroke="black" stroke-width="2"/>
+            </svg>
+
         </button>
-        <div class="custom-popup__content">
-            <h2 class="custom-popup__title">Запрос отправлен</h2>
-            <div class="custom-popup__message">
-                Документ будет загружен в Личный кабинет в течение<br>
-                7 календарных дней
-            </div>
-            <div class="custom-popup__button-container">
-                <a href="/personal/docs/" class="custom-popup__button">Закрыть</a>
-            </div>
+        <h2>Запрос отправлен</h2>
+        <p>Документ будет загружен в Личный кабинет в течение<br>7 календарных дней</p>
+        <div class="button-wrapper">
+            <a href="/personal/docs/" class="btn-primary">Закрыть</a>
         </div>
     </div>
 </div>
+<div class="doc-modal education-doc-modal" id="formDocModal" style="display:none;">
+    <div class="modal-content">
+        <button class="modal-close" type="button"
+                onclick="document.getElementById('formDocModal').style.display='none'; document.body.style.overflow='';">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="34.5626" y1="13.7896" x2="12.2887" y2="36.0635" stroke="black" stroke-width="2"/>
+                <line x1="34.2109" y1="36.0636" x2="11.937" y2="13.7897" stroke="black" stroke-width="2"/>
+            </svg>
+        </button>
 
-<section class="contact">
-    <div class="contact__content container">
+        <h1 class="form-title"><?= htmlspecialcharsbx($arResult["FORM_TITLE"]) ?></h1>
 
-        <div class="contact__text">
-            <h2>
-                <?= $arResult["FORM_TITLE"] ?>
-            </h2>
-            <?php if ($arResult["isFormDescription"] == "Y"): ?>
-                <p><?= $arResult["FORM_DESCRIPTION"] ?></p>
-            <?php endif; ?>
-        </div>
+        <?php if ($arResult["isFormDescription"] == "Y"): ?>
+            <div class="form-description"><?= $arResult["FORM_DESCRIPTION"] ?></div>
+        <?php endif; ?>
 
         <?= $arResult["FORM_HEADER"] ?>
 
-        <div class="contact__form">
-            
-            <?php foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
-                <?php if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden'): ?>
-                    <?= $arQuestion["HTML_CODE"] ?>
-                <?php endif; ?>
-            <?php endforeach; ?>
+        <form name="form_<?= $arResult["arForm"]["ID"] ?>"
+              action="<?= POST_FORM_ACTION_URI ?>"
+              method="POST"
+              enctype="multipart/form-data">
 
-            <?php foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
-                <?php if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') continue; ?>
+            <?= bitrix_sessid_post() ?>
+            <input type="hidden" name="WEB_FORM_ID" value="<?= $arResult["arForm"]["ID"] ?>">
+            <input type="hidden" name="web_form_submit" value="Y">
 
-                <?php
-                $fieldType = $arQuestion['STRUCTURE'][0]['FIELD_TYPE'];
-                $isRequired = $arQuestion["REQUIRED"] === "Y";
-                $isError = !empty($arResult["FORM_ERRORS"][$FIELD_SID]);
-                $errorClass = $isError ? 'error' : '';
-                $placeholder = htmlspecialcharsbx($arQuestion["CAPTION"]);
-                if ($isRequired && strpos($placeholder, '*') === false) {
-                    $placeholder .= ' *';
-                }
-                $fieldNameLower = mb_strtolower($arQuestion["CAPTION"]);
-                $inputType = 'text';
-                $fieldWrapperClass = '';
+            <div class="form-fields">
 
-                if (strpos($fieldNameLower, 'телефон') !== false || strpos($fieldNameLower, 'phone') !== false || strpos($fieldNameLower, 'тел') !== false) {
-                    $inputType = 'tel';
-                    $fieldWrapperClass = 'phone';
-                } elseif (strpos($fieldNameLower, 'email') !== false || strpos($fieldNameLower, 'почт') !== false || strpos($fieldNameLower, 'e-mail') !== false) {
-                    $inputType = 'email';
-                    $fieldWrapperClass = 'email';
-                } elseif (strpos($fieldNameLower, 'имя') !== false || strpos($fieldNameLower, 'name') !== false || strpos($fieldNameLower, 'фио') !== false) {
-                    $fieldWrapperClass = 'name';
-                }
-                ?>
+                <?php foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion): ?>
 
-                <div class="form-field <?= $errorClass ?>">
+                    <?php if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] === "hidden"): ?>
+                        <?= $arQuestion["HTML_CODE"] ?>
+                        <?php continue; ?>
+                    <?php endif; ?>
 
-                    <?php if ($fieldType == 'textarea'): ?>
+                    <?php
+                    $required = $arQuestion["REQUIRED"] === "Y";
+                    $error = !empty($arResult["FORM_ERRORS"][$FIELD_SID]);
+                    $caption = htmlspecialcharsbx($arQuestion["CAPTION"]);
+                    ?>
+
+                    <div class="form-group floating-label <?= $error ? 'error' : '' ?>">
+
                         <?php
                         $html = $arQuestion["HTML_CODE"];
-                        if (strpos($html, 'placeholder=') === false) {
-                            $html = preg_replace('/<textarea/', '<textarea placeholder="' . $placeholder . '"', $html);
-                        }
-                        // Добавляем required, если нужно
-                        if ($isRequired && strpos($html, 'required') === false) {
-                            $html = str_replace('<textarea', '<textarea required', $html);
-                        }
-                        echo $html;
-                        ?>
 
-                    <?php elseif ($fieldType == 'checkbox'): ?>
-                        <label class="checkbox <?= $errorClass ?>">
-                            <?php
-                            $html = $arQuestion["HTML_CODE"];
-                            if ($isRequired && strpos($html, 'required') === false) {
-                                $html = str_replace('<input', '<input required', $html);
-                            }
-                            echo $html;
-                            ?>
-                            <span><?= $arQuestion["CAPTION"] ?>
-                                <?php if ($isRequired): ?><span class="required">*</span><?php endif; ?>
-                            </span>
-                        </label>
-
-                    <?php elseif ($fieldType == 'dropdown'): ?>
-                        <?php
-                        $html = $arQuestion["HTML_CODE"];
-                        if ($isRequired && strpos($html, 'required') === false) {
-                            $html = str_replace('<select', '<select required', $html);
-                        }
-                        if ($isRequired && strpos($html, '<option value="">') === false && strpos($html, "<option value=''") === false) {
-                            $html = str_replace('<select', '<select><option value="">— Выберите —</option>', $html);
-                        }
-                        echo $html;
-                        ?>
-
-                    <?php else:?>
-                        <?php
-                        $html = $arQuestion["HTML_CODE"];
-                        if ($inputType !== 'text') {
-                            $html = preg_replace('/type="text"/i', 'type="' . $inputType . '"', $html);
-                        }
-
-                        if ($isRequired && strpos($html, 'required') === false) {
+                        $html = preg_replace(
+                            '/<input([^>]+)>/i',
+                            '<input$1 id="field-' . $FIELD_SID . '" class="form-control" placeholder=" ">',
+                            $html
+                        );
+                        if ($required && strpos($html, 'required') === false) {
                             $html = str_replace('<input', '<input required', $html);
                         }
 
-                        if ($isError) {
-                            if (strpos($html, 'class="') !== false) {
-                                $html = preg_replace('/class="([^"]*)"/', 'class="$1 error"', $html);
-                            } else {
-                                $html = str_replace('<input ', '<input class="error" ', $html);
-                            }
-                        }
-
-                        if (strpos($html, 'placeholder=') === false) {
-                            $html = preg_replace('/<input/', '<input placeholder="' . $placeholder . '"', $html);
-                        }
-
-                        echo '<div class="question-block ' . $fieldWrapperClass . '">' . $html . '</div>';
+                        echo $html;
                         ?>
 
-                    <?php endif; ?>
+                        <label for="field-<?= $FIELD_SID ?>" class="floating-label-text">
+                            <?= $caption ?>
+                            <?php if ($required): ?><span class="required">*</span><?php endif; ?>
+                        </label>
 
-                    <?php if ($isError): ?>
-                        <span class="form-error"><?= htmlspecialcharsbx($arResult["FORM_ERRORS"][$FIELD_SID]) ?></span>
-                    <?php endif; ?>
+                        <?php if ($error): ?>
+                            <div class="field-error"><?= $arResult["FORM_ERRORS"][$FIELD_SID] ?></div>
+                        <?php endif; ?>
 
-                </div>
-            <?php endforeach; ?>
-            <?php if ($arResult["isUseCaptcha"] == "Y"): ?>
-                <div class="captcha-container">
-                    <label class="field-label"><?= GetMessage("FORM_CAPTCHA_TABLE_TITLE") ?></label>
-                    <input type="hidden" name="captcha_sid" value="<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" />
-                    <div style="margin-bottom: 10px;">
-                        <img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>" width="180" height="40" alt="CAPTCHA"/>
                     </div>
-                    <label class="field-label">
-                        <?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?> <span class="required">*</span>
-                    </label>
-                    <input
-                            type="text"
-                            name="captcha_word"
-                            placeholder="<?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?> *"
-                            class="inputtext <?= !empty($arResult['FORM_ERRORS']['captcha_word']) ? 'error' : '' ?>"
-                            required
-                    >
-                    <?php if (!empty($arResult['FORM_ERRORS']['captcha_word'])): ?>
-                        <span class="form-error"><?= htmlspecialcharsbx($arResult['FORM_ERRORS']['captcha_word']) ?></span>
-                    <?php endif; ?>
+
+                <?php endforeach; ?>
+                <div class="form-hint">
+                    Можно ввести название курса или программы и дату получения или обучения
                 </div>
-            <?php endif; ?>
+                <button type="submit" class="btn btn-primary btn-large">
+                    <?= htmlspecialcharsbx($arResult["arForm"]["BUTTON"] ?: 'Отправить запрос') ?>
+                </button>
+                <?php if ($arResult["isUseCaptcha"] == "Y"): ?>
+                    <div class="form-group captcha">
+                        <label>Защитный код <span class="required">*</span></label>
+                        <input type="hidden" name="captcha_sid"
+                               value="<?= htmlspecialcharsbx($arResult["CAPTCHACode"]) ?>">
+                        <img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialcharsbx($arResult["CAPTCHACode"]) ?>"
+                             alt="Капча">
+                        <input type="text" name="captcha_word" class="form-control" required placeholder="Введите код">
+                        <?php if (!empty($arResult["FORM_ERRORS"]["captcha_word"])): ?>
+                            <div class="field-error"><?= $arResult["FORM_ERRORS"]["captcha_word"] ?></div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
 
-            <div style="display: flex; gap: 24px; flex-direction: column;">
-                <input
-                        type="submit"
-                        name="web_form_submit"
-                        value="<?= htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]); ?>"
-                    <?= (intval($arResult["F_RIGHT"]) < 10 ? "disabled" : "") ?>
-                />
+
+
             </div>
-
-            <?php if ($arResult["REQUIRED_SIGN"]): ?>
-                <p style="font-size: 12px; margin-top: 10px;">
-                    <?= $arResult["REQUIRED_SIGN"] ?> - <?= GetMessage("FORM_REQUIRED_FIELDS") ?>
-                </p>
-            <?php endif; ?>
-
-        </div>
+        </form>
 
         <?= $arResult["FORM_FOOTER"] ?>
+        
+
+        <?php if (isset($_GET['formresult']) && $_GET['formresult'] === 'addok'): ?>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.getElementById('formDocModal').style.display = 'none';
+                    document.getElementById('successDocModal').style.display = 'grid';
+                    document.body.style.overflow = 'hidden';
+                    if (history.replaceState) {
+                        history.replaceState(null, null, window.location.pathname);
+                    }
+                });
+            </script>
+        <?php endif; ?>
+
     </div>
-</section>
+</div>
