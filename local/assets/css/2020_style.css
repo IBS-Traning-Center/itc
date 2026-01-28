@@ -291,10 +291,10 @@ a:hover {
     margin-top: -16px;
     outline: none;
 }
-slick-prev:hover, .slick-prev:focus,
+/*slick-prev:hover, .slick-prev:focus,
 .slick-next:hover, .slick-next:focus {
     background: url("../images/icons/chevron-down.svg") center / contain no-repeat;
-}
+}*/
 
 .slick-arrow:before {
     display: none;

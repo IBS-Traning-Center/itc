@@ -2,6 +2,7 @@
 .slider-trener-block{
     margin-left: -6px;
     margin-right: -6px;
+    overflow: hidden;
 }
 
 .slider-trener-block .slick-track{
