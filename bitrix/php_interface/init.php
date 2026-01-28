@@ -2,6 +2,8 @@
 
 use Bitrix\Main\EventManager;
 use Luxoft\Dev\Tools;
+use Bitrix\Main\Loader;
+use Bitrix\Main\Type\DateTime;
 
 define('INIT_DIR', dirname(__FILE__));
 //define("LOG_FILENAME", $_SERVER["DOCUMENT_ROOT"]."/local/logs/log.txt");
@@ -65,6 +67,24 @@ $em->addEventHandler(
         AddMessage2Log("я родился", "my_module_id");
     }
 );*/
+AddEventHandler("main", "OnAfterEpilog", function() {
+    CAgent::AddAgent(
+        "TransactNotifierAgent::sendDeletionNotifications();",
+        "main",
+        "N",
+        86400,
+        "",
+        "Y",
+        "",
+        30
+    );
+    CAgent::AddAgent(
+        "TransactCleanerAgent::cleanOldTransactions();",
+        "main",
+        "N",
+        86400
+    );
+});
 
 function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
 {
@@ -152,6 +172,243 @@ function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
     }
 }
 
+
+function CheckBonusExpirationDaily()
+{
+    if (Loader::includeModule('sale')) {
+        // Логируем начало процесса
+        \CEventLog::Add([
+            "SEVERITY" => "INFO",
+            "AUDIT_TYPE_ID" => "BONUS_EXPIRATION_START",
+            "MODULE_ID" => "sale",
+            "DESCRIPTION" => "Начало ежедневной проверки истечения баллов"
+        ]);
+
+        // Проверяем существование класса
+        if (class_exists('BonusSystem')) {
+            $expiredCount = BonusSystem::checkAndExpireBonuses();
+        } else {
+            $expiredCount = 0;
+            \CEventLog::Add([
+                "SEVERITY" => "ERROR",
+                "AUDIT_TYPE_ID" => "BONUS_EXPIRATION_ERROR",
+                "MODULE_ID" => "sale",
+                "DESCRIPTION" => "Класс BonusSystem не найден"
+            ]);
+        }
+
+        // Логируем результат
+        \CEventLog::Add([
+            "SEVERITY" => "INFO",
+            "AUDIT_TYPE_ID" => "BONUS_EXPIRATION_FINISH",
+            "MODULE_ID" => "sale",
+            "DESCRIPTION" => "Ежедневная проверка завершена. Списано транзакций: " . $expiredCount
+        ]);
+    }
+
+    return "CheckBonusExpirationDaily();";
+}
+
+// Вспомогательные функции для отчетов
+function getNewUsersCount($days)
+{
+    $dateFrom = new DateTime();
+    $dateFrom->add('-' . $days . ' days');
+
+    $filter = [
+        '>=DATE_REGISTER' => $dateFrom,
+        'ACTIVE' => 'Y'
+    ];
+
+    $dbUsers = \CUser::GetList('ID', 'ASC', $filter, ['NAV_PARAMS' => ['nPageSize' => 1]]);
+
+    return $dbUsers->NavRecordCount;
+}
+
+function getActiveUsersCount()
+{
+    $filter = [
+        'ACTIVE' => 'Y'
+    ];
+
+    $dbUsers = \CUser::GetList('ID', 'ASC', $filter, ['NAV_PARAMS' => ['nPageSize' => 1]]);
+
+    return $dbUsers->NavRecordCount;
+}
+
+// Еженедельный отчет
+function SendBonusWeeklyReport()
+{
+    if (!Loader::includeModule('sale') || !Loader::includeModule('main')) {
+        return "SendBonusWeeklyReport();";
+    }
+
+    // Получаем статистику за неделю
+    $dateFrom = new DateTime();
+    $dateFrom->add('-7 days');
+
+    // Начисления за неделю
+    $addedResult = \CSaleUserTransact::GetList(
+        [],
+        [
+            '>=DATE_CREATE' => $dateFrom,
+            'DEBIT' => 'Y',
+            '!DESCRIPTION' => 'Списание по истечении срока'
+        ],
+        ['AMOUNT']
+    );
+    $added = $addedResult->Fetch();
+
+    // Списания за неделю
+    $usedResult = \CSaleUserTransact::GetList(
+        [],
+        [
+            '>=DATE_CREATE' => $dateFrom,
+            'DEBIT' => 'N',
+            '!DESCRIPTION' => 'Списание по истечении срока'
+        ],
+        ['AMOUNT']
+    );
+    $used = $usedResult->Fetch();
+
+    // Истекшие за неделю
+    $expiredResult = \CSaleUserTransact::GetList(
+        [],
+        [
+            '>=DATE_CREATE' => $dateFrom,
+            'DESCRIPTION' => 'Списание по истечении срока'
+        ],
+        ['AMOUNT']
+    );
+    $expired = $expiredResult->Fetch();
+
+    // Отправляем отчет администраторам
+    $admins = [];
+    $rsUsers = \CUser::GetList('ID', 'ASC', ['GROUPS_ID' => [1], 'ACTIVE' => 'Y']);
+    while ($admin = $rsUsers->Fetch()) {
+        if ($admin['EMAIL']) {
+            $admins[] = $admin['EMAIL'];
+        }
+    }
+
+    if (!empty($admins)) {
+        \CEvent::Send('BONUS_WEEKLY_REPORT_ADMIN', SITE_ID, [
+            'EMAIL_TO' => implode(',', $admins),
+            'DATE_FROM' => $dateFrom->format('d.m.Y'),
+            'DATE_TO' => date('d.m.Y'),
+            'BONUS_ADDED' => $added['AMOUNT'] ?? 0,
+            'BONUS_USED' => abs($used['AMOUNT'] ?? 0),
+            'BONUS_EXPIRED' => abs($expired['AMOUNT'] ?? 0),
+            'NEW_USERS' => getNewUsersCount(7),
+            'TOTAL_ACTIVE_USERS' => getActiveUsersCount()
+        ]);
+
+        \CEventLog::Add([
+            "SEVERITY" => "INFO",
+            "AUDIT_TYPE_ID" => "BONUS_WEEKLY_REPORT_SENT",
+            "MODULE_ID" => "sale",
+            "DESCRIPTION" => "Отправлен еженедельный отчет на " . count($admins) . " админов"
+        ]);
+    }
+
+    return "SendBonusWeeklyReport();";
+}
+
+// Ежемесячная очистка старых логов
+function CleanupBonusLogs()
+{
+    if (!Loader::includeModule('sale')) {
+        return "CleanupBonusLogs();";
+    }
+
+    // Удаляем транзакции старше 2 лет
+    $dateThreshold = new DateTime();
+    $dateThreshold->add('-2 years');
+
+    // Находим старые транзакции (ограничиваем 1000 за раз)
+    $oldTransactions = \CSaleUserTransact::GetList(
+        ['ID' => 'ASC'],
+        ['<DATE_CREATE' => $dateThreshold],
+        false,
+        ['nTopCount' => 1000],
+        ['ID']
+    );
+
+    $deletedCount = 0;
+    while ($transaction = $oldTransactions->Fetch()) {
+        \CSaleUserTransact::Delete($transaction['ID']);
+        $deletedCount++;
+    }
+
+    if ($deletedCount > 0) {
+        \CEventLog::Add([
+            "SEVERITY" => "INFO",
+            "AUDIT_TYPE_ID" => "BONUS_CLEANUP",
+            "MODULE_ID" => "sale",
+            "DESCRIPTION" => "Очищено старых транзакций: " . $deletedCount
+        ]);
+    }
+
+    return "CleanupBonusLogs();";
+}
+
+// Уведомление о низком балансе баллов (опционально)
+function CheckLowBonusBalance()
+{
+    if (!Loader::includeModule('sale')) {
+        return "CheckLowBonusBalance();";
+    }
+
+    // Проверяем пользователей с низким балансом (< 100 баллов)
+    $lowBalanceUsers = [];
+
+    $dbAccounts = \CSaleUserAccount::GetList(
+        ['USER_ID' => 'ASC'],
+        [
+            'CURRENCY' => 'RUB',
+            '<=CURRENT_BUDGET' => 100,
+            '>CURRENT_BUDGET' => 0
+        ],
+        false,
+        false,
+        ['USER_ID', 'CURRENT_BUDGET']
+    );
+
+    while ($account = $dbAccounts->Fetch()) {
+        $lowBalanceUsers[] = [
+            'USER_ID' => $account['USER_ID'],
+            'BALANCE' => $account['CURRENT_BUDGET']
+        ];
+    }
+
+    if (!empty($lowBalanceUsers)) {
+        \CEventLog::Add([
+            "SEVERITY" => "INFO",
+            "AUDIT_TYPE_ID" => "LOW_BONUS_BALANCE",
+            "MODULE_ID" => "sale",
+            "DESCRIPTION" => "Пользователей с низким балансом: " . count($lowBalanceUsers)
+        ]);
+    }
+
+    return "CheckLowBonusBalance();";
+}
+
+// Тестовая функция для проверки агентов
+function TestBonusSystem()
+{
+    \CEventLog::Add([
+        "SEVERITY" => "INFO",
+        "AUDIT_TYPE_ID" => "BONUS_SYSTEM_TEST",
+        "MODULE_ID" => "sale",
+        "DESCRIPTION" => "Тестовый запуск бонусной системы: " . date('Y-m-d H:i:s')
+    ]);
+
+    // Вызываем все основные функции для теста
+    CheckBonusExpirationDaily();
+    SendBonusWeeklyReport();
+
+    return "TestBonusSystem();";
+}
 function OrderPayment($ID, $val)
 {
     CModule::IncludeModule("iblock");

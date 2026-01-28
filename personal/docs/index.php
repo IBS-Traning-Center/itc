@@ -161,10 +161,10 @@ Array()
                     Показаны записи только после 1 января 2025 года. Если вы проходили обучение или сертификацию до этой даты, то вы можете запросить документы об образовании через форму
                 </div>
                 <div class="lk-modal">
-                <button class="btn-outline">
-                    <span>Запросить документ</span>
-                </button>
-			</div>
+                    <button type="button" class="btn-outline" onclick="openDocRequestForm()">
+                        Запросить документ
+                    </button>
+                </div>
 			</div>
 
         </div>
@@ -193,6 +193,4 @@ Array()
     ],
     false
 );?>
-
-
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

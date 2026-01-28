@@ -30,6 +30,22 @@
     padding: 0;
 }
 
+.top-page-banner.talent-page .breadcrumbs{
+    margin-bottom: 56px;
+}
+
+.top-page-banner.talent-page .breadcrumbs .f-14{
+    line-height: 19px;
+}
+
+.top-page-banner.talent-page .container .banner-content h1{
+    letter-spacing: 1px;
+}
+
+.top-page-banner.talent-page .container{
+    gap: 0;
+}
+
 .talent-section p {
     margin: 0;
 }
@@ -107,7 +123,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 56px;
-    align-items: center;
 }
 
 .images-icons-block .item {
@@ -129,6 +144,10 @@
     margin: 0;
 }
 
+.images-icons-block .item p.f-20{
+    line-height: 32px;
+}
+
 .images-icons-block .item p + p{
     margin-top: 16px;
 }
@@ -138,10 +157,6 @@
 }
 
 .talent-come svg {
-    max-width: 72px;
-    min-width: 72px;
-    min-height: 72px;
-    max-height: 72px;
     display: flex;
     margin-bottom: 16px;
     justify-content: center;
@@ -149,11 +164,15 @@
 }
 
 .talent-come-icon{
-    margin-bottom: 18px;
+    margin-bottom: 28px;
+}
+
+.talent-come .talent-content .item:nth-child(1) .talent-come-icon{
+    margin-bottom: 32px;
 }
 
 .talent-come .talent-content {
-    padding: 100px 0;
+    padding: 100px 0 120px;
     display: flex;
 }
 
@@ -198,8 +217,7 @@
     max-width: 595px;
     width: 100%;
     color: var(--white);
-    font-weight: 300!important;
-    letter-spacing: 1.7px;
+    letter-spacing: 0.5px;
 }
 
 .talent-get .talent-grid-block{
@@ -254,7 +272,12 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 84px;
     column-gap: 32px;
-    max-width: 100%;
+    width: 100%;
+}
+
+.talent-get .get-grid-block{
+    max-width: 1029px;
+    row-gap: 88px;
 }
 
 .talent-get-start .get-start-grid-block .item h2{
@@ -325,6 +348,10 @@
 
 .out-client.talent-content{
     padding: 100px 0 120px;
+}
+
+.out-client.talent-content h2{
+    margin-bottom: 32px;
 }
 
 .get-start-grid-wrapper .trainer-modal{
@@ -401,7 +428,8 @@
 }
 
 .talent-content.telegram {
-    padding: 120px 0;
+    padding: 100px 0 140px;
+    border-top: 1px solid #B2B2B2
 }
 
 .talent-content.telegram .subscribe-main-page-block {
@@ -520,6 +548,10 @@
     padding: 0 0 120px;
 }
 
+.talent-experience p{
+    letter-spacing: 1.2px;
+}
+
 .talent-school{
     padding: 80px 0 120px;
     background-color: #F8F7F7;
@@ -535,7 +567,7 @@
     max-width: 261px;
     max-height: 254px;
     width: 100%;
-    margin-right: 56px;
+    margin-right: 126px;
 }
 
 .talent-school-img svg{
@@ -550,7 +582,6 @@
 
 .talent-school-text h2{
     margin-bottom: 32px;
-    font-weight: 400;
 }
 
 @media (max-width: 1430px) {
