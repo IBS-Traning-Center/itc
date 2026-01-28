@@ -18,7 +18,7 @@
 }
 
 .bonus-points-header .bp-current-points {
-	width: 492px;
+	max-width: 550px;
 	height: 72px;
 	font-family: var(--bp-font-noto);
 	font-style: normal;
@@ -28,6 +28,7 @@
 	color: var(--bp-white);
 	margin: 0;
 	flex-shrink: 0;
+	width: 100%;
 }
 
 .bonus-points-header .bp-warning {
