@@ -222,7 +222,7 @@
 	padding: 32px;
 	gap: 24px;
 	width: calc(50% - 12px);
-	min-width: 657px;
+	max-width: 657px;
 	min-height: 169px;
 	background: var(--bp-grey-light);
 	border-radius: var(--bp-border-radius);
