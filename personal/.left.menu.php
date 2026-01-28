@@ -35,7 +35,7 @@ $aMenuLinks = Array(
             "ICON" => "orders"
         ),
         ""
-    ),
+    ),*/
     Array(
         "Уведомления",
         "/personal/notifications/",
