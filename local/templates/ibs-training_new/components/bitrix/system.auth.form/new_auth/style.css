@@ -58,7 +58,7 @@
 	margin-bottom: 32px;
 }
 
-.bx-custom-auth .auth-modal-overlay {
+.bx-custom-auth .auth-modal-overlay { 
 	display: none;
 	position: fixed;
 	top: 0;
@@ -405,7 +405,12 @@
 	cursor: not-allowed;
 }
 
-/* Форма авторизации */
+.bx-custom-auth .field input[type="password"],
+.bx-custom-auth .field__input[type="password"] {
+	font-size: 28px;          /* было 24px → делаем крупнее */
+	line-height: 32px;
+	letter-spacing: 3px;      /* расстояние между точками */
+}
 .bx-custom-auth .auth-form {
 	display: flex;
 	flex-direction: column;
