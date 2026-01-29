@@ -1,3 +1,42 @@
+.main-top-menu-item-container.no-border {
+    border-right: none !important;
+    padding-right: 0 !important;
+    padding-left: 15px !important;
+}
+
+.main-top-menu-item-container.no-border-right {
+    border-right: none !important;
+    padding-right: 0 !important;
+}
+.no-border-right .main-top-menu-item {
+    border-right: none !important;
+}
+.no-border-right {
+    border-right: none !important;
+}
+.points-count-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100px;
+    padding: 5px;
+    height: 32px;
+    background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
+    flex: none;
+    order: 7;
+    align-self: stretch;
+    flex-grow: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    flex: none;
+
+    flex-grow: 0;
+    justify-content: center;
+}
 .main-top-menu-block {
     display: flex;
     align-items: center;
