@@ -1,6 +1,6 @@
 <?php
 $aMenuLinks = Array(
-    /*Array(
+    Array(
         "Главная",
         "/personal/",
         Array(),
@@ -8,7 +8,7 @@ $aMenuLinks = Array(
             "ICON" => "home"
         ),
         ""
-    ),*/
+    ),
     Array(
         "Бонусные баллы",
         "/personal/bonus/",
@@ -35,7 +35,7 @@ $aMenuLinks = Array(
             "ICON" => "orders"
         ),
         ""
-    ),*/
+    ),
     Array(
         "Уведомления",
         "/personal/notifications/",
@@ -53,23 +53,23 @@ $aMenuLinks = Array(
             "ICON" => "settings"
         ),
         ""
-    )
-    // Array(
-    //     "Моя корзина",
-    //     "/cart/",
-    //     Array(),
-    //     Array(
-    //         "ICON" => "cart"
-    //     ),
-    //     ""
-    // ),
-    // Array(
-    //     "Подписка",
-    //     "/subscribe/",
-    //     Array(),
-    //     Array(
-    //         "ICON" => "subscribe"
-    //     ),
-    //     ""
-    // )
+    ),
+     Array(
+         "Моя корзина",
+         "/cart/",
+         Array(),
+         Array(
+             "ICON" => "cart"
+         ),
+         ""
+     ),
+     Array(
+         "Подписка",
+         "/subscribe/",
+         Array(),
+         Array(
+             "ICON" => "subscribe"
+         ),
+         ""
+     )
 );
