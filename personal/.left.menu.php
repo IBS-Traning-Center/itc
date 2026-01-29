@@ -54,22 +54,5 @@ $aMenuLinks = Array(
         ),
         ""
     ),
-     Array(
-         "Моя корзина",
-         "/cart/",
-         Array(),
-         Array(
-             "ICON" => "cart"
-         ),
-         ""
-     ),
-     Array(
-         "Подписка",
-         "/subscribe/",
-         Array(),
-         Array(
-             "ICON" => "subscribe"
-         ),
-         ""
-     )
+
 );
