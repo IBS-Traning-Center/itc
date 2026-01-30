@@ -1,5 +1,4 @@
 <?php
-
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
@@ -11,21 +10,53 @@ use Local\Util\Functions;
 <div class="main-top-menu-block">
     <?php if (!empty($arResult)) : ?>
         <?php foreach ($arResult as $key => $value) : ?>
-           <?php $isCatalog = false;
+            <?php
+            $isCatalog = false;
             $isPersonal = false;
+            $isNotifications = false;
+            $isPoints = false;
+            $isCart = false;
+            $isIconOnly = false;
+            $showItem = true;
+            $isAboutUs = false;
 
             if (isset($value['PARAMS']['CATALOG']) && $value['PARAMS']['CATALOG'] === 'Y') {
                 $isCatalog = true;
             }
-
-            if (strpos($value['LINK'], '/personal/') !== false ||
+            if (preg_match('~^/personal/?$~', $value['LINK']) ||
+                preg_match('~^' . preg_quote(SITE_DIR, '~') . 'personal/?$~', $value['LINK']) ||
                 (isset($value['PARAMS']['PERSONAL']) && $value['PARAMS']['PERSONAL'] === 'Y')) {
                 $isPersonal = true;
             }
 
+            if ($value['TEXT'] === 'Уведомления') {
+                $isNotifications = true;
+                $isIconOnly = true;
+                $showItem = $USER->IsAuthorized();
+            }
+
+            if ($value['TEXT'] === 'Баллы') {
+                $isPoints = true;
+                $isIconOnly = true;
+                $showItem = $USER->IsAuthorized();
+            }
+
+            if ($value['TEXT'] === 'Корзина') {
+                $isCart = true;
+                $isIconOnly = true;
+                $showItem = $USER->IsAuthorized();
+            }
+
+            if ($value['TEXT'] === 'О нас' || $value['TEXT'] === 'About us' ||
+                strpos($value['LINK'], '/about/') !== false) {
+                $isAboutUs = true;
+            }
+
             $isLast = (count($arResult) == $key + 1);
+
+            if (!$showItem) continue;
             ?>
-            <div class="main-top-menu-item-container <?= $isPersonal ? 'personal-container' : '' ?>">
+            <div class="main-top-menu-item-container <?= $isPersonal ? 'personal-container' : '' ?> <?= $isIconOnly ? 'no-border' : '' ?> <?= $isAboutUs ? 'no-border-right' : '' ?>">
                 <?php if ($isPersonal && !$USER->IsAuthorized()) : ?>
                     <a href="javascript:void(0);"
                        class="main-top-menu-item <?= $isLast ? 'last-menu' : '' ?> open-auth-modal"
@@ -42,14 +73,36 @@ use Local\Util\Functions;
 
                         <?= ($isCatalog) ? Functions::buildSVG('catalog_icon', $templateFolder . '/images') : '' ?>
 
-                        <?php if (!$isPersonal || !$USER->IsAuthorized()) : ?>
-                            <span class="f-16 <?= $isCatalog ? 'catalog-link' : '' ?>"><?=$value['TEXT']?></span>
+                        <?php if (!$isNotifications && !$isPoints && !$isCart) : ?>
+                            <?php if (!$isPersonal || !$USER->IsAuthorized()) : ?>
+                                <span class="f-16 <?= $isCatalog ? 'catalog-link' : '' ?>"><?=$value['TEXT']?></span>
+                            <?php endif; ?>
                         <?php endif; ?>
 
                         <?php if ($isPersonal) : ?>
+
                             <span class="profile-icon-right">
                                 <?= Functions::buildSVG('profile_icon', $templateFolder . '/images') ?>
                             </span>
+                        <?php endif; ?>
+
+                        <?php if ($isCart && $USER->IsAuthorized()) : ?>
+                            <span class="cart-icon-right">
+                                <?= Functions::buildSVG('cart_icon', $templateFolder . '/images') ?>
+                            </span>
+                            <span class="f-16"><?=$value['TEXT']?></span>
+                        <?php endif; ?>
+
+                        <?php if ($isNotifications && $USER->IsAuthorized()) : ?>
+                            <span class="notifications-icon-right">
+                                <?= Functions::buildSVG('notifications_icon', $templateFolder . '/images') ?>
+                            </span>
+                        <?php endif; ?>
+
+                        <?php if ($isPoints && $USER->IsAuthorized()) : ?>
+                            <span class="points-count-block">
+    <span class="points-count"><?= $arParams['USER_BALANCE'] ?> Б</span>
+</span>
                         <?php endif; ?>
                     </a>
                 <?php endif; ?>
