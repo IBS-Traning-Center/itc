@@ -1,318 +1,163 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Персональный раздел");
+
+$categoryFilter = $_GET['specialty'] ?? '';
+$priceFrom = $_GET['price_from'] ?? 0;
+$priceTo = $_GET['price_to'] ?? 9999999;
+
+function getSelfStudyValue() {
+    $property = CIBlockProperty::GetList(
+        array(),
+        array('IBLOCK_ID' => 6, 'CODE' => 'FORMAT')
+    )->Fetch();
+
+    if ($property && $property['PROPERTY_TYPE'] == 'L') {
+        $enumRes = CIBlockPropertyEnum::GetList(
+            array(),
+            array(
+                'PROPERTY_ID' => $property['ID'],
+                'VALUE' => 'Self_Study'
+            )
+        );
+
+        if ($enum = $enumRes->Fetch()) {
+            return $enum['ID'];
+        }
+    }
+
+    return 'Self_Study';
+}
+
+$selfStudyValue = getSelfStudyValue();
+
+$baseCourseFilter = array(
+    'IBLOCK_ID' => 6,
+    'ACTIVE' => 'Y',
+);
+if (is_numeric($selfStudyValue)) {
+    $baseCourseFilter['!=PROPERTY_FORMAT_VALUE'] = $selfStudyValue;
+} else {
+    $baseCourseFilter['!=PROPERTY_FORMAT'] = $selfStudyValue;
+}
+$coursesRes = CIBlockElement::GetList(
+    array(),
+    $baseCourseFilter,
+    false,
+    false,
+    array('ID')
+);
+
+$allCourseIds = array();
+while ($course = $coursesRes->Fetch()) {
+    $allCourseIds[] = $course['ID'];
+}
+
+$arFilter = array(
+    "IBLOCK_ID" => 9,
+    "ACTIVE" => "Y",
+);
+
+$arFilter['PROPERTY_SCHEDULE_COURSE'] = $allCourseIds;
+
+if ($categoryFilter) {
+
+    $filteredCourseFilter = $baseCourseFilter;
+    $filteredCourseFilter['PROPERTY_COURSE_IDCATEGORY'] = (int)$categoryFilter;
+
+    $filteredCoursesRes = CIBlockElement::GetList(
+        array(),
+        $filteredCourseFilter,
+        false,
+        false,
+        array('ID')
+    );
+
+    $filteredCourseIds = array();
+    while ($course = $filteredCoursesRes->Fetch()) {
+        $filteredCourseIds[] = $course['ID'];
+    }
+
+    if (!empty($filteredCourseIds)) {
+        $arFilter['PROPERTY_SCHEDULE_COURSE'] = $filteredCourseIds;
+    } else {
+        $arFilter['ID'] = 0;
+    }
+}
+
+if ($priceFrom > 0) {
+    $arFilter['>=PROPERTY_SCHEDULE_PRICE'] = $priceFrom;
+}
+if ($priceTo < 9999999) {
+    $arFilter['<=PROPERTY_SCHEDULE_PRICE'] = $priceTo;
+}
+$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "personal-lk",
+    array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "Y",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_DATE" => "Y",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array(),
+        "FILTER_NAME" => "arFilter",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => "9",
+        "IBLOCK_TYPE" => "edu",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Новости",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array(
+            "course_code", "startdate", "enddate", "schedule_time",
+            "schedule_description", "schedule_price", "schedule_onl_price",
+            "schedule_duration", "hot_checkbox", "online_link", "TIME_INTERVAL",
+            "IS_CLOSE", "LINK_DISCOUNT", "string_teacher", "LMS_ID", "CAN_BUY",
+            "sale_start_date", "sale_end_date", "ICON_SALE", "NEW_ICON", "INIT",
+            "sale_name", "ON_MAIN", "course_sale", "landing_link", "sale_link",
+            "ICON_SALE_LINK", "TESTDEV", "no_basket", "FORMAT", "COURSE_PRICE_UR",
+            "SCHEDULE_COURSE"
+        ),
+        "SET_BROWSER_TITLE" => "Y",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "Y",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "Y",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "ACTIVE_FROM",
+        "SORT_BY2" => "SORT",
+        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N"
+    ),
+    false
+);
+
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
 ?>
-
-    <div class="frame-851212741">
-        <?$APPLICATION->IncludeComponent(
-            "bitrix:menu",
-            "personal_menu",
-            [
-                "ALLOW_MULTI_SELECT" => "N",
-                "CHILD_MENU_TYPE" => "left",
-                "DELAY" => "N",
-                "MAX_LEVEL" => "1",
-                "MENU_CACHE_GET_VARS" => [],
-                "MENU_CACHE_TIME" => "3600",
-                "MENU_CACHE_TYPE" => "N",
-                "MENU_CACHE_USE_GROUPS" => "Y",
-                "ROOT_MENU_TYPE" => "left",
-                "USE_EXT" => "N",
-                "COMPONENT_TEMPLATE" => "personal_menu"
-            ],
-            false
-        );?>
-
-        <div class="frame-851212766">
-            <div class="stats-container">
-                <div class="stats-wrapper">
-                    <div class="stat-card">
-                        <div class="stat-header">
-                            <div class="stat-number green">3</div>
-                            <div class="stat-title">Курса пройдено</div>
-                        </div>
-                        <div class="cont-butt">
-                            <button class="btn-outline">Программы обучения</button>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-header">
-                            <div class="stat-number grey">0</div>
-                            <div class="stat-title">Программ пройдено</div>
-                        </div>
-                        <div class="cont-butt">
-                            <button class="btn-outline">Программы обучения</button>
-                        </div>
-
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-header">
-                            <div class="stat-number green">1</div>
-                            <div class="stat-title">Сертификация пройдена</div>
-                        </div>
-                        <button class="btn-outline">
-                            <span class="btn-text">Мои сертификаты</span>
-                        </button>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-header">
-                            <div class="stat-number green">3000</div>
-                            <div class="stat-title">Баллов на счёте</div>
-                        </div>
-                        <button class="btn-outline">
-                            <span class="btn-text">Мои баллы</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <style>
-        .frame-851212741 {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            background: #fff;
-        }
-
-        .frame-851212766 {
-            flex: 1;
-            min-width: 0;
-        }
-        .stats-container {
-            width: 100%;
-            background: #2B418B;
-            padding: 48px 56px;
-        }
-
-        .stats-wrapper {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 16px;
-            max-width: 1450px;
-            margin: 0 auto;
-        }
-        .stat-card {
-            flex: 0 0 326px;
-            width: 326px;
-            height: 298px;
-            background: #FFFFFF;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            border-radius: 0;
-            box-sizing: border-box;
-        }
-
-        .stat-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            flex-grow: 1;
-        }
-
-        .stat-number {
-            font-family: 'Stag Sans', 'Arial', sans-serif;
-            font-weight: 300;
-            font-size: 80px;
-            line-height: 1;
-            color: inherit;
-        }
-
-        .stat-number.green { color: #4C9F69; }
-        .stat-number.grey  { color: #B2B2B2; }
-
-        .stat-title {
-            font-family: 'Noto Sans', sans-serif;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 28px;
-            text-align: center;
-            color: #000;
-        }
-
-        .btn-outline {
-            width: 100%;
-            height: 54px;
-            background: #FFFFFF;
-            border: 1px solid #2B418B;
-            color: #2B418B;
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            cursor: pointer;
-            transition: all 0.25s;
-        }
-
-        .btn-outline:hover {
-            background: #2B418B;
-            color: white;
-        }
-        @media (max-width: 1200px) {
-            .stats-container {
-                padding: 32px 16px 32px 16px;
-                background: #2B418B;
-            }
-
-            .stats-wrapper {
-                display: flex;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                -webkit-overflow-scrolling: touch;
-                gap: 16px;
-                padding: 0 0 8px 0;
-                scrollbar-width: thin;
-                scrollbar-color: rgba(255,255,255,0.3) rgba(43,65,139,0.4);
-                max-width: 100%;
-                margin: 0;
-            }
-
-            .stats-wrapper::-webkit-scrollbar {
-                height: 8px;
-            }
-            .stats-wrapper::-webkit-scrollbar-track {
-                background: rgba(43,65,139,0.4);
-                border-radius: 4px;
-            }
-            .stats-wrapper::-webkit-scrollbar-thumb {
-                background: rgba(255,255,255,0.3);
-                border-radius: 4px;
-            }
-            .stat-card {
-                flex: 0 0 270px;
-                width: 270px;
-                height: 172px;
-                background: #FFFFFF;
-                padding: 8px 16px 16px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-                border-radius: 0;
-                box-sizing: border-box;
-                scroll-snap-align: start;
-                scroll-snap-stop: always;
-            }
-            .stat-header {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                padding: 0;
-                gap: 12px;
-                width: 100%;
-                height: 52px;
-                flex: none;
-                order: 0;
-                align-self: stretch;
-            }
-            .stat-number {
-                width: auto;
-                min-width: 20px;
-                height: 52px;
-                font-family: 'Noto Sans';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 34px;
-                line-height: 52px;
-                display: flex;
-                align-items: center;
-                background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                color: transparent;
-                flex: none;
-                order: 0;
-            }
-            .stat-number.green,
-            .stat-number.grey {
-                color: transparent;
-                background: linear-gradient(90deg, #2F6298 0%, #438DB0 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            .stat-title {
-                width: 100%;
-                height: 22px;
-                font-family: 'Noto Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 22px;
-                text-transform: capitalize;
-                color: #000000;
-                flex: none;
-                order: 1;
-                flex-grow: 1;
-                text-align: left;
-                white-space: normal;
-            }
-
-            .cont-butt {
-                width: 100%;
-            }
-
-            .btn-outline {
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                padding: 8px 16px;
-                width: 100%;
-                height: 40px;
-                background: #FFFFFF;
-                border: 1px solid #2B418B;
-                font-family: 'Noto Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 24px;
-                color: #2B418B;
-                cursor: pointer;
-                transition: all 0.25s;
-                flex: none;
-                order: 1;
-                align-self: stretch;
-            }
-
-            .btn-outline:hover {
-                background: #2B418B;
-                color: white;
-            }
-            .btn-text {
-                width: auto;
-                height: 24px;
-                flex: none;
-                order: 0;
-                flex-grow: 0;
-            }
-        }
-        @media (max-width: 480px) {
-
-
-            .stat-number {
-                font-size: 32px;
-                height: 48px;
-                line-height: 48px;
-            }
-        }
-        @media (max-width: 480px) {
-            .stat-card {
-                flex: 0 0 72vw;
-                width: 86vw;
-            }
-
-            .stat-number {
-                font-size: 42px;
-            }
-        }
-    </style>
-
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
