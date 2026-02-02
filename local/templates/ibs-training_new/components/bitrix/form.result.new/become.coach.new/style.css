@@ -551,7 +551,7 @@
 
 @media (max-width: 1180px) {
     .sign-course-form-block {
-        padding: 40px 0;
+        padding: 40px 0 90px; 
     }
 
     .sign-course-form-block .sign-course-form-container .questions-block .question-block .error-message {
@@ -723,6 +723,32 @@
         font-size: 16px;
         line-height: 32px;
         letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 555px) {
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block.privacy_policy_coach .error-message,
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block.agree_of_subject_coach .error-message{
+        top: 30px;
+    }
+
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block span,
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block span a{
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 300;
+        margin-top: 0;
+    }
+
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block.privacy_policy_coach,
+    .sign-course-form-block .sign-course-form-container .questions-block .question-block.agree_of_subject_coach {
+        margin-bottom: 26px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .sign-course-form-block .sign-course-form-container .questions-block .submit-main-feedback-form{
+        margin-top:6px;
     }
 }
 
