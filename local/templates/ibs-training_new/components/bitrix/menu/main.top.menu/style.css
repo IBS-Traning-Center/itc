@@ -172,6 +172,12 @@
         font-size: 14px;
         line-height: 22px;
     }
+    .points-count-block {
+        width: 50px;
+    }
+    .points-count {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 1180px) {
