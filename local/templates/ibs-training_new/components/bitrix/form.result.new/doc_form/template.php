@@ -8,7 +8,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     <div class="modal-content">
         <button class="modal-close" type="button"
                 onclick="document.getElementById('successDocModal').style.display='none'; document.body.style.overflow=''; location.href='/personal/docs/';">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="48" height="31" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="34.5626" y1="13.7896" x2="12.2887" y2="36.0635" stroke="black" stroke-width="2"/>
                 <line x1="34.2109" y1="36.0636" x2="11.937" y2="13.7897" stroke="black" stroke-width="2"/>
             </svg>
