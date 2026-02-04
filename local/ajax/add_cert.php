@@ -1,7 +1,13 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 global $formAnswer;
+
 use Bitrix\Main\Type\DateTime;
+use Luxoft\Dev\Table\CertificatesTable;
+use Luxoft\Dev\Table\HhUsersTable;
+use Luxoft\Dev\Table\VerifiedProgramsTable;
+
+define("LOG_FILENAME", $_SERVER["DOCUMENT_ROOT"]."/local/logs/hh_integration/add_cert.txt");
 
 $formAnswer = ['message' => ''];
 
@@ -74,60 +80,102 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         $hh_user_id = NULL;
 
+                        if ('' != $date_from) {
+                            $date_from = new DateTime($date_from, 'd.m.Y');
+                        }
+                        if ('' != $date_to) {
+                            $date_to = new DateTime($date_to, 'd.m.Y');
+                        }
+
                         $sql = "SELECT ID FROM b_user WHERE (EMAIL = '" . $mail . "') OR (NAME = '" . $name . "' AND LAST_NAME = '" . $surname . "' AND SECOND_NAME = '" . $patronymic . "')";
                         $recordset = $connection->query($sql);
                         if ($record = $recordset->fetch()) {
                             $user_id = $sqlHelper->forSql($record['ID']);
-        
-                            $sql = "SELECT hh_user_id FROM hh_users WHERE user_id = '" . $user_id . "'";
-                            $recordset = $connection->query($sql);
-                            if ($record = $recordset->fetch()) {
-                                $hh_user_id = $sqlHelper->forSql($record['hh_user_id']);
+
+                            $user = HhUsersTable::getList([
+                                'select' => [
+                                    'user_id',
+                                    'hh_user_id'
+                                ],
+                                'filter' => [
+                                    'user_id' => $user_id
+                                ],
+                            ])->fetch();
+
+                            if ($user) {
+                                $hh_user_id = $user['hh_user_id'];
                             }
                         }
 
-                        $sql = "INSERT certificates (surname, name, patronymic, mail, certificate_number, certificate_type, certification_level, date_from, date_to, link, user_id) 
-                        VALUES ('" . $surname . "', '" . $name . "', '" . $patronymic . "', '" . $mail . "', '" . $certificate_number . "', '" . $certificate_type . "', '" . $certification_level . "', '" . $date_from . "', '" . $date_to . "', '" . $link . "', '" . $user_id . "')";
-                        $recordset = $connection->query($sql);
-                        if ($record = $recordset->fetch()) {
-                            $message[] = 'Сертификат ' . $certificate_number . ' успешно сохранен';
-
-                            if ($hh_user_id) {
-                                $access_token_app = '1';
-                                $name = 'Authorization';
-                                $value = 'Bearer ' . $access_token_app;
-
-                                $httpClient->setHeader($name, $value, true);
-
-                                $provider_id = '';
-                                $program_id = '';
-                                $link = "https://ibs-training.ru/cert/" . $link;
-                                $date_from = new DateTime($date_from, 'd.m.Y');
-
-                                $postData = [
-                                    'certification_provider_id' => $provider_id,
-                                    'ceritification_program_id' => $program_id,
-                                    'ceritificate_link' => $link,
-                                    'certificate_id' => $certificate_number,
-                                    'issued_at' => $date_from->format('Y-m-d\TH:i:sP'),
-                                    'user_id' => $hh_user_id,
-                                ];
-
-                                if ('' != $date_to) {
-                                    $date_to = new DateTime($date_to, 'd.m.Y');
-                                    $postData['expires_at'] = $date_to->format('Y-m-d\TH:i:sP');
-                                }
-
-                                $url = 'https://api.hh.ru/external_certificates';
-                                $result = $httpClient->post($url, $postData);
-                                if ($result) {
-                                    $sql= "UPDATE certificates SET sent_to_hh = TRUE WHERE certificate_number = '" . $certificate_number . "'";
-                                    $set = $connection->query($sql);
-                                }
-                            }
-                        } else {
+                        $result = CertificatesTable::add(
+                            array(
+                                'surname' => $surname,
+                                'name' => $name,
+                                'patronymic' => $patronymic,
+                                'mail' => $mail,
+                                'certificate_number' => $certificate_number,
+                                'certificate_type' => $certificate_type,
+                                'certification_level' => $certification_level,
+                                'date_from' => $date_from,
+                                'date_to' => $date_to,
+                                'link' => $link,
+                                'user_id' => $user_id,
+                            )
+                        );
+			if (!$result->isSuccess())
+			{
+                            AddMessage2Log($result->getErrorMessages(), "add cert");
                             $message[] = 'Ошибка при добавлении сертификата ' . $certificate_number . ' в таблицу';
-                        }
+			} else {
+                            $message[] = 'Сертификат ' . $certificate_number . ' успешно сохранен';
+                            $certificate_id = $result->getId();
+                            if ($hh_user_id) {
+                                $program = VerifiedProgramsTable::getList([
+                                    'filter' => [
+                                        'certificate_type' => $certificate_type,
+                                        'certification_level' => $certification_level
+                                    ],
+                                    'select' => [
+                                        'program_id'
+                                    ]
+                                ])->fetch();
+                                if ($program) {
+                                    $program_id = $program['program_id'];
+                                    $provider_id = '10057ab8-3eb2-4a75-a1a4-7a01e2e9cc3e';
+                                    $link = "https://ibs-training.ru/cert/" . $link;
+                                    $date_from = new DateTime($date_from, 'd.m.Y');
+
+                                    $access_token_app = 'APPLNI9MJ65CPPA0NTI4F0PLGJQ9A13C38FOVPEGQD91UOSQ99RE0JCKNT6UMK36';
+                                    $name = 'Authorization';
+                                    $value = 'Bearer ' . $access_token_app;
+                                    $httpClient->setHeader($name, $value, true);
+
+                                    $postData = [
+                                        'certification_provider_id' => $provider_id,
+                                        'ceritification_program_id' => $program_id,
+                                        'ceritificate_link' => $link,
+                                        'certificate_id' => $certificate_number,
+                                        'issued_at' => $date_from->format('Y-m-d\TH:i:sP'),
+                                        'user_id' => $hh_user_id,
+                                    ];
+
+                                    if ('' != $date_to) {
+                                        $date_to = new DateTime($date_to, 'd.m.Y');
+                                        $postData['expires_at'] = $date_to->format('Y-m-d\TH:i:sP');
+                                    }
+
+                                    $url = 'https://api.hh.ru/external_certificates';
+                                    $result = $httpClient->post($url, $postData);
+                                    if ($result) {
+                                        AddMessage2Log($result, "add cert - result");
+                                        $id = ['id' => $certificate_id, 'certificate_number' => $certificate_number];
+                                        $result = CertificatesTable::update($id, array(
+                                            'sent_to_hh' => TRUE
+                                        ));
+                                    }
+                                }
+                            }
+			}
                     } else {
                         $message[] = 'Ошибка! Сертификат ' . $certificate_number . ' имеет неверные данные';
                     }

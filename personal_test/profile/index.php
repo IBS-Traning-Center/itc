@@ -1,5 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
+use Luxoft\Dev\Table\HhUsersTable;
+
 $APPLICATION->SetTitle("Профиль");
 ?>
 <?$APPLICATION->IncludeComponent("bitrix:main.profile", "personal-pro", array(
@@ -22,10 +25,28 @@ $APPLICATION->SetTitle("Профиль");
 );?>
 
 <?
-$client_id = 'VLEAK7BKIEFJ9FAEU9M3QQ5BTN2JUH4PT3CQM86VU2NOIHDHH5LAQ6UNJKI375IM';
-$address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&client_id=&client_id=' . $client_id;
-?>
+$user_id = $USER->GetID();
+$user = HhUsersTable::getList([
+	'select' => [
+		'id',
+		'user_id',
+		'hh_user_id'
+	],
+	'filter' => [
+		'user_id' => $user_id
+	],
+])->fetch();
 
-<a href="<?=$address?>">Привязать профиль в hh.ru</a>
+if (!$user) {
+	$client_id = 'VLEAK7BKIEFJ9FAEU9M3QQ5BTN2JUH4PT3CQM86VU2NOIHDHH5LAQ6UNJKI375IM';
+	$address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&client_id=&client_id=' . $client_id;
+	?>
+		<a href="<?=$address?>">Привязать профиль в hh.ru</a>
+	<?
+} else {
+	/*$id = ['id' => $user['id'], 'user_id' => $user['user_id'], 'hh_user_id' => $user['hh_user_id']];
+	$user = HhUsersTable::delete($id);*/
+}
+?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
