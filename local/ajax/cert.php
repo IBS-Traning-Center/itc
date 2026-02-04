@@ -1,4 +1,7 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+
+use Luxoft\Dev\Table\CertificatesTable;
+
 global $USER; global $formAnswer;
 $formAnswer = ['type' => 'error', 'message' => ''];
 
@@ -17,18 +20,19 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
         $number = $_POST['NUMBER'] ?? NULL;
 
         if ($surname && $number) {
-            $connection = Bitrix\Main\Application::getConnection();
-            $sqlHelper = $connection->getSqlHelper();
+            $certificate = CertificatesTable::getList([
+                'filter' => [
+                    'certificate_number' => $number,
+                    'surname' => $surname
+                ],
+                'select' => [
+                    'date_to'
+                ]
+            ])->fetch();
 
-            $surname = $sqlHelper->forSql($surname);
-            $number = $sqlHelper->forSql($number);
-
-            $today = date('d.m.Y');
-            $sql = "SELECT date_to FROM certificates WHERE certificate_number = '" . $number . "' AND surname = '" . $surname . "'";
-            $recordset = $connection->query($sql);
-            if ($record = $recordset->fetch())
-            {
-                if ((strtotime($today) <= strtotime($record['date_to'])) || ('' == $record['date_to'])) {
+            if ($certificate) {
+                $today = date('d.m.Y');
+                if ((strtotime($today) <= strtotime($certificate['date_to'])) || ('' == $certificate['date_to'])) {
                     $formAnswer['type'] = 'active'; //Сертификат действителен
                 } else {
                     $formAnswer['type'] = 'inactive'; //Сертификат не действителен

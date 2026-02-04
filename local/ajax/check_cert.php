@@ -1,5 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+
+use Luxoft\Dev\Table\CertificatesTable;
+
 global $formAnswer;
 $formAnswer = ['type' => 'error', 'message' => ''];
 
@@ -21,14 +24,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $number = $_POST['NUMBER'] ?? NULL;
 
             if ($surname && $number) {
-                $surname = $sqlHelper->forSql($surname);
-                $number = $sqlHelper->forSql($number);
-                $today = date('d.m.Y');
+                $certificate = CertificatesTable::getList([
+                    'filter' => [
+                        'certificate_number' => $number,
+                        'surname' => $surname
+                    ],
+                    'select' => [
+                        'date_to'
+                    ]
+                ])->fetch();
 
-                $sql = "SELECT date_to FROM certificates WHERE certificate_number = '" . $number . "' AND surname = '" . $surname . "'";
-                $recordset = $connection->query($sql);
-                if ($record = $recordset->fetch()) {
-                    if ((strtotime($today) <= strtotime($record['date_to'])) || ('' == $record['date_to'])) {
+                if ($certificate) {
+                    $today = date('d.m.Y');
+                    if ((strtotime($today) <= strtotime($certificate['date_to'])) || ('' == $certificate['date_to'])) {
                         $formAnswer['type'] = 'ok';
                         $formAnswer['message'] = 'Сертификат ' . $number . ' действителен';
                     } else {
