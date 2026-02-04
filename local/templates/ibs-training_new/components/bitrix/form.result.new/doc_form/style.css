@@ -99,12 +99,12 @@
 
 .doc-modal .modal-content {
     position: relative;
-    width: min(92vw, 1024px);
-    max-height: 92vh;
-    overflow-y: auto;
+    max-width: 1024px;
+    width: 100%;
     background: #ffffff;
     padding: 64px;
     box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
 }
 
 .doc-modal .modal-close {
@@ -387,10 +387,13 @@
 
 @media (max-width: 768px) {
 
-    .doc-modal .form-title {
-        font-size: 36px;
-        line-height: 1.2;
-    }
+
+        .doc-modal .form-title {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 32px;
+        }
+
     .doc-modal .btn-submit {
         height: auto;
         padding: 20px 32px;
@@ -421,10 +424,10 @@
     font-size: 20px;
 }
 .doc-modal.success-modal .modal-content {
-    width: min(92vw, 1024px);
+    max-width: 1024px;
     height: auto;
-    min-height: 481px;
-    max-height: 92vh;
+    max-height: 481px;
+
     padding: 64px;
     background: #FFFFFF;
     display: flex;
@@ -434,8 +437,9 @@
     box-sizing: border-box;
 }
 .doc-modal.success-modal .modal-content > * {
-    width: 896px;
+    max-width: 896px;
     align-self: stretch;
+    width: 100%;
 }
 .doc-modal.success-modal h2 {
     margin: 0;
@@ -459,11 +463,12 @@
 }
 .doc-modal.success-modal .button-wrapper {
     margin-top: 32px;
-    width: 896px;
+    max-width: 896px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    width: 100%;
 }
 .doc-modal.success-modal .btn-primary {
     width: 100%;
@@ -488,13 +493,12 @@
 }
 .doc-modal.success-modal .modal-close {
     position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 48px;
+
+    width: 50px;
     height: 48px;
-    background: #ffffff;
+
     border: none;
-    border-radius: 50%;
+
     cursor: pointer;
     display: grid;
     place-items: center;
@@ -525,14 +529,24 @@
     }
 
     .doc-modal.success-modal h2 {
-        font-size: 36px;
-        line-height: 48px;
+
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        font-family: 'Typography PC/Body S', system-ui, sans-serif;
     }
 
-    .doc-modal.success-modal p {
-        font-size: 24px;
-        line-height: 32px;
-    }
+
+        .doc-modal.success-modal p {
+
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 24px;
+            letter-spacing: 0%;
+            font-family: 'Typography PC/Body S', system-ui, sans-serif;
+        }
+
 
     .doc-modal.success-modal .btn-primary {
         height: auto;
