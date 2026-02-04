@@ -614,6 +614,8 @@
 	.course-card{
 		max-width:328px;
 	}
+	.description{display: none;}
+	.lk-section__title{font-size: 24px;}
 }
 .trainer a {
 	color: #1d427d;

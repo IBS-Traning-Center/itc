@@ -178,6 +178,10 @@ $this->setFrameMode(true);
                                 <?=$arItem["PREVIEW_TEXT"]?>
                             </p>
                         <?endif;?>
+
+                        <div class="description">
+                            При разработке программных систем разработчики принимают множество решений...
+                        </div>
                         <div class="trainer">
 
                             <?php
@@ -196,9 +200,6 @@ $this->setFrameMode(true);
                                 endif;
                             endif;
                             ?>
-                        </div>
-                        <div class="description">
-                            При разработке программных систем разработчики принимают множество решений...
                         </div>
                         <div class="price-row">
                             <div class="price-block">
