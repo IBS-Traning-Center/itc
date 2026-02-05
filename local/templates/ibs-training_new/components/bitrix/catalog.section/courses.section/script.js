@@ -7,16 +7,27 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
 
             const courseId = this.dataset.courseId;
-            const courseName = this.dataset.courseName;
+            const scheduleId = this.dataset.scheduleId || 0;
+
             const button = this;
             const originalText = button.innerHTML;
+
+            if (parseInt(scheduleId) === 0) {
+                alert('Не удалось добавить курс. Расписание не найдено.');
+                return;
+            }
+
             button.disabled = true;
             button.innerHTML = '<span class="loading-text">Добавляем...</span>';
+
+
             const formData = new URLSearchParams();
             formData.append('sessid', BX.bitrix_sessid());
             formData.append('action', 'ADD2BASKET');
             formData.append('id', courseId);
+            formData.append('schedule_id', scheduleId);
             formData.append('quantity', 1);
+
 
             fetch('/ajax/add_course_to_basket.php', {
                 method: 'POST',

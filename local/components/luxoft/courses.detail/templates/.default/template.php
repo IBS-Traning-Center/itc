@@ -136,18 +136,32 @@ function plural_form($number, $after) {
                         <?php endif; ?>
                     </div>
                     <?php if ($arResult['price_ur'] && !$arResult['price_request']) : ?>
-                        <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
+                       <p class="f-20"><?= Loc::getMessage('PRICE_UR_TEXT', ['#PRICE#' => number_format($arResult['price_ur'], 0, '', ' ')]) ?></p>
                     <?php endif; ?>
                     <?php if ($settings['MONEY_RETURN_LINK']) : ?>
                         <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
                     <?php endif; ?>
                     <?php ?>
-                    <a data-scroll="sign" class="btn-main size-l">
-                        <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
-                    </a>
+                    <?php if (isset($arResult['schedule'][0]['id'])): ?>
+                        <button
+                                class="btn-add-to-cart add-to-cart-btn"
+                                data-course-id="<?= $arResult['id'] ?>"
+                                data-course-name="<?= htmlspecialcharsbx($arResult['name']) ?>"
+                                data-course-price="<?= $arResult['sale']['price'] ?? 0 ?>"
+                                data-schedule-id="<?= $arResult['schedule'][0]['id'] ?>"
+                                data-schedule-name="<?= htmlspecialcharsbx($arResult['schedule'][0]['name'] ?? '') ?>"
+                                data-schedule-start="<?= $arResult['schedule'][0]['date']['start'] ?? '' ?>"
+                        >
+                            В корзину
+                        </button>
+                    <?php else: ?>
+                        <div class="no-schedule-message">
+                            <p class="f-16">Нет доступных дат для записи</p>
+                        </div>
+                    <?php endif; ?>
                     <?php if ($arResult['magnet']['button']) : ?>
                         <button class="open-sign-magnet-modal btn-main" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
-                            <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
+                        <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
                         </button>
                     <?php endif; ?>
                 </div>

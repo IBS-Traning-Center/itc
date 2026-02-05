@@ -164,14 +164,7 @@ use Bitrix\Main\Localization\Loc;
             </div>
             {{/DELAYED}}
 
-            {{#PROPS}}
-            <div class="basket-item-properties">
-                <div class="property-item">
-                    <span class="property-name">{{NAME}}:</span>
-                    <span class="property-value">{{VALUE}}</span>
-                </div>
-            </div>
-            {{/PROPS}}
+
         </div>
         <div class="delete-button-container desktop-delete-btn">
             <button class="delete-item-btn" data-entity="basket-item-delete" title="Удалить из корзины">
