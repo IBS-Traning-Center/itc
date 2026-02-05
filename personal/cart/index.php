@@ -2,72 +2,235 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Корзина выбранных услуг");
 ?>
-<p>
-Вы данной странице вы можете "Оформить заказ",  просмотреть корзину выбранных услуг и отредактировать ее содержимое. "Оформление заказа" подразумевает под собой бронирование мест на тренингах и классах в школах.<br />
-Для онлайн оплаты вам будет необходимо принять условия договора оферты на оказание услуг.<br/>
-<b>Пожалуйста, будьте готовы предъявить документ о Вашем образовании по просьбе администратора учебного центра.</b>
-</p>
-<?if(false) {?>
-    <?$APPLICATION->IncludeComponent(
-        "edu:store.sale.basket.basket",
-        "template",
-        array(
-            "COUNT_DISCOUNT_4_ALL_QUANTITY" => "N",
-            "COLUMNS_LIST" => array(
-                0 => "NAME",
-                1 => "PROPS",
-                2 => "PRICE",
-                3 => "QUANTITY",
-                4 => "DELETE",
-                5 => "DELAY",
-                6 => "DISCOUNT",
-            ),
-            "AJAX_MODE" => "N",
-            "AJAX_OPTION_JUMP" => "N",
-            "AJAX_OPTION_STYLE" => "Y",
-            "AJAX_OPTION_HISTORY" => "N",
-            "PATH_TO_ORDER" => "/personal/order/make/",
-            "HIDE_COUPON" => "N",
-            "QUANTITY_FLOAT" => "N",
-            "PRICE_VAT_SHOW_VALUE" => "N",
-            "SET_TITLE" => "N",
-            "AJAX_OPTION_ADDITIONAL" => "",
-            "COMPONENT_TEMPLATE" => "template"
-        ),
-        false
-    );?>
-<?}?>
-<?$APPLICATION->IncludeComponent(
-    "luxoft:basket", "page", [], false
-);?>
-<br />
-<p>
- Далее вам будет предложен способ оплаты или выставлен счет в зависимости от какого лица вы будете оплачивать (физ, юрид лицо).
-Для  Физического лица возможна оплата услуг по квитанции через банк и также возможна интернет-оплата (процессинг Ассист), оплата от Юридического лица происходит путем безналичного расчета через компанию Заказчика.<br />
-</p>
+<div class="lk-layout">
+ <aside class="lk-sidebar">
+	<?$APPLICATION->IncludeComponent(
+	"bitrix:menu",
+	"personal_menu",
+	Array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"COMPONENT_TEMPLATE" => "personal_menu",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => [],
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "left",
+		"USE_EXT" => "N"
+	)
+);?> </aside>
+	<div class="lk-content-main">
+		<div class="lk-header">
+			<h1 class="lk-header__title">Корзина</h1>
+		</div>
+		<div class="frame-851213393">
+			<div class="lk-content">
+				<div class="lk-header-row">
+				</div>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:sale.basket.basket",
+                    "new-basket",
+                    [
+                        "COMPONENT_TEMPLATE" => "new-basket",
+                        "DEFERRED_REFRESH" => "N",
+                        "USE_DYNAMIC_SCROLL" => "Y",
+                        "SHOW_FILTER" => "Y",
+                        "SHOW_RESTORE" => "Y",
+                        "COLUMNS_LIST_EXT" => [
+                            0 => "PREVIEW_PICTURE",
+                            1 => "DETAIL_PICTURE",
+                            2 => "PREVIEW_TEXT",
+                            3 => "DISCOUNT",
+                            4 => "WEIGHT",
+                            5 => "PROPS",
+                            6 => "DELETE",
+                            7 => "DELAY",
+                            8 => "TYPE",
+                            9 => "SUM",
+                            10 => "PROPERTY_FLAG_CATALOG_SHOW",
+                            11 => "PROPERTY_short_descr",
+                            12 => "PROPERTY_course_code",
+                            13 => "PROPERTY_EDUCATION_FORMAT",
+                            14 => "PROPERTY_course_idcategory",
+                            15 => "PROPERTY_CRM_CATEGORY",
+                            16 => "PROPERTY_CATEGORY_YANDEX",
+                            17 => "PROPERTY_course_price",
+                            18 => "PROPERTY_course_language",
+                            19 => "PROPERTY_course_duration",
+                            20 => "PROPERTY_course_type",
+                            21 => "PROPERTY_course_puproses",
+                            22 => "PROPERTY_course_audience",
+                            23 => "PROPERTY_COURSE_TAGS",
+                            24 => "PROPERTY_course_trainers",
+                            25 => "PROPERTY_course_owner",
+                            26 => "PROPERTY_course_addsources",
+                            27 => "PROPERTY_course_requirements",
+                            28 => "PROPERTY_course_other",
+                            29 => "PROPERTY_course_filename",
+                            30 => "PROPERTY_course_file",
+                            31 => "PROPERTY_course_top_html",
+                            32 => "PROPERTY_course_list_coach",
+                            33 => "PROPERTY_meta_keywords",
+                            34 => "PROPERTY_meta_desc",
+                            35 => "PROPERTY_course_desc_new",
+                            36 => "PROPERTY_course_req_new",
+                            37 => "PROPERTY_course_linked_new",
+                            38 => "PROPERTY_countdown_time",
+                            39 => "PROPERTY_SHOW_ONE_PRICE",
+                            40 => "PROPERTY_COURSE_LEARNING",
+                            41 => "PROPERTY_popular",
+                            42 => "PROPERTY_CERTIFIED",
+                            43 => "PROPERTY_international_certificate",
+                            44 => "PROPERTY_NEW_YEAR",
+                            45 => "PROPERTY_ICON_PD_HOURS",
+                            46 => "PROPERTY_COMPLEXITY",
+                            47 => "PROPERTY_ICON_SALE_LINK",
+                            48 => "PROPERTY_meta_image",
+                            49 => "PROPERTY_CERTIFICATE",
+                            50 => "PROPERTY_RECOMMENDED",
+                            51 => "PROPERTY_meta_title",
+                            52 => "PROPERTY_category",
+                            53 => "PROPERTY_is_certification",
+                            54 => "PROPERTY_TECHNOLOGIES",
+                            55 => "PROPERTY_TRAINING_TYPE",
+                            56 => "PROPERTY_COURSE_PRICE_UR",
+                            57 => "PROPERTY_FOR_COURSE",
+                            58 => "PROPERTY_IMPROVED_SKILLS",
+                            59 => "PROPERTY_WHAT_LEARN",
+                            60 => "PROPERTY_IS_NEW",
+                            61 => "PROPERTY_FREE_COURSE",
+                            62 => "PROPERTY_COURSE_WITH_DISCOUT",
+                            63 => "PROPERTY_preparation_certification",
+                            64 => "PROPERTY_FORMAT",
+                            65 => "PROPERTY_VIDEOS",
+                            66 => "PROPERTY_course_tools",
+                            67 => "PROPERTY_IS_DEV",
+                            68 => "PROPERTY_MAGNET_CODE",
+                            69 => "PROPERTY_MAGNET_LEAD_NAME",
+                            70 => "PROPERTY_MAGNET_BUTTON_NAME",
+                            71 => "PROPERTY_PRICE_ON_REQUEST",
+                            72 => "PROPERTY_ICON_SALE",
+                            73 => "PROPERTY_course_format",
+                            74 => "PROPERTY_linked_format_id",
+                            75 => "PROPERTY_ID_PREDV_COURSES",
+                            76 => "PROPERTY_ID_LINKED_COURSES",
+                            77 => "PROPERTY_ID_COURSE_OWNER",
+                            78 => "PROPERTY_ID_COURSE_TYPE",
+                            79 => "PROPERTY_IS_CLASS",
+                            80 => "PROPERTY_IS_IN_CATALOG",
+                            81 => "PROPERTY_timer_text",
+                            82 => "PROPERTY_course_test_link",
+                            83 => "PROPERTY_change_link",
+                            84 => "PROPERTY_ROADMAP_TITLE",
+                            85 => "PROPERTY_ROADMAP_DESCRIPTION",
+                            86 => "PROPERTY_HABR_SPEC",
+                            87 => "PROPERTY_HABR_MIN_KVAL",
+                            88 => "PROPERTY_HABR_MAX_KVAL",
+                            89 => "PROPERTY_HABR_SKILLS",
+                            90 => "PROPERTY_REDIRECT_URL",
+                            91 => "PROPERTY_city",
+                            92 => "PROPERTY_schedule_course",
+                            93 => "PROPERTY_startdate",
+                            94 => "PROPERTY_enddate",
+                            95 => "PROPERTY_schedule_time",
+                            96 => "PROPERTY_schedule_description",
+                            97 => "PROPERTY_schedule_price",
+                            98 => "PROPERTY_schedule_onl_price",
+                            99 => "PROPERTY_schedule_duration",
+                            100 => "PROPERTY_schedule_course_type",
+                            101 => "PROPERTY_hot_checkbox",
+                            102 => "PROPERTY_teacher",
+                            103 => "PROPERTY_online_link",
+                            104 => "PROPERTY_TIME_INTERVAL",
+                            105 => "PROPERTY_IS_CLOSE",
+                            106 => "PROPERTY_LINK_DISCOUNT",
+                            107 => "PROPERTY_string_teacher",
+                            108 => "PROPERTY_landing_mk",
+                            109 => "PROPERTY_ON_MAIN",
+                            110 => "PROPERTY_no_basket",
+                            111 => "PROPERTY_NEW_ICON",
+                            112 => "PROPERTY_CAN_BUY",
+                            113 => "PROPERTY_landing_link",
+                            114 => "PROPERTY_INIT",
+                            115 => "PROPERTY_LMS_ID",
+                            116 => "PROPERTY_course_sale",
+                            117 => "PROPERTY_TESTDEV",
+                            118 => "PROPERTY_sale_start_date",
+                            119 => "PROPERTY_sale_end_date",
+                            120 => "PROPERTY_sale_name",
+                            121 => "PROPERTY_sale_link",
+                            122 => "PROPERTY_prschedule_program",
+                            123 => "PROPERTY_prschedule_time",
+                            124 => "PROPERTY_prschedule_desc",
+                            125 => "PROPERTY_prschedule_courses",
+                            126 => "PROPERTY_prschedule_price",
+                            127 => "PROPERTY_prschedule_duration",
+                            128 => "PROPERTY_parent_section_id",
+                            129 => "PROPERTY_parent_section_name",
+                            130 => "PROPERTY_LEARN_TEST",
+                            131 => "PROPERTY_ROLES",
+                            132 => "PROPERTY_TECHNOLOGY",
+                            133 => "PROPERTY_type",
+                            134 => "PROPERTY_level",
+                            135 => "PROPERTY_duration",
+                            136 => "PROPERTY_time",
+                        ],
+                        "COLUMNS_LIST_MOBILE" => [
+                        ],
+                        "TEMPLATE_THEME" => "blue",
+                        "TOTAL_BLOCK_DISPLAY" => [
+                            0 => "top",
+                        ],
+                        "DISPLAY_MODE" => "extended",
+                        "PRICE_DISPLAY_MODE" => "Y",
+                        "SHOW_DISCOUNT_PERCENT" => "Y",
+                        "DISCOUNT_PERCENT_POSITION" => "bottom-right",
+                        "PRODUCT_BLOCKS_ORDER" => "props,sku,columns",
+                        "USE_PRICE_ANIMATION" => "Y",
+                        "LABEL_PROP" => [
+                        ],
+                        "PATH_TO_ORDER" => "/personal/order/make/",
+                        "HIDE_COUPON" => "N",
+                        "PRICE_VAT_SHOW_VALUE" => "N",
+                        "USE_PREPAYMENT" => "N",
+                        "QUANTITY_FLOAT" => "Y",
+                        "CORRECT_RATIO" => "Y",
+                        "AUTO_CALCULATION" => "Y",
+                        "SET_TITLE" => "Y",
+                        "ACTION_VARIABLE" => "basketAction",
+                        "COMPATIBLE_MODE" => "Y",
+                        "EMPTY_BASKET_HINT_PATH" => "/",
+                        "ADDITIONAL_PICT_PROP_6" => "-",
+                        "ADDITIONAL_PICT_PROP_9" => "-",
+                        "ADDITIONAL_PICT_PROP_10" => "-",
+                        "ADDITIONAL_PICT_PROP_71" => "-",
+                        "ADDITIONAL_PICT_PROP_136" => "-",
+                        "ADDITIONAL_PICT_PROP_138" => "-",
+                        "ADDITIONAL_PICT_PROP_183" => "-",
+                        "BASKET_IMAGES_SCALING" => "adaptive",
+                        "USE_GIFTS" => "Y",
+                        "GIFTS_PLACE" => "BOTTOM",
+                        "GIFTS_BLOCK_TITLE" => "Выберите один из подарков",
+                        "GIFTS_HIDE_BLOCK_TITLE" => "N",
+                        "GIFTS_TEXT_LABEL_GIFT" => "Подарок",
+                        "GIFTS_PRODUCT_QUANTITY_VARIABLE" => "quantity",
+                        "GIFTS_PRODUCT_PROPS_VARIABLE" => "prop",
+                        "GIFTS_SHOW_OLD_PRICE" => "N",
+                        "GIFTS_SHOW_DISCOUNT_PERCENT" => "Y",
+                        "GIFTS_MESS_BTN_BUY" => "Выбрать",
+                        "GIFTS_MESS_BTN_DETAIL" => "Подробнее",
+                        "GIFTS_PAGE_ELEMENT_COUNT" => "4",
+                        "GIFTS_CONVERT_CURRENCY" => "N",
+                        "GIFTS_HIDE_NOT_AVAILABLE" => "N",
+                        "USE_ENHANCED_ECOMMERCE" => "N"
+                    ],
+                    false
+                );?>
 
-
-<script>
-	$(document).ready(function(){
-							$("#basketOrderButton2").click(function() {
-	  							pageTracker._trackEvent('Order', 'ObtainOrder', 'personal/cart');
-							});
-	});
-</script>
-<?$APPLICATION->IncludeComponent("artions:listcourses.email", ".default", array(
-	"IBLOCK_TYPE" => "edu",
-	"IBLOCK_ID" => "6",
-	"ITEMS_LIMIT" => "10",
-	"USER_ID" => (new CUser)->GetID(),
-	"AJAX_MODE" => "N",
-	"AJAX_OPTION_SHADOW" => "Y",
-	"AJAX_OPTION_JUMP" => "N",
-	"AJAX_OPTION_STYLE" => "Y",
-	"AJAX_OPTION_HISTORY" => "N",
-	"CACHE_TYPE" => "N",
-	"CACHE_TIME" => "3600",
-	"AJAX_OPTION_ADDITIONAL" => ""
-	),
-	false
-);?>
+			</div>
+		</div>
+	</div>
+</div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
