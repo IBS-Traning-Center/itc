@@ -132,3 +132,52 @@ use Local\Util\Functions;
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
+<div id="<?= $authModalId ?>" class="auth-modal-wrapper" style="display: none;">
+    <div class="auth-modal-content">
+        <div class="auth-modal-close-btn">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.1302 12.1302L35.8698 35.8698" stroke="black" stroke-width="2"/>
+                <path d="M12.1302 35.8698L35.8698 12.1302" stroke="black" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <div class="auth-modal-body">
+            <h2 class="auth-modal-title">Регистрация и вход</h2>
+            <div class="auth-tabs">
+                <button class="auth-tab auth-tab--register" onclick="switchAuthTab('register')">
+                    <span class="auth-tab-text">Регистрация</span>
+                </button>
+                <button class="auth-tab auth-tab--login active" onclick="switchAuthTab('login')">
+                    <span class="auth-tab-text">Вход</span>
+                </button>
+            </div>
+            <div class="tabs-content">
+                <div id="tab-register" class="tab-content">
+                    <?php
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:system.auth.registration",
+                        "",
+                        array(),
+                        false
+                    );
+                    ?>
+                </div>
+                <div id="tab-login" class="tab-content active">
+                    <?php
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:system.auth.form",
+                        "new_auth",
+                        array(
+                            "REGISTER_URL" => "",
+                            "AUTH_FORGOT_PASSWORD_URL" => "/auth/forgot_pass.php",
+                            "PROFILE_URL" => "/personal/",
+                            "SHOW_ERRORS" => "Y"
+                        ),
+                        false
+                    );
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
