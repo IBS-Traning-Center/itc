@@ -5,6 +5,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 global $USER;
 $authModalId = 'auth-modal';
+use Bitrix\Sale\Basket;
+use Bitrix\Main\Context;
+
+$basket = Basket::loadItemsForFUser(
+    \Bitrix\Sale\Fuser::getId(),
+    Context::getCurrent()->getSite()
+);
+$basketItemsCount = $basket->count();
+
 use Local\Util\Functions;
 ?>
 <div class="main-top-menu-block">
@@ -88,9 +97,14 @@ use Local\Util\Functions;
 
                         <?php if ($isCart && $USER->IsAuthorized()) : ?>
                             <span class="cart-icon-right">
-                                <?= Functions::buildSVG('cart_icon', $templateFolder . '/images') ?>
+                                <?php if ($basketItemsCount > 0) : ?>
+                                    <?= Functions::buildSVG('cart_icon_full', $templateFolder . '/images') ?>
+                                <?php else : ?>
+                                    <?= Functions::buildSVG('cart_icon', $templateFolder . '/images') ?>
+                                <?php endif; ?>
                             </span>
                             <span class="f-16"><?=$value['TEXT']?></span>
+
                         <?php endif; ?>
 
                         <?php if ($isNotifications && $USER->IsAuthorized()) : ?>
@@ -101,8 +115,8 @@ use Local\Util\Functions;
 
                         <?php if ($isPoints && $USER->IsAuthorized()) : ?>
                             <span class="points-count-block">
-    <span class="points-count"><?= $arParams['USER_BALANCE'] ?> Б</span>
-</span>
+                                <span class="points-count"><?= $arParams['USER_BALANCE'] ?> Б</span>
+                            </span>
                         <?php endif; ?>
                     </a>
                 <?php endif; ?>
