@@ -27,14 +27,8 @@ if (!empty($arResult['ITEMS'])) : ?>
     <div class="section-course-block">
         <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
             <?php
-            $showCartButton = false;
 
-            $format = $item['PROPERTIES']['FORMAT']['VALUE'] ?? '';
-            $isCertification = $item['PROPERTIES']['is_certification']['VALUE_XML_ID'] ?? '';
-
-            $isSelfStudy = ($format === 'Self_Study');
-            $isCert = ($isCertification === 'Y');
-            $showCartButton = ($isSelfStudy || $isCert);
+            $showCartButton = $item['SHOW_CART_BUTTON'] ?? false;
             ?>
             <div class="course-block-wrapper">
                 <a href="/kurs/<?= $item['XML_ID'] ?>.html" class="course-block">
@@ -124,16 +118,20 @@ if (!empty($arResult['ITEMS'])) : ?>
                         <?php endif; ?>
                     </div>
 
-                    <?php if ($showCartButton) : ?>
+                    <?php if ($showCartButton) { ?>
                         <button
                                 class="btn-add-to-cart add-to-cart-btn"
                                 data-course-id="<?= $item['ID'] ?>"
                                 data-course-name="<?= htmlspecialcharsbx($item['NAME']) ?>"
-                                data-course-price="<?= $coursePrice ?? 0 ?>"
+                                data-course-price="<?= $item['SCHEDULE_PRICE'] ?? 0 ?>"
+                                data-schedule-id="<?= $item['SCHEDULE_ID'] ?? 0 ?>"
+                                data-schedule-name="<?= htmlspecialcharsbx($item['SCHEDULE_NAME'] ?? '') ?>"
+                                data-schedule-start="<?= $item['SCHEDULE_START_DATE'] ?? '' ?>"
+                                data-schedule-end="<?= $item['SCHEDULE_END_DATE'] ?? '' ?>"
                         >
-                            Добавить в корзину
+                            В корзину
                         </button>
-                    <?php endif; ?>
+<?php }?>
                 </a>
             </div>
         <?php endforeach; ?>
