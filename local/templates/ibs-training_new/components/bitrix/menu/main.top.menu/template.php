@@ -56,11 +56,6 @@ use Local\Util\Functions;
                 $showItem = $USER->IsAuthorized();
             }
 
-            if ($value['TEXT'] === 'О нас' || $value['TEXT'] === 'About us' ||
-                strpos($value['LINK'], '/about/') !== false) {
-                $isAboutUs = true;
-            }
-
             $isLast = (count($arResult) == $key + 1);
 
             if (!$showItem) continue;
