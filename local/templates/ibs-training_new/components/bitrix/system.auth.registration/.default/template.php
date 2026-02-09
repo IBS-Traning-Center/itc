@@ -355,12 +355,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['REGISTER']['FULL_NAM
 
         <?php endif; ?>
     });
-    function splitFIOauthauth($fullName) {
-        $parts = preg_split('/\s+/', trim($fullName));
-        $result = ['last_name' => '', 'name' => '', 'second_name' => ''];
-        if (count($parts) >= 1) $result['last_name'] = $parts[0];
-        if (count($parts) >= 2) $result['name'] = $parts[1];
-        if (count($parts) >= 3) $result['second_name'] = $parts[2];
-        return $result;
-    }
+    
 </script>
+<?
+function splitFIOauthauth($fullName) {
+    $parts = preg_split('/\s+/', trim($fullName));
+    $result = ['last_name' => '', 'name' => '', 'second_name' => ''];
+    if (count($parts) >= 1) $result['last_name'] = $parts[0];
+    if (count($parts) >= 2) $result['name'] = $parts[1];
+    if (count($parts) >= 3) $result['second_name'] = $parts[2];
+    return $result;
+}
+?>
