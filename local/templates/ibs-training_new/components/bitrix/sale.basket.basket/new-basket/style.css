@@ -1287,7 +1287,7 @@
 }
 @media (max-width: 600px) {
 	.container-order {
-		padding: 16px;
+		padding: 0px;
 	}
 	.course-level{display: none}
 	.trainer-name{display: none}
@@ -1368,10 +1368,7 @@
 		text-align: center;
 	}
 
-	.total-title {
-		font-size: 20px;
-		line-height: 28px;
-	}
+
 
 	.total-prices {
 		font-size: 20px;
@@ -1379,8 +1376,8 @@
 	}
 
 	.btn-order {
-		padding: 12px 24px;
-		font-size: 14px;
+		padding: 17px 16px;
+		font-size: 16px;
 	}
 
 	.conditions-link {
@@ -1451,9 +1448,7 @@
 	}
 }
 @media (max-width: 360px) {
-	.container-order {
-		padding: 12px;
-	}
+
 
 	.card {
 		padding: 12px;
@@ -1469,21 +1464,9 @@
 		line-height: 22px;
 	}
 
-	.btn-order {
-		padding: 10px 16px;
-		font-size: 12px;
-	}
 
-	.total-title {
-		font-size: 18px;
-		line-height: 24px;
-	}
 
-	.total-prices {
-		font-size: 18px;
-		line-height: 24px;
-		gap: 8px;
-	}
+
 
 	.total-old {
 		font-size: 14px;
