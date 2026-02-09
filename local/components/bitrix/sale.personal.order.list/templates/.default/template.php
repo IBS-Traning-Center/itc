@@ -261,7 +261,6 @@ if (!empty($arResult['ORDERS']) && $activeTab !== 'all') {
                                 } elseif ($isAccepted) {
                                     $paymentStatus = 'Ожидает оплаты';
                                 }
-
                                 $courseName = $item['NAME'] ?? 'Название курса';
                                 $courseLevel = $item['NOTES'] ?? ($properties['LEVEL']['VALUE'] ?? 'Уровень «Профессионал»');
                                 $coursePrice = SaleFormatCurrency($item['PRICE'], $item['CURRENCY']);
@@ -402,19 +401,36 @@ if (!empty($arResult['ORDERS']) && $activeTab !== 'all') {
 
                                             </div>
                                             <div class="card-btn-desc">
-                                            <div class="card-actions">
-                                                <a href="<?=htmlspecialcharsbx($buttonLink)?>"
-                                                   class="action-button <?=$buttonClass?> <?=($buttonClass === 'secondary' && !$isCanceled && !$isCompleted) ? 'small' : ''?>">
-                                                    <?=$buttonText?>
-                                                </a>
+                                                <div class="card-actions">
+                                                    <?php
 
-<!--                                                --><?php //if (!$isPaid && !$isCanceled && !$isCompleted): ?>
-<!--                                                    <div style="font-family: 'Inter'; font-size: 16px; color: var(--color-dark-blue); text-decoration: underline; display: flex; align-items: center;">-->
-<!--                                                        Вы выбрали рассрочку-->
-<!--                                                        <a href="#" style="margin-left: 4px;">Смотреть условия</a>-->
-<!--                                                    </div>-->
-<!--                                                --><?php //endif; ?>
-                                            </div>
+                                                    $finalLink = $buttonLink;
+                                                    $finalButtonText = $buttonText;
+
+                                                    if ($isCompleted) {
+                                                        $courseUrl = '';
+
+                                                        if (!empty($item['PRODUCT_ID']) && CModule::IncludeModule("iblock")) {
+                                                            $dbElement = CIBlockElement::GetByID($item['PRODUCT_ID']);
+                                                            if ($arElement = $dbElement->Fetch()) {
+                                                                $elementCode = $arElement['XML_ID'] ?? '';
+                                                                if (!empty($elementCode)) {
+                                                                    $courseUrl = '/kurs/' . $elementCode . '.html';
+                                                                }
+                                                            }
+                                                        }
+                                                        if (!empty($courseUrl)) {
+                                                            $finalLink = $courseUrl;
+                                                            $finalButtonText = 'Перейти к курсу';
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                    <a href="<?=htmlspecialcharsbx($finalLink)?>"
+                                                       class="action-button <?=$buttonClass?> <?=($buttonClass === 'secondary' && !$isCanceled && !$isCompleted) ? 'small' : ''?>">
+                                                        <?=$finalButtonText?>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -451,8 +467,8 @@ if (!empty($arResult['ORDERS']) && $activeTab !== 'all') {
                                                     <span>Ждём начала</span>
                                                 </div>
                                             <?php elseif ($isCompleted): ?>
+
                                                 <div class="status-badge success">
-                                                    <span class="icon icon-check"></span>
                                                     <span>Доступен</span>
                                                 </div>
                                             <?php endif; ?>
