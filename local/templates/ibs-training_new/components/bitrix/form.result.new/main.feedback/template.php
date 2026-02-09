@@ -57,7 +57,6 @@ Loc::loadMessages(__FILE__);
                                             id="<?= $question['STRUCTURE'][0]['ID'] ?>"
                                             value="<?= $question['STRUCTURE'][0]['ID'] ?>">
                                     <span><?= $question['CAPTION'] ?></span>
-
                                 <?php else : ?>
                                     <input
                                             class="inputtext main-feedback-form-input <?= $questionId ?> <?= isset($arResult['FORM_ERRORS'][$questionId]) ? 'has-error' : '' ?>"
@@ -66,7 +65,8 @@ Loc::loadMessages(__FILE__);
                                         <?= ($questionId == 'phone') ? 'id="phone_input" type="tel"' : '' ?>
                                             placeholder="<?= $question['CAPTION'] ?> <?= ($question['REQUIRED'] == 'Y') ? '' : '(не обязательно)' ?>"
                                             name="form_text_<?= $question['STRUCTURE'][0]['ID'] ?>"
-                                            type="<?= ($questionId == 'phone') ? 'tel' : $question['STRUCTURE'][0]['FIELD_TYPE'] ?>"
+                                            type="<?php if($questionId == 'phone'){echo 'tel';}elseif($questionId == 'email'){echo 'email';}else{ echo $question['STRUCTURE'][0]['FIELD_TYPE'];}?>"
+                                            
                                             value="<?= $value ?: '' ?>">
                                 <?php endif; ?>
                             </div>
