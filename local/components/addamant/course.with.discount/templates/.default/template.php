@@ -30,7 +30,7 @@ if (!empty($arResult['COURSES'])) : ?>
                 $dopClass = 'more-elem';
             }
         ?>
-        <div class="discount-courses-block container">
+        <div class="discount-courses-block container">1
             <div id="coursesDiscountSlider" class="<?= $dopClass ?>">
                 <?php foreach ($arResult['COURSES'] as $course) : ?>
                     <a href="/kurs/<?= $course['XML_ID'] ?>.html" class="discount-course-item">
@@ -69,7 +69,9 @@ if (!empty($arResult['COURSES'])) : ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
+                            <?php var_dump($course);?>
                             <div class="course-bottom-block">
+                                <?php var_dump($course);?>
                                 <?php if ($course['OLD_PRICE']) : ?>
                                     <p class="f-20 old-course-price"><?= number_format($course['OLD_PRICE'], 0, '', ' ') ?></p>
                                 <?php endif; ?>
