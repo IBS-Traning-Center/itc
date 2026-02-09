@@ -34,6 +34,11 @@ global $USER;
                                 <?= Functions::buildSVG('catalog_icon', $templateFolder . '/images') ?>
                             </div>
                             <?php break;
+                        case 'CART' : ?>
+                            <div class="icon">
+                                <?= Functions::buildSVG('cart_icon', $templateFolder . '/images') ?>
+                            </div>
+                            <?php break;
                         case 'TIME_TABLE' : ?>
                             <div class="icon">
                                 <?= Functions::buildSVG('time_icon', $templateFolder . '/images') ?>
