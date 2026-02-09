@@ -154,7 +154,13 @@
 	width: 428px;
 	flex-grow: 1;
 }
+#recommendationModal-custom .recommendation-input-wrapper {
+	width: 100% !important;
+}
 
+#recommendationModal-custom .recommendation-select {
+	width: 100% !important;
+}
 .recommendation-select {
 	box-sizing: border-box;
 	width: 100%;
