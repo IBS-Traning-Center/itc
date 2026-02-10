@@ -18,7 +18,7 @@ function validatePasswordModal(password) {
     const errors = [];
 
     if (password.length < 8) {
-        errors.push('Пароль должен быть не менее 8 символов длиной');
+        errors.push('Пароль должен быть не менее 6 символов длиной');
     }
 
     if (!/\d/.test(password)) {
