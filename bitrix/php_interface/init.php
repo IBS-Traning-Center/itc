@@ -90,11 +90,10 @@ AddEventHandler("main", "OnBeforeUserRegister", "FillFIOAndLoginFromFullName");
 
 function FillFIOAndLoginFromFullName(&$arFields)
 {
-    // Всегда устанавливаем значения по умолчанию
+
     $arFields["LAST_NAME"] = !empty($arFields["LAST_NAME"]) ? $arFields["LAST_NAME"] : 'Фамилия';
     $arFields["NAME"] = !empty($arFields["NAME"]) ? $arFields["NAME"] : 'Имя';
 
-    // Обрабатываем FULL_NAME если он есть
     if (!empty($_POST["REGISTER"]["FULL_NAME"])) {
         $fullName = trim($_POST["REGISTER"]["FULL_NAME"]);
         $parts = preg_split('/\s+/', $fullName, 3);
@@ -103,8 +102,6 @@ function FillFIOAndLoginFromFullName(&$arFields)
         $arFields["NAME"] = $parts[1] ?? $arFields["NAME"];
         $arFields["SECOND_NAME"] = $parts[2] ?? '';
     }
-
-    // Логин из email
     if (!empty($_POST["REGISTER"]["EMAIL"])) {
         $arFields["LOGIN"] = $_POST["REGISTER"]["EMAIL"];
     }
