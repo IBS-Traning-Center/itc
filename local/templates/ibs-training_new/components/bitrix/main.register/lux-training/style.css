@@ -16,7 +16,9 @@
 .field__icon:hover {
     opacity: 1;
 }
-
+.form-wrapper input[type="text"], input[type="password"], textarea {
+    padding: 5.5px 25px!important;
+}
 .registration-container {
     display: flex;
     flex-direction: column;
