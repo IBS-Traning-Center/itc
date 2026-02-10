@@ -61,11 +61,14 @@ try {
 
     $schedulePrice = 0;
     $scheduleName = '';
+    $scheduleStartDate = '';
+    $scheduleEndDate = '';
+    $scheduleTime = '';
 
     if ($scheduleId > 0) {
         if (class_exists('\\Bitrix\\Iblock\\Elements\\ElementScheduleTable')) {
             $schedule = \Bitrix\Iblock\Elements\ElementScheduleTable::getList([
-                'select' => ['ID', 'NAME', 'schedule_price', 'schedule_course'],
+                'select' => ['ID', 'NAME', 'schedule_price', 'schedule_course', 'startdate', 'enddate', 'schedule_time'],
                 'filter' => [
                     'ID' => $scheduleId,
                     'ACTIVE' => 'Y',
@@ -76,6 +79,9 @@ try {
             if ($schedule) {
                 $schedulePrice = floatval($schedule['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_schedule_price_VALUE'] ?? 0);
                 $scheduleName = $schedule['NAME'];
+                $scheduleStartDate = $schedule['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_startdate_VALUE'] ?? '';
+                $scheduleEndDate = $schedule['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_enddate_VALUE'] ?? '';
+                $scheduleTime = $schedule['IBLOCK_ELEMENTS_ELEMENT_SCHEDULE_schedule_time_VALUE'] ?? '';
             }
         }
     }
@@ -141,6 +147,67 @@ try {
                 "VALUE" => $scheduleName
             );
         }
+
+        if (!empty($scheduleStartDate)) {
+
+            $arBasketProps[] = array(
+                "NAME" => "Дата начала",
+                "CODE" => "SCHEDULE_START_DATE",
+                "VALUE" => $scheduleStartDate
+            );
+
+            if ($scheduleStartDate) {
+                try {
+                    $dateTime = new DateTime($scheduleStartDate);
+                    $formattedStartDate = $dateTime->format('d.m.Y');
+                    $arBasketProps[] = array(
+                        "NAME" => "Дата начала (формат)",
+                        "CODE" => "SCHEDULE_START_DATE_FORMATTED",
+                        "VALUE" => $formattedStartDate
+                    );
+                } catch (Exception $e) {
+
+                }
+            }
+        }
+
+        if (!empty($scheduleEndDate)) {
+            $arBasketProps[] = array(
+                "NAME" => "Дата окончания",
+                "CODE" => "SCHEDULE_END_DATE",
+                "VALUE" => $scheduleEndDate
+            );
+
+            if ($scheduleEndDate) {
+                try {
+                    $dateTime = new DateTime($scheduleEndDate);
+                    $formattedEndDate = $dateTime->format('d.m.Y');
+                    $arBasketProps[] = array(
+                        "NAME" => "Дата окончания (формат)",
+                        "CODE" => "SCHEDULE_END_DATE_FORMATTED",
+                        "VALUE" => $formattedEndDate
+                    );
+                } catch (Exception $e) {
+
+                }
+            }
+        }
+
+        if (!empty($scheduleTime)) {
+            $arBasketProps[] = array(
+                "NAME" => "Время проведения",
+                "CODE" => "SCHEDULE_TIME",
+                "VALUE" => $scheduleTime
+            );
+        }
+
+        if ($schedulePrice > 0) {
+            $arBasketProps[] = array(
+                "NAME" => "Цена по расписанию",
+                "CODE" => "SCHEDULE_PRICE_VALUE",
+                "VALUE" => $schedulePrice
+            );
+        }
     }
 
     $arBasketProps[] = array(
@@ -148,6 +215,8 @@ try {
         "CODE" => "COURSE_NAME",
         "VALUE" => $arElement['NAME']
     );
+
+    error_log("Schedule Props: " . print_r($arBasketProps, true));
 
     $dbBasketItem = CSaleBasket::GetList(
         [],
