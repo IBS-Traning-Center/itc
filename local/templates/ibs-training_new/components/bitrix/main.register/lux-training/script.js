@@ -5,325 +5,404 @@ function togglePassword(icon) {
     }
 }
 
-// Функция валидации пароля
+function splitFIO(fullName) {
+    const parts = fullName.trim().split(/\s+/);
+    return {
+        lastName: parts[0] || '',
+        name: parts[1] || '',
+        secondName: parts[2] || ''
+    };
+}
+
 function validatePassword(password) {
     const errors = [];
 
-    if (password.length < 6) {
-        errors.push('Пароль должен быть не менее 6 символов длиной');
+    if (password.length < 8) {
+        errors.push('Пароль должен быть не менее 8 символов длиной');
     }
 
-    if (!/[A-Z]/.test(password)) {
-        errors.push('Пароль должен содержать латинские символы верхнего регистра (A-Z)');
+    if (!/\d/.test(password)) {
+        errors.push('Пароль должен содержать цифры');
     }
 
-    if (!/[a-z]/.test(password)) {
-        errors.push('Пароль должен содержать латинские символы нижнего регистра (a-z)');
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        errors.push('Пароль должен содержать спецсимволы');
     }
 
     return errors;
 }
 
-// Функция для отображения ошибок под полем (красный текст друг под другом)
-function showFieldError(fieldName, message) {
-    const inputField = document.querySelector(`input[name="${fieldName}"]`);
-    if (!inputField) return;
+function showFieldError(fieldId, errorMessage) {
+    const field = document.getElementById(fieldId);
+    if (!field) return;
 
-    const wrapper = inputField.closest('.input-wrapper');
-    const errorText = wrapper?.nextElementSibling;
+    const fieldContainer = field.closest('.input-field');
+    if (!fieldContainer) return;
 
+    let errorElement = fieldContainer.querySelector('.error-text');
+    if (!errorElement) {
+        errorElement = document.createElement('div');
+        errorElement.className = 'error-text';
+        fieldContainer.appendChild(errorElement);
+    }
 
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add('show');
 
-    if (errorText) {
-        // Если сообщение содержит несколько ошибок, разбиваем их на строки
-        const messages = message.split('. ').filter(msg => msg.trim() !== '');
-
-        // Форматируем ошибки: каждая с новой строки, красный цвет
-        const formattedMessage = messages
-            .map(msg => `<span style="color: #ff0000; display: block;">${msg}</span>`)
-            .join('');
-
-        errorText.innerHTML = formattedMessage;
-        errorText.classList.add('show');
+    const wrapper = fieldContainer.querySelector('.input-wrapper');
+    if (wrapper) {
+        wrapper.classList.add('error');
     }
 }
 
-// Функция для очистки ошибок поля
-function clearFieldError(fieldName) {
-    const inputField = document.querySelector(`input[name="${fieldName}"]`);
-    if (!inputField) return;
+function hideFieldError(fieldId) {
+    const field = document.getElementById(fieldId);
+    if (!field) return;
 
-    const wrapper = inputField.closest('.input-wrapper');
-    const errorText = wrapper?.nextElementSibling;
+    const fieldContainer = field.closest('.input-field');
+    if (!fieldContainer) return;
 
-    if (wrapper) {
-        wrapper.classList.remove('error');
-
-        // Удаляем иконку ошибки
-        const errorIcon = wrapper.querySelector('.error-icon');
-        if (errorIcon) {
-            errorIcon.remove();
+    const errorElement = fieldContainer.querySelector('.error-text');
+    if (errorElement) {
+        errorElement.classList.remove('show');
+        const isHint = errorElement.textContent.includes('Пожалуйста, введите') ||
+            errorElement.textContent.includes('Необязательное поле');
+        if (!isHint) {
+            errorElement.textContent = '';
         }
     }
 
-    if (errorText) {
-        errorText.innerHTML = ''; // Очищаем содержимое
-        errorText.classList.remove('show');
+    const wrapper = fieldContainer.querySelector('.input-wrapper');
+    if (wrapper) {
+        wrapper.classList.remove('error');
     }
 }
 
-// Функция для разбиения ФИО на части
-function splitFIO(fullName) {
-    const parts = fullName.trim().split(/\s+/);
-    return {
-        lastName: parts[0] || '',      // Фамилия
-        name: parts[1] || '',          // Имя
-        secondName: parts[2] || ''     // Отчество
-    };
+function showCheckboxError(checkboxId, errorMessage) {
+    const checkbox = document.getElementById(checkboxId);
+    if (!checkbox) return;
+
+    const checkboxGroup = checkbox.closest('.checkbox-group');
+    if (!checkboxGroup) return;
+
+    let errorElement = checkboxGroup.querySelector('.checkbox-error');
+    if (!errorElement) {
+        errorElement = document.createElement('div');
+        errorElement.className = 'checkbox-error error-text show';
+        errorElement.style.marginTop = '4px';
+        errorElement.style.color = '#ff0000';
+        checkboxGroup.appendChild(errorElement);
+    }
+
+    errorElement.textContent = errorMessage;
+}
+
+function hideCheckboxError(checkboxId) {
+    const checkbox = document.getElementById(checkboxId);
+    if (!checkbox) return;
+
+    const checkboxGroup = checkbox.closest('.checkbox-group');
+    if (!checkboxGroup) return;
+
+    const errorElement = checkboxGroup.querySelector('.checkbox-error');
+    if (errorElement) {
+        errorElement.remove();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form.inputs-container');
-    const fullNameInput = document.getElementById('fullName');
-    const hiddenName = document.getElementById('hiddenName');
-    const hiddenLastName = document.getElementById('hiddenLastName');
-    const hiddenSecondName = document.getElementById('hiddenSecondName');
-    const hiddenLogin = document.getElementById('hiddenLogin');
-    const emailInput = form.querySelector('input[name="REGISTER[EMAIL]"]');
-    const passwordInput = form.querySelector('input[name="REGISTER[PASSWORD]"]');
-    const confirmPasswordInput = form.querySelector('input[name="REGISTER[CONFIRM_PASSWORD]"]');
+    console.log('DOM загружен, инициализация формы регистрации');
 
-    // Обновление логина при вводе email
-    if (emailInput && hiddenLogin) {
-        emailInput.addEventListener('input', function() {
-            hiddenLogin.value = this.value;
-        });
-        // Инициализация
-        hiddenLogin.value = emailInput.value;
+    const form = document.getElementById('registerForm');
+    if (!form) {
+        console.error('Форма не найдена!');
+        return;
     }
 
-    // Обновление ФИО
-    if (fullNameInput) {
-        fullNameInput.addEventListener('input', function() {
-            const fioParts = splitFIO(this.value);
-            hiddenLastName.value = fioParts.lastName;
-            hiddenName.value = fioParts.name;
-            hiddenSecondName.value = fioParts.secondName;
-        });
+    const emailInput = document.getElementById('USER_EMAIL');
+    const fullNameInput = document.getElementById('FULL_NAME_INPUT');
+    const passwordInput = document.getElementById('REGISTER_PASSWORD');
+    const confirmPasswordInput = document.getElementById('REGISTER_CONFIRM_PASSWORD');
+    const policyCheckbox = document.getElementById('policyCheckbox');
+    const termsCheckbox = document.getElementById('termsCheckbox');
 
-        // Инициализация при загрузке
-        const fioParts = splitFIO(fullNameInput.value);
-        hiddenLastName.value = fioParts.lastName;
-        hiddenName.value = fioParts.name;
-        hiddenSecondName.value = fioParts.secondName;
+    const regLastName = document.getElementById('REGISTER_LAST_NAME');
+    const regName = document.getElementById('REGISTER_NAME');
+    const regSecondName = document.getElementById('REGISTER_SECOND_NAME');
+    const regLogin = document.getElementById('REGISTER_LOGIN');
+    const regEmail = document.getElementById('REGISTER_EMAIL');
+    const regFullName = document.getElementById('REGISTER_FULL_NAME');
+
+    console.log('Найденные поля:', {
+        emailInput: !!emailInput,
+        fullNameInput: !!fullNameInput,
+        passwordInput: !!passwordInput,
+        confirmPasswordInput: !!confirmPasswordInput,
+        policyCheckbox: !!policyCheckbox,
+        termsCheckbox: !!termsCheckbox,
+        regLastName: !!regLastName,
+        regName: !!regName,
+        regSecondName: !!regSecondName,
+        regLogin: !!regLogin,
+        regEmail: !!regEmail,
+        regFullName: !!regFullName
+    });
+
+    function isCheckboxChecked(checkbox) {
+        if (!checkbox) return false;
+        return checkbox.checked ||
+            checkbox.getAttribute('checked') === 'checked' ||
+            checkbox.value === 'on';
     }
 
-    // Валидация пароля при вводе
-    if (passwordInput) {
-        passwordInput.addEventListener('input', function() {
-            const password = this.value;
-            const errors = validatePassword(password);
+    function updateHiddenFields() {
+        console.log('=== ОБНОВЛЕНИЕ СКРЫТЫХ ПОЛЕЙ ===');
 
-            if (errors.length > 0) {
-                showFieldError('REGISTER[PASSWORD]', errors.join('. '));
-            } else {
-                clearFieldError('REGISTER[PASSWORD]');
+        // 1. Обновляем email поля
+        if (emailInput && emailInput.value) {
+            const email = emailInput.value.trim();
+            console.log('Email:', email);
+
+            if (regLogin) {
+                regLogin.value = email;
+                console.log('REGISTER[LOGIN] установлен:', regLogin.value);
             }
 
-            // Также проверяем подтверждение пароля
-            if (confirmPasswordInput && confirmPasswordInput.value) {
-                if (password !== confirmPasswordInput.value) {
-                    showFieldError('REGISTER[CONFIRM_PASSWORD]', 'Пароли не совпадают');
-                } else {
-                    clearFieldError('REGISTER[CONFIRM_PASSWORD]');
-                }
+            if (regEmail) {
+                regEmail.value = email;
+                console.log('REGISTER[EMAIL] установлен:', regEmail.value);
             }
-        });
-    }
+        }
 
-    // Валидация подтверждения пароля при вводе
-    if (confirmPasswordInput) {
-        confirmPasswordInput.addEventListener('input', function() {
-            const password = passwordInput ? passwordInput.value : '';
-            const confirmPassword = this.value;
+        if (fullNameInput && fullNameInput.value) {
+            const fullName = fullNameInput.value.trim();
+            console.log('ФИО:', fullName);
 
-            if (confirmPassword && password !== confirmPassword) {
-                showFieldError('REGISTER[CONFIRM_PASSWORD]', 'Пароли не совпадают');
-            } else {
-                clearFieldError('REGISTER[CONFIRM_PASSWORD]');
-            }
-        });
-    }
-
-    // Валидация при отправке формы
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            console.log('Отправка формы...');
-
-            let hasErrors = false;
-
-            // Заполняем скрытые поля из ФИО
-            if (fullNameInput && fullNameInput.value.trim()) {
-                const fioParts = splitFIO(fullNameInput.value);
-
-                if (!hiddenLastName.value && fioParts.lastName) {
-                    hiddenLastName.value = fioParts.lastName;
-                }
-                if (!hiddenName.value && fioParts.name) {
-                    hiddenName.value = fioParts.name;
-                }
-                if (!hiddenSecondName.value && fioParts.secondName) {
-                    hiddenSecondName.value = fioParts.secondName;
-                }
-
-                console.log('ФИО разбито:', {
-                    lastName: hiddenLastName.value,
-                    name: hiddenName.value,
-                    secondName: hiddenSecondName.value
-                });
+            if (regFullName) {
+                regFullName.value = fullName;
+                console.log('REGISTER[FULL_NAME] установлен:', regFullName.value);
             }
 
-            // Заполняем логин из email
-            if (emailInput && hiddenLogin && !hiddenLogin.value && emailInput.value) {
-                hiddenLogin.value = emailInput.value;
+            const fioParts = splitFIO(fullName);
+            console.log('ФИО разбито:', fioParts);
+
+            if (regLastName) {
+                regLastName.value = fioParts.lastName || 'Фамилия';
+                console.log('REGISTER[LAST_NAME] установлен:', regLastName.value);
             }
 
-            // ДЕБАГ: покажем что отправляется
-            console.log('Отправляются данные:');
-            const formData = new FormData(form);
-            for (let [key, value] of formData.entries()) {
-                console.log(key + ': ' + value);
+            if (regName) {
+                regName.value = fioParts.name || 'Имя';
+                console.log('REGISTER[NAME] установлен:', regName.value);
             }
 
-            const policyCheckbox = document.getElementById('policyCheckbox');
-            const termsCheckbox = document.getElementById('termsCheckbox');
-
-            // Проверка чекбоксов согласия
-            if (!policyCheckbox.checked || !termsCheckbox.checked) {
-                e.preventDefault();
-                alert('Пожалуйста, примите условия обработки персональных данных');
-                return false;
-            }
-
-            // Валидация email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (emailInput && !emailRegex.test(emailInput.value)) {
-                e.preventDefault();
-                showFieldError('REGISTER[EMAIL]', 'Пожалуйста, введите корректный email');
-                emailInput.focus();
-                return false;
-            }
-
-            // Валидация пароля
-            if (passwordInput) {
-                const password = passwordInput.value;
-                const errors = validatePassword(password);
-
-                if (errors.length > 0) {
-                    e.preventDefault();
-                    showFieldError('REGISTER[PASSWORD]', errors.join('. '));
-                    hasErrors = true;
-                    passwordInput.focus();
-                }
-            }
-
-            // Проверка совпадения паролей
-            if (passwordInput && confirmPasswordInput) {
-                if (passwordInput.value !== confirmPasswordInput.value) {
-                    e.preventDefault();
-                    showFieldError('REGISTER[CONFIRM_PASSWORD]', 'Пароли не совпадают');
-                    hasErrors = true;
-                    if (!hasErrors) confirmPasswordInput.focus();
-                }
-            }
-
-            // Валидация ФИО
-            if (fullNameInput) {
-                const fioValue = fullNameInput.value.trim();
-                const nameParts = fioValue.split(/\s+/);
-
-                if (fioValue.length === 0) {
-                    e.preventDefault();
-                    showFieldError('REGISTER[FULL_NAME]', 'Пожалуйста, введите ФИО');
-                    fullNameInput.focus();
-                    return false;
-                }
-
-                if (nameParts.length < 2) {
-                    e.preventDefault();
-                    showFieldError('REGISTER[FULL_NAME]', 'Пожалуйста, введите и Фамилию, и Имя через пробел');
-                    fullNameInput.focus();
-                    return false;
-                }
-            }
-
-
-            return !hasErrors;
-        });
-
-        // Скрытие ошибок при вводе
-        const inputs = form.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.addEventListener('input', function() {
-                const wrapper = this.closest('.input-wrapper');
-                const errorText = wrapper?.nextElementSibling;
-
-                if (wrapper && wrapper.classList.contains('error')) {
-                    wrapper.classList.remove('error');
-                }
-
-                if (errorText && errorText.classList.contains('show')) {
-                    // Очищаем только если это не обязательное поле с текстом-подсказкой
-                    const isOptionalHint = errorText.textContent.includes('Необязательное поле') ||
-                        errorText.textContent.includes('Пожалуйста, введите');
-
-                    if (!isOptionalHint) {
-                        errorText.innerHTML = '';
-                        errorText.classList.remove('show');
-                    }
-                }
-
-                // Удаляем иконку ошибки при вводе
-                const errorIcon = wrapper?.querySelector('.error-icon');
-                if (errorIcon) {
-                    errorIcon.remove();
-                }
-            });
-        });
-
-        // Маска для телефона
-        const phoneInput = form.querySelector('input[name="REGISTER[PERSONAL_PHONE]"]');
-        if (phoneInput) {
-            phoneInput.addEventListener('input', function(e) {
-                let value = this.value.replace(/\D/g, '');
-
-                if (value.length > 0) {
-                    // Формат: +7 (XXX) XXX-XX-XX
-                    let formatted = '+7';
-
-                    if (value.length > 1) {
-                        formatted += ' (' + value.substring(1, 4);
-                    }
-                    if (value.length >= 4) {
-                        formatted += ') ' + value.substring(4, 7);
-                    }
-                    if (value.length >= 7) {
-                        formatted += '-' + value.substring(7, 9);
-                    }
-                    if (value.length >= 9) {
-                        formatted += '-' + value.substring(9, 11);
-                    }
-
-                    this.value = formatted;
-                }
-            });
-
-            // Инициализация маски при загрузке, если есть значение
-            if (phoneInput.value && phoneInput.value.replace(/\D/g, '').length > 1) {
-                phoneInput.dispatchEvent(new Event('input'));
+            if (regSecondName) {
+                regSecondName.value = fioParts.secondName || '';
+                console.log('REGISTER[SECOND_NAME] установлен:', regSecondName.value);
             }
         }
     }
 
+    function clearAllErrors() {
 
+        hideFieldError('USER_EMAIL');
+        hideFieldError('FULL_NAME_INPUT');
+        hideFieldError('REGISTER_PASSWORD');
+        hideFieldError('REGISTER_CONFIRM_PASSWORD');
+
+        hideCheckboxError('policyCheckbox');
+        hideCheckboxError('termsCheckbox');
+    }
+
+    if (emailInput) {
+        emailInput.addEventListener('input', function() {
+            updateHiddenFields();
+            hideFieldError('USER_EMAIL');
+        });
+    }
+
+    if (fullNameInput) {
+        fullNameInput.addEventListener('input', function() {
+            updateHiddenFields();
+            hideFieldError('FULL_NAME_INPUT');
+        });
+    }
+
+    if (passwordInput) {
+        passwordInput.addEventListener('input', function() {
+            hideFieldError('REGISTER_PASSWORD');
+        });
+    }
+
+    if (confirmPasswordInput) {
+        confirmPasswordInput.addEventListener('input', function() {
+            hideFieldError('REGISTER_CONFIRM_PASSWORD');
+        });
+    }
+
+    if (policyCheckbox) {
+        policyCheckbox.addEventListener('change', function() {
+            hideCheckboxError('policyCheckbox');
+        });
+    }
+
+    if (termsCheckbox) {
+        termsCheckbox.addEventListener('change', function() {
+            hideCheckboxError('termsCheckbox');
+        });
+    }
+
+    setTimeout(updateHiddenFields, 100);
+
+    form.addEventListener('submit', function(e) {
+        console.log('=== ОБРАБОТКА ОТПРАВКИ ФОРМЫ ===');
+
+        clearAllErrors();
+
+        let hasErrors = false;
+
+        updateHiddenFields();
+
+        if (!emailInput || !emailInput.value.trim()) {
+            showFieldError('USER_EMAIL', 'Пожалуйста, введите email');
+            hasErrors = true;
+        } else {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+                showFieldError('USER_EMAIL', 'Пожалуйста, введите корректный email');
+                hasErrors = true;
+            }
+        }
+
+        if (!fullNameInput || !fullNameInput.value.trim()) {
+            showFieldError('FULL_NAME_INPUT', 'Пожалуйста, введите ФИО');
+            hasErrors = true;
+        } else {
+            const fioParts = splitFIO(fullNameInput.value.trim());
+            if (!fioParts.lastName || !fioParts.name) {
+                showFieldError('FULL_NAME_INPUT', 'Пожалуйста, введите и Фамилию, и Имя через пробел');
+                hasErrors = true;
+            }
+        }
+
+        if (!passwordInput || !passwordInput.value.trim()) {
+            showFieldError('REGISTER_PASSWORD', 'Пожалуйста, введите пароль');
+            hasErrors = true;
+        } else {
+            const passwordErrors = validatePassword(passwordInput.value);
+            if (passwordErrors.length > 0) {
+                showFieldError('REGISTER_PASSWORD', passwordErrors[0]);
+                hasErrors = true;
+            }
+        }
+
+        if (!confirmPasswordInput || !confirmPasswordInput.value.trim()) {
+            showFieldError('REGISTER_CONFIRM_PASSWORD', 'Пожалуйста, подтвердите пароль');
+            hasErrors = true;
+        } else if (passwordInput && passwordInput.value !== confirmPasswordInput.value) {
+            showFieldError('REGISTER_CONFIRM_PASSWORD', 'Пароли не совпадают');
+            hasErrors = true;
+        }
+
+        const isPolicyChecked = isCheckboxChecked(policyCheckbox);
+        const isTermsChecked = isCheckboxChecked(termsCheckbox);
+
+        console.log('Состояние чекбоксов:', {
+            policyCheckbox: isPolicyChecked,
+            termsCheckbox: isTermsChecked,
+            policyDOM: policyCheckbox ? policyCheckbox.checked : 'не найден',
+            termsDOM: termsCheckbox ? termsCheckbox.checked : 'не найден'
+        });
+
+        if (!isPolicyChecked) {
+            showCheckboxError('policyCheckbox', 'Пожалуйста, ознакомьтесь с Политикой обработки персональных данных');
+            hasErrors = true;
+        }
+
+        if (!isTermsChecked) {
+            showCheckboxError('termsCheckbox', 'Пожалуйста, согласитесь с Условиями обработки персональных данных');
+            hasErrors = true;
+        }
+
+        if (hasErrors) {
+            e.preventDefault();
+            console.log('Есть ошибки валидации');
+
+            const firstErrorField = form.querySelector('.show');
+            if (firstErrorField) {
+                firstErrorField.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                if (emailInput && emailInput.closest('.input-field').querySelector('.show')) {
+                    emailInput.focus();
+                } else if (fullNameInput && fullNameInput.closest('.input-field').querySelector('.show')) {
+                    fullNameInput.focus();
+                } else if (passwordInput && passwordInput.closest('.input-field').querySelector('.show')) {
+                    passwordInput.focus();
+                } else if (confirmPasswordInput && confirmPasswordInput.closest('.input-field').querySelector('.show')) {
+                    confirmPasswordInput.focus();
+                } else if (policyCheckbox && !isPolicyChecked) {
+                    policyCheckbox.focus();
+                } else if (termsCheckbox && !isTermsChecked) {
+                    termsCheckbox.focus();
+                }
+            }
+
+            return false;
+        }
+        if (regLogin && !regLogin.value) {
+            console.error('ОШИБКА: REGISTER[LOGIN] пустой!');
+            regLogin.value = emailInput.value;
+        }
+
+        if (regLastName && !regLastName.value) {
+            console.error('ОШИБКА: REGISTER[LAST_NAME] пустой!');
+            const fioParts = splitFIO(fullNameInput.value);
+            regLastName.value = fioParts.lastName || 'Фамилия';
+        }
+
+        if (regName && !regName.value) {
+            console.error('ОШИБКА: REGISTER[NAME] пустой!');
+            const fioParts = splitFIO(fullNameInput.value);
+            regName.value = fioParts.name || 'Имя';
+        }
+        console.log('=== ДАННЫЕ ДЛЯ ОТПРАВКИ ===');
+        const formData = new FormData(form);
+        for (let [key, value] of formData.entries()) {
+            console.log(`${key}: ${value}`);
+        }
+
+        console.log('Проверка критических полей:');
+        console.log('REGISTER[LOGIN]:', regLogin?.value || 'не найден');
+        console.log('REGISTER[LAST_NAME]:', regLastName?.value || 'не найден');
+        console.log('REGISTER[NAME]:', regName?.value || 'не найден');
+        console.log('REGISTER[EMAIL]:', regEmail?.value || 'не найден');
+        console.log('REGISTER[FULL_NAME]:', regFullName?.value || 'не найден');
+        console.log('policyCheckbox checked:', policyCheckbox?.checked);
+        console.log('termsCheckbox checked:', termsCheckbox?.checked);
+
+        console.log('=== ОТПРАВКА ФОРМЫ ===');
+        return true;
+    });
+    const phoneInput = document.getElementById('REGISTER_PERSONAL_PHONE');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                let formatted = '+7';
+                if (value.length > 1) formatted += ' (' + value.substring(1, 4);
+                if (value.length >= 4) formatted += ') ' + value.substring(4, 7);
+                if (value.length >= 7) formatted += '-' + value.substring(7, 9);
+                if (value.length >= 9) formatted += '-' + value.substring(9, 11);
+                this.value = formatted;
+            }
+        });
+
+        if (phoneInput.value && phoneInput.value.replace(/\D/g, '').length > 1) {
+            phoneInput.dispatchEvent(new Event('input'));
+        }
+    }
+
+    console.log('Форма регистрации инициализирована');
 });

@@ -148,14 +148,37 @@ use Local\Util\Functions;
             </div>
             <div class="tabs-content">
                 <div id="tab-register" class="tab-content">
-                    <?php
-                    $APPLICATION->IncludeComponent(
-                        "bitrix:system.auth.registration",
-                        "",
-                        array(),
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.register",
+                        "lux-training-mod",
+                        [
+                            "USER_PROPERTY_NAME" => "",
+                            "SEF_MODE" => "N",
+                            "SHOW_FIELDS" => [
+                                0 => "EMAIL",
+                                1 => "PASSWORD",
+                                2 => "CONFIRM_PASSWORD",
+                                3 => "NAME",
+                                4 => "LAST_NAME",
+                                5 => "SECOND_NAME",
+                                6 => "PERSONAL_PHONE",
+                                7 => "PERSONAL_CITY",
+                                8 => "LOGIN",
+                            ],
+                            "REQUIRED_FIELDS" => [
+                                0 => "EMAIL",
+                                1 => "PASSWORD",
+                                2 => "CONFIRM_PASSWORD",
+
+                            ],
+                            "AUTH" => "Y",
+                            "USE_BACKURL" => "Y",
+                            "SUCCESS_PAGE" => "/",
+                            "SET_TITLE" => "Y",
+                            "USER_PROPERTY" => []
+                        ],
                         false
-                    );
-                    ?>
+                    );?>
                 </div>
                 <div id="tab-login" class="tab-content active">
                     <?php

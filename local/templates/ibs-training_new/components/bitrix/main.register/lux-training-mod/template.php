@@ -12,169 +12,166 @@ $cityValue = $_POST['REGISTER']['PERSONAL_CITY'] ?? ($arResult['VALUES']['PERSON
 $fullNameValue = $_POST['REGISTER']['FULL_NAME'] ?? ($arResult['VALUES']['FULL_NAME'] ?? '');
 ?>
 
-<div class="registration-container">
-    <div class="form-frame">
-        <h1 class="form-header">Регистрация и вход</h1>
+<div class="modal-registration-container"> <!-- Изменено на modal-registration-container -->
+    <div class="modal-registration-form"> <!-- Изменено на modal-registration-form -->
 
-        <div class="form-tabs">
-            <a href="#" class="tab active">Регистрация</a>
-            <a href="<?= $arResult['AUTH_AUTH_URL'] ?? '/auth/' ?>" class="tab inactive">Вход</a>
-        </div>
 
         <?php if ($hasGeneralErrors && !empty($arResult['ERRORS'])): ?>
-            <div class="general-errors">
+            <div class="modal-general-errors">
                 <?php foreach ($arResult['ERRORS'] as $error): ?>
-                    <div class="error-item"><?= $error ?></div>
+                    <div class="modal-error-item"><?= $error ?></div>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
 
-        <form class="inputs-container" method="post" action="<?= POST_FORM_ACTION_URI ?>" name="regform" id="registerForm">
+        <form class="modal-registration-fields" method="post" action="<?= POST_FORM_ACTION_URI ?>" name="regform" id="registerFormModal"> <!-- Изменено на modal-registration-fields -->
             <?php if (strlen($arResult["BACKURL"]) > 0): ?>
                 <input type="hidden" name="backurl" value="<?= $arResult['BACKURL'] ?>" />
             <?php endif; ?>
 
             <!-- СКРЫТЫЕ ПОЛЯ ДЛЯ BITRIX -->
-            <input type="hidden" name="REGISTER[LAST_NAME]" id="REGISTER_LAST_NAME" value="">
-            <input type="hidden" name="REGISTER[NAME]" id="REGISTER_NAME" value="">
-            <input type="hidden" name="REGISTER[SECOND_NAME]" id="REGISTER_SECOND_NAME" value="">
-            <input type="hidden" name="REGISTER[LOGIN]" id="REGISTER_LOGIN" value="<?= htmlspecialcharsbx($emailValue) ?>">
-            <input type="hidden" name="REGISTER[EMAIL]" id="REGISTER_EMAIL" value="<?= htmlspecialcharsbx($emailValue) ?>">
+            <input type="hidden" name="REGISTER[LAST_NAME]" id="REGISTER_LAST_NAME_MODAL" value="">
+            <input type="hidden" name="REGISTER[NAME]" id="REGISTER_NAME_MODAL" value="">
+            <input type="hidden" name="REGISTER[SECOND_NAME]" id="REGISTER_SECOND_NAME_MODAL" value="">
+            <input type="hidden" name="REGISTER[LOGIN]" id="REGISTER_LOGIN_MODAL" value="<?= htmlspecialcharsbx($emailValue) ?>">
+            <input type="hidden" name="REGISTER[EMAIL]" id="REGISTER_EMAIL_MODAL" value="<?= htmlspecialcharsbx($emailValue) ?>">
 
             <!-- ПОЛЕ ДЛЯ ПОЛНОГО ФИО (для обработчика) -->
-            <input type="hidden" name="REGISTER[FULL_NAME]" id="REGISTER_FULL_NAME" value="<?= htmlspecialcharsbx($fullNameValue) ?>">
+            <input type="hidden" name="REGISTER[FULL_NAME]" id="REGISTER_FULL_NAME_MODAL" value="<?= htmlspecialcharsbx($fullNameValue) ?>">
 
-            <div class="input-field">
-                <div class="input-wrapper <?= !empty($arResult['ERRORS']['EMAIL']) ? 'error' : '' ?>">
+            <div class="modal-input-field">
+                <div class="modal-input-wrapper <?= !empty($arResult['ERRORS']['EMAIL']) ? 'modal-error' : '' ?>">
                     <input type="email"
-                           name="USER_EMAIL"
-                           id="USER_EMAIL"
+                           name="USER_EMAIL_MODAL"
+                           id="USER_EMAIL_MODAL"
                            value="<?= htmlspecialcharsbx($emailValue) ?>"
                            placeholder="Email *"
                            required
                            autocomplete="email">
                 </div>
                 <?php if (!empty($arResult['ERRORS']['EMAIL'])): ?>
-                    <div class="error-text show"><?= $arResult['ERRORS']['EMAIL'] ?></div>
+                    <div class="modal-error-text modal-show"><?= $arResult['ERRORS']['EMAIL'] ?></div> <!-- Изменено на modal-show -->
                 <?php else: ?>
-                    <div class="error-text">Пожалуйста, введите корректный email</div>
+                    <div class="modal-error-text">Пожалуйста, введите корректный email</div>
                 <?php endif; ?>
             </div>
 
-            <div class="input-field">
-                <div class="input-wrapper password-wrapper">
+            <div class="modal-input-field">
+                <div class="modal-input-wrapper modal-password-wrapper"> <!-- Убрали password-wrapper, оставили modal-password-wrapper -->
                     <input type="password"
                            name="REGISTER[PASSWORD]"
-                           id="REGISTER_PASSWORD"
+                           id="REGISTER_PASSWORD_MODAL"
                            placeholder="Пароль *"
                            required>
-                    <span class="field__icon" onclick="togglePassword(this)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <span class="modal-field__icon" onclick="togglePasswordModal(this)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.9984 9.00462C14.2075 9.00462 15.9984 10.7955 15.9984 13.0046C15.9984 15.2138 14.2075 17.0046 11.9984 17.0046C9.78927 17.0046 7.99841 15.2138 7.99841 13.0046C7.99841 10.7955 9.78927 9.00462 11.9984 9.00462ZM11.9984 10.5046C10.6177 10.5046 9.49841 11.6239 9.49841 13.0046C9.49841 14.3853 10.6177 15.5046 11.9984 15.5046C13.3791 15.5046 14.4984 14.3853 14.4984 13.0046C14.4984 11.6239 13.3791 10.5046 11.9984 10.5046ZM11.9984 5.5C16.6119 5.5 20.5945 8.65001 21.6995 13.0644C21.8001 13.4662 21.5559 13.8735 21.1541 13.9741C20.7523 14.0746 20.345 13.8305 20.2444 13.4286C19.3055 9.67796 15.9198 7 11.9984 7C8.07534 7 4.68851 9.68026 3.75127 13.4332C3.6509 13.835 3.24376 14.0794 2.84189 13.9791C2.44002 13.8787 2.1956 13.4716 2.29596 13.0697C3.39905 8.65272 7.38289 5.5 11.9984 5.5Z" fill="#212121"/></svg></span>
                 </div>
-                <div class="fio-hint">Минимум 8 символов, включить цифры и спецсимволы</div>
+                <div class="modal-hint-text">Минимум 8 символов, включить цифры и спецсимволы</div> <!-- Изменено на modal-hint-text -->
             </div>
 
-            <div class="input-field">
-                <div class="input-wrapper password-wrapper">
+            <div class="modal-input-field">
+                <div class="modal-input-wrapper modal-password-wrapper"> <!-- Убрали password-wrapper, оставили modal-password-wrapper -->
                     <input type="password"
                            name="REGISTER[CONFIRM_PASSWORD]"
-                           id="REGISTER_CONFIRM_PASSWORD"
+                           id="REGISTER_CONFIRM_PASSWORD_MODAL"
                            placeholder="Повторите пароль *"
                            required>
-                    <span class="field__icon" onclick="togglePassword(this)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <span class="modal-field__icon" onclick="togglePasswordModal(this)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.9984 9.00462C14.2075 9.00462 15.9984 10.7955 15.9984 13.0046C15.9984 15.2138 14.2075 17.0046 11.9984 17.0046C9.78927 17.0046 7.99841 15.2138 7.99841 13.0046C7.99841 10.7955 9.78927 9.00462 11.9984 9.00462ZM11.9984 10.5046C10.6177 10.5046 9.49841 11.6239 9.49841 13.0046C9.49841 14.3853 10.6177 15.5046 11.9984 15.5046C13.3791 15.5046 14.4984 14.3853 14.4984 13.0046C14.4984 11.6239 13.3791 10.5046 11.9984 10.5046ZM11.9984 5.5C16.6119 5.5 20.5945 8.65001 21.6995 13.0644C21.8001 13.4662 21.5559 13.8735 21.1541 13.9741C20.7523 14.0746 20.345 13.8305 20.2444 13.4286C19.3055 9.67796 15.9198 7 11.9984 7C8.07534 7 4.68851 9.68026 3.75127 13.4332C3.6509 13.835 3.24376 14.0794 2.84189 13.9791C2.44002 13.8787 2.1956 13.4716 2.29596 13.0697C3.39905 8.65272 7.38289 5.5 11.9984 5.5Z" fill="#212121"/></svg></span>
                 </div>
             </div>
 
-            <div class="input-field">
-                <div class="input-wrapper <?= !empty($arResult['ERRORS']['LAST_NAME']) || !empty($arResult['ERRORS']['NAME']) ? 'error' : '' ?>">
+            <div class="modal-input-field">
+                <div class="modal-input-wrapper <?= !empty($arResult['ERRORS']['LAST_NAME']) || !empty($arResult['ERRORS']['NAME']) ? 'modal-error' : '' ?>">
                     <input type="text"
-                           name="FULL_NAME_INPUT"
-                           id="FULL_NAME_INPUT"
+                           name="FULL_NAME_INPUT_MODAL"
+                           id="FULL_NAME_INPUT_MODAL"
                            value="<?= htmlspecialcharsbx($fullNameValue) ?>"
                            placeholder="ФИО*"
                            required>
                 </div>
                 <?php if (!empty($arResult['ERRORS']['LAST_NAME'])): ?>
-                    <div class="error-text show"><?= $arResult['ERRORS']['LAST_NAME'] ?></div>
+                    <div class="modal-error-text modal-show"><?= $arResult['ERRORS']['LAST_NAME'] ?></div>
                 <?php elseif (!empty($arResult['ERRORS']['NAME'])): ?>
-                    <div class="error-text show"><?= $arResult['ERRORS']['NAME'] ?></div>
+                    <div class="modal-error-text modal-show"><?= $arResult['ERRORS']['NAME'] ?></div>
                 <?php else: ?>
-                    <div class="error-text">Пожалуйста, введите ваше ФИО полностью</div>
+                    <div class="modal-error-text">Пожалуйста, введите ваше ФИО полностью</div>
                 <?php endif; ?>
             </div>
 
-            <div class="input-field">
-                <div class="input-wrapper <?= !empty($arResult['ERRORS']['PERSONAL_PHONE']) ? 'error' : '' ?>">
+            <div class="modal-input-field">
+                <div class="modal-input-wrapper <?= !empty($arResult['ERRORS']['PERSONAL_PHONE']) ? 'modal-error' : '' ?>">
                     <input type="tel"
                            name="REGISTER[PERSONAL_PHONE]"
-                           id="REGISTER_PERSONAL_PHONE"
+                           id="REGISTER_PERSONAL_PHONE_MODAL"
                            value="<?= htmlspecialcharsbx($phoneValue) ?>"
                            placeholder="Телефон"
                            autocomplete="tel">
                 </div>
                 <?php if (!empty($arResult['ERRORS']['PERSONAL_PHONE'])): ?>
-                    <div class="error-text show"><?= $arResult['ERRORS']['PERSONAL_PHONE'] ?></div>
+                    <div class="modal-error-text modal-show"><?= $arResult['ERRORS']['PERSONAL_PHONE'] ?></div>
                 <?php else: ?>
-                    <div class="error-text">Необязательное поле</div>
+                    <div class="modal-error-text">Необязательное поле</div>
                 <?php endif; ?>
             </div>
 
-            <div class="input-field">
-                <div class="input-wrapper <?= !empty($arResult['ERRORS']['PERSONAL_CITY']) ? 'error' : '' ?>">
+            <div class="modal-input-field">
+                <div class="modal-input-wrapper <?= !empty($arResult['ERRORS']['PERSONAL_CITY']) ? 'modal-error' : '' ?>">
                     <input type="text"
                            name="REGISTER[PERSONAL_CITY]"
-                           id="REGISTER_PERSONAL_CITY"
+                           id="REGISTER_PERSONAL_CITY_MODAL"
                            value="<?= htmlspecialcharsbx($cityValue) ?>"
                            placeholder="Город"
                            autocomplete="address-level2">
                 </div>
                 <?php if (!empty($arResult['ERRORS']['PERSONAL_CITY'])): ?>
-                    <div class="error-text show"><?= $arResult['ERRORS']['PERSONAL_CITY'] ?></div>
+                    <div class="modal-error-text modal-show"><?= $arResult['ERRORS']['PERSONAL_CITY'] ?></div>
                 <?php else: ?>
-                    <div class="error-text">Необязательное поле</div>
+                    <div class="modal-error-text">Необязательное поле</div>
                 <?php endif; ?>
             </div>
 
             <?php if ($arResult["USE_CAPTCHA"] == "Y"): ?>
-                <div class="input-field">
+                <div class="modal-input-field">
                     <div style="margin-bottom: 16px;">
                         <img src="/bitrix/tools/captcha.php?captcha_sid=<?= $arResult["CAPTCHA_CODE"] ?>"
                              width="180" height="40" alt="CAPTCHA" />
                         <input type="hidden" name="captcha_sid" value="<?= $arResult["CAPTCHA_CODE"] ?>" />
                     </div>
-                    <div class="input-wrapper">
+                    <div class="modal-input-wrapper">
                         <input type="text" name="captcha_word" placeholder="Введите код с картинки *" maxlength="50" required />
                     </div>
                 </div>
             <?php endif; ?>
 
-            <div class="checkboxes-container">
-                <div class="checkbox-group">
-                    <div class="checkbox-wrapper">
-                        <input type="checkbox" id="policyCheckbox" name="policyCheckbox" required value="on">
+            <div class="modal-checkboxes-container">
+                <div class="modal-checkbox-group">
+                    <div class="modal-checkbox-wrapper">
+                        <input type="checkbox" id="policyCheckboxModal" name="policyCheckboxModal" required value="on">
+
                     </div>
-                    <label for="policyCheckbox" class="checkbox-label">
+                    <label for="policyCheckboxModal" class="modal-checkbox-label">
                         Ознакомлен с <a href="/privacy-policy" target="_blank">Политикой обработки персональных данных</a>
                     </label>
                 </div>
 
-                <div class="checkbox-group">
-                    <div class="checkbox-wrapper">
-                        <input type="checkbox" id="termsCheckbox" name="termsCheckbox" required value="on">
+                <div class="modal-checkbox-group">
+                    <div class="modal-checkbox-wrapper">
+                        <input type="checkbox" id="termsCheckboxModal" name="termsCheckboxModal" required value="on">
+
                     </div>
-                    <label for="termsCheckbox" class="checkbox-label">
+                    <label for="termsCheckboxModal" class="modal-checkbox-label">
                         Соглашаюсь с <a href="/terms-of-use" target="_blank">Условиями обработки персональных данных</a>
                     </label>
                 </div>
             </div>
 
-            <div class="submit-section">
-                <button type="submit" class="submit-button" name="register_submit_button" value="<?= GetMessage("AUTH_REGISTER") ?>">
+            <div class="modal-submit-section">
+                <button type="submit" class="modal-submit-button" name="register_submit_button" value="<?= GetMessage("AUTH_REGISTER") ?>">
                     Зарегистрироваться
                 </button>
             </div>
-            <div class="login-link">
+            <div class="modal-login-link">
                 Уже есть аккаунт? <a href="<?= $arResult['AUTH_AUTH_URL'] ?? '/auth/' ?>">Войти</a>
             </div>
         </form>

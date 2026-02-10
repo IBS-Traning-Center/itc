@@ -144,9 +144,3 @@
 
 </div>
 
-<script>
-    function togglePassword(icon) {
-        const input = icon.previousElementSibling;
-        input.type = input.type === 'password' ? 'text' : 'password';
-    }
-</script>
