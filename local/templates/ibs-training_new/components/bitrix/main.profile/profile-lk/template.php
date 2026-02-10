@@ -79,7 +79,18 @@ $address = 'https://hh.ru/oauth/authorize?response_type=code&role=applicant&clie
                     После привязки профиля, данные о пройденных сертификациях будут передаваться на сайт hh.ru
                 </div>
             </div>
+            <div class="profile-link-block">
+                <div class="inner-row">
+                    <div class="hh-logo">hh</div>
 
+                    <div class="text">
+                        Ваш профиль привязан к hh.ru
+                    </div>
+                    <div class="unlink">Отвязать</div>
+
+                </div>
+
+            </div>
             <div class="buttons">
                 <button type="button" class="btn btn-cancel" onclick="history.back()">Отменить</button>
                 <button type="submit" name="save" value="Y" class="btn btn-save">Сохранить</button>
