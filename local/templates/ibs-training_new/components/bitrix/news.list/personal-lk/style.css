@@ -610,13 +610,7 @@
 		color: #000000;
 	}
 }
-@media (max-width: 480px) {
-	.course-card{
-		max-width:328px;
-	}
-	.description{display: none;}
-	.lk-section__title{font-size: 24px;}
-}
+
 .trainer a {
 	color: #1d427d;
 	text-decoration: underline;
@@ -1364,4 +1358,11 @@ background: transparent;
 	.recommended-courses-section{
 		padding: 24px 16px;
 	}
+}
+@media (max-width: 480px) {
+	.course-card{
+		max-width:328px;
+	}
+	.description{display: none;}
+	.lk-section__title{font-size: 24px;}
 }
