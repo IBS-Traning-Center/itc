@@ -86,6 +86,27 @@ AddEventHandler("main", "OnAfterEpilog", function() {
     );
 });
 
+AddEventHandler("main", "OnBeforeUserRegister", "FillFIOAndLoginFromFullName");
+
+function FillFIOAndLoginFromFullName(&$arFields)
+{
+
+    $arFields["LAST_NAME"] = !empty($arFields["LAST_NAME"]) ? $arFields["LAST_NAME"] : 'Фамилия';
+    $arFields["NAME"] = !empty($arFields["NAME"]) ? $arFields["NAME"] : 'Имя';
+
+    if (!empty($_POST["REGISTER"]["FULL_NAME"])) {
+        $fullName = trim($_POST["REGISTER"]["FULL_NAME"]);
+        $parts = preg_split('/\s+/', $fullName, 3);
+
+        $arFields["LAST_NAME"] = $parts[0] ?? $arFields["LAST_NAME"];
+        $arFields["NAME"] = $parts[1] ?? $arFields["NAME"];
+        $arFields["SECOND_NAME"] = $parts[2] ?? '';
+    }
+    if (!empty($_POST["REGISTER"]["EMAIL"])) {
+        $arFields["LOGIN"] = $_POST["REGISTER"]["EMAIL"];
+    }
+}
+
 function CheckResult($WEB_FORM_ID, &$arFields, &$arrVALUES)
 {
     global $APPLICATION;
