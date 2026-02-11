@@ -526,7 +526,7 @@ if (!empty($arResult['ORDERS']) && $activeTab !== 'all') {
 
             <div class="cancel-modal-buttons">
                 <button class="cancel-modal-button cancel-modal-cancel" id="cancelAction">
-                    Отменить
+                    Не отменять
                 </button>
                 <button class="cancel-modal-button cancel-modal-confirm" id="confirmCancel">
                     Отменить заказ
