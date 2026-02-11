@@ -14,7 +14,7 @@
                 <input type="hidden" name="backurl" value="<?=$arResult["BACKURL"]?>" />
             <?endif?>
 
-            <?if(!$arResult["PHONE_REGISTRATION"]):?>
+
                 <?if(!empty($arResult["USER_LOGIN"])):?>
                     <input type="hidden" name="USER_LOGIN" value="<?=htmlspecialcharsbx($arResult["USER_LOGIN"])?>" />
                 <?else:?>
@@ -47,26 +47,7 @@
                         </div>
                     </div>
                 <?endif?>
-            <?else:?>
-                <div class="password-field">
-                    <div class="input-wrapper">
-                        <div class="label-text">Номер телефона</div>
-                        <div class="input-field">
-                            <input type="text" value="<?=htmlspecialcharsbx($arResult["USER_PHONE_NUMBER"])?>" disabled />
-                            <input type="hidden" name="USER_PHONE_NUMBER" value="<?=htmlspecialcharsbx($arResult["USER_PHONE_NUMBER"])?>" />
-                        </div>
-                    </div>
-                </div>
 
-                <div class="password-field">
-                    <div class="input-wrapper">
-                        <div class="label-text">Код из SMS</div>
-                        <div class="input-field">
-                            <input type="text" name="USER_CHECKWORD" maxlength="50" value="<?=$arResult["USER_CHECKWORD"]?>" required autocomplete="off" />
-                        </div>
-                    </div>
-                </div>
-            <?endif?>
 
             <div class="password-field">
                 <div class="input-wrapper">
@@ -119,34 +100,5 @@
         </form>
 
     <?endif?>
-    <?if($arResult["PHONE_REGISTRATION"]):?>
-        <div id="bx_chpass_error" style="display:none"></div>
-        <div id="bx_chpass_resend"></div>
-
-        <script>
-            new BX.PhoneAuth({
-                containerId: 'bx_chpass_resend',
-                errorContainerId: 'bx_chpass_error',
-                interval: <?=$arResult["PHONE_CODE_RESEND_INTERVAL"]?>,
-                data: <?= \Bitrix\Main\Web\Json::encode(['signedData' => $arResult["SIGNED_DATA"]]) ?>,
-                onError: function(response) {
-                    var errorDiv = BX('bx_chpass_error');
-                    var errorNode = BX.findChildByClassName(errorDiv, 'errortext') || errorDiv;
-                    errorNode.innerHTML = '';
-                    for(var i = 0; i < response.errors.length; i++) {
-                        errorNode.innerHTML += BX.util.htmlspecialchars(response.errors[i].message) + '<br>';
-                    }
-                    errorDiv.style.display = '';
-                }
-            });
-        </script>
-    <?endif?>
 
 </div>
-
-<script>
-    function togglePassword(icon) {
-        const input = icon.previousElementSibling;
-        input.type = input.type === 'password' ? 'text' : 'password';
-    }
-</script>
