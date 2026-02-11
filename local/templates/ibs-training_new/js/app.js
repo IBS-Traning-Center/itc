@@ -1,5 +1,5 @@
 document.addEventListener('click', function (e) {
-    const icon = e.target.closest('.eye-icon, .field__icon');
+    const icon = e.target.closest('.eye-icon, .field__icon, .modal-field__icon');
 
     if (icon) {
         const input = icon.previousElementSibling;
