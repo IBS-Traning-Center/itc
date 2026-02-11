@@ -91,12 +91,12 @@ use Local\Util\Functions;
                         <?php endif; ?>
 
                         <?php if ($isCart && $USER->IsAuthorized()) : ?>
-                            <span class="cart-icon-right">
-                                <?php if ($basketItemsCount > 0) : ?>
+                            <span class="cart-icon-right<?=  $basketItemsCount > 0? ' in-cart' : '' ?>">
+                                <?/*php if ($basketItemsCount > 0) : ?>
                                     <?= Functions::buildSVG('cart_icon_full', $templateFolder . '/images') ?>
                                 <?php else : ?>
                                     <?= Functions::buildSVG('cart_icon', $templateFolder . '/images') ?>
-                                <?php endif; ?>
+                                <?php endif; */?>
                             </span>
                             <span class="f-16"><?=$value['TEXT']?></span>
 

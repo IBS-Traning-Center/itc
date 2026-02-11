@@ -73,12 +73,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (typeof BX.onCustomEvent === 'function') {
             BX.onCustomEvent('OnBasketChange');
         }
-
+        
         const basketCounter = document.querySelector('.basket-count, .cart-count, .header-basket-counter');
         if (basketCounter && data.count !== undefined) {
             basketCounter.textContent = data.count;
             basketCounter.style.display = data.count > 0 ? 'inline-block' : 'none';
         }
+
+        const headerCounter = document.querySelector('.cart-icon-right');
+        if (headerCounter && data.count !== undefined) {
+            headerCounter.classList.add('in-cart');
+        }
+
         const basketSum = document.querySelector('.basket-sum, .cart-sum');
         if (basketSum && data.formatted_sum) {
             basketSum.textContent = data.formatted_sum;

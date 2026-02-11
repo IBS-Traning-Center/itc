@@ -73,17 +73,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-
             button.disabled = true;
             button.innerHTML = '<span class="loading-text">Добавляем...</span>';
-
 
             const formData = new URLSearchParams();
             formData.append('sessid', BX.bitrix_sessid());
             formData.append('id', courseId);
             formData.append('schedule_id', scheduleId);
             formData.append('quantity', 1);
-
 
             fetch('/ajax/add_course_to_basket.php', {
                 method: 'POST',
@@ -128,6 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateBasketCounter(data) {
         if (typeof BX.onCustomEvent === 'function') {
             BX.onCustomEvent('OnBasketChange');
+        }
+
+        const headerCounter = document.querySelector('.cart-icon-right');
+        if (headerCounter && data.count !== undefined) {
+            headerCounter.classList.add('in-cart');
         }
 
         const basketCounter = document.querySelector('.basket-count, .cart-count, .header-basket-counter');

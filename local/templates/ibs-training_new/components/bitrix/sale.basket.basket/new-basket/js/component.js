@@ -715,7 +715,7 @@
 		},
 
 		applyBasketResult: function(result)
-		{
+		{	
 			this.changedItems = [];
 			this.clearPriceAnimationData();
 
@@ -760,6 +760,13 @@
 				{
 					this.sortSortedItems(true);
 				}
+			}
+
+			if(result.BASKET_ITEM_RENDER_DATA.length == 0){
+				const headerCounter = document.querySelector('.cart-icon-right');
+        		if (headerCounter) {
+        		    headerCounter.classList.remove('in-cart');
+        		}
 			}
 
 			if (result.TOTAL_RENDER_DATA)
