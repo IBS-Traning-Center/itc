@@ -354,6 +354,19 @@
     display: none;
 }
 
+.cart-icon-right{
+    background-image: url(images/cart_icon.svg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    display: block;
+    height: 24px;
+    width: 27px;
+}
+
+.cart-icon-right.in-cart{
+    background-image: url(images/cart_icon_full.svg);
+}
+
 @media (max-width:1180px) {
     #header .header-container .logo-block svg{
         min-width: 105px;

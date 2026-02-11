@@ -302,6 +302,11 @@ document.addEventListener('DOMContentLoaded', function() {
             BX.onCustomEvent('OnBasketChange');
         }
 
+        const headerCounter = document.querySelector('.cart-icon-right');
+        if (headerCounter && data.count !== undefined) {
+            headerCounter.classList.add('in-cart');
+        }
+
         const basketCounter = document.querySelector('.basket-count, .cart-count, .header-basket-counter');
         if (basketCounter && data.count !== undefined) {
             basketCounter.textContent = data.count;
