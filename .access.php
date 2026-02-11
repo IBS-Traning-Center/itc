@@ -1,4 +1,5 @@
 <?
+$PERM["personal"]["2"]="D";
 $PERM["new-year-promoaction-2026"]["33"]="D";
 $PERM["check_cert"]["2"]="R";
 $PERM["check_cert"]["*"]="R";

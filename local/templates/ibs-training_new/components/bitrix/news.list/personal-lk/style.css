@@ -154,7 +154,13 @@
 	width: 428px;
 	flex-grow: 1;
 }
+#recommendationModal-custom .recommendation-input-wrapper {
+	width: 100% !important;
+}
 
+#recommendationModal-custom .recommendation-select {
+	width: 100% !important;
+}
 .recommendation-select {
 	box-sizing: border-box;
 	width: 100%;
@@ -328,7 +334,6 @@
 		padding: 40px;
 		height: auto;
 		max-height: 90vh;
-		overflow-y: auto;
 		margin: 20px;
 	}
 
@@ -610,13 +615,7 @@
 		color: #000000;
 	}
 }
-@media (max-width: 480px) {
-	.course-card{
-		max-width:328px;
-	}
-	.description{display: none;}
-	.lk-section__title{font-size: 24px;}
-}
+
 .trainer a {
 	color: #1d427d;
 	text-decoration: underline;
@@ -1364,4 +1363,11 @@ background: transparent;
 	.recommended-courses-section{
 		padding: 24px 16px;
 	}
+}
+@media (max-width: 480px) {
+	.course-card{
+		max-width:328px;
+	}
+	.description{display: none;}
+	.lk-section__title{font-size: 24px;}
 }

@@ -20,5 +20,12 @@ $aMenuLinks = [
         [],
         ['TYPE' => 'TIME_TABLE'],
         ''
+    ],
+    [
+        'Корзина',
+        '/personal/cart/',
+        [],
+        ['TYPE' => 'CART'],
+        ''
     ]
 ];
