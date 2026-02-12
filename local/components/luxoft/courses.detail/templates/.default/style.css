@@ -1475,15 +1475,15 @@
     justify-content: center;
     align-items: center;
     width: 304px;
-    height: 54px;
+    height: 97px;
     padding: 32px 40px;
     gap: 10px;
-    background: #2B418B;
+    background: #0827C4;
     color: #F0F0F0;
     font-family: 'Stag Sans', sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 32px;
     box-sizing: border-box;
     flex: none;
@@ -1501,4 +1501,11 @@
 .cart-btn-cont{
     display: flex;
     justify-content: center;
+}
+@media (max-width: 1180px) {
+    .btn-add-to-cart {
+        max-width: 328px;
+        height: 54px;
+        width: 100%;
+    }
 }
