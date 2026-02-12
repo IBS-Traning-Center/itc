@@ -1,0 +1,482 @@
+.password-wrapper {
+    position: relative;
+}
+
+.field__icon {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.field__icon:hover {
+    opacity: 1;
+}
+.form-wrapper input[type="text"], input[type="password"], textarea {
+    padding: 5.5px 25px!important;
+}
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 64px;
+    gap: 10px;
+    position: relative;
+    width: 1024px;
+    min-height: auto;
+    background: #FFFFFF;
+    margin: auto;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.registration-container .form-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+    width: 896px;
+    flex: 1;
+}
+
+.registration-container .form-header {
+    width: 100%;
+    height: 72px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 72px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.registration-container .form-tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 209px;
+    height: 40px;
+}
+
+.registration-container .tab {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 16px;
+    height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    transition: all 0.3s ease;
+}
+
+.registration-container .tab.active {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.registration-container .tab.inactive {
+    background: #F0F0F0;
+    color: #000000;
+}
+
+.registration-container .general-errors {
+    width: 100%;
+    padding: 16px;
+    background: #FFF0F0;
+    border: 1px solid #FF0000;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.registration-container .general-errors .error-item {
+    color: #FF0000;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.registration-container .general-errors .error-item:last-child {
+    margin-bottom: 0;
+}
+
+.registration-container .inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+}
+
+.registration-container .input-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 100%;
+}
+
+.registration-container .input-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    width: 100%;
+    height: 80px;
+    background: #F8F7F7;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px;
+    position: relative;
+}
+
+.registration-container .input-wrapper.error {
+    border-bottom: 1px solid #ff0000;
+}
+
+.registration-container .input-field input {
+    width: 100%;
+    height: 32px;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.registration-container .input-field input::placeholder {
+    color: #000000;
+    opacity: 0.7;
+}
+
+/* Защита от автозаполнения в Chrome */
+.registration-container .input-field input:-webkit-autofill,
+.registration-container .input-field input:-webkit-autofill:hover,
+.registration-container .input-field input:-webkit-autofill:focus,
+.registration-container .input-field input:-webkit-autofill:active {
+    -webkit-text-fill-color: #000000 !important;
+    background: transparent !important;
+    box-shadow: 0 0 0 1000px #F8F7F7 inset !important;
+    caret-color: #000000 !important;
+}
+
+.registration-container .input-icon {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    display: none;
+}
+
+.registration-container .input-icon.show {
+    display: block;
+}
+
+.registration-container .error-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.registration-container .error-icon::after {
+    content: '!';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff0000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.registration-container .error-text {
+    width: 100%;
+    min-height: 22px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000000;
+    display: none;
+}
+
+.registration-container .error-text.show {
+    display: block;
+    color: #ff0000;
+}
+
+.registration-container .fio-hint {
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.registration-container .checkboxes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.registration-container .checkbox-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    min-height: 24px;
+}
+
+.registration-container .checkbox-wrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex: none;
+}
+
+.registration-container .checkbox-wrapper input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.registration-container .checkbox-custom {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+.registration-container .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-custom {
+    background: #000000;
+}
+
+.registration-container .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '✓';
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.registration-container .checkbox-label {
+    width: 856px;
+    min-height: 24px;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.registration-container .submit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 0px 0px;
+    gap: 10px;
+    width: 100%;
+}
+
+.registration-container .submit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 40px;
+    gap: 10px;
+    width: 100%;
+    height: 97px;
+    background: #2B418B;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.registration-container .submit-button:hover {
+    background: #1a2d6b;
+}
+
+.registration-container .submit-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.registration-container .close-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    gap: 10px;
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    right: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.registration-container .close-icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+}
+
+.registration-container .close-icon::before,
+.registration-container .close-icon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background: #000000;
+}
+
+.registration-container .close-icon::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.registration-container .close-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.registration-container .login-link {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-family: 'Noto Sans';
+    font-size: 16px;
+    color: #000000;
+}
+
+.registration-container .login-link a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.registration-container .login-link a:hover {
+    color: #2B418B;
+}
+
+/* Медиа-запросы */
+@media (max-width: 1100px) {
+    .registration-container {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .registration-container .form-frame {
+        width: 100%;
+    }
+
+    .registration-container .form-header {
+        font-size: 48px;
+        line-height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .registration-container {
+        padding: 20px;
+    }
+
+    .registration-container .form-header {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .registration-container .input-field input {
+        font-size: 20px;
+    }
+
+    .registration-container .submit-button {
+        padding: 24px 20px;
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .registration-container .close-button {
+        width: 72px;
+        height: 72px;
+    }
+
+    .registration-container .checkbox-label {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-container .form-header {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .registration-container .input-wrapper {
+        padding: 16px;
+        height: 60px;
+    }
+
+    .registration-container .input-field input {
+        font-size: 18px;
+    }
+
+    .registration-container .submit-button {
+        height: 70px;
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .registration-container .checkbox-label {
+        font-size: 13px;
+    }
+}

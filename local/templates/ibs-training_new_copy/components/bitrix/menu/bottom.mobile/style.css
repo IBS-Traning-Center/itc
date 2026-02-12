@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1180px) {
     .bottom-mobile-menu-block {
         display: block;
     }
