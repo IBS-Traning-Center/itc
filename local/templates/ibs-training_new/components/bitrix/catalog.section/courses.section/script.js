@@ -12,11 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const button = this;
             const originalText = button.innerHTML;
 
-            if (parseInt(scheduleId) === 0) {
-                alert('Не удалось добавить курс. Расписание не найдено.');
-                return;
-            }
-
             button.disabled = true;
             button.innerHTML = '<span class="loading-text">Добавляем...</span>';
 

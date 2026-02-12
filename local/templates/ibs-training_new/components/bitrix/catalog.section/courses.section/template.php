@@ -27,8 +27,15 @@ if (!empty($arResult['ITEMS'])) : ?>
     <div class="section-course-block">
         <?php foreach ($arResult['ITEMS'] as $key => $item) : ?>
             <?php
+            $showCartButton = false;
 
-            $showCartButton = $item['SHOW_CART_BUTTON'] ?? false;
+            $format = $item['PROPERTIES']['FORMAT']['VALUE'] ?? '';
+            $isCertification = $item['PROPERTIES']['is_certification']['VALUE_XML_ID'] ?? '';
+            $isSelfStudy = ($format == 'Self_Study');
+            $isCert = ($isCertification === 'Y');
+
+            $showCartButton = ($isSelfStudy || $isCert);
+
             ?>
             <div class="course-block-wrapper">
                 <a href="/kurs/<?= $item['XML_ID'] ?>.html" class="course-block">
@@ -118,20 +125,34 @@ if (!empty($arResult['ITEMS'])) : ?>
                         <?php endif; ?>
                     </div>
 
-                    <?php if ($showCartButton) { ?>
+                    <?php if ($showCartButton) {
+                        $buttonPrice = $item['ORIGINAL_PRICE'] ?? 0;
+                        $scheduleId = $item['SCHEDULE_ID'] ?? 0;
+                        $scheduleName = $item['SCHEDULE_NAME'] ?? '';
+                        $scheduleStart = $item['SCHEDULE_START_DATE'] ?? '';
+                        $scheduleEnd = $item['SCHEDULE_END_DATE'] ?? '';
+
+                        if (!$isSelfStudy && !$isCert && $item['HAS_SCHEDULE']) {
+                            $buttonPrice = $item['SCHEDULE_PRICE'] ?? 0;
+                            $scheduleId = $item['SCHEDULE_ID'] ?? 0;
+                            $scheduleName = $item['SCHEDULE_NAME'] ?? '';
+                            $scheduleStart = $item['SCHEDULE_START_DATE'] ?? '';
+                            $scheduleEnd = $item['SCHEDULE_END_DATE'] ?? '';
+                        }
+                        ?>
                         <button
                                 class="btn-add-to-cart add-to-cart-btn"
                                 data-course-id="<?= $item['ID'] ?>"
                                 data-course-name="<?= htmlspecialcharsbx($item['NAME']) ?>"
-                                data-course-price="<?= $item['SCHEDULE_PRICE'] ?? 0 ?>"
-                                data-schedule-id="<?= $item['SCHEDULE_ID'] ?? 0 ?>"
-                                data-schedule-name="<?= htmlspecialcharsbx($item['SCHEDULE_NAME'] ?? '') ?>"
-                                data-schedule-start="<?= $item['SCHEDULE_START_DATE'] ?? '' ?>"
-                                data-schedule-end="<?= $item['SCHEDULE_END_DATE'] ?? '' ?>"
+                                data-course-price="<?= $buttonPrice ?>"
+                                data-schedule-id="<?= $scheduleId ?>"
+                                data-schedule-name="<?= htmlspecialcharsbx($scheduleName) ?>"
+                                data-schedule-start="<?= $scheduleStart ?>"
+                                data-schedule-end="<?= $scheduleEnd ?>"
                         >
                             В корзину
                         </button>
-<?php }?>
+                    <?php } ?>
                 </a>
             </div>
         <?php endforeach; ?>

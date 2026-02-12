@@ -27,6 +27,7 @@ function plural_form($number, $after) {
     $cases = array (2, 0, 1, 1, 1, 2);
     echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
+
 ?>
 
 <div class="course-detail-block">
@@ -142,15 +143,15 @@ function plural_form($number, $after) {
                         <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
                     <?php endif; ?>
                     <?php ?>
-                    <?php if (isset($arResult['schedule'][0]['id'])): ?>
+                    <?php if ($arResult['SHOW_CART_BUTTON'] || $arResult['HAS_SCHEDULE']): ?>
                         <button
                                 class="btn-add-to-cart add-to-cart-btn"
                                 data-course-id="<?= $arResult['id'] ?>"
                                 data-course-name="<?= htmlspecialcharsbx($arResult['name']) ?>"
-                                data-course-price="<?= $arResult['sale']['price'] ?? 0 ?>"
-                                data-schedule-id="<?= $arResult['schedule'][0]['id'] ?>"
-                                data-schedule-name="<?= htmlspecialcharsbx($arResult['schedule'][0]['name'] ?? '') ?>"
-                                data-schedule-start="<?= $arResult['schedule'][0]['date']['start'] ?? '' ?>"
+                                data-course-price="<?= $buttonPrice ?>"
+                                data-schedule-id="<?= $scheduleId ?>"
+                                data-schedule-name="<?= htmlspecialcharsbx($scheduleName) ?>"
+                                data-schedule-start="<?= $scheduleStart ?>"
                         >
                             В корзину
                         </button>
