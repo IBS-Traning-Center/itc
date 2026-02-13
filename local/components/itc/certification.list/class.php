@@ -10,7 +10,7 @@ use Bitrix\Iblock\Elements\ElementCertificationTable;
 use Bitrix\Iblock\Elements\ElementScheduleCertificationTable;
 
 class CertificationList
-extends CBitrixComponent
+    extends CBitrixComponent
 {
     public function executeComponent()
     {
@@ -110,12 +110,28 @@ extends CBitrixComponent
             },
             []
         );
-
         $this->arResult['items'] = array_map(function ($scheduleItem) use ($certifications, $prices) {
-            $certification = $certifications[$scheduleItem['certificationId']] ?? [];
-            $price = $prices[$certification['id']];
-            $certification['url'] = '/certification/' . $certification['type'] . '/?scheduleId=' . $scheduleItem['id'];
-            return array_merge($certification, $price, $scheduleItem);
+
+            $cert = $certifications[$scheduleItem['certificationId']] ?? null;
+            if (!$cert) return null;
+
+            $priceData = $prices[$cert['id']] ?? ['price' => 0, 'priceFormatted' => '—', 'currency' => 'RUB'];
+
+            return [
+                'ID'                => $scheduleItem['id'],
+                'CERTIFICATION_ID'  => $cert['id'],
+                'NAME'              => $cert['name'],
+                'url'               => '/certification/' . $cert['type'] . '/?scheduleId=' . $scheduleItem['id'],
+                'complexity'        => $cert['complexity'],
+                'duration'          => $cert['duration'] . ' мин',
+                'time'              => $scheduleItem['time'] ?? '',
+                'date'              => $scheduleItem['date'],
+                'locations'         => $scheduleItem['locations'],
+                'price'             => $priceData['price'],
+                'priceFormatted'    => $priceData['priceFormatted'],
+                'currency'          => $priceData['currency'],
+            ];
+
         }, $schedule);
     }
 }

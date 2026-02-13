@@ -14,6 +14,7 @@ $mobileColumns = array_fill_keys($mobileColumns, true);
 $result['BASKET_ITEM_RENDER_DATA'] = [];
 
 foreach ($this->basketItems as $row) {
+
     $rowData = [
         'ID'                    => $row['ID'],
         'PRODUCT_ID'            => $row['PRODUCT_ID'],
@@ -71,7 +72,7 @@ foreach ($this->basketItems as $row) {
             break;
         }
     }
-    foreach (['PROPERTY_enddate_VALUE', 'enddate', 'PROPERTY_ENDDATE_VALUE'] as $key) {
+    foreach (['PROPERTY_enddate_VALUE', 'enddate', 'PROPERTY_ENDDATE_VALUE', ] as $key) {
         if (!empty($row[$key])) {
             $end = is_array($row[$key]) ? implode(', ', $row[$key]) : $row[$key];
             break;
@@ -84,7 +85,8 @@ foreach ($this->basketItems as $row) {
     } elseif ($end) {
         $rowData['DELIVERY_DATE'] = $end;
     }
-    foreach (['PROPERTY_schedule_time_VALUE', 'schedule_time', 'PROPERTY_SCHEDULE_TIME_VALUE', 'PROPERTY_TIME_INTERVAL_VALUE', 'PROPERTY_TIME_VALUE', 'TIME'] as $key) {
+
+    foreach (['PROPERTY_schedule_time_VALUE', 'schedule_time', 'PROPERTY_SCHEDULE_TIME_VALUE', 'PROPERTY_TIME_INTERVAL_VALUE', 'PROPERTY_TIME_VALUE', 'TIME','PROPERTY_time_VALUE'] as $key) {
         if (!empty($row[$key])) {
             $rowData['DELIVERY_TIME'] = is_array($row[$key]) ? implode(', ', $row[$key]) : $row[$key];
             break;
@@ -109,7 +111,26 @@ foreach ($this->basketItems as $row) {
     if (empty($rowData['CATEGORY_LEVEL']) && !empty($rowData['LEVEL'])) {
         $rowData['CATEGORY_LEVEL'] = $rowData['LEVEL'];
     }
+    if (!empty($row['PROPS'])) {
+        $props = is_string($row['PROPS']) ? unserialize($row['PROPS']) : $row['PROPS'];
 
+        if (is_array($props)) {
+            foreach ($props as $prop) {
+                if ($prop['CODE'] === 'SCHEDULE_DATE') {
+                    $rowData['DELIVERY_DATE'] = $prop['VALUE'];
+                }
+                if ($prop['CODE'] === 'SCHEDULE_TIME') {
+                    $rowData['DELIVERY_TIME'] = $prop['VALUE'];
+                }
+                if ($prop['CODE'] === 'LOCATION') {
+                    $rowData['CITY'] = $prop['VALUE'];
+                }
+                if ($prop['CODE'] === 'SCHEDULE_ID') {
+                    $rowData['SCHEDULE_ID'] = $prop['VALUE'];
+                }
+            }
+        }
+    }
     if (empty($rowData['DELIVERY_DATE']) || empty($rowData['DELIVERY_TIME']) || $rowData['TRAINER_NAME'] === '—' || empty($rowData['CITY'])) {
         if (CModule::IncludeModule('iblock')) {
             $courseScheduleIBlockId = false;
@@ -202,7 +223,19 @@ foreach ($this->basketItems as $row) {
             }
         }
     }
+    $durationValue = '';
+    foreach (['PROPERTY_duration_VALUE', 'duration', 'PROPERTY_DURATION_VALUE', 'PROPERTY_course_duration_VALUE', 'course_duration'] as $key) {
+        if (!empty($row[$key])) {
+            $durationValue = is_array($row[$key]) ? implode(', ', $row[$key]) : $row[$key];
 
+            if (strpos($key, 'course_duration') !== false) {
+                $rowData['DURATION'] = $durationValue . ' ч';
+            } else {
+                $rowData['DURATION'] = $durationValue . ' мин';
+            }
+            break;
+        }
+    }
     if ($rowData['MEASURE_RATIO'] != 1) {
         $price = PriceMaths::roundPrecision($rowData['PRICE'] * $rowData['MEASURE_RATIO']);
         if ($price != $rowData['PRICE']) {

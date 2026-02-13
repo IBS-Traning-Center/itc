@@ -68,7 +68,7 @@ use Bitrix\Main\Localization\Loc;
                         <div class="tag-container-general">
                             {{#DURATION}}
                             <div class="tag-container">
-                                <div class="tag">{{DURATION}} часов</div>
+                                <div class="tag">{{DURATION}}</div>
                             </div>
                             {{/DURATION}}
 

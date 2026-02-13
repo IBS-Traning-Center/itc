@@ -7,42 +7,65 @@ declare(strict_types=1);
  */
 ?>
 <div class="container">
-<div class="scheduleCertification">
-    <div class="scheduleCertification__list timetable-list">
-        <?php foreach ($arResult['items'] as $item) {?>
-            <div class="scheduleCertification__item timetable-item">
-                <div class="timetable-item-wrap">
-                    <div class="timetable-name-wrap">
-                        <div class="name-n-code-wrap">
-                            <div class="code-icon-wrap">
-                                <div class="code-icon-right">
-                                    <? if($item['complexity'] !==''){?>
-                                        <span class="icon level"><?=$item['complexity']?></span>
-                                    <?}?>
-                                    <span class="hours"> <?=$item['duration']?> мин</span>
+    <div class="scheduleCertification">
+        <div class="scheduleCertification__list timetable-list">
+            <?php foreach ($arResult['items'] as $item) {?>
+                <div class="scheduleCertification__item timetable-item">
+                    <div class="timetable-item-wrap">
+                        <div class="timetable-name-wrap">
+                            <div class="name-n-code-wrap">
+                                <div class="code-icon-wrap">
+                                    <div class="code-icon-right">
+                                        <? if($item['complexity'] !==''){?>
+                                            <span class="icon level"><?=$item['complexity']?></span>
+                                        <?}?>
+                                        <span class="hours"> <?=$item['duration']?></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="scheduleCertificationItem__info">
-                            <a href="<?=$item['url']?>" class="scheduleCertificationItem__name course-name-time"><?=$item['name']?></a>
-                        </div>
-                    </div>
-                    <div class="scheduleCertificationItem__timetable time-price-wrapper">
-                        <div class="scheduleCertificationItem__region trener-info">Регион: <span><?=$item['locations']?></span></div>
-                        <div class="time-wrapper">
-                            Дата и время:
-                            <div class="time-wrapper-right">
-                                <div class="scheduleCertificationItem__date"><?=$item['date']?></div>
-                                <div class="scheduleCertificationItem__time"><?=$item['time']?></div>
+                            <div class="scheduleCertificationItem__info">
+                                <a href="<?=$item['url']?>" class="scheduleCertificationItem__name course-name-time"><?=$item['NAME']?></a>
                             </div>
                         </div>
-                        <div class="scheduleCertificationItem__order price-wrapper">
-                            <div class="scheduleCertificationItem__price price"><?=$item['priceFormatted']?></div>
+                        <div class="scheduleCertificationItem__timetable time-price-wrapper">
+                            <div class="scheduleCertificationItem__region trener-info">Регион: <span><?=$item['locations']?></span></div>
+                            <div class="time-wrapper">
+                                Дата и время:
+                                <div class="time-wrapper-right">
+                                    <div class="scheduleCertificationItem__date"><?=$item['date']?></div>
+                                    <div class="scheduleCertificationItem__time"><?=$item['time']?></div>
+                                </div>
+                            </div>
+                            <div class="scheduleCertificationItem__order price-wrapper">
+                                <div class="scheduleCertificationItem__price price"><?=$item['priceFormatted']?></div>
+                            </div>
+
                         </div>
+                        <?php if ($USER->IsAuthorized()): ?>
+                            <div class="btn-block">
+                                <button
+                                        class="btn-add-to-cart add-to-cart-btn"
+                                        data-course-id="<?= $item['CERTIFICATION_ID'] ?>"
+                                        data-course-name="<?= htmlspecialcharsbx($item['NAME']) ?>"
+                                        data-course-price="<?= $item['price'] ?>"
+                                        data-schedule-id="<?= $item['schedule_id'] ?? '' ?>"
+                                        data-schedule-date="<?= $item['date'] ?? '' ?>"
+                                        data-schedule-time="<?= $item['time'] ?? '' ?>"
+                                        data-schedule-location="<?= htmlspecialcharsbx($item['locations'] ?? '') ?>"
+                                >
+                                    В корзину
+                                </button>
+                            </div>
+                        <?php else: ?>
+                            <div class="btn-block">
+                                <a href="/auth/" class="btn-login-to-cart">
+                                    Войдите, чтобы добавить в корзину
+                                </a>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
-            </div>
-        <?php }?>
+            <?php }?>
+        </div>
     </div>
-</div>
 </div>
