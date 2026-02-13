@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -11,14 +11,20 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
 use Local\Util\Functions;
+
+// Получаем ID текущего пользователя
+global $USER;
+$currentUserId = $USER->GetID();
 ?>
+<?php // var_dump($arResult); ?>
 <div class="lk-layout">
     <aside class="lk-sidebar">
-        <?$APPLICATION->IncludeComponent(
+        <? $APPLICATION->IncludeComponent(
             "bitrix:menu",
             "personal_menu",
-            Array(
+            array(
                 "ALLOW_MULTI_SELECT" => "N",
                 "CHILD_MENU_TYPE" => "left",
                 "COMPONENT_TEMPLATE" => "personal_menu",
@@ -31,7 +37,9 @@ use Local\Util\Functions;
                 "ROOT_MENU_TYPE" => "left",
                 "USE_EXT" => "N"
             )
-        );?> </aside>
+        ); ?>
+    </aside>
+
     <div class="lk-content-main">
         <div class="lk-header">
             <h1 class="lk-header__title">Уведомления</h1>
@@ -40,44 +48,108 @@ use Local\Util\Functions;
             <div class="lk-content">
                 <div class="lk-header-row">
                     <div class="lk-tabs">
-                        <button class="lk-tab is-active">Все</button>
-                        <button class="lk-tab">Не прочитанные</button>
-                        <button class="lk-tab">Прочитанные</button>
+                        <?php
+                        $currentTab = $_REQUEST['tab'] ?? 'all';
+                        $tabs = [
+                            'all' => 'Все',
+                            'unread' => 'Не прочитанные',
+                            'read' => 'Прочитанные'
+                        ];
+                        foreach($tabs as $code => $name): ?>
+                            <button class="lk-tab <?=$currentTab == $code ? 'is-active' : ''?>"
+                                    data-tab="<?=$code?>">
+                                <?=$name?>
+                            </button>
+                        <?php endforeach; ?>
                     </div>
-
                 </div>
+
                 <div class="notifications-list">
-                    <div class="notification-card" data-read="false">
-                        <div class="notification-card-top" >
-                        <div class="notification-title-wrapper">
-                            <div class="dot"></div>
-                            <h2 class="title">Близится срок оплаты за курс «Python»</h2>
-                        </div>
+                    <?php
+                    $userItems = [];
+                    if(!empty($arResult["ITEMS"])) {
+                        foreach($arResult["ITEMS"] as $arItem) {
+                            $userId = $arItem["PROPERTIES"]["USER"]["VALUE"];
+                            if(is_array($userId)) {
+                                $isForCurrentUser = in_array($currentUserId, $userId);
+                            } else {
+                                $isForCurrentUser = ($userId == $currentUserId);
+                            }
+                            if(empty($userId)) {
+                                $isForCurrentUser = true;
+                            }
 
-                        <div class="description">
-                            Второй платёж в 12 500 ₽ необходимо внести до 12.09.2025
-                        </div>
-                        </div>
+                            if($isForCurrentUser) {
+                                $userItems[] = $arItem;
+                            }
+                        }
+                    }
 
-                        <button class="btn payment-btn" type="button">
-                            Оплатить 12 500 ₽ сейчас
-                        </button>
-                    </div>
-                    <div class="notification-card read" data-read="true">
-                        <div class="notification-card-top" >
-                        <div class="notification-title-wrapper">
-                            <h2 class="title">С новым годом!</h2>
+                    if(!empty($userItems)):
+                        ?>
+                        <?php foreach($userItems as $arItem): ?>
+                        <?php
+                        $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                        $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"));
+                        $isRead = false;
+                        if ($arItem["PROPERTIES"]["IS_READ"]["VALUE"] == 'Y') {
+                            $isRead = true;
+                        } elseif (isset($_SESSION['VIEWED_NOTIFICATIONS']) &&
+                            in_array($arItem['ID'], $_SESSION['VIEWED_NOTIFICATIONS'])) {
+                            $isRead = true;
+                        }
+                        $btnText = $arItem["PROPERTIES"]["BUTTON_TEXT"]["VALUE"];
+                        $btnType = $arItem["PROPERTIES"]["BUTTON_TYPE"]["VALUE"] == 'primary' ? 'payment-btn' : 'secondary-btn';
+                        $btnLink = $arItem["PROPERTIES"]["LINK"]["VALUE"];
+                        $btnPrice = $arItem["PROPERTIES"]["PRICE"]["VALUE"];
+                        $btnTarget = $arItem["PROPERTIES"]["TARGET"]["VALUE"] == 'Y' ? '_blank' : '_self';
+                        ?>
+
+                        <div class="notification-card <?=$isRead ? 'read' : ''?>"
+                             id="<?=$this->GetEditAreaId($arItem['ID']);?>"
+                             data-id="<?=$arItem['ID']?>"
+                             data-read="<?=$isRead ? 'true' : 'false'?>"
+                             data-user-id="<?=$currentUserId?>">
+
+                            <div class="notification-card-top">
+                                <div class="notification-title-wrapper">
+                                    <?php if(!$isRead): ?>
+                                        <div class="dot"></div>
+                                    <?php endif; ?>
+                                    <h2 class="title"><?=$arItem["NAME"]?></h2>
+                                </div>
+
+                                <?php if($arItem["PREVIEW_TEXT"]): ?>
+                                    <div class="description">
+                                        <?=$arItem["PREVIEW_TEXT"]?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+
+                            <?php if($btnText): ?>
+                                <a href="<?=$btnLink?>"
+                                   class="btn <?=$btnType?>"
+                                   type="button"
+                                   target="<?=$btnTarget?>">
+                                    <?=$btnText?>
+                                    <?php if($btnPrice): ?> <?=$btnPrice?> ₽<?php endif; ?>
+                                </a>
+                            <?php endif; ?>
+
                         </div>
-                        <div class="description">
-                            Поздравляем вас с новым годом и дарим 500 баллов, которые можно потратить на покупку курсов
+                    <?php endforeach; ?>
+
+                        <?php if($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
+                        <?=$arResult["NAV_STRING"]?>
+                    <?php endif; ?>
+
+                    <?php else: ?>
+                        <div style="text-align: center; padding: 60px 20px; color: #999;">
+                            Нет уведомлений
                         </div>
-                        </div>
-                        <button class="btn secondary-btn" type="button">
-                            Смотреть курсы
-                        </button>
-                    </div>
+                    <?php endif; ?>
                 </div>
+            </div>
         </div>
-        </div>
-        </div>
-        </div>
+    </div>
+</div>

@@ -1,0 +1,389 @@
+/* Основные стили для модальной регистрации */
+.modal-password-wrapper {
+    position: relative;
+}
+
+.modal-field__icon {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.modal-field__icon:hover {
+    opacity: 1;
+}
+
+.modal-registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    min-height: auto;
+    background: #FFFFFF;
+    margin: auto;
+    width: 100%;
+    max-width: 896px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-registration-container .modal-registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+    width: 100%;
+    flex: 1;
+}
+
+.modal-registration-container .modal-general-errors {
+    width: 100%;
+    padding: 16px;
+    background: #FFF0F0;
+    border: 1px solid #FF0000;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.modal-registration-container .modal-general-errors .modal-error-item {
+    color: #FF0000;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.modal-registration-container .modal-general-errors .modal-error-item:last-child {
+    margin-bottom: 0;
+}
+
+.modal-registration-container .modal-registration-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+}
+
+.modal-registration-container .modal-input-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 4px;
+    width: 100%;
+}
+
+.modal-registration-container .modal-input-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    width: 100%;
+    height: 80px;
+    background: #F8F7F7;
+    border-bottom: 1px solid #000000;
+    border-radius: 0px;
+    position: relative;
+}
+
+.modal-registration-container .modal-input-wrapper.modal-error {
+    border-bottom: 1px solid #ff0000;
+}
+
+.modal-registration-container .modal-input-field input {
+    width: 100%;
+    height: 32px;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.modal-registration-container .modal-input-field input::placeholder {
+    color: #000000;
+    opacity: 0.7;
+}
+
+/* Защита от автозаполнения в Chrome */
+.modal-registration-container .modal-input-field input:-webkit-autofill,
+.modal-registration-container .modal-input-field input:-webkit-autofill:hover,
+.modal-registration-container .modal-input-field input:-webkit-autofill:focus,
+.modal-registration-container .modal-input-field input:-webkit-autofill:active {
+    -webkit-text-fill-color: #000000 !important;
+    background: transparent !important;
+    box-shadow: 0 0 0 1000px #F8F7F7 inset !important;
+    caret-color: #000000 !important;
+}
+
+.modal-registration-container .modal-error-text {
+    width: 100%;
+    min-height: 22px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000000;
+    display: none;
+}
+
+.modal-registration-container .modal-error-text.modal-show {
+    display: block;
+    color: #ff0000;
+}
+
+.modal-registration-container .modal-hint-text {
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.modal-registration-container .modal-checkboxes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.modal-registration-container .modal-checkbox-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    min-height: 24px;
+}
+
+.modal-registration-container .modal-checkbox-wrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex: none;
+}
+
+.modal-registration-container .modal-checkbox-wrapper input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.modal-registration-container .modal-checkbox-custom {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+}
+
+.modal-registration-container .modal-checkbox-wrapper input[type="checkbox"]:checked + .modal-checkbox-custom {
+    background: #000000;
+}
+
+.modal-registration-container .modal-checkbox-wrapper input[type="checkbox"]:checked + .modal-checkbox-custom::after {
+    content: '✓';
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-registration-container .modal-checkbox-label {
+    width: 100%;
+    min-height: 24px;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    cursor: pointer;
+    flex: 1;
+}
+
+.modal-registration-container .modal-submit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 0px 0px;
+    gap: 10px;
+    width: 100%;
+}
+
+.modal-registration-container .modal-submit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 40px;
+    gap: 10px;
+    width: 100%;
+    height: 97px;
+    background: #2B418B;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.modal-registration-container .modal-submit-button:hover {
+    background: #1a2d6b;
+}
+
+.modal-registration-container .modal-submit-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.modal-registration-container .modal-login-link {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-family: 'Noto Sans';
+    font-size: 16px;
+    color: #000000;
+}
+
+.modal-registration-container .modal-login-link a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.modal-registration-container .modal-login-link a:hover {
+    color: #2B418B;
+}
+
+/* Медиа-запросы для модального окна */
+@media (max-width: 1100px) {
+    .modal-registration-container {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .modal-registration-container .modal-registration-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-registration-container {
+        padding: 20px;
+    }
+
+    .modal-registration-container .modal-input-field input {
+        font-size: 20px;
+    }
+
+    .modal-registration-container .modal-submit-button {
+        padding: 24px 20px;
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .modal-registration-container .modal-checkbox-label {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-registration-container .modal-input-wrapper {
+        padding: 16px;
+        height: 60px;
+    }
+
+    .modal-registration-container .modal-input-field input {
+        font-size: 18px;
+    }
+
+    .modal-registration-container .modal-submit-button {
+        height: 70px;
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .modal-registration-container .modal-checkbox-label {
+        font-size: 13px;
+    }
+}
+
+/* Стили для модального окна (если используется popup) */
+.modal-registration-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-registration-popup .modal-registration-container {
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 20px;
+}
+
+.modal-registration-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-registration-close::before,
+.modal-registration-close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 2px;
+    background: #000;
+}
+
+.modal-registration-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal-registration-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}

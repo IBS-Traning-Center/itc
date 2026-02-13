@@ -91,12 +91,12 @@ use Local\Util\Functions;
                         <?php endif; ?>
 
                         <?php if ($isCart && $USER->IsAuthorized()) : ?>
-                            <span class="cart-icon-right">
-                                <?php if ($basketItemsCount > 0) : ?>
+                            <span class="cart-icon-right<?=  $basketItemsCount > 0? ' in-cart' : '' ?>">
+                                <?/*php if ($basketItemsCount > 0) : ?>
                                     <?= Functions::buildSVG('cart_icon_full', $templateFolder . '/images') ?>
                                 <?php else : ?>
                                     <?= Functions::buildSVG('cart_icon', $templateFolder . '/images') ?>
-                                <?php endif; ?>
+                                <?php endif; */?>
                             </span>
                             <span class="f-16"><?=$value['TEXT']?></span>
 
@@ -148,14 +148,37 @@ use Local\Util\Functions;
             </div>
             <div class="tabs-content">
                 <div id="tab-register" class="tab-content">
-                    <?php
-                    $APPLICATION->IncludeComponent(
-                        "bitrix:system.auth.registration",
-                        "",
-                        array(),
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.register",
+                        "lux-training-mod",
+                        [
+                            "USER_PROPERTY_NAME" => "",
+                            "SEF_MODE" => "N",
+                            "SHOW_FIELDS" => [
+                                0 => "EMAIL",
+                                1 => "PASSWORD",
+                                2 => "CONFIRM_PASSWORD",
+                                3 => "NAME",
+                                4 => "LAST_NAME",
+                                5 => "SECOND_NAME",
+                                6 => "PERSONAL_PHONE",
+                                7 => "PERSONAL_CITY",
+                                8 => "LOGIN",
+                            ],
+                            "REQUIRED_FIELDS" => [
+                                0 => "EMAIL",
+                                1 => "PASSWORD",
+                                2 => "CONFIRM_PASSWORD",
+
+                            ],
+                            "AUTH" => "Y",
+                            "USE_BACKURL" => "Y",
+                            "SUCCESS_PAGE" => "/",
+                            "SET_TITLE" => "Y",
+                            "USER_PROPERTY" => []
+                        ],
                         false
-                    );
-                    ?>
+                    );?>
                 </div>
                 <div id="tab-login" class="tab-content active">
                     <?php
