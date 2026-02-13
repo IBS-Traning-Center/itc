@@ -1,8 +1,4 @@
 <?php
-/**
- * AJAX-обработчик добавления сертификата в корзину
- */
-
 define("NO_KEEP_STATISTIC", true);
 define("STOP_STATISTICS", true);
 define("NO_AGENT_CHECK", true);
@@ -30,10 +26,6 @@ if ($productId <= 0) {
     die(json_encode(['status' => 'error', 'message' => 'Неверный ID товара']));
 }
 
-// ================================================
-// Обработка свойств из POST (формат PROPS[n][CODE/NAME/VALUE])
-// ================================================
-
 $arProps = [];
 
 if (!empty($_POST['PROPS']) && is_array($_POST['PROPS'])) {
@@ -46,7 +38,6 @@ if (!empty($_POST['PROPS']) && is_array($_POST['PROPS'])) {
         $name  = trim($propItem['NAME']  ?? $code);
         $value = trim((string)($propItem['VALUE'] ?? ''));
 
-        // Добавляем только непустые значения
         if ($code !== '' && $value !== '' && $value !== '0') {
             $arProps[] = [
                 'NAME'  => $name,
@@ -57,10 +48,6 @@ if (!empty($_POST['PROPS']) && is_array($_POST['PROPS'])) {
         }
     }
 }
-
-// ================================================
-// Получаем название товара
-// ================================================
 
 $element = ElementTable::getList([
     'filter' => ['=ID' => $productId, '=ACTIVE' => 'Y'],
@@ -73,10 +60,6 @@ if (!$element) {
 }
 
 $name = $element['NAME'];
-
-// ================================================
-// Получаем цену
-// ================================================
 
 $price    = 0;
 $currency = 'RUB';
@@ -94,10 +77,6 @@ if ($optimalPrice && !empty($optimalPrice['PRICE']['PRICE'])) {
     }
 }
 
-// ================================================
-// Добавляем в корзину
-// ================================================
-
 $arFields = [
     'PRODUCT_ID'             => $productId,
     'PRICE'                  => $price,
@@ -110,13 +89,12 @@ $arFields = [
     'NAME'                   => $name,
     'MODULE'                 => 'catalog',
     'PRODUCT_PROVIDER_CLASS' => 'CCatalogProductProvider',
-    'PROPS'                  => $arProps,  // массив свойств — именно так!
+    'PROPS'                  => $arProps,
 ];
 
 $basketId = CSaleBasket::Add($arFields);
 
 if (intval($basketId) > 0) {
-    // Подсчёт количества позиций в корзине (кол-во разных товаров)
     $res = CSaleBasket::GetList(
         [],
         [
@@ -136,7 +114,6 @@ if (intval($basketId) > 0) {
     echo json_encode([
         'status' => 'success',
         'count'  => $count,
-        // 'formatted_sum' => ... можно добавить позже, если нужно
     ]);
 } else {
     echo json_encode([
