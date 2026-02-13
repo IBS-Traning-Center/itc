@@ -124,7 +124,7 @@ if (!empty($arResult['ITEMS'])) : ?>
                             </div>
                         <?php endif; ?>
                     </div>
-
+        <?php if ($USER->IsAuthorized()){ ?>
                     <?php if ($showCartButton) {
                         $buttonPrice = $item['ORIGINAL_PRICE'] ?? 0;
                         $scheduleId = $item['SCHEDULE_ID'] ?? 0;
@@ -152,6 +152,7 @@ if (!empty($arResult['ITEMS'])) : ?>
                         >
                             В корзину
                         </button>
+                    <?php } ?>
                     <?php } ?>
                 </a>
             </div>

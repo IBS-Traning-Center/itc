@@ -143,6 +143,7 @@ function plural_form($number, $after) {
                         <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
                     <?php endif; ?>
                     <?php ?>
+<?php if ($USER->IsAuthorized()){?>
                     <?php if ($arResult['SHOW_CART_BUTTON'] || $arResult['HAS_SCHEDULE']): ?>
                         <button
                                 class="btn-add-to-cart add-to-cart-btn"
@@ -160,6 +161,7 @@ function plural_form($number, $after) {
                             <p class="f-16">Нет доступных дат для записи</p>
                         </div>
                     <?php endif; ?>
+    <?php } ?>
                     <?php if ($arResult['magnet']['button']) : ?>
                         <button class="open-sign-magnet-modal btn-main" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
                         <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
@@ -551,9 +553,25 @@ function plural_form($number, $after) {
                 <a href="<?= $settings['MONEY_RETURN_LINK'] ?>" class="f-16 return-money-block"><?= Loc::getMessage('RETURN_MONEY_TEXT') ?></a>
             <?php endif; ?>
             <?php ?>
-            <a data-scroll="sign" class="btn-main size-l">
-                <span class="f-24"><?= Loc::getMessage('SIGN_TEXT_BTN') ?></span>
-            </a>
+            <?php if ($USER->IsAuthorized()){?>
+                <?php if ($arResult['SHOW_CART_BUTTON'] || $arResult['HAS_SCHEDULE']): ?>
+                    <button
+                            class="btn-add-to-cart add-to-cart-btn"
+                            data-course-id="<?= $arResult['id'] ?>"
+                            data-course-name="<?= htmlspecialcharsbx($arResult['name']) ?>"
+                            data-course-price="<?= $buttonPrice ?>"
+                            data-schedule-id="<?= $scheduleId ?>"
+                            data-schedule-name="<?= htmlspecialcharsbx($scheduleName) ?>"
+                            data-schedule-start="<?= $scheduleStart ?>"
+                    >
+                        В корзину
+                    </button>
+                <?php else: ?>
+                    <div class="no-schedule-message">
+                        <p class="f-16">Нет доступных дат для записи</p>
+                    </div>
+                <?php endif; ?>
+            <?php } ?>
             <?php if ($arResult['magnet']['button']) : ?>
                 <button class="open-sign-magnet-modal btn-main" style="background-color: var(--lime); border: 1px solid var(--button-blue);">
                     <span class="f-16" style="color: var(--button-blue); white-space: nowrap;"><?= $arResult['magnet']['button'] ?></span>
